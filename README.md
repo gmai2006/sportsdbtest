@@ -1,4 +1,4 @@
-# Auto-generated OpenPay application from openpay db schema
+# Auto-generated sportsdb application from sportsdb db schema
 ## Instruction
 All instructions should be run in a terminal
 
