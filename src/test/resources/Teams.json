@@ -1,0 +1,62 @@
+[
+  {
+    "publisherId": 0,
+    "homeSiteId": 0,
+    "teamKey": "Lorem ipsum dolor si0",
+    "id": 247375291
+  },
+  {
+    "publisherId": 1,
+    "homeSiteId": 1,
+    "teamKey": "Lorem ipsum dolor si1",
+    "id": 1739159675
+  },
+  {
+    "publisherId": 2,
+    "homeSiteId": 2,
+    "teamKey": "Lorem ipsum dolor si2",
+    "id": 315842272
+  },
+  {
+    "publisherId": 3,
+    "homeSiteId": 3,
+    "teamKey": "Lorem ipsum dolor si3",
+    "id": 171382276
+  },
+  {
+    "publisherId": 4,
+    "homeSiteId": 4,
+    "teamKey": "Lorem ipsum dolor si4",
+    "id": 83259591
+  },
+  {
+    "publisherId": 5,
+    "homeSiteId": 5,
+    "teamKey": "Lorem ipsum dolor si5",
+    "id": 1297820777
+  },
+  {
+    "publisherId": 6,
+    "homeSiteId": 6,
+    "teamKey": "Lorem ipsum dolor si6",
+    "id": 1916665795
+  },
+  {
+    "publisherId": 7,
+    "homeSiteId": 7,
+    "teamKey": "Lorem ipsum dolor si7",
+    "id": 1208191878
+  },
+  {
+    "publisherId": 8,
+    "homeSiteId": 8,
+    "teamKey": "Lorem ipsum dolor si8",
+    "id": 479688363
+  },
+  {
+    "publisherId": 9,
+    "homeSiteId": 9,
+    "teamKey": "Lorem ipsum dolor si9",
+    "id": 1156074857
+  }
+]

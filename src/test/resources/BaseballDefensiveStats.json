@@ -1,0 +1,122 @@
+[
+  {
+    "fieldingPercentage": 0.0,
+    "doublePlays": 0,
+    "putouts": 0,
+    "assists": 0,
+    "errorsPassedBall": 0,
+    "defensiveAverage": 0.0,
+    "errorsCatchersInterference": 0,
+    "errors": 0,
+    "triplePlays": 0,
+    "id": 1268065380
+  },
+  {
+    "fieldingPercentage": 1.0,
+    "doublePlays": 1,
+    "putouts": 1,
+    "assists": 1,
+    "errorsPassedBall": 1,
+    "defensiveAverage": 1.0,
+    "errorsCatchersInterference": 1,
+    "errors": 1,
+    "triplePlays": 1,
+    "id": 1697340873
+  },
+  {
+    "fieldingPercentage": 2.0,
+    "doublePlays": 2,
+    "putouts": 2,
+    "assists": 2,
+    "errorsPassedBall": 2,
+    "defensiveAverage": 2.0,
+    "errorsCatchersInterference": 2,
+    "errors": 2,
+    "triplePlays": 2,
+    "id": 1643398715
+  },
+  {
+    "fieldingPercentage": 3.0,
+    "doublePlays": 3,
+    "putouts": 3,
+    "assists": 3,
+    "errorsPassedBall": 3,
+    "defensiveAverage": 3.0,
+    "errorsCatchersInterference": 3,
+    "errors": 3,
+    "triplePlays": 3,
+    "id": 1822574973
+  },
+  {
+    "fieldingPercentage": 4.0,
+    "doublePlays": 4,
+    "putouts": 4,
+    "assists": 4,
+    "errorsPassedBall": 4,
+    "defensiveAverage": 4.0,
+    "errorsCatchersInterference": 4,
+    "errors": 4,
+    "triplePlays": 4,
+    "id": 363170240
+  },
+  {
+    "fieldingPercentage": 5.0,
+    "doublePlays": 5,
+    "putouts": 5,
+    "assists": 5,
+    "errorsPassedBall": 5,
+    "defensiveAverage": 5.0,
+    "errorsCatchersInterference": 5,
+    "errors": 5,
+    "triplePlays": 5,
+    "id": 642902416
+  },
+  {
+    "fieldingPercentage": 6.0,
+    "doublePlays": 6,
+    "putouts": 6,
+    "assists": 6,
+    "errorsPassedBall": 6,
+    "defensiveAverage": 6.0,
+    "errorsCatchersInterference": 6,
+    "errors": 6,
+    "triplePlays": 6,
+    "id": 1918746811
+  },
+  {
+    "fieldingPercentage": 7.0,
+    "doublePlays": 7,
+    "putouts": 7,
+    "assists": 7,
+    "errorsPassedBall": 7,
+    "defensiveAverage": 7.0,
+    "errorsCatchersInterference": 7,
+    "errors": 7,
+    "triplePlays": 7,
+    "id": 615343706
+  },
+  {
+    "fieldingPercentage": 8.0,
+    "doublePlays": 8,
+    "putouts": 8,
+    "assists": 8,
+    "errorsPassedBall": 8,
+    "defensiveAverage": 8.0,
+    "errorsCatchersInterference": 8,
+    "errors": 8,
+    "triplePlays": 8,
+    "id": 1724278550
+  },
+  {
+    "fieldingPercentage": 9.0,
+    "doublePlays": 9,
+    "putouts": 9,
+    "assists": 9,
+    "errorsPassedBall": 9,
+    "defensiveAverage": 9.0,
+    "errorsCatchersInterference": 9,
+    "errors": 9,
+    "triplePlays": 9,
+    "id": 211607469
+  }
+]

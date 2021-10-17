@@ -1,0 +1,102 @@
+[
+  {
+    "statHolderType": "Lorem ipsum dolor si0",
+    "statCoverageId": 0,
+    "statHolderId": 0,
+    "context": "Lorem ipsum dolor si0",
+    "statRepositoryId": 0,
+    "statRepositoryType": "Lorem ipsum dolor si0",
+    "statCoverageType": "12",
+    "id": 999297124
+  },
+  {
+    "statHolderType": "Lorem ipsum dolor si1",
+    "statCoverageId": 1,
+    "statHolderId": 1,
+    "context": "Lorem ipsum dolor si1",
+    "statRepositoryId": 1,
+    "statRepositoryType": "Lorem ipsum dolor si1",
+    "statCoverageType": "22",
+    "id": 801756748
+  },
+  {
+    "statHolderType": "Lorem ipsum dolor si2",
+    "statCoverageId": 2,
+    "statHolderId": 2,
+    "context": "Lorem ipsum dolor si2",
+    "statRepositoryId": 2,
+    "statRepositoryType": "Lorem ipsum dolor si2",
+    "statCoverageType": "50",
+    "id": 1202534099
+  },
+  {
+    "statHolderType": "Lorem ipsum dolor si3",
+    "statCoverageId": 3,
+    "statHolderId": 3,
+    "context": "Lorem ipsum dolor si3",
+    "statRepositoryId": 3,
+    "statRepositoryType": "Lorem ipsum dolor si3",
+    "statCoverageType": "23",
+    "id": 1583786359
+  },
+  {
+    "statHolderType": "Lorem ipsum dolor si4",
+    "statCoverageId": 4,
+    "statHolderId": 4,
+    "context": "Lorem ipsum dolor si4",
+    "statRepositoryId": 4,
+    "statRepositoryType": "Lorem ipsum dolor si4",
+    "statCoverageType": "28",
+    "id": 1600355267
+  },
+  {
+    "statHolderType": "Lorem ipsum dolor si5",
+    "statCoverageId": 5,
+    "statHolderId": 5,
+    "context": "Lorem ipsum dolor si5",
+    "statRepositoryId": 5,
+    "statRepositoryType": "Lorem ipsum dolor si5",
+    "statCoverageType": "33",
+    "id": 75514201
+  },
+  {
+    "statHolderType": "Lorem ipsum dolor si6",
+    "statCoverageId": 6,
+    "statHolderId": 6,
+    "context": "Lorem ipsum dolor si6",
+    "statRepositoryId": 6,
+    "statRepositoryType": "Lorem ipsum dolor si6",
+    "statCoverageType": "15",
+    "id": 444873760
+  },
+  {
+    "statHolderType": "Lorem ipsum dolor si7",
+    "statCoverageId": 7,
+    "statHolderId": 7,
+    "context": "Lorem ipsum dolor si7",
+    "statRepositoryId": 7,
+    "statRepositoryType": "Lorem ipsum dolor si7",
+    "statCoverageType": "2",
+    "id": 413250376
+  },
+  {
+    "statHolderType": "Lorem ipsum dolor si8",
+    "statCoverageId": 8,
+    "statHolderId": 8,
+    "context": "Lorem ipsum dolor si8",
+    "statRepositoryId": 8,
+    "statRepositoryType": "Lorem ipsum dolor si8",
+    "statCoverageType": "59",
+    "id": 43197916
+  },
+  {
+    "statHolderType": "Lorem ipsum dolor si9",
+    "statCoverageId": 9,
+    "statHolderId": 9,
+    "context": "Lorem ipsum dolor si9",
+    "statRepositoryId": 9,
+    "statRepositoryType": "Lorem ipsum dolor si9",
+    "statCoverageType": "27",
+    "id": 1923831283
+  }
+]

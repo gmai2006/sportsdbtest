@@ -1,0 +1,112 @@
+[
+  {
+    "americanFootballActionPlayId": 0,
+    "yardage": 0,
+    "scoreType": "Lorem ipsum dolor si0",
+    "personId": 0,
+    "fieldLine": 0,
+    "participantRole": "Lorem ipsum dolor si0",
+    "scoreCredit": 0,
+    "yardsGained": 0,
+    "id": 1387402554
+  },
+  {
+    "americanFootballActionPlayId": 1,
+    "yardage": 1,
+    "scoreType": "Lorem ipsum dolor si1",
+    "personId": 1,
+    "fieldLine": 1,
+    "participantRole": "Lorem ipsum dolor si1",
+    "scoreCredit": 1,
+    "yardsGained": 1,
+    "id": 2086767529
+  },
+  {
+    "americanFootballActionPlayId": 2,
+    "yardage": 2,
+    "scoreType": "Lorem ipsum dolor si2",
+    "personId": 2,
+    "fieldLine": 2,
+    "participantRole": "Lorem ipsum dolor si2",
+    "scoreCredit": 2,
+    "yardsGained": 2,
+    "id": 255348154
+  },
+  {
+    "americanFootballActionPlayId": 3,
+    "yardage": 3,
+    "scoreType": "Lorem ipsum dolor si3",
+    "personId": 3,
+    "fieldLine": 3,
+    "participantRole": "Lorem ipsum dolor si3",
+    "scoreCredit": 3,
+    "yardsGained": 3,
+    "id": 950822672
+  },
+  {
+    "americanFootballActionPlayId": 4,
+    "yardage": 4,
+    "scoreType": "Lorem ipsum dolor si4",
+    "personId": 4,
+    "fieldLine": 4,
+    "participantRole": "Lorem ipsum dolor si4",
+    "scoreCredit": 4,
+    "yardsGained": 4,
+    "id": 497731676
+  },
+  {
+    "americanFootballActionPlayId": 5,
+    "yardage": 5,
+    "scoreType": "Lorem ipsum dolor si5",
+    "personId": 5,
+    "fieldLine": 5,
+    "participantRole": "Lorem ipsum dolor si5",
+    "scoreCredit": 5,
+    "yardsGained": 5,
+    "id": 1187842861
+  },
+  {
+    "americanFootballActionPlayId": 6,
+    "yardage": 6,
+    "scoreType": "Lorem ipsum dolor si6",
+    "personId": 6,
+    "fieldLine": 6,
+    "participantRole": "Lorem ipsum dolor si6",
+    "scoreCredit": 6,
+    "yardsGained": 6,
+    "id": 1138107870
+  },
+  {
+    "americanFootballActionPlayId": 7,
+    "yardage": 7,
+    "scoreType": "Lorem ipsum dolor si7",
+    "personId": 7,
+    "fieldLine": 7,
+    "participantRole": "Lorem ipsum dolor si7",
+    "scoreCredit": 7,
+    "yardsGained": 7,
+    "id": 114760741
+  },
+  {
+    "americanFootballActionPlayId": 8,
+    "yardage": 8,
+    "scoreType": "Lorem ipsum dolor si8",
+    "personId": 8,
+    "fieldLine": 8,
+    "participantRole": "Lorem ipsum dolor si8",
+    "scoreCredit": 8,
+    "yardsGained": 8,
+    "id": 757515029
+  },
+  {
+    "americanFootballActionPlayId": 9,
+    "yardage": 9,
+    "scoreType": "Lorem ipsum dolor si9",
+    "personId": 9,
+    "fieldLine": 9,
+    "participantRole": "Lorem ipsum dolor si9",
+    "scoreCredit": 9,
+    "yardsGained": 9,
+    "id": 586351844
+  }
+]

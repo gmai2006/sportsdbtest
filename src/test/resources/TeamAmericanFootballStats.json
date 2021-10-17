@@ -1,0 +1,82 @@
+[
+  {
+    "turnoverRatio": "Lorem ipsum dolor si0",
+    "yardsPerAttempt": "Lorem ipsum dolor si0",
+    "timeouts": "Lorem ipsum dolor si0",
+    "timeOfPossession": "Lorem ipsum dolor si0",
+    "averageStartingPosition": "1",
+    "id": 114312470
+  },
+  {
+    "turnoverRatio": "Lorem ipsum dolor si1",
+    "yardsPerAttempt": "Lorem ipsum dolor si1",
+    "timeouts": "Lorem ipsum dolor si1",
+    "timeOfPossession": "Lorem ipsum dolor si1",
+    "averageStartingPosition": "54",
+    "id": 1568138088
+  },
+  {
+    "turnoverRatio": "Lorem ipsum dolor si2",
+    "yardsPerAttempt": "Lorem ipsum dolor si2",
+    "timeouts": "Lorem ipsum dolor si2",
+    "timeOfPossession": "Lorem ipsum dolor si2",
+    "averageStartingPosition": "33",
+    "id": 537724499
+  },
+  {
+    "turnoverRatio": "Lorem ipsum dolor si3",
+    "yardsPerAttempt": "Lorem ipsum dolor si3",
+    "timeouts": "Lorem ipsum dolor si3",
+    "timeOfPossession": "Lorem ipsum dolor si3",
+    "averageStartingPosition": "73",
+    "id": 420525882
+  },
+  {
+    "turnoverRatio": "Lorem ipsum dolor si4",
+    "yardsPerAttempt": "Lorem ipsum dolor si4",
+    "timeouts": "Lorem ipsum dolor si4",
+    "timeOfPossession": "Lorem ipsum dolor si4",
+    "averageStartingPosition": "72",
+    "id": 1546487789
+  },
+  {
+    "turnoverRatio": "Lorem ipsum dolor si5",
+    "yardsPerAttempt": "Lorem ipsum dolor si5",
+    "timeouts": "Lorem ipsum dolor si5",
+    "timeOfPossession": "Lorem ipsum dolor si5",
+    "averageStartingPosition": "77",
+    "id": 268556409
+  },
+  {
+    "turnoverRatio": "Lorem ipsum dolor si6",
+    "yardsPerAttempt": "Lorem ipsum dolor si6",
+    "timeouts": "Lorem ipsum dolor si6",
+    "timeOfPossession": "Lorem ipsum dolor si6",
+    "averageStartingPosition": "87",
+    "id": 1291984717
+  },
+  {
+    "turnoverRatio": "Lorem ipsum dolor si7",
+    "yardsPerAttempt": "Lorem ipsum dolor si7",
+    "timeouts": "Lorem ipsum dolor si7",
+    "timeOfPossession": "Lorem ipsum dolor si7",
+    "averageStartingPosition": "15",
+    "id": 870168894
+  },
+  {
+    "turnoverRatio": "Lorem ipsum dolor si8",
+    "yardsPerAttempt": "Lorem ipsum dolor si8",
+    "timeouts": "Lorem ipsum dolor si8",
+    "timeOfPossession": "Lorem ipsum dolor si8",
+    "averageStartingPosition": "78",
+    "id": 800367898
+  },
+  {
+    "turnoverRatio": "Lorem ipsum dolor si9",
+    "yardsPerAttempt": "Lorem ipsum dolor si9",
+    "timeouts": "Lorem ipsum dolor si9",
+    "timeOfPossession": "Lorem ipsum dolor si9",
+    "averageStartingPosition": "18",
+    "id": 1204663560
+  }
+]

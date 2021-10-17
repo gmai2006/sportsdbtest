@@ -1,0 +1,92 @@
+[
+  {
+    "playType": "Lorem ipsum dolor si0",
+    "scoreAttemptType": "Lorem ipsum dolor si0",
+    "driveResult": "Lorem ipsum dolor si0",
+    "americanFootballEventStateId": 0,
+    "comment": "Lorem ipsum dolor si0",
+    "points": 0,
+    "id": 2146378658
+  },
+  {
+    "playType": "Lorem ipsum dolor si1",
+    "scoreAttemptType": "Lorem ipsum dolor si1",
+    "driveResult": "Lorem ipsum dolor si1",
+    "americanFootballEventStateId": 1,
+    "comment": "Lorem ipsum dolor si1",
+    "points": 1,
+    "id": 1312645593
+  },
+  {
+    "playType": "Lorem ipsum dolor si2",
+    "scoreAttemptType": "Lorem ipsum dolor si2",
+    "driveResult": "Lorem ipsum dolor si2",
+    "americanFootballEventStateId": 2,
+    "comment": "Lorem ipsum dolor si2",
+    "points": 2,
+    "id": 1854758716
+  },
+  {
+    "playType": "Lorem ipsum dolor si3",
+    "scoreAttemptType": "Lorem ipsum dolor si3",
+    "driveResult": "Lorem ipsum dolor si3",
+    "americanFootballEventStateId": 3,
+    "comment": "Lorem ipsum dolor si3",
+    "points": 3,
+    "id": 527307585
+  },
+  {
+    "playType": "Lorem ipsum dolor si4",
+    "scoreAttemptType": "Lorem ipsum dolor si4",
+    "driveResult": "Lorem ipsum dolor si4",
+    "americanFootballEventStateId": 4,
+    "comment": "Lorem ipsum dolor si4",
+    "points": 4,
+    "id": 1815582966
+  },
+  {
+    "playType": "Lorem ipsum dolor si5",
+    "scoreAttemptType": "Lorem ipsum dolor si5",
+    "driveResult": "Lorem ipsum dolor si5",
+    "americanFootballEventStateId": 5,
+    "comment": "Lorem ipsum dolor si5",
+    "points": 5,
+    "id": 955944465
+  },
+  {
+    "playType": "Lorem ipsum dolor si6",
+    "scoreAttemptType": "Lorem ipsum dolor si6",
+    "driveResult": "Lorem ipsum dolor si6",
+    "americanFootballEventStateId": 6,
+    "comment": "Lorem ipsum dolor si6",
+    "points": 6,
+    "id": 1489806119
+  },
+  {
+    "playType": "Lorem ipsum dolor si7",
+    "scoreAttemptType": "Lorem ipsum dolor si7",
+    "driveResult": "Lorem ipsum dolor si7",
+    "americanFootballEventStateId": 7,
+    "comment": "Lorem ipsum dolor si7",
+    "points": 7,
+    "id": 1037437061
+  },
+  {
+    "playType": "Lorem ipsum dolor si8",
+    "scoreAttemptType": "Lorem ipsum dolor si8",
+    "driveResult": "Lorem ipsum dolor si8",
+    "americanFootballEventStateId": 8,
+    "comment": "Lorem ipsum dolor si8",
+    "points": 8,
+    "id": 1167318529
+  },
+  {
+    "playType": "Lorem ipsum dolor si9",
+    "scoreAttemptType": "Lorem ipsum dolor si9",
+    "driveResult": "Lorem ipsum dolor si9",
+    "americanFootballEventStateId": 9,
+    "comment": "Lorem ipsum dolor si9",
+    "points": 9,
+    "id": 1071741758
+  }
+]

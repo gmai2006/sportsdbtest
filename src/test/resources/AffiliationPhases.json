@@ -1,0 +1,92 @@
+[
+  {
+    "startDateTime": "1926-10-16",
+    "endSeasonId": 0,
+    "ancestorAffiliationId": 0,
+    "affiliationId": 0,
+    "endDateTime": "2026-10-16",
+    "startSeasonId": 0,
+    "id": 2126345494
+  },
+  {
+    "startDateTime": "1993-10-16",
+    "endSeasonId": 1,
+    "ancestorAffiliationId": 1,
+    "affiliationId": 1,
+    "endDateTime": "2013-10-16",
+    "startSeasonId": 1,
+    "id": 2005728453
+  },
+  {
+    "startDateTime": "2093-10-16",
+    "endSeasonId": 2,
+    "ancestorAffiliationId": 2,
+    "affiliationId": 2,
+    "endDateTime": "2037-10-16",
+    "startSeasonId": 2,
+    "id": 1800233048
+  },
+  {
+    "startDateTime": "1975-10-16",
+    "endSeasonId": 3,
+    "ancestorAffiliationId": 3,
+    "affiliationId": 3,
+    "endDateTime": "2076-10-16",
+    "startSeasonId": 3,
+    "id": 160323767
+  },
+  {
+    "startDateTime": "2029-10-16",
+    "endSeasonId": 4,
+    "ancestorAffiliationId": 4,
+    "affiliationId": 4,
+    "endDateTime": "2053-10-16",
+    "startSeasonId": 4,
+    "id": 1206550840
+  },
+  {
+    "startDateTime": "1907-10-16",
+    "endSeasonId": 5,
+    "ancestorAffiliationId": 5,
+    "affiliationId": 5,
+    "endDateTime": "2067-10-16",
+    "startSeasonId": 5,
+    "id": 1316566253
+  },
+  {
+    "startDateTime": "1976-10-16",
+    "endSeasonId": 6,
+    "ancestorAffiliationId": 6,
+    "affiliationId": 6,
+    "endDateTime": "1957-10-16",
+    "startSeasonId": 6,
+    "id": 946339556
+  },
+  {
+    "startDateTime": "1974-10-16",
+    "endSeasonId": 7,
+    "ancestorAffiliationId": 7,
+    "affiliationId": 7,
+    "endDateTime": "2094-10-16",
+    "startSeasonId": 7,
+    "id": 119969295
+  },
+  {
+    "startDateTime": "2083-10-16",
+    "endSeasonId": 8,
+    "ancestorAffiliationId": 8,
+    "affiliationId": 8,
+    "endDateTime": "2068-10-16",
+    "startSeasonId": 8,
+    "id": 1025024356
+  },
+  {
+    "startDateTime": "2079-10-16",
+    "endSeasonId": 9,
+    "ancestorAffiliationId": 9,
+    "affiliationId": 9,
+    "endDateTime": "2025-10-16",
+    "startSeasonId": 9,
+    "id": 1656611622
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "personId": 0,
+    "iceHockeyActionPlayId": 0,
+    "participantRole": "Lorem ipsum dolor si0",
+    "pointCredit": 0,
+    "id": "193980966"
+  },
+  {
+    "personId": 1,
+    "iceHockeyActionPlayId": 1,
+    "participantRole": "Lorem ipsum dolor si1",
+    "pointCredit": 1,
+    "id": "1818335613"
+  },
+  {
+    "personId": 2,
+    "iceHockeyActionPlayId": 2,
+    "participantRole": "Lorem ipsum dolor si2",
+    "pointCredit": 2,
+    "id": "1176946096"
+  },
+  {
+    "personId": 3,
+    "iceHockeyActionPlayId": 3,
+    "participantRole": "Lorem ipsum dolor si3",
+    "pointCredit": 3,
+    "id": "267571040"
+  },
+  {
+    "personId": 4,
+    "iceHockeyActionPlayId": 4,
+    "participantRole": "Lorem ipsum dolor si4",
+    "pointCredit": 4,
+    "id": "1934792101"
+  },
+  {
+    "personId": 5,
+    "iceHockeyActionPlayId": 5,
+    "participantRole": "Lorem ipsum dolor si5",
+    "pointCredit": 5,
+    "id": "170158574"
+  },
+  {
+    "personId": 6,
+    "iceHockeyActionPlayId": 6,
+    "participantRole": "Lorem ipsum dolor si6",
+    "pointCredit": 6,
+    "id": "562879411"
+  },
+  {
+    "personId": 7,
+    "iceHockeyActionPlayId": 7,
+    "participantRole": "Lorem ipsum dolor si7",
+    "pointCredit": 7,
+    "id": "260027034"
+  },
+  {
+    "personId": 8,
+    "iceHockeyActionPlayId": 8,
+    "participantRole": "Lorem ipsum dolor si8",
+    "pointCredit": 8,
+    "id": "824669297"
+  },
+  {
+    "personId": 9,
+    "iceHockeyActionPlayId": 9,
+    "participantRole": "Lorem ipsum dolor si9",
+    "pointCredit": 9,
+    "id": "1619697199"
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "endSeasonId": 0,
+    "startDateTime": "Lorem ipsum dolor si0",
+    "roleId": 0,
+    "teamId": 0,
+    "affiliationId": 0,
+    "endDateTime": "Lorem ipsum dolor si0",
+    "phaseStatus": "Lorem ipsum dolor si0",
+    "startSeasonId": 0,
+    "id": 1473316795
+  },
+  {
+    "endSeasonId": 1,
+    "startDateTime": "Lorem ipsum dolor si1",
+    "roleId": 1,
+    "teamId": 1,
+    "affiliationId": 1,
+    "endDateTime": "Lorem ipsum dolor si1",
+    "phaseStatus": "Lorem ipsum dolor si1",
+    "startSeasonId": 1,
+    "id": 1847414644
+  },
+  {
+    "endSeasonId": 2,
+    "startDateTime": "Lorem ipsum dolor si2",
+    "roleId": 2,
+    "teamId": 2,
+    "affiliationId": 2,
+    "endDateTime": "Lorem ipsum dolor si2",
+    "phaseStatus": "Lorem ipsum dolor si2",
+    "startSeasonId": 2,
+    "id": 426027095
+  },
+  {
+    "endSeasonId": 3,
+    "startDateTime": "Lorem ipsum dolor si3",
+    "roleId": 3,
+    "teamId": 3,
+    "affiliationId": 3,
+    "endDateTime": "Lorem ipsum dolor si3",
+    "phaseStatus": "Lorem ipsum dolor si3",
+    "startSeasonId": 3,
+    "id": 1091696047
+  },
+  {
+    "endSeasonId": 4,
+    "startDateTime": "Lorem ipsum dolor si4",
+    "roleId": 4,
+    "teamId": 4,
+    "affiliationId": 4,
+    "endDateTime": "Lorem ipsum dolor si4",
+    "phaseStatus": "Lorem ipsum dolor si4",
+    "startSeasonId": 4,
+    "id": 1539382856
+  },
+  {
+    "endSeasonId": 5,
+    "startDateTime": "Lorem ipsum dolor si5",
+    "roleId": 5,
+    "teamId": 5,
+    "affiliationId": 5,
+    "endDateTime": "Lorem ipsum dolor si5",
+    "phaseStatus": "Lorem ipsum dolor si5",
+    "startSeasonId": 5,
+    "id": 1689023018
+  },
+  {
+    "endSeasonId": 6,
+    "startDateTime": "Lorem ipsum dolor si6",
+    "roleId": 6,
+    "teamId": 6,
+    "affiliationId": 6,
+    "endDateTime": "Lorem ipsum dolor si6",
+    "phaseStatus": "Lorem ipsum dolor si6",
+    "startSeasonId": 6,
+    "id": 874520120
+  },
+  {
+    "endSeasonId": 7,
+    "startDateTime": "Lorem ipsum dolor si7",
+    "roleId": 7,
+    "teamId": 7,
+    "affiliationId": 7,
+    "endDateTime": "Lorem ipsum dolor si7",
+    "phaseStatus": "Lorem ipsum dolor si7",
+    "startSeasonId": 7,
+    "id": 843644387
+  },
+  {
+    "endSeasonId": 8,
+    "startDateTime": "Lorem ipsum dolor si8",
+    "roleId": 8,
+    "teamId": 8,
+    "affiliationId": 8,
+    "endDateTime": "Lorem ipsum dolor si8",
+    "phaseStatus": "Lorem ipsum dolor si8",
+    "startSeasonId": 8,
+    "id": 139582734
+  },
+  {
+    "endSeasonId": 9,
+    "startDateTime": "Lorem ipsum dolor si9",
+    "roleId": 9,
+    "teamId": 9,
+    "affiliationId": 9,
+    "endDateTime": "Lorem ipsum dolor si9",
+    "phaseStatus": "Lorem ipsum dolor si9",
+    "startSeasonId": 9,
+    "id": 1986767532
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "iceHockeyEventStateId": 0,
+    "playType": "Lorem ipsum dolor si0",
+    "playResult": "Lorem ipsum dolor si0",
+    "scoreAttemptType": "Lorem ipsum dolor si0",
+    "comment": "Lorem ipsum dolor si0",
+    "id": "1112316800"
+  },
+  {
+    "iceHockeyEventStateId": 1,
+    "playType": "Lorem ipsum dolor si1",
+    "playResult": "Lorem ipsum dolor si1",
+    "scoreAttemptType": "Lorem ipsum dolor si1",
+    "comment": "Lorem ipsum dolor si1",
+    "id": "100740797"
+  },
+  {
+    "iceHockeyEventStateId": 2,
+    "playType": "Lorem ipsum dolor si2",
+    "playResult": "Lorem ipsum dolor si2",
+    "scoreAttemptType": "Lorem ipsum dolor si2",
+    "comment": "Lorem ipsum dolor si2",
+    "id": "1987223752"
+  },
+  {
+    "iceHockeyEventStateId": 3,
+    "playType": "Lorem ipsum dolor si3",
+    "playResult": "Lorem ipsum dolor si3",
+    "scoreAttemptType": "Lorem ipsum dolor si3",
+    "comment": "Lorem ipsum dolor si3",
+    "id": "526900711"
+  },
+  {
+    "iceHockeyEventStateId": 4,
+    "playType": "Lorem ipsum dolor si4",
+    "playResult": "Lorem ipsum dolor si4",
+    "scoreAttemptType": "Lorem ipsum dolor si4",
+    "comment": "Lorem ipsum dolor si4",
+    "id": "15415899"
+  },
+  {
+    "iceHockeyEventStateId": 5,
+    "playType": "Lorem ipsum dolor si5",
+    "playResult": "Lorem ipsum dolor si5",
+    "scoreAttemptType": "Lorem ipsum dolor si5",
+    "comment": "Lorem ipsum dolor si5",
+    "id": "1754610406"
+  },
+  {
+    "iceHockeyEventStateId": 6,
+    "playType": "Lorem ipsum dolor si6",
+    "playResult": "Lorem ipsum dolor si6",
+    "scoreAttemptType": "Lorem ipsum dolor si6",
+    "comment": "Lorem ipsum dolor si6",
+    "id": "1105795584"
+  },
+  {
+    "iceHockeyEventStateId": 7,
+    "playType": "Lorem ipsum dolor si7",
+    "playResult": "Lorem ipsum dolor si7",
+    "scoreAttemptType": "Lorem ipsum dolor si7",
+    "comment": "Lorem ipsum dolor si7",
+    "id": "1584497148"
+  },
+  {
+    "iceHockeyEventStateId": 8,
+    "playType": "Lorem ipsum dolor si8",
+    "playResult": "Lorem ipsum dolor si8",
+    "scoreAttemptType": "Lorem ipsum dolor si8",
+    "comment": "Lorem ipsum dolor si8",
+    "id": "782916792"
+  },
+  {
+    "iceHockeyEventStateId": 9,
+    "playType": "Lorem ipsum dolor si9",
+    "playResult": "Lorem ipsum dolor si9",
+    "scoreAttemptType": "Lorem ipsum dolor si9",
+    "comment": "Lorem ipsum dolor si9",
+    "id": "159149104"
+  }
+]

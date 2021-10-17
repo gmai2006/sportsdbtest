@@ -1,0 +1,52 @@
+[
+  {
+    "teamId": 0,
+    "documentId": 0,
+    "defaultId": "d38f492b-09ce-41ad-9b84-d8ea6fa25fa9"
+  },
+  {
+    "teamId": 1,
+    "documentId": 1,
+    "defaultId": "7bff49a9-d75d-4c1e-81ab-c1cc7b4ac925"
+  },
+  {
+    "teamId": 2,
+    "documentId": 2,
+    "defaultId": "036b14ae-b229-4b93-bed7-95a6868f6254"
+  },
+  {
+    "teamId": 3,
+    "documentId": 3,
+    "defaultId": "23774861-1faf-4930-bc91-646e5bddb9be"
+  },
+  {
+    "teamId": 4,
+    "documentId": 4,
+    "defaultId": "bd6f2a59-fe8c-470a-a507-07db5a66dd81"
+  },
+  {
+    "teamId": 5,
+    "documentId": 5,
+    "defaultId": "8eb07253-4be1-427b-bbc8-f6972af675b4"
+  },
+  {
+    "teamId": 6,
+    "documentId": 6,
+    "defaultId": "d2be1b7b-a217-4a5d-ae91-d9a91c36931b"
+  },
+  {
+    "teamId": 7,
+    "documentId": 7,
+    "defaultId": "3ea6abd2-5b28-4e5c-8917-3c72bd46c5e7"
+  },
+  {
+    "teamId": 8,
+    "documentId": 8,
+    "defaultId": "26180c5f-aecc-4da1-b797-5bc275423f23"
+  },
+  {
+    "teamId": 9,
+    "documentId": 9,
+    "defaultId": "5778996f-4b63-4045-8e77-c599b87948dd"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "eventId": 0,
+    "affiliationId": 0,
+    "defaultId": "3bdcfabb-62cb-4cb3-91c2-fcfc3c63252a"
+  },
+  {
+    "eventId": 1,
+    "affiliationId": 1,
+    "defaultId": "00cc1442-86de-456d-bc43-01206c685d22"
+  },
+  {
+    "eventId": 2,
+    "affiliationId": 2,
+    "defaultId": "fc3da734-0058-4628-b8a5-4bb8c73805da"
+  },
+  {
+    "eventId": 3,
+    "affiliationId": 3,
+    "defaultId": "7358fcdc-b5d0-46cd-8d19-31cd4fbd1eac"
+  },
+  {
+    "eventId": 4,
+    "affiliationId": 4,
+    "defaultId": "09047da5-cc6a-456f-b195-6450a33ffb5e"
+  },
+  {
+    "eventId": 5,
+    "affiliationId": 5,
+    "defaultId": "f1e18b51-5a3a-4a86-8cea-240d10c38ed0"
+  },
+  {
+    "eventId": 6,
+    "affiliationId": 6,
+    "defaultId": "3bf8c03a-4e2c-4233-9db9-3c5f772c25b1"
+  },
+  {
+    "eventId": 7,
+    "affiliationId": 7,
+    "defaultId": "fb8e7de4-b4fd-4133-8b1d-7623b18fd7cd"
+  },
+  {
+    "eventId": 8,
+    "affiliationId": 8,
+    "defaultId": "b201cd3c-d9c4-47b2-b35e-fb6b85efb1bd"
+  },
+  {
+    "eventId": 9,
+    "affiliationId": 9,
+    "defaultId": "c8210534-1e02-46f0-af6e-3fb9ed07b095"
+  }
+]

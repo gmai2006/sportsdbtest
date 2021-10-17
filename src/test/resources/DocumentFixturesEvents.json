@@ -1,0 +1,72 @@
+[
+  {
+    "eventId": 0,
+    "latestDocumentId": 0,
+    "lastUpdate": "1905-10-16",
+    "documentFixtureId": 0,
+    "id": 1013883523
+  },
+  {
+    "eventId": 1,
+    "latestDocumentId": 1,
+    "lastUpdate": "2054-10-16",
+    "documentFixtureId": 1,
+    "id": 408271224
+  },
+  {
+    "eventId": 2,
+    "latestDocumentId": 2,
+    "lastUpdate": "1915-10-16",
+    "documentFixtureId": 2,
+    "id": 1649706999
+  },
+  {
+    "eventId": 3,
+    "latestDocumentId": 3,
+    "lastUpdate": "2008-10-16",
+    "documentFixtureId": 3,
+    "id": 78412279
+  },
+  {
+    "eventId": 4,
+    "latestDocumentId": 4,
+    "lastUpdate": "1977-10-16",
+    "documentFixtureId": 4,
+    "id": 1908511372
+  },
+  {
+    "eventId": 5,
+    "latestDocumentId": 5,
+    "lastUpdate": "2087-10-16",
+    "documentFixtureId": 5,
+    "id": 2132355165
+  },
+  {
+    "eventId": 6,
+    "latestDocumentId": 6,
+    "lastUpdate": "2027-10-16",
+    "documentFixtureId": 6,
+    "id": 1475806137
+  },
+  {
+    "eventId": 7,
+    "latestDocumentId": 7,
+    "lastUpdate": "1906-10-16",
+    "documentFixtureId": 7,
+    "id": 1428514914
+  },
+  {
+    "eventId": 8,
+    "latestDocumentId": 8,
+    "lastUpdate": "2053-10-16",
+    "documentFixtureId": 8,
+    "id": 481376873
+  },
+  {
+    "eventId": 9,
+    "latestDocumentId": 9,
+    "lastUpdate": "2015-10-16",
+    "documentFixtureId": 9,
+    "id": 2062128545
+  }
+]

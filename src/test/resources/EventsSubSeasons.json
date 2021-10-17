@@ -1,0 +1,52 @@
+[
+  {
+    "eventId": 0,
+    "subSeasonId": 0,
+    "defaultId": "91144126-590a-4f24-9a3c-2e13a8029fbe"
+  },
+  {
+    "eventId": 1,
+    "subSeasonId": 1,
+    "defaultId": "16cb2318-a34d-4cc3-85a8-678316f17554"
+  },
+  {
+    "eventId": 2,
+    "subSeasonId": 2,
+    "defaultId": "c177c490-982c-4ba7-8d56-0025651e3516"
+  },
+  {
+    "eventId": 3,
+    "subSeasonId": 3,
+    "defaultId": "1e7239dc-7e6f-43cf-8e36-321df125d4ee"
+  },
+  {
+    "eventId": 4,
+    "subSeasonId": 4,
+    "defaultId": "cd1de307-c71c-45c8-b937-82a9bcc2863c"
+  },
+  {
+    "eventId": 5,
+    "subSeasonId": 5,
+    "defaultId": "90b178b9-1fbd-4ec4-bd5a-f6b1a2b30b68"
+  },
+  {
+    "eventId": 6,
+    "subSeasonId": 6,
+    "defaultId": "6aaaba1c-3780-4aea-90c3-1162f60bd391"
+  },
+  {
+    "eventId": 7,
+    "subSeasonId": 7,
+    "defaultId": "8f6db1b7-1b2d-41fb-ae43-960c09a78fb0"
+  },
+  {
+    "eventId": 8,
+    "subSeasonId": 8,
+    "defaultId": "0d32bb95-bfb4-40e8-b2c9-e4b5fb675f24"
+  },
+  {
+    "eventId": 9,
+    "subSeasonId": 9,
+    "defaultId": "0c3c1efa-7d96-4712-a020-ccc5706efa61"
+  }
+]

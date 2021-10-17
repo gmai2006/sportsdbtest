@@ -1,0 +1,52 @@
+[
+  {
+    "eventId": 0,
+    "mediaId": 0,
+    "defaultId": "cbc6caad-f4f9-4fda-8c82-3e75dbe37d1b"
+  },
+  {
+    "eventId": 1,
+    "mediaId": 1,
+    "defaultId": "108c46ac-0813-4cbb-8b6d-12b7ceb58711"
+  },
+  {
+    "eventId": 2,
+    "mediaId": 2,
+    "defaultId": "444e43c5-568b-4dc7-b069-ac3c680d2177"
+  },
+  {
+    "eventId": 3,
+    "mediaId": 3,
+    "defaultId": "9ee05fd0-c4e2-46b1-8faa-ed4090eca71e"
+  },
+  {
+    "eventId": 4,
+    "mediaId": 4,
+    "defaultId": "8956ab57-f847-475d-9647-82059d62c2b8"
+  },
+  {
+    "eventId": 5,
+    "mediaId": 5,
+    "defaultId": "0574fafe-49ee-483e-8f5a-312d00158bf7"
+  },
+  {
+    "eventId": 6,
+    "mediaId": 6,
+    "defaultId": "dbfb085f-72cc-4d01-b532-129c0f100fae"
+  },
+  {
+    "eventId": 7,
+    "mediaId": 7,
+    "defaultId": "73b0f2b2-83ee-44b8-abd4-06c5dc0ec2f1"
+  },
+  {
+    "eventId": 8,
+    "mediaId": 8,
+    "defaultId": "8818699c-c5a5-4663-81d9-aa21556d078c"
+  },
+  {
+    "eventId": 9,
+    "mediaId": 9,
+    "defaultId": "646d727c-9d26-419d-a531-526943a76541"
+  }
+]

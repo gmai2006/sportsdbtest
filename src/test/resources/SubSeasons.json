@@ -1,0 +1,82 @@
+[
+  {
+    "startDateTime": "1976-10-16",
+    "seasonId": 0,
+    "subSeasonType": "Lorem ipsum dolor si0",
+    "subSeasonKey": "Lorem ipsum dolor si0",
+    "endDateTime": "2088-10-16",
+    "id": 1402772024
+  },
+  {
+    "startDateTime": "2071-10-16",
+    "seasonId": 1,
+    "subSeasonType": "Lorem ipsum dolor si1",
+    "subSeasonKey": "Lorem ipsum dolor si1",
+    "endDateTime": "2087-10-16",
+    "id": 1461220149
+  },
+  {
+    "startDateTime": "2036-10-16",
+    "seasonId": 2,
+    "subSeasonType": "Lorem ipsum dolor si2",
+    "subSeasonKey": "Lorem ipsum dolor si2",
+    "endDateTime": "2087-10-16",
+    "id": 1354927869
+  },
+  {
+    "startDateTime": "1941-10-16",
+    "seasonId": 3,
+    "subSeasonType": "Lorem ipsum dolor si3",
+    "subSeasonKey": "Lorem ipsum dolor si3",
+    "endDateTime": "2064-10-16",
+    "id": 970803049
+  },
+  {
+    "startDateTime": "2056-10-16",
+    "seasonId": 4,
+    "subSeasonType": "Lorem ipsum dolor si4",
+    "subSeasonKey": "Lorem ipsum dolor si4",
+    "endDateTime": "1951-10-16",
+    "id": 1262854859
+  },
+  {
+    "startDateTime": "1914-10-16",
+    "seasonId": 5,
+    "subSeasonType": "Lorem ipsum dolor si5",
+    "subSeasonKey": "Lorem ipsum dolor si5",
+    "endDateTime": "2047-10-16",
+    "id": 697607294
+  },
+  {
+    "startDateTime": "1974-10-16",
+    "seasonId": 6,
+    "subSeasonType": "Lorem ipsum dolor si6",
+    "subSeasonKey": "Lorem ipsum dolor si6",
+    "endDateTime": "1967-10-16",
+    "id": 1363856289
+  },
+  {
+    "startDateTime": "1919-10-16",
+    "seasonId": 7,
+    "subSeasonType": "Lorem ipsum dolor si7",
+    "subSeasonKey": "Lorem ipsum dolor si7",
+    "endDateTime": "2078-10-16",
+    "id": 1435429744
+  },
+  {
+    "startDateTime": "1924-10-16",
+    "seasonId": 8,
+    "subSeasonType": "Lorem ipsum dolor si8",
+    "subSeasonKey": "Lorem ipsum dolor si8",
+    "endDateTime": "2009-10-16",
+    "id": 1252835669
+  },
+  {
+    "startDateTime": "1937-10-16",
+    "seasonId": 9,
+    "subSeasonType": "Lorem ipsum dolor si9",
+    "subSeasonKey": "Lorem ipsum dolor si9",
+    "endDateTime": "2059-10-16",
+    "id": 786020866
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "strength": "Lorem ipsum dolor si0",
+    "baseballActionPitchId": 0,
+    "location": "Lorem ipsum dolor si0",
+    "comment": "0",
+    "velocity": 0,
+    "trajectoryCoordinates": "Lorem ipsum dolor si0",
+    "trajectoryFormula": "Lorem ipsum dolor si0",
+    "id": 1240854776
+  },
+  {
+    "strength": "Lorem ipsum dolor si1",
+    "baseballActionPitchId": 1,
+    "location": "Lorem ipsum dolor si1",
+    "comment": "1",
+    "velocity": 1,
+    "trajectoryCoordinates": "Lorem ipsum dolor si1",
+    "trajectoryFormula": "Lorem ipsum dolor si1",
+    "id": 906310989
+  },
+  {
+    "strength": "Lorem ipsum dolor si2",
+    "baseballActionPitchId": 2,
+    "location": "Lorem ipsum dolor si2",
+    "comment": "2",
+    "velocity": 2,
+    "trajectoryCoordinates": "Lorem ipsum dolor si2",
+    "trajectoryFormula": "Lorem ipsum dolor si2",
+    "id": 1965222626
+  },
+  {
+    "strength": "Lorem ipsum dolor si3",
+    "baseballActionPitchId": 3,
+    "location": "Lorem ipsum dolor si3",
+    "comment": "3",
+    "velocity": 3,
+    "trajectoryCoordinates": "Lorem ipsum dolor si3",
+    "trajectoryFormula": "Lorem ipsum dolor si3",
+    "id": 363748133
+  },
+  {
+    "strength": "Lorem ipsum dolor si4",
+    "baseballActionPitchId": 4,
+    "location": "Lorem ipsum dolor si4",
+    "comment": "4",
+    "velocity": 4,
+    "trajectoryCoordinates": "Lorem ipsum dolor si4",
+    "trajectoryFormula": "Lorem ipsum dolor si4",
+    "id": 79547745
+  },
+  {
+    "strength": "Lorem ipsum dolor si5",
+    "baseballActionPitchId": 5,
+    "location": "Lorem ipsum dolor si5",
+    "comment": "5",
+    "velocity": 5,
+    "trajectoryCoordinates": "Lorem ipsum dolor si5",
+    "trajectoryFormula": "Lorem ipsum dolor si5",
+    "id": 1993293497
+  },
+  {
+    "strength": "Lorem ipsum dolor si6",
+    "baseballActionPitchId": 6,
+    "location": "Lorem ipsum dolor si6",
+    "comment": "6",
+    "velocity": 6,
+    "trajectoryCoordinates": "Lorem ipsum dolor si6",
+    "trajectoryFormula": "Lorem ipsum dolor si6",
+    "id": 841472212
+  },
+  {
+    "strength": "Lorem ipsum dolor si7",
+    "baseballActionPitchId": 7,
+    "location": "Lorem ipsum dolor si7",
+    "comment": "7",
+    "velocity": 7,
+    "trajectoryCoordinates": "Lorem ipsum dolor si7",
+    "trajectoryFormula": "Lorem ipsum dolor si7",
+    "id": 1123051248
+  },
+  {
+    "strength": "Lorem ipsum dolor si8",
+    "baseballActionPitchId": 8,
+    "location": "Lorem ipsum dolor si8",
+    "comment": "8",
+    "velocity": 8,
+    "trajectoryCoordinates": "Lorem ipsum dolor si8",
+    "trajectoryFormula": "Lorem ipsum dolor si8",
+    "id": 2133843119
+  },
+  {
+    "strength": "Lorem ipsum dolor si9",
+    "baseballActionPitchId": 9,
+    "location": "Lorem ipsum dolor si9",
+    "comment": "9",
+    "velocity": 9,
+    "trajectoryCoordinates": "Lorem ipsum dolor si9",
+    "trajectoryFormula": "Lorem ipsum dolor si9",
+    "id": 1736188073
+  }
+]

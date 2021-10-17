@@ -1,0 +1,2 @@
+const summary = [{"source": "Source Code", "file_count": 976, "line_count": 38691}, {"source": "Unit test", "file_count": 396, "line_count": 27371}, {"source": "JavaScript", "file_count": 137, "line_count": 4772}]
+module.exports= summary; 

@@ -1,0 +1,72 @@
+[
+  {
+    "publisherId": 0,
+    "fixtureKey": "Lorem ipsum dolor si0",
+    "documentClassId": 0,
+    "name": "Lynett",
+    "id": 1722014102
+  },
+  {
+    "publisherId": 1,
+    "fixtureKey": "Lorem ipsum dolor si1",
+    "documentClassId": 1,
+    "name": "Opal",
+    "id": 1595663874
+  },
+  {
+    "publisherId": 2,
+    "fixtureKey": "Lorem ipsum dolor si2",
+    "documentClassId": 2,
+    "name": "Cristin",
+    "id": 295908039
+  },
+  {
+    "publisherId": 3,
+    "fixtureKey": "Lorem ipsum dolor si3",
+    "documentClassId": 3,
+    "name": "Trudi",
+    "id": 1040801491
+  },
+  {
+    "publisherId": 4,
+    "fixtureKey": "Lorem ipsum dolor si4",
+    "documentClassId": 4,
+    "name": "Ellie",
+    "id": 103805980
+  },
+  {
+    "publisherId": 5,
+    "fixtureKey": "Lorem ipsum dolor si5",
+    "documentClassId": 5,
+    "name": "Gustie",
+    "id": 1901896068
+  },
+  {
+    "publisherId": 6,
+    "fixtureKey": "Lorem ipsum dolor si6",
+    "documentClassId": 6,
+    "name": "Clemmy",
+    "id": 921275305
+  },
+  {
+    "publisherId": 7,
+    "fixtureKey": "Lorem ipsum dolor si7",
+    "documentClassId": 7,
+    "name": "Sondra",
+    "id": 985943750
+  },
+  {
+    "publisherId": 8,
+    "fixtureKey": "Lorem ipsum dolor si8",
+    "documentClassId": 8,
+    "name": "Leena",
+    "id": 705184505
+  },
+  {
+    "publisherId": 9,
+    "fixtureKey": "Lorem ipsum dolor si9",
+    "documentClassId": 9,
+    "name": "Nannette",
+    "id": 1318896837
+  }
+]

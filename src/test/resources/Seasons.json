@@ -1,0 +1,82 @@
+[
+  {
+    "seasonKey": 0,
+    "publisherId": 0,
+    "startDateTime": "2076-10-16",
+    "leagueId": 0,
+    "endDateTime": "1934-10-16",
+    "id": 26125192
+  },
+  {
+    "seasonKey": 1,
+    "publisherId": 1,
+    "startDateTime": "1949-10-16",
+    "leagueId": 1,
+    "endDateTime": "2038-10-16",
+    "id": 1992874385
+  },
+  {
+    "seasonKey": 2,
+    "publisherId": 2,
+    "startDateTime": "2048-10-16",
+    "leagueId": 2,
+    "endDateTime": "1961-10-16",
+    "id": 1162839999
+  },
+  {
+    "seasonKey": 3,
+    "publisherId": 3,
+    "startDateTime": "1948-10-16",
+    "leagueId": 3,
+    "endDateTime": "2086-10-16",
+    "id": 113825460
+  },
+  {
+    "seasonKey": 4,
+    "publisherId": 4,
+    "startDateTime": "2002-10-16",
+    "leagueId": 4,
+    "endDateTime": "1982-10-16",
+    "id": 1196818849
+  },
+  {
+    "seasonKey": 5,
+    "publisherId": 5,
+    "startDateTime": "1956-10-16",
+    "leagueId": 5,
+    "endDateTime": "2031-10-16",
+    "id": 110403279
+  },
+  {
+    "seasonKey": 6,
+    "publisherId": 6,
+    "startDateTime": "1980-10-16",
+    "leagueId": 6,
+    "endDateTime": "2069-10-16",
+    "id": 1247600667
+  },
+  {
+    "seasonKey": 7,
+    "publisherId": 7,
+    "startDateTime": "2059-10-16",
+    "leagueId": 7,
+    "endDateTime": "1933-10-16",
+    "id": 564394235
+  },
+  {
+    "seasonKey": 8,
+    "publisherId": 8,
+    "startDateTime": "2035-10-16",
+    "leagueId": 8,
+    "endDateTime": "1966-10-16",
+    "id": 2122669048
+  },
+  {
+    "seasonKey": 9,
+    "publisherId": 9,
+    "startDateTime": "2068-10-16",
+    "leagueId": 9,
+    "endDateTime": "2098-10-16",
+    "id": 1410779410
+  }
+]
