@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.DocumentFixtures;
 import java.util.List;
+import com.sportsdb.test.entity.DocumentFixtures;
 
 public interface DocumentFixturesDao {
-    /**
-     * Retrieve all records DocumentFixtures.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of DocumentFixtures
-     */
-    public List<DocumentFixtures> select(int maxResult);
+  /**
+   * Retrieve all records DocumentFixtures.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of DocumentFixtures
+   */
+  public List<DocumentFixtures> select(int maxResult);
 
-    /**
-     * Retrieve all records DocumentFixtures.
-     *
-     * @return A list of DocumentFixtures
-     */
-    public List<DocumentFixtures> selectAll();
+  /**
+   * Retrieve all records DocumentFixtures.
+   *
+   * @return A list of DocumentFixtures
+   */
+  public List<DocumentFixtures> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An DocumentFixtures id.
-     * @return The same DocumentFixtures.
-     */
-    public DocumentFixtures find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An DocumentFixtures id.
+   * @return The same DocumentFixtures.
+   */
+  public DocumentFixtures find(java.lang.Integer id);
 
-    /**
-     * Create an DocumentFixtures.
-     *
-     * @param e the DocumentFixtures.
-     * @return The same DocumentFixtures.
-     */
-    public DocumentFixtures create(DocumentFixtures e);
+  /**
+   * Create an DocumentFixtures.
+   *
+   * @param e the DocumentFixtures.
+   * @return The same DocumentFixtures.
+   */
+  public DocumentFixtures create(DocumentFixtures e);
 
-    /**
-     * Update the DocumentFixtures.
-     *
-     * @param e the DocumentFixtures.
-     * @return The same DocumentFixtures.
-     */
-    public DocumentFixtures update(DocumentFixtures e);
+  /**
+   * Update the DocumentFixtures.
+   *
+   * @param e the DocumentFixtures.
+   * @return The same DocumentFixtures.
+   */
+  public DocumentFixtures update(DocumentFixtures e);
 }

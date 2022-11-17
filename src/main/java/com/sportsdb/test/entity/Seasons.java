@@ -16,94 +16,94 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "seasons")
 public class Seasons implements Serializable {
-    private static final long serialVersionUID = 163445241925136186L;
+  private static final long serialVersionUID = 166867004251483379L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: season_key. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "season_key")
-    private java.lang.Integer seasonKey;
-    /** Description: publisher_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "publisher_id")
-    private java.lang.Integer publisherId;
-    /** Description: league_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "league_id")
-    private java.lang.Integer leagueId;
-    /** Description: start_date_time. */
-    @Basic
-    @Column(name = "start_date_time")
-    private java.util.Date startDateTime;
-    /** Description: end_date_time. */
-    @Basic
-    @Column(name = "end_date_time")
-    private java.util.Date endDateTime;
+  /** Description: season_key. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "season_key")
+  private java.lang.Integer seasonKey;
+  /** Description: publisher_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "publisher_id")
+  private java.lang.Integer publisherId;
+  /** Description: league_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "league_id")
+  private java.lang.Integer leagueId;
+  /** Description: start_date_time. */
+  @Basic
+  @Column(name = "start_date_time")
+  private java.util.Date startDateTime;
+  /** Description: end_date_time. */
+  @Basic
+  @Column(name = "end_date_time")
+  private java.util.Date endDateTime;
 
-    public Seasons() {}
+  public Seasons() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.Integer getSeasonKey() {
-        return this.seasonKey;
-    }
+  public java.lang.Integer getSeasonKey() {
+    return this.seasonKey;
+  }
 
-    public java.lang.Integer getPublisherId() {
-        return this.publisherId;
-    }
+  public java.lang.Integer getPublisherId() {
+    return this.publisherId;
+  }
 
-    public java.lang.Integer getLeagueId() {
-        return this.leagueId;
-    }
+  public java.lang.Integer getLeagueId() {
+    return this.leagueId;
+  }
 
-    public java.util.Date getStartDateTime() {
-        return this.startDateTime;
-    }
+  public java.util.Date getStartDateTime() {
+    return this.startDateTime;
+  }
 
-    public java.util.Date getEndDateTime() {
-        return this.endDateTime;
-    }
+  public java.util.Date getEndDateTime() {
+    return this.endDateTime;
+  }
 
-    public void setSeasonKey(java.lang.Integer seasonKey) {
-        this.seasonKey = seasonKey;
-    }
+  public void setSeasonKey(java.lang.Integer seasonKey) {
+    this.seasonKey = seasonKey;
+  }
 
-    public void setPublisherId(java.lang.Integer publisherId) {
-        this.publisherId = publisherId;
-    }
+  public void setPublisherId(java.lang.Integer publisherId) {
+    this.publisherId = publisherId;
+  }
 
-    public void setLeagueId(java.lang.Integer leagueId) {
-        this.leagueId = leagueId;
-    }
+  public void setLeagueId(java.lang.Integer leagueId) {
+    this.leagueId = leagueId;
+  }
 
-    public void setStartDateTime(java.util.Date startDateTime) {
-        this.startDateTime = startDateTime;
-    }
+  public void setStartDateTime(java.util.Date startDateTime) {
+    this.startDateTime = startDateTime;
+  }
 
-    public void setEndDateTime(java.util.Date endDateTime) {
-        this.endDateTime = endDateTime;
-    }
+  public void setEndDateTime(java.util.Date endDateTime) {
+    this.endDateTime = endDateTime;
+  }
 }

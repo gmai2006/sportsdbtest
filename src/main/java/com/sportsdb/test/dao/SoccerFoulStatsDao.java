@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.SoccerFoulStats;
 import java.util.List;
+import com.sportsdb.test.entity.SoccerFoulStats;
 
 public interface SoccerFoulStatsDao {
-    /**
-     * Retrieve all records SoccerFoulStats.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of SoccerFoulStats
-     */
-    public List<SoccerFoulStats> select(int maxResult);
+  /**
+   * Retrieve all records SoccerFoulStats.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of SoccerFoulStats
+   */
+  public List<SoccerFoulStats> select(int maxResult);
 
-    /**
-     * Retrieve all records SoccerFoulStats.
-     *
-     * @return A list of SoccerFoulStats
-     */
-    public List<SoccerFoulStats> selectAll();
+  /**
+   * Retrieve all records SoccerFoulStats.
+   *
+   * @return A list of SoccerFoulStats
+   */
+  public List<SoccerFoulStats> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An SoccerFoulStats id.
-     * @return The same SoccerFoulStats.
-     */
-    public SoccerFoulStats find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An SoccerFoulStats id.
+   * @return The same SoccerFoulStats.
+   */
+  public SoccerFoulStats find(java.lang.Integer id);
 
-    /**
-     * Create an SoccerFoulStats.
-     *
-     * @param e the SoccerFoulStats.
-     * @return The same SoccerFoulStats.
-     */
-    public SoccerFoulStats create(SoccerFoulStats e);
+  /**
+   * Create an SoccerFoulStats.
+   *
+   * @param e the SoccerFoulStats.
+   * @return The same SoccerFoulStats.
+   */
+  public SoccerFoulStats create(SoccerFoulStats e);
 
-    /**
-     * Update the SoccerFoulStats.
-     *
-     * @param e the SoccerFoulStats.
-     * @return The same SoccerFoulStats.
-     */
-    public SoccerFoulStats update(SoccerFoulStats e);
+  /**
+   * Update the SoccerFoulStats.
+   *
+   * @param e the SoccerFoulStats.
+   * @return The same SoccerFoulStats.
+   */
+  public SoccerFoulStats update(SoccerFoulStats e);
 }

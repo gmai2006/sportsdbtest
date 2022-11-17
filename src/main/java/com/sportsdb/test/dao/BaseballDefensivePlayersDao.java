@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.BaseballDefensivePlayers;
 import java.util.List;
+import com.sportsdb.test.entity.BaseballDefensivePlayers;
 
 public interface BaseballDefensivePlayersDao {
-    /**
-     * Retrieve all records BaseballDefensivePlayers.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of BaseballDefensivePlayers
-     */
-    public List<BaseballDefensivePlayers> select(int maxResult);
+  /**
+   * Retrieve all records BaseballDefensivePlayers.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of BaseballDefensivePlayers
+   */
+  public List<BaseballDefensivePlayers> select(int maxResult);
 
-    /**
-     * Retrieve all records BaseballDefensivePlayers.
-     *
-     * @return A list of BaseballDefensivePlayers
-     */
-    public List<BaseballDefensivePlayers> selectAll();
+  /**
+   * Retrieve all records BaseballDefensivePlayers.
+   *
+   * @return A list of BaseballDefensivePlayers
+   */
+  public List<BaseballDefensivePlayers> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An BaseballDefensivePlayers id.
-     * @return The same BaseballDefensivePlayers.
-     */
-    public BaseballDefensivePlayers find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An BaseballDefensivePlayers id.
+   * @return The same BaseballDefensivePlayers.
+   */
+  public BaseballDefensivePlayers find(java.lang.Integer id);
 
-    /**
-     * Create an BaseballDefensivePlayers.
-     *
-     * @param e the BaseballDefensivePlayers.
-     * @return The same BaseballDefensivePlayers.
-     */
-    public BaseballDefensivePlayers create(BaseballDefensivePlayers e);
+  /**
+   * Create an BaseballDefensivePlayers.
+   *
+   * @param e the BaseballDefensivePlayers.
+   * @return The same BaseballDefensivePlayers.
+   */
+  public BaseballDefensivePlayers create(BaseballDefensivePlayers e);
 
-    /**
-     * Update the BaseballDefensivePlayers.
-     *
-     * @param e the BaseballDefensivePlayers.
-     * @return The same BaseballDefensivePlayers.
-     */
-    public BaseballDefensivePlayers update(BaseballDefensivePlayers e);
+  /**
+   * Update the BaseballDefensivePlayers.
+   *
+   * @param e the BaseballDefensivePlayers.
+   * @return The same BaseballDefensivePlayers.
+   */
+  public BaseballDefensivePlayers update(BaseballDefensivePlayers e);
 }

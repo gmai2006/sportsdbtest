@@ -16,82 +16,77 @@
  */
 package com.sportsdb.test.service;
 
+import com.sportsdb.test.entity.WageringOddsLines;
+
+import com.sportsdb.test.utils.FileUtils;
+import com.google.gson.JsonArray;
+import com.google.gson.GsonBuilder;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
+import com.google.gson.Gson;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.sportsdb.test.entity.WageringOddsLines;
 import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
-import com.sportsdb.test.utils.FileUtils;
-import java.io.IOException;
-import java.nio.charset.Charset;
-import org.junit.BeforeClass;
-import org.junit.Test;
 
 public class WageringOddsLinesServiceTest {
-    private static DefaultWageringOddsLinesService serviceMock;
-    private static WageringOddsLines[] records;
-    static Gson gson =
-            new GsonBuilder()
-                    .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
-                    .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
-                    .create();
+  private static DefaultWageringOddsLinesService serviceMock;
+  private static WageringOddsLines[] records;
+  static Gson gson =
+      new GsonBuilder()
+          .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
+          .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
+          .create();
 
-    /** Run when the class is loaded. */
-    @BeforeClass
-    public static void setUp() {
-        serviceMock = mock(DefaultWageringOddsLinesService.class);
-        String inputFile = "WageringOddsLines.json";
-        try {
-            String json =
-                    FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
-            records = gson.fromJson(json, WageringOddsLines[].class);
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-
-        // test data
-        when(serviceMock.find(records[0].getId())).thenReturn(records[0]);
+  /** Run when the class is loaded. */
+  @BeforeClass
+  public static void setUp() {
+    serviceMock = mock(DefaultWageringOddsLinesService.class);
+    String inputFile = "WageringOddsLines.json";
+    try {
+      String json = FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
+      records = gson.fromJson(json, WageringOddsLines[].class);
+    } catch (IOException ex) {
+      ex.printStackTrace();
     }
 
-    @Test
-    public void testFind_success() {
-        WageringOddsLines testResult = serviceMock.find(records[0].getId());
+    // test data
+    when(serviceMock.find(records[0].getId())).thenReturn(records[0]);
+  }
 
-        org.junit.Assert.assertNotNull(testResult);
-        org.junit.Assert.assertTrue(
-                "expect equals bookmakerId ",
-                records[0].getBookmakerId() == testResult.getBookmakerId());
-        org.junit.Assert.assertTrue(
-                "expect equals eventId ", records[0].getEventId() == testResult.getEventId());
-        org.junit.Assert.assertTrue(
-                "expect equals teamId ", records[0].getTeamId() == testResult.getTeamId());
-        org.junit.Assert.assertTrue(
-                "expect equals personId ", records[0].getPersonId() == testResult.getPersonId());
-        org.junit.Assert.assertEquals(
-                "expect equals rotationKey ",
-                records[0].getRotationKey(),
-                testResult.getRotationKey());
-        org.junit.Assert.assertEquals(
-                "expect equals comment ", records[0].getComment(), testResult.getComment());
-        org.junit.Assert.assertEquals(
-                "expect equals numerator ", records[0].getNumerator(), testResult.getNumerator());
-        org.junit.Assert.assertEquals(
-                "expect equals denominator ",
-                records[0].getDenominator(),
-                testResult.getDenominator());
-        org.junit.Assert.assertEquals(
-                "expect equals prediction ",
-                records[0].getPrediction(),
-                testResult.getPrediction());
-        org.junit.Assert.assertEquals(
-                "expect equals payoutCalculation ",
-                records[0].getPayoutCalculation(),
-                testResult.getPayoutCalculation());
-        org.junit.Assert.assertEquals(
-                "expect equals payoutAmount ",
-                records[0].getPayoutAmount(),
-                testResult.getPayoutAmount());
-    }
+  @Test
+  public void testFind_success() {
+    WageringOddsLines testResult = serviceMock.find(records[0].getId());
+
+    org.junit.Assert.assertNotNull(testResult);
+    org.junit.Assert.assertTrue(
+        "expect equals bookmakerId ", records[0].getBookmakerId() == testResult.getBookmakerId());
+    org.junit.Assert.assertTrue(
+        "expect equals eventId ", records[0].getEventId() == testResult.getEventId());
+    org.junit.Assert.assertTrue(
+        "expect equals teamId ", records[0].getTeamId() == testResult.getTeamId());
+    org.junit.Assert.assertTrue(
+        "expect equals personId ", records[0].getPersonId() == testResult.getPersonId());
+    org.junit.Assert.assertEquals(
+        "expect equals rotationKey ", records[0].getRotationKey(), testResult.getRotationKey());
+    org.junit.Assert.assertEquals(
+        "expect equals comment ", records[0].getComment(), testResult.getComment());
+    org.junit.Assert.assertEquals(
+        "expect equals numerator ", records[0].getNumerator(), testResult.getNumerator());
+    org.junit.Assert.assertEquals(
+        "expect equals denominator ", records[0].getDenominator(), testResult.getDenominator());
+    org.junit.Assert.assertEquals(
+        "expect equals prediction ", records[0].getPrediction(), testResult.getPrediction());
+    org.junit.Assert.assertEquals(
+        "expect equals payoutCalculation ",
+        records[0].getPayoutCalculation(),
+        testResult.getPayoutCalculation());
+    org.junit.Assert.assertEquals(
+        "expect equals payoutAmount ", records[0].getPayoutAmount(), testResult.getPayoutAmount());
+  }
 }

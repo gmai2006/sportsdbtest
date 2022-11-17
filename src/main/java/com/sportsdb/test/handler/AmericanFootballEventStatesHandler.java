@@ -16,79 +16,82 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.AmericanFootballEventStates;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.AmericanFootballEventStates;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("AmericanFootballEventStatesHandler")
 public class AmericanFootballEventStatesHandler
-        extends DelimiterFileHandler<AmericanFootballEventStates> {
+    extends DelimiterFileHandler<AmericanFootballEventStates> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public AmericanFootballEventStatesHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public AmericanFootballEventStatesHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected AmericanFootballEventStates parseLine(List<String> headers, List<String> tokens) {
+    AmericanFootballEventStates record = new AmericanFootballEventStates();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "eventId":
+          record.setEventId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "currentState":
+          record.setCurrentState(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "sequenceNumber":
+          record.setSequenceNumber(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "periodValue":
+          record.setPeriodValue(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "periodTimeElapsed":
+          record.setPeriodTimeElapsed(tokens.get(i));
+          break;
+
+        case "periodTimeRemaining":
+          record.setPeriodTimeRemaining(tokens.get(i));
+          break;
+
+        case "clockState":
+          record.setClockState(tokens.get(i));
+          break;
+
+        case "down":
+          record.setDown(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "teamInPossessionId":
+          record.setTeamInPossessionId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "distanceFor1stDown":
+          record.setDistanceFor1stDown(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "fieldSide":
+          record.setFieldSide(tokens.get(i));
+          break;
+
+        case "fieldLine":
+          record.setFieldLine(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "context":
+          record.setContext(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected AmericanFootballEventStates parseLine(List<String> headers, List<String> tokens) {
-        AmericanFootballEventStates record = new AmericanFootballEventStates();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "eventId":
-                    record.setEventId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "currentState":
-                    record.setCurrentState(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "sequenceNumber":
-                    record.setSequenceNumber(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "periodValue":
-                    record.setPeriodValue(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "periodTimeElapsed":
-                    record.setPeriodTimeElapsed(tokens.get(i));
-                    break;
-
-                case "periodTimeRemaining":
-                    record.setPeriodTimeRemaining(tokens.get(i));
-                    break;
-
-                case "clockState":
-                    record.setClockState(tokens.get(i));
-                    break;
-
-                case "down":
-                    record.setDown(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "teamInPossessionId":
-                    record.setTeamInPossessionId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "distanceFor1stDown":
-                    record.setDistanceFor1stDown(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "fieldSide":
-                    record.setFieldSide(tokens.get(i));
-                    break;
-
-                case "fieldLine":
-                    record.setFieldLine(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "context":
-                    record.setContext(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

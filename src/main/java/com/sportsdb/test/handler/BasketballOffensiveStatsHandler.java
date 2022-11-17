@@ -16,135 +16,138 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.BasketballOffensiveStats;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.BasketballOffensiveStats;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("BasketballOffensiveStatsHandler")
 public class BasketballOffensiveStatsHandler
-        extends DelimiterFileHandler<BasketballOffensiveStats> {
+    extends DelimiterFileHandler<BasketballOffensiveStats> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public BasketballOffensiveStatsHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public BasketballOffensiveStatsHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected BasketballOffensiveStats parseLine(List<String> headers, List<String> tokens) {
+    BasketballOffensiveStats record = new BasketballOffensiveStats();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "fieldGoalsMade":
+          record.setFieldGoalsMade(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "fieldGoalsAttempted":
+          record.setFieldGoalsAttempted(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "fieldGoalsPercentage":
+          record.setFieldGoalsPercentage(tokens.get(i));
+          break;
+
+        case "fieldGoalsPerGame":
+          record.setFieldGoalsPerGame(tokens.get(i));
+          break;
+
+        case "fieldGoalsAttemptedPerGame":
+          record.setFieldGoalsAttemptedPerGame(tokens.get(i));
+          break;
+
+        case "fieldGoalsPercentageAdjusted":
+          record.setFieldGoalsPercentageAdjusted(tokens.get(i));
+          break;
+
+        case "threePointersMade":
+          record.setThreePointersMade(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "threePointersAttempted":
+          record.setThreePointersAttempted(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "threePointersPercentage":
+          record.setThreePointersPercentage(tokens.get(i));
+          break;
+
+        case "threePointersPerGame":
+          record.setThreePointersPerGame(tokens.get(i));
+          break;
+
+        case "threePointersAttemptedPerGame":
+          record.setThreePointersAttemptedPerGame(tokens.get(i));
+          break;
+
+        case "freeThrowsMade":
+          record.setFreeThrowsMade(tokens.get(i));
+          break;
+
+        case "freeThrowsAttempted":
+          record.setFreeThrowsAttempted(tokens.get(i));
+          break;
+
+        case "freeThrowsPercentage":
+          record.setFreeThrowsPercentage(tokens.get(i));
+          break;
+
+        case "freeThrowsPerGame":
+          record.setFreeThrowsPerGame(tokens.get(i));
+          break;
+
+        case "freeThrowsAttemptedPerGame":
+          record.setFreeThrowsAttemptedPerGame(tokens.get(i));
+          break;
+
+        case "pointsScoredTotal":
+          record.setPointsScoredTotal(tokens.get(i));
+          break;
+
+        case "pointsScoredPerGame":
+          record.setPointsScoredPerGame(tokens.get(i));
+          break;
+
+        case "assistsTotal":
+          record.setAssistsTotal(tokens.get(i));
+          break;
+
+        case "assistsPerGame":
+          record.setAssistsPerGame(tokens.get(i));
+          break;
+
+        case "turnoversTotal":
+          record.setTurnoversTotal(tokens.get(i));
+          break;
+
+        case "turnoversPerGame":
+          record.setTurnoversPerGame(tokens.get(i));
+          break;
+
+        case "pointsScoredOffTurnovers":
+          record.setPointsScoredOffTurnovers(tokens.get(i));
+          break;
+
+        case "pointsScoredInPaint":
+          record.setPointsScoredInPaint(tokens.get(i));
+          break;
+
+        case "pointsScoredOnSecondChance":
+          record.setPointsScoredOnSecondChance(tokens.get(i));
+          break;
+
+        case "pointsScoredOnFastBreak":
+          record.setPointsScoredOnFastBreak(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected BasketballOffensiveStats parseLine(List<String> headers, List<String> tokens) {
-        BasketballOffensiveStats record = new BasketballOffensiveStats();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "fieldGoalsMade":
-                    record.setFieldGoalsMade(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "fieldGoalsAttempted":
-                    record.setFieldGoalsAttempted(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "fieldGoalsPercentage":
-                    record.setFieldGoalsPercentage(tokens.get(i));
-                    break;
-
-                case "fieldGoalsPerGame":
-                    record.setFieldGoalsPerGame(tokens.get(i));
-                    break;
-
-                case "fieldGoalsAttemptedPerGame":
-                    record.setFieldGoalsAttemptedPerGame(tokens.get(i));
-                    break;
-
-                case "fieldGoalsPercentageAdjusted":
-                    record.setFieldGoalsPercentageAdjusted(tokens.get(i));
-                    break;
-
-                case "threePointersMade":
-                    record.setThreePointersMade(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "threePointersAttempted":
-                    record.setThreePointersAttempted(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "threePointersPercentage":
-                    record.setThreePointersPercentage(tokens.get(i));
-                    break;
-
-                case "threePointersPerGame":
-                    record.setThreePointersPerGame(tokens.get(i));
-                    break;
-
-                case "threePointersAttemptedPerGame":
-                    record.setThreePointersAttemptedPerGame(tokens.get(i));
-                    break;
-
-                case "freeThrowsMade":
-                    record.setFreeThrowsMade(tokens.get(i));
-                    break;
-
-                case "freeThrowsAttempted":
-                    record.setFreeThrowsAttempted(tokens.get(i));
-                    break;
-
-                case "freeThrowsPercentage":
-                    record.setFreeThrowsPercentage(tokens.get(i));
-                    break;
-
-                case "freeThrowsPerGame":
-                    record.setFreeThrowsPerGame(tokens.get(i));
-                    break;
-
-                case "freeThrowsAttemptedPerGame":
-                    record.setFreeThrowsAttemptedPerGame(tokens.get(i));
-                    break;
-
-                case "pointsScoredTotal":
-                    record.setPointsScoredTotal(tokens.get(i));
-                    break;
-
-                case "pointsScoredPerGame":
-                    record.setPointsScoredPerGame(tokens.get(i));
-                    break;
-
-                case "assistsTotal":
-                    record.setAssistsTotal(tokens.get(i));
-                    break;
-
-                case "assistsPerGame":
-                    record.setAssistsPerGame(tokens.get(i));
-                    break;
-
-                case "turnoversTotal":
-                    record.setTurnoversTotal(tokens.get(i));
-                    break;
-
-                case "turnoversPerGame":
-                    record.setTurnoversPerGame(tokens.get(i));
-                    break;
-
-                case "pointsScoredOffTurnovers":
-                    record.setPointsScoredOffTurnovers(tokens.get(i));
-                    break;
-
-                case "pointsScoredInPaint":
-                    record.setPointsScoredInPaint(tokens.get(i));
-                    break;
-
-                case "pointsScoredOnSecondChance":
-                    record.setPointsScoredOnSecondChance(tokens.get(i));
-                    break;
-
-                case "pointsScoredOnFastBreak":
-                    record.setPointsScoredOnFastBreak(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

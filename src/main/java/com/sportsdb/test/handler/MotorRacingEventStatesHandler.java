@@ -16,63 +16,66 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.MotorRacingEventStates;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.MotorRacingEventStates;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("MotorRacingEventStatesHandler")
 public class MotorRacingEventStatesHandler extends DelimiterFileHandler<MotorRacingEventStates> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public MotorRacingEventStatesHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public MotorRacingEventStatesHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected MotorRacingEventStates parseLine(List<String> headers, List<String> tokens) {
+    MotorRacingEventStates record = new MotorRacingEventStates();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "eventId":
+          record.setEventId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "currentState":
+          record.setCurrentState(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "sequenceNumber":
+          record.setSequenceNumber(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "lap":
+          record.setLap(tokens.get(i));
+          break;
+
+        case "lapsRemaining":
+          record.setLapsRemaining(tokens.get(i));
+          break;
+
+        case "timeElapsed":
+          record.setTimeElapsed(tokens.get(i));
+          break;
+
+        case "flagState":
+          record.setFlagState(tokens.get(i));
+          break;
+
+        case "context":
+          record.setContext(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected MotorRacingEventStates parseLine(List<String> headers, List<String> tokens) {
-        MotorRacingEventStates record = new MotorRacingEventStates();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "eventId":
-                    record.setEventId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "currentState":
-                    record.setCurrentState(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "sequenceNumber":
-                    record.setSequenceNumber(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "lap":
-                    record.setLap(tokens.get(i));
-                    break;
-
-                case "lapsRemaining":
-                    record.setLapsRemaining(tokens.get(i));
-                    break;
-
-                case "timeElapsed":
-                    record.setTimeElapsed(tokens.get(i));
-                    break;
-
-                case "flagState":
-                    record.setFlagState(tokens.get(i));
-                    break;
-
-                case "context":
-                    record.setContext(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

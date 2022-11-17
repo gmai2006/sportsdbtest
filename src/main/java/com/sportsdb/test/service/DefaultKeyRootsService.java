@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.KeyRootsDao;
-import com.sportsdb.test.entity.KeyRoots;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.KeyRootsDao;
+import com.sportsdb.test.entity.KeyRoots;
 
 @Stateless
 @Named("DefaultKeyRootsService")
 public class DefaultKeyRootsService implements KeyRootsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final KeyRootsDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final KeyRootsDao dao;
 
-    @Inject
-    @Named("DefaultKeyRootsDao")
-    public DefaultKeyRootsService(final KeyRootsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultKeyRootsDao")
+  public DefaultKeyRootsService(final KeyRootsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public KeyRoots find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public KeyRoots find(java.lang.Integer id) {
 
-        final KeyRoots result = dao.find(id);
-        logger.info("find(KeyRoots) - exited - return value={} result ");
-        return result;
-    }
+    final KeyRoots result = dao.find(id);
+    logger.info("find(KeyRoots) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<KeyRoots> select(int maxResult) {
-        final List<KeyRoots> result = dao.select(maxResult);
-        logger.info("select(KeyRoots) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<KeyRoots> select(int maxResult) {
+    final List<KeyRoots> result = dao.select(maxResult);
+    logger.info("select(KeyRoots) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<KeyRoots> selectAll() {
-        final List<KeyRoots> results = dao.selectAll();
-        logger.info("selectAll(KeyRoots) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<KeyRoots> selectAll() {
+    final List<KeyRoots> results = dao.selectAll();
+    logger.info("selectAll(KeyRoots) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public KeyRoots create(KeyRoots bean) {
-        requireNonNull(bean);
-        logger.info("create(KeyRoots={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public KeyRoots create(KeyRoots bean) {
+    requireNonNull(bean);
+    logger.info("create(KeyRoots={}) - entered bean ");
 
-        final KeyRoots result = dao.create(bean);
+    final KeyRoots result = dao.create(bean);
 
-        logger.info("create(KeyRoots) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(KeyRoots) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public KeyRoots update(KeyRoots bean) {
-        requireNonNull(bean);
-        logger.info("update(KeyRoots={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public KeyRoots update(KeyRoots bean) {
+    requireNonNull(bean);
+    logger.info("update(KeyRoots={}) - entered bean ");
 
-        final KeyRoots result = dao.update(bean);
+    final KeyRoots result = dao.update(bean);
 
-        logger.info("update(KeyRoots) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(KeyRoots) - exited - return value={} result ");
+    return result;
+  }
 }

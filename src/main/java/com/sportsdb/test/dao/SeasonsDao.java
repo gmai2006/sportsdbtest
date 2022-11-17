@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.Seasons;
 import java.util.List;
+import com.sportsdb.test.entity.Seasons;
 
 public interface SeasonsDao {
-    /**
-     * Retrieve all records Seasons.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of Seasons
-     */
-    public List<Seasons> select(int maxResult);
+  /**
+   * Retrieve all records Seasons.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of Seasons
+   */
+  public List<Seasons> select(int maxResult);
 
-    /**
-     * Retrieve all records Seasons.
-     *
-     * @return A list of Seasons
-     */
-    public List<Seasons> selectAll();
+  /**
+   * Retrieve all records Seasons.
+   *
+   * @return A list of Seasons
+   */
+  public List<Seasons> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An Seasons id.
-     * @return The same Seasons.
-     */
-    public Seasons find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An Seasons id.
+   * @return The same Seasons.
+   */
+  public Seasons find(java.lang.Integer id);
 
-    /**
-     * Create an Seasons.
-     *
-     * @param e the Seasons.
-     * @return The same Seasons.
-     */
-    public Seasons create(Seasons e);
+  /**
+   * Create an Seasons.
+   *
+   * @param e the Seasons.
+   * @return The same Seasons.
+   */
+  public Seasons create(Seasons e);
 
-    /**
-     * Update the Seasons.
-     *
-     * @param e the Seasons.
-     * @return The same Seasons.
-     */
-    public Seasons update(Seasons e);
+  /**
+   * Update the Seasons.
+   *
+   * @param e the Seasons.
+   * @return The same Seasons.
+   */
+  public Seasons update(Seasons e);
 }

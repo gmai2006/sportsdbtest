@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.Media;
 import java.util.List;
+import com.sportsdb.test.entity.Media;
 
 public interface MediaService {
-    public Media find(java.lang.Integer id);
+  public Media find(java.lang.Integer id);
 
-    /**
-     * Select a list of Media based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return Media records.
-     */
-    public List<Media> select(int maxResult);
+  /**
+   * Select a list of Media based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return Media records.
+   */
+  public List<Media> select(int maxResult);
 
-    /**
-     * Select all Media.
-     *
-     * @return all Media records.
-     */
-    public List<Media> selectAll();
+  /**
+   * Select all Media.
+   *
+   * @return all Media records.
+   */
+  public List<Media> selectAll();
 
-    /**
-     * Create Media.
-     *
-     * @param bean The Media.
-     * @return The Media.
-     */
-    public Media create(Media bean);
+  /**
+   * Create Media.
+   *
+   * @param bean The Media.
+   * @return The Media.
+   */
+  public Media create(Media bean);
 
-    /**
-     * Update a Media.
-     *
-     * @param bean - The Media.
-     * @return Media.
-     */
-    public Media update(Media bean);
+  /**
+   * Update a Media.
+   *
+   * @param bean - The Media.
+   * @return Media.
+   */
+  public Media update(Media bean);
 }

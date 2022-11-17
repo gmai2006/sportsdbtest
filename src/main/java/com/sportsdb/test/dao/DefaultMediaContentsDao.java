@@ -16,57 +16,60 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.MediaContents;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.MediaContents;
 
 @Stateless
 @Named("DefaultMediaContentsDao")
 public class DefaultMediaContentsDao implements MediaContentsDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultMediaContentsDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultMediaContentsDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultMediaContentsDao() {}
+  public DefaultMediaContentsDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public MediaContents find(java.lang.Integer id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(MediaContents.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public MediaContents find(java.lang.Integer id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(MediaContents.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<MediaContents> select(int max) {
-        return dao.select("select a from MediaContents a", MediaContents.class, max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<MediaContents> select(int max) {
+    return dao.select("select a from MediaContents a", MediaContents.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<MediaContents> selectAll() {
-        return dao.selectAll("select a from MediaContents a", MediaContents.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<MediaContents> selectAll() {
+    return dao.selectAll("select a from MediaContents a", MediaContents.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public MediaContents create(MediaContents e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public MediaContents create(MediaContents e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public MediaContents update(MediaContents e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public MediaContents update(MediaContents e) {
+    return dao.update(e);
+  }
 }

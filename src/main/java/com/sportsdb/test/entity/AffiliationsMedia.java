@@ -16,57 +16,57 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "affiliations_media")
 public class AffiliationsMedia implements Serializable {
-    private static final long serialVersionUID = 163445241867788320L;
+  private static final long serialVersionUID = 166867004210856689L;
 
-    /** Description: default_id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "default_id")
-    private java.lang.String defaultId;
+  /** Description: default_id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "default_id")
+  private java.lang.String defaultId;
 
-    /** Description: affiliation_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "affiliation_id")
-    private java.lang.Integer affiliationId;
-    /** Description: media_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "media_id")
-    private java.lang.Integer mediaId;
+  /** Description: affiliation_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "affiliation_id")
+  private java.lang.Integer affiliationId;
+  /** Description: media_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "media_id")
+  private java.lang.Integer mediaId;
 
-    public AffiliationsMedia() {}
+  public AffiliationsMedia() {}
 
-    public java.lang.String getDefaultId() {
-        return this.defaultId;
-    }
+  public java.lang.String getDefaultId() {
+    return this.defaultId;
+  }
 
-    public void setDefaultId(java.lang.String defaultId) {
-        this.defaultId = defaultId;
-    }
+  public void setDefaultId(java.lang.String defaultId) {
+    this.defaultId = defaultId;
+  }
 
-    public java.lang.Integer getAffiliationId() {
-        return this.affiliationId;
-    }
+  public java.lang.Integer getAffiliationId() {
+    return this.affiliationId;
+  }
 
-    public java.lang.Integer getMediaId() {
-        return this.mediaId;
-    }
+  public java.lang.Integer getMediaId() {
+    return this.mediaId;
+  }
 
-    public void setAffiliationId(java.lang.Integer affiliationId) {
-        this.affiliationId = affiliationId;
-    }
+  public void setAffiliationId(java.lang.Integer affiliationId) {
+    this.affiliationId = affiliationId;
+  }
 
-    public void setMediaId(java.lang.Integer mediaId) {
-        this.mediaId = mediaId;
-    }
+  public void setMediaId(java.lang.Integer mediaId) {
+    this.mediaId = mediaId;
+  }
 }

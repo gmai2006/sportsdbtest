@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.WeatherConditionsDao;
-import com.sportsdb.test.entity.WeatherConditions;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.WeatherConditionsDao;
+import com.sportsdb.test.entity.WeatherConditions;
 
 @Stateless
 @Named("DefaultWeatherConditionsService")
 public class DefaultWeatherConditionsService implements WeatherConditionsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final WeatherConditionsDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final WeatherConditionsDao dao;
 
-    @Inject
-    @Named("DefaultWeatherConditionsDao")
-    public DefaultWeatherConditionsService(final WeatherConditionsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultWeatherConditionsDao")
+  public DefaultWeatherConditionsService(final WeatherConditionsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public WeatherConditions find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public WeatherConditions find(java.lang.Integer id) {
 
-        final WeatherConditions result = dao.find(id);
-        logger.info("find(WeatherConditions) - exited - return value={} result ");
-        return result;
-    }
+    final WeatherConditions result = dao.find(id);
+    logger.info("find(WeatherConditions) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<WeatherConditions> select(int maxResult) {
-        final List<WeatherConditions> result = dao.select(maxResult);
-        logger.info("select(WeatherConditions) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<WeatherConditions> select(int maxResult) {
+    final List<WeatherConditions> result = dao.select(maxResult);
+    logger.info("select(WeatherConditions) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<WeatherConditions> selectAll() {
-        final List<WeatherConditions> results = dao.selectAll();
-        logger.info("selectAll(WeatherConditions) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<WeatherConditions> selectAll() {
+    final List<WeatherConditions> results = dao.selectAll();
+    logger.info("selectAll(WeatherConditions) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public WeatherConditions create(WeatherConditions bean) {
-        requireNonNull(bean);
-        logger.info("create(WeatherConditions={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public WeatherConditions create(WeatherConditions bean) {
+    requireNonNull(bean);
+    logger.info("create(WeatherConditions={}) - entered bean ");
 
-        final WeatherConditions result = dao.create(bean);
+    final WeatherConditions result = dao.create(bean);
 
-        logger.info("create(WeatherConditions) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(WeatherConditions) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public WeatherConditions update(WeatherConditions bean) {
-        requireNonNull(bean);
-        logger.info("update(WeatherConditions={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public WeatherConditions update(WeatherConditions bean) {
+    requireNonNull(bean);
+    logger.info("update(WeatherConditions={}) - entered bean ");
 
-        final WeatherConditions result = dao.update(bean);
+    final WeatherConditions result = dao.update(bean);
 
-        logger.info("update(WeatherConditions) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(WeatherConditions) - exited - return value={} result ");
+    return result;
+  }
 }

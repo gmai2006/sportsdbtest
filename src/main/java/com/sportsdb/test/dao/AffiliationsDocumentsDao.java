@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.AffiliationsDocuments;
 import java.util.List;
+import com.sportsdb.test.entity.AffiliationsDocuments;
 
 public interface AffiliationsDocumentsDao {
-    /**
-     * Retrieve all records AffiliationsDocuments.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of AffiliationsDocuments
-     */
-    public List<AffiliationsDocuments> select(int maxResult);
+  /**
+   * Retrieve all records AffiliationsDocuments.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of AffiliationsDocuments
+   */
+  public List<AffiliationsDocuments> select(int maxResult);
 
-    /**
-     * Retrieve all records AffiliationsDocuments.
-     *
-     * @return A list of AffiliationsDocuments
-     */
-    public List<AffiliationsDocuments> selectAll();
+  /**
+   * Retrieve all records AffiliationsDocuments.
+   *
+   * @return A list of AffiliationsDocuments
+   */
+  public List<AffiliationsDocuments> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An AffiliationsDocuments id.
-     * @return The same AffiliationsDocuments.
-     */
-    public AffiliationsDocuments find(java.lang.String id);
+  /**
+   * Find an entity.
+   *
+   * @param id An AffiliationsDocuments id.
+   * @return The same AffiliationsDocuments.
+   */
+  public AffiliationsDocuments find(java.lang.String id);
 
-    /**
-     * Create an AffiliationsDocuments.
-     *
-     * @param e the AffiliationsDocuments.
-     * @return The same AffiliationsDocuments.
-     */
-    public AffiliationsDocuments create(AffiliationsDocuments e);
+  /**
+   * Create an AffiliationsDocuments.
+   *
+   * @param e the AffiliationsDocuments.
+   * @return The same AffiliationsDocuments.
+   */
+  public AffiliationsDocuments create(AffiliationsDocuments e);
 
-    /**
-     * Update the AffiliationsDocuments.
-     *
-     * @param e the AffiliationsDocuments.
-     * @return The same AffiliationsDocuments.
-     */
-    public AffiliationsDocuments update(AffiliationsDocuments e);
+  /**
+   * Update the AffiliationsDocuments.
+   *
+   * @param e the AffiliationsDocuments.
+   * @return The same AffiliationsDocuments.
+   */
+  public AffiliationsDocuments update(AffiliationsDocuments e);
 }

@@ -17,76 +17,74 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.AmericanFootballSpecialTeamsStatsDao;
-import com.sportsdb.test.entity.AmericanFootballSpecialTeamsStats;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.AmericanFootballSpecialTeamsStatsDao;
+import com.sportsdb.test.entity.AmericanFootballSpecialTeamsStats;
 
 @Stateless
 @Named("DefaultAmericanFootballSpecialTeamsStatsService")
 public class DefaultAmericanFootballSpecialTeamsStatsService
-        implements AmericanFootballSpecialTeamsStatsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final AmericanFootballSpecialTeamsStatsDao dao;
+    implements AmericanFootballSpecialTeamsStatsService {
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final AmericanFootballSpecialTeamsStatsDao dao;
 
-    @Inject
-    @Named("DefaultAmericanFootballSpecialTeamsStatsDao")
-    public DefaultAmericanFootballSpecialTeamsStatsService(
-            final AmericanFootballSpecialTeamsStatsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultAmericanFootballSpecialTeamsStatsDao")
+  public DefaultAmericanFootballSpecialTeamsStatsService(
+      final AmericanFootballSpecialTeamsStatsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AmericanFootballSpecialTeamsStats find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public AmericanFootballSpecialTeamsStats find(java.lang.Integer id) {
 
-        final AmericanFootballSpecialTeamsStats result = dao.find(id);
-        logger.info("find(AmericanFootballSpecialTeamsStats) - exited - return value={} result ");
-        return result;
-    }
+    final AmericanFootballSpecialTeamsStats result = dao.find(id);
+    logger.info("find(AmericanFootballSpecialTeamsStats) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<AmericanFootballSpecialTeamsStats> select(int maxResult) {
-        final List<AmericanFootballSpecialTeamsStats> result = dao.select(maxResult);
-        logger.info("select(AmericanFootballSpecialTeamsStats) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<AmericanFootballSpecialTeamsStats> select(int maxResult) {
+    final List<AmericanFootballSpecialTeamsStats> result = dao.select(maxResult);
+    logger.info("select(AmericanFootballSpecialTeamsStats) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<AmericanFootballSpecialTeamsStats> selectAll() {
-        final List<AmericanFootballSpecialTeamsStats> results = dao.selectAll();
-        logger.info(
-                "selectAll(AmericanFootballSpecialTeamsStats) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<AmericanFootballSpecialTeamsStats> selectAll() {
+    final List<AmericanFootballSpecialTeamsStats> results = dao.selectAll();
+    logger.info("selectAll(AmericanFootballSpecialTeamsStats) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AmericanFootballSpecialTeamsStats create(AmericanFootballSpecialTeamsStats bean) {
-        requireNonNull(bean);
-        logger.info("create(AmericanFootballSpecialTeamsStats={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public AmericanFootballSpecialTeamsStats create(AmericanFootballSpecialTeamsStats bean) {
+    requireNonNull(bean);
+    logger.info("create(AmericanFootballSpecialTeamsStats={}) - entered bean ");
 
-        final AmericanFootballSpecialTeamsStats result = dao.create(bean);
+    final AmericanFootballSpecialTeamsStats result = dao.create(bean);
 
-        logger.info("create(AmericanFootballSpecialTeamsStats) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(AmericanFootballSpecialTeamsStats) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AmericanFootballSpecialTeamsStats update(AmericanFootballSpecialTeamsStats bean) {
-        requireNonNull(bean);
-        logger.info("update(AmericanFootballSpecialTeamsStats={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public AmericanFootballSpecialTeamsStats update(AmericanFootballSpecialTeamsStats bean) {
+    requireNonNull(bean);
+    logger.info("update(AmericanFootballSpecialTeamsStats={}) - entered bean ");
 
-        final AmericanFootballSpecialTeamsStats result = dao.update(bean);
+    final AmericanFootballSpecialTeamsStats result = dao.update(bean);
 
-        logger.info("update(AmericanFootballSpecialTeamsStats) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(AmericanFootballSpecialTeamsStats) - exited - return value={} result ");
+    return result;
+  }
 }

@@ -16,13 +16,13 @@
  */
 package com.sportsdb.test.dao;
 
+import java.nio.charset.Charset;
+import java.util.Arrays;
+import java.io.IOException;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.sportsdb.test.entity.Standings;
-import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
-import com.sportsdb.test.utils.FileUtils;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.Arrays;
@@ -32,90 +32,90 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import com.sportsdb.test.entity.Standings;
+import com.sportsdb.test.utils.FileUtils;
+import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
 
 public class StandingsDaoTestIt {
-    static final String inputFile = "Standings.json";
-    static StandingsDao dao;
-    static Gson gson =
-            new GsonBuilder()
-                    .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
-                    .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
-                    .create();
-    private Standings[] records;
+  static final String inputFile = "Standings.json";
+  static StandingsDao dao;
+  static Gson gson =
+      new GsonBuilder()
+          .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
+          .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
+          .create();
+  private Standings[] records;
 
-    /** Run when the class is loaded. */
-    @BeforeClass
-    public static void beforeClass() {
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("testpersistence");
-        JpaDao jpa = new StandaloneJpaDao(factory.createEntityManager());
-        dao = new DefaultStandingsDao(jpa);
-    }
+  /** Run when the class is loaded. */
+  @BeforeClass
+  public static void beforeClass() {
+    EntityManagerFactory factory = Persistence.createEntityManagerFactory("testpersistence");
+    JpaDao jpa = new StandaloneJpaDao(factory.createEntityManager());
+    dao = new DefaultStandingsDao(jpa);
+  }
 
-    /** Run before the test. */
-    @Before
-    public void before() {
-        try {
-            String json =
-                    FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
-            records = gson.fromJson(json, Standings[].class);
-            json = null;
-            Arrays.stream(records).skip(1).forEach(o -> dao.create(o));
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+  /** Run before the test. */
+  @Before
+  public void before() {
+    try {
+      String json = FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
+      records = gson.fromJson(json, Standings[].class);
+      json = null;
+      Arrays.stream(records).skip(1).forEach(o -> dao.create(o));
+    } catch (IOException ex) {
+      ex.printStackTrace();
     }
+  }
 
-    @After
-    public void after() {
-        records = null;
-    }
+  @After
+  public void after() {
+    records = null;
+  }
 
-    @Test
-    public void testSelect() {
-        Standings testResult = dao.find(records[1].getId());
-        assertNotNull("expect result", testResult);
-        org.junit.Assert.assertTrue(
-                "expect equals affiliationId ",
-                this.records[1].getAffiliationId() == testResult.getAffiliationId());
-        org.junit.Assert.assertEquals(
-                "expect equals standingType ",
-                this.records[1].getStandingType(),
-                testResult.getStandingType());
-        org.junit.Assert.assertTrue(
-                "expect equals subSeasonId ",
-                this.records[1].getSubSeasonId() == testResult.getSubSeasonId());
-        org.junit.Assert.assertEquals(
-                "expect equals lastUpdated ",
-                this.records[1].getLastUpdated(),
-                testResult.getLastUpdated());
-        org.junit.Assert.assertEquals(
-                "expect equals durationScope ",
-                this.records[1].getDurationScope(),
-                testResult.getDurationScope());
-        org.junit.Assert.assertEquals(
-                "expect equals competitionScope ",
-                this.records[1].getCompetitionScope(),
-                testResult.getCompetitionScope());
-        org.junit.Assert.assertEquals(
-                "expect equals competitionScopeId ",
-                this.records[1].getCompetitionScopeId(),
-                testResult.getCompetitionScopeId());
-        org.junit.Assert.assertEquals(
-                "expect equals alignmentScope ",
-                this.records[1].getAlignmentScope(),
-                testResult.getAlignmentScope());
-        org.junit.Assert.assertEquals(
-                "expect equals siteScope ",
-                this.records[1].getSiteScope(),
-                testResult.getSiteScope());
-        org.junit.Assert.assertEquals(
-                "expect equals scopingLabel ",
-                this.records[1].getScopingLabel(),
-                testResult.getScopingLabel());
-        org.junit.Assert.assertTrue(
-                "expect equals publisherId ",
-                this.records[1].getPublisherId() == testResult.getPublisherId());
-        org.junit.Assert.assertEquals(
-                "expect equals source ", this.records[1].getSource(), testResult.getSource());
-    }
+  @Test
+  public void testSelect() {
+    Standings testResult = dao.find(records[1].getId());
+    assertNotNull("expect result", testResult);
+    org.junit.Assert.assertTrue(
+        "expect equals affiliationId ",
+        this.records[1].getAffiliationId() == testResult.getAffiliationId());
+    org.junit.Assert.assertEquals(
+        "expect equals standingType ",
+        this.records[1].getStandingType(),
+        testResult.getStandingType());
+    org.junit.Assert.assertTrue(
+        "expect equals subSeasonId ",
+        this.records[1].getSubSeasonId() == testResult.getSubSeasonId());
+    org.junit.Assert.assertEquals(
+        "expect equals lastUpdated ",
+        this.records[1].getLastUpdated(),
+        testResult.getLastUpdated());
+    org.junit.Assert.assertEquals(
+        "expect equals durationScope ",
+        this.records[1].getDurationScope(),
+        testResult.getDurationScope());
+    org.junit.Assert.assertEquals(
+        "expect equals competitionScope ",
+        this.records[1].getCompetitionScope(),
+        testResult.getCompetitionScope());
+    org.junit.Assert.assertEquals(
+        "expect equals competitionScopeId ",
+        this.records[1].getCompetitionScopeId(),
+        testResult.getCompetitionScopeId());
+    org.junit.Assert.assertEquals(
+        "expect equals alignmentScope ",
+        this.records[1].getAlignmentScope(),
+        testResult.getAlignmentScope());
+    org.junit.Assert.assertEquals(
+        "expect equals siteScope ", this.records[1].getSiteScope(), testResult.getSiteScope());
+    org.junit.Assert.assertEquals(
+        "expect equals scopingLabel ",
+        this.records[1].getScopingLabel(),
+        testResult.getScopingLabel());
+    org.junit.Assert.assertTrue(
+        "expect equals publisherId ",
+        this.records[1].getPublisherId() == testResult.getPublisherId());
+    org.junit.Assert.assertEquals(
+        "expect equals source ", this.records[1].getSource(), testResult.getSource());
+  }
 }

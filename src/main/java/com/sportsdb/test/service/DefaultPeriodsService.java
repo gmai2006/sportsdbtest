@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.PeriodsDao;
-import com.sportsdb.test.entity.Periods;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.PeriodsDao;
+import com.sportsdb.test.entity.Periods;
 
 @Stateless
 @Named("DefaultPeriodsService")
 public class DefaultPeriodsService implements PeriodsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final PeriodsDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final PeriodsDao dao;
 
-    @Inject
-    @Named("DefaultPeriodsDao")
-    public DefaultPeriodsService(final PeriodsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultPeriodsDao")
+  public DefaultPeriodsService(final PeriodsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public Periods find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public Periods find(java.lang.Integer id) {
 
-        final Periods result = dao.find(id);
-        logger.info("find(Periods) - exited - return value={} result ");
-        return result;
-    }
+    final Periods result = dao.find(id);
+    logger.info("find(Periods) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<Periods> select(int maxResult) {
-        final List<Periods> result = dao.select(maxResult);
-        logger.info("select(Periods) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<Periods> select(int maxResult) {
+    final List<Periods> result = dao.select(maxResult);
+    logger.info("select(Periods) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<Periods> selectAll() {
-        final List<Periods> results = dao.selectAll();
-        logger.info("selectAll(Periods) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<Periods> selectAll() {
+    final List<Periods> results = dao.selectAll();
+    logger.info("selectAll(Periods) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public Periods create(Periods bean) {
-        requireNonNull(bean);
-        logger.info("create(Periods={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public Periods create(Periods bean) {
+    requireNonNull(bean);
+    logger.info("create(Periods={}) - entered bean ");
 
-        final Periods result = dao.create(bean);
+    final Periods result = dao.create(bean);
 
-        logger.info("create(Periods) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(Periods) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public Periods update(Periods bean) {
-        requireNonNull(bean);
-        logger.info("update(Periods={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public Periods update(Periods bean) {
+    requireNonNull(bean);
+    logger.info("update(Periods={}) - entered bean ");
 
-        final Periods result = dao.update(bean);
+    final Periods result = dao.update(bean);
 
-        logger.info("update(Periods) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(Periods) - exited - return value={} result ");
+    return result;
+  }
 }

@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.LatestRevisions;
 import java.util.List;
+import com.sportsdb.test.entity.LatestRevisions;
 
 public interface LatestRevisionsDao {
-    /**
-     * Retrieve all records LatestRevisions.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of LatestRevisions
-     */
-    public List<LatestRevisions> select(int maxResult);
+  /**
+   * Retrieve all records LatestRevisions.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of LatestRevisions
+   */
+  public List<LatestRevisions> select(int maxResult);
 
-    /**
-     * Retrieve all records LatestRevisions.
-     *
-     * @return A list of LatestRevisions
-     */
-    public List<LatestRevisions> selectAll();
+  /**
+   * Retrieve all records LatestRevisions.
+   *
+   * @return A list of LatestRevisions
+   */
+  public List<LatestRevisions> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An LatestRevisions id.
-     * @return The same LatestRevisions.
-     */
-    public LatestRevisions find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An LatestRevisions id.
+   * @return The same LatestRevisions.
+   */
+  public LatestRevisions find(java.lang.Integer id);
 
-    /**
-     * Create an LatestRevisions.
-     *
-     * @param e the LatestRevisions.
-     * @return The same LatestRevisions.
-     */
-    public LatestRevisions create(LatestRevisions e);
+  /**
+   * Create an LatestRevisions.
+   *
+   * @param e the LatestRevisions.
+   * @return The same LatestRevisions.
+   */
+  public LatestRevisions create(LatestRevisions e);
 
-    /**
-     * Update the LatestRevisions.
-     *
-     * @param e the LatestRevisions.
-     * @return The same LatestRevisions.
-     */
-    public LatestRevisions update(LatestRevisions e);
+  /**
+   * Update the LatestRevisions.
+   *
+   * @param e the LatestRevisions.
+   * @return The same LatestRevisions.
+   */
+  public LatestRevisions update(LatestRevisions e);
 }

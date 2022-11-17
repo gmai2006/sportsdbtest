@@ -17,14 +17,14 @@
 package com.sportsdb.test.rest;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.entity.TennisEventStates;
-import com.sportsdb.test.service.TennisEventStatesService;
 import java.util.List;
+
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -32,96 +32,95 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import com.sportsdb.test.service.TennisEventStatesService;
+import com.sportsdb.test.entity.TennisEventStates;
+
 @Path("/tenniseventstates")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces({MediaType.APPLICATION_JSON})
 public class TennisEventStatesResource {
 
-    @Inject private TennisEventStatesService service;
+  @Inject private TennisEventStatesService service;
 
-    public TennisEventStatesResource() {}
+  public TennisEventStatesResource() {}
 
-    public TennisEventStatesResource(final TennisEventStatesService service) {
-        requireNonNull(service);
-        this.service = service;
+  public TennisEventStatesResource(final TennisEventStatesService service) {
+    requireNonNull(service);
+    this.service = service;
+  }
+
+  /**
+   * hello.
+   *
+   * @return a hello.
+   */
+  @GET
+  @Path("")
+  public Response hello() {
+    return Response.status(Response.Status.OK).entity(this.getClass().getName()).build();
+  }
+
+  /**
+   * InIdempotent method. Update existing TennisEventStates.
+   *
+   * @param obj - instance of TennisEventStates.
+   * @return TennisEventStates.
+   */
+  @Consumes(MediaType.APPLICATION_JSON)
+  @POST
+  public TennisEventStates update(TennisEventStates obj) {
+    return this.service.update(obj);
+  }
+
+  /**
+   * Delete existing TennisEventStates.
+   *
+   * @param id instance of TennisEventStates.
+   * @return TennisEventStates.
+   */
+
+  /**
+   * Select all TennisEventStates with limit of returned records.
+   *
+   * @param max - number of records.
+   * @return a list TennisEventStates.
+   */
+  @GET
+  @Path("select/{max}")
+  public Response findWithLimit(@PathParam("max") String max) {
+    Integer input = null;
+    try {
+      input = Integer.valueOf(max);
+    } catch (NumberFormatException ex) {
+      throw new WebApplicationException(Response.Status.BAD_REQUEST);
     }
+    List<TennisEventStates> result = service.select(input);
 
-    /**
-     * hello.
-     *
-     * @return a hello.
-     */
-    @GET
-    @Path("")
-    public Response hello() {
-        return Response.status(Response.Status.OK).entity(this.getClass().getName()).build();
-    }
+    return Response.status(Response.Status.OK)
+        .header("Access-Control-Allow-Origin", "*")
+        .header("Access-Control-Allow-Credentials", "true")
+        .header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
+        .header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
+        .entity(result)
+        .build();
+  }
 
-    /**
-     * InIdempotent method. Update existing TennisEventStates.
-     *
-     * @param obj - instance of TennisEventStates.
-     * @return TennisEventStates.
-     */
-    @Consumes(MediaType.APPLICATION_JSON)
-    @POST
-    public TennisEventStates update(TennisEventStates obj) {
-        return this.service.update(obj);
-    }
+  /**
+   * Select all TennisEventStates records.
+   *
+   * @return a list TennisEventStates.
+   */
+  @GET
+  @Path("selectAll")
+  public Response selectAll() {
+    List<TennisEventStates> result = service.selectAll();
 
-    /**
-     * Delete existing TennisEventStates.
-     *
-     * @param id instance of TennisEventStates.
-     * @return TennisEventStates.
-     */
-
-    /**
-     * Select all TennisEventStates with limit of returned records.
-     *
-     * @param max - number of records.
-     * @return a list TennisEventStates.
-     */
-    @GET
-    @Path("select/{max}")
-    public Response findWithLimit(@PathParam("max") String max) {
-        Integer input = null;
-        try {
-            input = Integer.valueOf(max);
-        } catch (NumberFormatException ex) {
-            throw new WebApplicationException(Response.Status.BAD_REQUEST);
-        }
-        List<TennisEventStates> result = service.select(input);
-
-        return Response.status(Response.Status.OK)
-                .header("Access-Control-Allow-Origin", "*")
-                .header("Access-Control-Allow-Credentials", "true")
-                .header(
-                        "Access-Control-Allow-Headers",
-                        "origin, content-type, accept, authorization")
-                .header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
-                .entity(result)
-                .build();
-    }
-
-    /**
-     * Select all TennisEventStates records.
-     *
-     * @return a list TennisEventStates.
-     */
-    @GET
-    @Path("selectAll")
-    public Response selectAll() {
-        List<TennisEventStates> result = service.selectAll();
-
-        return Response.status(Response.Status.OK)
-                .header("Access-Control-Allow-Origin", "*")
-                .header("Access-Control-Allow-Credentials", "true")
-                .header(
-                        "Access-Control-Allow-Headers",
-                        "origin, content-type, accept, authorization")
-                .header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
-                .entity(result)
-                .build();
-    }
+    return Response.status(Response.Status.OK)
+        .header("Access-Control-Allow-Origin", "*")
+        .header("Access-Control-Allow-Credentials", "true")
+        .header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
+        .header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
+        .entity(result)
+        .build();
+  }
 }

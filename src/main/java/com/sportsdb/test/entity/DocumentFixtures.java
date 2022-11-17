@@ -16,81 +16,81 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "document_fixtures")
 public class DocumentFixtures implements Serializable {
-    private static final long serialVersionUID = 163445241894787492L;
+  private static final long serialVersionUID = 166867004231558946L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: fixture_key. */
-    @Basic
-    @Column(name = "fixture_key", length = 100)
-    private java.lang.String fixtureKey;
-    /** Description: publisher_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "publisher_id")
-    private java.lang.Integer publisherId;
-    /** Description: name. */
-    @Basic
-    @Column(name = "name", length = 100)
-    private java.lang.String name;
-    /** Description: document_class_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "document_class_id")
-    private java.lang.Integer documentClassId;
+  /** Description: fixture_key. */
+  @Basic
+  @Column(name = "fixture_key", length = 100)
+  private java.lang.String fixtureKey;
+  /** Description: publisher_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "publisher_id")
+  private java.lang.Integer publisherId;
+  /** Description: name. */
+  @Basic
+  @Column(name = "name", length = 100)
+  private java.lang.String name;
+  /** Description: document_class_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "document_class_id")
+  private java.lang.Integer documentClassId;
 
-    public DocumentFixtures() {}
+  public DocumentFixtures() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.String getFixtureKey() {
-        return this.fixtureKey;
-    }
+  public java.lang.String getFixtureKey() {
+    return this.fixtureKey;
+  }
 
-    public java.lang.Integer getPublisherId() {
-        return this.publisherId;
-    }
+  public java.lang.Integer getPublisherId() {
+    return this.publisherId;
+  }
 
-    public java.lang.String getName() {
-        return this.name;
-    }
+  public java.lang.String getName() {
+    return this.name;
+  }
 
-    public java.lang.Integer getDocumentClassId() {
-        return this.documentClassId;
-    }
+  public java.lang.Integer getDocumentClassId() {
+    return this.documentClassId;
+  }
 
-    public void setFixtureKey(java.lang.String fixtureKey) {
-        this.fixtureKey = fixtureKey;
-    }
+  public void setFixtureKey(java.lang.String fixtureKey) {
+    this.fixtureKey = fixtureKey;
+  }
 
-    public void setPublisherId(java.lang.Integer publisherId) {
-        this.publisherId = publisherId;
-    }
+  public void setPublisherId(java.lang.Integer publisherId) {
+    this.publisherId = publisherId;
+  }
 
-    public void setName(java.lang.String name) {
-        this.name = name;
-    }
+  public void setName(java.lang.String name) {
+    this.name = name;
+  }
 
-    public void setDocumentClassId(java.lang.Integer documentClassId) {
-        this.documentClassId = documentClassId;
-    }
+  public void setDocumentClassId(java.lang.Integer documentClassId) {
+    this.documentClassId = documentClassId;
+  }
 }

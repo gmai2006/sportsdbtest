@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.TennisEventStates;
 import java.util.List;
+import com.sportsdb.test.entity.TennisEventStates;
 
 public interface TennisEventStatesService {
-    public TennisEventStates find(java.lang.Integer id);
+  public TennisEventStates find(java.lang.Integer id);
 
-    /**
-     * Select a list of TennisEventStates based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return TennisEventStates records.
-     */
-    public List<TennisEventStates> select(int maxResult);
+  /**
+   * Select a list of TennisEventStates based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return TennisEventStates records.
+   */
+  public List<TennisEventStates> select(int maxResult);
 
-    /**
-     * Select all TennisEventStates.
-     *
-     * @return all TennisEventStates records.
-     */
-    public List<TennisEventStates> selectAll();
+  /**
+   * Select all TennisEventStates.
+   *
+   * @return all TennisEventStates records.
+   */
+  public List<TennisEventStates> selectAll();
 
-    /**
-     * Create TennisEventStates.
-     *
-     * @param bean The TennisEventStates.
-     * @return The TennisEventStates.
-     */
-    public TennisEventStates create(TennisEventStates bean);
+  /**
+   * Create TennisEventStates.
+   *
+   * @param bean The TennisEventStates.
+   * @return The TennisEventStates.
+   */
+  public TennisEventStates create(TennisEventStates bean);
 
-    /**
-     * Update a TennisEventStates.
-     *
-     * @param bean - The TennisEventStates.
-     * @return TennisEventStates.
-     */
-    public TennisEventStates update(TennisEventStates bean);
+  /**
+   * Update a TennisEventStates.
+   *
+   * @param bean - The TennisEventStates.
+   * @return TennisEventStates.
+   */
+  public TennisEventStates update(TennisEventStates bean);
 }

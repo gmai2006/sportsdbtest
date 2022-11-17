@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.DocumentFixturesEvents;
 import java.util.List;
+import com.sportsdb.test.entity.DocumentFixturesEvents;
 
 public interface DocumentFixturesEventsService {
-    public DocumentFixturesEvents find(java.lang.Integer id);
+  public DocumentFixturesEvents find(java.lang.Integer id);
 
-    /**
-     * Select a list of DocumentFixturesEvents based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return DocumentFixturesEvents records.
-     */
-    public List<DocumentFixturesEvents> select(int maxResult);
+  /**
+   * Select a list of DocumentFixturesEvents based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return DocumentFixturesEvents records.
+   */
+  public List<DocumentFixturesEvents> select(int maxResult);
 
-    /**
-     * Select all DocumentFixturesEvents.
-     *
-     * @return all DocumentFixturesEvents records.
-     */
-    public List<DocumentFixturesEvents> selectAll();
+  /**
+   * Select all DocumentFixturesEvents.
+   *
+   * @return all DocumentFixturesEvents records.
+   */
+  public List<DocumentFixturesEvents> selectAll();
 
-    /**
-     * Create DocumentFixturesEvents.
-     *
-     * @param bean The DocumentFixturesEvents.
-     * @return The DocumentFixturesEvents.
-     */
-    public DocumentFixturesEvents create(DocumentFixturesEvents bean);
+  /**
+   * Create DocumentFixturesEvents.
+   *
+   * @param bean The DocumentFixturesEvents.
+   * @return The DocumentFixturesEvents.
+   */
+  public DocumentFixturesEvents create(DocumentFixturesEvents bean);
 
-    /**
-     * Update a DocumentFixturesEvents.
-     *
-     * @param bean - The DocumentFixturesEvents.
-     * @return DocumentFixturesEvents.
-     */
-    public DocumentFixturesEvents update(DocumentFixturesEvents bean);
+  /**
+   * Update a DocumentFixturesEvents.
+   *
+   * @param bean - The DocumentFixturesEvents.
+   * @return DocumentFixturesEvents.
+   */
+  public DocumentFixturesEvents update(DocumentFixturesEvents bean);
 }

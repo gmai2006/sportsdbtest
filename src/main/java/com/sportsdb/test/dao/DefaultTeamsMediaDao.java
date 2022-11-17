@@ -16,57 +16,60 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.TeamsMedia;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.TeamsMedia;
 
 @Stateless
 @Named("DefaultTeamsMediaDao")
 public class DefaultTeamsMediaDao implements TeamsMediaDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultTeamsMediaDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultTeamsMediaDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultTeamsMediaDao() {}
+  public DefaultTeamsMediaDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public TeamsMedia find(java.lang.String id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(TeamsMedia.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public TeamsMedia find(java.lang.String id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(TeamsMedia.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<TeamsMedia> select(int max) {
-        return dao.select("select a from TeamsMedia a", TeamsMedia.class, max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<TeamsMedia> select(int max) {
+    return dao.select("select a from TeamsMedia a", TeamsMedia.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<TeamsMedia> selectAll() {
-        return dao.selectAll("select a from TeamsMedia a", TeamsMedia.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<TeamsMedia> selectAll() {
+    return dao.selectAll("select a from TeamsMedia a", TeamsMedia.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public TeamsMedia create(TeamsMedia e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public TeamsMedia create(TeamsMedia e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public TeamsMedia update(TeamsMedia e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public TeamsMedia update(TeamsMedia e) {
+    return dao.update(e);
+  }
 }

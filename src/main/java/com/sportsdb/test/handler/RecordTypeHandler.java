@@ -17,13 +17,14 @@
 package com.sportsdb.test.handler;
 
 import java.io.InputStream;
+import java.util.List;
 
 public interface RecordTypeHandler {
-    /**
-     * parse data from a delimited data file.
-     *
-     * @param input input stream.
-     * @return Total count of the inserted records.
-     */
-    public int process(InputStream input);
+  /**
+   * parse data from a delimited data file.
+   *
+   * @param input input stream.
+   * @return Total count of the inserted records.
+   */
+  public int process(InputStream input);
 }

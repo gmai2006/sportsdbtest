@@ -16,56 +16,56 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "positions")
 public class Positions implements Serializable {
-    private static final long serialVersionUID = 163445241923514261L;
+  private static final long serialVersionUID = 166867004250546342L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: affiliation_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "affiliation_id")
-    private java.lang.Integer affiliationId;
-    /** Description: abbreviation. */
-    @Basic
-    @Column(name = "abbreviation", length = 100)
-    private java.lang.String abbreviation;
+  /** Description: affiliation_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "affiliation_id")
+  private java.lang.Integer affiliationId;
+  /** Description: abbreviation. */
+  @Basic
+  @Column(name = "abbreviation", length = 100)
+  private java.lang.String abbreviation;
 
-    public Positions() {}
+  public Positions() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.Integer getAffiliationId() {
-        return this.affiliationId;
-    }
+  public java.lang.Integer getAffiliationId() {
+    return this.affiliationId;
+  }
 
-    public java.lang.String getAbbreviation() {
-        return this.abbreviation;
-    }
+  public java.lang.String getAbbreviation() {
+    return this.abbreviation;
+  }
 
-    public void setAffiliationId(java.lang.Integer affiliationId) {
-        this.affiliationId = affiliationId;
-    }
+  public void setAffiliationId(java.lang.Integer affiliationId) {
+    this.affiliationId = affiliationId;
+  }
 
-    public void setAbbreviation(java.lang.String abbreviation) {
-        this.abbreviation = abbreviation;
-    }
+  public void setAbbreviation(java.lang.String abbreviation) {
+    this.abbreviation = abbreviation;
+  }
 }

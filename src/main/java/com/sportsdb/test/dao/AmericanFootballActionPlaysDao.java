@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.AmericanFootballActionPlays;
 import java.util.List;
+import com.sportsdb.test.entity.AmericanFootballActionPlays;
 
 public interface AmericanFootballActionPlaysDao {
-    /**
-     * Retrieve all records AmericanFootballActionPlays.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of AmericanFootballActionPlays
-     */
-    public List<AmericanFootballActionPlays> select(int maxResult);
+  /**
+   * Retrieve all records AmericanFootballActionPlays.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of AmericanFootballActionPlays
+   */
+  public List<AmericanFootballActionPlays> select(int maxResult);
 
-    /**
-     * Retrieve all records AmericanFootballActionPlays.
-     *
-     * @return A list of AmericanFootballActionPlays
-     */
-    public List<AmericanFootballActionPlays> selectAll();
+  /**
+   * Retrieve all records AmericanFootballActionPlays.
+   *
+   * @return A list of AmericanFootballActionPlays
+   */
+  public List<AmericanFootballActionPlays> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An AmericanFootballActionPlays id.
-     * @return The same AmericanFootballActionPlays.
-     */
-    public AmericanFootballActionPlays find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An AmericanFootballActionPlays id.
+   * @return The same AmericanFootballActionPlays.
+   */
+  public AmericanFootballActionPlays find(java.lang.Integer id);
 
-    /**
-     * Create an AmericanFootballActionPlays.
-     *
-     * @param e the AmericanFootballActionPlays.
-     * @return The same AmericanFootballActionPlays.
-     */
-    public AmericanFootballActionPlays create(AmericanFootballActionPlays e);
+  /**
+   * Create an AmericanFootballActionPlays.
+   *
+   * @param e the AmericanFootballActionPlays.
+   * @return The same AmericanFootballActionPlays.
+   */
+  public AmericanFootballActionPlays create(AmericanFootballActionPlays e);
 
-    /**
-     * Update the AmericanFootballActionPlays.
-     *
-     * @param e the AmericanFootballActionPlays.
-     * @return The same AmericanFootballActionPlays.
-     */
-    public AmericanFootballActionPlays update(AmericanFootballActionPlays e);
+  /**
+   * Update the AmericanFootballActionPlays.
+   *
+   * @param e the AmericanFootballActionPlays.
+   * @return The same AmericanFootballActionPlays.
+   */
+  public AmericanFootballActionPlays update(AmericanFootballActionPlays e);
 }

@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.InjuryPhases;
 import java.util.List;
+import com.sportsdb.test.entity.InjuryPhases;
 
 public interface InjuryPhasesDao {
-    /**
-     * Retrieve all records InjuryPhases.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of InjuryPhases
-     */
-    public List<InjuryPhases> select(int maxResult);
+  /**
+   * Retrieve all records InjuryPhases.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of InjuryPhases
+   */
+  public List<InjuryPhases> select(int maxResult);
 
-    /**
-     * Retrieve all records InjuryPhases.
-     *
-     * @return A list of InjuryPhases
-     */
-    public List<InjuryPhases> selectAll();
+  /**
+   * Retrieve all records InjuryPhases.
+   *
+   * @return A list of InjuryPhases
+   */
+  public List<InjuryPhases> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An InjuryPhases id.
-     * @return The same InjuryPhases.
-     */
-    public InjuryPhases find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An InjuryPhases id.
+   * @return The same InjuryPhases.
+   */
+  public InjuryPhases find(java.lang.Integer id);
 
-    /**
-     * Create an InjuryPhases.
-     *
-     * @param e the InjuryPhases.
-     * @return The same InjuryPhases.
-     */
-    public InjuryPhases create(InjuryPhases e);
+  /**
+   * Create an InjuryPhases.
+   *
+   * @param e the InjuryPhases.
+   * @return The same InjuryPhases.
+   */
+  public InjuryPhases create(InjuryPhases e);
 
-    /**
-     * Update the InjuryPhases.
-     *
-     * @param e the InjuryPhases.
-     * @return The same InjuryPhases.
-     */
-    public InjuryPhases update(InjuryPhases e);
+  /**
+   * Update the InjuryPhases.
+   *
+   * @param e the InjuryPhases.
+   * @return The same InjuryPhases.
+   */
+  public InjuryPhases update(InjuryPhases e);
 }

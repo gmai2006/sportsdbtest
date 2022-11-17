@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.BaseballActionPlays;
 import java.util.List;
+import com.sportsdb.test.entity.BaseballActionPlays;
 
 public interface BaseballActionPlaysDao {
-    /**
-     * Retrieve all records BaseballActionPlays.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of BaseballActionPlays
-     */
-    public List<BaseballActionPlays> select(int maxResult);
+  /**
+   * Retrieve all records BaseballActionPlays.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of BaseballActionPlays
+   */
+  public List<BaseballActionPlays> select(int maxResult);
 
-    /**
-     * Retrieve all records BaseballActionPlays.
-     *
-     * @return A list of BaseballActionPlays
-     */
-    public List<BaseballActionPlays> selectAll();
+  /**
+   * Retrieve all records BaseballActionPlays.
+   *
+   * @return A list of BaseballActionPlays
+   */
+  public List<BaseballActionPlays> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An BaseballActionPlays id.
-     * @return The same BaseballActionPlays.
-     */
-    public BaseballActionPlays find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An BaseballActionPlays id.
+   * @return The same BaseballActionPlays.
+   */
+  public BaseballActionPlays find(java.lang.Integer id);
 
-    /**
-     * Create an BaseballActionPlays.
-     *
-     * @param e the BaseballActionPlays.
-     * @return The same BaseballActionPlays.
-     */
-    public BaseballActionPlays create(BaseballActionPlays e);
+  /**
+   * Create an BaseballActionPlays.
+   *
+   * @param e the BaseballActionPlays.
+   * @return The same BaseballActionPlays.
+   */
+  public BaseballActionPlays create(BaseballActionPlays e);
 
-    /**
-     * Update the BaseballActionPlays.
-     *
-     * @param e the BaseballActionPlays.
-     * @return The same BaseballActionPlays.
-     */
-    public BaseballActionPlays update(BaseballActionPlays e);
+  /**
+   * Update the BaseballActionPlays.
+   *
+   * @param e the BaseballActionPlays.
+   * @return The same BaseballActionPlays.
+   */
+  public BaseballActionPlays update(BaseballActionPlays e);
 }

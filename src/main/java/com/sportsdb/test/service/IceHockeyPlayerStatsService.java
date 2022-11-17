@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.IceHockeyPlayerStats;
 import java.util.List;
+import com.sportsdb.test.entity.IceHockeyPlayerStats;
 
 public interface IceHockeyPlayerStatsService {
-    public IceHockeyPlayerStats find(java.lang.Integer id);
+  public IceHockeyPlayerStats find(java.lang.Integer id);
 
-    /**
-     * Select a list of IceHockeyPlayerStats based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return IceHockeyPlayerStats records.
-     */
-    public List<IceHockeyPlayerStats> select(int maxResult);
+  /**
+   * Select a list of IceHockeyPlayerStats based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return IceHockeyPlayerStats records.
+   */
+  public List<IceHockeyPlayerStats> select(int maxResult);
 
-    /**
-     * Select all IceHockeyPlayerStats.
-     *
-     * @return all IceHockeyPlayerStats records.
-     */
-    public List<IceHockeyPlayerStats> selectAll();
+  /**
+   * Select all IceHockeyPlayerStats.
+   *
+   * @return all IceHockeyPlayerStats records.
+   */
+  public List<IceHockeyPlayerStats> selectAll();
 
-    /**
-     * Create IceHockeyPlayerStats.
-     *
-     * @param bean The IceHockeyPlayerStats.
-     * @return The IceHockeyPlayerStats.
-     */
-    public IceHockeyPlayerStats create(IceHockeyPlayerStats bean);
+  /**
+   * Create IceHockeyPlayerStats.
+   *
+   * @param bean The IceHockeyPlayerStats.
+   * @return The IceHockeyPlayerStats.
+   */
+  public IceHockeyPlayerStats create(IceHockeyPlayerStats bean);
 
-    /**
-     * Update a IceHockeyPlayerStats.
-     *
-     * @param bean - The IceHockeyPlayerStats.
-     * @return IceHockeyPlayerStats.
-     */
-    public IceHockeyPlayerStats update(IceHockeyPlayerStats bean);
+  /**
+   * Update a IceHockeyPlayerStats.
+   *
+   * @param bean - The IceHockeyPlayerStats.
+   * @return IceHockeyPlayerStats.
+   */
+  public IceHockeyPlayerStats update(IceHockeyPlayerStats bean);
 }

@@ -16,41 +16,41 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.AmericanFootballEventStates;
 import java.util.List;
+import com.sportsdb.test.entity.AmericanFootballEventStates;
 
 public interface AmericanFootballEventStatesService {
-    public AmericanFootballEventStates find(java.lang.Integer id);
+  public AmericanFootballEventStates find(java.lang.Integer id);
 
-    /**
-     * Select a list of AmericanFootballEventStates based on a given maximum number of returning
-     * records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return AmericanFootballEventStates records.
-     */
-    public List<AmericanFootballEventStates> select(int maxResult);
+  /**
+   * Select a list of AmericanFootballEventStates based on a given maximum number of returning
+   * records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return AmericanFootballEventStates records.
+   */
+  public List<AmericanFootballEventStates> select(int maxResult);
 
-    /**
-     * Select all AmericanFootballEventStates.
-     *
-     * @return all AmericanFootballEventStates records.
-     */
-    public List<AmericanFootballEventStates> selectAll();
+  /**
+   * Select all AmericanFootballEventStates.
+   *
+   * @return all AmericanFootballEventStates records.
+   */
+  public List<AmericanFootballEventStates> selectAll();
 
-    /**
-     * Create AmericanFootballEventStates.
-     *
-     * @param bean The AmericanFootballEventStates.
-     * @return The AmericanFootballEventStates.
-     */
-    public AmericanFootballEventStates create(AmericanFootballEventStates bean);
+  /**
+   * Create AmericanFootballEventStates.
+   *
+   * @param bean The AmericanFootballEventStates.
+   * @return The AmericanFootballEventStates.
+   */
+  public AmericanFootballEventStates create(AmericanFootballEventStates bean);
 
-    /**
-     * Update a AmericanFootballEventStates.
-     *
-     * @param bean - The AmericanFootballEventStates.
-     * @return AmericanFootballEventStates.
-     */
-    public AmericanFootballEventStates update(AmericanFootballEventStates bean);
+  /**
+   * Update a AmericanFootballEventStates.
+   *
+   * @param bean - The AmericanFootballEventStates.
+   * @return AmericanFootballEventStates.
+   */
+  public AmericanFootballEventStates update(AmericanFootballEventStates bean);
 }

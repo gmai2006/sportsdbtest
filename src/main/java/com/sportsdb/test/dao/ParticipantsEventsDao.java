@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.ParticipantsEvents;
 import java.util.List;
+import com.sportsdb.test.entity.ParticipantsEvents;
 
 public interface ParticipantsEventsDao {
-    /**
-     * Retrieve all records ParticipantsEvents.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of ParticipantsEvents
-     */
-    public List<ParticipantsEvents> select(int maxResult);
+  /**
+   * Retrieve all records ParticipantsEvents.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of ParticipantsEvents
+   */
+  public List<ParticipantsEvents> select(int maxResult);
 
-    /**
-     * Retrieve all records ParticipantsEvents.
-     *
-     * @return A list of ParticipantsEvents
-     */
-    public List<ParticipantsEvents> selectAll();
+  /**
+   * Retrieve all records ParticipantsEvents.
+   *
+   * @return A list of ParticipantsEvents
+   */
+  public List<ParticipantsEvents> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An ParticipantsEvents id.
-     * @return The same ParticipantsEvents.
-     */
-    public ParticipantsEvents find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An ParticipantsEvents id.
+   * @return The same ParticipantsEvents.
+   */
+  public ParticipantsEvents find(java.lang.Integer id);
 
-    /**
-     * Create an ParticipantsEvents.
-     *
-     * @param e the ParticipantsEvents.
-     * @return The same ParticipantsEvents.
-     */
-    public ParticipantsEvents create(ParticipantsEvents e);
+  /**
+   * Create an ParticipantsEvents.
+   *
+   * @param e the ParticipantsEvents.
+   * @return The same ParticipantsEvents.
+   */
+  public ParticipantsEvents create(ParticipantsEvents e);
 
-    /**
-     * Update the ParticipantsEvents.
-     *
-     * @param e the ParticipantsEvents.
-     * @return The same ParticipantsEvents.
-     */
-    public ParticipantsEvents update(ParticipantsEvents e);
+  /**
+   * Update the ParticipantsEvents.
+   *
+   * @param e the ParticipantsEvents.
+   * @return The same ParticipantsEvents.
+   */
+  public ParticipantsEvents update(ParticipantsEvents e);
 }

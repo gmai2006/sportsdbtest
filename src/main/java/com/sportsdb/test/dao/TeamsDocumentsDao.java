@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.TeamsDocuments;
 import java.util.List;
+import com.sportsdb.test.entity.TeamsDocuments;
 
 public interface TeamsDocumentsDao {
-    /**
-     * Retrieve all records TeamsDocuments.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of TeamsDocuments
-     */
-    public List<TeamsDocuments> select(int maxResult);
+  /**
+   * Retrieve all records TeamsDocuments.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of TeamsDocuments
+   */
+  public List<TeamsDocuments> select(int maxResult);
 
-    /**
-     * Retrieve all records TeamsDocuments.
-     *
-     * @return A list of TeamsDocuments
-     */
-    public List<TeamsDocuments> selectAll();
+  /**
+   * Retrieve all records TeamsDocuments.
+   *
+   * @return A list of TeamsDocuments
+   */
+  public List<TeamsDocuments> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An TeamsDocuments id.
-     * @return The same TeamsDocuments.
-     */
-    public TeamsDocuments find(java.lang.String id);
+  /**
+   * Find an entity.
+   *
+   * @param id An TeamsDocuments id.
+   * @return The same TeamsDocuments.
+   */
+  public TeamsDocuments find(java.lang.String id);
 
-    /**
-     * Create an TeamsDocuments.
-     *
-     * @param e the TeamsDocuments.
-     * @return The same TeamsDocuments.
-     */
-    public TeamsDocuments create(TeamsDocuments e);
+  /**
+   * Create an TeamsDocuments.
+   *
+   * @param e the TeamsDocuments.
+   * @return The same TeamsDocuments.
+   */
+  public TeamsDocuments create(TeamsDocuments e);
 
-    /**
-     * Update the TeamsDocuments.
-     *
-     * @param e the TeamsDocuments.
-     * @return The same TeamsDocuments.
-     */
-    public TeamsDocuments update(TeamsDocuments e);
+  /**
+   * Update the TeamsDocuments.
+   *
+   * @param e the TeamsDocuments.
+   * @return The same TeamsDocuments.
+   */
+  public TeamsDocuments update(TeamsDocuments e);
 }

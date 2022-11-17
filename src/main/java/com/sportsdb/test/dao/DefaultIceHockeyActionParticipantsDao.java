@@ -16,61 +16,62 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.IceHockeyActionParticipants;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.IceHockeyActionParticipants;
 
 @Stateless
 @Named("DefaultIceHockeyActionParticipantsDao")
 public class DefaultIceHockeyActionParticipantsDao implements IceHockeyActionParticipantsDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultIceHockeyActionParticipantsDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultIceHockeyActionParticipantsDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultIceHockeyActionParticipantsDao() {}
+  public DefaultIceHockeyActionParticipantsDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public IceHockeyActionParticipants find(java.lang.Long id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(IceHockeyActionParticipants.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public IceHockeyActionParticipants find(java.lang.Long id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(IceHockeyActionParticipants.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<IceHockeyActionParticipants> select(int max) {
-        return dao.select(
-                "select a from IceHockeyActionParticipants a",
-                IceHockeyActionParticipants.class,
-                max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<IceHockeyActionParticipants> select(int max) {
+    return dao.select(
+        "select a from IceHockeyActionParticipants a", IceHockeyActionParticipants.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<IceHockeyActionParticipants> selectAll() {
-        return dao.selectAll(
-                "select a from IceHockeyActionParticipants a", IceHockeyActionParticipants.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<IceHockeyActionParticipants> selectAll() {
+    return dao.selectAll(
+        "select a from IceHockeyActionParticipants a", IceHockeyActionParticipants.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public IceHockeyActionParticipants create(IceHockeyActionParticipants e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public IceHockeyActionParticipants create(IceHockeyActionParticipants e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public IceHockeyActionParticipants update(IceHockeyActionParticipants e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public IceHockeyActionParticipants update(IceHockeyActionParticipants e) {
+    return dao.update(e);
+  }
 }

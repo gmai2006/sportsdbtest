@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.Events;
 import java.util.List;
+import com.sportsdb.test.entity.Events;
 
 public interface EventsService {
-    public Events find(java.lang.Integer id);
+  public Events find(java.lang.Integer id);
 
-    /**
-     * Select a list of Events based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return Events records.
-     */
-    public List<Events> select(int maxResult);
+  /**
+   * Select a list of Events based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return Events records.
+   */
+  public List<Events> select(int maxResult);
 
-    /**
-     * Select all Events.
-     *
-     * @return all Events records.
-     */
-    public List<Events> selectAll();
+  /**
+   * Select all Events.
+   *
+   * @return all Events records.
+   */
+  public List<Events> selectAll();
 
-    /**
-     * Create Events.
-     *
-     * @param bean The Events.
-     * @return The Events.
-     */
-    public Events create(Events bean);
+  /**
+   * Create Events.
+   *
+   * @param bean The Events.
+   * @return The Events.
+   */
+  public Events create(Events bean);
 
-    /**
-     * Update a Events.
-     *
-     * @param bean - The Events.
-     * @return Events.
-     */
-    public Events update(Events bean);
+  /**
+   * Update a Events.
+   *
+   * @param bean - The Events.
+   * @return Events.
+   */
+  public Events update(Events bean);
 }

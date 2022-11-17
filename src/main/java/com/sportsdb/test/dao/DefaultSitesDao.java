@@ -16,57 +16,60 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.Sites;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.Sites;
 
 @Stateless
 @Named("DefaultSitesDao")
 public class DefaultSitesDao implements SitesDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultSitesDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultSitesDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultSitesDao() {}
+  public DefaultSitesDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public Sites find(java.lang.Integer id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(Sites.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public Sites find(java.lang.Integer id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(Sites.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<Sites> select(int max) {
-        return dao.select("select a from Sites a", Sites.class, max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<Sites> select(int max) {
+    return dao.select("select a from Sites a", Sites.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<Sites> selectAll() {
-        return dao.selectAll("select a from Sites a", Sites.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<Sites> selectAll() {
+    return dao.selectAll("select a from Sites a", Sites.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public Sites create(Sites e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public Sites create(Sites e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public Sites update(Sites e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public Sites update(Sites e) {
+    return dao.update(e);
+  }
 }

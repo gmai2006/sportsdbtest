@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.KeyRoots;
 import java.util.List;
+import com.sportsdb.test.entity.KeyRoots;
 
 public interface KeyRootsService {
-    public KeyRoots find(java.lang.Integer id);
+  public KeyRoots find(java.lang.Integer id);
 
-    /**
-     * Select a list of KeyRoots based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return KeyRoots records.
-     */
-    public List<KeyRoots> select(int maxResult);
+  /**
+   * Select a list of KeyRoots based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return KeyRoots records.
+   */
+  public List<KeyRoots> select(int maxResult);
 
-    /**
-     * Select all KeyRoots.
-     *
-     * @return all KeyRoots records.
-     */
-    public List<KeyRoots> selectAll();
+  /**
+   * Select all KeyRoots.
+   *
+   * @return all KeyRoots records.
+   */
+  public List<KeyRoots> selectAll();
 
-    /**
-     * Create KeyRoots.
-     *
-     * @param bean The KeyRoots.
-     * @return The KeyRoots.
-     */
-    public KeyRoots create(KeyRoots bean);
+  /**
+   * Create KeyRoots.
+   *
+   * @param bean The KeyRoots.
+   * @return The KeyRoots.
+   */
+  public KeyRoots create(KeyRoots bean);
 
-    /**
-     * Update a KeyRoots.
-     *
-     * @param bean - The KeyRoots.
-     * @return KeyRoots.
-     */
-    public KeyRoots update(KeyRoots bean);
+  /**
+   * Update a KeyRoots.
+   *
+   * @param bean - The KeyRoots.
+   * @return KeyRoots.
+   */
+  public KeyRoots update(KeyRoots bean);
 }

@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.TeamsMediaDao;
-import com.sportsdb.test.entity.TeamsMedia;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.TeamsMediaDao;
+import com.sportsdb.test.entity.TeamsMedia;
 
 @Stateless
 @Named("DefaultTeamsMediaService")
 public class DefaultTeamsMediaService implements TeamsMediaService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final TeamsMediaDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final TeamsMediaDao dao;
 
-    @Inject
-    @Named("DefaultTeamsMediaDao")
-    public DefaultTeamsMediaService(final TeamsMediaDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultTeamsMediaDao")
+  public DefaultTeamsMediaService(final TeamsMediaDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public TeamsMedia find(java.lang.String id) {
+  /** {@inheritDoc} */
+  @Override
+  public TeamsMedia find(java.lang.String id) {
 
-        final TeamsMedia result = dao.find(id);
-        logger.info("find(TeamsMedia) - exited - return value={} result ");
-        return result;
-    }
+    final TeamsMedia result = dao.find(id);
+    logger.info("find(TeamsMedia) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<TeamsMedia> select(int maxResult) {
-        final List<TeamsMedia> result = dao.select(maxResult);
-        logger.info("select(TeamsMedia) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<TeamsMedia> select(int maxResult) {
+    final List<TeamsMedia> result = dao.select(maxResult);
+    logger.info("select(TeamsMedia) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<TeamsMedia> selectAll() {
-        final List<TeamsMedia> results = dao.selectAll();
-        logger.info("selectAll(TeamsMedia) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<TeamsMedia> selectAll() {
+    final List<TeamsMedia> results = dao.selectAll();
+    logger.info("selectAll(TeamsMedia) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public TeamsMedia create(TeamsMedia bean) {
-        requireNonNull(bean);
-        logger.info("create(TeamsMedia={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public TeamsMedia create(TeamsMedia bean) {
+    requireNonNull(bean);
+    logger.info("create(TeamsMedia={}) - entered bean ");
 
-        final TeamsMedia result = dao.create(bean);
+    final TeamsMedia result = dao.create(bean);
 
-        logger.info("create(TeamsMedia) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(TeamsMedia) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public TeamsMedia update(TeamsMedia bean) {
-        requireNonNull(bean);
-        logger.info("update(TeamsMedia={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public TeamsMedia update(TeamsMedia bean) {
+    requireNonNull(bean);
+    logger.info("update(TeamsMedia={}) - entered bean ");
 
-        final TeamsMedia result = dao.update(bean);
+    final TeamsMedia result = dao.update(bean);
 
-        logger.info("update(TeamsMedia) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(TeamsMedia) - exited - return value={} result ");
+    return result;
+  }
 }

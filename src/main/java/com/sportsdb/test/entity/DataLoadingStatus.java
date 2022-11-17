@@ -29,70 +29,70 @@ import javax.validation.constraints.NotNull;
 @Table(name = "data_loading_status")
 public class DataLoadingStatus {
 
-    @Basic
-    @Column(name = "update_Date", length = 10)
-    @NotNull
-    @Temporal(TemporalType.DATE)
-    private java.util.Date updateDate;
+  @Basic
+  @Column(name = "update_Date", length = 10)
+  @NotNull
+  @Temporal(TemporalType.DATE)
+  private java.util.Date updateDate;
 
-    @Basic private String status;
+  @Basic private String status;
 
-    @Basic private Long records;
+  @Basic private Long records;
 
-    @Basic @NotNull @Id private String id;
+  @Basic @NotNull @Id private String id;
 
-    public DataLoadingStatus() {}
+  public DataLoadingStatus() {}
 
-    /**
-     * A parametered Constructor.
-     *
-     * @param type loadind status type (profiles, equipments).
-     * @param status The status of the loading.
-     */
-    public DataLoadingStatus(String type, Enum<Loadingstatus> status) {
-        this.id = type;
-        this.status = status.name();
-        this.updateDate = new java.util.Date(System.currentTimeMillis());
-    }
+  /**
+   * A parametered Constructor.
+   *
+   * @param type loadind status type (profiles, equipments).
+   * @param status The status of the loading.
+   */
+  public DataLoadingStatus(String type, Enum<Loadingstatus> status) {
+    this.id = type;
+    this.status = status.name();
+    this.updateDate = new java.util.Date(System.currentTimeMillis());
+  }
 
-    public String getId() {
-        return id;
-    }
+  public String getId() {
+    return id;
+  }
 
-    public void setId(String type) {
-        this.id = type;
-    }
+  public void setId(String type) {
+    this.id = type;
+  }
 
-    @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append(id + " LOADING [\n");
-        builder.append("updateDate=" + String.valueOf(this.updateDate) + ", ");
-        builder.append("status=" + String.valueOf(this.status) + ", ");
-        return builder.toString();
-    }
+  @Override
+  public String toString() {
+    StringBuilder builder = new StringBuilder();
+    builder.append(id + " LOADING [\n");
+    builder.append("updateDate=" + String.valueOf(this.updateDate) + ", ");
+    builder.append("status=" + String.valueOf(this.status) + ", ");
+    return builder.toString();
+  }
 
-    public java.util.Date getUpdateDate() {
-        return updateDate;
-    }
+  public java.util.Date getUpdateDate() {
+    return updateDate;
+  }
 
-    public void setUpdateDate(java.util.Date updateDate) {
-        this.updateDate = updateDate;
-    }
+  public void setUpdateDate(java.util.Date updateDate) {
+    this.updateDate = updateDate;
+  }
 
-    public String getStatus() {
-        return status;
-    }
+  public String getStatus() {
+    return status;
+  }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
+  public void setStatus(String status) {
+    this.status = status;
+  }
 
-    public Long getRecords() {
-        return records;
-    }
+  public Long getRecords() {
+    return records;
+  }
 
-    public void setRecords(Long records) {
-        this.records = records;
-    }
+  public void setRecords(Long records) {
+    this.records = records;
+  }
 }

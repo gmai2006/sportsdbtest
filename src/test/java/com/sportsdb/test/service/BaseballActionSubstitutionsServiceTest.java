@@ -16,87 +16,85 @@
  */
 package com.sportsdb.test.service;
 
+import com.sportsdb.test.entity.BaseballActionSubstitutions;
+
+import com.sportsdb.test.utils.FileUtils;
+import com.google.gson.JsonArray;
+import com.google.gson.GsonBuilder;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
+import com.google.gson.Gson;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.sportsdb.test.entity.BaseballActionSubstitutions;
 import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
-import com.sportsdb.test.utils.FileUtils;
-import java.io.IOException;
-import java.nio.charset.Charset;
-import org.junit.BeforeClass;
-import org.junit.Test;
 
 public class BaseballActionSubstitutionsServiceTest {
-    private static DefaultBaseballActionSubstitutionsService serviceMock;
-    private static BaseballActionSubstitutions[] records;
-    static Gson gson =
-            new GsonBuilder()
-                    .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
-                    .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
-                    .create();
+  private static DefaultBaseballActionSubstitutionsService serviceMock;
+  private static BaseballActionSubstitutions[] records;
+  static Gson gson =
+      new GsonBuilder()
+          .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
+          .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
+          .create();
 
-    /** Run when the class is loaded. */
-    @BeforeClass
-    public static void setUp() {
-        serviceMock = mock(DefaultBaseballActionSubstitutionsService.class);
-        String inputFile = "BaseballActionSubstitutions.json";
-        try {
-            String json =
-                    FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
-            records = gson.fromJson(json, BaseballActionSubstitutions[].class);
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-
-        // test data
-        when(serviceMock.find(records[0].getId())).thenReturn(records[0]);
+  /** Run when the class is loaded. */
+  @BeforeClass
+  public static void setUp() {
+    serviceMock = mock(DefaultBaseballActionSubstitutionsService.class);
+    String inputFile = "BaseballActionSubstitutions.json";
+    try {
+      String json = FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
+      records = gson.fromJson(json, BaseballActionSubstitutions[].class);
+    } catch (IOException ex) {
+      ex.printStackTrace();
     }
 
-    @Test
-    public void testFind_success() {
-        BaseballActionSubstitutions testResult = serviceMock.find(records[0].getId());
+    // test data
+    when(serviceMock.find(records[0].getId())).thenReturn(records[0]);
+  }
 
-        org.junit.Assert.assertNotNull(testResult);
-        org.junit.Assert.assertTrue(
-                "expect equals baseballEventStateId ",
-                records[0].getBaseballEventStateId() == testResult.getBaseballEventStateId());
-        org.junit.Assert.assertTrue(
-                "expect equals sequenceNumber ",
-                records[0].getSequenceNumber() == testResult.getSequenceNumber());
-        org.junit.Assert.assertEquals(
-                "expect equals personType ",
-                records[0].getPersonType(),
-                testResult.getPersonType());
-        org.junit.Assert.assertTrue(
-                "expect equals personOriginalId ",
-                records[0].getPersonOriginalId() == testResult.getPersonOriginalId());
-        org.junit.Assert.assertTrue(
-                "expect equals personOriginalPositionId ",
-                records[0].getPersonOriginalPositionId()
-                        == testResult.getPersonOriginalPositionId());
-        org.junit.Assert.assertTrue(
-                "expect equals personOriginalLineupSlot ",
-                records[0].getPersonOriginalLineupSlot()
-                        == testResult.getPersonOriginalLineupSlot());
-        org.junit.Assert.assertTrue(
-                "expect equals personReplacingId ",
-                records[0].getPersonReplacingId() == testResult.getPersonReplacingId());
-        org.junit.Assert.assertTrue(
-                "expect equals personReplacingPositionId ",
-                records[0].getPersonReplacingPositionId()
-                        == testResult.getPersonReplacingPositionId());
-        org.junit.Assert.assertTrue(
-                "expect equals personReplacingLineupSlot ",
-                records[0].getPersonReplacingLineupSlot()
-                        == testResult.getPersonReplacingLineupSlot());
-        org.junit.Assert.assertEquals(
-                "expect equals substitutionReason ",
-                records[0].getSubstitutionReason(),
-                testResult.getSubstitutionReason());
-        org.junit.Assert.assertEquals(
-                "expect equals comment ", records[0].getComment(), testResult.getComment());
-    }
+  @Test
+  public void testFind_success() {
+    BaseballActionSubstitutions testResult = serviceMock.find(records[0].getId());
+
+    org.junit.Assert.assertNotNull(testResult);
+    org.junit.Assert.assertTrue(
+        "expect equals baseballEventStateId ",
+        records[0].getBaseballEventStateId() == testResult.getBaseballEventStateId());
+    org.junit.Assert.assertTrue(
+        "expect equals sequenceNumber ",
+        records[0].getSequenceNumber() == testResult.getSequenceNumber());
+    org.junit.Assert.assertEquals(
+        "expect equals personType ", records[0].getPersonType(), testResult.getPersonType());
+    org.junit.Assert.assertTrue(
+        "expect equals personOriginalId ",
+        records[0].getPersonOriginalId() == testResult.getPersonOriginalId());
+    org.junit.Assert.assertTrue(
+        "expect equals personOriginalPositionId ",
+        records[0].getPersonOriginalPositionId() == testResult.getPersonOriginalPositionId());
+    org.junit.Assert.assertTrue(
+        "expect equals personOriginalLineupSlot ",
+        records[0].getPersonOriginalLineupSlot() == testResult.getPersonOriginalLineupSlot());
+    org.junit.Assert.assertTrue(
+        "expect equals personReplacingId ",
+        records[0].getPersonReplacingId() == testResult.getPersonReplacingId());
+    org.junit.Assert.assertTrue(
+        "expect equals personReplacingPositionId ",
+        records[0].getPersonReplacingPositionId() == testResult.getPersonReplacingPositionId());
+    org.junit.Assert.assertTrue(
+        "expect equals personReplacingLineupSlot ",
+        records[0].getPersonReplacingLineupSlot() == testResult.getPersonReplacingLineupSlot());
+    org.junit.Assert.assertEquals(
+        "expect equals substitutionReason ",
+        records[0].getSubstitutionReason(),
+        testResult.getSubstitutionReason());
+    org.junit.Assert.assertEquals(
+        "expect equals comment ", records[0].getComment(), testResult.getComment());
+  }
 }

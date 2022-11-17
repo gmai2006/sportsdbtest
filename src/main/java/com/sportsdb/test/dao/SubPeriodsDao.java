@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.SubPeriods;
 import java.util.List;
+import com.sportsdb.test.entity.SubPeriods;
 
 public interface SubPeriodsDao {
-    /**
-     * Retrieve all records SubPeriods.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of SubPeriods
-     */
-    public List<SubPeriods> select(int maxResult);
+  /**
+   * Retrieve all records SubPeriods.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of SubPeriods
+   */
+  public List<SubPeriods> select(int maxResult);
 
-    /**
-     * Retrieve all records SubPeriods.
-     *
-     * @return A list of SubPeriods
-     */
-    public List<SubPeriods> selectAll();
+  /**
+   * Retrieve all records SubPeriods.
+   *
+   * @return A list of SubPeriods
+   */
+  public List<SubPeriods> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An SubPeriods id.
-     * @return The same SubPeriods.
-     */
-    public SubPeriods find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An SubPeriods id.
+   * @return The same SubPeriods.
+   */
+  public SubPeriods find(java.lang.Integer id);
 
-    /**
-     * Create an SubPeriods.
-     *
-     * @param e the SubPeriods.
-     * @return The same SubPeriods.
-     */
-    public SubPeriods create(SubPeriods e);
+  /**
+   * Create an SubPeriods.
+   *
+   * @param e the SubPeriods.
+   * @return The same SubPeriods.
+   */
+  public SubPeriods create(SubPeriods e);
 
-    /**
-     * Update the SubPeriods.
-     *
-     * @param e the SubPeriods.
-     * @return The same SubPeriods.
-     */
-    public SubPeriods update(SubPeriods e);
+  /**
+   * Update the SubPeriods.
+   *
+   * @param e the SubPeriods.
+   * @return The same SubPeriods.
+   */
+  public SubPeriods update(SubPeriods e);
 }

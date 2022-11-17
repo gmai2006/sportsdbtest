@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.WageringMoneylines;
 import java.util.List;
+import com.sportsdb.test.entity.WageringMoneylines;
 
 public interface WageringMoneylinesService {
-    public WageringMoneylines find(java.lang.Integer id);
+  public WageringMoneylines find(java.lang.Integer id);
 
-    /**
-     * Select a list of WageringMoneylines based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return WageringMoneylines records.
-     */
-    public List<WageringMoneylines> select(int maxResult);
+  /**
+   * Select a list of WageringMoneylines based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return WageringMoneylines records.
+   */
+  public List<WageringMoneylines> select(int maxResult);
 
-    /**
-     * Select all WageringMoneylines.
-     *
-     * @return all WageringMoneylines records.
-     */
-    public List<WageringMoneylines> selectAll();
+  /**
+   * Select all WageringMoneylines.
+   *
+   * @return all WageringMoneylines records.
+   */
+  public List<WageringMoneylines> selectAll();
 
-    /**
-     * Create WageringMoneylines.
-     *
-     * @param bean The WageringMoneylines.
-     * @return The WageringMoneylines.
-     */
-    public WageringMoneylines create(WageringMoneylines bean);
+  /**
+   * Create WageringMoneylines.
+   *
+   * @param bean The WageringMoneylines.
+   * @return The WageringMoneylines.
+   */
+  public WageringMoneylines create(WageringMoneylines bean);
 
-    /**
-     * Update a WageringMoneylines.
-     *
-     * @param bean - The WageringMoneylines.
-     * @return WageringMoneylines.
-     */
-    public WageringMoneylines update(WageringMoneylines bean);
+  /**
+   * Update a WageringMoneylines.
+   *
+   * @param bean - The WageringMoneylines.
+   * @return WageringMoneylines.
+   */
+  public WageringMoneylines update(WageringMoneylines bean);
 }

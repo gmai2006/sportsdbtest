@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.DbInfo;
 import java.util.List;
+import com.sportsdb.test.entity.DbInfo;
 
 public interface DbInfoDao {
-    /**
-     * Retrieve all records DbInfo.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of DbInfo
-     */
-    public List<DbInfo> select(int maxResult);
+  /**
+   * Retrieve all records DbInfo.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of DbInfo
+   */
+  public List<DbInfo> select(int maxResult);
 
-    /**
-     * Retrieve all records DbInfo.
-     *
-     * @return A list of DbInfo
-     */
-    public List<DbInfo> selectAll();
+  /**
+   * Retrieve all records DbInfo.
+   *
+   * @return A list of DbInfo
+   */
+  public List<DbInfo> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An DbInfo id.
-     * @return The same DbInfo.
-     */
-    public DbInfo find(java.lang.String id);
+  /**
+   * Find an entity.
+   *
+   * @param id An DbInfo id.
+   * @return The same DbInfo.
+   */
+  public DbInfo find(java.lang.String id);
 
-    /**
-     * Create an DbInfo.
-     *
-     * @param e the DbInfo.
-     * @return The same DbInfo.
-     */
-    public DbInfo create(DbInfo e);
+  /**
+   * Create an DbInfo.
+   *
+   * @param e the DbInfo.
+   * @return The same DbInfo.
+   */
+  public DbInfo create(DbInfo e);
 
-    /**
-     * Update the DbInfo.
-     *
-     * @param e the DbInfo.
-     * @return The same DbInfo.
-     */
-    public DbInfo update(DbInfo e);
+  /**
+   * Update the DbInfo.
+   *
+   * @param e the DbInfo.
+   * @return The same DbInfo.
+   */
+  public DbInfo update(DbInfo e);
 }

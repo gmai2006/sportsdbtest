@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.DocumentFixturesEvents;
 import java.util.List;
+import com.sportsdb.test.entity.DocumentFixturesEvents;
 
 public interface DocumentFixturesEventsDao {
-    /**
-     * Retrieve all records DocumentFixturesEvents.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of DocumentFixturesEvents
-     */
-    public List<DocumentFixturesEvents> select(int maxResult);
+  /**
+   * Retrieve all records DocumentFixturesEvents.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of DocumentFixturesEvents
+   */
+  public List<DocumentFixturesEvents> select(int maxResult);
 
-    /**
-     * Retrieve all records DocumentFixturesEvents.
-     *
-     * @return A list of DocumentFixturesEvents
-     */
-    public List<DocumentFixturesEvents> selectAll();
+  /**
+   * Retrieve all records DocumentFixturesEvents.
+   *
+   * @return A list of DocumentFixturesEvents
+   */
+  public List<DocumentFixturesEvents> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An DocumentFixturesEvents id.
-     * @return The same DocumentFixturesEvents.
-     */
-    public DocumentFixturesEvents find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An DocumentFixturesEvents id.
+   * @return The same DocumentFixturesEvents.
+   */
+  public DocumentFixturesEvents find(java.lang.Integer id);
 
-    /**
-     * Create an DocumentFixturesEvents.
-     *
-     * @param e the DocumentFixturesEvents.
-     * @return The same DocumentFixturesEvents.
-     */
-    public DocumentFixturesEvents create(DocumentFixturesEvents e);
+  /**
+   * Create an DocumentFixturesEvents.
+   *
+   * @param e the DocumentFixturesEvents.
+   * @return The same DocumentFixturesEvents.
+   */
+  public DocumentFixturesEvents create(DocumentFixturesEvents e);
 
-    /**
-     * Update the DocumentFixturesEvents.
-     *
-     * @param e the DocumentFixturesEvents.
-     * @return The same DocumentFixturesEvents.
-     */
-    public DocumentFixturesEvents update(DocumentFixturesEvents e);
+  /**
+   * Update the DocumentFixturesEvents.
+   *
+   * @param e the DocumentFixturesEvents.
+   * @return The same DocumentFixturesEvents.
+   */
+  public DocumentFixturesEvents update(DocumentFixturesEvents e);
 }

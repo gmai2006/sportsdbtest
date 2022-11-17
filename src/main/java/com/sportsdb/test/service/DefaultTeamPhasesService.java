@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.TeamPhasesDao;
-import com.sportsdb.test.entity.TeamPhases;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.TeamPhasesDao;
+import com.sportsdb.test.entity.TeamPhases;
 
 @Stateless
 @Named("DefaultTeamPhasesService")
 public class DefaultTeamPhasesService implements TeamPhasesService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final TeamPhasesDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final TeamPhasesDao dao;
 
-    @Inject
-    @Named("DefaultTeamPhasesDao")
-    public DefaultTeamPhasesService(final TeamPhasesDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultTeamPhasesDao")
+  public DefaultTeamPhasesService(final TeamPhasesDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public TeamPhases find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public TeamPhases find(java.lang.Integer id) {
 
-        final TeamPhases result = dao.find(id);
-        logger.info("find(TeamPhases) - exited - return value={} result ");
-        return result;
-    }
+    final TeamPhases result = dao.find(id);
+    logger.info("find(TeamPhases) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<TeamPhases> select(int maxResult) {
-        final List<TeamPhases> result = dao.select(maxResult);
-        logger.info("select(TeamPhases) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<TeamPhases> select(int maxResult) {
+    final List<TeamPhases> result = dao.select(maxResult);
+    logger.info("select(TeamPhases) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<TeamPhases> selectAll() {
-        final List<TeamPhases> results = dao.selectAll();
-        logger.info("selectAll(TeamPhases) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<TeamPhases> selectAll() {
+    final List<TeamPhases> results = dao.selectAll();
+    logger.info("selectAll(TeamPhases) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public TeamPhases create(TeamPhases bean) {
-        requireNonNull(bean);
-        logger.info("create(TeamPhases={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public TeamPhases create(TeamPhases bean) {
+    requireNonNull(bean);
+    logger.info("create(TeamPhases={}) - entered bean ");
 
-        final TeamPhases result = dao.create(bean);
+    final TeamPhases result = dao.create(bean);
 
-        logger.info("create(TeamPhases) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(TeamPhases) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public TeamPhases update(TeamPhases bean) {
-        requireNonNull(bean);
-        logger.info("update(TeamPhases={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public TeamPhases update(TeamPhases bean) {
+    requireNonNull(bean);
+    logger.info("update(TeamPhases={}) - entered bean ");
 
-        final TeamPhases result = dao.update(bean);
+    final TeamPhases result = dao.update(bean);
 
-        logger.info("update(TeamPhases) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(TeamPhases) - exited - return value={} result ");
+    return result;
+  }
 }

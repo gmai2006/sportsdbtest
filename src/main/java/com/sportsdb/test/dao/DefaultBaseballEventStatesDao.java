@@ -16,57 +16,60 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.BaseballEventStates;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.BaseballEventStates;
 
 @Stateless
 @Named("DefaultBaseballEventStatesDao")
 public class DefaultBaseballEventStatesDao implements BaseballEventStatesDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultBaseballEventStatesDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultBaseballEventStatesDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultBaseballEventStatesDao() {}
+  public DefaultBaseballEventStatesDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public BaseballEventStates find(java.lang.Integer id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(BaseballEventStates.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public BaseballEventStates find(java.lang.Integer id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(BaseballEventStates.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<BaseballEventStates> select(int max) {
-        return dao.select("select a from BaseballEventStates a", BaseballEventStates.class, max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<BaseballEventStates> select(int max) {
+    return dao.select("select a from BaseballEventStates a", BaseballEventStates.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<BaseballEventStates> selectAll() {
-        return dao.selectAll("select a from BaseballEventStates a", BaseballEventStates.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<BaseballEventStates> selectAll() {
+    return dao.selectAll("select a from BaseballEventStates a", BaseballEventStates.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BaseballEventStates create(BaseballEventStates e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public BaseballEventStates create(BaseballEventStates e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BaseballEventStates update(BaseballEventStates e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public BaseballEventStates update(BaseballEventStates e) {
+    return dao.update(e);
+  }
 }

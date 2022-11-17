@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.Stats;
 import java.util.List;
+import com.sportsdb.test.entity.Stats;
 
 public interface StatsService {
-    public Stats find(java.lang.Integer id);
+  public Stats find(java.lang.Integer id);
 
-    /**
-     * Select a list of Stats based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return Stats records.
-     */
-    public List<Stats> select(int maxResult);
+  /**
+   * Select a list of Stats based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return Stats records.
+   */
+  public List<Stats> select(int maxResult);
 
-    /**
-     * Select all Stats.
-     *
-     * @return all Stats records.
-     */
-    public List<Stats> selectAll();
+  /**
+   * Select all Stats.
+   *
+   * @return all Stats records.
+   */
+  public List<Stats> selectAll();
 
-    /**
-     * Create Stats.
-     *
-     * @param bean The Stats.
-     * @return The Stats.
-     */
-    public Stats create(Stats bean);
+  /**
+   * Create Stats.
+   *
+   * @param bean The Stats.
+   * @return The Stats.
+   */
+  public Stats create(Stats bean);
 
-    /**
-     * Update a Stats.
-     *
-     * @param bean - The Stats.
-     * @return Stats.
-     */
-    public Stats update(Stats bean);
+  /**
+   * Update a Stats.
+   *
+   * @param bean - The Stats.
+   * @return Stats.
+   */
+  public Stats update(Stats bean);
 }

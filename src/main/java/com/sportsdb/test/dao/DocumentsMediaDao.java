@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.DocumentsMedia;
 import java.util.List;
+import com.sportsdb.test.entity.DocumentsMedia;
 
 public interface DocumentsMediaDao {
-    /**
-     * Retrieve all records DocumentsMedia.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of DocumentsMedia
-     */
-    public List<DocumentsMedia> select(int maxResult);
+  /**
+   * Retrieve all records DocumentsMedia.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of DocumentsMedia
+   */
+  public List<DocumentsMedia> select(int maxResult);
 
-    /**
-     * Retrieve all records DocumentsMedia.
-     *
-     * @return A list of DocumentsMedia
-     */
-    public List<DocumentsMedia> selectAll();
+  /**
+   * Retrieve all records DocumentsMedia.
+   *
+   * @return A list of DocumentsMedia
+   */
+  public List<DocumentsMedia> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An DocumentsMedia id.
-     * @return The same DocumentsMedia.
-     */
-    public DocumentsMedia find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An DocumentsMedia id.
+   * @return The same DocumentsMedia.
+   */
+  public DocumentsMedia find(java.lang.Integer id);
 
-    /**
-     * Create an DocumentsMedia.
-     *
-     * @param e the DocumentsMedia.
-     * @return The same DocumentsMedia.
-     */
-    public DocumentsMedia create(DocumentsMedia e);
+  /**
+   * Create an DocumentsMedia.
+   *
+   * @param e the DocumentsMedia.
+   * @return The same DocumentsMedia.
+   */
+  public DocumentsMedia create(DocumentsMedia e);
 
-    /**
-     * Update the DocumentsMedia.
-     *
-     * @param e the DocumentsMedia.
-     * @return The same DocumentsMedia.
-     */
-    public DocumentsMedia update(DocumentsMedia e);
+  /**
+   * Update the DocumentsMedia.
+   *
+   * @param e the DocumentsMedia.
+   * @return The same DocumentsMedia.
+   */
+  public DocumentsMedia update(DocumentsMedia e);
 }

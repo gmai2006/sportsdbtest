@@ -16,60 +16,63 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.ParticipantsEvents;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.ParticipantsEvents;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("ParticipantsEventsHandler")
 public class ParticipantsEventsHandler extends DelimiterFileHandler<ParticipantsEvents> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public ParticipantsEventsHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public ParticipantsEventsHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected ParticipantsEvents parseLine(List<String> headers, List<String> tokens) {
+    ParticipantsEvents record = new ParticipantsEvents();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "participantType":
+          record.setParticipantType(tokens.get(i));
+          break;
+
+        case "participantId":
+          record.setParticipantId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "eventId":
+          record.setEventId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "alignment":
+          record.setAlignment(tokens.get(i));
+          break;
+
+        case "score":
+          record.setScore(tokens.get(i));
+          break;
+
+        case "eventOutcome":
+          record.setEventOutcome(tokens.get(i));
+          break;
+
+        case "rank":
+          record.setRank(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected ParticipantsEvents parseLine(List<String> headers, List<String> tokens) {
-        ParticipantsEvents record = new ParticipantsEvents();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "participantType":
-                    record.setParticipantType(tokens.get(i));
-                    break;
-
-                case "participantId":
-                    record.setParticipantId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "eventId":
-                    record.setEventId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "alignment":
-                    record.setAlignment(tokens.get(i));
-                    break;
-
-                case "score":
-                    record.setScore(tokens.get(i));
-                    break;
-
-                case "eventOutcome":
-                    record.setEventOutcome(tokens.get(i));
-                    break;
-
-                case "rank":
-                    record.setRank(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

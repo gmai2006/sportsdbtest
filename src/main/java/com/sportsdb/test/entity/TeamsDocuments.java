@@ -16,57 +16,57 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "teams_documents")
 public class TeamsDocuments implements Serializable {
-    private static final long serialVersionUID = 163445241935532340L;
+  private static final long serialVersionUID = 166867004257995284L;
 
-    /** Description: default_id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "default_id")
-    private java.lang.String defaultId;
+  /** Description: default_id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "default_id")
+  private java.lang.String defaultId;
 
-    /** Description: team_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "team_id")
-    private java.lang.Integer teamId;
-    /** Description: document_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "document_id")
-    private java.lang.Integer documentId;
+  /** Description: team_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "team_id")
+  private java.lang.Integer teamId;
+  /** Description: document_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "document_id")
+  private java.lang.Integer documentId;
 
-    public TeamsDocuments() {}
+  public TeamsDocuments() {}
 
-    public java.lang.String getDefaultId() {
-        return this.defaultId;
-    }
+  public java.lang.String getDefaultId() {
+    return this.defaultId;
+  }
 
-    public void setDefaultId(java.lang.String defaultId) {
-        this.defaultId = defaultId;
-    }
+  public void setDefaultId(java.lang.String defaultId) {
+    this.defaultId = defaultId;
+  }
 
-    public java.lang.Integer getTeamId() {
-        return this.teamId;
-    }
+  public java.lang.Integer getTeamId() {
+    return this.teamId;
+  }
 
-    public java.lang.Integer getDocumentId() {
-        return this.documentId;
-    }
+  public java.lang.Integer getDocumentId() {
+    return this.documentId;
+  }
 
-    public void setTeamId(java.lang.Integer teamId) {
-        this.teamId = teamId;
-    }
+  public void setTeamId(java.lang.Integer teamId) {
+    this.teamId = teamId;
+  }
 
-    public void setDocumentId(java.lang.Integer documentId) {
-        this.documentId = documentId;
-    }
+  public void setDocumentId(java.lang.Integer documentId) {
+    this.documentId = documentId;
+  }
 }

@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.AffiliationsMedia;
 import java.util.List;
+import com.sportsdb.test.entity.AffiliationsMedia;
 
 public interface AffiliationsMediaDao {
-    /**
-     * Retrieve all records AffiliationsMedia.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of AffiliationsMedia
-     */
-    public List<AffiliationsMedia> select(int maxResult);
+  /**
+   * Retrieve all records AffiliationsMedia.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of AffiliationsMedia
+   */
+  public List<AffiliationsMedia> select(int maxResult);
 
-    /**
-     * Retrieve all records AffiliationsMedia.
-     *
-     * @return A list of AffiliationsMedia
-     */
-    public List<AffiliationsMedia> selectAll();
+  /**
+   * Retrieve all records AffiliationsMedia.
+   *
+   * @return A list of AffiliationsMedia
+   */
+  public List<AffiliationsMedia> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An AffiliationsMedia id.
-     * @return The same AffiliationsMedia.
-     */
-    public AffiliationsMedia find(java.lang.String id);
+  /**
+   * Find an entity.
+   *
+   * @param id An AffiliationsMedia id.
+   * @return The same AffiliationsMedia.
+   */
+  public AffiliationsMedia find(java.lang.String id);
 
-    /**
-     * Create an AffiliationsMedia.
-     *
-     * @param e the AffiliationsMedia.
-     * @return The same AffiliationsMedia.
-     */
-    public AffiliationsMedia create(AffiliationsMedia e);
+  /**
+   * Create an AffiliationsMedia.
+   *
+   * @param e the AffiliationsMedia.
+   * @return The same AffiliationsMedia.
+   */
+  public AffiliationsMedia create(AffiliationsMedia e);
 
-    /**
-     * Update the AffiliationsMedia.
-     *
-     * @param e the AffiliationsMedia.
-     * @return The same AffiliationsMedia.
-     */
-    public AffiliationsMedia update(AffiliationsMedia e);
+  /**
+   * Update the AffiliationsMedia.
+   *
+   * @param e the AffiliationsMedia.
+   * @return The same AffiliationsMedia.
+   */
+  public AffiliationsMedia update(AffiliationsMedia e);
 }

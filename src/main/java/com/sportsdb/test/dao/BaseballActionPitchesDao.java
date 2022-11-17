@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.BaseballActionPitches;
 import java.util.List;
+import com.sportsdb.test.entity.BaseballActionPitches;
 
 public interface BaseballActionPitchesDao {
-    /**
-     * Retrieve all records BaseballActionPitches.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of BaseballActionPitches
-     */
-    public List<BaseballActionPitches> select(int maxResult);
+  /**
+   * Retrieve all records BaseballActionPitches.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of BaseballActionPitches
+   */
+  public List<BaseballActionPitches> select(int maxResult);
 
-    /**
-     * Retrieve all records BaseballActionPitches.
-     *
-     * @return A list of BaseballActionPitches
-     */
-    public List<BaseballActionPitches> selectAll();
+  /**
+   * Retrieve all records BaseballActionPitches.
+   *
+   * @return A list of BaseballActionPitches
+   */
+  public List<BaseballActionPitches> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An BaseballActionPitches id.
-     * @return The same BaseballActionPitches.
-     */
-    public BaseballActionPitches find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An BaseballActionPitches id.
+   * @return The same BaseballActionPitches.
+   */
+  public BaseballActionPitches find(java.lang.Integer id);
 
-    /**
-     * Create an BaseballActionPitches.
-     *
-     * @param e the BaseballActionPitches.
-     * @return The same BaseballActionPitches.
-     */
-    public BaseballActionPitches create(BaseballActionPitches e);
+  /**
+   * Create an BaseballActionPitches.
+   *
+   * @param e the BaseballActionPitches.
+   * @return The same BaseballActionPitches.
+   */
+  public BaseballActionPitches create(BaseballActionPitches e);
 
-    /**
-     * Update the BaseballActionPitches.
-     *
-     * @param e the BaseballActionPitches.
-     * @return The same BaseballActionPitches.
-     */
-    public BaseballActionPitches update(BaseballActionPitches e);
+  /**
+   * Update the BaseballActionPitches.
+   *
+   * @param e the BaseballActionPitches.
+   * @return The same BaseballActionPitches.
+   */
+  public BaseballActionPitches update(BaseballActionPitches e);
 }

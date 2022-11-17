@@ -16,61 +16,64 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.BaseballActionContactDetails;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.BaseballActionContactDetails;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("BaseballActionContactDetailsHandler")
 public class BaseballActionContactDetailsHandler
-        extends DelimiterFileHandler<BaseballActionContactDetails> {
+    extends DelimiterFileHandler<BaseballActionContactDetails> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public BaseballActionContactDetailsHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public BaseballActionContactDetailsHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected BaseballActionContactDetails parseLine(List<String> headers, List<String> tokens) {
+    BaseballActionContactDetails record = new BaseballActionContactDetails();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "baseballActionPitchId":
+          record.setBaseballActionPitchId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "location":
+          record.setLocation(tokens.get(i));
+          break;
+
+        case "strength":
+          record.setStrength(tokens.get(i));
+          break;
+
+        case "velocity":
+          record.setVelocity(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "comment":
+          record.setComment(tokens.get(i));
+          break;
+
+        case "trajectoryCoordinates":
+          record.setTrajectoryCoordinates(tokens.get(i));
+          break;
+
+        case "trajectoryFormula":
+          record.setTrajectoryFormula(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected BaseballActionContactDetails parseLine(List<String> headers, List<String> tokens) {
-        BaseballActionContactDetails record = new BaseballActionContactDetails();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "baseballActionPitchId":
-                    record.setBaseballActionPitchId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "location":
-                    record.setLocation(tokens.get(i));
-                    break;
-
-                case "strength":
-                    record.setStrength(tokens.get(i));
-                    break;
-
-                case "velocity":
-                    record.setVelocity(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "comment":
-                    record.setComment(tokens.get(i));
-                    break;
-
-                case "trajectoryCoordinates":
-                    record.setTrajectoryCoordinates(tokens.get(i));
-                    break;
-
-                case "trajectoryFormula":
-                    record.setTrajectoryFormula(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

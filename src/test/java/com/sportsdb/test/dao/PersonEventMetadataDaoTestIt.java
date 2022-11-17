@@ -16,13 +16,13 @@
  */
 package com.sportsdb.test.dao;
 
+import java.nio.charset.Charset;
+import java.util.Arrays;
+import java.io.IOException;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.sportsdb.test.entity.PersonEventMetadata;
-import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
-import com.sportsdb.test.utils.FileUtils;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.Arrays;
@@ -32,71 +32,70 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import com.sportsdb.test.entity.PersonEventMetadata;
+import com.sportsdb.test.utils.FileUtils;
+import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
 
 public class PersonEventMetadataDaoTestIt {
-    static final String inputFile = "PersonEventMetadata.json";
-    static PersonEventMetadataDao dao;
-    static Gson gson =
-            new GsonBuilder()
-                    .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
-                    .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
-                    .create();
-    private PersonEventMetadata[] records;
+  static final String inputFile = "PersonEventMetadata.json";
+  static PersonEventMetadataDao dao;
+  static Gson gson =
+      new GsonBuilder()
+          .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
+          .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
+          .create();
+  private PersonEventMetadata[] records;
 
-    /** Run when the class is loaded. */
-    @BeforeClass
-    public static void beforeClass() {
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("testpersistence");
-        JpaDao jpa = new StandaloneJpaDao(factory.createEntityManager());
-        dao = new DefaultPersonEventMetadataDao(jpa);
-    }
+  /** Run when the class is loaded. */
+  @BeforeClass
+  public static void beforeClass() {
+    EntityManagerFactory factory = Persistence.createEntityManagerFactory("testpersistence");
+    JpaDao jpa = new StandaloneJpaDao(factory.createEntityManager());
+    dao = new DefaultPersonEventMetadataDao(jpa);
+  }
 
-    /** Run before the test. */
-    @Before
-    public void before() {
-        try {
-            String json =
-                    FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
-            records = gson.fromJson(json, PersonEventMetadata[].class);
-            json = null;
-            Arrays.stream(records).skip(1).forEach(o -> dao.create(o));
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+  /** Run before the test. */
+  @Before
+  public void before() {
+    try {
+      String json = FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
+      records = gson.fromJson(json, PersonEventMetadata[].class);
+      json = null;
+      Arrays.stream(records).skip(1).forEach(o -> dao.create(o));
+    } catch (IOException ex) {
+      ex.printStackTrace();
     }
+  }
 
-    @After
-    public void after() {
-        records = null;
-    }
+  @After
+  public void after() {
+    records = null;
+  }
 
-    @Test
-    public void testSelect() {
-        PersonEventMetadata testResult = dao.find(records[1].getId());
-        assertNotNull("expect result", testResult);
-        org.junit.Assert.assertTrue(
-                "expect equals personId ",
-                this.records[1].getPersonId() == testResult.getPersonId());
-        org.junit.Assert.assertTrue(
-                "expect equals eventId ", this.records[1].getEventId() == testResult.getEventId());
-        org.junit.Assert.assertEquals(
-                "expect equals status ", this.records[1].getStatus(), testResult.getStatus());
-        org.junit.Assert.assertEquals(
-                "expect equals health ", this.records[1].getHealth(), testResult.getHealth());
-        org.junit.Assert.assertEquals(
-                "expect equals weight ", this.records[1].getWeight(), testResult.getWeight());
-        org.junit.Assert.assertTrue(
-                "expect equals roleId ", this.records[1].getRoleId() == testResult.getRoleId());
-        org.junit.Assert.assertTrue(
-                "expect equals positionId ",
-                this.records[1].getPositionId() == testResult.getPositionId());
-        org.junit.Assert.assertTrue(
-                "expect equals teamId ", this.records[1].getTeamId() == testResult.getTeamId());
-        org.junit.Assert.assertTrue(
-                "expect equals lineupSlot ",
-                this.records[1].getLineupSlot() == testResult.getLineupSlot());
-        org.junit.Assert.assertTrue(
-                "expect equals lineupSlotSequence ",
-                this.records[1].getLineupSlotSequence() == testResult.getLineupSlotSequence());
-    }
+  @Test
+  public void testSelect() {
+    PersonEventMetadata testResult = dao.find(records[1].getId());
+    assertNotNull("expect result", testResult);
+    org.junit.Assert.assertTrue(
+        "expect equals personId ", this.records[1].getPersonId() == testResult.getPersonId());
+    org.junit.Assert.assertTrue(
+        "expect equals eventId ", this.records[1].getEventId() == testResult.getEventId());
+    org.junit.Assert.assertEquals(
+        "expect equals status ", this.records[1].getStatus(), testResult.getStatus());
+    org.junit.Assert.assertEquals(
+        "expect equals health ", this.records[1].getHealth(), testResult.getHealth());
+    org.junit.Assert.assertEquals(
+        "expect equals weight ", this.records[1].getWeight(), testResult.getWeight());
+    org.junit.Assert.assertTrue(
+        "expect equals roleId ", this.records[1].getRoleId() == testResult.getRoleId());
+    org.junit.Assert.assertTrue(
+        "expect equals positionId ", this.records[1].getPositionId() == testResult.getPositionId());
+    org.junit.Assert.assertTrue(
+        "expect equals teamId ", this.records[1].getTeamId() == testResult.getTeamId());
+    org.junit.Assert.assertTrue(
+        "expect equals lineupSlot ", this.records[1].getLineupSlot() == testResult.getLineupSlot());
+    org.junit.Assert.assertTrue(
+        "expect equals lineupSlotSequence ",
+        this.records[1].getLineupSlotSequence() == testResult.getLineupSlotSequence());
+  }
 }

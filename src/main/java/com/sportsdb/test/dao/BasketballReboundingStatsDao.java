@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.BasketballReboundingStats;
 import java.util.List;
+import com.sportsdb.test.entity.BasketballReboundingStats;
 
 public interface BasketballReboundingStatsDao {
-    /**
-     * Retrieve all records BasketballReboundingStats.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of BasketballReboundingStats
-     */
-    public List<BasketballReboundingStats> select(int maxResult);
+  /**
+   * Retrieve all records BasketballReboundingStats.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of BasketballReboundingStats
+   */
+  public List<BasketballReboundingStats> select(int maxResult);
 
-    /**
-     * Retrieve all records BasketballReboundingStats.
-     *
-     * @return A list of BasketballReboundingStats
-     */
-    public List<BasketballReboundingStats> selectAll();
+  /**
+   * Retrieve all records BasketballReboundingStats.
+   *
+   * @return A list of BasketballReboundingStats
+   */
+  public List<BasketballReboundingStats> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An BasketballReboundingStats id.
-     * @return The same BasketballReboundingStats.
-     */
-    public BasketballReboundingStats find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An BasketballReboundingStats id.
+   * @return The same BasketballReboundingStats.
+   */
+  public BasketballReboundingStats find(java.lang.Integer id);
 
-    /**
-     * Create an BasketballReboundingStats.
-     *
-     * @param e the BasketballReboundingStats.
-     * @return The same BasketballReboundingStats.
-     */
-    public BasketballReboundingStats create(BasketballReboundingStats e);
+  /**
+   * Create an BasketballReboundingStats.
+   *
+   * @param e the BasketballReboundingStats.
+   * @return The same BasketballReboundingStats.
+   */
+  public BasketballReboundingStats create(BasketballReboundingStats e);
 
-    /**
-     * Update the BasketballReboundingStats.
-     *
-     * @param e the BasketballReboundingStats.
-     * @return The same BasketballReboundingStats.
-     */
-    public BasketballReboundingStats update(BasketballReboundingStats e);
+  /**
+   * Update the BasketballReboundingStats.
+   *
+   * @param e the BasketballReboundingStats.
+   * @return The same BasketballReboundingStats.
+   */
+  public BasketballReboundingStats update(BasketballReboundingStats e);
 }

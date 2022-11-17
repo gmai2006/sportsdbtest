@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.MediaKeywords;
 import java.util.List;
+import com.sportsdb.test.entity.MediaKeywords;
 
 public interface MediaKeywordsService {
-    public MediaKeywords find(java.lang.Integer id);
+  public MediaKeywords find(java.lang.Integer id);
 
-    /**
-     * Select a list of MediaKeywords based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return MediaKeywords records.
-     */
-    public List<MediaKeywords> select(int maxResult);
+  /**
+   * Select a list of MediaKeywords based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return MediaKeywords records.
+   */
+  public List<MediaKeywords> select(int maxResult);
 
-    /**
-     * Select all MediaKeywords.
-     *
-     * @return all MediaKeywords records.
-     */
-    public List<MediaKeywords> selectAll();
+  /**
+   * Select all MediaKeywords.
+   *
+   * @return all MediaKeywords records.
+   */
+  public List<MediaKeywords> selectAll();
 
-    /**
-     * Create MediaKeywords.
-     *
-     * @param bean The MediaKeywords.
-     * @return The MediaKeywords.
-     */
-    public MediaKeywords create(MediaKeywords bean);
+  /**
+   * Create MediaKeywords.
+   *
+   * @param bean The MediaKeywords.
+   * @return The MediaKeywords.
+   */
+  public MediaKeywords create(MediaKeywords bean);
 
-    /**
-     * Update a MediaKeywords.
-     *
-     * @param bean - The MediaKeywords.
-     * @return MediaKeywords.
-     */
-    public MediaKeywords update(MediaKeywords bean);
+  /**
+   * Update a MediaKeywords.
+   *
+   * @param bean - The MediaKeywords.
+   * @return MediaKeywords.
+   */
+  public MediaKeywords update(MediaKeywords bean);
 }

@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.DisplayNames;
 import java.util.List;
+import com.sportsdb.test.entity.DisplayNames;
 
 public interface DisplayNamesDao {
-    /**
-     * Retrieve all records DisplayNames.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of DisplayNames
-     */
-    public List<DisplayNames> select(int maxResult);
+  /**
+   * Retrieve all records DisplayNames.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of DisplayNames
+   */
+  public List<DisplayNames> select(int maxResult);
 
-    /**
-     * Retrieve all records DisplayNames.
-     *
-     * @return A list of DisplayNames
-     */
-    public List<DisplayNames> selectAll();
+  /**
+   * Retrieve all records DisplayNames.
+   *
+   * @return A list of DisplayNames
+   */
+  public List<DisplayNames> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An DisplayNames id.
-     * @return The same DisplayNames.
-     */
-    public DisplayNames find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An DisplayNames id.
+   * @return The same DisplayNames.
+   */
+  public DisplayNames find(java.lang.Integer id);
 
-    /**
-     * Create an DisplayNames.
-     *
-     * @param e the DisplayNames.
-     * @return The same DisplayNames.
-     */
-    public DisplayNames create(DisplayNames e);
+  /**
+   * Create an DisplayNames.
+   *
+   * @param e the DisplayNames.
+   * @return The same DisplayNames.
+   */
+  public DisplayNames create(DisplayNames e);
 
-    /**
-     * Update the DisplayNames.
-     *
-     * @param e the DisplayNames.
-     * @return The same DisplayNames.
-     */
-    public DisplayNames update(DisplayNames e);
+  /**
+   * Update the DisplayNames.
+   *
+   * @param e the DisplayNames.
+   * @return The same DisplayNames.
+   */
+  public DisplayNames update(DisplayNames e);
 }

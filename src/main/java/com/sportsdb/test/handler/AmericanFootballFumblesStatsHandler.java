@@ -16,87 +16,90 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.AmericanFootballFumblesStats;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.AmericanFootballFumblesStats;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("AmericanFootballFumblesStatsHandler")
 public class AmericanFootballFumblesStatsHandler
-        extends DelimiterFileHandler<AmericanFootballFumblesStats> {
+    extends DelimiterFileHandler<AmericanFootballFumblesStats> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public AmericanFootballFumblesStatsHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public AmericanFootballFumblesStatsHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected AmericanFootballFumblesStats parseLine(List<String> headers, List<String> tokens) {
+    AmericanFootballFumblesStats record = new AmericanFootballFumblesStats();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "fumblesCommitted":
+          record.setFumblesCommitted(tokens.get(i));
+          break;
+
+        case "fumblesForced":
+          record.setFumblesForced(tokens.get(i));
+          break;
+
+        case "fumblesRecovered":
+          record.setFumblesRecovered(tokens.get(i));
+          break;
+
+        case "fumblesLost":
+          record.setFumblesLost(tokens.get(i));
+          break;
+
+        case "fumblesYardsGained":
+          record.setFumblesYardsGained(tokens.get(i));
+          break;
+
+        case "fumblesOwnCommitted":
+          record.setFumblesOwnCommitted(tokens.get(i));
+          break;
+
+        case "fumblesOwnRecovered":
+          record.setFumblesOwnRecovered(tokens.get(i));
+          break;
+
+        case "fumblesOwnLost":
+          record.setFumblesOwnLost(tokens.get(i));
+          break;
+
+        case "fumblesOwnYardsGained":
+          record.setFumblesOwnYardsGained(tokens.get(i));
+          break;
+
+        case "fumblesOpposingCommitted":
+          record.setFumblesOpposingCommitted(tokens.get(i));
+          break;
+
+        case "fumblesOpposingRecovered":
+          record.setFumblesOpposingRecovered(tokens.get(i));
+          break;
+
+        case "fumblesOpposingLost":
+          record.setFumblesOpposingLost(tokens.get(i));
+          break;
+
+        case "fumblesOpposingYardsGained":
+          record.setFumblesOpposingYardsGained(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected AmericanFootballFumblesStats parseLine(List<String> headers, List<String> tokens) {
-        AmericanFootballFumblesStats record = new AmericanFootballFumblesStats();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "fumblesCommitted":
-                    record.setFumblesCommitted(tokens.get(i));
-                    break;
-
-                case "fumblesForced":
-                    record.setFumblesForced(tokens.get(i));
-                    break;
-
-                case "fumblesRecovered":
-                    record.setFumblesRecovered(tokens.get(i));
-                    break;
-
-                case "fumblesLost":
-                    record.setFumblesLost(tokens.get(i));
-                    break;
-
-                case "fumblesYardsGained":
-                    record.setFumblesYardsGained(tokens.get(i));
-                    break;
-
-                case "fumblesOwnCommitted":
-                    record.setFumblesOwnCommitted(tokens.get(i));
-                    break;
-
-                case "fumblesOwnRecovered":
-                    record.setFumblesOwnRecovered(tokens.get(i));
-                    break;
-
-                case "fumblesOwnLost":
-                    record.setFumblesOwnLost(tokens.get(i));
-                    break;
-
-                case "fumblesOwnYardsGained":
-                    record.setFumblesOwnYardsGained(tokens.get(i));
-                    break;
-
-                case "fumblesOpposingCommitted":
-                    record.setFumblesOpposingCommitted(tokens.get(i));
-                    break;
-
-                case "fumblesOpposingRecovered":
-                    record.setFumblesOpposingRecovered(tokens.get(i));
-                    break;
-
-                case "fumblesOpposingLost":
-                    record.setFumblesOpposingLost(tokens.get(i));
-                    break;
-
-                case "fumblesOpposingYardsGained":
-                    record.setFumblesOpposingYardsGained(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

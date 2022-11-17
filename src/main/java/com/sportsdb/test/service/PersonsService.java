@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.Persons;
 import java.util.List;
+import com.sportsdb.test.entity.Persons;
 
 public interface PersonsService {
-    public Persons find(java.lang.Integer id);
+  public Persons find(java.lang.Integer id);
 
-    /**
-     * Select a list of Persons based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return Persons records.
-     */
-    public List<Persons> select(int maxResult);
+  /**
+   * Select a list of Persons based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return Persons records.
+   */
+  public List<Persons> select(int maxResult);
 
-    /**
-     * Select all Persons.
-     *
-     * @return all Persons records.
-     */
-    public List<Persons> selectAll();
+  /**
+   * Select all Persons.
+   *
+   * @return all Persons records.
+   */
+  public List<Persons> selectAll();
 
-    /**
-     * Create Persons.
-     *
-     * @param bean The Persons.
-     * @return The Persons.
-     */
-    public Persons create(Persons bean);
+  /**
+   * Create Persons.
+   *
+   * @param bean The Persons.
+   * @return The Persons.
+   */
+  public Persons create(Persons bean);
 
-    /**
-     * Update a Persons.
-     *
-     * @param bean - The Persons.
-     * @return Persons.
-     */
-    public Persons update(Persons bean);
+  /**
+   * Update a Persons.
+   *
+   * @param bean - The Persons.
+   * @return Persons.
+   */
+  public Persons update(Persons bean);
 }

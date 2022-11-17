@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.BaseballEventStates;
 import java.util.List;
+import com.sportsdb.test.entity.BaseballEventStates;
 
 public interface BaseballEventStatesDao {
-    /**
-     * Retrieve all records BaseballEventStates.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of BaseballEventStates
-     */
-    public List<BaseballEventStates> select(int maxResult);
+  /**
+   * Retrieve all records BaseballEventStates.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of BaseballEventStates
+   */
+  public List<BaseballEventStates> select(int maxResult);
 
-    /**
-     * Retrieve all records BaseballEventStates.
-     *
-     * @return A list of BaseballEventStates
-     */
-    public List<BaseballEventStates> selectAll();
+  /**
+   * Retrieve all records BaseballEventStates.
+   *
+   * @return A list of BaseballEventStates
+   */
+  public List<BaseballEventStates> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An BaseballEventStates id.
-     * @return The same BaseballEventStates.
-     */
-    public BaseballEventStates find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An BaseballEventStates id.
+   * @return The same BaseballEventStates.
+   */
+  public BaseballEventStates find(java.lang.Integer id);
 
-    /**
-     * Create an BaseballEventStates.
-     *
-     * @param e the BaseballEventStates.
-     * @return The same BaseballEventStates.
-     */
-    public BaseballEventStates create(BaseballEventStates e);
+  /**
+   * Create an BaseballEventStates.
+   *
+   * @param e the BaseballEventStates.
+   * @return The same BaseballEventStates.
+   */
+  public BaseballEventStates create(BaseballEventStates e);
 
-    /**
-     * Update the BaseballEventStates.
-     *
-     * @param e the BaseballEventStates.
-     * @return The same BaseballEventStates.
-     */
-    public BaseballEventStates update(BaseballEventStates e);
+  /**
+   * Update the BaseballEventStates.
+   *
+   * @param e the BaseballEventStates.
+   * @return The same BaseballEventStates.
+   */
+  public BaseballEventStates update(BaseballEventStates e);
 }

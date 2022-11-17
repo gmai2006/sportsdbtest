@@ -16,41 +16,41 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.BasketballReboundingStats;
 import java.util.List;
+import com.sportsdb.test.entity.BasketballReboundingStats;
 
 public interface BasketballReboundingStatsService {
-    public BasketballReboundingStats find(java.lang.Integer id);
+  public BasketballReboundingStats find(java.lang.Integer id);
 
-    /**
-     * Select a list of BasketballReboundingStats based on a given maximum number of returning
-     * records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return BasketballReboundingStats records.
-     */
-    public List<BasketballReboundingStats> select(int maxResult);
+  /**
+   * Select a list of BasketballReboundingStats based on a given maximum number of returning
+   * records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return BasketballReboundingStats records.
+   */
+  public List<BasketballReboundingStats> select(int maxResult);
 
-    /**
-     * Select all BasketballReboundingStats.
-     *
-     * @return all BasketballReboundingStats records.
-     */
-    public List<BasketballReboundingStats> selectAll();
+  /**
+   * Select all BasketballReboundingStats.
+   *
+   * @return all BasketballReboundingStats records.
+   */
+  public List<BasketballReboundingStats> selectAll();
 
-    /**
-     * Create BasketballReboundingStats.
-     *
-     * @param bean The BasketballReboundingStats.
-     * @return The BasketballReboundingStats.
-     */
-    public BasketballReboundingStats create(BasketballReboundingStats bean);
+  /**
+   * Create BasketballReboundingStats.
+   *
+   * @param bean The BasketballReboundingStats.
+   * @return The BasketballReboundingStats.
+   */
+  public BasketballReboundingStats create(BasketballReboundingStats bean);
 
-    /**
-     * Update a BasketballReboundingStats.
-     *
-     * @param bean - The BasketballReboundingStats.
-     * @return BasketballReboundingStats.
-     */
-    public BasketballReboundingStats update(BasketballReboundingStats bean);
+  /**
+   * Update a BasketballReboundingStats.
+   *
+   * @param bean - The BasketballReboundingStats.
+   * @return BasketballReboundingStats.
+   */
+  public BasketballReboundingStats update(BasketballReboundingStats bean);
 }

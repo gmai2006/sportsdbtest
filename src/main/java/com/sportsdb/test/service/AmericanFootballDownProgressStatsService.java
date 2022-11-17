@@ -16,41 +16,41 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.AmericanFootballDownProgressStats;
 import java.util.List;
+import com.sportsdb.test.entity.AmericanFootballDownProgressStats;
 
 public interface AmericanFootballDownProgressStatsService {
-    public AmericanFootballDownProgressStats find(java.lang.Integer id);
+  public AmericanFootballDownProgressStats find(java.lang.Integer id);
 
-    /**
-     * Select a list of AmericanFootballDownProgressStats based on a given maximum number of
-     * returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return AmericanFootballDownProgressStats records.
-     */
-    public List<AmericanFootballDownProgressStats> select(int maxResult);
+  /**
+   * Select a list of AmericanFootballDownProgressStats based on a given maximum number of returning
+   * records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return AmericanFootballDownProgressStats records.
+   */
+  public List<AmericanFootballDownProgressStats> select(int maxResult);
 
-    /**
-     * Select all AmericanFootballDownProgressStats.
-     *
-     * @return all AmericanFootballDownProgressStats records.
-     */
-    public List<AmericanFootballDownProgressStats> selectAll();
+  /**
+   * Select all AmericanFootballDownProgressStats.
+   *
+   * @return all AmericanFootballDownProgressStats records.
+   */
+  public List<AmericanFootballDownProgressStats> selectAll();
 
-    /**
-     * Create AmericanFootballDownProgressStats.
-     *
-     * @param bean The AmericanFootballDownProgressStats.
-     * @return The AmericanFootballDownProgressStats.
-     */
-    public AmericanFootballDownProgressStats create(AmericanFootballDownProgressStats bean);
+  /**
+   * Create AmericanFootballDownProgressStats.
+   *
+   * @param bean The AmericanFootballDownProgressStats.
+   * @return The AmericanFootballDownProgressStats.
+   */
+  public AmericanFootballDownProgressStats create(AmericanFootballDownProgressStats bean);
 
-    /**
-     * Update a AmericanFootballDownProgressStats.
-     *
-     * @param bean - The AmericanFootballDownProgressStats.
-     * @return AmericanFootballDownProgressStats.
-     */
-    public AmericanFootballDownProgressStats update(AmericanFootballDownProgressStats bean);
+  /**
+   * Update a AmericanFootballDownProgressStats.
+   *
+   * @param bean - The AmericanFootballDownProgressStats.
+   * @return AmericanFootballDownProgressStats.
+   */
+  public AmericanFootballDownProgressStats update(AmericanFootballDownProgressStats bean);
 }

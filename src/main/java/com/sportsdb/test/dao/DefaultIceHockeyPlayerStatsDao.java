@@ -16,57 +16,60 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.IceHockeyPlayerStats;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.IceHockeyPlayerStats;
 
 @Stateless
 @Named("DefaultIceHockeyPlayerStatsDao")
 public class DefaultIceHockeyPlayerStatsDao implements IceHockeyPlayerStatsDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultIceHockeyPlayerStatsDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultIceHockeyPlayerStatsDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultIceHockeyPlayerStatsDao() {}
+  public DefaultIceHockeyPlayerStatsDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public IceHockeyPlayerStats find(java.lang.Integer id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(IceHockeyPlayerStats.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public IceHockeyPlayerStats find(java.lang.Integer id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(IceHockeyPlayerStats.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<IceHockeyPlayerStats> select(int max) {
-        return dao.select("select a from IceHockeyPlayerStats a", IceHockeyPlayerStats.class, max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<IceHockeyPlayerStats> select(int max) {
+    return dao.select("select a from IceHockeyPlayerStats a", IceHockeyPlayerStats.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<IceHockeyPlayerStats> selectAll() {
-        return dao.selectAll("select a from IceHockeyPlayerStats a", IceHockeyPlayerStats.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<IceHockeyPlayerStats> selectAll() {
+    return dao.selectAll("select a from IceHockeyPlayerStats a", IceHockeyPlayerStats.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public IceHockeyPlayerStats create(IceHockeyPlayerStats e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public IceHockeyPlayerStats create(IceHockeyPlayerStats e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public IceHockeyPlayerStats update(IceHockeyPlayerStats e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public IceHockeyPlayerStats update(IceHockeyPlayerStats e) {
+    return dao.update(e);
+  }
 }

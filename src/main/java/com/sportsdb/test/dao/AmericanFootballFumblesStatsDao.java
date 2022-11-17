@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.AmericanFootballFumblesStats;
 import java.util.List;
+import com.sportsdb.test.entity.AmericanFootballFumblesStats;
 
 public interface AmericanFootballFumblesStatsDao {
-    /**
-     * Retrieve all records AmericanFootballFumblesStats.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of AmericanFootballFumblesStats
-     */
-    public List<AmericanFootballFumblesStats> select(int maxResult);
+  /**
+   * Retrieve all records AmericanFootballFumblesStats.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of AmericanFootballFumblesStats
+   */
+  public List<AmericanFootballFumblesStats> select(int maxResult);
 
-    /**
-     * Retrieve all records AmericanFootballFumblesStats.
-     *
-     * @return A list of AmericanFootballFumblesStats
-     */
-    public List<AmericanFootballFumblesStats> selectAll();
+  /**
+   * Retrieve all records AmericanFootballFumblesStats.
+   *
+   * @return A list of AmericanFootballFumblesStats
+   */
+  public List<AmericanFootballFumblesStats> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An AmericanFootballFumblesStats id.
-     * @return The same AmericanFootballFumblesStats.
-     */
-    public AmericanFootballFumblesStats find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An AmericanFootballFumblesStats id.
+   * @return The same AmericanFootballFumblesStats.
+   */
+  public AmericanFootballFumblesStats find(java.lang.Integer id);
 
-    /**
-     * Create an AmericanFootballFumblesStats.
-     *
-     * @param e the AmericanFootballFumblesStats.
-     * @return The same AmericanFootballFumblesStats.
-     */
-    public AmericanFootballFumblesStats create(AmericanFootballFumblesStats e);
+  /**
+   * Create an AmericanFootballFumblesStats.
+   *
+   * @param e the AmericanFootballFumblesStats.
+   * @return The same AmericanFootballFumblesStats.
+   */
+  public AmericanFootballFumblesStats create(AmericanFootballFumblesStats e);
 
-    /**
-     * Update the AmericanFootballFumblesStats.
-     *
-     * @param e the AmericanFootballFumblesStats.
-     * @return The same AmericanFootballFumblesStats.
-     */
-    public AmericanFootballFumblesStats update(AmericanFootballFumblesStats e);
+  /**
+   * Update the AmericanFootballFumblesStats.
+   *
+   * @param e the AmericanFootballFumblesStats.
+   * @return The same AmericanFootballFumblesStats.
+   */
+  public AmericanFootballFumblesStats update(AmericanFootballFumblesStats e);
 }

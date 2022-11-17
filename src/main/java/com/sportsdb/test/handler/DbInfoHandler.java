@@ -16,39 +16,42 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.DbInfo;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.DbInfo;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("DbInfoHandler")
 public class DbInfoHandler extends DelimiterFileHandler<DbInfo> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DbInfoHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public DbInfoHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected DbInfo parseLine(List<String> headers, List<String> tokens) {
+    DbInfo record = new DbInfo();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "version":
+          record.setVersion(tokens.get(i));
+          break;
+
+        case "defaultId":
+          record.setDefaultId(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected DbInfo parseLine(List<String> headers, List<String> tokens) {
-        DbInfo record = new DbInfo();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "version":
-                    record.setVersion(tokens.get(i));
-                    break;
-
-                case "defaultId":
-                    record.setDefaultId(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

@@ -17,14 +17,14 @@
 package com.sportsdb.test.rest;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.entity.WageringTotalScoreLines;
-import com.sportsdb.test.service.WageringTotalScoreLinesService;
 import java.util.List;
+
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -32,96 +32,95 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import com.sportsdb.test.service.WageringTotalScoreLinesService;
+import com.sportsdb.test.entity.WageringTotalScoreLines;
+
 @Path("/wageringtotalscorelines")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces({MediaType.APPLICATION_JSON})
 public class WageringTotalScoreLinesResource {
 
-    @Inject private WageringTotalScoreLinesService service;
+  @Inject private WageringTotalScoreLinesService service;
 
-    public WageringTotalScoreLinesResource() {}
+  public WageringTotalScoreLinesResource() {}
 
-    public WageringTotalScoreLinesResource(final WageringTotalScoreLinesService service) {
-        requireNonNull(service);
-        this.service = service;
+  public WageringTotalScoreLinesResource(final WageringTotalScoreLinesService service) {
+    requireNonNull(service);
+    this.service = service;
+  }
+
+  /**
+   * hello.
+   *
+   * @return a hello.
+   */
+  @GET
+  @Path("")
+  public Response hello() {
+    return Response.status(Response.Status.OK).entity(this.getClass().getName()).build();
+  }
+
+  /**
+   * InIdempotent method. Update existing WageringTotalScoreLines.
+   *
+   * @param obj - instance of WageringTotalScoreLines.
+   * @return WageringTotalScoreLines.
+   */
+  @Consumes(MediaType.APPLICATION_JSON)
+  @POST
+  public WageringTotalScoreLines update(WageringTotalScoreLines obj) {
+    return this.service.update(obj);
+  }
+
+  /**
+   * Delete existing WageringTotalScoreLines.
+   *
+   * @param id instance of WageringTotalScoreLines.
+   * @return WageringTotalScoreLines.
+   */
+
+  /**
+   * Select all WageringTotalScoreLines with limit of returned records.
+   *
+   * @param max - number of records.
+   * @return a list WageringTotalScoreLines.
+   */
+  @GET
+  @Path("select/{max}")
+  public Response findWithLimit(@PathParam("max") String max) {
+    Integer input = null;
+    try {
+      input = Integer.valueOf(max);
+    } catch (NumberFormatException ex) {
+      throw new WebApplicationException(Response.Status.BAD_REQUEST);
     }
+    List<WageringTotalScoreLines> result = service.select(input);
 
-    /**
-     * hello.
-     *
-     * @return a hello.
-     */
-    @GET
-    @Path("")
-    public Response hello() {
-        return Response.status(Response.Status.OK).entity(this.getClass().getName()).build();
-    }
+    return Response.status(Response.Status.OK)
+        .header("Access-Control-Allow-Origin", "*")
+        .header("Access-Control-Allow-Credentials", "true")
+        .header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
+        .header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
+        .entity(result)
+        .build();
+  }
 
-    /**
-     * InIdempotent method. Update existing WageringTotalScoreLines.
-     *
-     * @param obj - instance of WageringTotalScoreLines.
-     * @return WageringTotalScoreLines.
-     */
-    @Consumes(MediaType.APPLICATION_JSON)
-    @POST
-    public WageringTotalScoreLines update(WageringTotalScoreLines obj) {
-        return this.service.update(obj);
-    }
+  /**
+   * Select all WageringTotalScoreLines records.
+   *
+   * @return a list WageringTotalScoreLines.
+   */
+  @GET
+  @Path("selectAll")
+  public Response selectAll() {
+    List<WageringTotalScoreLines> result = service.selectAll();
 
-    /**
-     * Delete existing WageringTotalScoreLines.
-     *
-     * @param id instance of WageringTotalScoreLines.
-     * @return WageringTotalScoreLines.
-     */
-
-    /**
-     * Select all WageringTotalScoreLines with limit of returned records.
-     *
-     * @param max - number of records.
-     * @return a list WageringTotalScoreLines.
-     */
-    @GET
-    @Path("select/{max}")
-    public Response findWithLimit(@PathParam("max") String max) {
-        Integer input = null;
-        try {
-            input = Integer.valueOf(max);
-        } catch (NumberFormatException ex) {
-            throw new WebApplicationException(Response.Status.BAD_REQUEST);
-        }
-        List<WageringTotalScoreLines> result = service.select(input);
-
-        return Response.status(Response.Status.OK)
-                .header("Access-Control-Allow-Origin", "*")
-                .header("Access-Control-Allow-Credentials", "true")
-                .header(
-                        "Access-Control-Allow-Headers",
-                        "origin, content-type, accept, authorization")
-                .header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
-                .entity(result)
-                .build();
-    }
-
-    /**
-     * Select all WageringTotalScoreLines records.
-     *
-     * @return a list WageringTotalScoreLines.
-     */
-    @GET
-    @Path("selectAll")
-    public Response selectAll() {
-        List<WageringTotalScoreLines> result = service.selectAll();
-
-        return Response.status(Response.Status.OK)
-                .header("Access-Control-Allow-Origin", "*")
-                .header("Access-Control-Allow-Credentials", "true")
-                .header(
-                        "Access-Control-Allow-Headers",
-                        "origin, content-type, accept, authorization")
-                .header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
-                .entity(result)
-                .build();
-    }
+    return Response.status(Response.Status.OK)
+        .header("Access-Control-Allow-Origin", "*")
+        .header("Access-Control-Allow-Credentials", "true")
+        .header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
+        .header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
+        .entity(result)
+        .build();
+  }
 }

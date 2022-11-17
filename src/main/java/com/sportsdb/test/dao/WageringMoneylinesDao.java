@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.WageringMoneylines;
 import java.util.List;
+import com.sportsdb.test.entity.WageringMoneylines;
 
 public interface WageringMoneylinesDao {
-    /**
-     * Retrieve all records WageringMoneylines.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of WageringMoneylines
-     */
-    public List<WageringMoneylines> select(int maxResult);
+  /**
+   * Retrieve all records WageringMoneylines.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of WageringMoneylines
+   */
+  public List<WageringMoneylines> select(int maxResult);
 
-    /**
-     * Retrieve all records WageringMoneylines.
-     *
-     * @return A list of WageringMoneylines
-     */
-    public List<WageringMoneylines> selectAll();
+  /**
+   * Retrieve all records WageringMoneylines.
+   *
+   * @return A list of WageringMoneylines
+   */
+  public List<WageringMoneylines> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An WageringMoneylines id.
-     * @return The same WageringMoneylines.
-     */
-    public WageringMoneylines find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An WageringMoneylines id.
+   * @return The same WageringMoneylines.
+   */
+  public WageringMoneylines find(java.lang.Integer id);
 
-    /**
-     * Create an WageringMoneylines.
-     *
-     * @param e the WageringMoneylines.
-     * @return The same WageringMoneylines.
-     */
-    public WageringMoneylines create(WageringMoneylines e);
+  /**
+   * Create an WageringMoneylines.
+   *
+   * @param e the WageringMoneylines.
+   * @return The same WageringMoneylines.
+   */
+  public WageringMoneylines create(WageringMoneylines e);
 
-    /**
-     * Update the WageringMoneylines.
-     *
-     * @param e the WageringMoneylines.
-     * @return The same WageringMoneylines.
-     */
-    public WageringMoneylines update(WageringMoneylines e);
+  /**
+   * Update the WageringMoneylines.
+   *
+   * @param e the WageringMoneylines.
+   * @return The same WageringMoneylines.
+   */
+  public WageringMoneylines update(WageringMoneylines e);
 }

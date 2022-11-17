@@ -16,59 +16,62 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.AmericanFootballRushingStats;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.AmericanFootballRushingStats;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("AmericanFootballRushingStatsHandler")
 public class AmericanFootballRushingStatsHandler
-        extends DelimiterFileHandler<AmericanFootballRushingStats> {
+    extends DelimiterFileHandler<AmericanFootballRushingStats> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public AmericanFootballRushingStatsHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public AmericanFootballRushingStatsHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected AmericanFootballRushingStats parseLine(List<String> headers, List<String> tokens) {
+    AmericanFootballRushingStats record = new AmericanFootballRushingStats();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "rushesAttempts":
+          record.setRushesAttempts(tokens.get(i));
+          break;
+
+        case "rushesYards":
+          record.setRushesYards(tokens.get(i));
+          break;
+
+        case "rushesTouchdowns":
+          record.setRushesTouchdowns(tokens.get(i));
+          break;
+
+        case "rushingAverageYardsPer":
+          record.setRushingAverageYardsPer(tokens.get(i));
+          break;
+
+        case "rushesFirstDown":
+          record.setRushesFirstDown(tokens.get(i));
+          break;
+
+        case "rushesLongest":
+          record.setRushesLongest(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected AmericanFootballRushingStats parseLine(List<String> headers, List<String> tokens) {
-        AmericanFootballRushingStats record = new AmericanFootballRushingStats();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "rushesAttempts":
-                    record.setRushesAttempts(tokens.get(i));
-                    break;
-
-                case "rushesYards":
-                    record.setRushesYards(tokens.get(i));
-                    break;
-
-                case "rushesTouchdowns":
-                    record.setRushesTouchdowns(tokens.get(i));
-                    break;
-
-                case "rushingAverageYardsPer":
-                    record.setRushingAverageYardsPer(tokens.get(i));
-                    break;
-
-                case "rushesFirstDown":
-                    record.setRushesFirstDown(tokens.get(i));
-                    break;
-
-                case "rushesLongest":
-                    record.setRushesLongest(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.WageringOddsLines;
 import java.util.List;
+import com.sportsdb.test.entity.WageringOddsLines;
 
 public interface WageringOddsLinesService {
-    public WageringOddsLines find(java.lang.Integer id);
+  public WageringOddsLines find(java.lang.Integer id);
 
-    /**
-     * Select a list of WageringOddsLines based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return WageringOddsLines records.
-     */
-    public List<WageringOddsLines> select(int maxResult);
+  /**
+   * Select a list of WageringOddsLines based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return WageringOddsLines records.
+   */
+  public List<WageringOddsLines> select(int maxResult);
 
-    /**
-     * Select all WageringOddsLines.
-     *
-     * @return all WageringOddsLines records.
-     */
-    public List<WageringOddsLines> selectAll();
+  /**
+   * Select all WageringOddsLines.
+   *
+   * @return all WageringOddsLines records.
+   */
+  public List<WageringOddsLines> selectAll();
 
-    /**
-     * Create WageringOddsLines.
-     *
-     * @param bean The WageringOddsLines.
-     * @return The WageringOddsLines.
-     */
-    public WageringOddsLines create(WageringOddsLines bean);
+  /**
+   * Create WageringOddsLines.
+   *
+   * @param bean The WageringOddsLines.
+   * @return The WageringOddsLines.
+   */
+  public WageringOddsLines create(WageringOddsLines bean);
 
-    /**
-     * Update a WageringOddsLines.
-     *
-     * @param bean - The WageringOddsLines.
-     * @return WageringOddsLines.
-     */
-    public WageringOddsLines update(WageringOddsLines bean);
+  /**
+   * Update a WageringOddsLines.
+   *
+   * @param bean - The WageringOddsLines.
+   * @return WageringOddsLines.
+   */
+  public WageringOddsLines update(WageringOddsLines bean);
 }

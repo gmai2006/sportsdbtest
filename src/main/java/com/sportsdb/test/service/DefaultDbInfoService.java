@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.DbInfoDao;
-import com.sportsdb.test.entity.DbInfo;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.DbInfoDao;
+import com.sportsdb.test.entity.DbInfo;
 
 @Stateless
 @Named("DefaultDbInfoService")
 public class DefaultDbInfoService implements DbInfoService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final DbInfoDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final DbInfoDao dao;
 
-    @Inject
-    @Named("DefaultDbInfoDao")
-    public DefaultDbInfoService(final DbInfoDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultDbInfoDao")
+  public DefaultDbInfoService(final DbInfoDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public DbInfo find(java.lang.String id) {
+  /** {@inheritDoc} */
+  @Override
+  public DbInfo find(java.lang.String id) {
 
-        final DbInfo result = dao.find(id);
-        logger.info("find(DbInfo) - exited - return value={} result ");
-        return result;
-    }
+    final DbInfo result = dao.find(id);
+    logger.info("find(DbInfo) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<DbInfo> select(int maxResult) {
-        final List<DbInfo> result = dao.select(maxResult);
-        logger.info("select(DbInfo) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<DbInfo> select(int maxResult) {
+    final List<DbInfo> result = dao.select(maxResult);
+    logger.info("select(DbInfo) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<DbInfo> selectAll() {
-        final List<DbInfo> results = dao.selectAll();
-        logger.info("selectAll(DbInfo) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<DbInfo> selectAll() {
+    final List<DbInfo> results = dao.selectAll();
+    logger.info("selectAll(DbInfo) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public DbInfo create(DbInfo bean) {
-        requireNonNull(bean);
-        logger.info("create(DbInfo={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public DbInfo create(DbInfo bean) {
+    requireNonNull(bean);
+    logger.info("create(DbInfo={}) - entered bean ");
 
-        final DbInfo result = dao.create(bean);
+    final DbInfo result = dao.create(bean);
 
-        logger.info("create(DbInfo) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(DbInfo) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public DbInfo update(DbInfo bean) {
-        requireNonNull(bean);
-        logger.info("update(DbInfo={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public DbInfo update(DbInfo bean) {
+    requireNonNull(bean);
+    logger.info("update(DbInfo={}) - entered bean ");
 
-        final DbInfo result = dao.update(bean);
+    final DbInfo result = dao.update(bean);
 
-        logger.info("update(DbInfo) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(DbInfo) - exited - return value={} result ");
+    return result;
+  }
 }

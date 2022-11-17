@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.TeamAmericanFootballStats;
 import java.util.List;
+import com.sportsdb.test.entity.TeamAmericanFootballStats;
 
 public interface TeamAmericanFootballStatsDao {
-    /**
-     * Retrieve all records TeamAmericanFootballStats.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of TeamAmericanFootballStats
-     */
-    public List<TeamAmericanFootballStats> select(int maxResult);
+  /**
+   * Retrieve all records TeamAmericanFootballStats.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of TeamAmericanFootballStats
+   */
+  public List<TeamAmericanFootballStats> select(int maxResult);
 
-    /**
-     * Retrieve all records TeamAmericanFootballStats.
-     *
-     * @return A list of TeamAmericanFootballStats
-     */
-    public List<TeamAmericanFootballStats> selectAll();
+  /**
+   * Retrieve all records TeamAmericanFootballStats.
+   *
+   * @return A list of TeamAmericanFootballStats
+   */
+  public List<TeamAmericanFootballStats> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An TeamAmericanFootballStats id.
-     * @return The same TeamAmericanFootballStats.
-     */
-    public TeamAmericanFootballStats find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An TeamAmericanFootballStats id.
+   * @return The same TeamAmericanFootballStats.
+   */
+  public TeamAmericanFootballStats find(java.lang.Integer id);
 
-    /**
-     * Create an TeamAmericanFootballStats.
-     *
-     * @param e the TeamAmericanFootballStats.
-     * @return The same TeamAmericanFootballStats.
-     */
-    public TeamAmericanFootballStats create(TeamAmericanFootballStats e);
+  /**
+   * Create an TeamAmericanFootballStats.
+   *
+   * @param e the TeamAmericanFootballStats.
+   * @return The same TeamAmericanFootballStats.
+   */
+  public TeamAmericanFootballStats create(TeamAmericanFootballStats e);
 
-    /**
-     * Update the TeamAmericanFootballStats.
-     *
-     * @param e the TeamAmericanFootballStats.
-     * @return The same TeamAmericanFootballStats.
-     */
-    public TeamAmericanFootballStats update(TeamAmericanFootballStats e);
+  /**
+   * Update the TeamAmericanFootballStats.
+   *
+   * @param e the TeamAmericanFootballStats.
+   * @return The same TeamAmericanFootballStats.
+   */
+  public TeamAmericanFootballStats update(TeamAmericanFootballStats e);
 }

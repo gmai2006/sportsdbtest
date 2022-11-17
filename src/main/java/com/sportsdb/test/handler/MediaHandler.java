@@ -16,65 +16,68 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.Media;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.Media;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("MediaHandler")
 public class MediaHandler extends DelimiterFileHandler<Media> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public MediaHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public MediaHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected Media parseLine(List<String> headers, List<String> tokens) {
+    Media record = new Media();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "objectId":
+          record.setObjectId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "sourceId":
+          record.setSourceId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "revisionId":
+          record.setRevisionId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "mediaType":
+          record.setMediaType(tokens.get(i));
+          break;
+
+        case "publisherId":
+          record.setPublisherId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "dateTime":
+          record.setDateTime(tokens.get(i));
+          break;
+
+        case "creditId":
+          record.setCreditId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "dbLoadingDateTime":
+          record.setDbLoadingDateTime(new java.util.Date(parseDate(tokens.get(i))));
+          break;
+
+        case "creationLocationId":
+          record.setCreationLocationId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected Media parseLine(List<String> headers, List<String> tokens) {
-        Media record = new Media();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "objectId":
-                    record.setObjectId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "sourceId":
-                    record.setSourceId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "revisionId":
-                    record.setRevisionId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "mediaType":
-                    record.setMediaType(tokens.get(i));
-                    break;
-
-                case "publisherId":
-                    record.setPublisherId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "dateTime":
-                    record.setDateTime(tokens.get(i));
-                    break;
-
-                case "creditId":
-                    record.setCreditId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "dbLoadingDateTime":
-                    record.setDbLoadingDateTime(new java.util.Date(parseDate(tokens.get(i))));
-                    break;
-
-                case "creationLocationId":
-                    record.setCreationLocationId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

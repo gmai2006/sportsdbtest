@@ -16,50 +16,53 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.BasketballTeamStats;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.BasketballTeamStats;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("BasketballTeamStatsHandler")
 public class BasketballTeamStatsHandler extends DelimiterFileHandler<BasketballTeamStats> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public BasketballTeamStatsHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public BasketballTeamStatsHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected BasketballTeamStats parseLine(List<String> headers, List<String> tokens) {
+    BasketballTeamStats record = new BasketballTeamStats();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "timeoutsLeft":
+          record.setTimeoutsLeft(tokens.get(i));
+          break;
+
+        case "largestLead":
+          record.setLargestLead(tokens.get(i));
+          break;
+
+        case "foulsTotal":
+          record.setFoulsTotal(tokens.get(i));
+          break;
+
+        case "turnoverMargin":
+          record.setTurnoverMargin(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected BasketballTeamStats parseLine(List<String> headers, List<String> tokens) {
-        BasketballTeamStats record = new BasketballTeamStats();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "timeoutsLeft":
-                    record.setTimeoutsLeft(tokens.get(i));
-                    break;
-
-                case "largestLead":
-                    record.setLargestLead(tokens.get(i));
-                    break;
-
-                case "foulsTotal":
-                    record.setFoulsTotal(tokens.get(i));
-                    break;
-
-                case "turnoverMargin":
-                    record.setTurnoverMargin(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

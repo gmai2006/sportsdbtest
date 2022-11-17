@@ -16,41 +16,41 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.BaseballActionContactDetails;
 import java.util.List;
+import com.sportsdb.test.entity.BaseballActionContactDetails;
 
 public interface BaseballActionContactDetailsService {
-    public BaseballActionContactDetails find(java.lang.Integer id);
+  public BaseballActionContactDetails find(java.lang.Integer id);
 
-    /**
-     * Select a list of BaseballActionContactDetails based on a given maximum number of returning
-     * records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return BaseballActionContactDetails records.
-     */
-    public List<BaseballActionContactDetails> select(int maxResult);
+  /**
+   * Select a list of BaseballActionContactDetails based on a given maximum number of returning
+   * records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return BaseballActionContactDetails records.
+   */
+  public List<BaseballActionContactDetails> select(int maxResult);
 
-    /**
-     * Select all BaseballActionContactDetails.
-     *
-     * @return all BaseballActionContactDetails records.
-     */
-    public List<BaseballActionContactDetails> selectAll();
+  /**
+   * Select all BaseballActionContactDetails.
+   *
+   * @return all BaseballActionContactDetails records.
+   */
+  public List<BaseballActionContactDetails> selectAll();
 
-    /**
-     * Create BaseballActionContactDetails.
-     *
-     * @param bean The BaseballActionContactDetails.
-     * @return The BaseballActionContactDetails.
-     */
-    public BaseballActionContactDetails create(BaseballActionContactDetails bean);
+  /**
+   * Create BaseballActionContactDetails.
+   *
+   * @param bean The BaseballActionContactDetails.
+   * @return The BaseballActionContactDetails.
+   */
+  public BaseballActionContactDetails create(BaseballActionContactDetails bean);
 
-    /**
-     * Update a BaseballActionContactDetails.
-     *
-     * @param bean - The BaseballActionContactDetails.
-     * @return BaseballActionContactDetails.
-     */
-    public BaseballActionContactDetails update(BaseballActionContactDetails bean);
+  /**
+   * Update a BaseballActionContactDetails.
+   *
+   * @param bean - The BaseballActionContactDetails.
+   * @return BaseballActionContactDetails.
+   */
+  public BaseballActionContactDetails update(BaseballActionContactDetails bean);
 }

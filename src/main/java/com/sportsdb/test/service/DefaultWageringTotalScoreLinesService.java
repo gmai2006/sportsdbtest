@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.WageringTotalScoreLinesDao;
-import com.sportsdb.test.entity.WageringTotalScoreLines;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.WageringTotalScoreLinesDao;
+import com.sportsdb.test.entity.WageringTotalScoreLines;
 
 @Stateless
 @Named("DefaultWageringTotalScoreLinesService")
 public class DefaultWageringTotalScoreLinesService implements WageringTotalScoreLinesService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final WageringTotalScoreLinesDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final WageringTotalScoreLinesDao dao;
 
-    @Inject
-    @Named("DefaultWageringTotalScoreLinesDao")
-    public DefaultWageringTotalScoreLinesService(final WageringTotalScoreLinesDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultWageringTotalScoreLinesDao")
+  public DefaultWageringTotalScoreLinesService(final WageringTotalScoreLinesDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public WageringTotalScoreLines find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public WageringTotalScoreLines find(java.lang.Integer id) {
 
-        final WageringTotalScoreLines result = dao.find(id);
-        logger.info("find(WageringTotalScoreLines) - exited - return value={} result ");
-        return result;
-    }
+    final WageringTotalScoreLines result = dao.find(id);
+    logger.info("find(WageringTotalScoreLines) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<WageringTotalScoreLines> select(int maxResult) {
-        final List<WageringTotalScoreLines> result = dao.select(maxResult);
-        logger.info("select(WageringTotalScoreLines) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<WageringTotalScoreLines> select(int maxResult) {
+    final List<WageringTotalScoreLines> result = dao.select(maxResult);
+    logger.info("select(WageringTotalScoreLines) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<WageringTotalScoreLines> selectAll() {
-        final List<WageringTotalScoreLines> results = dao.selectAll();
-        logger.info("selectAll(WageringTotalScoreLines) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<WageringTotalScoreLines> selectAll() {
+    final List<WageringTotalScoreLines> results = dao.selectAll();
+    logger.info("selectAll(WageringTotalScoreLines) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public WageringTotalScoreLines create(WageringTotalScoreLines bean) {
-        requireNonNull(bean);
-        logger.info("create(WageringTotalScoreLines={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public WageringTotalScoreLines create(WageringTotalScoreLines bean) {
+    requireNonNull(bean);
+    logger.info("create(WageringTotalScoreLines={}) - entered bean ");
 
-        final WageringTotalScoreLines result = dao.create(bean);
+    final WageringTotalScoreLines result = dao.create(bean);
 
-        logger.info("create(WageringTotalScoreLines) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(WageringTotalScoreLines) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public WageringTotalScoreLines update(WageringTotalScoreLines bean) {
-        requireNonNull(bean);
-        logger.info("update(WageringTotalScoreLines={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public WageringTotalScoreLines update(WageringTotalScoreLines bean) {
+    requireNonNull(bean);
+    logger.info("update(WageringTotalScoreLines={}) - entered bean ");
 
-        final WageringTotalScoreLines result = dao.update(bean);
+    final WageringTotalScoreLines result = dao.update(bean);
 
-        logger.info("update(WageringTotalScoreLines) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(WageringTotalScoreLines) - exited - return value={} result ");
+    return result;
+  }
 }

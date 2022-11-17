@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.Publishers;
 import java.util.List;
+import com.sportsdb.test.entity.Publishers;
 
 public interface PublishersDao {
-    /**
-     * Retrieve all records Publishers.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of Publishers
-     */
-    public List<Publishers> select(int maxResult);
+  /**
+   * Retrieve all records Publishers.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of Publishers
+   */
+  public List<Publishers> select(int maxResult);
 
-    /**
-     * Retrieve all records Publishers.
-     *
-     * @return A list of Publishers
-     */
-    public List<Publishers> selectAll();
+  /**
+   * Retrieve all records Publishers.
+   *
+   * @return A list of Publishers
+   */
+  public List<Publishers> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An Publishers id.
-     * @return The same Publishers.
-     */
-    public Publishers find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An Publishers id.
+   * @return The same Publishers.
+   */
+  public Publishers find(java.lang.Integer id);
 
-    /**
-     * Create an Publishers.
-     *
-     * @param e the Publishers.
-     * @return The same Publishers.
-     */
-    public Publishers create(Publishers e);
+  /**
+   * Create an Publishers.
+   *
+   * @param e the Publishers.
+   * @return The same Publishers.
+   */
+  public Publishers create(Publishers e);
 
-    /**
-     * Update the Publishers.
-     *
-     * @param e the Publishers.
-     * @return The same Publishers.
-     */
-    public Publishers update(Publishers e);
+  /**
+   * Update the Publishers.
+   *
+   * @param e the Publishers.
+   * @return The same Publishers.
+   */
+  public Publishers update(Publishers e);
 }

@@ -16,116 +16,116 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "baseball_action_contact_details")
 public class BaseballActionContactDetails implements Serializable {
-    private static final long serialVersionUID = 16344524187869533L;
+  private static final long serialVersionUID = 166867004219271212L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: baseball_action_pitch_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "baseball_action_pitch_id")
-    private java.lang.Integer baseballActionPitchId;
-    /** Description: location. */
-    @Basic
-    @Column(name = "location", length = 100)
-    private java.lang.String location;
-    /** Description: strength. */
-    @Basic
-    @Column(name = "strength", length = 100)
-    private java.lang.String strength;
-    /** Description: velocity. */
-    @Basic
-    @Column(name = "velocity")
-    private java.lang.Integer velocity;
-    /** Description: comment. */
-    @Basic
-    @Column(name = "comment", length = 0)
-    private java.lang.String comment;
-    /** Description: trajectory_coordinates. */
-    @Basic
-    @Column(name = "trajectory_coordinates", length = 100)
-    private java.lang.String trajectoryCoordinates;
-    /** Description: trajectory_formula. */
-    @Basic
-    @Column(name = "trajectory_formula", length = 100)
-    private java.lang.String trajectoryFormula;
+  /** Description: baseball_action_pitch_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "baseball_action_pitch_id")
+  private java.lang.Integer baseballActionPitchId;
+  /** Description: location. */
+  @Basic
+  @Column(name = "location", length = 100)
+  private java.lang.String location;
+  /** Description: strength. */
+  @Basic
+  @Column(name = "strength", length = 100)
+  private java.lang.String strength;
+  /** Description: velocity. */
+  @Basic
+  @Column(name = "velocity")
+  private java.lang.Integer velocity;
+  /** Description: comment. */
+  @Basic
+  @Column(name = "comment", length = 0)
+  private java.lang.String comment;
+  /** Description: trajectory_coordinates. */
+  @Basic
+  @Column(name = "trajectory_coordinates", length = 100)
+  private java.lang.String trajectoryCoordinates;
+  /** Description: trajectory_formula. */
+  @Basic
+  @Column(name = "trajectory_formula", length = 100)
+  private java.lang.String trajectoryFormula;
 
-    public BaseballActionContactDetails() {}
+  public BaseballActionContactDetails() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.Integer getBaseballActionPitchId() {
-        return this.baseballActionPitchId;
-    }
+  public java.lang.Integer getBaseballActionPitchId() {
+    return this.baseballActionPitchId;
+  }
 
-    public java.lang.String getLocation() {
-        return this.location;
-    }
+  public java.lang.String getLocation() {
+    return this.location;
+  }
 
-    public java.lang.String getStrength() {
-        return this.strength;
-    }
+  public java.lang.String getStrength() {
+    return this.strength;
+  }
 
-    public java.lang.Integer getVelocity() {
-        return this.velocity;
-    }
+  public java.lang.Integer getVelocity() {
+    return this.velocity;
+  }
 
-    public java.lang.String getComment() {
-        return this.comment;
-    }
+  public java.lang.String getComment() {
+    return this.comment;
+  }
 
-    public java.lang.String getTrajectoryCoordinates() {
-        return this.trajectoryCoordinates;
-    }
+  public java.lang.String getTrajectoryCoordinates() {
+    return this.trajectoryCoordinates;
+  }
 
-    public java.lang.String getTrajectoryFormula() {
-        return this.trajectoryFormula;
-    }
+  public java.lang.String getTrajectoryFormula() {
+    return this.trajectoryFormula;
+  }
 
-    public void setBaseballActionPitchId(java.lang.Integer baseballActionPitchId) {
-        this.baseballActionPitchId = baseballActionPitchId;
-    }
+  public void setBaseballActionPitchId(java.lang.Integer baseballActionPitchId) {
+    this.baseballActionPitchId = baseballActionPitchId;
+  }
 
-    public void setLocation(java.lang.String location) {
-        this.location = location;
-    }
+  public void setLocation(java.lang.String location) {
+    this.location = location;
+  }
 
-    public void setStrength(java.lang.String strength) {
-        this.strength = strength;
-    }
+  public void setStrength(java.lang.String strength) {
+    this.strength = strength;
+  }
 
-    public void setVelocity(java.lang.Integer velocity) {
-        this.velocity = velocity;
-    }
+  public void setVelocity(java.lang.Integer velocity) {
+    this.velocity = velocity;
+  }
 
-    public void setComment(java.lang.String comment) {
-        this.comment = comment;
-    }
+  public void setComment(java.lang.String comment) {
+    this.comment = comment;
+  }
 
-    public void setTrajectoryCoordinates(java.lang.String trajectoryCoordinates) {
-        this.trajectoryCoordinates = trajectoryCoordinates;
-    }
+  public void setTrajectoryCoordinates(java.lang.String trajectoryCoordinates) {
+    this.trajectoryCoordinates = trajectoryCoordinates;
+  }
 
-    public void setTrajectoryFormula(java.lang.String trajectoryFormula) {
-        this.trajectoryFormula = trajectoryFormula;
-    }
+  public void setTrajectoryFormula(java.lang.String trajectoryFormula) {
+    this.trajectoryFormula = trajectoryFormula;
+  }
 }

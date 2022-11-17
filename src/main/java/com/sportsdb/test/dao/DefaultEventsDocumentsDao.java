@@ -16,57 +16,60 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.EventsDocuments;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.EventsDocuments;
 
 @Stateless
 @Named("DefaultEventsDocumentsDao")
 public class DefaultEventsDocumentsDao implements EventsDocumentsDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultEventsDocumentsDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultEventsDocumentsDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultEventsDocumentsDao() {}
+  public DefaultEventsDocumentsDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public EventsDocuments find(java.lang.String id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(EventsDocuments.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public EventsDocuments find(java.lang.String id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(EventsDocuments.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<EventsDocuments> select(int max) {
-        return dao.select("select a from EventsDocuments a", EventsDocuments.class, max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<EventsDocuments> select(int max) {
+    return dao.select("select a from EventsDocuments a", EventsDocuments.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<EventsDocuments> selectAll() {
-        return dao.selectAll("select a from EventsDocuments a", EventsDocuments.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<EventsDocuments> selectAll() {
+    return dao.selectAll("select a from EventsDocuments a", EventsDocuments.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public EventsDocuments create(EventsDocuments e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public EventsDocuments create(EventsDocuments e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public EventsDocuments update(EventsDocuments e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public EventsDocuments update(EventsDocuments e) {
+    return dao.update(e);
+  }
 }

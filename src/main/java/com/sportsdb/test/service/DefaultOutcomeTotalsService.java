@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.OutcomeTotalsDao;
-import com.sportsdb.test.entity.OutcomeTotals;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.OutcomeTotalsDao;
+import com.sportsdb.test.entity.OutcomeTotals;
 
 @Stateless
 @Named("DefaultOutcomeTotalsService")
 public class DefaultOutcomeTotalsService implements OutcomeTotalsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final OutcomeTotalsDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final OutcomeTotalsDao dao;
 
-    @Inject
-    @Named("DefaultOutcomeTotalsDao")
-    public DefaultOutcomeTotalsService(final OutcomeTotalsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultOutcomeTotalsDao")
+  public DefaultOutcomeTotalsService(final OutcomeTotalsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public OutcomeTotals find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public OutcomeTotals find(java.lang.Integer id) {
 
-        final OutcomeTotals result = dao.find(id);
-        logger.info("find(OutcomeTotals) - exited - return value={} result ");
-        return result;
-    }
+    final OutcomeTotals result = dao.find(id);
+    logger.info("find(OutcomeTotals) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<OutcomeTotals> select(int maxResult) {
-        final List<OutcomeTotals> result = dao.select(maxResult);
-        logger.info("select(OutcomeTotals) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<OutcomeTotals> select(int maxResult) {
+    final List<OutcomeTotals> result = dao.select(maxResult);
+    logger.info("select(OutcomeTotals) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<OutcomeTotals> selectAll() {
-        final List<OutcomeTotals> results = dao.selectAll();
-        logger.info("selectAll(OutcomeTotals) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<OutcomeTotals> selectAll() {
+    final List<OutcomeTotals> results = dao.selectAll();
+    logger.info("selectAll(OutcomeTotals) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public OutcomeTotals create(OutcomeTotals bean) {
-        requireNonNull(bean);
-        logger.info("create(OutcomeTotals={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public OutcomeTotals create(OutcomeTotals bean) {
+    requireNonNull(bean);
+    logger.info("create(OutcomeTotals={}) - entered bean ");
 
-        final OutcomeTotals result = dao.create(bean);
+    final OutcomeTotals result = dao.create(bean);
 
-        logger.info("create(OutcomeTotals) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(OutcomeTotals) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public OutcomeTotals update(OutcomeTotals bean) {
-        requireNonNull(bean);
-        logger.info("update(OutcomeTotals={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public OutcomeTotals update(OutcomeTotals bean) {
+    requireNonNull(bean);
+    logger.info("update(OutcomeTotals={}) - entered bean ");
 
-        final OutcomeTotals result = dao.update(bean);
+    final OutcomeTotals result = dao.update(bean);
 
-        logger.info("update(OutcomeTotals) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(OutcomeTotals) - exited - return value={} result ");
+    return result;
+  }
 }

@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.ParticipantsEventsDao;
-import com.sportsdb.test.entity.ParticipantsEvents;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.ParticipantsEventsDao;
+import com.sportsdb.test.entity.ParticipantsEvents;
 
 @Stateless
 @Named("DefaultParticipantsEventsService")
 public class DefaultParticipantsEventsService implements ParticipantsEventsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final ParticipantsEventsDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final ParticipantsEventsDao dao;
 
-    @Inject
-    @Named("DefaultParticipantsEventsDao")
-    public DefaultParticipantsEventsService(final ParticipantsEventsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultParticipantsEventsDao")
+  public DefaultParticipantsEventsService(final ParticipantsEventsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public ParticipantsEvents find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public ParticipantsEvents find(java.lang.Integer id) {
 
-        final ParticipantsEvents result = dao.find(id);
-        logger.info("find(ParticipantsEvents) - exited - return value={} result ");
-        return result;
-    }
+    final ParticipantsEvents result = dao.find(id);
+    logger.info("find(ParticipantsEvents) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<ParticipantsEvents> select(int maxResult) {
-        final List<ParticipantsEvents> result = dao.select(maxResult);
-        logger.info("select(ParticipantsEvents) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<ParticipantsEvents> select(int maxResult) {
+    final List<ParticipantsEvents> result = dao.select(maxResult);
+    logger.info("select(ParticipantsEvents) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<ParticipantsEvents> selectAll() {
-        final List<ParticipantsEvents> results = dao.selectAll();
-        logger.info("selectAll(ParticipantsEvents) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<ParticipantsEvents> selectAll() {
+    final List<ParticipantsEvents> results = dao.selectAll();
+    logger.info("selectAll(ParticipantsEvents) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public ParticipantsEvents create(ParticipantsEvents bean) {
-        requireNonNull(bean);
-        logger.info("create(ParticipantsEvents={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public ParticipantsEvents create(ParticipantsEvents bean) {
+    requireNonNull(bean);
+    logger.info("create(ParticipantsEvents={}) - entered bean ");
 
-        final ParticipantsEvents result = dao.create(bean);
+    final ParticipantsEvents result = dao.create(bean);
 
-        logger.info("create(ParticipantsEvents) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(ParticipantsEvents) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public ParticipantsEvents update(ParticipantsEvents bean) {
-        requireNonNull(bean);
-        logger.info("update(ParticipantsEvents={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public ParticipantsEvents update(ParticipantsEvents bean) {
+    requireNonNull(bean);
+    logger.info("update(ParticipantsEvents={}) - entered bean ");
 
-        final ParticipantsEvents result = dao.update(bean);
+    final ParticipantsEvents result = dao.update(bean);
 
-        logger.info("update(ParticipantsEvents) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(ParticipantsEvents) - exited - return value={} result ");
+    return result;
+  }
 }

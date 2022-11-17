@@ -16,128 +16,128 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "motor_racing_event_states")
 public class MotorRacingEventStates implements Serializable {
-    private static final long serialVersionUID = 163445241913871681L;
+  private static final long serialVersionUID = 16686700424355044L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: event_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "event_id")
-    private java.lang.Integer eventId;
-    /** Description: current_state. */
-    @Basic
-    @Column(name = "current_state")
-    private java.lang.Integer currentState;
-    /** Description: sequence_number. */
-    @Basic
-    @Column(name = "sequence_number")
-    private java.lang.Integer sequenceNumber;
-    /** Description: lap. */
-    @Basic
-    @Column(name = "lap", length = 100)
-    private java.lang.String lap;
-    /** Description: laps_remaining. */
-    @Basic
-    @Column(name = "laps_remaining", length = 100)
-    private java.lang.String lapsRemaining;
-    /** Description: time_elapsed. */
-    @Basic
-    @Column(name = "time_elapsed", length = 100)
-    private java.lang.String timeElapsed;
-    /** Description: flag_state. */
-    @Basic
-    @Column(name = "flag_state", length = 100)
-    private java.lang.String flagState;
-    /** Description: context. */
-    @Basic
-    @Column(name = "context", length = 40)
-    private java.lang.String context;
+  /** Description: event_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "event_id")
+  private java.lang.Integer eventId;
+  /** Description: current_state. */
+  @Basic
+  @Column(name = "current_state")
+  private java.lang.Integer currentState;
+  /** Description: sequence_number. */
+  @Basic
+  @Column(name = "sequence_number")
+  private java.lang.Integer sequenceNumber;
+  /** Description: lap. */
+  @Basic
+  @Column(name = "lap", length = 100)
+  private java.lang.String lap;
+  /** Description: laps_remaining. */
+  @Basic
+  @Column(name = "laps_remaining", length = 100)
+  private java.lang.String lapsRemaining;
+  /** Description: time_elapsed. */
+  @Basic
+  @Column(name = "time_elapsed", length = 100)
+  private java.lang.String timeElapsed;
+  /** Description: flag_state. */
+  @Basic
+  @Column(name = "flag_state", length = 100)
+  private java.lang.String flagState;
+  /** Description: context. */
+  @Basic
+  @Column(name = "context", length = 40)
+  private java.lang.String context;
 
-    public MotorRacingEventStates() {}
+  public MotorRacingEventStates() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.Integer getEventId() {
-        return this.eventId;
-    }
+  public java.lang.Integer getEventId() {
+    return this.eventId;
+  }
 
-    public java.lang.Integer getCurrentState() {
-        return this.currentState;
-    }
+  public java.lang.Integer getCurrentState() {
+    return this.currentState;
+  }
 
-    public java.lang.Integer getSequenceNumber() {
-        return this.sequenceNumber;
-    }
+  public java.lang.Integer getSequenceNumber() {
+    return this.sequenceNumber;
+  }
 
-    public java.lang.String getLap() {
-        return this.lap;
-    }
+  public java.lang.String getLap() {
+    return this.lap;
+  }
 
-    public java.lang.String getLapsRemaining() {
-        return this.lapsRemaining;
-    }
+  public java.lang.String getLapsRemaining() {
+    return this.lapsRemaining;
+  }
 
-    public java.lang.String getTimeElapsed() {
-        return this.timeElapsed;
-    }
+  public java.lang.String getTimeElapsed() {
+    return this.timeElapsed;
+  }
 
-    public java.lang.String getFlagState() {
-        return this.flagState;
-    }
+  public java.lang.String getFlagState() {
+    return this.flagState;
+  }
 
-    public java.lang.String getContext() {
-        return this.context;
-    }
+  public java.lang.String getContext() {
+    return this.context;
+  }
 
-    public void setEventId(java.lang.Integer eventId) {
-        this.eventId = eventId;
-    }
+  public void setEventId(java.lang.Integer eventId) {
+    this.eventId = eventId;
+  }
 
-    public void setCurrentState(java.lang.Integer currentState) {
-        this.currentState = currentState;
-    }
+  public void setCurrentState(java.lang.Integer currentState) {
+    this.currentState = currentState;
+  }
 
-    public void setSequenceNumber(java.lang.Integer sequenceNumber) {
-        this.sequenceNumber = sequenceNumber;
-    }
+  public void setSequenceNumber(java.lang.Integer sequenceNumber) {
+    this.sequenceNumber = sequenceNumber;
+  }
 
-    public void setLap(java.lang.String lap) {
-        this.lap = lap;
-    }
+  public void setLap(java.lang.String lap) {
+    this.lap = lap;
+  }
 
-    public void setLapsRemaining(java.lang.String lapsRemaining) {
-        this.lapsRemaining = lapsRemaining;
-    }
+  public void setLapsRemaining(java.lang.String lapsRemaining) {
+    this.lapsRemaining = lapsRemaining;
+  }
 
-    public void setTimeElapsed(java.lang.String timeElapsed) {
-        this.timeElapsed = timeElapsed;
-    }
+  public void setTimeElapsed(java.lang.String timeElapsed) {
+    this.timeElapsed = timeElapsed;
+  }
 
-    public void setFlagState(java.lang.String flagState) {
-        this.flagState = flagState;
-    }
+  public void setFlagState(java.lang.String flagState) {
+    this.flagState = flagState;
+  }
 
-    public void setContext(java.lang.String context) {
-        this.context = context;
-    }
+  public void setContext(java.lang.String context) {
+    this.context = context;
+  }
 }

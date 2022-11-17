@@ -16,69 +16,69 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "affiliations")
 public class Affiliations implements Serializable {
-    private static final long serialVersionUID = 163445241865934572L;
+  private static final long serialVersionUID = 166867004209522L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: affiliation_key. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "affiliation_key", length = 100)
-    private java.lang.String affiliationKey;
-    /** Description: affiliation_type. */
-    @Basic
-    @Column(name = "affiliation_type", length = 100)
-    private java.lang.String affiliationType;
-    /** Description: publisher_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "publisher_id")
-    private java.lang.Integer publisherId;
+  /** Description: affiliation_key. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "affiliation_key", length = 100)
+  private java.lang.String affiliationKey;
+  /** Description: affiliation_type. */
+  @Basic
+  @Column(name = "affiliation_type", length = 100)
+  private java.lang.String affiliationType;
+  /** Description: publisher_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "publisher_id")
+  private java.lang.Integer publisherId;
 
-    public Affiliations() {}
+  public Affiliations() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.String getAffiliationKey() {
-        return this.affiliationKey;
-    }
+  public java.lang.String getAffiliationKey() {
+    return this.affiliationKey;
+  }
 
-    public java.lang.String getAffiliationType() {
-        return this.affiliationType;
-    }
+  public java.lang.String getAffiliationType() {
+    return this.affiliationType;
+  }
 
-    public java.lang.Integer getPublisherId() {
-        return this.publisherId;
-    }
+  public java.lang.Integer getPublisherId() {
+    return this.publisherId;
+  }
 
-    public void setAffiliationKey(java.lang.String affiliationKey) {
-        this.affiliationKey = affiliationKey;
-    }
+  public void setAffiliationKey(java.lang.String affiliationKey) {
+    this.affiliationKey = affiliationKey;
+  }
 
-    public void setAffiliationType(java.lang.String affiliationType) {
-        this.affiliationType = affiliationType;
-    }
+  public void setAffiliationType(java.lang.String affiliationType) {
+    this.affiliationType = affiliationType;
+  }
 
-    public void setPublisherId(java.lang.Integer publisherId) {
-        this.publisherId = publisherId;
-    }
+  public void setPublisherId(java.lang.Integer publisherId) {
+    this.publisherId = publisherId;
+  }
 }

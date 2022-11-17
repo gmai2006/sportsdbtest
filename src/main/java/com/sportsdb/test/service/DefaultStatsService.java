@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.StatsDao;
-import com.sportsdb.test.entity.Stats;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.StatsDao;
+import com.sportsdb.test.entity.Stats;
 
 @Stateless
 @Named("DefaultStatsService")
 public class DefaultStatsService implements StatsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final StatsDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final StatsDao dao;
 
-    @Inject
-    @Named("DefaultStatsDao")
-    public DefaultStatsService(final StatsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultStatsDao")
+  public DefaultStatsService(final StatsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public Stats find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public Stats find(java.lang.Integer id) {
 
-        final Stats result = dao.find(id);
-        logger.info("find(Stats) - exited - return value={} result ");
-        return result;
-    }
+    final Stats result = dao.find(id);
+    logger.info("find(Stats) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<Stats> select(int maxResult) {
-        final List<Stats> result = dao.select(maxResult);
-        logger.info("select(Stats) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<Stats> select(int maxResult) {
+    final List<Stats> result = dao.select(maxResult);
+    logger.info("select(Stats) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<Stats> selectAll() {
-        final List<Stats> results = dao.selectAll();
-        logger.info("selectAll(Stats) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<Stats> selectAll() {
+    final List<Stats> results = dao.selectAll();
+    logger.info("selectAll(Stats) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public Stats create(Stats bean) {
-        requireNonNull(bean);
-        logger.info("create(Stats={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public Stats create(Stats bean) {
+    requireNonNull(bean);
+    logger.info("create(Stats={}) - entered bean ");
 
-        final Stats result = dao.create(bean);
+    final Stats result = dao.create(bean);
 
-        logger.info("create(Stats) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(Stats) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public Stats update(Stats bean) {
-        requireNonNull(bean);
-        logger.info("update(Stats={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public Stats update(Stats bean) {
+    requireNonNull(bean);
+    logger.info("update(Stats={}) - entered bean ");
 
-        final Stats result = dao.update(bean);
+    final Stats result = dao.update(bean);
 
-        logger.info("update(Stats) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(Stats) - exited - return value={} result ");
+    return result;
+  }
 }

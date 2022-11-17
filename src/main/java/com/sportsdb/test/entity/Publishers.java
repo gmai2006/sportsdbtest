@@ -16,56 +16,56 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "publishers")
 public class Publishers implements Serializable {
-    private static final long serialVersionUID = 16344524192404826L;
+  private static final long serialVersionUID = 166867004250835444L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: publisher_key. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "publisher_key", length = 100)
-    private java.lang.String publisherKey;
-    /** Description: publisher_name. */
-    @Basic
-    @Column(name = "publisher_name", length = 100)
-    private java.lang.String publisherName;
+  /** Description: publisher_key. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "publisher_key", length = 100)
+  private java.lang.String publisherKey;
+  /** Description: publisher_name. */
+  @Basic
+  @Column(name = "publisher_name", length = 100)
+  private java.lang.String publisherName;
 
-    public Publishers() {}
+  public Publishers() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.String getPublisherKey() {
-        return this.publisherKey;
-    }
+  public java.lang.String getPublisherKey() {
+    return this.publisherKey;
+  }
 
-    public java.lang.String getPublisherName() {
-        return this.publisherName;
-    }
+  public java.lang.String getPublisherName() {
+    return this.publisherName;
+  }
 
-    public void setPublisherKey(java.lang.String publisherKey) {
-        this.publisherKey = publisherKey;
-    }
+  public void setPublisherKey(java.lang.String publisherKey) {
+    this.publisherKey = publisherKey;
+  }
 
-    public void setPublisherName(java.lang.String publisherName) {
-        this.publisherName = publisherName;
-    }
+  public void setPublisherName(java.lang.String publisherName) {
+    this.publisherName = publisherName;
+  }
 }

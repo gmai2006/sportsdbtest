@@ -16,141 +16,141 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "persons")
 public class Persons implements Serializable {
-    private static final long serialVersionUID = 163445241921769738L;
+  private static final long serialVersionUID = 166867004249399199L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: person_key. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "person_key", length = 100)
-    private java.lang.String personKey;
-    /** Description: publisher_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "publisher_id")
-    private java.lang.Integer publisherId;
-    /** Description: gender. */
-    @Basic
-    @Column(name = "gender", length = 20)
-    private java.lang.String gender;
-    /** Description: birth_date. */
-    @Basic
-    @Column(name = "birth_date", length = 30)
-    private java.lang.String birthDate;
-    /** Description: death_date. */
-    @Basic
-    @Column(name = "death_date", length = 30)
-    private java.lang.String deathDate;
-    /** Description: birth_location_id. */
-    @Basic
-    @Column(name = "birth_location_id")
-    private java.lang.Integer birthLocationId;
-    /** Description: hometown_location_id. */
-    @Basic
-    @Column(name = "hometown_location_id")
-    private java.lang.Integer hometownLocationId;
-    /** Description: residence_location_id. */
-    @Basic
-    @Column(name = "residence_location_id")
-    private java.lang.Integer residenceLocationId;
-    /** Description: death_location_id. */
-    @Basic
-    @Column(name = "death_location_id")
-    private java.lang.Integer deathLocationId;
+  /** Description: person_key. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "person_key", length = 100)
+  private java.lang.String personKey;
+  /** Description: publisher_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "publisher_id")
+  private java.lang.Integer publisherId;
+  /** Description: gender. */
+  @Basic
+  @Column(name = "gender", length = 20)
+  private java.lang.String gender;
+  /** Description: birth_date. */
+  @Basic
+  @Column(name = "birth_date", length = 30)
+  private java.lang.String birthDate;
+  /** Description: death_date. */
+  @Basic
+  @Column(name = "death_date", length = 30)
+  private java.lang.String deathDate;
+  /** Description: birth_location_id. */
+  @Basic
+  @Column(name = "birth_location_id")
+  private java.lang.Integer birthLocationId;
+  /** Description: hometown_location_id. */
+  @Basic
+  @Column(name = "hometown_location_id")
+  private java.lang.Integer hometownLocationId;
+  /** Description: residence_location_id. */
+  @Basic
+  @Column(name = "residence_location_id")
+  private java.lang.Integer residenceLocationId;
+  /** Description: death_location_id. */
+  @Basic
+  @Column(name = "death_location_id")
+  private java.lang.Integer deathLocationId;
 
-    public Persons() {}
+  public Persons() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.String getPersonKey() {
-        return this.personKey;
-    }
+  public java.lang.String getPersonKey() {
+    return this.personKey;
+  }
 
-    public java.lang.Integer getPublisherId() {
-        return this.publisherId;
-    }
+  public java.lang.Integer getPublisherId() {
+    return this.publisherId;
+  }
 
-    public java.lang.String getGender() {
-        return this.gender;
-    }
+  public java.lang.String getGender() {
+    return this.gender;
+  }
 
-    public java.lang.String getBirthDate() {
-        return this.birthDate;
-    }
+  public java.lang.String getBirthDate() {
+    return this.birthDate;
+  }
 
-    public java.lang.String getDeathDate() {
-        return this.deathDate;
-    }
+  public java.lang.String getDeathDate() {
+    return this.deathDate;
+  }
 
-    public java.lang.Integer getBirthLocationId() {
-        return this.birthLocationId;
-    }
+  public java.lang.Integer getBirthLocationId() {
+    return this.birthLocationId;
+  }
 
-    public java.lang.Integer getHometownLocationId() {
-        return this.hometownLocationId;
-    }
+  public java.lang.Integer getHometownLocationId() {
+    return this.hometownLocationId;
+  }
 
-    public java.lang.Integer getResidenceLocationId() {
-        return this.residenceLocationId;
-    }
+  public java.lang.Integer getResidenceLocationId() {
+    return this.residenceLocationId;
+  }
 
-    public java.lang.Integer getDeathLocationId() {
-        return this.deathLocationId;
-    }
+  public java.lang.Integer getDeathLocationId() {
+    return this.deathLocationId;
+  }
 
-    public void setPersonKey(java.lang.String personKey) {
-        this.personKey = personKey;
-    }
+  public void setPersonKey(java.lang.String personKey) {
+    this.personKey = personKey;
+  }
 
-    public void setPublisherId(java.lang.Integer publisherId) {
-        this.publisherId = publisherId;
-    }
+  public void setPublisherId(java.lang.Integer publisherId) {
+    this.publisherId = publisherId;
+  }
 
-    public void setGender(java.lang.String gender) {
-        this.gender = gender;
-    }
+  public void setGender(java.lang.String gender) {
+    this.gender = gender;
+  }
 
-    public void setBirthDate(java.lang.String birthDate) {
-        this.birthDate = birthDate;
-    }
+  public void setBirthDate(java.lang.String birthDate) {
+    this.birthDate = birthDate;
+  }
 
-    public void setDeathDate(java.lang.String deathDate) {
-        this.deathDate = deathDate;
-    }
+  public void setDeathDate(java.lang.String deathDate) {
+    this.deathDate = deathDate;
+  }
 
-    public void setBirthLocationId(java.lang.Integer birthLocationId) {
-        this.birthLocationId = birthLocationId;
-    }
+  public void setBirthLocationId(java.lang.Integer birthLocationId) {
+    this.birthLocationId = birthLocationId;
+  }
 
-    public void setHometownLocationId(java.lang.Integer hometownLocationId) {
-        this.hometownLocationId = hometownLocationId;
-    }
+  public void setHometownLocationId(java.lang.Integer hometownLocationId) {
+    this.hometownLocationId = hometownLocationId;
+  }
 
-    public void setResidenceLocationId(java.lang.Integer residenceLocationId) {
-        this.residenceLocationId = residenceLocationId;
-    }
+  public void setResidenceLocationId(java.lang.Integer residenceLocationId) {
+    this.residenceLocationId = residenceLocationId;
+  }
 
-    public void setDeathLocationId(java.lang.Integer deathLocationId) {
-        this.deathLocationId = deathLocationId;
-    }
+  public void setDeathLocationId(java.lang.Integer deathLocationId) {
+    this.deathLocationId = deathLocationId;
+  }
 }

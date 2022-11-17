@@ -16,59 +16,60 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.BaseballDefensiveGroup;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.BaseballDefensiveGroup;
 
 @Stateless
 @Named("DefaultBaseballDefensiveGroupDao")
 public class DefaultBaseballDefensiveGroupDao implements BaseballDefensiveGroupDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultBaseballDefensiveGroupDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultBaseballDefensiveGroupDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultBaseballDefensiveGroupDao() {}
+  public DefaultBaseballDefensiveGroupDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public BaseballDefensiveGroup find(java.lang.Integer id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(BaseballDefensiveGroup.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public BaseballDefensiveGroup find(java.lang.Integer id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(BaseballDefensiveGroup.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<BaseballDefensiveGroup> select(int max) {
-        return dao.select(
-                "select a from BaseballDefensiveGroup a", BaseballDefensiveGroup.class, max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<BaseballDefensiveGroup> select(int max) {
+    return dao.select("select a from BaseballDefensiveGroup a", BaseballDefensiveGroup.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<BaseballDefensiveGroup> selectAll() {
-        return dao.selectAll(
-                "select a from BaseballDefensiveGroup a", BaseballDefensiveGroup.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<BaseballDefensiveGroup> selectAll() {
+    return dao.selectAll("select a from BaseballDefensiveGroup a", BaseballDefensiveGroup.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BaseballDefensiveGroup create(BaseballDefensiveGroup e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public BaseballDefensiveGroup create(BaseballDefensiveGroup e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BaseballDefensiveGroup update(BaseballDefensiveGroup e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public BaseballDefensiveGroup update(BaseballDefensiveGroup e) {
+    return dao.update(e);
+  }
 }

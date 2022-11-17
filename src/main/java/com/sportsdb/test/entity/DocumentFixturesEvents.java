@@ -16,82 +16,82 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "document_fixtures_events")
 public class DocumentFixturesEvents implements Serializable {
-    private static final long serialVersionUID = 163445241895195873L;
+  private static final long serialVersionUID = 166867004231996040L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: document_fixture_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "document_fixture_id")
-    private java.lang.Integer documentFixtureId;
-    /** Description: event_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "event_id")
-    private java.lang.Integer eventId;
-    /** Description: latest_document_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "latest_document_id")
-    private java.lang.Integer latestDocumentId;
-    /** Description: last_update. */
-    @Basic
-    @Column(name = "last_update")
-    private java.util.Date lastUpdate;
+  /** Description: document_fixture_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "document_fixture_id")
+  private java.lang.Integer documentFixtureId;
+  /** Description: event_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "event_id")
+  private java.lang.Integer eventId;
+  /** Description: latest_document_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "latest_document_id")
+  private java.lang.Integer latestDocumentId;
+  /** Description: last_update. */
+  @Basic
+  @Column(name = "last_update")
+  private java.util.Date lastUpdate;
 
-    public DocumentFixturesEvents() {}
+  public DocumentFixturesEvents() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.Integer getDocumentFixtureId() {
-        return this.documentFixtureId;
-    }
+  public java.lang.Integer getDocumentFixtureId() {
+    return this.documentFixtureId;
+  }
 
-    public java.lang.Integer getEventId() {
-        return this.eventId;
-    }
+  public java.lang.Integer getEventId() {
+    return this.eventId;
+  }
 
-    public java.lang.Integer getLatestDocumentId() {
-        return this.latestDocumentId;
-    }
+  public java.lang.Integer getLatestDocumentId() {
+    return this.latestDocumentId;
+  }
 
-    public java.util.Date getLastUpdate() {
-        return this.lastUpdate;
-    }
+  public java.util.Date getLastUpdate() {
+    return this.lastUpdate;
+  }
 
-    public void setDocumentFixtureId(java.lang.Integer documentFixtureId) {
-        this.documentFixtureId = documentFixtureId;
-    }
+  public void setDocumentFixtureId(java.lang.Integer documentFixtureId) {
+    this.documentFixtureId = documentFixtureId;
+  }
 
-    public void setEventId(java.lang.Integer eventId) {
-        this.eventId = eventId;
-    }
+  public void setEventId(java.lang.Integer eventId) {
+    this.eventId = eventId;
+  }
 
-    public void setLatestDocumentId(java.lang.Integer latestDocumentId) {
-        this.latestDocumentId = latestDocumentId;
-    }
+  public void setLatestDocumentId(java.lang.Integer latestDocumentId) {
+    this.latestDocumentId = latestDocumentId;
+  }
 
-    public void setLastUpdate(java.util.Date lastUpdate) {
-        this.lastUpdate = lastUpdate;
-    }
+  public void setLastUpdate(java.util.Date lastUpdate) {
+    this.lastUpdate = lastUpdate;
+  }
 }

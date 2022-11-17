@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.DisplayNames;
 import java.util.List;
+import com.sportsdb.test.entity.DisplayNames;
 
 public interface DisplayNamesService {
-    public DisplayNames find(java.lang.Integer id);
+  public DisplayNames find(java.lang.Integer id);
 
-    /**
-     * Select a list of DisplayNames based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return DisplayNames records.
-     */
-    public List<DisplayNames> select(int maxResult);
+  /**
+   * Select a list of DisplayNames based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return DisplayNames records.
+   */
+  public List<DisplayNames> select(int maxResult);
 
-    /**
-     * Select all DisplayNames.
-     *
-     * @return all DisplayNames records.
-     */
-    public List<DisplayNames> selectAll();
+  /**
+   * Select all DisplayNames.
+   *
+   * @return all DisplayNames records.
+   */
+  public List<DisplayNames> selectAll();
 
-    /**
-     * Create DisplayNames.
-     *
-     * @param bean The DisplayNames.
-     * @return The DisplayNames.
-     */
-    public DisplayNames create(DisplayNames bean);
+  /**
+   * Create DisplayNames.
+   *
+   * @param bean The DisplayNames.
+   * @return The DisplayNames.
+   */
+  public DisplayNames create(DisplayNames bean);
 
-    /**
-     * Update a DisplayNames.
-     *
-     * @param bean - The DisplayNames.
-     * @return DisplayNames.
-     */
-    public DisplayNames update(DisplayNames bean);
+  /**
+   * Update a DisplayNames.
+   *
+   * @param bean - The DisplayNames.
+   * @return DisplayNames.
+   */
+  public DisplayNames update(DisplayNames bean);
 }

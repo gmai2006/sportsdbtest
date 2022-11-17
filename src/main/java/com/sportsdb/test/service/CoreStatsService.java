@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.CoreStats;
 import java.util.List;
+import com.sportsdb.test.entity.CoreStats;
 
 public interface CoreStatsService {
-    public CoreStats find(java.lang.Integer id);
+  public CoreStats find(java.lang.Integer id);
 
-    /**
-     * Select a list of CoreStats based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return CoreStats records.
-     */
-    public List<CoreStats> select(int maxResult);
+  /**
+   * Select a list of CoreStats based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return CoreStats records.
+   */
+  public List<CoreStats> select(int maxResult);
 
-    /**
-     * Select all CoreStats.
-     *
-     * @return all CoreStats records.
-     */
-    public List<CoreStats> selectAll();
+  /**
+   * Select all CoreStats.
+   *
+   * @return all CoreStats records.
+   */
+  public List<CoreStats> selectAll();
 
-    /**
-     * Create CoreStats.
-     *
-     * @param bean The CoreStats.
-     * @return The CoreStats.
-     */
-    public CoreStats create(CoreStats bean);
+  /**
+   * Create CoreStats.
+   *
+   * @param bean The CoreStats.
+   * @return The CoreStats.
+   */
+  public CoreStats create(CoreStats bean);
 
-    /**
-     * Update a CoreStats.
-     *
-     * @param bean - The CoreStats.
-     * @return CoreStats.
-     */
-    public CoreStats update(CoreStats bean);
+  /**
+   * Update a CoreStats.
+   *
+   * @param bean - The CoreStats.
+   * @return CoreStats.
+   */
+  public CoreStats update(CoreStats bean);
 }

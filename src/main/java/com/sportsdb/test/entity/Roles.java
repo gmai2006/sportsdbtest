@@ -16,68 +16,68 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "roles")
 public class Roles implements Serializable {
-    private static final long serialVersionUID = 163445241924570666L;
+  private static final long serialVersionUID = 16686700425118149L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: role_key. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "role_key", length = 100)
-    private java.lang.String roleKey;
-    /** Description: role_name. */
-    @Basic
-    @Column(name = "role_name", length = 100)
-    private java.lang.String roleName;
-    /** Description: comment. */
-    @Basic
-    @Column(name = "comment", length = 100)
-    private java.lang.String comment;
+  /** Description: role_key. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "role_key", length = 100)
+  private java.lang.String roleKey;
+  /** Description: role_name. */
+  @Basic
+  @Column(name = "role_name", length = 100)
+  private java.lang.String roleName;
+  /** Description: comment. */
+  @Basic
+  @Column(name = "comment", length = 100)
+  private java.lang.String comment;
 
-    public Roles() {}
+  public Roles() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.String getRoleKey() {
-        return this.roleKey;
-    }
+  public java.lang.String getRoleKey() {
+    return this.roleKey;
+  }
 
-    public java.lang.String getRoleName() {
-        return this.roleName;
-    }
+  public java.lang.String getRoleName() {
+    return this.roleName;
+  }
 
-    public java.lang.String getComment() {
-        return this.comment;
-    }
+  public java.lang.String getComment() {
+    return this.comment;
+  }
 
-    public void setRoleKey(java.lang.String roleKey) {
-        this.roleKey = roleKey;
-    }
+  public void setRoleKey(java.lang.String roleKey) {
+    this.roleKey = roleKey;
+  }
 
-    public void setRoleName(java.lang.String roleName) {
-        this.roleName = roleName;
-    }
+  public void setRoleName(java.lang.String roleName) {
+    this.roleName = roleName;
+  }
 
-    public void setComment(java.lang.String comment) {
-        this.comment = comment;
-    }
+  public void setComment(java.lang.String comment) {
+    this.comment = comment;
+  }
 }

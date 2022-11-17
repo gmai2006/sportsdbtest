@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.MotorRacingRaceStats;
 import java.util.List;
+import com.sportsdb.test.entity.MotorRacingRaceStats;
 
 public interface MotorRacingRaceStatsDao {
-    /**
-     * Retrieve all records MotorRacingRaceStats.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of MotorRacingRaceStats
-     */
-    public List<MotorRacingRaceStats> select(int maxResult);
+  /**
+   * Retrieve all records MotorRacingRaceStats.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of MotorRacingRaceStats
+   */
+  public List<MotorRacingRaceStats> select(int maxResult);
 
-    /**
-     * Retrieve all records MotorRacingRaceStats.
-     *
-     * @return A list of MotorRacingRaceStats
-     */
-    public List<MotorRacingRaceStats> selectAll();
+  /**
+   * Retrieve all records MotorRacingRaceStats.
+   *
+   * @return A list of MotorRacingRaceStats
+   */
+  public List<MotorRacingRaceStats> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An MotorRacingRaceStats id.
-     * @return The same MotorRacingRaceStats.
-     */
-    public MotorRacingRaceStats find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An MotorRacingRaceStats id.
+   * @return The same MotorRacingRaceStats.
+   */
+  public MotorRacingRaceStats find(java.lang.Integer id);
 
-    /**
-     * Create an MotorRacingRaceStats.
-     *
-     * @param e the MotorRacingRaceStats.
-     * @return The same MotorRacingRaceStats.
-     */
-    public MotorRacingRaceStats create(MotorRacingRaceStats e);
+  /**
+   * Create an MotorRacingRaceStats.
+   *
+   * @param e the MotorRacingRaceStats.
+   * @return The same MotorRacingRaceStats.
+   */
+  public MotorRacingRaceStats create(MotorRacingRaceStats e);
 
-    /**
-     * Update the MotorRacingRaceStats.
-     *
-     * @param e the MotorRacingRaceStats.
-     * @return The same MotorRacingRaceStats.
-     */
-    public MotorRacingRaceStats update(MotorRacingRaceStats e);
+  /**
+   * Update the MotorRacingRaceStats.
+   *
+   * @param e the MotorRacingRaceStats.
+   * @return The same MotorRacingRaceStats.
+   */
+  public MotorRacingRaceStats update(MotorRacingRaceStats e);
 }

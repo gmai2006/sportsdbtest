@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.RolesDao;
-import com.sportsdb.test.entity.Roles;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.RolesDao;
+import com.sportsdb.test.entity.Roles;
 
 @Stateless
 @Named("DefaultRolesService")
 public class DefaultRolesService implements RolesService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final RolesDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final RolesDao dao;
 
-    @Inject
-    @Named("DefaultRolesDao")
-    public DefaultRolesService(final RolesDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultRolesDao")
+  public DefaultRolesService(final RolesDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public Roles find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public Roles find(java.lang.Integer id) {
 
-        final Roles result = dao.find(id);
-        logger.info("find(Roles) - exited - return value={} result ");
-        return result;
-    }
+    final Roles result = dao.find(id);
+    logger.info("find(Roles) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<Roles> select(int maxResult) {
-        final List<Roles> result = dao.select(maxResult);
-        logger.info("select(Roles) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<Roles> select(int maxResult) {
+    final List<Roles> result = dao.select(maxResult);
+    logger.info("select(Roles) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<Roles> selectAll() {
-        final List<Roles> results = dao.selectAll();
-        logger.info("selectAll(Roles) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<Roles> selectAll() {
+    final List<Roles> results = dao.selectAll();
+    logger.info("selectAll(Roles) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public Roles create(Roles bean) {
-        requireNonNull(bean);
-        logger.info("create(Roles={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public Roles create(Roles bean) {
+    requireNonNull(bean);
+    logger.info("create(Roles={}) - entered bean ");
 
-        final Roles result = dao.create(bean);
+    final Roles result = dao.create(bean);
 
-        logger.info("create(Roles) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(Roles) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public Roles update(Roles bean) {
-        requireNonNull(bean);
-        logger.info("update(Roles={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public Roles update(Roles bean) {
+    requireNonNull(bean);
+    logger.info("update(Roles={}) - entered bean ");
 
-        final Roles result = dao.update(bean);
+    final Roles result = dao.update(bean);
 
-        logger.info("update(Roles) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(Roles) - exited - return value={} result ");
+    return result;
+  }
 }

@@ -16,70 +16,70 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "baseball_defensive_players")
 public class BaseballDefensivePlayers implements Serializable {
-    private static final long serialVersionUID = 16344524188246209L;
+  private static final long serialVersionUID = 166867004221943976L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: baseball_defensive_group_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "baseball_defensive_group_id")
-    private java.lang.Integer baseballDefensiveGroupId;
-    /** Description: player_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "player_id")
-    private java.lang.Integer playerId;
-    /** Description: position_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "position_id")
-    private java.lang.Integer positionId;
+  /** Description: baseball_defensive_group_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "baseball_defensive_group_id")
+  private java.lang.Integer baseballDefensiveGroupId;
+  /** Description: player_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "player_id")
+  private java.lang.Integer playerId;
+  /** Description: position_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "position_id")
+  private java.lang.Integer positionId;
 
-    public BaseballDefensivePlayers() {}
+  public BaseballDefensivePlayers() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.Integer getBaseballDefensiveGroupId() {
-        return this.baseballDefensiveGroupId;
-    }
+  public java.lang.Integer getBaseballDefensiveGroupId() {
+    return this.baseballDefensiveGroupId;
+  }
 
-    public java.lang.Integer getPlayerId() {
-        return this.playerId;
-    }
+  public java.lang.Integer getPlayerId() {
+    return this.playerId;
+  }
 
-    public java.lang.Integer getPositionId() {
-        return this.positionId;
-    }
+  public java.lang.Integer getPositionId() {
+    return this.positionId;
+  }
 
-    public void setBaseballDefensiveGroupId(java.lang.Integer baseballDefensiveGroupId) {
-        this.baseballDefensiveGroupId = baseballDefensiveGroupId;
-    }
+  public void setBaseballDefensiveGroupId(java.lang.Integer baseballDefensiveGroupId) {
+    this.baseballDefensiveGroupId = baseballDefensiveGroupId;
+  }
 
-    public void setPlayerId(java.lang.Integer playerId) {
-        this.playerId = playerId;
-    }
+  public void setPlayerId(java.lang.Integer playerId) {
+    this.playerId = playerId;
+  }
 
-    public void setPositionId(java.lang.Integer positionId) {
-        this.positionId = positionId;
-    }
+  public void setPositionId(java.lang.Integer positionId) {
+    this.positionId = positionId;
+  }
 }

@@ -16,91 +16,91 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "american_football_offensive_stats")
 public class AmericanFootballOffensiveStats implements Serializable {
-    private static final long serialVersionUID = 163445241872813231L;
+  private static final long serialVersionUID = 166867004214733111L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: offensive_plays_yards. */
-    @Basic
-    @Column(name = "offensive_plays_yards", length = 100)
-    private java.lang.String offensivePlaysYards;
-    /** Description: offensive_plays_number. */
-    @Basic
-    @Column(name = "offensive_plays_number", length = 100)
-    private java.lang.String offensivePlaysNumber;
-    /** Description: offensive_plays_average_yards_per. */
-    @Basic
-    @Column(name = "offensive_plays_average_yards_per", length = 100)
-    private java.lang.String offensivePlaysAverageYardsPer;
-    /** Description: possession_duration. */
-    @Basic
-    @Column(name = "possession_duration", length = 100)
-    private java.lang.String possessionDuration;
-    /** Description: turnovers_giveaway. */
-    @Basic
-    @Column(name = "turnovers_giveaway", length = 100)
-    private java.lang.String turnoversGiveaway;
+  /** Description: offensive_plays_yards. */
+  @Basic
+  @Column(name = "offensive_plays_yards", length = 100)
+  private java.lang.String offensivePlaysYards;
+  /** Description: offensive_plays_number. */
+  @Basic
+  @Column(name = "offensive_plays_number", length = 100)
+  private java.lang.String offensivePlaysNumber;
+  /** Description: offensive_plays_average_yards_per. */
+  @Basic
+  @Column(name = "offensive_plays_average_yards_per", length = 100)
+  private java.lang.String offensivePlaysAverageYardsPer;
+  /** Description: possession_duration. */
+  @Basic
+  @Column(name = "possession_duration", length = 100)
+  private java.lang.String possessionDuration;
+  /** Description: turnovers_giveaway. */
+  @Basic
+  @Column(name = "turnovers_giveaway", length = 100)
+  private java.lang.String turnoversGiveaway;
 
-    public AmericanFootballOffensiveStats() {}
+  public AmericanFootballOffensiveStats() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.String getOffensivePlaysYards() {
-        return this.offensivePlaysYards;
-    }
+  public java.lang.String getOffensivePlaysYards() {
+    return this.offensivePlaysYards;
+  }
 
-    public java.lang.String getOffensivePlaysNumber() {
-        return this.offensivePlaysNumber;
-    }
+  public java.lang.String getOffensivePlaysNumber() {
+    return this.offensivePlaysNumber;
+  }
 
-    public java.lang.String getOffensivePlaysAverageYardsPer() {
-        return this.offensivePlaysAverageYardsPer;
-    }
+  public java.lang.String getOffensivePlaysAverageYardsPer() {
+    return this.offensivePlaysAverageYardsPer;
+  }
 
-    public java.lang.String getPossessionDuration() {
-        return this.possessionDuration;
-    }
+  public java.lang.String getPossessionDuration() {
+    return this.possessionDuration;
+  }
 
-    public java.lang.String getTurnoversGiveaway() {
-        return this.turnoversGiveaway;
-    }
+  public java.lang.String getTurnoversGiveaway() {
+    return this.turnoversGiveaway;
+  }
 
-    public void setOffensivePlaysYards(java.lang.String offensivePlaysYards) {
-        this.offensivePlaysYards = offensivePlaysYards;
-    }
+  public void setOffensivePlaysYards(java.lang.String offensivePlaysYards) {
+    this.offensivePlaysYards = offensivePlaysYards;
+  }
 
-    public void setOffensivePlaysNumber(java.lang.String offensivePlaysNumber) {
-        this.offensivePlaysNumber = offensivePlaysNumber;
-    }
+  public void setOffensivePlaysNumber(java.lang.String offensivePlaysNumber) {
+    this.offensivePlaysNumber = offensivePlaysNumber;
+  }
 
-    public void setOffensivePlaysAverageYardsPer(java.lang.String offensivePlaysAverageYardsPer) {
-        this.offensivePlaysAverageYardsPer = offensivePlaysAverageYardsPer;
-    }
+  public void setOffensivePlaysAverageYardsPer(java.lang.String offensivePlaysAverageYardsPer) {
+    this.offensivePlaysAverageYardsPer = offensivePlaysAverageYardsPer;
+  }
 
-    public void setPossessionDuration(java.lang.String possessionDuration) {
-        this.possessionDuration = possessionDuration;
-    }
+  public void setPossessionDuration(java.lang.String possessionDuration) {
+    this.possessionDuration = possessionDuration;
+  }
 
-    public void setTurnoversGiveaway(java.lang.String turnoversGiveaway) {
-        this.turnoversGiveaway = turnoversGiveaway;
-    }
+  public void setTurnoversGiveaway(java.lang.String turnoversGiveaway) {
+    this.turnoversGiveaway = turnoversGiveaway;
+  }
 }

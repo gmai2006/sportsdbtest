@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.OutcomeTotals;
 import java.util.List;
+import com.sportsdb.test.entity.OutcomeTotals;
 
 public interface OutcomeTotalsService {
-    public OutcomeTotals find(java.lang.Integer id);
+  public OutcomeTotals find(java.lang.Integer id);
 
-    /**
-     * Select a list of OutcomeTotals based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return OutcomeTotals records.
-     */
-    public List<OutcomeTotals> select(int maxResult);
+  /**
+   * Select a list of OutcomeTotals based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return OutcomeTotals records.
+   */
+  public List<OutcomeTotals> select(int maxResult);
 
-    /**
-     * Select all OutcomeTotals.
-     *
-     * @return all OutcomeTotals records.
-     */
-    public List<OutcomeTotals> selectAll();
+  /**
+   * Select all OutcomeTotals.
+   *
+   * @return all OutcomeTotals records.
+   */
+  public List<OutcomeTotals> selectAll();
 
-    /**
-     * Create OutcomeTotals.
-     *
-     * @param bean The OutcomeTotals.
-     * @return The OutcomeTotals.
-     */
-    public OutcomeTotals create(OutcomeTotals bean);
+  /**
+   * Create OutcomeTotals.
+   *
+   * @param bean The OutcomeTotals.
+   * @return The OutcomeTotals.
+   */
+  public OutcomeTotals create(OutcomeTotals bean);
 
-    /**
-     * Update a OutcomeTotals.
-     *
-     * @param bean - The OutcomeTotals.
-     * @return OutcomeTotals.
-     */
-    public OutcomeTotals update(OutcomeTotals bean);
+  /**
+   * Update a OutcomeTotals.
+   *
+   * @param bean - The OutcomeTotals.
+   * @return OutcomeTotals.
+   */
+  public OutcomeTotals update(OutcomeTotals bean);
 }

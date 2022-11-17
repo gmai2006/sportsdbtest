@@ -16,61 +16,62 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.BaseballActionSubstitutions;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.BaseballActionSubstitutions;
 
 @Stateless
 @Named("DefaultBaseballActionSubstitutionsDao")
 public class DefaultBaseballActionSubstitutionsDao implements BaseballActionSubstitutionsDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultBaseballActionSubstitutionsDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultBaseballActionSubstitutionsDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultBaseballActionSubstitutionsDao() {}
+  public DefaultBaseballActionSubstitutionsDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public BaseballActionSubstitutions find(java.lang.Integer id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(BaseballActionSubstitutions.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public BaseballActionSubstitutions find(java.lang.Integer id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(BaseballActionSubstitutions.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<BaseballActionSubstitutions> select(int max) {
-        return dao.select(
-                "select a from BaseballActionSubstitutions a",
-                BaseballActionSubstitutions.class,
-                max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<BaseballActionSubstitutions> select(int max) {
+    return dao.select(
+        "select a from BaseballActionSubstitutions a", BaseballActionSubstitutions.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<BaseballActionSubstitutions> selectAll() {
-        return dao.selectAll(
-                "select a from BaseballActionSubstitutions a", BaseballActionSubstitutions.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<BaseballActionSubstitutions> selectAll() {
+    return dao.selectAll(
+        "select a from BaseballActionSubstitutions a", BaseballActionSubstitutions.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BaseballActionSubstitutions create(BaseballActionSubstitutions e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public BaseballActionSubstitutions create(BaseballActionSubstitutions e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BaseballActionSubstitutions update(BaseballActionSubstitutions e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public BaseballActionSubstitutions update(BaseballActionSubstitutions e) {
+    return dao.update(e);
+  }
 }

@@ -16,58 +16,60 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.AffiliationsDocuments;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.AffiliationsDocuments;
 
 @Stateless
 @Named("DefaultAffiliationsDocumentsDao")
 public class DefaultAffiliationsDocumentsDao implements AffiliationsDocumentsDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultAffiliationsDocumentsDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultAffiliationsDocumentsDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultAffiliationsDocumentsDao() {}
+  public DefaultAffiliationsDocumentsDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public AffiliationsDocuments find(java.lang.String id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(AffiliationsDocuments.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public AffiliationsDocuments find(java.lang.String id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(AffiliationsDocuments.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<AffiliationsDocuments> select(int max) {
-        return dao.select(
-                "select a from AffiliationsDocuments a", AffiliationsDocuments.class, max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<AffiliationsDocuments> select(int max) {
+    return dao.select("select a from AffiliationsDocuments a", AffiliationsDocuments.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<AffiliationsDocuments> selectAll() {
-        return dao.selectAll("select a from AffiliationsDocuments a", AffiliationsDocuments.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<AffiliationsDocuments> selectAll() {
+    return dao.selectAll("select a from AffiliationsDocuments a", AffiliationsDocuments.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AffiliationsDocuments create(AffiliationsDocuments e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public AffiliationsDocuments create(AffiliationsDocuments e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AffiliationsDocuments update(AffiliationsDocuments e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public AffiliationsDocuments update(AffiliationsDocuments e) {
+    return dao.update(e);
+  }
 }

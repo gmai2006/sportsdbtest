@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.Roles;
 import java.util.List;
+import com.sportsdb.test.entity.Roles;
 
 public interface RolesService {
-    public Roles find(java.lang.Integer id);
+  public Roles find(java.lang.Integer id);
 
-    /**
-     * Select a list of Roles based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return Roles records.
-     */
-    public List<Roles> select(int maxResult);
+  /**
+   * Select a list of Roles based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return Roles records.
+   */
+  public List<Roles> select(int maxResult);
 
-    /**
-     * Select all Roles.
-     *
-     * @return all Roles records.
-     */
-    public List<Roles> selectAll();
+  /**
+   * Select all Roles.
+   *
+   * @return all Roles records.
+   */
+  public List<Roles> selectAll();
 
-    /**
-     * Create Roles.
-     *
-     * @param bean The Roles.
-     * @return The Roles.
-     */
-    public Roles create(Roles bean);
+  /**
+   * Create Roles.
+   *
+   * @param bean The Roles.
+   * @return The Roles.
+   */
+  public Roles create(Roles bean);
 
-    /**
-     * Update a Roles.
-     *
-     * @param bean - The Roles.
-     * @return Roles.
-     */
-    public Roles update(Roles bean);
+  /**
+   * Update a Roles.
+   *
+   * @param bean - The Roles.
+   * @return Roles.
+   */
+  public Roles update(Roles bean);
 }

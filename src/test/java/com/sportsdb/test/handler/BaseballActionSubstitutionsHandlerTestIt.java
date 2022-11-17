@@ -17,128 +17,103 @@
 package com.sportsdb.test.handler;
 
 import static org.junit.Assert.assertEquals;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.dao.StandaloneJpaDao;
-import com.sportsdb.test.entity.BaseballActionSubstitutions;
-import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
-import com.sportsdb.test.utils.FileUtils;
+import java.io.IOException;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import org.json.CDL;
 import org.json.JSONArray;
+import com.google.gson.Gson;
+import com.sportsdb.test.entity.BaseballActionSubstitutions;
+import com.sportsdb.test.dao.JpaDao;
+import com.sportsdb.test.dao.StandaloneJpaDao;
+import com.sportsdb.test.dao.DefaultBaseballActionSubstitutionsDao;
+import com.sportsdb.test.utils.DelimiterParser;
+import com.sportsdb.test.utils.FileUtils;
+import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
+
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import com.google.gson.GsonBuilder;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class BaseballActionSubstitutionsHandlerTestIt {
-    static final String inputFile = "BaseballActionSubstitutions.json";
-    static BaseballActionSubstitutionsHandler handler;
-    private static JpaDao jpa;
-    static Gson gson =
-            new GsonBuilder()
-                    .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
-                    .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
-                    .create();
-    private BaseballActionSubstitutions[] records;
+  static final String inputFile = "BaseballActionSubstitutions.json";
+  static BaseballActionSubstitutionsHandler handler;
+  private static JpaDao jpa;
+  static Gson gson =
+      new GsonBuilder()
+          .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
+          .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
+          .create();
+  private BaseballActionSubstitutions[] records;
 
-    /** Run before the test. */
-    @BeforeClass
-    public static void before() {
-        final EntityManagerFactory factory =
-                Persistence.createEntityManagerFactory("testpersistence");
-        jpa = new StandaloneJpaDao(factory.createEntityManager());
-        handler = new BaseballActionSubstitutionsHandler(jpa);
-    }
+  /** Run before the test. */
+  @BeforeClass
+  public static void before() {
+    final EntityManagerFactory factory = Persistence.createEntityManagerFactory("testpersistence");
+    jpa = new StandaloneJpaDao(factory.createEntityManager());
+    handler = new BaseballActionSubstitutionsHandler(jpa);
+  }
 
-    @Test
-    public void testSelect() throws IOException {
-        final File tempFile =
-                createRecordInputStreamFromJsonFile(inputFile, Charset.defaultCharset());
-        final InputStream inputStream = new BufferedInputStream(new FileInputStream(tempFile));
-        int count = handler.process(inputStream);
-        String json = FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
-        records = gson.fromJson(json, BaseballActionSubstitutions[].class);
-        assertEquals("match count", count, records.length);
-        BaseballActionSubstitutions testResult =
-                jpa.find(BaseballActionSubstitutions.class, records[0].getId());
-        org.junit.Assert.assertEquals(
-                "expect equals baseballEventStateId ",
-                this.records[0].getBaseballEventStateId(),
-                testResult.getBaseballEventStateId());
-        org.junit.Assert.assertEquals(
-                "expect equals sequenceNumber ",
-                this.records[0].getSequenceNumber(),
-                testResult.getSequenceNumber());
-        assertEquals(
-                "expect equals personType ",
-                this.records[0].getPersonType(),
-                testResult.getPersonType());
-        org.junit.Assert.assertEquals(
-                "expect equals personOriginalId ",
-                this.records[0].getPersonOriginalId(),
-                testResult.getPersonOriginalId());
-        org.junit.Assert.assertEquals(
-                "expect equals personOriginalPositionId ",
-                this.records[0].getPersonOriginalPositionId(),
-                testResult.getPersonOriginalPositionId());
-        org.junit.Assert.assertEquals(
-                "expect equals personOriginalLineupSlot ",
-                this.records[0].getPersonOriginalLineupSlot(),
-                testResult.getPersonOriginalLineupSlot());
-        org.junit.Assert.assertEquals(
-                "expect equals personReplacingId ",
-                this.records[0].getPersonReplacingId(),
-                testResult.getPersonReplacingId());
-        org.junit.Assert.assertEquals(
-                "expect equals personReplacingPositionId ",
-                this.records[0].getPersonReplacingPositionId(),
-                testResult.getPersonReplacingPositionId());
-        org.junit.Assert.assertEquals(
-                "expect equals personReplacingLineupSlot ",
-                this.records[0].getPersonReplacingLineupSlot(),
-                testResult.getPersonReplacingLineupSlot());
-        assertEquals(
-                "expect equals substitutionReason ",
-                this.records[0].getSubstitutionReason(),
-                testResult.getSubstitutionReason());
-        assertEquals(
-                "expect equals comment ", this.records[0].getComment(), testResult.getComment());
+  @Test
+  public void testSelect() throws IOException {
+    final File tempFile = new File("./src/test/resources/BaseballActionSubstitutions.csv");
+    final InputStream inputStream = new BufferedInputStream(new FileInputStream(tempFile));
+    int count = handler.process(inputStream);
+    String json = FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
+    records = gson.fromJson(json, BaseballActionSubstitutions[].class);
+    assertEquals("match count", count, records.length);
+    BaseballActionSubstitutions testResult =
+        jpa.find(BaseballActionSubstitutions.class, records[0].getId());
+    org.junit.Assert.assertEquals(
+        "expect equals baseballEventStateId ",
+        this.records[0].getBaseballEventStateId(),
+        testResult.getBaseballEventStateId());
+    org.junit.Assert.assertEquals(
+        "expect equals sequenceNumber ",
+        this.records[0].getSequenceNumber(),
+        testResult.getSequenceNumber());
+    assertEquals(
+        "expect equals personType ", this.records[0].getPersonType(), testResult.getPersonType());
+    org.junit.Assert.assertEquals(
+        "expect equals personOriginalId ",
+        this.records[0].getPersonOriginalId(),
+        testResult.getPersonOriginalId());
+    org.junit.Assert.assertEquals(
+        "expect equals personOriginalPositionId ",
+        this.records[0].getPersonOriginalPositionId(),
+        testResult.getPersonOriginalPositionId());
+    org.junit.Assert.assertEquals(
+        "expect equals personOriginalLineupSlot ",
+        this.records[0].getPersonOriginalLineupSlot(),
+        testResult.getPersonOriginalLineupSlot());
+    org.junit.Assert.assertEquals(
+        "expect equals personReplacingId ",
+        this.records[0].getPersonReplacingId(),
+        testResult.getPersonReplacingId());
+    org.junit.Assert.assertEquals(
+        "expect equals personReplacingPositionId ",
+        this.records[0].getPersonReplacingPositionId(),
+        testResult.getPersonReplacingPositionId());
+    org.junit.Assert.assertEquals(
+        "expect equals personReplacingLineupSlot ",
+        this.records[0].getPersonReplacingLineupSlot(),
+        testResult.getPersonReplacingLineupSlot());
+    assertEquals(
+        "expect equals substitutionReason ",
+        this.records[0].getSubstitutionReason(),
+        testResult.getSubstitutionReason());
+    assertEquals("expect equals comment ", this.records[0].getComment(), testResult.getComment());
 
-        // cleanup
-        inputStream.close();
-        json = null;
-        records = null;
-    }
-
-    /**
-     * Construct a delimiter file from a json file.
-     *
-     * @param inputFile the json file.
-     * @param charset default charset.
-     * @return
-     */
-    private File createRecordInputStreamFromJsonFile(String inputFile, Charset charset) {
-        try {
-            final File tempFile = File.createTempFile(inputFile, ".txt");
-            tempFile.deleteOnExit();
-            String json =
-                    FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
-            JSONArray docs = new JSONArray(json);
-            String csv = CDL.toString(docs);
-            org.apache.commons.io.FileUtils.writeStringToFile(
-                    tempFile, csv, Charset.defaultCharset());
-            return tempFile;
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return null;
-        }
-    }
+    // cleanup
+    inputStream.close();
+    json = null;
+    records = null;
+  }
 }

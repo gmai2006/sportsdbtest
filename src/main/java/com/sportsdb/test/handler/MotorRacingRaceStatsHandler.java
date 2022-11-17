@@ -16,138 +16,141 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.MotorRacingRaceStats;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.MotorRacingRaceStats;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("MotorRacingRaceStatsHandler")
 public class MotorRacingRaceStatsHandler extends DelimiterFileHandler<MotorRacingRaceStats> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public MotorRacingRaceStatsHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public MotorRacingRaceStatsHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected MotorRacingRaceStats parseLine(List<String> headers, List<String> tokens) {
+    MotorRacingRaceStats record = new MotorRacingRaceStats();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "timeBehindLeader":
+          record.setTimeBehindLeader(tokens.get(i));
+          break;
+
+        case "lapsBehindLeader":
+          record.setLapsBehindLeader(tokens.get(i));
+          break;
+
+        case "timeAheadFollower":
+          record.setTimeAheadFollower(tokens.get(i));
+          break;
+
+        case "lapsAheadFollower":
+          record.setLapsAheadFollower(tokens.get(i));
+          break;
+
+        case "time":
+          record.setTime(tokens.get(i));
+          break;
+
+        case "points":
+          record.setPoints(tokens.get(i));
+          break;
+
+        case "pointsRookie":
+          record.setPointsRookie(tokens.get(i));
+          break;
+
+        case "bonus":
+          record.setBonus(tokens.get(i));
+          break;
+
+        case "lapsCompleted":
+          record.setLapsCompleted(tokens.get(i));
+          break;
+
+        case "lapsLeadingTotal":
+          record.setLapsLeadingTotal(tokens.get(i));
+          break;
+
+        case "distanceLeading":
+          record.setDistanceLeading(tokens.get(i));
+          break;
+
+        case "distanceCompleted":
+          record.setDistanceCompleted(tokens.get(i));
+          break;
+
+        case "distanceUnits":
+          record.setDistanceUnits(tokens.get(i));
+          break;
+
+        case "speedAverage":
+          record.setSpeedAverage(tokens.get(i));
+          break;
+
+        case "speedUnits":
+          record.setSpeedUnits(tokens.get(i));
+          break;
+
+        case "status":
+          record.setStatus(tokens.get(i));
+          break;
+
+        case "finishesTop5":
+          record.setFinishesTop5(tokens.get(i));
+          break;
+
+        case "finishesTop10":
+          record.setFinishesTop10(tokens.get(i));
+          break;
+
+        case "starts":
+          record.setStarts(tokens.get(i));
+          break;
+
+        case "finishes":
+          record.setFinishes(tokens.get(i));
+          break;
+
+        case "nonFinishes":
+          record.setNonFinishes(tokens.get(i));
+          break;
+
+        case "wins":
+          record.setWins(tokens.get(i));
+          break;
+
+        case "racesLeading":
+          record.setRacesLeading(tokens.get(i));
+          break;
+
+        case "money":
+          record.setMoney(tokens.get(i));
+          break;
+
+        case "moneyUnits":
+          record.setMoneyUnits(tokens.get(i));
+          break;
+
+        case "leadsTotal":
+          record.setLeadsTotal(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected MotorRacingRaceStats parseLine(List<String> headers, List<String> tokens) {
-        MotorRacingRaceStats record = new MotorRacingRaceStats();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "timeBehindLeader":
-                    record.setTimeBehindLeader(tokens.get(i));
-                    break;
-
-                case "lapsBehindLeader":
-                    record.setLapsBehindLeader(tokens.get(i));
-                    break;
-
-                case "timeAheadFollower":
-                    record.setTimeAheadFollower(tokens.get(i));
-                    break;
-
-                case "lapsAheadFollower":
-                    record.setLapsAheadFollower(tokens.get(i));
-                    break;
-
-                case "time":
-                    record.setTime(tokens.get(i));
-                    break;
-
-                case "points":
-                    record.setPoints(tokens.get(i));
-                    break;
-
-                case "pointsRookie":
-                    record.setPointsRookie(tokens.get(i));
-                    break;
-
-                case "bonus":
-                    record.setBonus(tokens.get(i));
-                    break;
-
-                case "lapsCompleted":
-                    record.setLapsCompleted(tokens.get(i));
-                    break;
-
-                case "lapsLeadingTotal":
-                    record.setLapsLeadingTotal(tokens.get(i));
-                    break;
-
-                case "distanceLeading":
-                    record.setDistanceLeading(tokens.get(i));
-                    break;
-
-                case "distanceCompleted":
-                    record.setDistanceCompleted(tokens.get(i));
-                    break;
-
-                case "distanceUnits":
-                    record.setDistanceUnits(tokens.get(i));
-                    break;
-
-                case "speedAverage":
-                    record.setSpeedAverage(tokens.get(i));
-                    break;
-
-                case "speedUnits":
-                    record.setSpeedUnits(tokens.get(i));
-                    break;
-
-                case "status":
-                    record.setStatus(tokens.get(i));
-                    break;
-
-                case "finishesTop5":
-                    record.setFinishesTop5(tokens.get(i));
-                    break;
-
-                case "finishesTop10":
-                    record.setFinishesTop10(tokens.get(i));
-                    break;
-
-                case "starts":
-                    record.setStarts(tokens.get(i));
-                    break;
-
-                case "finishes":
-                    record.setFinishes(tokens.get(i));
-                    break;
-
-                case "nonFinishes":
-                    record.setNonFinishes(tokens.get(i));
-                    break;
-
-                case "wins":
-                    record.setWins(tokens.get(i));
-                    break;
-
-                case "racesLeading":
-                    record.setRacesLeading(tokens.get(i));
-                    break;
-
-                case "money":
-                    record.setMoney(tokens.get(i));
-                    break;
-
-                case "moneyUnits":
-                    record.setMoneyUnits(tokens.get(i));
-                    break;
-
-                case "leadsTotal":
-                    record.setLeadsTotal(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

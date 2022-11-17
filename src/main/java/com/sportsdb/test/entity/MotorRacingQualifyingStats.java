@@ -16,115 +16,115 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "motor_racing_qualifying_stats")
 public class MotorRacingQualifyingStats implements Serializable {
-    private static final long serialVersionUID = 163445241914539204L;
+  private static final long serialVersionUID = 166867004244055354L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: grid. */
-    @Basic
-    @Column(name = "grid", length = 100)
-    private java.lang.String grid;
-    /** Description: pole_position. */
-    @Basic
-    @Column(name = "pole_position", length = 100)
-    private java.lang.String polePosition;
-    /** Description: pole_wins. */
-    @Basic
-    @Column(name = "pole_wins", length = 100)
-    private java.lang.String poleWins;
-    /** Description: qualifying_speed. */
-    @Basic
-    @Column(name = "qualifying_speed", length = 100)
-    private java.lang.String qualifyingSpeed;
-    /** Description: qualifying_speed_units. */
-    @Basic
-    @Column(name = "qualifying_speed_units", length = 100)
-    private java.lang.String qualifyingSpeedUnits;
-    /** Description: qualifying_time. */
-    @Basic
-    @Column(name = "qualifying_time", length = 100)
-    private java.lang.String qualifyingTime;
-    /** Description: qualifying_position. */
-    @Basic
-    @Column(name = "qualifying_position", length = 100)
-    private java.lang.String qualifyingPosition;
+  /** Description: grid. */
+  @Basic
+  @Column(name = "grid", length = 100)
+  private java.lang.String grid;
+  /** Description: pole_position. */
+  @Basic
+  @Column(name = "pole_position", length = 100)
+  private java.lang.String polePosition;
+  /** Description: pole_wins. */
+  @Basic
+  @Column(name = "pole_wins", length = 100)
+  private java.lang.String poleWins;
+  /** Description: qualifying_speed. */
+  @Basic
+  @Column(name = "qualifying_speed", length = 100)
+  private java.lang.String qualifyingSpeed;
+  /** Description: qualifying_speed_units. */
+  @Basic
+  @Column(name = "qualifying_speed_units", length = 100)
+  private java.lang.String qualifyingSpeedUnits;
+  /** Description: qualifying_time. */
+  @Basic
+  @Column(name = "qualifying_time", length = 100)
+  private java.lang.String qualifyingTime;
+  /** Description: qualifying_position. */
+  @Basic
+  @Column(name = "qualifying_position", length = 100)
+  private java.lang.String qualifyingPosition;
 
-    public MotorRacingQualifyingStats() {}
+  public MotorRacingQualifyingStats() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.String getGrid() {
-        return this.grid;
-    }
+  public java.lang.String getGrid() {
+    return this.grid;
+  }
 
-    public java.lang.String getPolePosition() {
-        return this.polePosition;
-    }
+  public java.lang.String getPolePosition() {
+    return this.polePosition;
+  }
 
-    public java.lang.String getPoleWins() {
-        return this.poleWins;
-    }
+  public java.lang.String getPoleWins() {
+    return this.poleWins;
+  }
 
-    public java.lang.String getQualifyingSpeed() {
-        return this.qualifyingSpeed;
-    }
+  public java.lang.String getQualifyingSpeed() {
+    return this.qualifyingSpeed;
+  }
 
-    public java.lang.String getQualifyingSpeedUnits() {
-        return this.qualifyingSpeedUnits;
-    }
+  public java.lang.String getQualifyingSpeedUnits() {
+    return this.qualifyingSpeedUnits;
+  }
 
-    public java.lang.String getQualifyingTime() {
-        return this.qualifyingTime;
-    }
+  public java.lang.String getQualifyingTime() {
+    return this.qualifyingTime;
+  }
 
-    public java.lang.String getQualifyingPosition() {
-        return this.qualifyingPosition;
-    }
+  public java.lang.String getQualifyingPosition() {
+    return this.qualifyingPosition;
+  }
 
-    public void setGrid(java.lang.String grid) {
-        this.grid = grid;
-    }
+  public void setGrid(java.lang.String grid) {
+    this.grid = grid;
+  }
 
-    public void setPolePosition(java.lang.String polePosition) {
-        this.polePosition = polePosition;
-    }
+  public void setPolePosition(java.lang.String polePosition) {
+    this.polePosition = polePosition;
+  }
 
-    public void setPoleWins(java.lang.String poleWins) {
-        this.poleWins = poleWins;
-    }
+  public void setPoleWins(java.lang.String poleWins) {
+    this.poleWins = poleWins;
+  }
 
-    public void setQualifyingSpeed(java.lang.String qualifyingSpeed) {
-        this.qualifyingSpeed = qualifyingSpeed;
-    }
+  public void setQualifyingSpeed(java.lang.String qualifyingSpeed) {
+    this.qualifyingSpeed = qualifyingSpeed;
+  }
 
-    public void setQualifyingSpeedUnits(java.lang.String qualifyingSpeedUnits) {
-        this.qualifyingSpeedUnits = qualifyingSpeedUnits;
-    }
+  public void setQualifyingSpeedUnits(java.lang.String qualifyingSpeedUnits) {
+    this.qualifyingSpeedUnits = qualifyingSpeedUnits;
+  }
 
-    public void setQualifyingTime(java.lang.String qualifyingTime) {
-        this.qualifyingTime = qualifyingTime;
-    }
+  public void setQualifyingTime(java.lang.String qualifyingTime) {
+    this.qualifyingTime = qualifyingTime;
+  }
 
-    public void setQualifyingPosition(java.lang.String qualifyingPosition) {
-        this.qualifyingPosition = qualifyingPosition;
-    }
+  public void setQualifyingPosition(java.lang.String qualifyingPosition) {
+    this.qualifyingPosition = qualifyingPosition;
+  }
 }

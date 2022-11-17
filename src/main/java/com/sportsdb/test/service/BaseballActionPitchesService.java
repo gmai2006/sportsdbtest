@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.BaseballActionPitches;
 import java.util.List;
+import com.sportsdb.test.entity.BaseballActionPitches;
 
 public interface BaseballActionPitchesService {
-    public BaseballActionPitches find(java.lang.Integer id);
+  public BaseballActionPitches find(java.lang.Integer id);
 
-    /**
-     * Select a list of BaseballActionPitches based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return BaseballActionPitches records.
-     */
-    public List<BaseballActionPitches> select(int maxResult);
+  /**
+   * Select a list of BaseballActionPitches based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return BaseballActionPitches records.
+   */
+  public List<BaseballActionPitches> select(int maxResult);
 
-    /**
-     * Select all BaseballActionPitches.
-     *
-     * @return all BaseballActionPitches records.
-     */
-    public List<BaseballActionPitches> selectAll();
+  /**
+   * Select all BaseballActionPitches.
+   *
+   * @return all BaseballActionPitches records.
+   */
+  public List<BaseballActionPitches> selectAll();
 
-    /**
-     * Create BaseballActionPitches.
-     *
-     * @param bean The BaseballActionPitches.
-     * @return The BaseballActionPitches.
-     */
-    public BaseballActionPitches create(BaseballActionPitches bean);
+  /**
+   * Create BaseballActionPitches.
+   *
+   * @param bean The BaseballActionPitches.
+   * @return The BaseballActionPitches.
+   */
+  public BaseballActionPitches create(BaseballActionPitches bean);
 
-    /**
-     * Update a BaseballActionPitches.
-     *
-     * @param bean - The BaseballActionPitches.
-     * @return BaseballActionPitches.
-     */
-    public BaseballActionPitches update(BaseballActionPitches bean);
+  /**
+   * Update a BaseballActionPitches.
+   *
+   * @param bean - The BaseballActionPitches.
+   * @return BaseballActionPitches.
+   */
+  public BaseballActionPitches update(BaseballActionPitches bean);
 }

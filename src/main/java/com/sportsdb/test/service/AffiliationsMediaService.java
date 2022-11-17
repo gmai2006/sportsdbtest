@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.AffiliationsMedia;
 import java.util.List;
+import com.sportsdb.test.entity.AffiliationsMedia;
 
 public interface AffiliationsMediaService {
-    public AffiliationsMedia find(java.lang.String id);
+  public AffiliationsMedia find(java.lang.String id);
 
-    /**
-     * Select a list of AffiliationsMedia based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return AffiliationsMedia records.
-     */
-    public List<AffiliationsMedia> select(int maxResult);
+  /**
+   * Select a list of AffiliationsMedia based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return AffiliationsMedia records.
+   */
+  public List<AffiliationsMedia> select(int maxResult);
 
-    /**
-     * Select all AffiliationsMedia.
-     *
-     * @return all AffiliationsMedia records.
-     */
-    public List<AffiliationsMedia> selectAll();
+  /**
+   * Select all AffiliationsMedia.
+   *
+   * @return all AffiliationsMedia records.
+   */
+  public List<AffiliationsMedia> selectAll();
 
-    /**
-     * Create AffiliationsMedia.
-     *
-     * @param bean The AffiliationsMedia.
-     * @return The AffiliationsMedia.
-     */
-    public AffiliationsMedia create(AffiliationsMedia bean);
+  /**
+   * Create AffiliationsMedia.
+   *
+   * @param bean The AffiliationsMedia.
+   * @return The AffiliationsMedia.
+   */
+  public AffiliationsMedia create(AffiliationsMedia bean);
 
-    /**
-     * Update a AffiliationsMedia.
-     *
-     * @param bean - The AffiliationsMedia.
-     * @return AffiliationsMedia.
-     */
-    public AffiliationsMedia update(AffiliationsMedia bean);
+  /**
+   * Update a AffiliationsMedia.
+   *
+   * @param bean - The AffiliationsMedia.
+   * @return AffiliationsMedia.
+   */
+  public AffiliationsMedia update(AffiliationsMedia bean);
 }

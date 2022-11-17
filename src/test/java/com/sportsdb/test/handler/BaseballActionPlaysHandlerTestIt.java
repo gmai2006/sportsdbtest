@@ -17,129 +17,104 @@
 package com.sportsdb.test.handler;
 
 import static org.junit.Assert.assertEquals;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.dao.StandaloneJpaDao;
-import com.sportsdb.test.entity.BaseballActionPlays;
-import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
-import com.sportsdb.test.utils.FileUtils;
+import java.io.IOException;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import org.json.CDL;
 import org.json.JSONArray;
+import com.google.gson.Gson;
+import com.sportsdb.test.entity.BaseballActionPlays;
+import com.sportsdb.test.dao.JpaDao;
+import com.sportsdb.test.dao.StandaloneJpaDao;
+import com.sportsdb.test.dao.DefaultBaseballActionPlaysDao;
+import com.sportsdb.test.utils.DelimiterParser;
+import com.sportsdb.test.utils.FileUtils;
+import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
+
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import com.google.gson.GsonBuilder;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class BaseballActionPlaysHandlerTestIt {
-    static final String inputFile = "BaseballActionPlays.json";
-    static BaseballActionPlaysHandler handler;
-    private static JpaDao jpa;
-    static Gson gson =
-            new GsonBuilder()
-                    .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
-                    .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
-                    .create();
-    private BaseballActionPlays[] records;
+  static final String inputFile = "BaseballActionPlays.json";
+  static BaseballActionPlaysHandler handler;
+  private static JpaDao jpa;
+  static Gson gson =
+      new GsonBuilder()
+          .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
+          .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
+          .create();
+  private BaseballActionPlays[] records;
 
-    /** Run before the test. */
-    @BeforeClass
-    public static void before() {
-        final EntityManagerFactory factory =
-                Persistence.createEntityManagerFactory("testpersistence");
-        jpa = new StandaloneJpaDao(factory.createEntityManager());
-        handler = new BaseballActionPlaysHandler(jpa);
-    }
+  /** Run before the test. */
+  @BeforeClass
+  public static void before() {
+    final EntityManagerFactory factory = Persistence.createEntityManagerFactory("testpersistence");
+    jpa = new StandaloneJpaDao(factory.createEntityManager());
+    handler = new BaseballActionPlaysHandler(jpa);
+  }
 
-    @Test
-    public void testSelect() throws IOException {
-        final File tempFile =
-                createRecordInputStreamFromJsonFile(inputFile, Charset.defaultCharset());
-        final InputStream inputStream = new BufferedInputStream(new FileInputStream(tempFile));
-        int count = handler.process(inputStream);
-        String json = FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
-        records = gson.fromJson(json, BaseballActionPlays[].class);
-        assertEquals("match count", count, records.length);
-        BaseballActionPlays testResult = jpa.find(BaseballActionPlays.class, records[0].getId());
-        org.junit.Assert.assertEquals(
-                "expect equals baseballEventStateId ",
-                this.records[0].getBaseballEventStateId(),
-                testResult.getBaseballEventStateId());
-        assertEquals(
-                "expect equals playType ", this.records[0].getPlayType(), testResult.getPlayType());
-        assertEquals(
-                "expect equals notation ", this.records[0].getNotation(), testResult.getNotation());
-        assertEquals(
-                "expect equals notationYaml ",
-                this.records[0].getNotationYaml(),
-                testResult.getNotationYaml());
-        org.junit.Assert.assertEquals(
-                "expect equals baseballDefensiveGroupId ",
-                this.records[0].getBaseballDefensiveGroupId(),
-                testResult.getBaseballDefensiveGroupId());
-        assertEquals(
-                "expect equals comment ", this.records[0].getComment(), testResult.getComment());
-        org.junit.Assert.assertEquals(
-                "expect equals runnerOnFirstAdvance ",
-                this.records[0].getRunnerOnFirstAdvance(),
-                testResult.getRunnerOnFirstAdvance());
-        org.junit.Assert.assertEquals(
-                "expect equals runnerOnSecondAdvance ",
-                this.records[0].getRunnerOnSecondAdvance(),
-                testResult.getRunnerOnSecondAdvance());
-        org.junit.Assert.assertEquals(
-                "expect equals runnerOnThirdAdvance ",
-                this.records[0].getRunnerOnThirdAdvance(),
-                testResult.getRunnerOnThirdAdvance());
-        org.junit.Assert.assertEquals(
-                "expect equals outsRecorded ",
-                this.records[0].getOutsRecorded(),
-                testResult.getOutsRecorded());
-        org.junit.Assert.assertEquals(
-                "expect equals rbi ", this.records[0].getRbi(), testResult.getRbi());
-        org.junit.Assert.assertEquals(
-                "expect equals runsScored ",
-                this.records[0].getRunsScored(),
-                testResult.getRunsScored());
-        assertEquals(
-                "expect equals earnedRunsScored ",
-                this.records[0].getEarnedRunsScored(),
-                testResult.getEarnedRunsScored());
+  @Test
+  public void testSelect() throws IOException {
+    final File tempFile = new File("./src/test/resources/BaseballActionPlays.csv");
+    final InputStream inputStream = new BufferedInputStream(new FileInputStream(tempFile));
+    int count = handler.process(inputStream);
+    String json = FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
+    records = gson.fromJson(json, BaseballActionPlays[].class);
+    assertEquals("match count", count, records.length);
+    BaseballActionPlays testResult = jpa.find(BaseballActionPlays.class, records[0].getId());
+    org.junit.Assert.assertEquals(
+        "expect equals baseballEventStateId ",
+        this.records[0].getBaseballEventStateId(),
+        testResult.getBaseballEventStateId());
+    assertEquals(
+        "expect equals playType ", this.records[0].getPlayType(), testResult.getPlayType());
+    assertEquals(
+        "expect equals notation ", this.records[0].getNotation(), testResult.getNotation());
+    assertEquals(
+        "expect equals notationYaml ",
+        this.records[0].getNotationYaml(),
+        testResult.getNotationYaml());
+    org.junit.Assert.assertEquals(
+        "expect equals baseballDefensiveGroupId ",
+        this.records[0].getBaseballDefensiveGroupId(),
+        testResult.getBaseballDefensiveGroupId());
+    assertEquals("expect equals comment ", this.records[0].getComment(), testResult.getComment());
+    org.junit.Assert.assertEquals(
+        "expect equals runnerOnFirstAdvance ",
+        this.records[0].getRunnerOnFirstAdvance(),
+        testResult.getRunnerOnFirstAdvance());
+    org.junit.Assert.assertEquals(
+        "expect equals runnerOnSecondAdvance ",
+        this.records[0].getRunnerOnSecondAdvance(),
+        testResult.getRunnerOnSecondAdvance());
+    org.junit.Assert.assertEquals(
+        "expect equals runnerOnThirdAdvance ",
+        this.records[0].getRunnerOnThirdAdvance(),
+        testResult.getRunnerOnThirdAdvance());
+    org.junit.Assert.assertEquals(
+        "expect equals outsRecorded ",
+        this.records[0].getOutsRecorded(),
+        testResult.getOutsRecorded());
+    org.junit.Assert.assertEquals(
+        "expect equals rbi ", this.records[0].getRbi(), testResult.getRbi());
+    org.junit.Assert.assertEquals(
+        "expect equals runsScored ", this.records[0].getRunsScored(), testResult.getRunsScored());
+    assertEquals(
+        "expect equals earnedRunsScored ",
+        this.records[0].getEarnedRunsScored(),
+        testResult.getEarnedRunsScored());
 
-        // cleanup
-        inputStream.close();
-        json = null;
-        records = null;
-    }
-
-    /**
-     * Construct a delimiter file from a json file.
-     *
-     * @param inputFile the json file.
-     * @param charset default charset.
-     * @return
-     */
-    private File createRecordInputStreamFromJsonFile(String inputFile, Charset charset) {
-        try {
-            final File tempFile = File.createTempFile(inputFile, ".txt");
-            tempFile.deleteOnExit();
-            String json =
-                    FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
-            JSONArray docs = new JSONArray(json);
-            String csv = CDL.toString(docs);
-            org.apache.commons.io.FileUtils.writeStringToFile(
-                    tempFile, csv, Charset.defaultCharset());
-            return tempFile;
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return null;
-        }
-    }
+    // cleanup
+    inputStream.close();
+    json = null;
+    records = null;
+  }
 }

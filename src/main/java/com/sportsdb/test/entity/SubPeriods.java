@@ -16,68 +16,68 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "sub_periods")
 public class SubPeriods implements Serializable {
-    private static final long serialVersionUID = 163445241932755697L;
+  private static final long serialVersionUID = 166867004256074014L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: period_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "period_id")
-    private java.lang.Integer periodId;
-    /** Description: sub_period_value. */
-    @Basic
-    @Column(name = "sub_period_value", length = 100)
-    private java.lang.String subPeriodValue;
-    /** Description: score. */
-    @Basic
-    @Column(name = "score", length = 100)
-    private java.lang.String score;
+  /** Description: period_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "period_id")
+  private java.lang.Integer periodId;
+  /** Description: sub_period_value. */
+  @Basic
+  @Column(name = "sub_period_value", length = 100)
+  private java.lang.String subPeriodValue;
+  /** Description: score. */
+  @Basic
+  @Column(name = "score", length = 100)
+  private java.lang.String score;
 
-    public SubPeriods() {}
+  public SubPeriods() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.Integer getPeriodId() {
-        return this.periodId;
-    }
+  public java.lang.Integer getPeriodId() {
+    return this.periodId;
+  }
 
-    public java.lang.String getSubPeriodValue() {
-        return this.subPeriodValue;
-    }
+  public java.lang.String getSubPeriodValue() {
+    return this.subPeriodValue;
+  }
 
-    public java.lang.String getScore() {
-        return this.score;
-    }
+  public java.lang.String getScore() {
+    return this.score;
+  }
 
-    public void setPeriodId(java.lang.Integer periodId) {
-        this.periodId = periodId;
-    }
+  public void setPeriodId(java.lang.Integer periodId) {
+    this.periodId = periodId;
+  }
 
-    public void setSubPeriodValue(java.lang.String subPeriodValue) {
-        this.subPeriodValue = subPeriodValue;
-    }
+  public void setSubPeriodValue(java.lang.String subPeriodValue) {
+    this.subPeriodValue = subPeriodValue;
+  }
 
-    public void setScore(java.lang.String score) {
-        this.score = score;
-    }
+  public void setScore(java.lang.String score) {
+    this.score = score;
+  }
 }

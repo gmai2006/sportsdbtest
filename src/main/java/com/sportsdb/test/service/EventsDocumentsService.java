@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.EventsDocuments;
 import java.util.List;
+import com.sportsdb.test.entity.EventsDocuments;
 
 public interface EventsDocumentsService {
-    public EventsDocuments find(java.lang.String id);
+  public EventsDocuments find(java.lang.String id);
 
-    /**
-     * Select a list of EventsDocuments based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return EventsDocuments records.
-     */
-    public List<EventsDocuments> select(int maxResult);
+  /**
+   * Select a list of EventsDocuments based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return EventsDocuments records.
+   */
+  public List<EventsDocuments> select(int maxResult);
 
-    /**
-     * Select all EventsDocuments.
-     *
-     * @return all EventsDocuments records.
-     */
-    public List<EventsDocuments> selectAll();
+  /**
+   * Select all EventsDocuments.
+   *
+   * @return all EventsDocuments records.
+   */
+  public List<EventsDocuments> selectAll();
 
-    /**
-     * Create EventsDocuments.
-     *
-     * @param bean The EventsDocuments.
-     * @return The EventsDocuments.
-     */
-    public EventsDocuments create(EventsDocuments bean);
+  /**
+   * Create EventsDocuments.
+   *
+   * @param bean The EventsDocuments.
+   * @return The EventsDocuments.
+   */
+  public EventsDocuments create(EventsDocuments bean);
 
-    /**
-     * Update a EventsDocuments.
-     *
-     * @param bean - The EventsDocuments.
-     * @return EventsDocuments.
-     */
-    public EventsDocuments update(EventsDocuments bean);
+  /**
+   * Update a EventsDocuments.
+   *
+   * @param bean - The EventsDocuments.
+   * @return EventsDocuments.
+   */
+  public EventsDocuments update(EventsDocuments bean);
 }

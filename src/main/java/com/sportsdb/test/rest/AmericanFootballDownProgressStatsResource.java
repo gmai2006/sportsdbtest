@@ -17,14 +17,14 @@
 package com.sportsdb.test.rest;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.entity.AmericanFootballDownProgressStats;
-import com.sportsdb.test.service.AmericanFootballDownProgressStatsService;
 import java.util.List;
+
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -32,97 +32,96 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import com.sportsdb.test.service.AmericanFootballDownProgressStatsService;
+import com.sportsdb.test.entity.AmericanFootballDownProgressStats;
+
 @Path("/americanfootballdownprogressstats")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces({MediaType.APPLICATION_JSON})
 public class AmericanFootballDownProgressStatsResource {
 
-    @Inject private AmericanFootballDownProgressStatsService service;
+  @Inject private AmericanFootballDownProgressStatsService service;
 
-    public AmericanFootballDownProgressStatsResource() {}
+  public AmericanFootballDownProgressStatsResource() {}
 
-    public AmericanFootballDownProgressStatsResource(
-            final AmericanFootballDownProgressStatsService service) {
-        requireNonNull(service);
-        this.service = service;
+  public AmericanFootballDownProgressStatsResource(
+      final AmericanFootballDownProgressStatsService service) {
+    requireNonNull(service);
+    this.service = service;
+  }
+
+  /**
+   * hello.
+   *
+   * @return a hello.
+   */
+  @GET
+  @Path("")
+  public Response hello() {
+    return Response.status(Response.Status.OK).entity(this.getClass().getName()).build();
+  }
+
+  /**
+   * InIdempotent method. Update existing AmericanFootballDownProgressStats.
+   *
+   * @param obj - instance of AmericanFootballDownProgressStats.
+   * @return AmericanFootballDownProgressStats.
+   */
+  @Consumes(MediaType.APPLICATION_JSON)
+  @POST
+  public AmericanFootballDownProgressStats update(AmericanFootballDownProgressStats obj) {
+    return this.service.update(obj);
+  }
+
+  /**
+   * Delete existing AmericanFootballDownProgressStats.
+   *
+   * @param id instance of AmericanFootballDownProgressStats.
+   * @return AmericanFootballDownProgressStats.
+   */
+
+  /**
+   * Select all AmericanFootballDownProgressStats with limit of returned records.
+   *
+   * @param max - number of records.
+   * @return a list AmericanFootballDownProgressStats.
+   */
+  @GET
+  @Path("select/{max}")
+  public Response findWithLimit(@PathParam("max") String max) {
+    Integer input = null;
+    try {
+      input = Integer.valueOf(max);
+    } catch (NumberFormatException ex) {
+      throw new WebApplicationException(Response.Status.BAD_REQUEST);
     }
+    List<AmericanFootballDownProgressStats> result = service.select(input);
 
-    /**
-     * hello.
-     *
-     * @return a hello.
-     */
-    @GET
-    @Path("")
-    public Response hello() {
-        return Response.status(Response.Status.OK).entity(this.getClass().getName()).build();
-    }
+    return Response.status(Response.Status.OK)
+        .header("Access-Control-Allow-Origin", "*")
+        .header("Access-Control-Allow-Credentials", "true")
+        .header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
+        .header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
+        .entity(result)
+        .build();
+  }
 
-    /**
-     * InIdempotent method. Update existing AmericanFootballDownProgressStats.
-     *
-     * @param obj - instance of AmericanFootballDownProgressStats.
-     * @return AmericanFootballDownProgressStats.
-     */
-    @Consumes(MediaType.APPLICATION_JSON)
-    @POST
-    public AmericanFootballDownProgressStats update(AmericanFootballDownProgressStats obj) {
-        return this.service.update(obj);
-    }
+  /**
+   * Select all AmericanFootballDownProgressStats records.
+   *
+   * @return a list AmericanFootballDownProgressStats.
+   */
+  @GET
+  @Path("selectAll")
+  public Response selectAll() {
+    List<AmericanFootballDownProgressStats> result = service.selectAll();
 
-    /**
-     * Delete existing AmericanFootballDownProgressStats.
-     *
-     * @param id instance of AmericanFootballDownProgressStats.
-     * @return AmericanFootballDownProgressStats.
-     */
-
-    /**
-     * Select all AmericanFootballDownProgressStats with limit of returned records.
-     *
-     * @param max - number of records.
-     * @return a list AmericanFootballDownProgressStats.
-     */
-    @GET
-    @Path("select/{max}")
-    public Response findWithLimit(@PathParam("max") String max) {
-        Integer input = null;
-        try {
-            input = Integer.valueOf(max);
-        } catch (NumberFormatException ex) {
-            throw new WebApplicationException(Response.Status.BAD_REQUEST);
-        }
-        List<AmericanFootballDownProgressStats> result = service.select(input);
-
-        return Response.status(Response.Status.OK)
-                .header("Access-Control-Allow-Origin", "*")
-                .header("Access-Control-Allow-Credentials", "true")
-                .header(
-                        "Access-Control-Allow-Headers",
-                        "origin, content-type, accept, authorization")
-                .header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
-                .entity(result)
-                .build();
-    }
-
-    /**
-     * Select all AmericanFootballDownProgressStats records.
-     *
-     * @return a list AmericanFootballDownProgressStats.
-     */
-    @GET
-    @Path("selectAll")
-    public Response selectAll() {
-        List<AmericanFootballDownProgressStats> result = service.selectAll();
-
-        return Response.status(Response.Status.OK)
-                .header("Access-Control-Allow-Origin", "*")
-                .header("Access-Control-Allow-Credentials", "true")
-                .header(
-                        "Access-Control-Allow-Headers",
-                        "origin, content-type, accept, authorization")
-                .header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
-                .entity(result)
-                .build();
-    }
+    return Response.status(Response.Status.OK)
+        .header("Access-Control-Allow-Origin", "*")
+        .header("Access-Control-Allow-Credentials", "true")
+        .header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
+        .header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
+        .entity(result)
+        .build();
+  }
 }

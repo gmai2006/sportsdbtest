@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.BaseballDefensiveGroup;
 import java.util.List;
+import com.sportsdb.test.entity.BaseballDefensiveGroup;
 
 public interface BaseballDefensiveGroupService {
-    public BaseballDefensiveGroup find(java.lang.Integer id);
+  public BaseballDefensiveGroup find(java.lang.Integer id);
 
-    /**
-     * Select a list of BaseballDefensiveGroup based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return BaseballDefensiveGroup records.
-     */
-    public List<BaseballDefensiveGroup> select(int maxResult);
+  /**
+   * Select a list of BaseballDefensiveGroup based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return BaseballDefensiveGroup records.
+   */
+  public List<BaseballDefensiveGroup> select(int maxResult);
 
-    /**
-     * Select all BaseballDefensiveGroup.
-     *
-     * @return all BaseballDefensiveGroup records.
-     */
-    public List<BaseballDefensiveGroup> selectAll();
+  /**
+   * Select all BaseballDefensiveGroup.
+   *
+   * @return all BaseballDefensiveGroup records.
+   */
+  public List<BaseballDefensiveGroup> selectAll();
 
-    /**
-     * Create BaseballDefensiveGroup.
-     *
-     * @param bean The BaseballDefensiveGroup.
-     * @return The BaseballDefensiveGroup.
-     */
-    public BaseballDefensiveGroup create(BaseballDefensiveGroup bean);
+  /**
+   * Create BaseballDefensiveGroup.
+   *
+   * @param bean The BaseballDefensiveGroup.
+   * @return The BaseballDefensiveGroup.
+   */
+  public BaseballDefensiveGroup create(BaseballDefensiveGroup bean);
 
-    /**
-     * Update a BaseballDefensiveGroup.
-     *
-     * @param bean - The BaseballDefensiveGroup.
-     * @return BaseballDefensiveGroup.
-     */
-    public BaseballDefensiveGroup update(BaseballDefensiveGroup bean);
+  /**
+   * Update a BaseballDefensiveGroup.
+   *
+   * @param bean - The BaseballDefensiveGroup.
+   * @return BaseballDefensiveGroup.
+   */
+  public BaseballDefensiveGroup update(BaseballDefensiveGroup bean);
 }

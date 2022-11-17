@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.SoccerFoulStatsDao;
-import com.sportsdb.test.entity.SoccerFoulStats;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.SoccerFoulStatsDao;
+import com.sportsdb.test.entity.SoccerFoulStats;
 
 @Stateless
 @Named("DefaultSoccerFoulStatsService")
 public class DefaultSoccerFoulStatsService implements SoccerFoulStatsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final SoccerFoulStatsDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final SoccerFoulStatsDao dao;
 
-    @Inject
-    @Named("DefaultSoccerFoulStatsDao")
-    public DefaultSoccerFoulStatsService(final SoccerFoulStatsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultSoccerFoulStatsDao")
+  public DefaultSoccerFoulStatsService(final SoccerFoulStatsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public SoccerFoulStats find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public SoccerFoulStats find(java.lang.Integer id) {
 
-        final SoccerFoulStats result = dao.find(id);
-        logger.info("find(SoccerFoulStats) - exited - return value={} result ");
-        return result;
-    }
+    final SoccerFoulStats result = dao.find(id);
+    logger.info("find(SoccerFoulStats) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<SoccerFoulStats> select(int maxResult) {
-        final List<SoccerFoulStats> result = dao.select(maxResult);
-        logger.info("select(SoccerFoulStats) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<SoccerFoulStats> select(int maxResult) {
+    final List<SoccerFoulStats> result = dao.select(maxResult);
+    logger.info("select(SoccerFoulStats) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<SoccerFoulStats> selectAll() {
-        final List<SoccerFoulStats> results = dao.selectAll();
-        logger.info("selectAll(SoccerFoulStats) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<SoccerFoulStats> selectAll() {
+    final List<SoccerFoulStats> results = dao.selectAll();
+    logger.info("selectAll(SoccerFoulStats) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public SoccerFoulStats create(SoccerFoulStats bean) {
-        requireNonNull(bean);
-        logger.info("create(SoccerFoulStats={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public SoccerFoulStats create(SoccerFoulStats bean) {
+    requireNonNull(bean);
+    logger.info("create(SoccerFoulStats={}) - entered bean ");
 
-        final SoccerFoulStats result = dao.create(bean);
+    final SoccerFoulStats result = dao.create(bean);
 
-        logger.info("create(SoccerFoulStats) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(SoccerFoulStats) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public SoccerFoulStats update(SoccerFoulStats bean) {
-        requireNonNull(bean);
-        logger.info("update(SoccerFoulStats={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public SoccerFoulStats update(SoccerFoulStats bean) {
+    requireNonNull(bean);
+    logger.info("update(SoccerFoulStats={}) - entered bean ");
 
-        final SoccerFoulStats result = dao.update(bean);
+    final SoccerFoulStats result = dao.update(bean);
 
-        logger.info("update(SoccerFoulStats) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(SoccerFoulStats) - exited - return value={} result ");
+    return result;
+  }
 }

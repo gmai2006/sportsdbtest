@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.AmericanFootballActionParticipants;
 import java.util.List;
+import com.sportsdb.test.entity.AmericanFootballActionParticipants;
 
 public interface AmericanFootballActionParticipantsDao {
-    /**
-     * Retrieve all records AmericanFootballActionParticipants.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of AmericanFootballActionParticipants
-     */
-    public List<AmericanFootballActionParticipants> select(int maxResult);
+  /**
+   * Retrieve all records AmericanFootballActionParticipants.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of AmericanFootballActionParticipants
+   */
+  public List<AmericanFootballActionParticipants> select(int maxResult);
 
-    /**
-     * Retrieve all records AmericanFootballActionParticipants.
-     *
-     * @return A list of AmericanFootballActionParticipants
-     */
-    public List<AmericanFootballActionParticipants> selectAll();
+  /**
+   * Retrieve all records AmericanFootballActionParticipants.
+   *
+   * @return A list of AmericanFootballActionParticipants
+   */
+  public List<AmericanFootballActionParticipants> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An AmericanFootballActionParticipants id.
-     * @return The same AmericanFootballActionParticipants.
-     */
-    public AmericanFootballActionParticipants find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An AmericanFootballActionParticipants id.
+   * @return The same AmericanFootballActionParticipants.
+   */
+  public AmericanFootballActionParticipants find(java.lang.Integer id);
 
-    /**
-     * Create an AmericanFootballActionParticipants.
-     *
-     * @param e the AmericanFootballActionParticipants.
-     * @return The same AmericanFootballActionParticipants.
-     */
-    public AmericanFootballActionParticipants create(AmericanFootballActionParticipants e);
+  /**
+   * Create an AmericanFootballActionParticipants.
+   *
+   * @param e the AmericanFootballActionParticipants.
+   * @return The same AmericanFootballActionParticipants.
+   */
+  public AmericanFootballActionParticipants create(AmericanFootballActionParticipants e);
 
-    /**
-     * Update the AmericanFootballActionParticipants.
-     *
-     * @param e the AmericanFootballActionParticipants.
-     * @return The same AmericanFootballActionParticipants.
-     */
-    public AmericanFootballActionParticipants update(AmericanFootballActionParticipants e);
+  /**
+   * Update the AmericanFootballActionParticipants.
+   *
+   * @param e the AmericanFootballActionParticipants.
+   * @return The same AmericanFootballActionParticipants.
+   */
+  public AmericanFootballActionParticipants update(AmericanFootballActionParticipants e);
 }

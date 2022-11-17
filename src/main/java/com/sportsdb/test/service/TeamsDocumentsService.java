@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.TeamsDocuments;
 import java.util.List;
+import com.sportsdb.test.entity.TeamsDocuments;
 
 public interface TeamsDocumentsService {
-    public TeamsDocuments find(java.lang.String id);
+  public TeamsDocuments find(java.lang.String id);
 
-    /**
-     * Select a list of TeamsDocuments based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return TeamsDocuments records.
-     */
-    public List<TeamsDocuments> select(int maxResult);
+  /**
+   * Select a list of TeamsDocuments based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return TeamsDocuments records.
+   */
+  public List<TeamsDocuments> select(int maxResult);
 
-    /**
-     * Select all TeamsDocuments.
-     *
-     * @return all TeamsDocuments records.
-     */
-    public List<TeamsDocuments> selectAll();
+  /**
+   * Select all TeamsDocuments.
+   *
+   * @return all TeamsDocuments records.
+   */
+  public List<TeamsDocuments> selectAll();
 
-    /**
-     * Create TeamsDocuments.
-     *
-     * @param bean The TeamsDocuments.
-     * @return The TeamsDocuments.
-     */
-    public TeamsDocuments create(TeamsDocuments bean);
+  /**
+   * Create TeamsDocuments.
+   *
+   * @param bean The TeamsDocuments.
+   * @return The TeamsDocuments.
+   */
+  public TeamsDocuments create(TeamsDocuments bean);
 
-    /**
-     * Update a TeamsDocuments.
-     *
-     * @param bean - The TeamsDocuments.
-     * @return TeamsDocuments.
-     */
-    public TeamsDocuments update(TeamsDocuments bean);
+  /**
+   * Update a TeamsDocuments.
+   *
+   * @param bean - The TeamsDocuments.
+   * @return TeamsDocuments.
+   */
+  public TeamsDocuments update(TeamsDocuments bean);
 }

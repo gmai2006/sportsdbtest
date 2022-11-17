@@ -16,72 +16,75 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.InjuryPhases;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.InjuryPhases;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("InjuryPhasesHandler")
 public class InjuryPhasesHandler extends DelimiterFileHandler<InjuryPhases> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public InjuryPhasesHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public InjuryPhasesHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected InjuryPhases parseLine(List<String> headers, List<String> tokens) {
+    InjuryPhases record = new InjuryPhases();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "personId":
+          record.setPersonId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "injuryStatus":
+          record.setInjuryStatus(tokens.get(i));
+          break;
+
+        case "injuryType":
+          record.setInjuryType(tokens.get(i));
+          break;
+
+        case "injuryComment":
+          record.setInjuryComment(tokens.get(i));
+          break;
+
+        case "disabledList":
+          record.setDisabledList(tokens.get(i));
+          break;
+
+        case "startDateTime":
+          record.setStartDateTime(new java.util.Date(parseDate(tokens.get(i))));
+          break;
+
+        case "endDateTime":
+          record.setEndDateTime(new java.util.Date(parseDate(tokens.get(i))));
+          break;
+
+        case "seasonId":
+          record.setSeasonId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "phaseType":
+          record.setPhaseType(tokens.get(i));
+          break;
+
+        case "injurySide":
+          record.setInjurySide(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected InjuryPhases parseLine(List<String> headers, List<String> tokens) {
-        InjuryPhases record = new InjuryPhases();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "personId":
-                    record.setPersonId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "injuryStatus":
-                    record.setInjuryStatus(tokens.get(i));
-                    break;
-
-                case "injuryType":
-                    record.setInjuryType(tokens.get(i));
-                    break;
-
-                case "injuryComment":
-                    record.setInjuryComment(tokens.get(i));
-                    break;
-
-                case "disabledList":
-                    record.setDisabledList(tokens.get(i));
-                    break;
-
-                case "startDateTime":
-                    record.setStartDateTime(new java.util.Date(parseDate(tokens.get(i))));
-                    break;
-
-                case "endDateTime":
-                    record.setEndDateTime(new java.util.Date(parseDate(tokens.get(i))));
-                    break;
-
-                case "seasonId":
-                    record.setSeasonId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "phaseType":
-                    record.setPhaseType(tokens.get(i));
-                    break;
-
-                case "injurySide":
-                    record.setInjurySide(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

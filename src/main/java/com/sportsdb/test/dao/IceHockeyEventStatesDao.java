@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.IceHockeyEventStates;
 import java.util.List;
+import com.sportsdb.test.entity.IceHockeyEventStates;
 
 public interface IceHockeyEventStatesDao {
-    /**
-     * Retrieve all records IceHockeyEventStates.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of IceHockeyEventStates
-     */
-    public List<IceHockeyEventStates> select(int maxResult);
+  /**
+   * Retrieve all records IceHockeyEventStates.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of IceHockeyEventStates
+   */
+  public List<IceHockeyEventStates> select(int maxResult);
 
-    /**
-     * Retrieve all records IceHockeyEventStates.
-     *
-     * @return A list of IceHockeyEventStates
-     */
-    public List<IceHockeyEventStates> selectAll();
+  /**
+   * Retrieve all records IceHockeyEventStates.
+   *
+   * @return A list of IceHockeyEventStates
+   */
+  public List<IceHockeyEventStates> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An IceHockeyEventStates id.
-     * @return The same IceHockeyEventStates.
-     */
-    public IceHockeyEventStates find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An IceHockeyEventStates id.
+   * @return The same IceHockeyEventStates.
+   */
+  public IceHockeyEventStates find(java.lang.Integer id);
 
-    /**
-     * Create an IceHockeyEventStates.
-     *
-     * @param e the IceHockeyEventStates.
-     * @return The same IceHockeyEventStates.
-     */
-    public IceHockeyEventStates create(IceHockeyEventStates e);
+  /**
+   * Create an IceHockeyEventStates.
+   *
+   * @param e the IceHockeyEventStates.
+   * @return The same IceHockeyEventStates.
+   */
+  public IceHockeyEventStates create(IceHockeyEventStates e);
 
-    /**
-     * Update the IceHockeyEventStates.
-     *
-     * @param e the IceHockeyEventStates.
-     * @return The same IceHockeyEventStates.
-     */
-    public IceHockeyEventStates update(IceHockeyEventStates e);
+  /**
+   * Update the IceHockeyEventStates.
+   *
+   * @param e the IceHockeyEventStates.
+   * @return The same IceHockeyEventStates.
+   */
+  public IceHockeyEventStates update(IceHockeyEventStates e);
 }

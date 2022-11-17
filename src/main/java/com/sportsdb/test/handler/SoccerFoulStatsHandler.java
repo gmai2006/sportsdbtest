@@ -16,62 +16,65 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.SoccerFoulStats;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.SoccerFoulStats;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("SoccerFoulStatsHandler")
 public class SoccerFoulStatsHandler extends DelimiterFileHandler<SoccerFoulStats> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public SoccerFoulStatsHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public SoccerFoulStatsHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected SoccerFoulStats parseLine(List<String> headers, List<String> tokens) {
+    SoccerFoulStats record = new SoccerFoulStats();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "foulsSuffered":
+          record.setFoulsSuffered(tokens.get(i));
+          break;
+
+        case "foulsCommited":
+          record.setFoulsCommited(tokens.get(i));
+          break;
+
+        case "cautionsTotal":
+          record.setCautionsTotal(tokens.get(i));
+          break;
+
+        case "cautionsPending":
+          record.setCautionsPending(tokens.get(i));
+          break;
+
+        case "cautionPointsTotal":
+          record.setCautionPointsTotal(tokens.get(i));
+          break;
+
+        case "cautionPointsPending":
+          record.setCautionPointsPending(tokens.get(i));
+          break;
+
+        case "ejectionsTotal":
+          record.setEjectionsTotal(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected SoccerFoulStats parseLine(List<String> headers, List<String> tokens) {
-        SoccerFoulStats record = new SoccerFoulStats();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "foulsSuffered":
-                    record.setFoulsSuffered(tokens.get(i));
-                    break;
-
-                case "foulsCommited":
-                    record.setFoulsCommited(tokens.get(i));
-                    break;
-
-                case "cautionsTotal":
-                    record.setCautionsTotal(tokens.get(i));
-                    break;
-
-                case "cautionsPending":
-                    record.setCautionsPending(tokens.get(i));
-                    break;
-
-                case "cautionPointsTotal":
-                    record.setCautionPointsTotal(tokens.get(i));
-                    break;
-
-                case "cautionPointsPending":
-                    record.setCautionPointsPending(tokens.get(i));
-                    break;
-
-                case "ejectionsTotal":
-                    record.setEjectionsTotal(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

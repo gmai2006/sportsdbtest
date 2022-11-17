@@ -16,65 +16,68 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.WeatherConditions;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.WeatherConditions;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("WeatherConditionsHandler")
 public class WeatherConditionsHandler extends DelimiterFileHandler<WeatherConditions> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public WeatherConditionsHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public WeatherConditionsHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected WeatherConditions parseLine(List<String> headers, List<String> tokens) {
+    WeatherConditions record = new WeatherConditions();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "eventId":
+          record.setEventId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "temperature":
+          record.setTemperature(tokens.get(i));
+          break;
+
+        case "temperatureUnits":
+          record.setTemperatureUnits(tokens.get(i));
+          break;
+
+        case "humidity":
+          record.setHumidity(tokens.get(i));
+          break;
+
+        case "clouds":
+          record.setClouds(tokens.get(i));
+          break;
+
+        case "windDirection":
+          record.setWindDirection(tokens.get(i));
+          break;
+
+        case "windVelocity":
+          record.setWindVelocity(tokens.get(i));
+          break;
+
+        case "weatherCode":
+          record.setWeatherCode(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected WeatherConditions parseLine(List<String> headers, List<String> tokens) {
-        WeatherConditions record = new WeatherConditions();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "eventId":
-                    record.setEventId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "temperature":
-                    record.setTemperature(tokens.get(i));
-                    break;
-
-                case "temperatureUnits":
-                    record.setTemperatureUnits(tokens.get(i));
-                    break;
-
-                case "humidity":
-                    record.setHumidity(tokens.get(i));
-                    break;
-
-                case "clouds":
-                    record.setClouds(tokens.get(i));
-                    break;
-
-                case "windDirection":
-                    record.setWindDirection(tokens.get(i));
-                    break;
-
-                case "windVelocity":
-                    record.setWindVelocity(tokens.get(i));
-                    break;
-
-                case "weatherCode":
-                    record.setWeatherCode(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

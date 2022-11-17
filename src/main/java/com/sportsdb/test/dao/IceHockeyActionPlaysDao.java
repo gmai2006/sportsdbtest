@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.IceHockeyActionPlays;
 import java.util.List;
+import com.sportsdb.test.entity.IceHockeyActionPlays;
 
 public interface IceHockeyActionPlaysDao {
-    /**
-     * Retrieve all records IceHockeyActionPlays.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of IceHockeyActionPlays
-     */
-    public List<IceHockeyActionPlays> select(int maxResult);
+  /**
+   * Retrieve all records IceHockeyActionPlays.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of IceHockeyActionPlays
+   */
+  public List<IceHockeyActionPlays> select(int maxResult);
 
-    /**
-     * Retrieve all records IceHockeyActionPlays.
-     *
-     * @return A list of IceHockeyActionPlays
-     */
-    public List<IceHockeyActionPlays> selectAll();
+  /**
+   * Retrieve all records IceHockeyActionPlays.
+   *
+   * @return A list of IceHockeyActionPlays
+   */
+  public List<IceHockeyActionPlays> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An IceHockeyActionPlays id.
-     * @return The same IceHockeyActionPlays.
-     */
-    public IceHockeyActionPlays find(java.lang.Long id);
+  /**
+   * Find an entity.
+   *
+   * @param id An IceHockeyActionPlays id.
+   * @return The same IceHockeyActionPlays.
+   */
+  public IceHockeyActionPlays find(java.lang.Long id);
 
-    /**
-     * Create an IceHockeyActionPlays.
-     *
-     * @param e the IceHockeyActionPlays.
-     * @return The same IceHockeyActionPlays.
-     */
-    public IceHockeyActionPlays create(IceHockeyActionPlays e);
+  /**
+   * Create an IceHockeyActionPlays.
+   *
+   * @param e the IceHockeyActionPlays.
+   * @return The same IceHockeyActionPlays.
+   */
+  public IceHockeyActionPlays create(IceHockeyActionPlays e);
 
-    /**
-     * Update the IceHockeyActionPlays.
-     *
-     * @param e the IceHockeyActionPlays.
-     * @return The same IceHockeyActionPlays.
-     */
-    public IceHockeyActionPlays update(IceHockeyActionPlays e);
+  /**
+   * Update the IceHockeyActionPlays.
+   *
+   * @param e the IceHockeyActionPlays.
+   * @return The same IceHockeyActionPlays.
+   */
+  public IceHockeyActionPlays update(IceHockeyActionPlays e);
 }

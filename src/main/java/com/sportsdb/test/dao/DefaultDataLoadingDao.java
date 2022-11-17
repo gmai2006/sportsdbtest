@@ -16,6 +16,13 @@
  */
 package com.sportsdb.test.dao;
 
+import java.util.List;
+import java.util.logging.Logger;
+
+import javax.ejb.Stateless;
+import javax.inject.Inject;
+import javax.inject.Named;
+
 import com.sportsdb.test.entity.Addresses;
 import com.sportsdb.test.entity.AffiliationPhases;
 import com.sportsdb.test.entity.Affiliations;
@@ -53,7 +60,6 @@ import com.sportsdb.test.entity.BasketballTeamStats;
 import com.sportsdb.test.entity.Bookmakers;
 import com.sportsdb.test.entity.CorePersonStats;
 import com.sportsdb.test.entity.CoreStats;
-import com.sportsdb.test.entity.DataLoadingStatus;
 import com.sportsdb.test.entity.DbInfo;
 import com.sportsdb.test.entity.DisplayNames;
 import com.sportsdb.test.entity.DocumentClasses;
@@ -78,7 +84,6 @@ import com.sportsdb.test.entity.InjuryPhases;
 import com.sportsdb.test.entity.KeyAliases;
 import com.sportsdb.test.entity.KeyRoots;
 import com.sportsdb.test.entity.LatestRevisions;
-import com.sportsdb.test.entity.Loadingstatus;
 import com.sportsdb.test.entity.Locations;
 import com.sportsdb.test.entity.Media;
 import com.sportsdb.test.entity.MediaCaptions;
@@ -125,162 +130,160 @@ import com.sportsdb.test.entity.WageringRunlines;
 import com.sportsdb.test.entity.WageringStraightSpreadLines;
 import com.sportsdb.test.entity.WageringTotalScoreLines;
 import com.sportsdb.test.entity.WeatherConditions;
-import java.util.logging.Logger;
-import javax.ejb.Stateless;
-import javax.inject.Inject;
-import javax.inject.Named;
+import com.sportsdb.test.entity.DataLoadingStatus;
+import com.sportsdb.test.entity.Loadingstatus;
 
 @Stateless
 @Named("DefaultDataLoadingDao")
 public class DefaultDataLoadingDao implements DataLoadingDao {
 
-    private static final Logger logger = Logger.getLogger(DefaultDataLoadingDao.class.getName());
-    private JpaDao dao;
+  private static final Logger logger = Logger.getLogger(DefaultDataLoadingDao.class.getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultDataLoadingDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultDataLoadingDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public DataLoadingStatus update(DataLoadingStatus e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public DataLoadingStatus update(DataLoadingStatus e) {
+    return dao.update(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public DataLoadingStatus getLoadingStatus(String type) {
-        DataLoadingStatus loadingStatus = dao.find(DataLoadingStatus.class, type);
-        if (null == loadingStatus) {
-            loadingStatus = new DataLoadingStatus(type, Loadingstatus.NEW);
-            dao.create(loadingStatus);
-        }
-        return loadingStatus;
+  /** {@inheritDoc} */
+  @Override
+  public DataLoadingStatus getLoadingStatus(String type) {
+    DataLoadingStatus loadingStatus = dao.find(DataLoadingStatus.class, type);
+    if (null == loadingStatus) {
+      loadingStatus = new DataLoadingStatus(type, Loadingstatus.NEW);
+      dao.create(loadingStatus);
     }
+    return loadingStatus;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public <E> E create(E e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public <E> E create(E e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public void delete(String id) {
-        dao.delete(DataLoadingStatus.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public void delete(String id) {
+    dao.delete(DataLoadingStatus.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public void deleteAll() {
-        dao.deleteAll(Addresses.class);
-        dao.deleteAll(AffiliationPhases.class);
-        dao.deleteAll(Affiliations.class);
-        dao.deleteAll(AffiliationsDocuments.class);
-        dao.deleteAll(AffiliationsEvents.class);
-        dao.deleteAll(AffiliationsMedia.class);
-        dao.deleteAll(AmericanFootballActionParticipants.class);
-        dao.deleteAll(AmericanFootballActionPlays.class);
-        dao.deleteAll(AmericanFootballDefensiveStats.class);
-        dao.deleteAll(AmericanFootballDownProgressStats.class);
-        dao.deleteAll(AmericanFootballEventStates.class);
-        dao.deleteAll(AmericanFootballFumblesStats.class);
-        dao.deleteAll(AmericanFootballOffensiveStats.class);
-        dao.deleteAll(AmericanFootballPassingStats.class);
-        dao.deleteAll(AmericanFootballPenaltiesStats.class);
-        dao.deleteAll(AmericanFootballRushingStats.class);
-        dao.deleteAll(AmericanFootballSacksAgainstStats.class);
-        dao.deleteAll(AmericanFootballScoringStats.class);
-        dao.deleteAll(AmericanFootballSpecialTeamsStats.class);
-        dao.deleteAll(BaseballActionContactDetails.class);
-        dao.deleteAll(BaseballActionPitches.class);
-        dao.deleteAll(BaseballActionPlays.class);
-        dao.deleteAll(BaseballActionSubstitutions.class);
-        dao.deleteAll(BaseballDefensiveGroup.class);
-        dao.deleteAll(BaseballDefensivePlayers.class);
-        dao.deleteAll(BaseballDefensiveStats.class);
-        dao.deleteAll(BaseballEventStates.class);
-        dao.deleteAll(BaseballOffensiveStats.class);
-        dao.deleteAll(BaseballPitchingStats.class);
-        dao.deleteAll(BasketballDefensiveStats.class);
-        dao.deleteAll(BasketballEventStates.class);
-        dao.deleteAll(BasketballOffensiveStats.class);
-        dao.deleteAll(BasketballReboundingStats.class);
-        dao.deleteAll(BasketballTeamStats.class);
-        dao.deleteAll(Bookmakers.class);
-        dao.deleteAll(CorePersonStats.class);
-        dao.deleteAll(CoreStats.class);
-        dao.deleteAll(DbInfo.class);
-        dao.deleteAll(DisplayNames.class);
-        dao.deleteAll(DocumentClasses.class);
-        dao.deleteAll(DocumentContents.class);
-        dao.deleteAll(DocumentFixtures.class);
-        dao.deleteAll(DocumentFixturesEvents.class);
-        dao.deleteAll(DocumentPackageEntry.class);
-        dao.deleteAll(DocumentPackages.class);
-        dao.deleteAll(Documents.class);
-        dao.deleteAll(DocumentsMedia.class);
-        dao.deleteAll(Events.class);
-        dao.deleteAll(EventsDocuments.class);
-        dao.deleteAll(EventsMedia.class);
-        dao.deleteAll(EventsSubSeasons.class);
-        dao.deleteAll(IceHockeyActionParticipants.class);
-        dao.deleteAll(IceHockeyActionPlays.class);
-        dao.deleteAll(IceHockeyDefensiveStats.class);
-        dao.deleteAll(IceHockeyEventStates.class);
-        dao.deleteAll(IceHockeyOffensiveStats.class);
-        dao.deleteAll(IceHockeyPlayerStats.class);
-        dao.deleteAll(InjuryPhases.class);
-        dao.deleteAll(KeyAliases.class);
-        dao.deleteAll(KeyRoots.class);
-        dao.deleteAll(LatestRevisions.class);
-        dao.deleteAll(Locations.class);
-        dao.deleteAll(Media.class);
-        dao.deleteAll(MediaCaptions.class);
-        dao.deleteAll(MediaContents.class);
-        dao.deleteAll(MediaKeywords.class);
-        dao.deleteAll(MotorRacingEventStates.class);
-        dao.deleteAll(MotorRacingQualifyingStats.class);
-        dao.deleteAll(MotorRacingRaceStats.class);
-        dao.deleteAll(OutcomeTotals.class);
-        dao.deleteAll(ParticipantsEvents.class);
-        dao.deleteAll(Periods.class);
-        dao.deleteAll(PersonEventMetadata.class);
-        dao.deleteAll(PersonPhases.class);
-        dao.deleteAll(Persons.class);
-        dao.deleteAll(PersonsDocuments.class);
-        dao.deleteAll(PersonsMedia.class);
-        dao.deleteAll(Positions.class);
-        dao.deleteAll(Publishers.class);
-        dao.deleteAll(Roles.class);
-        dao.deleteAll(Seasons.class);
-        dao.deleteAll(Sites.class);
-        dao.deleteAll(SoccerDefensiveStats.class);
-        dao.deleteAll(SoccerEventStates.class);
-        dao.deleteAll(SoccerFoulStats.class);
-        dao.deleteAll(SoccerOffensiveStats.class);
-        dao.deleteAll(StandingSubgroups.class);
-        dao.deleteAll(Standings.class);
-        dao.deleteAll(Stats.class);
-        dao.deleteAll(SubPeriods.class);
-        dao.deleteAll(SubSeasons.class);
-        dao.deleteAll(TeamAmericanFootballStats.class);
-        dao.deleteAll(TeamPhases.class);
-        dao.deleteAll(Teams.class);
-        dao.deleteAll(TeamsDocuments.class);
-        dao.deleteAll(TeamsMedia.class);
-        dao.deleteAll(TennisActionPoints.class);
-        dao.deleteAll(TennisActionVolleys.class);
-        dao.deleteAll(TennisEventStates.class);
-        dao.deleteAll(TennisReturnStats.class);
-        dao.deleteAll(TennisServiceStats.class);
-        dao.deleteAll(WageringMoneylines.class);
-        dao.deleteAll(WageringOddsLines.class);
-        dao.deleteAll(WageringRunlines.class);
-        dao.deleteAll(WageringStraightSpreadLines.class);
-        dao.deleteAll(WageringTotalScoreLines.class);
-        dao.deleteAll(WeatherConditions.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public void deleteAll() {
+    dao.deleteAll(Addresses.class);
+    dao.deleteAll(AffiliationPhases.class);
+    dao.deleteAll(Affiliations.class);
+    dao.deleteAll(AffiliationsDocuments.class);
+    dao.deleteAll(AffiliationsEvents.class);
+    dao.deleteAll(AffiliationsMedia.class);
+    dao.deleteAll(AmericanFootballActionParticipants.class);
+    dao.deleteAll(AmericanFootballActionPlays.class);
+    dao.deleteAll(AmericanFootballDefensiveStats.class);
+    dao.deleteAll(AmericanFootballDownProgressStats.class);
+    dao.deleteAll(AmericanFootballEventStates.class);
+    dao.deleteAll(AmericanFootballFumblesStats.class);
+    dao.deleteAll(AmericanFootballOffensiveStats.class);
+    dao.deleteAll(AmericanFootballPassingStats.class);
+    dao.deleteAll(AmericanFootballPenaltiesStats.class);
+    dao.deleteAll(AmericanFootballRushingStats.class);
+    dao.deleteAll(AmericanFootballSacksAgainstStats.class);
+    dao.deleteAll(AmericanFootballScoringStats.class);
+    dao.deleteAll(AmericanFootballSpecialTeamsStats.class);
+    dao.deleteAll(BaseballActionContactDetails.class);
+    dao.deleteAll(BaseballActionPitches.class);
+    dao.deleteAll(BaseballActionPlays.class);
+    dao.deleteAll(BaseballActionSubstitutions.class);
+    dao.deleteAll(BaseballDefensiveGroup.class);
+    dao.deleteAll(BaseballDefensivePlayers.class);
+    dao.deleteAll(BaseballDefensiveStats.class);
+    dao.deleteAll(BaseballEventStates.class);
+    dao.deleteAll(BaseballOffensiveStats.class);
+    dao.deleteAll(BaseballPitchingStats.class);
+    dao.deleteAll(BasketballDefensiveStats.class);
+    dao.deleteAll(BasketballEventStates.class);
+    dao.deleteAll(BasketballOffensiveStats.class);
+    dao.deleteAll(BasketballReboundingStats.class);
+    dao.deleteAll(BasketballTeamStats.class);
+    dao.deleteAll(Bookmakers.class);
+    dao.deleteAll(CorePersonStats.class);
+    dao.deleteAll(CoreStats.class);
+    dao.deleteAll(DbInfo.class);
+    dao.deleteAll(DisplayNames.class);
+    dao.deleteAll(DocumentClasses.class);
+    dao.deleteAll(DocumentContents.class);
+    dao.deleteAll(DocumentFixtures.class);
+    dao.deleteAll(DocumentFixturesEvents.class);
+    dao.deleteAll(DocumentPackageEntry.class);
+    dao.deleteAll(DocumentPackages.class);
+    dao.deleteAll(Documents.class);
+    dao.deleteAll(DocumentsMedia.class);
+    dao.deleteAll(Events.class);
+    dao.deleteAll(EventsDocuments.class);
+    dao.deleteAll(EventsMedia.class);
+    dao.deleteAll(EventsSubSeasons.class);
+    dao.deleteAll(IceHockeyActionParticipants.class);
+    dao.deleteAll(IceHockeyActionPlays.class);
+    dao.deleteAll(IceHockeyDefensiveStats.class);
+    dao.deleteAll(IceHockeyEventStates.class);
+    dao.deleteAll(IceHockeyOffensiveStats.class);
+    dao.deleteAll(IceHockeyPlayerStats.class);
+    dao.deleteAll(InjuryPhases.class);
+    dao.deleteAll(KeyAliases.class);
+    dao.deleteAll(KeyRoots.class);
+    dao.deleteAll(LatestRevisions.class);
+    dao.deleteAll(Locations.class);
+    dao.deleteAll(Media.class);
+    dao.deleteAll(MediaCaptions.class);
+    dao.deleteAll(MediaContents.class);
+    dao.deleteAll(MediaKeywords.class);
+    dao.deleteAll(MotorRacingEventStates.class);
+    dao.deleteAll(MotorRacingQualifyingStats.class);
+    dao.deleteAll(MotorRacingRaceStats.class);
+    dao.deleteAll(OutcomeTotals.class);
+    dao.deleteAll(ParticipantsEvents.class);
+    dao.deleteAll(Periods.class);
+    dao.deleteAll(PersonEventMetadata.class);
+    dao.deleteAll(PersonPhases.class);
+    dao.deleteAll(Persons.class);
+    dao.deleteAll(PersonsDocuments.class);
+    dao.deleteAll(PersonsMedia.class);
+    dao.deleteAll(Positions.class);
+    dao.deleteAll(Publishers.class);
+    dao.deleteAll(Roles.class);
+    dao.deleteAll(Seasons.class);
+    dao.deleteAll(Sites.class);
+    dao.deleteAll(SoccerDefensiveStats.class);
+    dao.deleteAll(SoccerEventStates.class);
+    dao.deleteAll(SoccerFoulStats.class);
+    dao.deleteAll(SoccerOffensiveStats.class);
+    dao.deleteAll(StandingSubgroups.class);
+    dao.deleteAll(Standings.class);
+    dao.deleteAll(Stats.class);
+    dao.deleteAll(SubPeriods.class);
+    dao.deleteAll(SubSeasons.class);
+    dao.deleteAll(TeamAmericanFootballStats.class);
+    dao.deleteAll(TeamPhases.class);
+    dao.deleteAll(Teams.class);
+    dao.deleteAll(TeamsDocuments.class);
+    dao.deleteAll(TeamsMedia.class);
+    dao.deleteAll(TennisActionPoints.class);
+    dao.deleteAll(TennisActionVolleys.class);
+    dao.deleteAll(TennisEventStates.class);
+    dao.deleteAll(TennisReturnStats.class);
+    dao.deleteAll(TennisServiceStats.class);
+    dao.deleteAll(WageringMoneylines.class);
+    dao.deleteAll(WageringOddsLines.class);
+    dao.deleteAll(WageringRunlines.class);
+    dao.deleteAll(WageringStraightSpreadLines.class);
+    dao.deleteAll(WageringTotalScoreLines.class);
+    dao.deleteAll(WeatherConditions.class);
+  }
 }

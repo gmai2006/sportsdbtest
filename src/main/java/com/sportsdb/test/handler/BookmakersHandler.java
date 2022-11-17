@@ -16,45 +16,48 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.Bookmakers;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.Bookmakers;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("BookmakersHandler")
 public class BookmakersHandler extends DelimiterFileHandler<Bookmakers> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public BookmakersHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public BookmakersHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected Bookmakers parseLine(List<String> headers, List<String> tokens) {
+    Bookmakers record = new Bookmakers();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "bookmakerKey":
+          record.setBookmakerKey(tokens.get(i));
+          break;
+
+        case "publisherId":
+          record.setPublisherId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "locationId":
+          record.setLocationId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected Bookmakers parseLine(List<String> headers, List<String> tokens) {
-        Bookmakers record = new Bookmakers();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "bookmakerKey":
-                    record.setBookmakerKey(tokens.get(i));
-                    break;
-
-                case "publisherId":
-                    record.setPublisherId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "locationId":
-                    record.setLocationId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

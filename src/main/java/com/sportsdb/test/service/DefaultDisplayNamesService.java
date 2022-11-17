@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.DisplayNamesDao;
-import com.sportsdb.test.entity.DisplayNames;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.DisplayNamesDao;
+import com.sportsdb.test.entity.DisplayNames;
 
 @Stateless
 @Named("DefaultDisplayNamesService")
 public class DefaultDisplayNamesService implements DisplayNamesService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final DisplayNamesDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final DisplayNamesDao dao;
 
-    @Inject
-    @Named("DefaultDisplayNamesDao")
-    public DefaultDisplayNamesService(final DisplayNamesDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultDisplayNamesDao")
+  public DefaultDisplayNamesService(final DisplayNamesDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public DisplayNames find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public DisplayNames find(java.lang.Integer id) {
 
-        final DisplayNames result = dao.find(id);
-        logger.info("find(DisplayNames) - exited - return value={} result ");
-        return result;
-    }
+    final DisplayNames result = dao.find(id);
+    logger.info("find(DisplayNames) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<DisplayNames> select(int maxResult) {
-        final List<DisplayNames> result = dao.select(maxResult);
-        logger.info("select(DisplayNames) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<DisplayNames> select(int maxResult) {
+    final List<DisplayNames> result = dao.select(maxResult);
+    logger.info("select(DisplayNames) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<DisplayNames> selectAll() {
-        final List<DisplayNames> results = dao.selectAll();
-        logger.info("selectAll(DisplayNames) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<DisplayNames> selectAll() {
+    final List<DisplayNames> results = dao.selectAll();
+    logger.info("selectAll(DisplayNames) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public DisplayNames create(DisplayNames bean) {
-        requireNonNull(bean);
-        logger.info("create(DisplayNames={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public DisplayNames create(DisplayNames bean) {
+    requireNonNull(bean);
+    logger.info("create(DisplayNames={}) - entered bean ");
 
-        final DisplayNames result = dao.create(bean);
+    final DisplayNames result = dao.create(bean);
 
-        logger.info("create(DisplayNames) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(DisplayNames) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public DisplayNames update(DisplayNames bean) {
-        requireNonNull(bean);
-        logger.info("update(DisplayNames={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public DisplayNames update(DisplayNames bean) {
+    requireNonNull(bean);
+    logger.info("update(DisplayNames={}) - entered bean ");
 
-        final DisplayNames result = dao.update(bean);
+    final DisplayNames result = dao.update(bean);
 
-        logger.info("update(DisplayNames) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(DisplayNames) - exited - return value={} result ");
+    return result;
+  }
 }

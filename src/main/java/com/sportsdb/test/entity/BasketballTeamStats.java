@@ -16,79 +16,79 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "basketball_team_stats")
 public class BasketballTeamStats implements Serializable {
-    private static final long serialVersionUID = 163445241890616700L;
+  private static final long serialVersionUID = 166867004228426L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: timeouts_left. */
-    @Basic
-    @Column(name = "timeouts_left", length = 100)
-    private java.lang.String timeoutsLeft;
-    /** Description: largest_lead. */
-    @Basic
-    @Column(name = "largest_lead", length = 100)
-    private java.lang.String largestLead;
-    /** Description: fouls_total. */
-    @Basic
-    @Column(name = "fouls_total", length = 100)
-    private java.lang.String foulsTotal;
-    /** Description: turnover_margin. */
-    @Basic
-    @Column(name = "turnover_margin", length = 100)
-    private java.lang.String turnoverMargin;
+  /** Description: timeouts_left. */
+  @Basic
+  @Column(name = "timeouts_left", length = 100)
+  private java.lang.String timeoutsLeft;
+  /** Description: largest_lead. */
+  @Basic
+  @Column(name = "largest_lead", length = 100)
+  private java.lang.String largestLead;
+  /** Description: fouls_total. */
+  @Basic
+  @Column(name = "fouls_total", length = 100)
+  private java.lang.String foulsTotal;
+  /** Description: turnover_margin. */
+  @Basic
+  @Column(name = "turnover_margin", length = 100)
+  private java.lang.String turnoverMargin;
 
-    public BasketballTeamStats() {}
+  public BasketballTeamStats() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.String getTimeoutsLeft() {
-        return this.timeoutsLeft;
-    }
+  public java.lang.String getTimeoutsLeft() {
+    return this.timeoutsLeft;
+  }
 
-    public java.lang.String getLargestLead() {
-        return this.largestLead;
-    }
+  public java.lang.String getLargestLead() {
+    return this.largestLead;
+  }
 
-    public java.lang.String getFoulsTotal() {
-        return this.foulsTotal;
-    }
+  public java.lang.String getFoulsTotal() {
+    return this.foulsTotal;
+  }
 
-    public java.lang.String getTurnoverMargin() {
-        return this.turnoverMargin;
-    }
+  public java.lang.String getTurnoverMargin() {
+    return this.turnoverMargin;
+  }
 
-    public void setTimeoutsLeft(java.lang.String timeoutsLeft) {
-        this.timeoutsLeft = timeoutsLeft;
-    }
+  public void setTimeoutsLeft(java.lang.String timeoutsLeft) {
+    this.timeoutsLeft = timeoutsLeft;
+  }
 
-    public void setLargestLead(java.lang.String largestLead) {
-        this.largestLead = largestLead;
-    }
+  public void setLargestLead(java.lang.String largestLead) {
+    this.largestLead = largestLead;
+  }
 
-    public void setFoulsTotal(java.lang.String foulsTotal) {
-        this.foulsTotal = foulsTotal;
-    }
+  public void setFoulsTotal(java.lang.String foulsTotal) {
+    this.foulsTotal = foulsTotal;
+  }
 
-    public void setTurnoverMargin(java.lang.String turnoverMargin) {
-        this.turnoverMargin = turnoverMargin;
-    }
+  public void setTurnoverMargin(java.lang.String turnoverMargin) {
+    this.turnoverMargin = turnoverMargin;
+  }
 }

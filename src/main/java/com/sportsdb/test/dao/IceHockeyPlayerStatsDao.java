@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.IceHockeyPlayerStats;
 import java.util.List;
+import com.sportsdb.test.entity.IceHockeyPlayerStats;
 
 public interface IceHockeyPlayerStatsDao {
-    /**
-     * Retrieve all records IceHockeyPlayerStats.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of IceHockeyPlayerStats
-     */
-    public List<IceHockeyPlayerStats> select(int maxResult);
+  /**
+   * Retrieve all records IceHockeyPlayerStats.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of IceHockeyPlayerStats
+   */
+  public List<IceHockeyPlayerStats> select(int maxResult);
 
-    /**
-     * Retrieve all records IceHockeyPlayerStats.
-     *
-     * @return A list of IceHockeyPlayerStats
-     */
-    public List<IceHockeyPlayerStats> selectAll();
+  /**
+   * Retrieve all records IceHockeyPlayerStats.
+   *
+   * @return A list of IceHockeyPlayerStats
+   */
+  public List<IceHockeyPlayerStats> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An IceHockeyPlayerStats id.
-     * @return The same IceHockeyPlayerStats.
-     */
-    public IceHockeyPlayerStats find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An IceHockeyPlayerStats id.
+   * @return The same IceHockeyPlayerStats.
+   */
+  public IceHockeyPlayerStats find(java.lang.Integer id);
 
-    /**
-     * Create an IceHockeyPlayerStats.
-     *
-     * @param e the IceHockeyPlayerStats.
-     * @return The same IceHockeyPlayerStats.
-     */
-    public IceHockeyPlayerStats create(IceHockeyPlayerStats e);
+  /**
+   * Create an IceHockeyPlayerStats.
+   *
+   * @param e the IceHockeyPlayerStats.
+   * @return The same IceHockeyPlayerStats.
+   */
+  public IceHockeyPlayerStats create(IceHockeyPlayerStats e);
 
-    /**
-     * Update the IceHockeyPlayerStats.
-     *
-     * @param e the IceHockeyPlayerStats.
-     * @return The same IceHockeyPlayerStats.
-     */
-    public IceHockeyPlayerStats update(IceHockeyPlayerStats e);
+  /**
+   * Update the IceHockeyPlayerStats.
+   *
+   * @param e the IceHockeyPlayerStats.
+   * @return The same IceHockeyPlayerStats.
+   */
+  public IceHockeyPlayerStats update(IceHockeyPlayerStats e);
 }

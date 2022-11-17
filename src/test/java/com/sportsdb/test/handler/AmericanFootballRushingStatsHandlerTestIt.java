@@ -17,110 +17,88 @@
 package com.sportsdb.test.handler;
 
 import static org.junit.Assert.assertEquals;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.dao.StandaloneJpaDao;
-import com.sportsdb.test.entity.AmericanFootballRushingStats;
-import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
-import com.sportsdb.test.utils.FileUtils;
+import java.io.IOException;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import org.json.CDL;
 import org.json.JSONArray;
+import com.google.gson.Gson;
+import com.sportsdb.test.entity.AmericanFootballRushingStats;
+import com.sportsdb.test.dao.JpaDao;
+import com.sportsdb.test.dao.StandaloneJpaDao;
+import com.sportsdb.test.dao.DefaultAmericanFootballRushingStatsDao;
+import com.sportsdb.test.utils.DelimiterParser;
+import com.sportsdb.test.utils.FileUtils;
+import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
+
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import com.google.gson.GsonBuilder;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class AmericanFootballRushingStatsHandlerTestIt {
-    static final String inputFile = "AmericanFootballRushingStats.json";
-    static AmericanFootballRushingStatsHandler handler;
-    private static JpaDao jpa;
-    static Gson gson =
-            new GsonBuilder()
-                    .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
-                    .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
-                    .create();
-    private AmericanFootballRushingStats[] records;
+  static final String inputFile = "AmericanFootballRushingStats.json";
+  static AmericanFootballRushingStatsHandler handler;
+  private static JpaDao jpa;
+  static Gson gson =
+      new GsonBuilder()
+          .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
+          .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
+          .create();
+  private AmericanFootballRushingStats[] records;
 
-    /** Run before the test. */
-    @BeforeClass
-    public static void before() {
-        final EntityManagerFactory factory =
-                Persistence.createEntityManagerFactory("testpersistence");
-        jpa = new StandaloneJpaDao(factory.createEntityManager());
-        handler = new AmericanFootballRushingStatsHandler(jpa);
-    }
+  /** Run before the test. */
+  @BeforeClass
+  public static void before() {
+    final EntityManagerFactory factory = Persistence.createEntityManagerFactory("testpersistence");
+    jpa = new StandaloneJpaDao(factory.createEntityManager());
+    handler = new AmericanFootballRushingStatsHandler(jpa);
+  }
 
-    @Test
-    public void testSelect() throws IOException {
-        final File tempFile =
-                createRecordInputStreamFromJsonFile(inputFile, Charset.defaultCharset());
-        final InputStream inputStream = new BufferedInputStream(new FileInputStream(tempFile));
-        int count = handler.process(inputStream);
-        String json = FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
-        records = gson.fromJson(json, AmericanFootballRushingStats[].class);
-        assertEquals("match count", count, records.length);
-        AmericanFootballRushingStats testResult =
-                jpa.find(AmericanFootballRushingStats.class, records[0].getId());
-        assertEquals(
-                "expect equals rushesAttempts ",
-                this.records[0].getRushesAttempts(),
-                testResult.getRushesAttempts());
-        assertEquals(
-                "expect equals rushesYards ",
-                this.records[0].getRushesYards(),
-                testResult.getRushesYards());
-        assertEquals(
-                "expect equals rushesTouchdowns ",
-                this.records[0].getRushesTouchdowns(),
-                testResult.getRushesTouchdowns());
-        assertEquals(
-                "expect equals rushingAverageYardsPer ",
-                this.records[0].getRushingAverageYardsPer(),
-                testResult.getRushingAverageYardsPer());
-        assertEquals(
-                "expect equals rushesFirstDown ",
-                this.records[0].getRushesFirstDown(),
-                testResult.getRushesFirstDown());
-        assertEquals(
-                "expect equals rushesLongest ",
-                this.records[0].getRushesLongest(),
-                testResult.getRushesLongest());
+  @Test
+  public void testSelect() throws IOException {
+    final File tempFile = new File("./src/test/resources/AmericanFootballRushingStats.csv");
+    final InputStream inputStream = new BufferedInputStream(new FileInputStream(tempFile));
+    int count = handler.process(inputStream);
+    String json = FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
+    records = gson.fromJson(json, AmericanFootballRushingStats[].class);
+    assertEquals("match count", count, records.length);
+    AmericanFootballRushingStats testResult =
+        jpa.find(AmericanFootballRushingStats.class, records[0].getId());
+    assertEquals(
+        "expect equals rushesAttempts ",
+        this.records[0].getRushesAttempts(),
+        testResult.getRushesAttempts());
+    assertEquals(
+        "expect equals rushesYards ",
+        this.records[0].getRushesYards(),
+        testResult.getRushesYards());
+    assertEquals(
+        "expect equals rushesTouchdowns ",
+        this.records[0].getRushesTouchdowns(),
+        testResult.getRushesTouchdowns());
+    assertEquals(
+        "expect equals rushingAverageYardsPer ",
+        this.records[0].getRushingAverageYardsPer(),
+        testResult.getRushingAverageYardsPer());
+    assertEquals(
+        "expect equals rushesFirstDown ",
+        this.records[0].getRushesFirstDown(),
+        testResult.getRushesFirstDown());
+    assertEquals(
+        "expect equals rushesLongest ",
+        this.records[0].getRushesLongest(),
+        testResult.getRushesLongest());
 
-        // cleanup
-        inputStream.close();
-        json = null;
-        records = null;
-    }
-
-    /**
-     * Construct a delimiter file from a json file.
-     *
-     * @param inputFile the json file.
-     * @param charset default charset.
-     * @return
-     */
-    private File createRecordInputStreamFromJsonFile(String inputFile, Charset charset) {
-        try {
-            final File tempFile = File.createTempFile(inputFile, ".txt");
-            tempFile.deleteOnExit();
-            String json =
-                    FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
-            JSONArray docs = new JSONArray(json);
-            String csv = CDL.toString(docs);
-            org.apache.commons.io.FileUtils.writeStringToFile(
-                    tempFile, csv, Charset.defaultCharset());
-            return tempFile;
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return null;
-        }
-    }
+    // cleanup
+    inputStream.close();
+    json = null;
+    records = null;
+  }
 }

@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.Seasons;
 import java.util.List;
+import com.sportsdb.test.entity.Seasons;
 
 public interface SeasonsService {
-    public Seasons find(java.lang.Integer id);
+  public Seasons find(java.lang.Integer id);
 
-    /**
-     * Select a list of Seasons based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return Seasons records.
-     */
-    public List<Seasons> select(int maxResult);
+  /**
+   * Select a list of Seasons based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return Seasons records.
+   */
+  public List<Seasons> select(int maxResult);
 
-    /**
-     * Select all Seasons.
-     *
-     * @return all Seasons records.
-     */
-    public List<Seasons> selectAll();
+  /**
+   * Select all Seasons.
+   *
+   * @return all Seasons records.
+   */
+  public List<Seasons> selectAll();
 
-    /**
-     * Create Seasons.
-     *
-     * @param bean The Seasons.
-     * @return The Seasons.
-     */
-    public Seasons create(Seasons bean);
+  /**
+   * Create Seasons.
+   *
+   * @param bean The Seasons.
+   * @return The Seasons.
+   */
+  public Seasons create(Seasons bean);
 
-    /**
-     * Update a Seasons.
-     *
-     * @param bean - The Seasons.
-     * @return Seasons.
-     */
-    public Seasons update(Seasons bean);
+  /**
+   * Update a Seasons.
+   *
+   * @param bean - The Seasons.
+   * @return Seasons.
+   */
+  public Seasons update(Seasons bean);
 }

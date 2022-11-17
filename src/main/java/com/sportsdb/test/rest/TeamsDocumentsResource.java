@@ -17,14 +17,14 @@
 package com.sportsdb.test.rest;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.entity.TeamsDocuments;
-import com.sportsdb.test.service.TeamsDocumentsService;
 import java.util.List;
+
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -32,96 +32,95 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import com.sportsdb.test.service.TeamsDocumentsService;
+import com.sportsdb.test.entity.TeamsDocuments;
+
 @Path("/teamsdocuments")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces({MediaType.APPLICATION_JSON})
 public class TeamsDocumentsResource {
 
-    @Inject private TeamsDocumentsService service;
+  @Inject private TeamsDocumentsService service;
 
-    public TeamsDocumentsResource() {}
+  public TeamsDocumentsResource() {}
 
-    public TeamsDocumentsResource(final TeamsDocumentsService service) {
-        requireNonNull(service);
-        this.service = service;
+  public TeamsDocumentsResource(final TeamsDocumentsService service) {
+    requireNonNull(service);
+    this.service = service;
+  }
+
+  /**
+   * hello.
+   *
+   * @return a hello.
+   */
+  @GET
+  @Path("")
+  public Response hello() {
+    return Response.status(Response.Status.OK).entity(this.getClass().getName()).build();
+  }
+
+  /**
+   * InIdempotent method. Update existing TeamsDocuments.
+   *
+   * @param obj - instance of TeamsDocuments.
+   * @return TeamsDocuments.
+   */
+  @Consumes(MediaType.APPLICATION_JSON)
+  @POST
+  public TeamsDocuments update(TeamsDocuments obj) {
+    return this.service.update(obj);
+  }
+
+  /**
+   * Delete existing TeamsDocuments.
+   *
+   * @param id instance of TeamsDocuments.
+   * @return TeamsDocuments.
+   */
+
+  /**
+   * Select all TeamsDocuments with limit of returned records.
+   *
+   * @param max - number of records.
+   * @return a list TeamsDocuments.
+   */
+  @GET
+  @Path("select/{max}")
+  public Response findWithLimit(@PathParam("max") String max) {
+    Integer input = null;
+    try {
+      input = Integer.valueOf(max);
+    } catch (NumberFormatException ex) {
+      throw new WebApplicationException(Response.Status.BAD_REQUEST);
     }
+    List<TeamsDocuments> result = service.select(input);
 
-    /**
-     * hello.
-     *
-     * @return a hello.
-     */
-    @GET
-    @Path("")
-    public Response hello() {
-        return Response.status(Response.Status.OK).entity(this.getClass().getName()).build();
-    }
+    return Response.status(Response.Status.OK)
+        .header("Access-Control-Allow-Origin", "*")
+        .header("Access-Control-Allow-Credentials", "true")
+        .header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
+        .header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
+        .entity(result)
+        .build();
+  }
 
-    /**
-     * InIdempotent method. Update existing TeamsDocuments.
-     *
-     * @param obj - instance of TeamsDocuments.
-     * @return TeamsDocuments.
-     */
-    @Consumes(MediaType.APPLICATION_JSON)
-    @POST
-    public TeamsDocuments update(TeamsDocuments obj) {
-        return this.service.update(obj);
-    }
+  /**
+   * Select all TeamsDocuments records.
+   *
+   * @return a list TeamsDocuments.
+   */
+  @GET
+  @Path("selectAll")
+  public Response selectAll() {
+    List<TeamsDocuments> result = service.selectAll();
 
-    /**
-     * Delete existing TeamsDocuments.
-     *
-     * @param id instance of TeamsDocuments.
-     * @return TeamsDocuments.
-     */
-
-    /**
-     * Select all TeamsDocuments with limit of returned records.
-     *
-     * @param max - number of records.
-     * @return a list TeamsDocuments.
-     */
-    @GET
-    @Path("select/{max}")
-    public Response findWithLimit(@PathParam("max") String max) {
-        Integer input = null;
-        try {
-            input = Integer.valueOf(max);
-        } catch (NumberFormatException ex) {
-            throw new WebApplicationException(Response.Status.BAD_REQUEST);
-        }
-        List<TeamsDocuments> result = service.select(input);
-
-        return Response.status(Response.Status.OK)
-                .header("Access-Control-Allow-Origin", "*")
-                .header("Access-Control-Allow-Credentials", "true")
-                .header(
-                        "Access-Control-Allow-Headers",
-                        "origin, content-type, accept, authorization")
-                .header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
-                .entity(result)
-                .build();
-    }
-
-    /**
-     * Select all TeamsDocuments records.
-     *
-     * @return a list TeamsDocuments.
-     */
-    @GET
-    @Path("selectAll")
-    public Response selectAll() {
-        List<TeamsDocuments> result = service.selectAll();
-
-        return Response.status(Response.Status.OK)
-                .header("Access-Control-Allow-Origin", "*")
-                .header("Access-Control-Allow-Credentials", "true")
-                .header(
-                        "Access-Control-Allow-Headers",
-                        "origin, content-type, accept, authorization")
-                .header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
-                .entity(result)
-                .build();
-    }
+    return Response.status(Response.Status.OK)
+        .header("Access-Control-Allow-Origin", "*")
+        .header("Access-Control-Allow-Credentials", "true")
+        .header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
+        .header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
+        .entity(result)
+        .build();
+  }
 }

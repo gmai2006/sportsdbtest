@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.Locations;
 import java.util.List;
+import com.sportsdb.test.entity.Locations;
 
 public interface LocationsDao {
-    /**
-     * Retrieve all records Locations.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of Locations
-     */
-    public List<Locations> select(int maxResult);
+  /**
+   * Retrieve all records Locations.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of Locations
+   */
+  public List<Locations> select(int maxResult);
 
-    /**
-     * Retrieve all records Locations.
-     *
-     * @return A list of Locations
-     */
-    public List<Locations> selectAll();
+  /**
+   * Retrieve all records Locations.
+   *
+   * @return A list of Locations
+   */
+  public List<Locations> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An Locations id.
-     * @return The same Locations.
-     */
-    public Locations find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An Locations id.
+   * @return The same Locations.
+   */
+  public Locations find(java.lang.Integer id);
 
-    /**
-     * Create an Locations.
-     *
-     * @param e the Locations.
-     * @return The same Locations.
-     */
-    public Locations create(Locations e);
+  /**
+   * Create an Locations.
+   *
+   * @param e the Locations.
+   * @return The same Locations.
+   */
+  public Locations create(Locations e);
 
-    /**
-     * Update the Locations.
-     *
-     * @param e the Locations.
-     * @return The same Locations.
-     */
-    public Locations update(Locations e);
+  /**
+   * Update the Locations.
+   *
+   * @param e the Locations.
+   * @return The same Locations.
+   */
+  public Locations update(Locations e);
 }

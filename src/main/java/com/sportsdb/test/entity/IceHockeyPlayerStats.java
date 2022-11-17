@@ -16,43 +16,43 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "ice_hockey_player_stats")
 public class IceHockeyPlayerStats implements Serializable {
-    private static final long serialVersionUID = 163445241904488223L;
+  private static final long serialVersionUID = 166867004239494568L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: plus_minus. */
-    @Basic
-    @Column(name = "plus_minus", length = 100)
-    private java.lang.String plusMinus;
+  /** Description: plus_minus. */
+  @Basic
+  @Column(name = "plus_minus", length = 100)
+  private java.lang.String plusMinus;
 
-    public IceHockeyPlayerStats() {}
+  public IceHockeyPlayerStats() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.String getPlusMinus() {
-        return this.plusMinus;
-    }
+  public java.lang.String getPlusMinus() {
+    return this.plusMinus;
+  }
 
-    public void setPlusMinus(java.lang.String plusMinus) {
-        this.plusMinus = plusMinus;
-    }
+  public void setPlusMinus(java.lang.String plusMinus) {
+    this.plusMinus = plusMinus;
+  }
 }

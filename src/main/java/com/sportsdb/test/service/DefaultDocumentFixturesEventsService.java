@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.DocumentFixturesEventsDao;
-import com.sportsdb.test.entity.DocumentFixturesEvents;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.DocumentFixturesEventsDao;
+import com.sportsdb.test.entity.DocumentFixturesEvents;
 
 @Stateless
 @Named("DefaultDocumentFixturesEventsService")
 public class DefaultDocumentFixturesEventsService implements DocumentFixturesEventsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final DocumentFixturesEventsDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final DocumentFixturesEventsDao dao;
 
-    @Inject
-    @Named("DefaultDocumentFixturesEventsDao")
-    public DefaultDocumentFixturesEventsService(final DocumentFixturesEventsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultDocumentFixturesEventsDao")
+  public DefaultDocumentFixturesEventsService(final DocumentFixturesEventsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public DocumentFixturesEvents find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public DocumentFixturesEvents find(java.lang.Integer id) {
 
-        final DocumentFixturesEvents result = dao.find(id);
-        logger.info("find(DocumentFixturesEvents) - exited - return value={} result ");
-        return result;
-    }
+    final DocumentFixturesEvents result = dao.find(id);
+    logger.info("find(DocumentFixturesEvents) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<DocumentFixturesEvents> select(int maxResult) {
-        final List<DocumentFixturesEvents> result = dao.select(maxResult);
-        logger.info("select(DocumentFixturesEvents) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<DocumentFixturesEvents> select(int maxResult) {
+    final List<DocumentFixturesEvents> result = dao.select(maxResult);
+    logger.info("select(DocumentFixturesEvents) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<DocumentFixturesEvents> selectAll() {
-        final List<DocumentFixturesEvents> results = dao.selectAll();
-        logger.info("selectAll(DocumentFixturesEvents) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<DocumentFixturesEvents> selectAll() {
+    final List<DocumentFixturesEvents> results = dao.selectAll();
+    logger.info("selectAll(DocumentFixturesEvents) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public DocumentFixturesEvents create(DocumentFixturesEvents bean) {
-        requireNonNull(bean);
-        logger.info("create(DocumentFixturesEvents={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public DocumentFixturesEvents create(DocumentFixturesEvents bean) {
+    requireNonNull(bean);
+    logger.info("create(DocumentFixturesEvents={}) - entered bean ");
 
-        final DocumentFixturesEvents result = dao.create(bean);
+    final DocumentFixturesEvents result = dao.create(bean);
 
-        logger.info("create(DocumentFixturesEvents) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(DocumentFixturesEvents) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public DocumentFixturesEvents update(DocumentFixturesEvents bean) {
-        requireNonNull(bean);
-        logger.info("update(DocumentFixturesEvents={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public DocumentFixturesEvents update(DocumentFixturesEvents bean) {
+    requireNonNull(bean);
+    logger.info("update(DocumentFixturesEvents={}) - entered bean ");
 
-        final DocumentFixturesEvents result = dao.update(bean);
+    final DocumentFixturesEvents result = dao.update(bean);
 
-        logger.info("update(DocumentFixturesEvents) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(DocumentFixturesEvents) - exited - return value={} result ");
+    return result;
+  }
 }

@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.SubPeriodsDao;
-import com.sportsdb.test.entity.SubPeriods;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.SubPeriodsDao;
+import com.sportsdb.test.entity.SubPeriods;
 
 @Stateless
 @Named("DefaultSubPeriodsService")
 public class DefaultSubPeriodsService implements SubPeriodsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final SubPeriodsDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final SubPeriodsDao dao;
 
-    @Inject
-    @Named("DefaultSubPeriodsDao")
-    public DefaultSubPeriodsService(final SubPeriodsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultSubPeriodsDao")
+  public DefaultSubPeriodsService(final SubPeriodsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public SubPeriods find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public SubPeriods find(java.lang.Integer id) {
 
-        final SubPeriods result = dao.find(id);
-        logger.info("find(SubPeriods) - exited - return value={} result ");
-        return result;
-    }
+    final SubPeriods result = dao.find(id);
+    logger.info("find(SubPeriods) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<SubPeriods> select(int maxResult) {
-        final List<SubPeriods> result = dao.select(maxResult);
-        logger.info("select(SubPeriods) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<SubPeriods> select(int maxResult) {
+    final List<SubPeriods> result = dao.select(maxResult);
+    logger.info("select(SubPeriods) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<SubPeriods> selectAll() {
-        final List<SubPeriods> results = dao.selectAll();
-        logger.info("selectAll(SubPeriods) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<SubPeriods> selectAll() {
+    final List<SubPeriods> results = dao.selectAll();
+    logger.info("selectAll(SubPeriods) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public SubPeriods create(SubPeriods bean) {
-        requireNonNull(bean);
-        logger.info("create(SubPeriods={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public SubPeriods create(SubPeriods bean) {
+    requireNonNull(bean);
+    logger.info("create(SubPeriods={}) - entered bean ");
 
-        final SubPeriods result = dao.create(bean);
+    final SubPeriods result = dao.create(bean);
 
-        logger.info("create(SubPeriods) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(SubPeriods) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public SubPeriods update(SubPeriods bean) {
-        requireNonNull(bean);
-        logger.info("update(SubPeriods={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public SubPeriods update(SubPeriods bean) {
+    requireNonNull(bean);
+    logger.info("update(SubPeriods={}) - entered bean ");
 
-        final SubPeriods result = dao.update(bean);
+    final SubPeriods result = dao.update(bean);
 
-        logger.info("update(SubPeriods) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(SubPeriods) - exited - return value={} result ");
+    return result;
+  }
 }

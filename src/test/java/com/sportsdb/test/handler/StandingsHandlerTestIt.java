@@ -17,130 +17,106 @@
 package com.sportsdb.test.handler;
 
 import static org.junit.Assert.assertEquals;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.dao.StandaloneJpaDao;
-import com.sportsdb.test.entity.Standings;
-import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
-import com.sportsdb.test.utils.FileUtils;
+import java.io.IOException;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import org.json.CDL;
 import org.json.JSONArray;
+import com.google.gson.Gson;
+import com.sportsdb.test.entity.Standings;
+import com.sportsdb.test.dao.JpaDao;
+import com.sportsdb.test.dao.StandaloneJpaDao;
+import com.sportsdb.test.dao.DefaultStandingsDao;
+import com.sportsdb.test.utils.DelimiterParser;
+import com.sportsdb.test.utils.FileUtils;
+import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
+
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import com.google.gson.GsonBuilder;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class StandingsHandlerTestIt {
-    static final String inputFile = "Standings.json";
-    static StandingsHandler handler;
-    private static JpaDao jpa;
-    static Gson gson =
-            new GsonBuilder()
-                    .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
-                    .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
-                    .create();
-    private Standings[] records;
+  static final String inputFile = "Standings.json";
+  static StandingsHandler handler;
+  private static JpaDao jpa;
+  static Gson gson =
+      new GsonBuilder()
+          .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
+          .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
+          .create();
+  private Standings[] records;
 
-    /** Run before the test. */
-    @BeforeClass
-    public static void before() {
-        final EntityManagerFactory factory =
-                Persistence.createEntityManagerFactory("testpersistence");
-        jpa = new StandaloneJpaDao(factory.createEntityManager());
-        handler = new StandingsHandler(jpa);
-    }
+  /** Run before the test. */
+  @BeforeClass
+  public static void before() {
+    final EntityManagerFactory factory = Persistence.createEntityManagerFactory("testpersistence");
+    jpa = new StandaloneJpaDao(factory.createEntityManager());
+    handler = new StandingsHandler(jpa);
+  }
 
-    @Test
-    public void testSelect() throws IOException {
-        final File tempFile =
-                createRecordInputStreamFromJsonFile(inputFile, Charset.defaultCharset());
-        final InputStream inputStream = new BufferedInputStream(new FileInputStream(tempFile));
-        int count = handler.process(inputStream);
-        String json = FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
-        records = gson.fromJson(json, Standings[].class);
-        assertEquals("match count", count, records.length);
-        Standings testResult = jpa.find(Standings.class, records[0].getId());
-        org.junit.Assert.assertEquals(
-                "expect equals affiliationId ",
-                this.records[0].getAffiliationId(),
-                testResult.getAffiliationId());
-        assertEquals(
-                "expect equals standingType ",
-                this.records[0].getStandingType(),
-                testResult.getStandingType());
-        org.junit.Assert.assertEquals(
-                "expect equals subSeasonId ",
-                this.records[0].getSubSeasonId(),
-                testResult.getSubSeasonId());
-        assertEquals(
-                "expect equals lastUpdated ",
-                this.records[0].getLastUpdated(),
-                testResult.getLastUpdated());
-        assertEquals(
-                "expect equals durationScope ",
-                this.records[0].getDurationScope(),
-                testResult.getDurationScope());
-        assertEquals(
-                "expect equals competitionScope ",
-                this.records[0].getCompetitionScope(),
-                testResult.getCompetitionScope());
-        assertEquals(
-                "expect equals competitionScopeId ",
-                this.records[0].getCompetitionScopeId(),
-                testResult.getCompetitionScopeId());
-        assertEquals(
-                "expect equals alignmentScope ",
-                this.records[0].getAlignmentScope(),
-                testResult.getAlignmentScope());
-        assertEquals(
-                "expect equals siteScope ",
-                this.records[0].getSiteScope(),
-                testResult.getSiteScope());
-        assertEquals(
-                "expect equals scopingLabel ",
-                this.records[0].getScopingLabel(),
-                testResult.getScopingLabel());
-        org.junit.Assert.assertEquals(
-                "expect equals publisherId ",
-                this.records[0].getPublisherId(),
-                testResult.getPublisherId());
-        assertEquals("expect equals source ", this.records[0].getSource(), testResult.getSource());
+  @Test
+  public void testSelect() throws IOException {
+    final File tempFile = new File("./src/test/resources/Standings.csv");
+    final InputStream inputStream = new BufferedInputStream(new FileInputStream(tempFile));
+    int count = handler.process(inputStream);
+    String json = FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
+    records = gson.fromJson(json, Standings[].class);
+    assertEquals("match count", count, records.length);
+    Standings testResult = jpa.find(Standings.class, records[0].getId());
+    org.junit.Assert.assertEquals(
+        "expect equals affiliationId ",
+        this.records[0].getAffiliationId(),
+        testResult.getAffiliationId());
+    assertEquals(
+        "expect equals standingType ",
+        this.records[0].getStandingType(),
+        testResult.getStandingType());
+    org.junit.Assert.assertEquals(
+        "expect equals subSeasonId ",
+        this.records[0].getSubSeasonId(),
+        testResult.getSubSeasonId());
+    assertEquals(
+        "expect equals lastUpdated ",
+        this.records[0].getLastUpdated(),
+        testResult.getLastUpdated());
+    assertEquals(
+        "expect equals durationScope ",
+        this.records[0].getDurationScope(),
+        testResult.getDurationScope());
+    assertEquals(
+        "expect equals competitionScope ",
+        this.records[0].getCompetitionScope(),
+        testResult.getCompetitionScope());
+    assertEquals(
+        "expect equals competitionScopeId ",
+        this.records[0].getCompetitionScopeId(),
+        testResult.getCompetitionScopeId());
+    assertEquals(
+        "expect equals alignmentScope ",
+        this.records[0].getAlignmentScope(),
+        testResult.getAlignmentScope());
+    assertEquals(
+        "expect equals siteScope ", this.records[0].getSiteScope(), testResult.getSiteScope());
+    assertEquals(
+        "expect equals scopingLabel ",
+        this.records[0].getScopingLabel(),
+        testResult.getScopingLabel());
+    org.junit.Assert.assertEquals(
+        "expect equals publisherId ",
+        this.records[0].getPublisherId(),
+        testResult.getPublisherId());
+    assertEquals("expect equals source ", this.records[0].getSource(), testResult.getSource());
 
-        // cleanup
-        inputStream.close();
-        json = null;
-        records = null;
-    }
-
-    /**
-     * Construct a delimiter file from a json file.
-     *
-     * @param inputFile the json file.
-     * @param charset default charset.
-     * @return
-     */
-    private File createRecordInputStreamFromJsonFile(String inputFile, Charset charset) {
-        try {
-            final File tempFile = File.createTempFile(inputFile, ".txt");
-            tempFile.deleteOnExit();
-            String json =
-                    FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
-            JSONArray docs = new JSONArray(json);
-            String csv = CDL.toString(docs);
-            org.apache.commons.io.FileUtils.writeStringToFile(
-                    tempFile, csv, Charset.defaultCharset());
-            return tempFile;
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return null;
-        }
-    }
+    // cleanup
+    inputStream.close();
+    json = null;
+    records = null;
+  }
 }

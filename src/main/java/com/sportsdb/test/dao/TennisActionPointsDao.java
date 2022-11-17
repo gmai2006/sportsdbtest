@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.TennisActionPoints;
 import java.util.List;
+import com.sportsdb.test.entity.TennisActionPoints;
 
 public interface TennisActionPointsDao {
-    /**
-     * Retrieve all records TennisActionPoints.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of TennisActionPoints
-     */
-    public List<TennisActionPoints> select(int maxResult);
+  /**
+   * Retrieve all records TennisActionPoints.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of TennisActionPoints
+   */
+  public List<TennisActionPoints> select(int maxResult);
 
-    /**
-     * Retrieve all records TennisActionPoints.
-     *
-     * @return A list of TennisActionPoints
-     */
-    public List<TennisActionPoints> selectAll();
+  /**
+   * Retrieve all records TennisActionPoints.
+   *
+   * @return A list of TennisActionPoints
+   */
+  public List<TennisActionPoints> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An TennisActionPoints id.
-     * @return The same TennisActionPoints.
-     */
-    public TennisActionPoints find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An TennisActionPoints id.
+   * @return The same TennisActionPoints.
+   */
+  public TennisActionPoints find(java.lang.Integer id);
 
-    /**
-     * Create an TennisActionPoints.
-     *
-     * @param e the TennisActionPoints.
-     * @return The same TennisActionPoints.
-     */
-    public TennisActionPoints create(TennisActionPoints e);
+  /**
+   * Create an TennisActionPoints.
+   *
+   * @param e the TennisActionPoints.
+   * @return The same TennisActionPoints.
+   */
+  public TennisActionPoints create(TennisActionPoints e);
 
-    /**
-     * Update the TennisActionPoints.
-     *
-     * @param e the TennisActionPoints.
-     * @return The same TennisActionPoints.
-     */
-    public TennisActionPoints update(TennisActionPoints e);
+  /**
+   * Update the TennisActionPoints.
+   *
+   * @param e the TennisActionPoints.
+   * @return The same TennisActionPoints.
+   */
+  public TennisActionPoints update(TennisActionPoints e);
 }

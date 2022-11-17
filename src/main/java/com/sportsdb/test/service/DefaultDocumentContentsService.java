@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.DocumentContentsDao;
-import com.sportsdb.test.entity.DocumentContents;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.DocumentContentsDao;
+import com.sportsdb.test.entity.DocumentContents;
 
 @Stateless
 @Named("DefaultDocumentContentsService")
 public class DefaultDocumentContentsService implements DocumentContentsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final DocumentContentsDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final DocumentContentsDao dao;
 
-    @Inject
-    @Named("DefaultDocumentContentsDao")
-    public DefaultDocumentContentsService(final DocumentContentsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultDocumentContentsDao")
+  public DefaultDocumentContentsService(final DocumentContentsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public DocumentContents find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public DocumentContents find(java.lang.Integer id) {
 
-        final DocumentContents result = dao.find(id);
-        logger.info("find(DocumentContents) - exited - return value={} result ");
-        return result;
-    }
+    final DocumentContents result = dao.find(id);
+    logger.info("find(DocumentContents) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<DocumentContents> select(int maxResult) {
-        final List<DocumentContents> result = dao.select(maxResult);
-        logger.info("select(DocumentContents) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<DocumentContents> select(int maxResult) {
+    final List<DocumentContents> result = dao.select(maxResult);
+    logger.info("select(DocumentContents) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<DocumentContents> selectAll() {
-        final List<DocumentContents> results = dao.selectAll();
-        logger.info("selectAll(DocumentContents) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<DocumentContents> selectAll() {
+    final List<DocumentContents> results = dao.selectAll();
+    logger.info("selectAll(DocumentContents) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public DocumentContents create(DocumentContents bean) {
-        requireNonNull(bean);
-        logger.info("create(DocumentContents={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public DocumentContents create(DocumentContents bean) {
+    requireNonNull(bean);
+    logger.info("create(DocumentContents={}) - entered bean ");
 
-        final DocumentContents result = dao.create(bean);
+    final DocumentContents result = dao.create(bean);
 
-        logger.info("create(DocumentContents) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(DocumentContents) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public DocumentContents update(DocumentContents bean) {
-        requireNonNull(bean);
-        logger.info("update(DocumentContents={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public DocumentContents update(DocumentContents bean) {
+    requireNonNull(bean);
+    logger.info("update(DocumentContents={}) - entered bean ");
 
-        final DocumentContents result = dao.update(bean);
+    final DocumentContents result = dao.update(bean);
 
-        logger.info("update(DocumentContents) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(DocumentContents) - exited - return value={} result ");
+    return result;
+  }
 }

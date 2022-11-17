@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.MotorRacingQualifyingStats;
 import java.util.List;
+import com.sportsdb.test.entity.MotorRacingQualifyingStats;
 
 public interface MotorRacingQualifyingStatsDao {
-    /**
-     * Retrieve all records MotorRacingQualifyingStats.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of MotorRacingQualifyingStats
-     */
-    public List<MotorRacingQualifyingStats> select(int maxResult);
+  /**
+   * Retrieve all records MotorRacingQualifyingStats.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of MotorRacingQualifyingStats
+   */
+  public List<MotorRacingQualifyingStats> select(int maxResult);
 
-    /**
-     * Retrieve all records MotorRacingQualifyingStats.
-     *
-     * @return A list of MotorRacingQualifyingStats
-     */
-    public List<MotorRacingQualifyingStats> selectAll();
+  /**
+   * Retrieve all records MotorRacingQualifyingStats.
+   *
+   * @return A list of MotorRacingQualifyingStats
+   */
+  public List<MotorRacingQualifyingStats> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An MotorRacingQualifyingStats id.
-     * @return The same MotorRacingQualifyingStats.
-     */
-    public MotorRacingQualifyingStats find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An MotorRacingQualifyingStats id.
+   * @return The same MotorRacingQualifyingStats.
+   */
+  public MotorRacingQualifyingStats find(java.lang.Integer id);
 
-    /**
-     * Create an MotorRacingQualifyingStats.
-     *
-     * @param e the MotorRacingQualifyingStats.
-     * @return The same MotorRacingQualifyingStats.
-     */
-    public MotorRacingQualifyingStats create(MotorRacingQualifyingStats e);
+  /**
+   * Create an MotorRacingQualifyingStats.
+   *
+   * @param e the MotorRacingQualifyingStats.
+   * @return The same MotorRacingQualifyingStats.
+   */
+  public MotorRacingQualifyingStats create(MotorRacingQualifyingStats e);
 
-    /**
-     * Update the MotorRacingQualifyingStats.
-     *
-     * @param e the MotorRacingQualifyingStats.
-     * @return The same MotorRacingQualifyingStats.
-     */
-    public MotorRacingQualifyingStats update(MotorRacingQualifyingStats e);
+  /**
+   * Update the MotorRacingQualifyingStats.
+   *
+   * @param e the MotorRacingQualifyingStats.
+   * @return The same MotorRacingQualifyingStats.
+   */
+  public MotorRacingQualifyingStats update(MotorRacingQualifyingStats e);
 }

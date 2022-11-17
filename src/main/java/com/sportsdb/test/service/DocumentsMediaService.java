@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.DocumentsMedia;
 import java.util.List;
+import com.sportsdb.test.entity.DocumentsMedia;
 
 public interface DocumentsMediaService {
-    public DocumentsMedia find(java.lang.Integer id);
+  public DocumentsMedia find(java.lang.Integer id);
 
-    /**
-     * Select a list of DocumentsMedia based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return DocumentsMedia records.
-     */
-    public List<DocumentsMedia> select(int maxResult);
+  /**
+   * Select a list of DocumentsMedia based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return DocumentsMedia records.
+   */
+  public List<DocumentsMedia> select(int maxResult);
 
-    /**
-     * Select all DocumentsMedia.
-     *
-     * @return all DocumentsMedia records.
-     */
-    public List<DocumentsMedia> selectAll();
+  /**
+   * Select all DocumentsMedia.
+   *
+   * @return all DocumentsMedia records.
+   */
+  public List<DocumentsMedia> selectAll();
 
-    /**
-     * Create DocumentsMedia.
-     *
-     * @param bean The DocumentsMedia.
-     * @return The DocumentsMedia.
-     */
-    public DocumentsMedia create(DocumentsMedia bean);
+  /**
+   * Create DocumentsMedia.
+   *
+   * @param bean The DocumentsMedia.
+   * @return The DocumentsMedia.
+   */
+  public DocumentsMedia create(DocumentsMedia bean);
 
-    /**
-     * Update a DocumentsMedia.
-     *
-     * @param bean - The DocumentsMedia.
-     * @return DocumentsMedia.
-     */
-    public DocumentsMedia update(DocumentsMedia bean);
+  /**
+   * Update a DocumentsMedia.
+   *
+   * @param bean - The DocumentsMedia.
+   * @return DocumentsMedia.
+   */
+  public DocumentsMedia update(DocumentsMedia bean);
 }

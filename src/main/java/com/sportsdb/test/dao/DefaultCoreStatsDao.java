@@ -16,57 +16,60 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.CoreStats;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.CoreStats;
 
 @Stateless
 @Named("DefaultCoreStatsDao")
 public class DefaultCoreStatsDao implements CoreStatsDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultCoreStatsDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultCoreStatsDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultCoreStatsDao() {}
+  public DefaultCoreStatsDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public CoreStats find(java.lang.Integer id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(CoreStats.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public CoreStats find(java.lang.Integer id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(CoreStats.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<CoreStats> select(int max) {
-        return dao.select("select a from CoreStats a", CoreStats.class, max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<CoreStats> select(int max) {
+    return dao.select("select a from CoreStats a", CoreStats.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<CoreStats> selectAll() {
-        return dao.selectAll("select a from CoreStats a", CoreStats.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<CoreStats> selectAll() {
+    return dao.selectAll("select a from CoreStats a", CoreStats.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public CoreStats create(CoreStats e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public CoreStats create(CoreStats e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public CoreStats update(CoreStats e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public CoreStats update(CoreStats e) {
+    return dao.update(e);
+  }
 }

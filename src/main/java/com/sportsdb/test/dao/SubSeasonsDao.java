@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.SubSeasons;
 import java.util.List;
+import com.sportsdb.test.entity.SubSeasons;
 
 public interface SubSeasonsDao {
-    /**
-     * Retrieve all records SubSeasons.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of SubSeasons
-     */
-    public List<SubSeasons> select(int maxResult);
+  /**
+   * Retrieve all records SubSeasons.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of SubSeasons
+   */
+  public List<SubSeasons> select(int maxResult);
 
-    /**
-     * Retrieve all records SubSeasons.
-     *
-     * @return A list of SubSeasons
-     */
-    public List<SubSeasons> selectAll();
+  /**
+   * Retrieve all records SubSeasons.
+   *
+   * @return A list of SubSeasons
+   */
+  public List<SubSeasons> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An SubSeasons id.
-     * @return The same SubSeasons.
-     */
-    public SubSeasons find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An SubSeasons id.
+   * @return The same SubSeasons.
+   */
+  public SubSeasons find(java.lang.Integer id);
 
-    /**
-     * Create an SubSeasons.
-     *
-     * @param e the SubSeasons.
-     * @return The same SubSeasons.
-     */
-    public SubSeasons create(SubSeasons e);
+  /**
+   * Create an SubSeasons.
+   *
+   * @param e the SubSeasons.
+   * @return The same SubSeasons.
+   */
+  public SubSeasons create(SubSeasons e);
 
-    /**
-     * Update the SubSeasons.
-     *
-     * @param e the SubSeasons.
-     * @return The same SubSeasons.
-     */
-    public SubSeasons update(SubSeasons e);
+  /**
+   * Update the SubSeasons.
+   *
+   * @param e the SubSeasons.
+   * @return The same SubSeasons.
+   */
+  public SubSeasons update(SubSeasons e);
 }

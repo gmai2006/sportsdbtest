@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.DbInfo;
 import java.util.List;
+import com.sportsdb.test.entity.DbInfo;
 
 public interface DbInfoService {
-    public DbInfo find(java.lang.String id);
+  public DbInfo find(java.lang.String id);
 
-    /**
-     * Select a list of DbInfo based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return DbInfo records.
-     */
-    public List<DbInfo> select(int maxResult);
+  /**
+   * Select a list of DbInfo based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return DbInfo records.
+   */
+  public List<DbInfo> select(int maxResult);
 
-    /**
-     * Select all DbInfo.
-     *
-     * @return all DbInfo records.
-     */
-    public List<DbInfo> selectAll();
+  /**
+   * Select all DbInfo.
+   *
+   * @return all DbInfo records.
+   */
+  public List<DbInfo> selectAll();
 
-    /**
-     * Create DbInfo.
-     *
-     * @param bean The DbInfo.
-     * @return The DbInfo.
-     */
-    public DbInfo create(DbInfo bean);
+  /**
+   * Create DbInfo.
+   *
+   * @param bean The DbInfo.
+   * @return The DbInfo.
+   */
+  public DbInfo create(DbInfo bean);
 
-    /**
-     * Update a DbInfo.
-     *
-     * @param bean - The DbInfo.
-     * @return DbInfo.
-     */
-    public DbInfo update(DbInfo bean);
+  /**
+   * Update a DbInfo.
+   *
+   * @param bean - The DbInfo.
+   * @return DbInfo.
+   */
+  public DbInfo update(DbInfo bean);
 }

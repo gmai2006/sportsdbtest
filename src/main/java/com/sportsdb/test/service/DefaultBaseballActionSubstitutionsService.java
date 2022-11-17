@@ -17,74 +17,73 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.BaseballActionSubstitutionsDao;
-import com.sportsdb.test.entity.BaseballActionSubstitutions;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.BaseballActionSubstitutionsDao;
+import com.sportsdb.test.entity.BaseballActionSubstitutions;
 
 @Stateless
 @Named("DefaultBaseballActionSubstitutionsService")
 public class DefaultBaseballActionSubstitutionsService
-        implements BaseballActionSubstitutionsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final BaseballActionSubstitutionsDao dao;
+    implements BaseballActionSubstitutionsService {
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final BaseballActionSubstitutionsDao dao;
 
-    @Inject
-    @Named("DefaultBaseballActionSubstitutionsDao")
-    public DefaultBaseballActionSubstitutionsService(final BaseballActionSubstitutionsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultBaseballActionSubstitutionsDao")
+  public DefaultBaseballActionSubstitutionsService(final BaseballActionSubstitutionsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BaseballActionSubstitutions find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public BaseballActionSubstitutions find(java.lang.Integer id) {
 
-        final BaseballActionSubstitutions result = dao.find(id);
-        logger.info("find(BaseballActionSubstitutions) - exited - return value={} result ");
-        return result;
-    }
+    final BaseballActionSubstitutions result = dao.find(id);
+    logger.info("find(BaseballActionSubstitutions) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<BaseballActionSubstitutions> select(int maxResult) {
-        final List<BaseballActionSubstitutions> result = dao.select(maxResult);
-        logger.info("select(BaseballActionSubstitutions) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<BaseballActionSubstitutions> select(int maxResult) {
+    final List<BaseballActionSubstitutions> result = dao.select(maxResult);
+    logger.info("select(BaseballActionSubstitutions) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<BaseballActionSubstitutions> selectAll() {
-        final List<BaseballActionSubstitutions> results = dao.selectAll();
-        logger.info("selectAll(BaseballActionSubstitutions) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<BaseballActionSubstitutions> selectAll() {
+    final List<BaseballActionSubstitutions> results = dao.selectAll();
+    logger.info("selectAll(BaseballActionSubstitutions) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BaseballActionSubstitutions create(BaseballActionSubstitutions bean) {
-        requireNonNull(bean);
-        logger.info("create(BaseballActionSubstitutions={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public BaseballActionSubstitutions create(BaseballActionSubstitutions bean) {
+    requireNonNull(bean);
+    logger.info("create(BaseballActionSubstitutions={}) - entered bean ");
 
-        final BaseballActionSubstitutions result = dao.create(bean);
+    final BaseballActionSubstitutions result = dao.create(bean);
 
-        logger.info("create(BaseballActionSubstitutions) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(BaseballActionSubstitutions) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BaseballActionSubstitutions update(BaseballActionSubstitutions bean) {
-        requireNonNull(bean);
-        logger.info("update(BaseballActionSubstitutions={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public BaseballActionSubstitutions update(BaseballActionSubstitutions bean) {
+    requireNonNull(bean);
+    logger.info("update(BaseballActionSubstitutions={}) - entered bean ");
 
-        final BaseballActionSubstitutions result = dao.update(bean);
+    final BaseballActionSubstitutions result = dao.update(bean);
 
-        logger.info("update(BaseballActionSubstitutions) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(BaseballActionSubstitutions) - exited - return value={} result ");
+    return result;
+  }
 }

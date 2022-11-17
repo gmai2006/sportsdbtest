@@ -16,52 +16,55 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.DocumentPackageEntry;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.DocumentPackageEntry;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("DocumentPackageEntryHandler")
 public class DocumentPackageEntryHandler extends DelimiterFileHandler<DocumentPackageEntry> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DocumentPackageEntryHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public DocumentPackageEntryHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected DocumentPackageEntry parseLine(List<String> headers, List<String> tokens) {
+    DocumentPackageEntry record = new DocumentPackageEntry();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "documentPackageId":
+          record.setDocumentPackageId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "rank":
+          record.setRank(tokens.get(i));
+          break;
+
+        case "documentId":
+          record.setDocumentId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "headline":
+          record.setHeadline(tokens.get(i));
+          break;
+
+        case "shortHeadline":
+          record.setShortHeadline(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected DocumentPackageEntry parseLine(List<String> headers, List<String> tokens) {
-        DocumentPackageEntry record = new DocumentPackageEntry();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "documentPackageId":
-                    record.setDocumentPackageId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "rank":
-                    record.setRank(tokens.get(i));
-                    break;
-
-                case "documentId":
-                    record.setDocumentId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "headline":
-                    record.setHeadline(tokens.get(i));
-                    break;
-
-                case "shortHeadline":
-                    record.setShortHeadline(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

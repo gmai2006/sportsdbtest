@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.LatestRevisionsDao;
-import com.sportsdb.test.entity.LatestRevisions;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.LatestRevisionsDao;
+import com.sportsdb.test.entity.LatestRevisions;
 
 @Stateless
 @Named("DefaultLatestRevisionsService")
 public class DefaultLatestRevisionsService implements LatestRevisionsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final LatestRevisionsDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final LatestRevisionsDao dao;
 
-    @Inject
-    @Named("DefaultLatestRevisionsDao")
-    public DefaultLatestRevisionsService(final LatestRevisionsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultLatestRevisionsDao")
+  public DefaultLatestRevisionsService(final LatestRevisionsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public LatestRevisions find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public LatestRevisions find(java.lang.Integer id) {
 
-        final LatestRevisions result = dao.find(id);
-        logger.info("find(LatestRevisions) - exited - return value={} result ");
-        return result;
-    }
+    final LatestRevisions result = dao.find(id);
+    logger.info("find(LatestRevisions) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<LatestRevisions> select(int maxResult) {
-        final List<LatestRevisions> result = dao.select(maxResult);
-        logger.info("select(LatestRevisions) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<LatestRevisions> select(int maxResult) {
+    final List<LatestRevisions> result = dao.select(maxResult);
+    logger.info("select(LatestRevisions) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<LatestRevisions> selectAll() {
-        final List<LatestRevisions> results = dao.selectAll();
-        logger.info("selectAll(LatestRevisions) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<LatestRevisions> selectAll() {
+    final List<LatestRevisions> results = dao.selectAll();
+    logger.info("selectAll(LatestRevisions) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public LatestRevisions create(LatestRevisions bean) {
-        requireNonNull(bean);
-        logger.info("create(LatestRevisions={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public LatestRevisions create(LatestRevisions bean) {
+    requireNonNull(bean);
+    logger.info("create(LatestRevisions={}) - entered bean ");
 
-        final LatestRevisions result = dao.create(bean);
+    final LatestRevisions result = dao.create(bean);
 
-        logger.info("create(LatestRevisions) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(LatestRevisions) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public LatestRevisions update(LatestRevisions bean) {
-        requireNonNull(bean);
-        logger.info("update(LatestRevisions={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public LatestRevisions update(LatestRevisions bean) {
+    requireNonNull(bean);
+    logger.info("update(LatestRevisions={}) - entered bean ");
 
-        final LatestRevisions result = dao.update(bean);
+    final LatestRevisions result = dao.update(bean);
 
-        logger.info("update(LatestRevisions) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(LatestRevisions) - exited - return value={} result ");
+    return result;
+  }
 }

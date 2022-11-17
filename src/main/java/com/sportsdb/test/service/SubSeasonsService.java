@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.SubSeasons;
 import java.util.List;
+import com.sportsdb.test.entity.SubSeasons;
 
 public interface SubSeasonsService {
-    public SubSeasons find(java.lang.Integer id);
+  public SubSeasons find(java.lang.Integer id);
 
-    /**
-     * Select a list of SubSeasons based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return SubSeasons records.
-     */
-    public List<SubSeasons> select(int maxResult);
+  /**
+   * Select a list of SubSeasons based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return SubSeasons records.
+   */
+  public List<SubSeasons> select(int maxResult);
 
-    /**
-     * Select all SubSeasons.
-     *
-     * @return all SubSeasons records.
-     */
-    public List<SubSeasons> selectAll();
+  /**
+   * Select all SubSeasons.
+   *
+   * @return all SubSeasons records.
+   */
+  public List<SubSeasons> selectAll();
 
-    /**
-     * Create SubSeasons.
-     *
-     * @param bean The SubSeasons.
-     * @return The SubSeasons.
-     */
-    public SubSeasons create(SubSeasons bean);
+  /**
+   * Create SubSeasons.
+   *
+   * @param bean The SubSeasons.
+   * @return The SubSeasons.
+   */
+  public SubSeasons create(SubSeasons bean);
 
-    /**
-     * Update a SubSeasons.
-     *
-     * @param bean - The SubSeasons.
-     * @return SubSeasons.
-     */
-    public SubSeasons update(SubSeasons bean);
+  /**
+   * Update a SubSeasons.
+   *
+   * @param bean - The SubSeasons.
+   * @return SubSeasons.
+   */
+  public SubSeasons update(SubSeasons bean);
 }

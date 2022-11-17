@@ -16,97 +16,100 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.Addresses;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.Addresses;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("AddressesHandler")
 public class AddressesHandler extends DelimiterFileHandler<Addresses> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public AddressesHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public AddressesHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected Addresses parseLine(List<String> headers, List<String> tokens) {
+    Addresses record = new Addresses();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "locationId":
+          record.setLocationId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "language":
+          record.setLanguage(tokens.get(i));
+          break;
+
+        case "suite":
+          record.setSuite(tokens.get(i));
+          break;
+
+        case "floor":
+          record.setFloor(tokens.get(i));
+          break;
+
+        case "building":
+          record.setBuilding(tokens.get(i));
+          break;
+
+        case "streetNumber":
+          record.setStreetNumber(tokens.get(i));
+          break;
+
+        case "streetPrefix":
+          record.setStreetPrefix(tokens.get(i));
+          break;
+
+        case "street":
+          record.setStreet(tokens.get(i));
+          break;
+
+        case "streetSuffix":
+          record.setStreetSuffix(tokens.get(i));
+          break;
+
+        case "neighborhood":
+          record.setNeighborhood(tokens.get(i));
+          break;
+
+        case "district":
+          record.setDistrict(tokens.get(i));
+          break;
+
+        case "locality":
+          record.setLocality(tokens.get(i));
+          break;
+
+        case "county":
+          record.setCounty(tokens.get(i));
+          break;
+
+        case "region":
+          record.setRegion(tokens.get(i));
+          break;
+
+        case "postalCode":
+          record.setPostalCode(tokens.get(i));
+          break;
+
+        case "country":
+          record.setCountry(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected Addresses parseLine(List<String> headers, List<String> tokens) {
-        Addresses record = new Addresses();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "locationId":
-                    record.setLocationId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "language":
-                    record.setLanguage(tokens.get(i));
-                    break;
-
-                case "suite":
-                    record.setSuite(tokens.get(i));
-                    break;
-
-                case "floor":
-                    record.setFloor(tokens.get(i));
-                    break;
-
-                case "building":
-                    record.setBuilding(tokens.get(i));
-                    break;
-
-                case "streetNumber":
-                    record.setStreetNumber(tokens.get(i));
-                    break;
-
-                case "streetPrefix":
-                    record.setStreetPrefix(tokens.get(i));
-                    break;
-
-                case "street":
-                    record.setStreet(tokens.get(i));
-                    break;
-
-                case "streetSuffix":
-                    record.setStreetSuffix(tokens.get(i));
-                    break;
-
-                case "neighborhood":
-                    record.setNeighborhood(tokens.get(i));
-                    break;
-
-                case "district":
-                    record.setDistrict(tokens.get(i));
-                    break;
-
-                case "locality":
-                    record.setLocality(tokens.get(i));
-                    break;
-
-                case "county":
-                    record.setCounty(tokens.get(i));
-                    break;
-
-                case "region":
-                    record.setRegion(tokens.get(i));
-                    break;
-
-                case "postalCode":
-                    record.setPostalCode(tokens.get(i));
-                    break;
-
-                case "country":
-                    record.setCountry(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

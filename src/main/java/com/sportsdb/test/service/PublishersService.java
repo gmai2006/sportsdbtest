@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.Publishers;
 import java.util.List;
+import com.sportsdb.test.entity.Publishers;
 
 public interface PublishersService {
-    public Publishers find(java.lang.Integer id);
+  public Publishers find(java.lang.Integer id);
 
-    /**
-     * Select a list of Publishers based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return Publishers records.
-     */
-    public List<Publishers> select(int maxResult);
+  /**
+   * Select a list of Publishers based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return Publishers records.
+   */
+  public List<Publishers> select(int maxResult);
 
-    /**
-     * Select all Publishers.
-     *
-     * @return all Publishers records.
-     */
-    public List<Publishers> selectAll();
+  /**
+   * Select all Publishers.
+   *
+   * @return all Publishers records.
+   */
+  public List<Publishers> selectAll();
 
-    /**
-     * Create Publishers.
-     *
-     * @param bean The Publishers.
-     * @return The Publishers.
-     */
-    public Publishers create(Publishers bean);
+  /**
+   * Create Publishers.
+   *
+   * @param bean The Publishers.
+   * @return The Publishers.
+   */
+  public Publishers create(Publishers bean);
 
-    /**
-     * Update a Publishers.
-     *
-     * @param bean - The Publishers.
-     * @return Publishers.
-     */
-    public Publishers update(Publishers bean);
+  /**
+   * Update a Publishers.
+   *
+   * @param bean - The Publishers.
+   * @return Publishers.
+   */
+  public Publishers update(Publishers bean);
 }

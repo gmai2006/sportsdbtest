@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.MediaContents;
 import java.util.List;
+import com.sportsdb.test.entity.MediaContents;
 
 public interface MediaContentsService {
-    public MediaContents find(java.lang.Integer id);
+  public MediaContents find(java.lang.Integer id);
 
-    /**
-     * Select a list of MediaContents based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return MediaContents records.
-     */
-    public List<MediaContents> select(int maxResult);
+  /**
+   * Select a list of MediaContents based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return MediaContents records.
+   */
+  public List<MediaContents> select(int maxResult);
 
-    /**
-     * Select all MediaContents.
-     *
-     * @return all MediaContents records.
-     */
-    public List<MediaContents> selectAll();
+  /**
+   * Select all MediaContents.
+   *
+   * @return all MediaContents records.
+   */
+  public List<MediaContents> selectAll();
 
-    /**
-     * Create MediaContents.
-     *
-     * @param bean The MediaContents.
-     * @return The MediaContents.
-     */
-    public MediaContents create(MediaContents bean);
+  /**
+   * Create MediaContents.
+   *
+   * @param bean The MediaContents.
+   * @return The MediaContents.
+   */
+  public MediaContents create(MediaContents bean);
 
-    /**
-     * Update a MediaContents.
-     *
-     * @param bean - The MediaContents.
-     * @return MediaContents.
-     */
-    public MediaContents update(MediaContents bean);
+  /**
+   * Update a MediaContents.
+   *
+   * @param bean - The MediaContents.
+   * @return MediaContents.
+   */
+  public MediaContents update(MediaContents bean);
 }

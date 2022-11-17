@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.WageringRunlinesDao;
-import com.sportsdb.test.entity.WageringRunlines;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.WageringRunlinesDao;
+import com.sportsdb.test.entity.WageringRunlines;
 
 @Stateless
 @Named("DefaultWageringRunlinesService")
 public class DefaultWageringRunlinesService implements WageringRunlinesService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final WageringRunlinesDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final WageringRunlinesDao dao;
 
-    @Inject
-    @Named("DefaultWageringRunlinesDao")
-    public DefaultWageringRunlinesService(final WageringRunlinesDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultWageringRunlinesDao")
+  public DefaultWageringRunlinesService(final WageringRunlinesDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public WageringRunlines find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public WageringRunlines find(java.lang.Integer id) {
 
-        final WageringRunlines result = dao.find(id);
-        logger.info("find(WageringRunlines) - exited - return value={} result ");
-        return result;
-    }
+    final WageringRunlines result = dao.find(id);
+    logger.info("find(WageringRunlines) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<WageringRunlines> select(int maxResult) {
-        final List<WageringRunlines> result = dao.select(maxResult);
-        logger.info("select(WageringRunlines) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<WageringRunlines> select(int maxResult) {
+    final List<WageringRunlines> result = dao.select(maxResult);
+    logger.info("select(WageringRunlines) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<WageringRunlines> selectAll() {
-        final List<WageringRunlines> results = dao.selectAll();
-        logger.info("selectAll(WageringRunlines) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<WageringRunlines> selectAll() {
+    final List<WageringRunlines> results = dao.selectAll();
+    logger.info("selectAll(WageringRunlines) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public WageringRunlines create(WageringRunlines bean) {
-        requireNonNull(bean);
-        logger.info("create(WageringRunlines={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public WageringRunlines create(WageringRunlines bean) {
+    requireNonNull(bean);
+    logger.info("create(WageringRunlines={}) - entered bean ");
 
-        final WageringRunlines result = dao.create(bean);
+    final WageringRunlines result = dao.create(bean);
 
-        logger.info("create(WageringRunlines) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(WageringRunlines) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public WageringRunlines update(WageringRunlines bean) {
-        requireNonNull(bean);
-        logger.info("update(WageringRunlines={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public WageringRunlines update(WageringRunlines bean) {
+    requireNonNull(bean);
+    logger.info("update(WageringRunlines={}) - entered bean ");
 
-        final WageringRunlines result = dao.update(bean);
+    final WageringRunlines result = dao.update(bean);
 
-        logger.info("update(WageringRunlines) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(WageringRunlines) - exited - return value={} result ");
+    return result;
+  }
 }

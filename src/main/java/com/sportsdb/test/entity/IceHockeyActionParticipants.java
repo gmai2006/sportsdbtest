@@ -16,82 +16,82 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "ice_hockey_action_participants")
 public class IceHockeyActionParticipants implements Serializable {
-    private static final long serialVersionUID = 163445241900686249L;
+  private static final long serialVersionUID = 166867004236472726L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Long id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Long id;
 
-    /** Description: ice_hockey_action_play_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "ice_hockey_action_play_id")
-    private java.lang.Integer iceHockeyActionPlayId;
-    /** Description: person_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "person_id")
-    private java.lang.Integer personId;
-    /** Description: participant_role. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "participant_role", length = 100)
-    private java.lang.String participantRole;
-    /** Description: point_credit. */
-    @Basic
-    @Column(name = "point_credit")
-    private java.lang.Integer pointCredit;
+  /** Description: ice_hockey_action_play_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "ice_hockey_action_play_id")
+  private java.lang.Integer iceHockeyActionPlayId;
+  /** Description: person_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "person_id")
+  private java.lang.Integer personId;
+  /** Description: participant_role. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "participant_role", length = 100)
+  private java.lang.String participantRole;
+  /** Description: point_credit. */
+  @Basic
+  @Column(name = "point_credit")
+  private java.lang.Integer pointCredit;
 
-    public IceHockeyActionParticipants() {}
+  public IceHockeyActionParticipants() {}
 
-    public java.lang.Long getId() {
-        return this.id;
-    }
+  public java.lang.Long getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Long id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Long id) {
+    this.id = id;
+  }
 
-    public java.lang.Integer getIceHockeyActionPlayId() {
-        return this.iceHockeyActionPlayId;
-    }
+  public java.lang.Integer getIceHockeyActionPlayId() {
+    return this.iceHockeyActionPlayId;
+  }
 
-    public java.lang.Integer getPersonId() {
-        return this.personId;
-    }
+  public java.lang.Integer getPersonId() {
+    return this.personId;
+  }
 
-    public java.lang.String getParticipantRole() {
-        return this.participantRole;
-    }
+  public java.lang.String getParticipantRole() {
+    return this.participantRole;
+  }
 
-    public java.lang.Integer getPointCredit() {
-        return this.pointCredit;
-    }
+  public java.lang.Integer getPointCredit() {
+    return this.pointCredit;
+  }
 
-    public void setIceHockeyActionPlayId(java.lang.Integer iceHockeyActionPlayId) {
-        this.iceHockeyActionPlayId = iceHockeyActionPlayId;
-    }
+  public void setIceHockeyActionPlayId(java.lang.Integer iceHockeyActionPlayId) {
+    this.iceHockeyActionPlayId = iceHockeyActionPlayId;
+  }
 
-    public void setPersonId(java.lang.Integer personId) {
-        this.personId = personId;
-    }
+  public void setPersonId(java.lang.Integer personId) {
+    this.personId = personId;
+  }
 
-    public void setParticipantRole(java.lang.String participantRole) {
-        this.participantRole = participantRole;
-    }
+  public void setParticipantRole(java.lang.String participantRole) {
+    this.participantRole = participantRole;
+  }
 
-    public void setPointCredit(java.lang.Integer pointCredit) {
-        this.pointCredit = pointCredit;
-    }
+  public void setPointCredit(java.lang.Integer pointCredit) {
+    this.pointCredit = pointCredit;
+  }
 }

@@ -16,61 +16,64 @@
  */
 package com.sportsdb.test.service;
 
+import com.sportsdb.test.entity.IceHockeyActionParticipants;
+
+import com.sportsdb.test.utils.FileUtils;
+import com.google.gson.JsonArray;
+import com.google.gson.GsonBuilder;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
+import com.google.gson.Gson;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.sportsdb.test.entity.IceHockeyActionParticipants;
 import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
-import com.sportsdb.test.utils.FileUtils;
-import java.io.IOException;
-import java.nio.charset.Charset;
-import org.junit.BeforeClass;
-import org.junit.Test;
 
 public class IceHockeyActionParticipantsServiceTest {
-    private static DefaultIceHockeyActionParticipantsService serviceMock;
-    private static IceHockeyActionParticipants[] records;
-    static Gson gson =
-            new GsonBuilder()
-                    .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
-                    .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
-                    .create();
+  private static DefaultIceHockeyActionParticipantsService serviceMock;
+  private static IceHockeyActionParticipants[] records;
+  static Gson gson =
+      new GsonBuilder()
+          .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
+          .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
+          .create();
 
-    /** Run when the class is loaded. */
-    @BeforeClass
-    public static void setUp() {
-        serviceMock = mock(DefaultIceHockeyActionParticipantsService.class);
-        String inputFile = "IceHockeyActionParticipants.json";
-        try {
-            String json =
-                    FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
-            records = gson.fromJson(json, IceHockeyActionParticipants[].class);
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-
-        // test data
-        when(serviceMock.find(records[0].getId())).thenReturn(records[0]);
+  /** Run when the class is loaded. */
+  @BeforeClass
+  public static void setUp() {
+    serviceMock = mock(DefaultIceHockeyActionParticipantsService.class);
+    String inputFile = "IceHockeyActionParticipants.json";
+    try {
+      String json = FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
+      records = gson.fromJson(json, IceHockeyActionParticipants[].class);
+    } catch (IOException ex) {
+      ex.printStackTrace();
     }
 
-    @Test
-    public void testFind_success() {
-        IceHockeyActionParticipants testResult = serviceMock.find(records[0].getId());
+    // test data
+    when(serviceMock.find(records[0].getId())).thenReturn(records[0]);
+  }
 
-        org.junit.Assert.assertNotNull(testResult);
-        org.junit.Assert.assertTrue(
-                "expect equals iceHockeyActionPlayId ",
-                records[0].getIceHockeyActionPlayId() == testResult.getIceHockeyActionPlayId());
-        org.junit.Assert.assertTrue(
-                "expect equals personId ", records[0].getPersonId() == testResult.getPersonId());
-        org.junit.Assert.assertEquals(
-                "expect equals participantRole ",
-                records[0].getParticipantRole(),
-                testResult.getParticipantRole());
-        org.junit.Assert.assertTrue(
-                "expect equals pointCredit ",
-                records[0].getPointCredit() == testResult.getPointCredit());
-    }
+  @Test
+  public void testFind_success() {
+    IceHockeyActionParticipants testResult = serviceMock.find(records[0].getId());
+
+    org.junit.Assert.assertNotNull(testResult);
+    org.junit.Assert.assertTrue(
+        "expect equals iceHockeyActionPlayId ",
+        records[0].getIceHockeyActionPlayId() == testResult.getIceHockeyActionPlayId());
+    org.junit.Assert.assertTrue(
+        "expect equals personId ", records[0].getPersonId() == testResult.getPersonId());
+    org.junit.Assert.assertEquals(
+        "expect equals participantRole ",
+        records[0].getParticipantRole(),
+        testResult.getParticipantRole());
+    org.junit.Assert.assertTrue(
+        "expect equals pointCredit ", records[0].getPointCredit() == testResult.getPointCredit());
+  }
 }

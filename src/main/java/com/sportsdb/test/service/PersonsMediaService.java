@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.PersonsMedia;
 import java.util.List;
+import com.sportsdb.test.entity.PersonsMedia;
 
 public interface PersonsMediaService {
-    public PersonsMedia find(java.lang.String id);
+  public PersonsMedia find(java.lang.String id);
 
-    /**
-     * Select a list of PersonsMedia based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return PersonsMedia records.
-     */
-    public List<PersonsMedia> select(int maxResult);
+  /**
+   * Select a list of PersonsMedia based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return PersonsMedia records.
+   */
+  public List<PersonsMedia> select(int maxResult);
 
-    /**
-     * Select all PersonsMedia.
-     *
-     * @return all PersonsMedia records.
-     */
-    public List<PersonsMedia> selectAll();
+  /**
+   * Select all PersonsMedia.
+   *
+   * @return all PersonsMedia records.
+   */
+  public List<PersonsMedia> selectAll();
 
-    /**
-     * Create PersonsMedia.
-     *
-     * @param bean The PersonsMedia.
-     * @return The PersonsMedia.
-     */
-    public PersonsMedia create(PersonsMedia bean);
+  /**
+   * Create PersonsMedia.
+   *
+   * @param bean The PersonsMedia.
+   * @return The PersonsMedia.
+   */
+  public PersonsMedia create(PersonsMedia bean);
 
-    /**
-     * Update a PersonsMedia.
-     *
-     * @param bean - The PersonsMedia.
-     * @return PersonsMedia.
-     */
-    public PersonsMedia update(PersonsMedia bean);
+  /**
+   * Update a PersonsMedia.
+   *
+   * @param bean - The PersonsMedia.
+   * @return PersonsMedia.
+   */
+  public PersonsMedia update(PersonsMedia bean);
 }

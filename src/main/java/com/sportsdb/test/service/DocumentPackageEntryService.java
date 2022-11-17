@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.DocumentPackageEntry;
 import java.util.List;
+import com.sportsdb.test.entity.DocumentPackageEntry;
 
 public interface DocumentPackageEntryService {
-    public DocumentPackageEntry find(java.lang.Integer id);
+  public DocumentPackageEntry find(java.lang.Integer id);
 
-    /**
-     * Select a list of DocumentPackageEntry based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return DocumentPackageEntry records.
-     */
-    public List<DocumentPackageEntry> select(int maxResult);
+  /**
+   * Select a list of DocumentPackageEntry based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return DocumentPackageEntry records.
+   */
+  public List<DocumentPackageEntry> select(int maxResult);
 
-    /**
-     * Select all DocumentPackageEntry.
-     *
-     * @return all DocumentPackageEntry records.
-     */
-    public List<DocumentPackageEntry> selectAll();
+  /**
+   * Select all DocumentPackageEntry.
+   *
+   * @return all DocumentPackageEntry records.
+   */
+  public List<DocumentPackageEntry> selectAll();
 
-    /**
-     * Create DocumentPackageEntry.
-     *
-     * @param bean The DocumentPackageEntry.
-     * @return The DocumentPackageEntry.
-     */
-    public DocumentPackageEntry create(DocumentPackageEntry bean);
+  /**
+   * Create DocumentPackageEntry.
+   *
+   * @param bean The DocumentPackageEntry.
+   * @return The DocumentPackageEntry.
+   */
+  public DocumentPackageEntry create(DocumentPackageEntry bean);
 
-    /**
-     * Update a DocumentPackageEntry.
-     *
-     * @param bean - The DocumentPackageEntry.
-     * @return DocumentPackageEntry.
-     */
-    public DocumentPackageEntry update(DocumentPackageEntry bean);
+  /**
+   * Update a DocumentPackageEntry.
+   *
+   * @param bean - The DocumentPackageEntry.
+   * @return DocumentPackageEntry.
+   */
+  public DocumentPackageEntry update(DocumentPackageEntry bean);
 }

@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.AffiliationsDocumentsDao;
-import com.sportsdb.test.entity.AffiliationsDocuments;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.AffiliationsDocumentsDao;
+import com.sportsdb.test.entity.AffiliationsDocuments;
 
 @Stateless
 @Named("DefaultAffiliationsDocumentsService")
 public class DefaultAffiliationsDocumentsService implements AffiliationsDocumentsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final AffiliationsDocumentsDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final AffiliationsDocumentsDao dao;
 
-    @Inject
-    @Named("DefaultAffiliationsDocumentsDao")
-    public DefaultAffiliationsDocumentsService(final AffiliationsDocumentsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultAffiliationsDocumentsDao")
+  public DefaultAffiliationsDocumentsService(final AffiliationsDocumentsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AffiliationsDocuments find(java.lang.String id) {
+  /** {@inheritDoc} */
+  @Override
+  public AffiliationsDocuments find(java.lang.String id) {
 
-        final AffiliationsDocuments result = dao.find(id);
-        logger.info("find(AffiliationsDocuments) - exited - return value={} result ");
-        return result;
-    }
+    final AffiliationsDocuments result = dao.find(id);
+    logger.info("find(AffiliationsDocuments) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<AffiliationsDocuments> select(int maxResult) {
-        final List<AffiliationsDocuments> result = dao.select(maxResult);
-        logger.info("select(AffiliationsDocuments) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<AffiliationsDocuments> select(int maxResult) {
+    final List<AffiliationsDocuments> result = dao.select(maxResult);
+    logger.info("select(AffiliationsDocuments) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<AffiliationsDocuments> selectAll() {
-        final List<AffiliationsDocuments> results = dao.selectAll();
-        logger.info("selectAll(AffiliationsDocuments) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<AffiliationsDocuments> selectAll() {
+    final List<AffiliationsDocuments> results = dao.selectAll();
+    logger.info("selectAll(AffiliationsDocuments) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AffiliationsDocuments create(AffiliationsDocuments bean) {
-        requireNonNull(bean);
-        logger.info("create(AffiliationsDocuments={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public AffiliationsDocuments create(AffiliationsDocuments bean) {
+    requireNonNull(bean);
+    logger.info("create(AffiliationsDocuments={}) - entered bean ");
 
-        final AffiliationsDocuments result = dao.create(bean);
+    final AffiliationsDocuments result = dao.create(bean);
 
-        logger.info("create(AffiliationsDocuments) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(AffiliationsDocuments) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AffiliationsDocuments update(AffiliationsDocuments bean) {
-        requireNonNull(bean);
-        logger.info("update(AffiliationsDocuments={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public AffiliationsDocuments update(AffiliationsDocuments bean) {
+    requireNonNull(bean);
+    logger.info("update(AffiliationsDocuments={}) - entered bean ");
 
-        final AffiliationsDocuments result = dao.update(bean);
+    final AffiliationsDocuments result = dao.update(bean);
 
-        logger.info("update(AffiliationsDocuments) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(AffiliationsDocuments) - exited - return value={} result ");
+    return result;
+  }
 }

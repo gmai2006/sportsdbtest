@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.TeamsDocumentsDao;
-import com.sportsdb.test.entity.TeamsDocuments;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.TeamsDocumentsDao;
+import com.sportsdb.test.entity.TeamsDocuments;
 
 @Stateless
 @Named("DefaultTeamsDocumentsService")
 public class DefaultTeamsDocumentsService implements TeamsDocumentsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final TeamsDocumentsDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final TeamsDocumentsDao dao;
 
-    @Inject
-    @Named("DefaultTeamsDocumentsDao")
-    public DefaultTeamsDocumentsService(final TeamsDocumentsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultTeamsDocumentsDao")
+  public DefaultTeamsDocumentsService(final TeamsDocumentsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public TeamsDocuments find(java.lang.String id) {
+  /** {@inheritDoc} */
+  @Override
+  public TeamsDocuments find(java.lang.String id) {
 
-        final TeamsDocuments result = dao.find(id);
-        logger.info("find(TeamsDocuments) - exited - return value={} result ");
-        return result;
-    }
+    final TeamsDocuments result = dao.find(id);
+    logger.info("find(TeamsDocuments) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<TeamsDocuments> select(int maxResult) {
-        final List<TeamsDocuments> result = dao.select(maxResult);
-        logger.info("select(TeamsDocuments) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<TeamsDocuments> select(int maxResult) {
+    final List<TeamsDocuments> result = dao.select(maxResult);
+    logger.info("select(TeamsDocuments) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<TeamsDocuments> selectAll() {
-        final List<TeamsDocuments> results = dao.selectAll();
-        logger.info("selectAll(TeamsDocuments) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<TeamsDocuments> selectAll() {
+    final List<TeamsDocuments> results = dao.selectAll();
+    logger.info("selectAll(TeamsDocuments) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public TeamsDocuments create(TeamsDocuments bean) {
-        requireNonNull(bean);
-        logger.info("create(TeamsDocuments={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public TeamsDocuments create(TeamsDocuments bean) {
+    requireNonNull(bean);
+    logger.info("create(TeamsDocuments={}) - entered bean ");
 
-        final TeamsDocuments result = dao.create(bean);
+    final TeamsDocuments result = dao.create(bean);
 
-        logger.info("create(TeamsDocuments) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(TeamsDocuments) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public TeamsDocuments update(TeamsDocuments bean) {
-        requireNonNull(bean);
-        logger.info("update(TeamsDocuments={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public TeamsDocuments update(TeamsDocuments bean) {
+    requireNonNull(bean);
+    logger.info("update(TeamsDocuments={}) - entered bean ");
 
-        final TeamsDocuments result = dao.update(bean);
+    final TeamsDocuments result = dao.update(bean);
 
-        logger.info("update(TeamsDocuments) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(TeamsDocuments) - exited - return value={} result ");
+    return result;
+  }
 }

@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.TennisActionVolleys;
 import java.util.List;
+import com.sportsdb.test.entity.TennisActionVolleys;
 
 public interface TennisActionVolleysDao {
-    /**
-     * Retrieve all records TennisActionVolleys.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of TennisActionVolleys
-     */
-    public List<TennisActionVolleys> select(int maxResult);
+  /**
+   * Retrieve all records TennisActionVolleys.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of TennisActionVolleys
+   */
+  public List<TennisActionVolleys> select(int maxResult);
 
-    /**
-     * Retrieve all records TennisActionVolleys.
-     *
-     * @return A list of TennisActionVolleys
-     */
-    public List<TennisActionVolleys> selectAll();
+  /**
+   * Retrieve all records TennisActionVolleys.
+   *
+   * @return A list of TennisActionVolleys
+   */
+  public List<TennisActionVolleys> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An TennisActionVolleys id.
-     * @return The same TennisActionVolleys.
-     */
-    public TennisActionVolleys find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An TennisActionVolleys id.
+   * @return The same TennisActionVolleys.
+   */
+  public TennisActionVolleys find(java.lang.Integer id);
 
-    /**
-     * Create an TennisActionVolleys.
-     *
-     * @param e the TennisActionVolleys.
-     * @return The same TennisActionVolleys.
-     */
-    public TennisActionVolleys create(TennisActionVolleys e);
+  /**
+   * Create an TennisActionVolleys.
+   *
+   * @param e the TennisActionVolleys.
+   * @return The same TennisActionVolleys.
+   */
+  public TennisActionVolleys create(TennisActionVolleys e);
 
-    /**
-     * Update the TennisActionVolleys.
-     *
-     * @param e the TennisActionVolleys.
-     * @return The same TennisActionVolleys.
-     */
-    public TennisActionVolleys update(TennisActionVolleys e);
+  /**
+   * Update the TennisActionVolleys.
+   *
+   * @param e the TennisActionVolleys.
+   * @return The same TennisActionVolleys.
+   */
+  public TennisActionVolleys update(TennisActionVolleys e);
 }

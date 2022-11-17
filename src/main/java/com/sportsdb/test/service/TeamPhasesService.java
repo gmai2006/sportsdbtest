@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.TeamPhases;
 import java.util.List;
+import com.sportsdb.test.entity.TeamPhases;
 
 public interface TeamPhasesService {
-    public TeamPhases find(java.lang.Integer id);
+  public TeamPhases find(java.lang.Integer id);
 
-    /**
-     * Select a list of TeamPhases based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return TeamPhases records.
-     */
-    public List<TeamPhases> select(int maxResult);
+  /**
+   * Select a list of TeamPhases based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return TeamPhases records.
+   */
+  public List<TeamPhases> select(int maxResult);
 
-    /**
-     * Select all TeamPhases.
-     *
-     * @return all TeamPhases records.
-     */
-    public List<TeamPhases> selectAll();
+  /**
+   * Select all TeamPhases.
+   *
+   * @return all TeamPhases records.
+   */
+  public List<TeamPhases> selectAll();
 
-    /**
-     * Create TeamPhases.
-     *
-     * @param bean The TeamPhases.
-     * @return The TeamPhases.
-     */
-    public TeamPhases create(TeamPhases bean);
+  /**
+   * Create TeamPhases.
+   *
+   * @param bean The TeamPhases.
+   * @return The TeamPhases.
+   */
+  public TeamPhases create(TeamPhases bean);
 
-    /**
-     * Update a TeamPhases.
-     *
-     * @param bean - The TeamPhases.
-     * @return TeamPhases.
-     */
-    public TeamPhases update(TeamPhases bean);
+  /**
+   * Update a TeamPhases.
+   *
+   * @param bean - The TeamPhases.
+   * @return TeamPhases.
+   */
+  public TeamPhases update(TeamPhases bean);
 }

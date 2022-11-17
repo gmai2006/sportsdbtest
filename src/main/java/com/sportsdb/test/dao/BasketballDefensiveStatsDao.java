@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.BasketballDefensiveStats;
 import java.util.List;
+import com.sportsdb.test.entity.BasketballDefensiveStats;
 
 public interface BasketballDefensiveStatsDao {
-    /**
-     * Retrieve all records BasketballDefensiveStats.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of BasketballDefensiveStats
-     */
-    public List<BasketballDefensiveStats> select(int maxResult);
+  /**
+   * Retrieve all records BasketballDefensiveStats.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of BasketballDefensiveStats
+   */
+  public List<BasketballDefensiveStats> select(int maxResult);
 
-    /**
-     * Retrieve all records BasketballDefensiveStats.
-     *
-     * @return A list of BasketballDefensiveStats
-     */
-    public List<BasketballDefensiveStats> selectAll();
+  /**
+   * Retrieve all records BasketballDefensiveStats.
+   *
+   * @return A list of BasketballDefensiveStats
+   */
+  public List<BasketballDefensiveStats> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An BasketballDefensiveStats id.
-     * @return The same BasketballDefensiveStats.
-     */
-    public BasketballDefensiveStats find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An BasketballDefensiveStats id.
+   * @return The same BasketballDefensiveStats.
+   */
+  public BasketballDefensiveStats find(java.lang.Integer id);
 
-    /**
-     * Create an BasketballDefensiveStats.
-     *
-     * @param e the BasketballDefensiveStats.
-     * @return The same BasketballDefensiveStats.
-     */
-    public BasketballDefensiveStats create(BasketballDefensiveStats e);
+  /**
+   * Create an BasketballDefensiveStats.
+   *
+   * @param e the BasketballDefensiveStats.
+   * @return The same BasketballDefensiveStats.
+   */
+  public BasketballDefensiveStats create(BasketballDefensiveStats e);
 
-    /**
-     * Update the BasketballDefensiveStats.
-     *
-     * @param e the BasketballDefensiveStats.
-     * @return The same BasketballDefensiveStats.
-     */
-    public BasketballDefensiveStats update(BasketballDefensiveStats e);
+  /**
+   * Update the BasketballDefensiveStats.
+   *
+   * @param e the BasketballDefensiveStats.
+   * @return The same BasketballDefensiveStats.
+   */
+  public BasketballDefensiveStats update(BasketballDefensiveStats e);
 }

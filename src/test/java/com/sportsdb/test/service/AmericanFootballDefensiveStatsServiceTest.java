@@ -16,97 +16,93 @@
  */
 package com.sportsdb.test.service;
 
+import com.sportsdb.test.entity.AmericanFootballDefensiveStats;
+
+import com.sportsdb.test.utils.FileUtils;
+import com.google.gson.JsonArray;
+import com.google.gson.GsonBuilder;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
+import com.google.gson.Gson;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.sportsdb.test.entity.AmericanFootballDefensiveStats;
 import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
-import com.sportsdb.test.utils.FileUtils;
-import java.io.IOException;
-import java.nio.charset.Charset;
-import org.junit.BeforeClass;
-import org.junit.Test;
 
 public class AmericanFootballDefensiveStatsServiceTest {
-    private static DefaultAmericanFootballDefensiveStatsService serviceMock;
-    private static AmericanFootballDefensiveStats[] records;
-    static Gson gson =
-            new GsonBuilder()
-                    .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
-                    .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
-                    .create();
+  private static DefaultAmericanFootballDefensiveStatsService serviceMock;
+  private static AmericanFootballDefensiveStats[] records;
+  static Gson gson =
+      new GsonBuilder()
+          .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
+          .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
+          .create();
 
-    /** Run when the class is loaded. */
-    @BeforeClass
-    public static void setUp() {
-        serviceMock = mock(DefaultAmericanFootballDefensiveStatsService.class);
-        String inputFile = "AmericanFootballDefensiveStats.json";
-        try {
-            String json =
-                    FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
-            records = gson.fromJson(json, AmericanFootballDefensiveStats[].class);
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-
-        // test data
-        when(serviceMock.find(records[0].getId())).thenReturn(records[0]);
+  /** Run when the class is loaded. */
+  @BeforeClass
+  public static void setUp() {
+    serviceMock = mock(DefaultAmericanFootballDefensiveStatsService.class);
+    String inputFile = "AmericanFootballDefensiveStats.json";
+    try {
+      String json = FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
+      records = gson.fromJson(json, AmericanFootballDefensiveStats[].class);
+    } catch (IOException ex) {
+      ex.printStackTrace();
     }
 
-    @Test
-    public void testFind_success() {
-        AmericanFootballDefensiveStats testResult = serviceMock.find(records[0].getId());
+    // test data
+    when(serviceMock.find(records[0].getId())).thenReturn(records[0]);
+  }
 
-        org.junit.Assert.assertNotNull(testResult);
-        org.junit.Assert.assertEquals(
-                "expect equals tacklesTotal ",
-                records[0].getTacklesTotal(),
-                testResult.getTacklesTotal());
-        org.junit.Assert.assertEquals(
-                "expect equals tacklesSolo ",
-                records[0].getTacklesSolo(),
-                testResult.getTacklesSolo());
-        org.junit.Assert.assertEquals(
-                "expect equals tacklesAssists ",
-                records[0].getTacklesAssists(),
-                testResult.getTacklesAssists());
-        org.junit.Assert.assertEquals(
-                "expect equals interceptionsTotal ",
-                records[0].getInterceptionsTotal(),
-                testResult.getInterceptionsTotal());
-        org.junit.Assert.assertEquals(
-                "expect equals interceptionsYards ",
-                records[0].getInterceptionsYards(),
-                testResult.getInterceptionsYards());
-        org.junit.Assert.assertEquals(
-                "expect equals interceptionsAverage ",
-                records[0].getInterceptionsAverage(),
-                testResult.getInterceptionsAverage());
-        org.junit.Assert.assertEquals(
-                "expect equals interceptionsLongest ",
-                records[0].getInterceptionsLongest(),
-                testResult.getInterceptionsLongest());
-        org.junit.Assert.assertEquals(
-                "expect equals interceptionsTouchdown ",
-                records[0].getInterceptionsTouchdown(),
-                testResult.getInterceptionsTouchdown());
-        org.junit.Assert.assertEquals(
-                "expect equals quarterbackHurries ",
-                records[0].getQuarterbackHurries(),
-                testResult.getQuarterbackHurries());
-        org.junit.Assert.assertEquals(
-                "expect equals sacksTotal ",
-                records[0].getSacksTotal(),
-                testResult.getSacksTotal());
-        org.junit.Assert.assertEquals(
-                "expect equals sacksYards ",
-                records[0].getSacksYards(),
-                testResult.getSacksYards());
-        org.junit.Assert.assertEquals(
-                "expect equals passesDefensed ",
-                records[0].getPassesDefensed(),
-                testResult.getPassesDefensed());
-    }
+  @Test
+  public void testFind_success() {
+    AmericanFootballDefensiveStats testResult = serviceMock.find(records[0].getId());
+
+    org.junit.Assert.assertNotNull(testResult);
+    org.junit.Assert.assertEquals(
+        "expect equals tacklesTotal ", records[0].getTacklesTotal(), testResult.getTacklesTotal());
+    org.junit.Assert.assertEquals(
+        "expect equals tacklesSolo ", records[0].getTacklesSolo(), testResult.getTacklesSolo());
+    org.junit.Assert.assertEquals(
+        "expect equals tacklesAssists ",
+        records[0].getTacklesAssists(),
+        testResult.getTacklesAssists());
+    org.junit.Assert.assertEquals(
+        "expect equals interceptionsTotal ",
+        records[0].getInterceptionsTotal(),
+        testResult.getInterceptionsTotal());
+    org.junit.Assert.assertEquals(
+        "expect equals interceptionsYards ",
+        records[0].getInterceptionsYards(),
+        testResult.getInterceptionsYards());
+    org.junit.Assert.assertEquals(
+        "expect equals interceptionsAverage ",
+        records[0].getInterceptionsAverage(),
+        testResult.getInterceptionsAverage());
+    org.junit.Assert.assertEquals(
+        "expect equals interceptionsLongest ",
+        records[0].getInterceptionsLongest(),
+        testResult.getInterceptionsLongest());
+    org.junit.Assert.assertEquals(
+        "expect equals interceptionsTouchdown ",
+        records[0].getInterceptionsTouchdown(),
+        testResult.getInterceptionsTouchdown());
+    org.junit.Assert.assertEquals(
+        "expect equals quarterbackHurries ",
+        records[0].getQuarterbackHurries(),
+        testResult.getQuarterbackHurries());
+    org.junit.Assert.assertEquals(
+        "expect equals sacksTotal ", records[0].getSacksTotal(), testResult.getSacksTotal());
+    org.junit.Assert.assertEquals(
+        "expect equals sacksYards ", records[0].getSacksYards(), testResult.getSacksYards());
+    org.junit.Assert.assertEquals(
+        "expect equals passesDefensed ",
+        records[0].getPassesDefensed(),
+        testResult.getPassesDefensed());
+  }
 }

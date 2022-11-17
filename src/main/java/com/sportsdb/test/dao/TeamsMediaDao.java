@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.TeamsMedia;
 import java.util.List;
+import com.sportsdb.test.entity.TeamsMedia;
 
 public interface TeamsMediaDao {
-    /**
-     * Retrieve all records TeamsMedia.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of TeamsMedia
-     */
-    public List<TeamsMedia> select(int maxResult);
+  /**
+   * Retrieve all records TeamsMedia.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of TeamsMedia
+   */
+  public List<TeamsMedia> select(int maxResult);
 
-    /**
-     * Retrieve all records TeamsMedia.
-     *
-     * @return A list of TeamsMedia
-     */
-    public List<TeamsMedia> selectAll();
+  /**
+   * Retrieve all records TeamsMedia.
+   *
+   * @return A list of TeamsMedia
+   */
+  public List<TeamsMedia> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An TeamsMedia id.
-     * @return The same TeamsMedia.
-     */
-    public TeamsMedia find(java.lang.String id);
+  /**
+   * Find an entity.
+   *
+   * @param id An TeamsMedia id.
+   * @return The same TeamsMedia.
+   */
+  public TeamsMedia find(java.lang.String id);
 
-    /**
-     * Create an TeamsMedia.
-     *
-     * @param e the TeamsMedia.
-     * @return The same TeamsMedia.
-     */
-    public TeamsMedia create(TeamsMedia e);
+  /**
+   * Create an TeamsMedia.
+   *
+   * @param e the TeamsMedia.
+   * @return The same TeamsMedia.
+   */
+  public TeamsMedia create(TeamsMedia e);
 
-    /**
-     * Update the TeamsMedia.
-     *
-     * @param e the TeamsMedia.
-     * @return The same TeamsMedia.
-     */
-    public TeamsMedia update(TeamsMedia e);
+  /**
+   * Update the TeamsMedia.
+   *
+   * @param e the TeamsMedia.
+   * @return The same TeamsMedia.
+   */
+  public TeamsMedia update(TeamsMedia e);
 }

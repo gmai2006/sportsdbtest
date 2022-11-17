@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.Affiliations;
 import java.util.List;
+import com.sportsdb.test.entity.Affiliations;
 
 public interface AffiliationsDao {
-    /**
-     * Retrieve all records Affiliations.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of Affiliations
-     */
-    public List<Affiliations> select(int maxResult);
+  /**
+   * Retrieve all records Affiliations.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of Affiliations
+   */
+  public List<Affiliations> select(int maxResult);
 
-    /**
-     * Retrieve all records Affiliations.
-     *
-     * @return A list of Affiliations
-     */
-    public List<Affiliations> selectAll();
+  /**
+   * Retrieve all records Affiliations.
+   *
+   * @return A list of Affiliations
+   */
+  public List<Affiliations> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An Affiliations id.
-     * @return The same Affiliations.
-     */
-    public Affiliations find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An Affiliations id.
+   * @return The same Affiliations.
+   */
+  public Affiliations find(java.lang.Integer id);
 
-    /**
-     * Create an Affiliations.
-     *
-     * @param e the Affiliations.
-     * @return The same Affiliations.
-     */
-    public Affiliations create(Affiliations e);
+  /**
+   * Create an Affiliations.
+   *
+   * @param e the Affiliations.
+   * @return The same Affiliations.
+   */
+  public Affiliations create(Affiliations e);
 
-    /**
-     * Update the Affiliations.
-     *
-     * @param e the Affiliations.
-     * @return The same Affiliations.
-     */
-    public Affiliations update(Affiliations e);
+  /**
+   * Update the Affiliations.
+   *
+   * @param e the Affiliations.
+   * @return The same Affiliations.
+   */
+  public Affiliations update(Affiliations e);
 }

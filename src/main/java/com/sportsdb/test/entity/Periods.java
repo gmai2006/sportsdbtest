@@ -16,68 +16,68 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "periods")
 public class Periods implements Serializable {
-    private static final long serialVersionUID = 163445241919021824L;
+  private static final long serialVersionUID = 166867004247636236L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: participant_event_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "participant_event_id")
-    private java.lang.Integer participantEventId;
-    /** Description: period_value. */
-    @Basic
-    @Column(name = "period_value", length = 100)
-    private java.lang.String periodValue;
-    /** Description: score. */
-    @Basic
-    @Column(name = "score", length = 100)
-    private java.lang.String score;
+  /** Description: participant_event_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "participant_event_id")
+  private java.lang.Integer participantEventId;
+  /** Description: period_value. */
+  @Basic
+  @Column(name = "period_value", length = 100)
+  private java.lang.String periodValue;
+  /** Description: score. */
+  @Basic
+  @Column(name = "score", length = 100)
+  private java.lang.String score;
 
-    public Periods() {}
+  public Periods() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.Integer getParticipantEventId() {
-        return this.participantEventId;
-    }
+  public java.lang.Integer getParticipantEventId() {
+    return this.participantEventId;
+  }
 
-    public java.lang.String getPeriodValue() {
-        return this.periodValue;
-    }
+  public java.lang.String getPeriodValue() {
+    return this.periodValue;
+  }
 
-    public java.lang.String getScore() {
-        return this.score;
-    }
+  public java.lang.String getScore() {
+    return this.score;
+  }
 
-    public void setParticipantEventId(java.lang.Integer participantEventId) {
-        this.participantEventId = participantEventId;
-    }
+  public void setParticipantEventId(java.lang.Integer participantEventId) {
+    this.participantEventId = participantEventId;
+  }
 
-    public void setPeriodValue(java.lang.String periodValue) {
-        this.periodValue = periodValue;
-    }
+  public void setPeriodValue(java.lang.String periodValue) {
+    this.periodValue = periodValue;
+  }
 
-    public void setScore(java.lang.String score) {
-        this.score = score;
-    }
+  public void setScore(java.lang.String score) {
+    this.score = score;
+  }
 }

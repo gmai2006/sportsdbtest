@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.Standings;
 import java.util.List;
+import com.sportsdb.test.entity.Standings;
 
 public interface StandingsService {
-    public Standings find(java.lang.Integer id);
+  public Standings find(java.lang.Integer id);
 
-    /**
-     * Select a list of Standings based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return Standings records.
-     */
-    public List<Standings> select(int maxResult);
+  /**
+   * Select a list of Standings based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return Standings records.
+   */
+  public List<Standings> select(int maxResult);
 
-    /**
-     * Select all Standings.
-     *
-     * @return all Standings records.
-     */
-    public List<Standings> selectAll();
+  /**
+   * Select all Standings.
+   *
+   * @return all Standings records.
+   */
+  public List<Standings> selectAll();
 
-    /**
-     * Create Standings.
-     *
-     * @param bean The Standings.
-     * @return The Standings.
-     */
-    public Standings create(Standings bean);
+  /**
+   * Create Standings.
+   *
+   * @param bean The Standings.
+   * @return The Standings.
+   */
+  public Standings create(Standings bean);
 
-    /**
-     * Update a Standings.
-     *
-     * @param bean - The Standings.
-     * @return Standings.
-     */
-    public Standings update(Standings bean);
+  /**
+   * Update a Standings.
+   *
+   * @param bean - The Standings.
+   * @return Standings.
+   */
+  public Standings update(Standings bean);
 }

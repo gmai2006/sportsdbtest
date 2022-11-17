@@ -16,43 +16,43 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "document_classes")
 public class DocumentClasses implements Serializable {
-    private static final long serialVersionUID = 163445241893961037L;
+  private static final long serialVersionUID = 166867004230866057L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: name. */
-    @Basic
-    @Column(name = "name", length = 100)
-    private java.lang.String name;
+  /** Description: name. */
+  @Basic
+  @Column(name = "name", length = 100)
+  private java.lang.String name;
 
-    public DocumentClasses() {}
+  public DocumentClasses() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.String getName() {
-        return this.name;
-    }
+  public java.lang.String getName() {
+    return this.name;
+  }
 
-    public void setName(java.lang.String name) {
-        this.name = name;
-    }
+  public void setName(java.lang.String name) {
+    this.name = name;
+  }
 }

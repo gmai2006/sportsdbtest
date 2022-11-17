@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.BookmakersDao;
-import com.sportsdb.test.entity.Bookmakers;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.BookmakersDao;
+import com.sportsdb.test.entity.Bookmakers;
 
 @Stateless
 @Named("DefaultBookmakersService")
 public class DefaultBookmakersService implements BookmakersService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final BookmakersDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final BookmakersDao dao;
 
-    @Inject
-    @Named("DefaultBookmakersDao")
-    public DefaultBookmakersService(final BookmakersDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultBookmakersDao")
+  public DefaultBookmakersService(final BookmakersDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public Bookmakers find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public Bookmakers find(java.lang.Integer id) {
 
-        final Bookmakers result = dao.find(id);
-        logger.info("find(Bookmakers) - exited - return value={} result ");
-        return result;
-    }
+    final Bookmakers result = dao.find(id);
+    logger.info("find(Bookmakers) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<Bookmakers> select(int maxResult) {
-        final List<Bookmakers> result = dao.select(maxResult);
-        logger.info("select(Bookmakers) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<Bookmakers> select(int maxResult) {
+    final List<Bookmakers> result = dao.select(maxResult);
+    logger.info("select(Bookmakers) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<Bookmakers> selectAll() {
-        final List<Bookmakers> results = dao.selectAll();
-        logger.info("selectAll(Bookmakers) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<Bookmakers> selectAll() {
+    final List<Bookmakers> results = dao.selectAll();
+    logger.info("selectAll(Bookmakers) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public Bookmakers create(Bookmakers bean) {
-        requireNonNull(bean);
-        logger.info("create(Bookmakers={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public Bookmakers create(Bookmakers bean) {
+    requireNonNull(bean);
+    logger.info("create(Bookmakers={}) - entered bean ");
 
-        final Bookmakers result = dao.create(bean);
+    final Bookmakers result = dao.create(bean);
 
-        logger.info("create(Bookmakers) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(Bookmakers) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public Bookmakers update(Bookmakers bean) {
-        requireNonNull(bean);
-        logger.info("update(Bookmakers={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public Bookmakers update(Bookmakers bean) {
+    requireNonNull(bean);
+    logger.info("update(Bookmakers={}) - entered bean ");
 
-        final Bookmakers result = dao.update(bean);
+    final Bookmakers result = dao.update(bean);
 
-        logger.info("update(Bookmakers) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(Bookmakers) - exited - return value={} result ");
+    return result;
+  }
 }

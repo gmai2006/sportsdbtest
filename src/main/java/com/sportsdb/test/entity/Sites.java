@@ -16,69 +16,69 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "sites")
 public class Sites implements Serializable {
-    private static final long serialVersionUID = 163445241925759501L;
+  private static final long serialVersionUID = 166867004251885664L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: site_key. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "site_key")
-    private java.lang.Integer siteKey;
-    /** Description: publisher_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "publisher_id")
-    private java.lang.Integer publisherId;
-    /** Description: location_id. */
-    @Basic
-    @Column(name = "location_id")
-    private java.lang.Integer locationId;
+  /** Description: site_key. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "site_key")
+  private java.lang.Integer siteKey;
+  /** Description: publisher_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "publisher_id")
+  private java.lang.Integer publisherId;
+  /** Description: location_id. */
+  @Basic
+  @Column(name = "location_id")
+  private java.lang.Integer locationId;
 
-    public Sites() {}
+  public Sites() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.Integer getSiteKey() {
-        return this.siteKey;
-    }
+  public java.lang.Integer getSiteKey() {
+    return this.siteKey;
+  }
 
-    public java.lang.Integer getPublisherId() {
-        return this.publisherId;
-    }
+  public java.lang.Integer getPublisherId() {
+    return this.publisherId;
+  }
 
-    public java.lang.Integer getLocationId() {
-        return this.locationId;
-    }
+  public java.lang.Integer getLocationId() {
+    return this.locationId;
+  }
 
-    public void setSiteKey(java.lang.Integer siteKey) {
-        this.siteKey = siteKey;
-    }
+  public void setSiteKey(java.lang.Integer siteKey) {
+    this.siteKey = siteKey;
+  }
 
-    public void setPublisherId(java.lang.Integer publisherId) {
-        this.publisherId = publisherId;
-    }
+  public void setPublisherId(java.lang.Integer publisherId) {
+    this.publisherId = publisherId;
+  }
 
-    public void setLocationId(java.lang.Integer locationId) {
-        this.locationId = locationId;
-    }
+  public void setLocationId(java.lang.Integer locationId) {
+    this.locationId = locationId;
+  }
 }

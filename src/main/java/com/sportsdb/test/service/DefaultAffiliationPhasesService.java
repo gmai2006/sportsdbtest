@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.AffiliationPhasesDao;
-import com.sportsdb.test.entity.AffiliationPhases;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.AffiliationPhasesDao;
+import com.sportsdb.test.entity.AffiliationPhases;
 
 @Stateless
 @Named("DefaultAffiliationPhasesService")
 public class DefaultAffiliationPhasesService implements AffiliationPhasesService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final AffiliationPhasesDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final AffiliationPhasesDao dao;
 
-    @Inject
-    @Named("DefaultAffiliationPhasesDao")
-    public DefaultAffiliationPhasesService(final AffiliationPhasesDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultAffiliationPhasesDao")
+  public DefaultAffiliationPhasesService(final AffiliationPhasesDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AffiliationPhases find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public AffiliationPhases find(java.lang.Integer id) {
 
-        final AffiliationPhases result = dao.find(id);
-        logger.info("find(AffiliationPhases) - exited - return value={} result ");
-        return result;
-    }
+    final AffiliationPhases result = dao.find(id);
+    logger.info("find(AffiliationPhases) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<AffiliationPhases> select(int maxResult) {
-        final List<AffiliationPhases> result = dao.select(maxResult);
-        logger.info("select(AffiliationPhases) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<AffiliationPhases> select(int maxResult) {
+    final List<AffiliationPhases> result = dao.select(maxResult);
+    logger.info("select(AffiliationPhases) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<AffiliationPhases> selectAll() {
-        final List<AffiliationPhases> results = dao.selectAll();
-        logger.info("selectAll(AffiliationPhases) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<AffiliationPhases> selectAll() {
+    final List<AffiliationPhases> results = dao.selectAll();
+    logger.info("selectAll(AffiliationPhases) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AffiliationPhases create(AffiliationPhases bean) {
-        requireNonNull(bean);
-        logger.info("create(AffiliationPhases={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public AffiliationPhases create(AffiliationPhases bean) {
+    requireNonNull(bean);
+    logger.info("create(AffiliationPhases={}) - entered bean ");
 
-        final AffiliationPhases result = dao.create(bean);
+    final AffiliationPhases result = dao.create(bean);
 
-        logger.info("create(AffiliationPhases) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(AffiliationPhases) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AffiliationPhases update(AffiliationPhases bean) {
-        requireNonNull(bean);
-        logger.info("update(AffiliationPhases={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public AffiliationPhases update(AffiliationPhases bean) {
+    requireNonNull(bean);
+    logger.info("update(AffiliationPhases={}) - entered bean ");
 
-        final AffiliationPhases result = dao.update(bean);
+    final AffiliationPhases result = dao.update(bean);
 
-        logger.info("update(AffiliationPhases) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(AffiliationPhases) - exited - return value={} result ");
+    return result;
+  }
 }

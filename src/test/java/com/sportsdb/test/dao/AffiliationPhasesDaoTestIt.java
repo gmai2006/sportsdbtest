@@ -16,13 +16,13 @@
  */
 package com.sportsdb.test.dao;
 
+import java.nio.charset.Charset;
+import java.util.Arrays;
+import java.io.IOException;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.sportsdb.test.entity.AffiliationPhases;
-import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
-import com.sportsdb.test.utils.FileUtils;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.Arrays;
@@ -32,60 +32,61 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import com.sportsdb.test.entity.AffiliationPhases;
+import com.sportsdb.test.utils.FileUtils;
+import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
 
 public class AffiliationPhasesDaoTestIt {
-    static final String inputFile = "AffiliationPhases.json";
-    static AffiliationPhasesDao dao;
-    static Gson gson =
-            new GsonBuilder()
-                    .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
-                    .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
-                    .create();
-    private AffiliationPhases[] records;
+  static final String inputFile = "AffiliationPhases.json";
+  static AffiliationPhasesDao dao;
+  static Gson gson =
+      new GsonBuilder()
+          .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
+          .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
+          .create();
+  private AffiliationPhases[] records;
 
-    /** Run when the class is loaded. */
-    @BeforeClass
-    public static void beforeClass() {
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("testpersistence");
-        JpaDao jpa = new StandaloneJpaDao(factory.createEntityManager());
-        dao = new DefaultAffiliationPhasesDao(jpa);
-    }
+  /** Run when the class is loaded. */
+  @BeforeClass
+  public static void beforeClass() {
+    EntityManagerFactory factory = Persistence.createEntityManagerFactory("testpersistence");
+    JpaDao jpa = new StandaloneJpaDao(factory.createEntityManager());
+    dao = new DefaultAffiliationPhasesDao(jpa);
+  }
 
-    /** Run before the test. */
-    @Before
-    public void before() {
-        try {
-            String json =
-                    FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
-            records = gson.fromJson(json, AffiliationPhases[].class);
-            json = null;
-            Arrays.stream(records).skip(1).forEach(o -> dao.create(o));
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+  /** Run before the test. */
+  @Before
+  public void before() {
+    try {
+      String json = FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
+      records = gson.fromJson(json, AffiliationPhases[].class);
+      json = null;
+      Arrays.stream(records).skip(1).forEach(o -> dao.create(o));
+    } catch (IOException ex) {
+      ex.printStackTrace();
     }
+  }
 
-    @After
-    public void after() {
-        records = null;
-    }
+  @After
+  public void after() {
+    records = null;
+  }
 
-    @Test
-    public void testSelect() {
-        AffiliationPhases testResult = dao.find(records[1].getId());
-        assertNotNull("expect result", testResult);
-        org.junit.Assert.assertTrue(
-                "expect equals affiliationId ",
-                this.records[1].getAffiliationId() == testResult.getAffiliationId());
-        org.junit.Assert.assertTrue(
-                "expect equals ancestorAffiliationId ",
-                this.records[1].getAncestorAffiliationId()
-                        == testResult.getAncestorAffiliationId());
-        org.junit.Assert.assertTrue(
-                "expect equals startSeasonId ",
-                this.records[1].getStartSeasonId() == testResult.getStartSeasonId());
-        org.junit.Assert.assertTrue(
-                "expect equals endSeasonId ",
-                this.records[1].getEndSeasonId() == testResult.getEndSeasonId());
-    }
+  @Test
+  public void testSelect() {
+    AffiliationPhases testResult = dao.find(records[1].getId());
+    assertNotNull("expect result", testResult);
+    org.junit.Assert.assertTrue(
+        "expect equals affiliationId ",
+        this.records[1].getAffiliationId() == testResult.getAffiliationId());
+    org.junit.Assert.assertTrue(
+        "expect equals ancestorAffiliationId ",
+        this.records[1].getAncestorAffiliationId() == testResult.getAncestorAffiliationId());
+    org.junit.Assert.assertTrue(
+        "expect equals startSeasonId ",
+        this.records[1].getStartSeasonId() == testResult.getStartSeasonId());
+    org.junit.Assert.assertTrue(
+        "expect equals endSeasonId ",
+        this.records[1].getEndSeasonId() == testResult.getEndSeasonId());
+  }
 }

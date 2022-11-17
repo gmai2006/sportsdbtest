@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.StandingSubgroups;
 import java.util.List;
+import com.sportsdb.test.entity.StandingSubgroups;
 
 public interface StandingSubgroupsService {
-    public StandingSubgroups find(java.lang.Integer id);
+  public StandingSubgroups find(java.lang.Integer id);
 
-    /**
-     * Select a list of StandingSubgroups based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return StandingSubgroups records.
-     */
-    public List<StandingSubgroups> select(int maxResult);
+  /**
+   * Select a list of StandingSubgroups based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return StandingSubgroups records.
+   */
+  public List<StandingSubgroups> select(int maxResult);
 
-    /**
-     * Select all StandingSubgroups.
-     *
-     * @return all StandingSubgroups records.
-     */
-    public List<StandingSubgroups> selectAll();
+  /**
+   * Select all StandingSubgroups.
+   *
+   * @return all StandingSubgroups records.
+   */
+  public List<StandingSubgroups> selectAll();
 
-    /**
-     * Create StandingSubgroups.
-     *
-     * @param bean The StandingSubgroups.
-     * @return The StandingSubgroups.
-     */
-    public StandingSubgroups create(StandingSubgroups bean);
+  /**
+   * Create StandingSubgroups.
+   *
+   * @param bean The StandingSubgroups.
+   * @return The StandingSubgroups.
+   */
+  public StandingSubgroups create(StandingSubgroups bean);
 
-    /**
-     * Update a StandingSubgroups.
-     *
-     * @param bean - The StandingSubgroups.
-     * @return StandingSubgroups.
-     */
-    public StandingSubgroups update(StandingSubgroups bean);
+  /**
+   * Update a StandingSubgroups.
+   *
+   * @param bean - The StandingSubgroups.
+   * @return StandingSubgroups.
+   */
+  public StandingSubgroups update(StandingSubgroups bean);
 }

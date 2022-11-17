@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.Periods;
 import java.util.List;
+import com.sportsdb.test.entity.Periods;
 
 public interface PeriodsService {
-    public Periods find(java.lang.Integer id);
+  public Periods find(java.lang.Integer id);
 
-    /**
-     * Select a list of Periods based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return Periods records.
-     */
-    public List<Periods> select(int maxResult);
+  /**
+   * Select a list of Periods based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return Periods records.
+   */
+  public List<Periods> select(int maxResult);
 
-    /**
-     * Select all Periods.
-     *
-     * @return all Periods records.
-     */
-    public List<Periods> selectAll();
+  /**
+   * Select all Periods.
+   *
+   * @return all Periods records.
+   */
+  public List<Periods> selectAll();
 
-    /**
-     * Create Periods.
-     *
-     * @param bean The Periods.
-     * @return The Periods.
-     */
-    public Periods create(Periods bean);
+  /**
+   * Create Periods.
+   *
+   * @param bean The Periods.
+   * @return The Periods.
+   */
+  public Periods create(Periods bean);
 
-    /**
-     * Update a Periods.
-     *
-     * @param bean - The Periods.
-     * @return Periods.
-     */
-    public Periods update(Periods bean);
+  /**
+   * Update a Periods.
+   *
+   * @param bean - The Periods.
+   * @return Periods.
+   */
+  public Periods update(Periods bean);
 }

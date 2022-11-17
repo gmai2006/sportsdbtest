@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.DocumentContents;
 import java.util.List;
+import com.sportsdb.test.entity.DocumentContents;
 
 public interface DocumentContentsService {
-    public DocumentContents find(java.lang.Integer id);
+  public DocumentContents find(java.lang.Integer id);
 
-    /**
-     * Select a list of DocumentContents based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return DocumentContents records.
-     */
-    public List<DocumentContents> select(int maxResult);
+  /**
+   * Select a list of DocumentContents based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return DocumentContents records.
+   */
+  public List<DocumentContents> select(int maxResult);
 
-    /**
-     * Select all DocumentContents.
-     *
-     * @return all DocumentContents records.
-     */
-    public List<DocumentContents> selectAll();
+  /**
+   * Select all DocumentContents.
+   *
+   * @return all DocumentContents records.
+   */
+  public List<DocumentContents> selectAll();
 
-    /**
-     * Create DocumentContents.
-     *
-     * @param bean The DocumentContents.
-     * @return The DocumentContents.
-     */
-    public DocumentContents create(DocumentContents bean);
+  /**
+   * Create DocumentContents.
+   *
+   * @param bean The DocumentContents.
+   * @return The DocumentContents.
+   */
+  public DocumentContents create(DocumentContents bean);
 
-    /**
-     * Update a DocumentContents.
-     *
-     * @param bean - The DocumentContents.
-     * @return DocumentContents.
-     */
-    public DocumentContents update(DocumentContents bean);
+  /**
+   * Update a DocumentContents.
+   *
+   * @param bean - The DocumentContents.
+   * @return DocumentContents.
+   */
+  public DocumentContents update(DocumentContents bean);
 }

@@ -16,57 +16,60 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.KeyAliases;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.KeyAliases;
 
 @Stateless
 @Named("DefaultKeyAliasesDao")
 public class DefaultKeyAliasesDao implements KeyAliasesDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultKeyAliasesDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultKeyAliasesDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultKeyAliasesDao() {}
+  public DefaultKeyAliasesDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public KeyAliases find(java.lang.Integer id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(KeyAliases.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public KeyAliases find(java.lang.Integer id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(KeyAliases.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<KeyAliases> select(int max) {
-        return dao.select("select a from KeyAliases a", KeyAliases.class, max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<KeyAliases> select(int max) {
+    return dao.select("select a from KeyAliases a", KeyAliases.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<KeyAliases> selectAll() {
-        return dao.selectAll("select a from KeyAliases a", KeyAliases.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<KeyAliases> selectAll() {
+    return dao.selectAll("select a from KeyAliases a", KeyAliases.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public KeyAliases create(KeyAliases e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public KeyAliases create(KeyAliases e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public KeyAliases update(KeyAliases e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public KeyAliases update(KeyAliases e) {
+    return dao.update(e);
+  }
 }

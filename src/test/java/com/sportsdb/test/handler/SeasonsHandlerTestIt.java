@@ -17,95 +17,71 @@
 package com.sportsdb.test.handler;
 
 import static org.junit.Assert.assertEquals;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.dao.StandaloneJpaDao;
-import com.sportsdb.test.entity.Seasons;
-import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
-import com.sportsdb.test.utils.FileUtils;
+import java.io.IOException;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import org.json.CDL;
 import org.json.JSONArray;
+import com.google.gson.Gson;
+import com.sportsdb.test.entity.Seasons;
+import com.sportsdb.test.dao.JpaDao;
+import com.sportsdb.test.dao.StandaloneJpaDao;
+import com.sportsdb.test.dao.DefaultSeasonsDao;
+import com.sportsdb.test.utils.DelimiterParser;
+import com.sportsdb.test.utils.FileUtils;
+import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
+
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import com.google.gson.GsonBuilder;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class SeasonsHandlerTestIt {
-    static final String inputFile = "Seasons.json";
-    static SeasonsHandler handler;
-    private static JpaDao jpa;
-    static Gson gson =
-            new GsonBuilder()
-                    .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
-                    .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
-                    .create();
-    private Seasons[] records;
+  static final String inputFile = "Seasons.json";
+  static SeasonsHandler handler;
+  private static JpaDao jpa;
+  static Gson gson =
+      new GsonBuilder()
+          .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
+          .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
+          .create();
+  private Seasons[] records;
 
-    /** Run before the test. */
-    @BeforeClass
-    public static void before() {
-        final EntityManagerFactory factory =
-                Persistence.createEntityManagerFactory("testpersistence");
-        jpa = new StandaloneJpaDao(factory.createEntityManager());
-        handler = new SeasonsHandler(jpa);
-    }
+  /** Run before the test. */
+  @BeforeClass
+  public static void before() {
+    final EntityManagerFactory factory = Persistence.createEntityManagerFactory("testpersistence");
+    jpa = new StandaloneJpaDao(factory.createEntityManager());
+    handler = new SeasonsHandler(jpa);
+  }
 
-    @Test
-    public void testSelect() throws IOException {
-        final File tempFile =
-                createRecordInputStreamFromJsonFile(inputFile, Charset.defaultCharset());
-        final InputStream inputStream = new BufferedInputStream(new FileInputStream(tempFile));
-        int count = handler.process(inputStream);
-        String json = FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
-        records = gson.fromJson(json, Seasons[].class);
-        assertEquals("match count", count, records.length);
-        Seasons testResult = jpa.find(Seasons.class, records[0].getId());
-        org.junit.Assert.assertEquals(
-                "expect equals seasonKey ",
-                this.records[0].getSeasonKey(),
-                testResult.getSeasonKey());
-        org.junit.Assert.assertEquals(
-                "expect equals publisherId ",
-                this.records[0].getPublisherId(),
-                testResult.getPublisherId());
-        org.junit.Assert.assertEquals(
-                "expect equals leagueId ", this.records[0].getLeagueId(), testResult.getLeagueId());
+  @Test
+  public void testSelect() throws IOException {
+    final File tempFile = new File("./src/test/resources/Seasons.csv");
+    final InputStream inputStream = new BufferedInputStream(new FileInputStream(tempFile));
+    int count = handler.process(inputStream);
+    String json = FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
+    records = gson.fromJson(json, Seasons[].class);
+    assertEquals("match count", count, records.length);
+    Seasons testResult = jpa.find(Seasons.class, records[0].getId());
+    org.junit.Assert.assertEquals(
+        "expect equals seasonKey ", this.records[0].getSeasonKey(), testResult.getSeasonKey());
+    org.junit.Assert.assertEquals(
+        "expect equals publisherId ",
+        this.records[0].getPublisherId(),
+        testResult.getPublisherId());
+    org.junit.Assert.assertEquals(
+        "expect equals leagueId ", this.records[0].getLeagueId(), testResult.getLeagueId());
 
-        // cleanup
-        inputStream.close();
-        json = null;
-        records = null;
-    }
-
-    /**
-     * Construct a delimiter file from a json file.
-     *
-     * @param inputFile the json file.
-     * @param charset default charset.
-     * @return
-     */
-    private File createRecordInputStreamFromJsonFile(String inputFile, Charset charset) {
-        try {
-            final File tempFile = File.createTempFile(inputFile, ".txt");
-            tempFile.deleteOnExit();
-            String json =
-                    FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
-            JSONArray docs = new JSONArray(json);
-            String csv = CDL.toString(docs);
-            org.apache.commons.io.FileUtils.writeStringToFile(
-                    tempFile, csv, Charset.defaultCharset());
-            return tempFile;
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return null;
-        }
-    }
+    // cleanup
+    inputStream.close();
+    json = null;
+    records = null;
+  }
 }

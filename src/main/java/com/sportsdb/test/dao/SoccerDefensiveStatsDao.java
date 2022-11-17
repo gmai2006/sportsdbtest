@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.SoccerDefensiveStats;
 import java.util.List;
+import com.sportsdb.test.entity.SoccerDefensiveStats;
 
 public interface SoccerDefensiveStatsDao {
-    /**
-     * Retrieve all records SoccerDefensiveStats.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of SoccerDefensiveStats
-     */
-    public List<SoccerDefensiveStats> select(int maxResult);
+  /**
+   * Retrieve all records SoccerDefensiveStats.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of SoccerDefensiveStats
+   */
+  public List<SoccerDefensiveStats> select(int maxResult);
 
-    /**
-     * Retrieve all records SoccerDefensiveStats.
-     *
-     * @return A list of SoccerDefensiveStats
-     */
-    public List<SoccerDefensiveStats> selectAll();
+  /**
+   * Retrieve all records SoccerDefensiveStats.
+   *
+   * @return A list of SoccerDefensiveStats
+   */
+  public List<SoccerDefensiveStats> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An SoccerDefensiveStats id.
-     * @return The same SoccerDefensiveStats.
-     */
-    public SoccerDefensiveStats find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An SoccerDefensiveStats id.
+   * @return The same SoccerDefensiveStats.
+   */
+  public SoccerDefensiveStats find(java.lang.Integer id);
 
-    /**
-     * Create an SoccerDefensiveStats.
-     *
-     * @param e the SoccerDefensiveStats.
-     * @return The same SoccerDefensiveStats.
-     */
-    public SoccerDefensiveStats create(SoccerDefensiveStats e);
+  /**
+   * Create an SoccerDefensiveStats.
+   *
+   * @param e the SoccerDefensiveStats.
+   * @return The same SoccerDefensiveStats.
+   */
+  public SoccerDefensiveStats create(SoccerDefensiveStats e);
 
-    /**
-     * Update the SoccerDefensiveStats.
-     *
-     * @param e the SoccerDefensiveStats.
-     * @return The same SoccerDefensiveStats.
-     */
-    public SoccerDefensiveStats update(SoccerDefensiveStats e);
+  /**
+   * Update the SoccerDefensiveStats.
+   *
+   * @param e the SoccerDefensiveStats.
+   * @return The same SoccerDefensiveStats.
+   */
+  public SoccerDefensiveStats update(SoccerDefensiveStats e);
 }

@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.TeamPhases;
 import java.util.List;
+import com.sportsdb.test.entity.TeamPhases;
 
 public interface TeamPhasesDao {
-    /**
-     * Retrieve all records TeamPhases.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of TeamPhases
-     */
-    public List<TeamPhases> select(int maxResult);
+  /**
+   * Retrieve all records TeamPhases.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of TeamPhases
+   */
+  public List<TeamPhases> select(int maxResult);
 
-    /**
-     * Retrieve all records TeamPhases.
-     *
-     * @return A list of TeamPhases
-     */
-    public List<TeamPhases> selectAll();
+  /**
+   * Retrieve all records TeamPhases.
+   *
+   * @return A list of TeamPhases
+   */
+  public List<TeamPhases> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An TeamPhases id.
-     * @return The same TeamPhases.
-     */
-    public TeamPhases find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An TeamPhases id.
+   * @return The same TeamPhases.
+   */
+  public TeamPhases find(java.lang.Integer id);
 
-    /**
-     * Create an TeamPhases.
-     *
-     * @param e the TeamPhases.
-     * @return The same TeamPhases.
-     */
-    public TeamPhases create(TeamPhases e);
+  /**
+   * Create an TeamPhases.
+   *
+   * @param e the TeamPhases.
+   * @return The same TeamPhases.
+   */
+  public TeamPhases create(TeamPhases e);
 
-    /**
-     * Update the TeamPhases.
-     *
-     * @param e the TeamPhases.
-     * @return The same TeamPhases.
-     */
-    public TeamPhases update(TeamPhases e);
+  /**
+   * Update the TeamPhases.
+   *
+   * @param e the TeamPhases.
+   * @return The same TeamPhases.
+   */
+  public TeamPhases update(TeamPhases e);
 }

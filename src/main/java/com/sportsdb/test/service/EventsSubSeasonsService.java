@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.EventsSubSeasons;
 import java.util.List;
+import com.sportsdb.test.entity.EventsSubSeasons;
 
 public interface EventsSubSeasonsService {
-    public EventsSubSeasons find(java.lang.String id);
+  public EventsSubSeasons find(java.lang.String id);
 
-    /**
-     * Select a list of EventsSubSeasons based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return EventsSubSeasons records.
-     */
-    public List<EventsSubSeasons> select(int maxResult);
+  /**
+   * Select a list of EventsSubSeasons based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return EventsSubSeasons records.
+   */
+  public List<EventsSubSeasons> select(int maxResult);
 
-    /**
-     * Select all EventsSubSeasons.
-     *
-     * @return all EventsSubSeasons records.
-     */
-    public List<EventsSubSeasons> selectAll();
+  /**
+   * Select all EventsSubSeasons.
+   *
+   * @return all EventsSubSeasons records.
+   */
+  public List<EventsSubSeasons> selectAll();
 
-    /**
-     * Create EventsSubSeasons.
-     *
-     * @param bean The EventsSubSeasons.
-     * @return The EventsSubSeasons.
-     */
-    public EventsSubSeasons create(EventsSubSeasons bean);
+  /**
+   * Create EventsSubSeasons.
+   *
+   * @param bean The EventsSubSeasons.
+   * @return The EventsSubSeasons.
+   */
+  public EventsSubSeasons create(EventsSubSeasons bean);
 
-    /**
-     * Update a EventsSubSeasons.
-     *
-     * @param bean - The EventsSubSeasons.
-     * @return EventsSubSeasons.
-     */
-    public EventsSubSeasons update(EventsSubSeasons bean);
+  /**
+   * Update a EventsSubSeasons.
+   *
+   * @param bean - The EventsSubSeasons.
+   * @return EventsSubSeasons.
+   */
+  public EventsSubSeasons update(EventsSubSeasons bean);
 }

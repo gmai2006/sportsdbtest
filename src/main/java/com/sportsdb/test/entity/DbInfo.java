@@ -16,44 +16,44 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "db_info")
 public class DbInfo implements Serializable {
-    private static final long serialVersionUID = 163445241892826661L;
+  private static final long serialVersionUID = 166867004230011336L;
 
-    /** Description: default_id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "default_id")
-    private java.lang.String defaultId;
+  /** Description: default_id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "default_id")
+  private java.lang.String defaultId;
 
-    /** Description: version. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "version", length = 100)
-    private java.lang.String version;
+  /** Description: version. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "version", length = 100)
+  private java.lang.String version;
 
-    public DbInfo() {}
+  public DbInfo() {}
 
-    public java.lang.String getDefaultId() {
-        return this.defaultId;
-    }
+  public java.lang.String getDefaultId() {
+    return this.defaultId;
+  }
 
-    public void setDefaultId(java.lang.String defaultId) {
-        this.defaultId = defaultId;
-    }
+  public void setDefaultId(java.lang.String defaultId) {
+    this.defaultId = defaultId;
+  }
 
-    public java.lang.String getVersion() {
-        return this.version;
-    }
+  public java.lang.String getVersion() {
+    return this.version;
+  }
 
-    public void setVersion(java.lang.String version) {
-        this.version = version;
-    }
+  public void setVersion(java.lang.String version) {
+    this.version = version;
+  }
 }

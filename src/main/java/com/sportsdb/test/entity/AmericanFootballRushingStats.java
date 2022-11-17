@@ -16,103 +16,103 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "american_football_rushing_stats")
 public class AmericanFootballRushingStats implements Serializable {
-    private static final long serialVersionUID = 163445241874941751L;
+  private static final long serialVersionUID = 166867004216387709L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: rushes_attempts. */
-    @Basic
-    @Column(name = "rushes_attempts", length = 100)
-    private java.lang.String rushesAttempts;
-    /** Description: rushes_yards. */
-    @Basic
-    @Column(name = "rushes_yards", length = 100)
-    private java.lang.String rushesYards;
-    /** Description: rushes_touchdowns. */
-    @Basic
-    @Column(name = "rushes_touchdowns", length = 100)
-    private java.lang.String rushesTouchdowns;
-    /** Description: rushing_average_yards_per. */
-    @Basic
-    @Column(name = "rushing_average_yards_per", length = 100)
-    private java.lang.String rushingAverageYardsPer;
-    /** Description: rushes_first_down. */
-    @Basic
-    @Column(name = "rushes_first_down", length = 100)
-    private java.lang.String rushesFirstDown;
-    /** Description: rushes_longest. */
-    @Basic
-    @Column(name = "rushes_longest", length = 100)
-    private java.lang.String rushesLongest;
+  /** Description: rushes_attempts. */
+  @Basic
+  @Column(name = "rushes_attempts", length = 100)
+  private java.lang.String rushesAttempts;
+  /** Description: rushes_yards. */
+  @Basic
+  @Column(name = "rushes_yards", length = 100)
+  private java.lang.String rushesYards;
+  /** Description: rushes_touchdowns. */
+  @Basic
+  @Column(name = "rushes_touchdowns", length = 100)
+  private java.lang.String rushesTouchdowns;
+  /** Description: rushing_average_yards_per. */
+  @Basic
+  @Column(name = "rushing_average_yards_per", length = 100)
+  private java.lang.String rushingAverageYardsPer;
+  /** Description: rushes_first_down. */
+  @Basic
+  @Column(name = "rushes_first_down", length = 100)
+  private java.lang.String rushesFirstDown;
+  /** Description: rushes_longest. */
+  @Basic
+  @Column(name = "rushes_longest", length = 100)
+  private java.lang.String rushesLongest;
 
-    public AmericanFootballRushingStats() {}
+  public AmericanFootballRushingStats() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.String getRushesAttempts() {
-        return this.rushesAttempts;
-    }
+  public java.lang.String getRushesAttempts() {
+    return this.rushesAttempts;
+  }
 
-    public java.lang.String getRushesYards() {
-        return this.rushesYards;
-    }
+  public java.lang.String getRushesYards() {
+    return this.rushesYards;
+  }
 
-    public java.lang.String getRushesTouchdowns() {
-        return this.rushesTouchdowns;
-    }
+  public java.lang.String getRushesTouchdowns() {
+    return this.rushesTouchdowns;
+  }
 
-    public java.lang.String getRushingAverageYardsPer() {
-        return this.rushingAverageYardsPer;
-    }
+  public java.lang.String getRushingAverageYardsPer() {
+    return this.rushingAverageYardsPer;
+  }
 
-    public java.lang.String getRushesFirstDown() {
-        return this.rushesFirstDown;
-    }
+  public java.lang.String getRushesFirstDown() {
+    return this.rushesFirstDown;
+  }
 
-    public java.lang.String getRushesLongest() {
-        return this.rushesLongest;
-    }
+  public java.lang.String getRushesLongest() {
+    return this.rushesLongest;
+  }
 
-    public void setRushesAttempts(java.lang.String rushesAttempts) {
-        this.rushesAttempts = rushesAttempts;
-    }
+  public void setRushesAttempts(java.lang.String rushesAttempts) {
+    this.rushesAttempts = rushesAttempts;
+  }
 
-    public void setRushesYards(java.lang.String rushesYards) {
-        this.rushesYards = rushesYards;
-    }
+  public void setRushesYards(java.lang.String rushesYards) {
+    this.rushesYards = rushesYards;
+  }
 
-    public void setRushesTouchdowns(java.lang.String rushesTouchdowns) {
-        this.rushesTouchdowns = rushesTouchdowns;
-    }
+  public void setRushesTouchdowns(java.lang.String rushesTouchdowns) {
+    this.rushesTouchdowns = rushesTouchdowns;
+  }
 
-    public void setRushingAverageYardsPer(java.lang.String rushingAverageYardsPer) {
-        this.rushingAverageYardsPer = rushingAverageYardsPer;
-    }
+  public void setRushingAverageYardsPer(java.lang.String rushingAverageYardsPer) {
+    this.rushingAverageYardsPer = rushingAverageYardsPer;
+  }
 
-    public void setRushesFirstDown(java.lang.String rushesFirstDown) {
-        this.rushesFirstDown = rushesFirstDown;
-    }
+  public void setRushesFirstDown(java.lang.String rushesFirstDown) {
+    this.rushesFirstDown = rushesFirstDown;
+  }
 
-    public void setRushesLongest(java.lang.String rushesLongest) {
-        this.rushesLongest = rushesLongest;
-    }
+  public void setRushesLongest(java.lang.String rushesLongest) {
+    this.rushesLongest = rushesLongest;
+  }
 }

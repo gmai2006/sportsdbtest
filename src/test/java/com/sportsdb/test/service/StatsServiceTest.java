@@ -16,72 +16,76 @@
  */
 package com.sportsdb.test.service;
 
+import com.sportsdb.test.entity.Stats;
+
+import com.sportsdb.test.utils.FileUtils;
+import com.google.gson.JsonArray;
+import com.google.gson.GsonBuilder;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
+import com.google.gson.Gson;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.sportsdb.test.entity.Stats;
 import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
-import com.sportsdb.test.utils.FileUtils;
-import java.io.IOException;
-import java.nio.charset.Charset;
-import org.junit.BeforeClass;
-import org.junit.Test;
 
 public class StatsServiceTest {
-    private static DefaultStatsService serviceMock;
-    private static Stats[] records;
-    static Gson gson =
-            new GsonBuilder()
-                    .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
-                    .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
-                    .create();
+  private static DefaultStatsService serviceMock;
+  private static Stats[] records;
+  static Gson gson =
+      new GsonBuilder()
+          .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
+          .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
+          .create();
 
-    /** Run when the class is loaded. */
-    @BeforeClass
-    public static void setUp() {
-        serviceMock = mock(DefaultStatsService.class);
-        String inputFile = "Stats.json";
-        try {
-            String json =
-                    FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
-            records = gson.fromJson(json, Stats[].class);
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-
-        // test data
-        when(serviceMock.find(records[0].getId())).thenReturn(records[0]);
+  /** Run when the class is loaded. */
+  @BeforeClass
+  public static void setUp() {
+    serviceMock = mock(DefaultStatsService.class);
+    String inputFile = "Stats.json";
+    try {
+      String json = FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
+      records = gson.fromJson(json, Stats[].class);
+    } catch (IOException ex) {
+      ex.printStackTrace();
     }
 
-    @Test
-    public void testFind_success() {
-        Stats testResult = serviceMock.find(records[0].getId());
+    // test data
+    when(serviceMock.find(records[0].getId())).thenReturn(records[0]);
+  }
 
-        org.junit.Assert.assertNotNull(testResult);
-        org.junit.Assert.assertEquals(
-                "expect equals statRepositoryType ",
-                records[0].getStatRepositoryType(),
-                testResult.getStatRepositoryType());
-        org.junit.Assert.assertTrue(
-                "expect equals statRepositoryId ",
-                records[0].getStatRepositoryId() == testResult.getStatRepositoryId());
-        org.junit.Assert.assertEquals(
-                "expect equals statHolderType ",
-                records[0].getStatHolderType(),
-                testResult.getStatHolderType());
-        org.junit.Assert.assertTrue(
-                "expect equals statHolderId ",
-                records[0].getStatHolderId() == testResult.getStatHolderId());
-        org.junit.Assert.assertEquals(
-                "expect equals statCoverageType ",
-                records[0].getStatCoverageType(),
-                testResult.getStatCoverageType());
-        org.junit.Assert.assertTrue(
-                "expect equals statCoverageId ",
-                records[0].getStatCoverageId() == testResult.getStatCoverageId());
-        org.junit.Assert.assertEquals(
-                "expect equals context ", records[0].getContext(), testResult.getContext());
-    }
+  @Test
+  public void testFind_success() {
+    Stats testResult = serviceMock.find(records[0].getId());
+
+    org.junit.Assert.assertNotNull(testResult);
+    org.junit.Assert.assertEquals(
+        "expect equals statRepositoryType ",
+        records[0].getStatRepositoryType(),
+        testResult.getStatRepositoryType());
+    org.junit.Assert.assertTrue(
+        "expect equals statRepositoryId ",
+        records[0].getStatRepositoryId() == testResult.getStatRepositoryId());
+    org.junit.Assert.assertEquals(
+        "expect equals statHolderType ",
+        records[0].getStatHolderType(),
+        testResult.getStatHolderType());
+    org.junit.Assert.assertTrue(
+        "expect equals statHolderId ",
+        records[0].getStatHolderId() == testResult.getStatHolderId());
+    org.junit.Assert.assertEquals(
+        "expect equals statCoverageType ",
+        records[0].getStatCoverageType(),
+        testResult.getStatCoverageType());
+    org.junit.Assert.assertTrue(
+        "expect equals statCoverageId ",
+        records[0].getStatCoverageId() == testResult.getStatCoverageId());
+    org.junit.Assert.assertEquals(
+        "expect equals context ", records[0].getContext(), testResult.getContext());
+  }
 }

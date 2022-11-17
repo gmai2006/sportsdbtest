@@ -16,76 +16,78 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.AmericanFootballDownProgressStats;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.AmericanFootballDownProgressStats;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("AmericanFootballDownProgressStatsHandler")
 public class AmericanFootballDownProgressStatsHandler
-        extends DelimiterFileHandler<AmericanFootballDownProgressStats> {
+    extends DelimiterFileHandler<AmericanFootballDownProgressStats> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public AmericanFootballDownProgressStatsHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public AmericanFootballDownProgressStatsHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected AmericanFootballDownProgressStats parseLine(List<String> headers, List<String> tokens) {
+    AmericanFootballDownProgressStats record = new AmericanFootballDownProgressStats();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "firstDownsTotal":
+          record.setFirstDownsTotal(tokens.get(i));
+          break;
+
+        case "firstDownsPass":
+          record.setFirstDownsPass(tokens.get(i));
+          break;
+
+        case "firstDownsRun":
+          record.setFirstDownsRun(tokens.get(i));
+          break;
+
+        case "firstDownsPenalty":
+          record.setFirstDownsPenalty(tokens.get(i));
+          break;
+
+        case "conversionsThirdDown":
+          record.setConversionsThirdDown(tokens.get(i));
+          break;
+
+        case "conversionsThirdDownAttempts":
+          record.setConversionsThirdDownAttempts(tokens.get(i));
+          break;
+
+        case "conversionsThirdDownPercentage":
+          record.setConversionsThirdDownPercentage(tokens.get(i));
+          break;
+
+        case "conversionsFourthDown":
+          record.setConversionsFourthDown(tokens.get(i));
+          break;
+
+        case "conversionsFourthDownAttempts":
+          record.setConversionsFourthDownAttempts(tokens.get(i));
+          break;
+
+        case "conversionsFourthDownPercentage":
+          record.setConversionsFourthDownPercentage(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected AmericanFootballDownProgressStats parseLine(
-            List<String> headers, List<String> tokens) {
-        AmericanFootballDownProgressStats record = new AmericanFootballDownProgressStats();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "firstDownsTotal":
-                    record.setFirstDownsTotal(tokens.get(i));
-                    break;
-
-                case "firstDownsPass":
-                    record.setFirstDownsPass(tokens.get(i));
-                    break;
-
-                case "firstDownsRun":
-                    record.setFirstDownsRun(tokens.get(i));
-                    break;
-
-                case "firstDownsPenalty":
-                    record.setFirstDownsPenalty(tokens.get(i));
-                    break;
-
-                case "conversionsThirdDown":
-                    record.setConversionsThirdDown(tokens.get(i));
-                    break;
-
-                case "conversionsThirdDownAttempts":
-                    record.setConversionsThirdDownAttempts(tokens.get(i));
-                    break;
-
-                case "conversionsThirdDownPercentage":
-                    record.setConversionsThirdDownPercentage(tokens.get(i));
-                    break;
-
-                case "conversionsFourthDown":
-                    record.setConversionsFourthDown(tokens.get(i));
-                    break;
-
-                case "conversionsFourthDownAttempts":
-                    record.setConversionsFourthDownAttempts(tokens.get(i));
-                    break;
-
-                case "conversionsFourthDownPercentage":
-                    record.setConversionsFourthDownPercentage(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

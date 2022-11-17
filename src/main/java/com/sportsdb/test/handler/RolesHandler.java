@@ -16,46 +16,49 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.Roles;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.Roles;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("RolesHandler")
 public class RolesHandler extends DelimiterFileHandler<Roles> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public RolesHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public RolesHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected Roles parseLine(List<String> headers, List<String> tokens) {
+    Roles record = new Roles();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "roleKey":
+          record.setRoleKey(tokens.get(i));
+          break;
+
+        case "roleName":
+          record.setRoleName(tokens.get(i));
+          break;
+
+        case "comment":
+          record.setComment(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected Roles parseLine(List<String> headers, List<String> tokens) {
-        Roles record = new Roles();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "roleKey":
-                    record.setRoleKey(tokens.get(i));
-                    break;
-
-                case "roleName":
-                    record.setRoleName(tokens.get(i));
-                    break;
-
-                case "comment":
-                    record.setComment(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

@@ -16,57 +16,60 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.AffiliationsEvents;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.AffiliationsEvents;
 
 @Stateless
 @Named("DefaultAffiliationsEventsDao")
 public class DefaultAffiliationsEventsDao implements AffiliationsEventsDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultAffiliationsEventsDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultAffiliationsEventsDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultAffiliationsEventsDao() {}
+  public DefaultAffiliationsEventsDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public AffiliationsEvents find(java.lang.String id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(AffiliationsEvents.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public AffiliationsEvents find(java.lang.String id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(AffiliationsEvents.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<AffiliationsEvents> select(int max) {
-        return dao.select("select a from AffiliationsEvents a", AffiliationsEvents.class, max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<AffiliationsEvents> select(int max) {
+    return dao.select("select a from AffiliationsEvents a", AffiliationsEvents.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<AffiliationsEvents> selectAll() {
-        return dao.selectAll("select a from AffiliationsEvents a", AffiliationsEvents.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<AffiliationsEvents> selectAll() {
+    return dao.selectAll("select a from AffiliationsEvents a", AffiliationsEvents.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AffiliationsEvents create(AffiliationsEvents e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public AffiliationsEvents create(AffiliationsEvents e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AffiliationsEvents update(AffiliationsEvents e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public AffiliationsEvents update(AffiliationsEvents e) {
+    return dao.update(e);
+  }
 }

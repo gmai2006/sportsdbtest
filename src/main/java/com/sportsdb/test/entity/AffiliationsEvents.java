@@ -16,57 +16,57 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "affiliations_events")
 public class AffiliationsEvents implements Serializable {
-    private static final long serialVersionUID = 163445241867196279L;
+  private static final long serialVersionUID = 166867004210471323L;
 
-    /** Description: default_id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "default_id")
-    private java.lang.String defaultId;
+  /** Description: default_id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "default_id")
+  private java.lang.String defaultId;
 
-    /** Description: affiliation_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "affiliation_id")
-    private java.lang.Integer affiliationId;
-    /** Description: event_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "event_id")
-    private java.lang.Integer eventId;
+  /** Description: affiliation_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "affiliation_id")
+  private java.lang.Integer affiliationId;
+  /** Description: event_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "event_id")
+  private java.lang.Integer eventId;
 
-    public AffiliationsEvents() {}
+  public AffiliationsEvents() {}
 
-    public java.lang.String getDefaultId() {
-        return this.defaultId;
-    }
+  public java.lang.String getDefaultId() {
+    return this.defaultId;
+  }
 
-    public void setDefaultId(java.lang.String defaultId) {
-        this.defaultId = defaultId;
-    }
+  public void setDefaultId(java.lang.String defaultId) {
+    this.defaultId = defaultId;
+  }
 
-    public java.lang.Integer getAffiliationId() {
-        return this.affiliationId;
-    }
+  public java.lang.Integer getAffiliationId() {
+    return this.affiliationId;
+  }
 
-    public java.lang.Integer getEventId() {
-        return this.eventId;
-    }
+  public java.lang.Integer getEventId() {
+    return this.eventId;
+  }
 
-    public void setAffiliationId(java.lang.Integer affiliationId) {
-        this.affiliationId = affiliationId;
-    }
+  public void setAffiliationId(java.lang.Integer affiliationId) {
+    this.affiliationId = affiliationId;
+  }
 
-    public void setEventId(java.lang.Integer eventId) {
-        this.eventId = eventId;
-    }
+  public void setEventId(java.lang.Integer eventId) {
+    this.eventId = eventId;
+  }
 }

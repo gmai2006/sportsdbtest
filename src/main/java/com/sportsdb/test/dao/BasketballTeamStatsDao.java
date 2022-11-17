@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.BasketballTeamStats;
 import java.util.List;
+import com.sportsdb.test.entity.BasketballTeamStats;
 
 public interface BasketballTeamStatsDao {
-    /**
-     * Retrieve all records BasketballTeamStats.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of BasketballTeamStats
-     */
-    public List<BasketballTeamStats> select(int maxResult);
+  /**
+   * Retrieve all records BasketballTeamStats.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of BasketballTeamStats
+   */
+  public List<BasketballTeamStats> select(int maxResult);
 
-    /**
-     * Retrieve all records BasketballTeamStats.
-     *
-     * @return A list of BasketballTeamStats
-     */
-    public List<BasketballTeamStats> selectAll();
+  /**
+   * Retrieve all records BasketballTeamStats.
+   *
+   * @return A list of BasketballTeamStats
+   */
+  public List<BasketballTeamStats> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An BasketballTeamStats id.
-     * @return The same BasketballTeamStats.
-     */
-    public BasketballTeamStats find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An BasketballTeamStats id.
+   * @return The same BasketballTeamStats.
+   */
+  public BasketballTeamStats find(java.lang.Integer id);
 
-    /**
-     * Create an BasketballTeamStats.
-     *
-     * @param e the BasketballTeamStats.
-     * @return The same BasketballTeamStats.
-     */
-    public BasketballTeamStats create(BasketballTeamStats e);
+  /**
+   * Create an BasketballTeamStats.
+   *
+   * @param e the BasketballTeamStats.
+   * @return The same BasketballTeamStats.
+   */
+  public BasketballTeamStats create(BasketballTeamStats e);
 
-    /**
-     * Update the BasketballTeamStats.
-     *
-     * @param e the BasketballTeamStats.
-     * @return The same BasketballTeamStats.
-     */
-    public BasketballTeamStats update(BasketballTeamStats e);
+  /**
+   * Update the BasketballTeamStats.
+   *
+   * @param e the BasketballTeamStats.
+   * @return The same BasketballTeamStats.
+   */
+  public BasketballTeamStats update(BasketballTeamStats e);
 }

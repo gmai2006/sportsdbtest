@@ -16,62 +16,65 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.TeamPhases;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.TeamPhases;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("TeamPhasesHandler")
 public class TeamPhasesHandler extends DelimiterFileHandler<TeamPhases> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public TeamPhasesHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public TeamPhasesHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected TeamPhases parseLine(List<String> headers, List<String> tokens) {
+    TeamPhases record = new TeamPhases();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "teamId":
+          record.setTeamId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "startSeasonId":
+          record.setStartSeasonId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "endSeasonId":
+          record.setEndSeasonId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "affiliationId":
+          record.setAffiliationId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "startDateTime":
+          record.setStartDateTime(tokens.get(i));
+          break;
+
+        case "endDateTime":
+          record.setEndDateTime(tokens.get(i));
+          break;
+
+        case "phaseStatus":
+          record.setPhaseStatus(tokens.get(i));
+          break;
+
+        case "roleId":
+          record.setRoleId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected TeamPhases parseLine(List<String> headers, List<String> tokens) {
-        TeamPhases record = new TeamPhases();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "teamId":
-                    record.setTeamId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "startSeasonId":
-                    record.setStartSeasonId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "endSeasonId":
-                    record.setEndSeasonId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "affiliationId":
-                    record.setAffiliationId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "startDateTime":
-                    record.setStartDateTime(tokens.get(i));
-                    break;
-
-                case "endDateTime":
-                    record.setEndDateTime(tokens.get(i));
-                    break;
-
-                case "phaseStatus":
-                    record.setPhaseStatus(tokens.get(i));
-                    break;
-
-                case "roleId":
-                    record.setRoleId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

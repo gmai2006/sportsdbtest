@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.MotorRacingEventStates;
 import java.util.List;
+import com.sportsdb.test.entity.MotorRacingEventStates;
 
 public interface MotorRacingEventStatesService {
-    public MotorRacingEventStates find(java.lang.Integer id);
+  public MotorRacingEventStates find(java.lang.Integer id);
 
-    /**
-     * Select a list of MotorRacingEventStates based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return MotorRacingEventStates records.
-     */
-    public List<MotorRacingEventStates> select(int maxResult);
+  /**
+   * Select a list of MotorRacingEventStates based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return MotorRacingEventStates records.
+   */
+  public List<MotorRacingEventStates> select(int maxResult);
 
-    /**
-     * Select all MotorRacingEventStates.
-     *
-     * @return all MotorRacingEventStates records.
-     */
-    public List<MotorRacingEventStates> selectAll();
+  /**
+   * Select all MotorRacingEventStates.
+   *
+   * @return all MotorRacingEventStates records.
+   */
+  public List<MotorRacingEventStates> selectAll();
 
-    /**
-     * Create MotorRacingEventStates.
-     *
-     * @param bean The MotorRacingEventStates.
-     * @return The MotorRacingEventStates.
-     */
-    public MotorRacingEventStates create(MotorRacingEventStates bean);
+  /**
+   * Create MotorRacingEventStates.
+   *
+   * @param bean The MotorRacingEventStates.
+   * @return The MotorRacingEventStates.
+   */
+  public MotorRacingEventStates create(MotorRacingEventStates bean);
 
-    /**
-     * Update a MotorRacingEventStates.
-     *
-     * @param bean - The MotorRacingEventStates.
-     * @return MotorRacingEventStates.
-     */
-    public MotorRacingEventStates update(MotorRacingEventStates bean);
+  /**
+   * Update a MotorRacingEventStates.
+   *
+   * @param bean - The MotorRacingEventStates.
+   * @return MotorRacingEventStates.
+   */
+  public MotorRacingEventStates update(MotorRacingEventStates bean);
 }

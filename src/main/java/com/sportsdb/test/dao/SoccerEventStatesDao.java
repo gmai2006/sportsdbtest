@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.SoccerEventStates;
 import java.util.List;
+import com.sportsdb.test.entity.SoccerEventStates;
 
 public interface SoccerEventStatesDao {
-    /**
-     * Retrieve all records SoccerEventStates.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of SoccerEventStates
-     */
-    public List<SoccerEventStates> select(int maxResult);
+  /**
+   * Retrieve all records SoccerEventStates.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of SoccerEventStates
+   */
+  public List<SoccerEventStates> select(int maxResult);
 
-    /**
-     * Retrieve all records SoccerEventStates.
-     *
-     * @return A list of SoccerEventStates
-     */
-    public List<SoccerEventStates> selectAll();
+  /**
+   * Retrieve all records SoccerEventStates.
+   *
+   * @return A list of SoccerEventStates
+   */
+  public List<SoccerEventStates> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An SoccerEventStates id.
-     * @return The same SoccerEventStates.
-     */
-    public SoccerEventStates find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An SoccerEventStates id.
+   * @return The same SoccerEventStates.
+   */
+  public SoccerEventStates find(java.lang.Integer id);
 
-    /**
-     * Create an SoccerEventStates.
-     *
-     * @param e the SoccerEventStates.
-     * @return The same SoccerEventStates.
-     */
-    public SoccerEventStates create(SoccerEventStates e);
+  /**
+   * Create an SoccerEventStates.
+   *
+   * @param e the SoccerEventStates.
+   * @return The same SoccerEventStates.
+   */
+  public SoccerEventStates create(SoccerEventStates e);
 
-    /**
-     * Update the SoccerEventStates.
-     *
-     * @param e the SoccerEventStates.
-     * @return The same SoccerEventStates.
-     */
-    public SoccerEventStates update(SoccerEventStates e);
+  /**
+   * Update the SoccerEventStates.
+   *
+   * @param e the SoccerEventStates.
+   * @return The same SoccerEventStates.
+   */
+  public SoccerEventStates update(SoccerEventStates e);
 }

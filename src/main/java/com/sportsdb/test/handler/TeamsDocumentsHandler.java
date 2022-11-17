@@ -16,41 +16,44 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.TeamsDocuments;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.TeamsDocuments;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("TeamsDocumentsHandler")
 public class TeamsDocumentsHandler extends DelimiterFileHandler<TeamsDocuments> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public TeamsDocumentsHandler(final JpaDao dao) {
-        super(dao);
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public TeamsDocumentsHandler(final JpaDao dao) {
+    super(dao);
+  }
 
-    @Override
-    protected TeamsDocuments parseLine(List<String> headers, List<String> tokens) {
-        TeamsDocuments record = new TeamsDocuments();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "teamId":
-                    record.setTeamId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "documentId":
-                    record.setDocumentId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "defaultId":
-                    record.setDefaultId(tokens.get(i));
-                    break;
+  @Override
+  protected TeamsDocuments parseLine(List<String> headers, List<String> tokens) {
+    TeamsDocuments record = new TeamsDocuments();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "teamId":
+          record.setTeamId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "documentId":
+          record.setDocumentId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "defaultId":
+          record.setDefaultId(tokens.get(i));
+          break;
 
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
+    return record;
+  }
 }

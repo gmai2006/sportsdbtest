@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.AffiliationsEvents;
 import java.util.List;
+import com.sportsdb.test.entity.AffiliationsEvents;
 
 public interface AffiliationsEventsService {
-    public AffiliationsEvents find(java.lang.String id);
+  public AffiliationsEvents find(java.lang.String id);
 
-    /**
-     * Select a list of AffiliationsEvents based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return AffiliationsEvents records.
-     */
-    public List<AffiliationsEvents> select(int maxResult);
+  /**
+   * Select a list of AffiliationsEvents based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return AffiliationsEvents records.
+   */
+  public List<AffiliationsEvents> select(int maxResult);
 
-    /**
-     * Select all AffiliationsEvents.
-     *
-     * @return all AffiliationsEvents records.
-     */
-    public List<AffiliationsEvents> selectAll();
+  /**
+   * Select all AffiliationsEvents.
+   *
+   * @return all AffiliationsEvents records.
+   */
+  public List<AffiliationsEvents> selectAll();
 
-    /**
-     * Create AffiliationsEvents.
-     *
-     * @param bean The AffiliationsEvents.
-     * @return The AffiliationsEvents.
-     */
-    public AffiliationsEvents create(AffiliationsEvents bean);
+  /**
+   * Create AffiliationsEvents.
+   *
+   * @param bean The AffiliationsEvents.
+   * @return The AffiliationsEvents.
+   */
+  public AffiliationsEvents create(AffiliationsEvents bean);
 
-    /**
-     * Update a AffiliationsEvents.
-     *
-     * @param bean - The AffiliationsEvents.
-     * @return AffiliationsEvents.
-     */
-    public AffiliationsEvents update(AffiliationsEvents bean);
+  /**
+   * Update a AffiliationsEvents.
+   *
+   * @param bean - The AffiliationsEvents.
+   * @return AffiliationsEvents.
+   */
+  public AffiliationsEvents update(AffiliationsEvents bean);
 }

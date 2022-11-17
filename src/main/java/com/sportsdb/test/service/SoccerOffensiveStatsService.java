@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.SoccerOffensiveStats;
 import java.util.List;
+import com.sportsdb.test.entity.SoccerOffensiveStats;
 
 public interface SoccerOffensiveStatsService {
-    public SoccerOffensiveStats find(java.lang.Integer id);
+  public SoccerOffensiveStats find(java.lang.Integer id);
 
-    /**
-     * Select a list of SoccerOffensiveStats based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return SoccerOffensiveStats records.
-     */
-    public List<SoccerOffensiveStats> select(int maxResult);
+  /**
+   * Select a list of SoccerOffensiveStats based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return SoccerOffensiveStats records.
+   */
+  public List<SoccerOffensiveStats> select(int maxResult);
 
-    /**
-     * Select all SoccerOffensiveStats.
-     *
-     * @return all SoccerOffensiveStats records.
-     */
-    public List<SoccerOffensiveStats> selectAll();
+  /**
+   * Select all SoccerOffensiveStats.
+   *
+   * @return all SoccerOffensiveStats records.
+   */
+  public List<SoccerOffensiveStats> selectAll();
 
-    /**
-     * Create SoccerOffensiveStats.
-     *
-     * @param bean The SoccerOffensiveStats.
-     * @return The SoccerOffensiveStats.
-     */
-    public SoccerOffensiveStats create(SoccerOffensiveStats bean);
+  /**
+   * Create SoccerOffensiveStats.
+   *
+   * @param bean The SoccerOffensiveStats.
+   * @return The SoccerOffensiveStats.
+   */
+  public SoccerOffensiveStats create(SoccerOffensiveStats bean);
 
-    /**
-     * Update a SoccerOffensiveStats.
-     *
-     * @param bean - The SoccerOffensiveStats.
-     * @return SoccerOffensiveStats.
-     */
-    public SoccerOffensiveStats update(SoccerOffensiveStats bean);
+  /**
+   * Update a SoccerOffensiveStats.
+   *
+   * @param bean - The SoccerOffensiveStats.
+   * @return SoccerOffensiveStats.
+   */
+  public SoccerOffensiveStats update(SoccerOffensiveStats bean);
 }

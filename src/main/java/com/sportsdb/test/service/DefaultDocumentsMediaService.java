@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.DocumentsMediaDao;
-import com.sportsdb.test.entity.DocumentsMedia;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.DocumentsMediaDao;
+import com.sportsdb.test.entity.DocumentsMedia;
 
 @Stateless
 @Named("DefaultDocumentsMediaService")
 public class DefaultDocumentsMediaService implements DocumentsMediaService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final DocumentsMediaDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final DocumentsMediaDao dao;
 
-    @Inject
-    @Named("DefaultDocumentsMediaDao")
-    public DefaultDocumentsMediaService(final DocumentsMediaDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultDocumentsMediaDao")
+  public DefaultDocumentsMediaService(final DocumentsMediaDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public DocumentsMedia find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public DocumentsMedia find(java.lang.Integer id) {
 
-        final DocumentsMedia result = dao.find(id);
-        logger.info("find(DocumentsMedia) - exited - return value={} result ");
-        return result;
-    }
+    final DocumentsMedia result = dao.find(id);
+    logger.info("find(DocumentsMedia) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<DocumentsMedia> select(int maxResult) {
-        final List<DocumentsMedia> result = dao.select(maxResult);
-        logger.info("select(DocumentsMedia) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<DocumentsMedia> select(int maxResult) {
+    final List<DocumentsMedia> result = dao.select(maxResult);
+    logger.info("select(DocumentsMedia) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<DocumentsMedia> selectAll() {
-        final List<DocumentsMedia> results = dao.selectAll();
-        logger.info("selectAll(DocumentsMedia) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<DocumentsMedia> selectAll() {
+    final List<DocumentsMedia> results = dao.selectAll();
+    logger.info("selectAll(DocumentsMedia) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public DocumentsMedia create(DocumentsMedia bean) {
-        requireNonNull(bean);
-        logger.info("create(DocumentsMedia={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public DocumentsMedia create(DocumentsMedia bean) {
+    requireNonNull(bean);
+    logger.info("create(DocumentsMedia={}) - entered bean ");
 
-        final DocumentsMedia result = dao.create(bean);
+    final DocumentsMedia result = dao.create(bean);
 
-        logger.info("create(DocumentsMedia) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(DocumentsMedia) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public DocumentsMedia update(DocumentsMedia bean) {
-        requireNonNull(bean);
-        logger.info("update(DocumentsMedia={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public DocumentsMedia update(DocumentsMedia bean) {
+    requireNonNull(bean);
+    logger.info("update(DocumentsMedia={}) - entered bean ");
 
-        final DocumentsMedia result = dao.update(bean);
+    final DocumentsMedia result = dao.update(bean);
 
-        logger.info("update(DocumentsMedia) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(DocumentsMedia) - exited - return value={} result ");
+    return result;
+  }
 }

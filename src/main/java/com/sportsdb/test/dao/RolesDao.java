@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.Roles;
 import java.util.List;
+import com.sportsdb.test.entity.Roles;
 
 public interface RolesDao {
-    /**
-     * Retrieve all records Roles.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of Roles
-     */
-    public List<Roles> select(int maxResult);
+  /**
+   * Retrieve all records Roles.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of Roles
+   */
+  public List<Roles> select(int maxResult);
 
-    /**
-     * Retrieve all records Roles.
-     *
-     * @return A list of Roles
-     */
-    public List<Roles> selectAll();
+  /**
+   * Retrieve all records Roles.
+   *
+   * @return A list of Roles
+   */
+  public List<Roles> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An Roles id.
-     * @return The same Roles.
-     */
-    public Roles find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An Roles id.
+   * @return The same Roles.
+   */
+  public Roles find(java.lang.Integer id);
 
-    /**
-     * Create an Roles.
-     *
-     * @param e the Roles.
-     * @return The same Roles.
-     */
-    public Roles create(Roles e);
+  /**
+   * Create an Roles.
+   *
+   * @param e the Roles.
+   * @return The same Roles.
+   */
+  public Roles create(Roles e);
 
-    /**
-     * Update the Roles.
-     *
-     * @param e the Roles.
-     * @return The same Roles.
-     */
-    public Roles update(Roles e);
+  /**
+   * Update the Roles.
+   *
+   * @param e the Roles.
+   * @return The same Roles.
+   */
+  public Roles update(Roles e);
 }

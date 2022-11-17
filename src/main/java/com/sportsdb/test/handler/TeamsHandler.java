@@ -16,45 +16,48 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.Teams;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.Teams;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("TeamsHandler")
 public class TeamsHandler extends DelimiterFileHandler<Teams> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public TeamsHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public TeamsHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected Teams parseLine(List<String> headers, List<String> tokens) {
+    Teams record = new Teams();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "teamKey":
+          record.setTeamKey(tokens.get(i));
+          break;
+
+        case "publisherId":
+          record.setPublisherId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "homeSiteId":
+          record.setHomeSiteId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected Teams parseLine(List<String> headers, List<String> tokens) {
-        Teams record = new Teams();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "teamKey":
-                    record.setTeamKey(tokens.get(i));
-                    break;
-
-                case "publisherId":
-                    record.setPublisherId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "homeSiteId":
-                    record.setHomeSiteId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

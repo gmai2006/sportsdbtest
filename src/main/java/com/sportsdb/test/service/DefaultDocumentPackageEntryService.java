@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.DocumentPackageEntryDao;
-import com.sportsdb.test.entity.DocumentPackageEntry;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.DocumentPackageEntryDao;
+import com.sportsdb.test.entity.DocumentPackageEntry;
 
 @Stateless
 @Named("DefaultDocumentPackageEntryService")
 public class DefaultDocumentPackageEntryService implements DocumentPackageEntryService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final DocumentPackageEntryDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final DocumentPackageEntryDao dao;
 
-    @Inject
-    @Named("DefaultDocumentPackageEntryDao")
-    public DefaultDocumentPackageEntryService(final DocumentPackageEntryDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultDocumentPackageEntryDao")
+  public DefaultDocumentPackageEntryService(final DocumentPackageEntryDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public DocumentPackageEntry find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public DocumentPackageEntry find(java.lang.Integer id) {
 
-        final DocumentPackageEntry result = dao.find(id);
-        logger.info("find(DocumentPackageEntry) - exited - return value={} result ");
-        return result;
-    }
+    final DocumentPackageEntry result = dao.find(id);
+    logger.info("find(DocumentPackageEntry) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<DocumentPackageEntry> select(int maxResult) {
-        final List<DocumentPackageEntry> result = dao.select(maxResult);
-        logger.info("select(DocumentPackageEntry) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<DocumentPackageEntry> select(int maxResult) {
+    final List<DocumentPackageEntry> result = dao.select(maxResult);
+    logger.info("select(DocumentPackageEntry) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<DocumentPackageEntry> selectAll() {
-        final List<DocumentPackageEntry> results = dao.selectAll();
-        logger.info("selectAll(DocumentPackageEntry) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<DocumentPackageEntry> selectAll() {
+    final List<DocumentPackageEntry> results = dao.selectAll();
+    logger.info("selectAll(DocumentPackageEntry) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public DocumentPackageEntry create(DocumentPackageEntry bean) {
-        requireNonNull(bean);
-        logger.info("create(DocumentPackageEntry={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public DocumentPackageEntry create(DocumentPackageEntry bean) {
+    requireNonNull(bean);
+    logger.info("create(DocumentPackageEntry={}) - entered bean ");
 
-        final DocumentPackageEntry result = dao.create(bean);
+    final DocumentPackageEntry result = dao.create(bean);
 
-        logger.info("create(DocumentPackageEntry) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(DocumentPackageEntry) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public DocumentPackageEntry update(DocumentPackageEntry bean) {
-        requireNonNull(bean);
-        logger.info("update(DocumentPackageEntry={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public DocumentPackageEntry update(DocumentPackageEntry bean) {
+    requireNonNull(bean);
+    logger.info("update(DocumentPackageEntry={}) - entered bean ");
 
-        final DocumentPackageEntry result = dao.update(bean);
+    final DocumentPackageEntry result = dao.update(bean);
 
-        logger.info("update(DocumentPackageEntry) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(DocumentPackageEntry) - exited - return value={} result ");
+    return result;
+  }
 }

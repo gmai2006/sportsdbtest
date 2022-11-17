@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.Standings;
 import java.util.List;
+import com.sportsdb.test.entity.Standings;
 
 public interface StandingsDao {
-    /**
-     * Retrieve all records Standings.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of Standings
-     */
-    public List<Standings> select(int maxResult);
+  /**
+   * Retrieve all records Standings.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of Standings
+   */
+  public List<Standings> select(int maxResult);
 
-    /**
-     * Retrieve all records Standings.
-     *
-     * @return A list of Standings
-     */
-    public List<Standings> selectAll();
+  /**
+   * Retrieve all records Standings.
+   *
+   * @return A list of Standings
+   */
+  public List<Standings> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An Standings id.
-     * @return The same Standings.
-     */
-    public Standings find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An Standings id.
+   * @return The same Standings.
+   */
+  public Standings find(java.lang.Integer id);
 
-    /**
-     * Create an Standings.
-     *
-     * @param e the Standings.
-     * @return The same Standings.
-     */
-    public Standings create(Standings e);
+  /**
+   * Create an Standings.
+   *
+   * @param e the Standings.
+   * @return The same Standings.
+   */
+  public Standings create(Standings e);
 
-    /**
-     * Update the Standings.
-     *
-     * @param e the Standings.
-     * @return The same Standings.
-     */
-    public Standings update(Standings e);
+  /**
+   * Update the Standings.
+   *
+   * @param e the Standings.
+   * @return The same Standings.
+   */
+  public Standings update(Standings e);
 }

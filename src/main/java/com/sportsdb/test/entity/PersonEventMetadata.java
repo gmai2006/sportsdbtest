@@ -16,153 +16,153 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "person_event_metadata")
 public class PersonEventMetadata implements Serializable {
-    private static final long serialVersionUID = 163445241919539201L;
+  private static final long serialVersionUID = 166867004248060944L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: person_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "person_id")
-    private java.lang.Integer personId;
-    /** Description: event_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "event_id")
-    private java.lang.Integer eventId;
-    /** Description: status. */
-    @Basic
-    @Column(name = "status", length = 100)
-    private java.lang.String status;
-    /** Description: health. */
-    @Basic
-    @Column(name = "health", length = 100)
-    private java.lang.String health;
-    /** Description: weight. */
-    @Basic
-    @Column(name = "weight", length = 100)
-    private java.lang.String weight;
-    /** Description: role_id. */
-    @Basic
-    @Column(name = "role_id")
-    private java.lang.Integer roleId;
-    /** Description: position_id. */
-    @Basic
-    @Column(name = "position_id")
-    private java.lang.Integer positionId;
-    /** Description: team_id. */
-    @Basic
-    @Column(name = "team_id")
-    private java.lang.Integer teamId;
-    /** Description: lineup_slot. */
-    @Basic
-    @Column(name = "lineup_slot")
-    private java.lang.Integer lineupSlot;
-    /** Description: lineup_slot_sequence. */
-    @Basic
-    @Column(name = "lineup_slot_sequence")
-    private java.lang.Integer lineupSlotSequence;
+  /** Description: person_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "person_id")
+  private java.lang.Integer personId;
+  /** Description: event_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "event_id")
+  private java.lang.Integer eventId;
+  /** Description: status. */
+  @Basic
+  @Column(name = "status", length = 100)
+  private java.lang.String status;
+  /** Description: health. */
+  @Basic
+  @Column(name = "health", length = 100)
+  private java.lang.String health;
+  /** Description: weight. */
+  @Basic
+  @Column(name = "weight", length = 100)
+  private java.lang.String weight;
+  /** Description: role_id. */
+  @Basic
+  @Column(name = "role_id")
+  private java.lang.Integer roleId;
+  /** Description: position_id. */
+  @Basic
+  @Column(name = "position_id")
+  private java.lang.Integer positionId;
+  /** Description: team_id. */
+  @Basic
+  @Column(name = "team_id")
+  private java.lang.Integer teamId;
+  /** Description: lineup_slot. */
+  @Basic
+  @Column(name = "lineup_slot")
+  private java.lang.Integer lineupSlot;
+  /** Description: lineup_slot_sequence. */
+  @Basic
+  @Column(name = "lineup_slot_sequence")
+  private java.lang.Integer lineupSlotSequence;
 
-    public PersonEventMetadata() {}
+  public PersonEventMetadata() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.Integer getPersonId() {
-        return this.personId;
-    }
+  public java.lang.Integer getPersonId() {
+    return this.personId;
+  }
 
-    public java.lang.Integer getEventId() {
-        return this.eventId;
-    }
+  public java.lang.Integer getEventId() {
+    return this.eventId;
+  }
 
-    public java.lang.String getStatus() {
-        return this.status;
-    }
+  public java.lang.String getStatus() {
+    return this.status;
+  }
 
-    public java.lang.String getHealth() {
-        return this.health;
-    }
+  public java.lang.String getHealth() {
+    return this.health;
+  }
 
-    public java.lang.String getWeight() {
-        return this.weight;
-    }
+  public java.lang.String getWeight() {
+    return this.weight;
+  }
 
-    public java.lang.Integer getRoleId() {
-        return this.roleId;
-    }
+  public java.lang.Integer getRoleId() {
+    return this.roleId;
+  }
 
-    public java.lang.Integer getPositionId() {
-        return this.positionId;
-    }
+  public java.lang.Integer getPositionId() {
+    return this.positionId;
+  }
 
-    public java.lang.Integer getTeamId() {
-        return this.teamId;
-    }
+  public java.lang.Integer getTeamId() {
+    return this.teamId;
+  }
 
-    public java.lang.Integer getLineupSlot() {
-        return this.lineupSlot;
-    }
+  public java.lang.Integer getLineupSlot() {
+    return this.lineupSlot;
+  }
 
-    public java.lang.Integer getLineupSlotSequence() {
-        return this.lineupSlotSequence;
-    }
+  public java.lang.Integer getLineupSlotSequence() {
+    return this.lineupSlotSequence;
+  }
 
-    public void setPersonId(java.lang.Integer personId) {
-        this.personId = personId;
-    }
+  public void setPersonId(java.lang.Integer personId) {
+    this.personId = personId;
+  }
 
-    public void setEventId(java.lang.Integer eventId) {
-        this.eventId = eventId;
-    }
+  public void setEventId(java.lang.Integer eventId) {
+    this.eventId = eventId;
+  }
 
-    public void setStatus(java.lang.String status) {
-        this.status = status;
-    }
+  public void setStatus(java.lang.String status) {
+    this.status = status;
+  }
 
-    public void setHealth(java.lang.String health) {
-        this.health = health;
-    }
+  public void setHealth(java.lang.String health) {
+    this.health = health;
+  }
 
-    public void setWeight(java.lang.String weight) {
-        this.weight = weight;
-    }
+  public void setWeight(java.lang.String weight) {
+    this.weight = weight;
+  }
 
-    public void setRoleId(java.lang.Integer roleId) {
-        this.roleId = roleId;
-    }
+  public void setRoleId(java.lang.Integer roleId) {
+    this.roleId = roleId;
+  }
 
-    public void setPositionId(java.lang.Integer positionId) {
-        this.positionId = positionId;
-    }
+  public void setPositionId(java.lang.Integer positionId) {
+    this.positionId = positionId;
+  }
 
-    public void setTeamId(java.lang.Integer teamId) {
-        this.teamId = teamId;
-    }
+  public void setTeamId(java.lang.Integer teamId) {
+    this.teamId = teamId;
+  }
 
-    public void setLineupSlot(java.lang.Integer lineupSlot) {
-        this.lineupSlot = lineupSlot;
-    }
+  public void setLineupSlot(java.lang.Integer lineupSlot) {
+    this.lineupSlot = lineupSlot;
+  }
 
-    public void setLineupSlotSequence(java.lang.Integer lineupSlotSequence) {
-        this.lineupSlotSequence = lineupSlotSequence;
-    }
+  public void setLineupSlotSequence(java.lang.Integer lineupSlotSequence) {
+    this.lineupSlotSequence = lineupSlotSequence;
+  }
 }

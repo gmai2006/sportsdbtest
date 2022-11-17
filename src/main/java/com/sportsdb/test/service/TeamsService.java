@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.Teams;
 import java.util.List;
+import com.sportsdb.test.entity.Teams;
 
 public interface TeamsService {
-    public Teams find(java.lang.Integer id);
+  public Teams find(java.lang.Integer id);
 
-    /**
-     * Select a list of Teams based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return Teams records.
-     */
-    public List<Teams> select(int maxResult);
+  /**
+   * Select a list of Teams based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return Teams records.
+   */
+  public List<Teams> select(int maxResult);
 
-    /**
-     * Select all Teams.
-     *
-     * @return all Teams records.
-     */
-    public List<Teams> selectAll();
+  /**
+   * Select all Teams.
+   *
+   * @return all Teams records.
+   */
+  public List<Teams> selectAll();
 
-    /**
-     * Create Teams.
-     *
-     * @param bean The Teams.
-     * @return The Teams.
-     */
-    public Teams create(Teams bean);
+  /**
+   * Create Teams.
+   *
+   * @param bean The Teams.
+   * @return The Teams.
+   */
+  public Teams create(Teams bean);
 
-    /**
-     * Update a Teams.
-     *
-     * @param bean - The Teams.
-     * @return Teams.
-     */
-    public Teams update(Teams bean);
+  /**
+   * Update a Teams.
+   *
+   * @param bean - The Teams.
+   * @return Teams.
+   */
+  public Teams update(Teams bean);
 }

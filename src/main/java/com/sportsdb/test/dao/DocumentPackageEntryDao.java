@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.DocumentPackageEntry;
 import java.util.List;
+import com.sportsdb.test.entity.DocumentPackageEntry;
 
 public interface DocumentPackageEntryDao {
-    /**
-     * Retrieve all records DocumentPackageEntry.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of DocumentPackageEntry
-     */
-    public List<DocumentPackageEntry> select(int maxResult);
+  /**
+   * Retrieve all records DocumentPackageEntry.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of DocumentPackageEntry
+   */
+  public List<DocumentPackageEntry> select(int maxResult);
 
-    /**
-     * Retrieve all records DocumentPackageEntry.
-     *
-     * @return A list of DocumentPackageEntry
-     */
-    public List<DocumentPackageEntry> selectAll();
+  /**
+   * Retrieve all records DocumentPackageEntry.
+   *
+   * @return A list of DocumentPackageEntry
+   */
+  public List<DocumentPackageEntry> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An DocumentPackageEntry id.
-     * @return The same DocumentPackageEntry.
-     */
-    public DocumentPackageEntry find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An DocumentPackageEntry id.
+   * @return The same DocumentPackageEntry.
+   */
+  public DocumentPackageEntry find(java.lang.Integer id);
 
-    /**
-     * Create an DocumentPackageEntry.
-     *
-     * @param e the DocumentPackageEntry.
-     * @return The same DocumentPackageEntry.
-     */
-    public DocumentPackageEntry create(DocumentPackageEntry e);
+  /**
+   * Create an DocumentPackageEntry.
+   *
+   * @param e the DocumentPackageEntry.
+   * @return The same DocumentPackageEntry.
+   */
+  public DocumentPackageEntry create(DocumentPackageEntry e);
 
-    /**
-     * Update the DocumentPackageEntry.
-     *
-     * @param e the DocumentPackageEntry.
-     * @return The same DocumentPackageEntry.
-     */
-    public DocumentPackageEntry update(DocumentPackageEntry e);
+  /**
+   * Update the DocumentPackageEntry.
+   *
+   * @param e the DocumentPackageEntry.
+   * @return The same DocumentPackageEntry.
+   */
+  public DocumentPackageEntry update(DocumentPackageEntry e);
 }

@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.TeamsMedia;
 import java.util.List;
+import com.sportsdb.test.entity.TeamsMedia;
 
 public interface TeamsMediaService {
-    public TeamsMedia find(java.lang.String id);
+  public TeamsMedia find(java.lang.String id);
 
-    /**
-     * Select a list of TeamsMedia based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return TeamsMedia records.
-     */
-    public List<TeamsMedia> select(int maxResult);
+  /**
+   * Select a list of TeamsMedia based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return TeamsMedia records.
+   */
+  public List<TeamsMedia> select(int maxResult);
 
-    /**
-     * Select all TeamsMedia.
-     *
-     * @return all TeamsMedia records.
-     */
-    public List<TeamsMedia> selectAll();
+  /**
+   * Select all TeamsMedia.
+   *
+   * @return all TeamsMedia records.
+   */
+  public List<TeamsMedia> selectAll();
 
-    /**
-     * Create TeamsMedia.
-     *
-     * @param bean The TeamsMedia.
-     * @return The TeamsMedia.
-     */
-    public TeamsMedia create(TeamsMedia bean);
+  /**
+   * Create TeamsMedia.
+   *
+   * @param bean The TeamsMedia.
+   * @return The TeamsMedia.
+   */
+  public TeamsMedia create(TeamsMedia bean);
 
-    /**
-     * Update a TeamsMedia.
-     *
-     * @param bean - The TeamsMedia.
-     * @return TeamsMedia.
-     */
-    public TeamsMedia update(TeamsMedia bean);
+  /**
+   * Update a TeamsMedia.
+   *
+   * @param bean - The TeamsMedia.
+   * @return TeamsMedia.
+   */
+  public TeamsMedia update(TeamsMedia bean);
 }

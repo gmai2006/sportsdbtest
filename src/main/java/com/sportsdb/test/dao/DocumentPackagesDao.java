@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.DocumentPackages;
 import java.util.List;
+import com.sportsdb.test.entity.DocumentPackages;
 
 public interface DocumentPackagesDao {
-    /**
-     * Retrieve all records DocumentPackages.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of DocumentPackages
-     */
-    public List<DocumentPackages> select(int maxResult);
+  /**
+   * Retrieve all records DocumentPackages.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of DocumentPackages
+   */
+  public List<DocumentPackages> select(int maxResult);
 
-    /**
-     * Retrieve all records DocumentPackages.
-     *
-     * @return A list of DocumentPackages
-     */
-    public List<DocumentPackages> selectAll();
+  /**
+   * Retrieve all records DocumentPackages.
+   *
+   * @return A list of DocumentPackages
+   */
+  public List<DocumentPackages> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An DocumentPackages id.
-     * @return The same DocumentPackages.
-     */
-    public DocumentPackages find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An DocumentPackages id.
+   * @return The same DocumentPackages.
+   */
+  public DocumentPackages find(java.lang.Integer id);
 
-    /**
-     * Create an DocumentPackages.
-     *
-     * @param e the DocumentPackages.
-     * @return The same DocumentPackages.
-     */
-    public DocumentPackages create(DocumentPackages e);
+  /**
+   * Create an DocumentPackages.
+   *
+   * @param e the DocumentPackages.
+   * @return The same DocumentPackages.
+   */
+  public DocumentPackages create(DocumentPackages e);
 
-    /**
-     * Update the DocumentPackages.
-     *
-     * @param e the DocumentPackages.
-     * @return The same DocumentPackages.
-     */
-    public DocumentPackages update(DocumentPackages e);
+  /**
+   * Update the DocumentPackages.
+   *
+   * @param e the DocumentPackages.
+   * @return The same DocumentPackages.
+   */
+  public DocumentPackages update(DocumentPackages e);
 }

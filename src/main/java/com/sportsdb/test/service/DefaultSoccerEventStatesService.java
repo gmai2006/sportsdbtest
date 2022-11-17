@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.SoccerEventStatesDao;
-import com.sportsdb.test.entity.SoccerEventStates;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.SoccerEventStatesDao;
+import com.sportsdb.test.entity.SoccerEventStates;
 
 @Stateless
 @Named("DefaultSoccerEventStatesService")
 public class DefaultSoccerEventStatesService implements SoccerEventStatesService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final SoccerEventStatesDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final SoccerEventStatesDao dao;
 
-    @Inject
-    @Named("DefaultSoccerEventStatesDao")
-    public DefaultSoccerEventStatesService(final SoccerEventStatesDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultSoccerEventStatesDao")
+  public DefaultSoccerEventStatesService(final SoccerEventStatesDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public SoccerEventStates find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public SoccerEventStates find(java.lang.Integer id) {
 
-        final SoccerEventStates result = dao.find(id);
-        logger.info("find(SoccerEventStates) - exited - return value={} result ");
-        return result;
-    }
+    final SoccerEventStates result = dao.find(id);
+    logger.info("find(SoccerEventStates) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<SoccerEventStates> select(int maxResult) {
-        final List<SoccerEventStates> result = dao.select(maxResult);
-        logger.info("select(SoccerEventStates) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<SoccerEventStates> select(int maxResult) {
+    final List<SoccerEventStates> result = dao.select(maxResult);
+    logger.info("select(SoccerEventStates) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<SoccerEventStates> selectAll() {
-        final List<SoccerEventStates> results = dao.selectAll();
-        logger.info("selectAll(SoccerEventStates) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<SoccerEventStates> selectAll() {
+    final List<SoccerEventStates> results = dao.selectAll();
+    logger.info("selectAll(SoccerEventStates) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public SoccerEventStates create(SoccerEventStates bean) {
-        requireNonNull(bean);
-        logger.info("create(SoccerEventStates={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public SoccerEventStates create(SoccerEventStates bean) {
+    requireNonNull(bean);
+    logger.info("create(SoccerEventStates={}) - entered bean ");
 
-        final SoccerEventStates result = dao.create(bean);
+    final SoccerEventStates result = dao.create(bean);
 
-        logger.info("create(SoccerEventStates) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(SoccerEventStates) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public SoccerEventStates update(SoccerEventStates bean) {
-        requireNonNull(bean);
-        logger.info("update(SoccerEventStates={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public SoccerEventStates update(SoccerEventStates bean) {
+    requireNonNull(bean);
+    logger.info("update(SoccerEventStates={}) - entered bean ");
 
-        final SoccerEventStates result = dao.update(bean);
+    final SoccerEventStates result = dao.update(bean);
 
-        logger.info("update(SoccerEventStates) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(SoccerEventStates) - exited - return value={} result ");
+    return result;
+  }
 }

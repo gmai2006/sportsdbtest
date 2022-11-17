@@ -16,67 +16,70 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.BasketballReboundingStats;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.BasketballReboundingStats;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("BasketballReboundingStatsHandler")
 public class BasketballReboundingStatsHandler
-        extends DelimiterFileHandler<BasketballReboundingStats> {
+    extends DelimiterFileHandler<BasketballReboundingStats> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public BasketballReboundingStatsHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public BasketballReboundingStatsHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected BasketballReboundingStats parseLine(List<String> headers, List<String> tokens) {
+    BasketballReboundingStats record = new BasketballReboundingStats();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "reboundsTotal":
+          record.setReboundsTotal(tokens.get(i));
+          break;
+
+        case "reboundsPerGame":
+          record.setReboundsPerGame(tokens.get(i));
+          break;
+
+        case "reboundsDefensive":
+          record.setReboundsDefensive(tokens.get(i));
+          break;
+
+        case "reboundsOffensive":
+          record.setReboundsOffensive(tokens.get(i));
+          break;
+
+        case "teamReboundsTotal":
+          record.setTeamReboundsTotal(tokens.get(i));
+          break;
+
+        case "teamReboundsPerGame":
+          record.setTeamReboundsPerGame(tokens.get(i));
+          break;
+
+        case "teamReboundsDefensive":
+          record.setTeamReboundsDefensive(tokens.get(i));
+          break;
+
+        case "teamReboundsOffensive":
+          record.setTeamReboundsOffensive(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected BasketballReboundingStats parseLine(List<String> headers, List<String> tokens) {
-        BasketballReboundingStats record = new BasketballReboundingStats();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "reboundsTotal":
-                    record.setReboundsTotal(tokens.get(i));
-                    break;
-
-                case "reboundsPerGame":
-                    record.setReboundsPerGame(tokens.get(i));
-                    break;
-
-                case "reboundsDefensive":
-                    record.setReboundsDefensive(tokens.get(i));
-                    break;
-
-                case "reboundsOffensive":
-                    record.setReboundsOffensive(tokens.get(i));
-                    break;
-
-                case "teamReboundsTotal":
-                    record.setTeamReboundsTotal(tokens.get(i));
-                    break;
-
-                case "teamReboundsPerGame":
-                    record.setTeamReboundsPerGame(tokens.get(i));
-                    break;
-
-                case "teamReboundsDefensive":
-                    record.setTeamReboundsDefensive(tokens.get(i));
-                    break;
-
-                case "teamReboundsOffensive":
-                    record.setTeamReboundsOffensive(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

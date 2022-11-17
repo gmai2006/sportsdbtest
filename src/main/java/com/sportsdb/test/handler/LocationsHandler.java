@@ -16,50 +16,53 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.Locations;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.Locations;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("LocationsHandler")
 public class LocationsHandler extends DelimiterFileHandler<Locations> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public LocationsHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public LocationsHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected Locations parseLine(List<String> headers, List<String> tokens) {
+    Locations record = new Locations();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "timezone":
+          record.setTimezone(tokens.get(i));
+          break;
+
+        case "latitude":
+          record.setLatitude(tokens.get(i));
+          break;
+
+        case "longitude":
+          record.setLongitude(tokens.get(i));
+          break;
+
+        case "countryCode":
+          record.setCountryCode(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected Locations parseLine(List<String> headers, List<String> tokens) {
-        Locations record = new Locations();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "timezone":
-                    record.setTimezone(tokens.get(i));
-                    break;
-
-                case "latitude":
-                    record.setLatitude(tokens.get(i));
-                    break;
-
-                case "longitude":
-                    record.setLongitude(tokens.get(i));
-                    break;
-
-                case "countryCode":
-                    record.setCountryCode(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

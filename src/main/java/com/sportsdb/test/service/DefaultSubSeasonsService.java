@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.SubSeasonsDao;
-import com.sportsdb.test.entity.SubSeasons;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.SubSeasonsDao;
+import com.sportsdb.test.entity.SubSeasons;
 
 @Stateless
 @Named("DefaultSubSeasonsService")
 public class DefaultSubSeasonsService implements SubSeasonsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final SubSeasonsDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final SubSeasonsDao dao;
 
-    @Inject
-    @Named("DefaultSubSeasonsDao")
-    public DefaultSubSeasonsService(final SubSeasonsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultSubSeasonsDao")
+  public DefaultSubSeasonsService(final SubSeasonsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public SubSeasons find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public SubSeasons find(java.lang.Integer id) {
 
-        final SubSeasons result = dao.find(id);
-        logger.info("find(SubSeasons) - exited - return value={} result ");
-        return result;
-    }
+    final SubSeasons result = dao.find(id);
+    logger.info("find(SubSeasons) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<SubSeasons> select(int maxResult) {
-        final List<SubSeasons> result = dao.select(maxResult);
-        logger.info("select(SubSeasons) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<SubSeasons> select(int maxResult) {
+    final List<SubSeasons> result = dao.select(maxResult);
+    logger.info("select(SubSeasons) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<SubSeasons> selectAll() {
-        final List<SubSeasons> results = dao.selectAll();
-        logger.info("selectAll(SubSeasons) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<SubSeasons> selectAll() {
+    final List<SubSeasons> results = dao.selectAll();
+    logger.info("selectAll(SubSeasons) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public SubSeasons create(SubSeasons bean) {
-        requireNonNull(bean);
-        logger.info("create(SubSeasons={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public SubSeasons create(SubSeasons bean) {
+    requireNonNull(bean);
+    logger.info("create(SubSeasons={}) - entered bean ");
 
-        final SubSeasons result = dao.create(bean);
+    final SubSeasons result = dao.create(bean);
 
-        logger.info("create(SubSeasons) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(SubSeasons) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public SubSeasons update(SubSeasons bean) {
-        requireNonNull(bean);
-        logger.info("update(SubSeasons={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public SubSeasons update(SubSeasons bean) {
+    requireNonNull(bean);
+    logger.info("update(SubSeasons={}) - entered bean ");
 
-        final SubSeasons result = dao.update(bean);
+    final SubSeasons result = dao.update(bean);
 
-        logger.info("update(SubSeasons) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(SubSeasons) - exited - return value={} result ");
+    return result;
+  }
 }

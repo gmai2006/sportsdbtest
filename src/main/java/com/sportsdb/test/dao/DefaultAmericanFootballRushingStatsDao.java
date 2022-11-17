@@ -16,61 +16,62 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.AmericanFootballRushingStats;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.AmericanFootballRushingStats;
 
 @Stateless
 @Named("DefaultAmericanFootballRushingStatsDao")
 public class DefaultAmericanFootballRushingStatsDao implements AmericanFootballRushingStatsDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultAmericanFootballRushingStatsDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultAmericanFootballRushingStatsDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultAmericanFootballRushingStatsDao() {}
+  public DefaultAmericanFootballRushingStatsDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public AmericanFootballRushingStats find(java.lang.Integer id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(AmericanFootballRushingStats.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public AmericanFootballRushingStats find(java.lang.Integer id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(AmericanFootballRushingStats.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<AmericanFootballRushingStats> select(int max) {
-        return dao.select(
-                "select a from AmericanFootballRushingStats a",
-                AmericanFootballRushingStats.class,
-                max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<AmericanFootballRushingStats> select(int max) {
+    return dao.select(
+        "select a from AmericanFootballRushingStats a", AmericanFootballRushingStats.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<AmericanFootballRushingStats> selectAll() {
-        return dao.selectAll(
-                "select a from AmericanFootballRushingStats a", AmericanFootballRushingStats.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<AmericanFootballRushingStats> selectAll() {
+    return dao.selectAll(
+        "select a from AmericanFootballRushingStats a", AmericanFootballRushingStats.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AmericanFootballRushingStats create(AmericanFootballRushingStats e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public AmericanFootballRushingStats create(AmericanFootballRushingStats e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AmericanFootballRushingStats update(AmericanFootballRushingStats e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public AmericanFootballRushingStats update(AmericanFootballRushingStats e) {
+    return dao.update(e);
+  }
 }

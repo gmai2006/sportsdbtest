@@ -16,71 +16,74 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.BaseballActionSubstitutions;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.BaseballActionSubstitutions;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("BaseballActionSubstitutionsHandler")
 public class BaseballActionSubstitutionsHandler
-        extends DelimiterFileHandler<BaseballActionSubstitutions> {
+    extends DelimiterFileHandler<BaseballActionSubstitutions> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public BaseballActionSubstitutionsHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public BaseballActionSubstitutionsHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected BaseballActionSubstitutions parseLine(List<String> headers, List<String> tokens) {
+    BaseballActionSubstitutions record = new BaseballActionSubstitutions();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "baseballEventStateId":
+          record.setBaseballEventStateId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "sequenceNumber":
+          record.setSequenceNumber(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "personType":
+          record.setPersonType(tokens.get(i));
+          break;
+
+        case "personOriginalId":
+          record.setPersonOriginalId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "personOriginalPositionId":
+          record.setPersonOriginalPositionId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "personOriginalLineupSlot":
+          record.setPersonOriginalLineupSlot(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "personReplacingId":
+          record.setPersonReplacingId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "personReplacingPositionId":
+          record.setPersonReplacingPositionId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "personReplacingLineupSlot":
+          record.setPersonReplacingLineupSlot(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "substitutionReason":
+          record.setSubstitutionReason(tokens.get(i));
+          break;
+
+        case "comment":
+          record.setComment(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected BaseballActionSubstitutions parseLine(List<String> headers, List<String> tokens) {
-        BaseballActionSubstitutions record = new BaseballActionSubstitutions();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "baseballEventStateId":
-                    record.setBaseballEventStateId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "sequenceNumber":
-                    record.setSequenceNumber(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "personType":
-                    record.setPersonType(tokens.get(i));
-                    break;
-
-                case "personOriginalId":
-                    record.setPersonOriginalId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "personOriginalPositionId":
-                    record.setPersonOriginalPositionId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "personOriginalLineupSlot":
-                    record.setPersonOriginalLineupSlot(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "personReplacingId":
-                    record.setPersonReplacingId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "personReplacingPositionId":
-                    record.setPersonReplacingPositionId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "personReplacingLineupSlot":
-                    record.setPersonReplacingLineupSlot(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "substitutionReason":
-                    record.setSubstitutionReason(tokens.get(i));
-                    break;
-
-                case "comment":
-                    record.setComment(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

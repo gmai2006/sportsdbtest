@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.Sites;
 import java.util.List;
+import com.sportsdb.test.entity.Sites;
 
 public interface SitesService {
-    public Sites find(java.lang.Integer id);
+  public Sites find(java.lang.Integer id);
 
-    /**
-     * Select a list of Sites based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return Sites records.
-     */
-    public List<Sites> select(int maxResult);
+  /**
+   * Select a list of Sites based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return Sites records.
+   */
+  public List<Sites> select(int maxResult);
 
-    /**
-     * Select all Sites.
-     *
-     * @return all Sites records.
-     */
-    public List<Sites> selectAll();
+  /**
+   * Select all Sites.
+   *
+   * @return all Sites records.
+   */
+  public List<Sites> selectAll();
 
-    /**
-     * Create Sites.
-     *
-     * @param bean The Sites.
-     * @return The Sites.
-     */
-    public Sites create(Sites bean);
+  /**
+   * Create Sites.
+   *
+   * @param bean The Sites.
+   * @return The Sites.
+   */
+  public Sites create(Sites bean);
 
-    /**
-     * Update a Sites.
-     *
-     * @param bean - The Sites.
-     * @return Sites.
-     */
-    public Sites update(Sites bean);
+  /**
+   * Update a Sites.
+   *
+   * @param bean - The Sites.
+   * @return Sites.
+   */
+  public Sites update(Sites bean);
 }

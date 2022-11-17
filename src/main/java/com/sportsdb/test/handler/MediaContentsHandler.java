@@ -16,69 +16,72 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.MediaContents;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.MediaContents;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("MediaContentsHandler")
 public class MediaContentsHandler extends DelimiterFileHandler<MediaContents> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public MediaContentsHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public MediaContentsHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected MediaContents parseLine(List<String> headers, List<String> tokens) {
+    MediaContents record = new MediaContents();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "mediaId":
+          record.setMediaId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "object":
+          record.setObject(tokens.get(i));
+          break;
+
+        case "format":
+          record.setFormat(tokens.get(i));
+          break;
+
+        case "mimeType":
+          record.setMimeType(tokens.get(i));
+          break;
+
+        case "height":
+          record.setHeight(tokens.get(i));
+          break;
+
+        case "width":
+          record.setWidth(tokens.get(i));
+          break;
+
+        case "duration":
+          record.setDuration(tokens.get(i));
+          break;
+
+        case "fileSize":
+          record.setFileSize(tokens.get(i));
+          break;
+
+        case "resolution":
+          record.setResolution(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected MediaContents parseLine(List<String> headers, List<String> tokens) {
-        MediaContents record = new MediaContents();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "mediaId":
-                    record.setMediaId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "object":
-                    record.setObject(tokens.get(i));
-                    break;
-
-                case "format":
-                    record.setFormat(tokens.get(i));
-                    break;
-
-                case "mimeType":
-                    record.setMimeType(tokens.get(i));
-                    break;
-
-                case "height":
-                    record.setHeight(tokens.get(i));
-                    break;
-
-                case "width":
-                    record.setWidth(tokens.get(i));
-                    break;
-
-                case "duration":
-                    record.setDuration(tokens.get(i));
-                    break;
-
-                case "fileSize":
-                    record.setFileSize(tokens.get(i));
-                    break;
-
-                case "resolution":
-                    record.setResolution(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

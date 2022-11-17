@@ -16,75 +16,78 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.Documents;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.Documents;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("DocumentsHandler")
 public class DocumentsHandler extends DelimiterFileHandler<Documents> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DocumentsHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public DocumentsHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected Documents parseLine(List<String> headers, List<String> tokens) {
+    Documents record = new Documents();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "docId":
+          record.setDocId(tokens.get(i));
+          break;
+
+        case "publisherId":
+          record.setPublisherId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "dateTime":
+          record.setDateTime(new java.util.Date(parseDate(tokens.get(i))));
+          break;
+
+        case "title":
+          record.setTitle(tokens.get(i));
+          break;
+
+        case "language":
+          record.setLanguage(tokens.get(i));
+          break;
+
+        case "priority":
+          record.setPriority(tokens.get(i));
+          break;
+
+        case "revisionId":
+          record.setRevisionId(tokens.get(i));
+          break;
+
+        case "statsCoverage":
+          record.setStatsCoverage(tokens.get(i));
+          break;
+
+        case "documentFixtureId":
+          record.setDocumentFixtureId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "sourceId":
+          record.setSourceId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "dbLoadingDateTime":
+          record.setDbLoadingDateTime(new java.util.Date(parseDate(tokens.get(i))));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected Documents parseLine(List<String> headers, List<String> tokens) {
-        Documents record = new Documents();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "docId":
-                    record.setDocId(tokens.get(i));
-                    break;
-
-                case "publisherId":
-                    record.setPublisherId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "dateTime":
-                    record.setDateTime(new java.util.Date(parseDate(tokens.get(i))));
-                    break;
-
-                case "title":
-                    record.setTitle(tokens.get(i));
-                    break;
-
-                case "language":
-                    record.setLanguage(tokens.get(i));
-                    break;
-
-                case "priority":
-                    record.setPriority(tokens.get(i));
-                    break;
-
-                case "revisionId":
-                    record.setRevisionId(tokens.get(i));
-                    break;
-
-                case "statsCoverage":
-                    record.setStatsCoverage(tokens.get(i));
-                    break;
-
-                case "documentFixtureId":
-                    record.setDocumentFixtureId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "sourceId":
-                    record.setSourceId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "dbLoadingDateTime":
-                    record.setDbLoadingDateTime(new java.util.Date(parseDate(tokens.get(i))));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

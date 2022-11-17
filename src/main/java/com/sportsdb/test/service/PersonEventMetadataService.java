@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.PersonEventMetadata;
 import java.util.List;
+import com.sportsdb.test.entity.PersonEventMetadata;
 
 public interface PersonEventMetadataService {
-    public PersonEventMetadata find(java.lang.Integer id);
+  public PersonEventMetadata find(java.lang.Integer id);
 
-    /**
-     * Select a list of PersonEventMetadata based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return PersonEventMetadata records.
-     */
-    public List<PersonEventMetadata> select(int maxResult);
+  /**
+   * Select a list of PersonEventMetadata based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return PersonEventMetadata records.
+   */
+  public List<PersonEventMetadata> select(int maxResult);
 
-    /**
-     * Select all PersonEventMetadata.
-     *
-     * @return all PersonEventMetadata records.
-     */
-    public List<PersonEventMetadata> selectAll();
+  /**
+   * Select all PersonEventMetadata.
+   *
+   * @return all PersonEventMetadata records.
+   */
+  public List<PersonEventMetadata> selectAll();
 
-    /**
-     * Create PersonEventMetadata.
-     *
-     * @param bean The PersonEventMetadata.
-     * @return The PersonEventMetadata.
-     */
-    public PersonEventMetadata create(PersonEventMetadata bean);
+  /**
+   * Create PersonEventMetadata.
+   *
+   * @param bean The PersonEventMetadata.
+   * @return The PersonEventMetadata.
+   */
+  public PersonEventMetadata create(PersonEventMetadata bean);
 
-    /**
-     * Update a PersonEventMetadata.
-     *
-     * @param bean - The PersonEventMetadata.
-     * @return PersonEventMetadata.
-     */
-    public PersonEventMetadata update(PersonEventMetadata bean);
+  /**
+   * Update a PersonEventMetadata.
+   *
+   * @param bean - The PersonEventMetadata.
+   * @return PersonEventMetadata.
+   */
+  public PersonEventMetadata update(PersonEventMetadata bean);
 }

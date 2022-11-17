@@ -16,44 +16,46 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.AmericanFootballSacksAgainstStats;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.AmericanFootballSacksAgainstStats;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("AmericanFootballSacksAgainstStatsHandler")
 public class AmericanFootballSacksAgainstStatsHandler
-        extends DelimiterFileHandler<AmericanFootballSacksAgainstStats> {
+    extends DelimiterFileHandler<AmericanFootballSacksAgainstStats> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public AmericanFootballSacksAgainstStatsHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public AmericanFootballSacksAgainstStatsHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected AmericanFootballSacksAgainstStats parseLine(List<String> headers, List<String> tokens) {
+    AmericanFootballSacksAgainstStats record = new AmericanFootballSacksAgainstStats();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "sacksAgainstYards":
+          record.setSacksAgainstYards(tokens.get(i));
+          break;
+
+        case "sacksAgainstTotal":
+          record.setSacksAgainstTotal(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected AmericanFootballSacksAgainstStats parseLine(
-            List<String> headers, List<String> tokens) {
-        AmericanFootballSacksAgainstStats record = new AmericanFootballSacksAgainstStats();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "sacksAgainstYards":
-                    record.setSacksAgainstYards(tokens.get(i));
-                    break;
-
-                case "sacksAgainstTotal":
-                    record.setSacksAgainstTotal(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.BaseballActionPitchesDao;
-import com.sportsdb.test.entity.BaseballActionPitches;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.BaseballActionPitchesDao;
+import com.sportsdb.test.entity.BaseballActionPitches;
 
 @Stateless
 @Named("DefaultBaseballActionPitchesService")
 public class DefaultBaseballActionPitchesService implements BaseballActionPitchesService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final BaseballActionPitchesDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final BaseballActionPitchesDao dao;
 
-    @Inject
-    @Named("DefaultBaseballActionPitchesDao")
-    public DefaultBaseballActionPitchesService(final BaseballActionPitchesDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultBaseballActionPitchesDao")
+  public DefaultBaseballActionPitchesService(final BaseballActionPitchesDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BaseballActionPitches find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public BaseballActionPitches find(java.lang.Integer id) {
 
-        final BaseballActionPitches result = dao.find(id);
-        logger.info("find(BaseballActionPitches) - exited - return value={} result ");
-        return result;
-    }
+    final BaseballActionPitches result = dao.find(id);
+    logger.info("find(BaseballActionPitches) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<BaseballActionPitches> select(int maxResult) {
-        final List<BaseballActionPitches> result = dao.select(maxResult);
-        logger.info("select(BaseballActionPitches) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<BaseballActionPitches> select(int maxResult) {
+    final List<BaseballActionPitches> result = dao.select(maxResult);
+    logger.info("select(BaseballActionPitches) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<BaseballActionPitches> selectAll() {
-        final List<BaseballActionPitches> results = dao.selectAll();
-        logger.info("selectAll(BaseballActionPitches) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<BaseballActionPitches> selectAll() {
+    final List<BaseballActionPitches> results = dao.selectAll();
+    logger.info("selectAll(BaseballActionPitches) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BaseballActionPitches create(BaseballActionPitches bean) {
-        requireNonNull(bean);
-        logger.info("create(BaseballActionPitches={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public BaseballActionPitches create(BaseballActionPitches bean) {
+    requireNonNull(bean);
+    logger.info("create(BaseballActionPitches={}) - entered bean ");
 
-        final BaseballActionPitches result = dao.create(bean);
+    final BaseballActionPitches result = dao.create(bean);
 
-        logger.info("create(BaseballActionPitches) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(BaseballActionPitches) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BaseballActionPitches update(BaseballActionPitches bean) {
-        requireNonNull(bean);
-        logger.info("update(BaseballActionPitches={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public BaseballActionPitches update(BaseballActionPitches bean) {
+    requireNonNull(bean);
+    logger.info("update(BaseballActionPitches={}) - entered bean ");
 
-        final BaseballActionPitches result = dao.update(bean);
+    final BaseballActionPitches result = dao.update(bean);
 
-        logger.info("update(BaseballActionPitches) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(BaseballActionPitches) - exited - return value={} result ");
+    return result;
+  }
 }

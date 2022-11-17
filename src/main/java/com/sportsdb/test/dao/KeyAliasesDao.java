@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.KeyAliases;
 import java.util.List;
+import com.sportsdb.test.entity.KeyAliases;
 
 public interface KeyAliasesDao {
-    /**
-     * Retrieve all records KeyAliases.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of KeyAliases
-     */
-    public List<KeyAliases> select(int maxResult);
+  /**
+   * Retrieve all records KeyAliases.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of KeyAliases
+   */
+  public List<KeyAliases> select(int maxResult);
 
-    /**
-     * Retrieve all records KeyAliases.
-     *
-     * @return A list of KeyAliases
-     */
-    public List<KeyAliases> selectAll();
+  /**
+   * Retrieve all records KeyAliases.
+   *
+   * @return A list of KeyAliases
+   */
+  public List<KeyAliases> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An KeyAliases id.
-     * @return The same KeyAliases.
-     */
-    public KeyAliases find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An KeyAliases id.
+   * @return The same KeyAliases.
+   */
+  public KeyAliases find(java.lang.Integer id);
 
-    /**
-     * Create an KeyAliases.
-     *
-     * @param e the KeyAliases.
-     * @return The same KeyAliases.
-     */
-    public KeyAliases create(KeyAliases e);
+  /**
+   * Create an KeyAliases.
+   *
+   * @param e the KeyAliases.
+   * @return The same KeyAliases.
+   */
+  public KeyAliases create(KeyAliases e);
 
-    /**
-     * Update the KeyAliases.
-     *
-     * @param e the KeyAliases.
-     * @return The same KeyAliases.
-     */
-    public KeyAliases update(KeyAliases e);
+  /**
+   * Update the KeyAliases.
+   *
+   * @param e the KeyAliases.
+   * @return The same KeyAliases.
+   */
+  public KeyAliases update(KeyAliases e);
 }

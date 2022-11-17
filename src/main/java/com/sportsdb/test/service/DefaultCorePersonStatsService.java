@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.CorePersonStatsDao;
-import com.sportsdb.test.entity.CorePersonStats;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.CorePersonStatsDao;
+import com.sportsdb.test.entity.CorePersonStats;
 
 @Stateless
 @Named("DefaultCorePersonStatsService")
 public class DefaultCorePersonStatsService implements CorePersonStatsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final CorePersonStatsDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final CorePersonStatsDao dao;
 
-    @Inject
-    @Named("DefaultCorePersonStatsDao")
-    public DefaultCorePersonStatsService(final CorePersonStatsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultCorePersonStatsDao")
+  public DefaultCorePersonStatsService(final CorePersonStatsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public CorePersonStats find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public CorePersonStats find(java.lang.Integer id) {
 
-        final CorePersonStats result = dao.find(id);
-        logger.info("find(CorePersonStats) - exited - return value={} result ");
-        return result;
-    }
+    final CorePersonStats result = dao.find(id);
+    logger.info("find(CorePersonStats) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<CorePersonStats> select(int maxResult) {
-        final List<CorePersonStats> result = dao.select(maxResult);
-        logger.info("select(CorePersonStats) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<CorePersonStats> select(int maxResult) {
+    final List<CorePersonStats> result = dao.select(maxResult);
+    logger.info("select(CorePersonStats) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<CorePersonStats> selectAll() {
-        final List<CorePersonStats> results = dao.selectAll();
-        logger.info("selectAll(CorePersonStats) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<CorePersonStats> selectAll() {
+    final List<CorePersonStats> results = dao.selectAll();
+    logger.info("selectAll(CorePersonStats) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public CorePersonStats create(CorePersonStats bean) {
-        requireNonNull(bean);
-        logger.info("create(CorePersonStats={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public CorePersonStats create(CorePersonStats bean) {
+    requireNonNull(bean);
+    logger.info("create(CorePersonStats={}) - entered bean ");
 
-        final CorePersonStats result = dao.create(bean);
+    final CorePersonStats result = dao.create(bean);
 
-        logger.info("create(CorePersonStats) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(CorePersonStats) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public CorePersonStats update(CorePersonStats bean) {
-        requireNonNull(bean);
-        logger.info("update(CorePersonStats={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public CorePersonStats update(CorePersonStats bean) {
+    requireNonNull(bean);
+    logger.info("update(CorePersonStats={}) - entered bean ");
 
-        final CorePersonStats result = dao.update(bean);
+    final CorePersonStats result = dao.update(bean);
 
-        logger.info("update(CorePersonStats) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(CorePersonStats) - exited - return value={} result ");
+    return result;
+  }
 }

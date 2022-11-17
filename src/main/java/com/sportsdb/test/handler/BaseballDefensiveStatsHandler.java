@@ -16,63 +16,65 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.BaseballDefensiveStats;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.BaseballDefensiveStats;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("BaseballDefensiveStatsHandler")
 public class BaseballDefensiveStatsHandler extends DelimiterFileHandler<BaseballDefensiveStats> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public BaseballDefensiveStatsHandler(final JpaDao dao) {
-        super(dao);
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public BaseballDefensiveStatsHandler(final JpaDao dao) {
+    super(dao);
+  }
 
-    @Override
-    protected BaseballDefensiveStats parseLine(List<String> headers, List<String> tokens) {
-        BaseballDefensiveStats record = new BaseballDefensiveStats();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "doublePlays":
-                    record.setDoublePlays(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "triplePlays":
-                    record.setTriplePlays(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "putouts":
-                    record.setPutouts(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "assists":
-                    record.setAssists(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "errors":
-                    record.setErrors(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "fieldingPercentage":
-                    record.setFieldingPercentage(java.lang.Float.valueOf((tokens.get(i))));
-                    break;
-                case "defensiveAverage":
-                    record.setDefensiveAverage(java.lang.Float.valueOf((tokens.get(i))));
-                    break;
-                case "errorsPassedBall":
-                    record.setErrorsPassedBall(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "errorsCatchersInterference":
-                    record.setErrorsCatchersInterference(
-                            java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
+  @Override
+  protected BaseballDefensiveStats parseLine(List<String> headers, List<String> tokens) {
+    BaseballDefensiveStats record = new BaseballDefensiveStats();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "doublePlays":
+          record.setDoublePlays(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "triplePlays":
+          record.setTriplePlays(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "putouts":
+          record.setPutouts(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "assists":
+          record.setAssists(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "errors":
+          record.setErrors(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "fieldingPercentage":
+          record.setFieldingPercentage(java.lang.Float.valueOf((tokens.get(i))));
+          break;
+        case "defensiveAverage":
+          record.setDefensiveAverage(java.lang.Float.valueOf((tokens.get(i))));
+          break;
+        case "errorsPassedBall":
+          record.setErrorsPassedBall(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "errorsCatchersInterference":
+          record.setErrorsCatchersInterference(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
 
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
+    return record;
+  }
 }

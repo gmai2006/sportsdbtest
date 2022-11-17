@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.PersonPhases;
 import java.util.List;
+import com.sportsdb.test.entity.PersonPhases;
 
 public interface PersonPhasesDao {
-    /**
-     * Retrieve all records PersonPhases.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of PersonPhases
-     */
-    public List<PersonPhases> select(int maxResult);
+  /**
+   * Retrieve all records PersonPhases.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of PersonPhases
+   */
+  public List<PersonPhases> select(int maxResult);
 
-    /**
-     * Retrieve all records PersonPhases.
-     *
-     * @return A list of PersonPhases
-     */
-    public List<PersonPhases> selectAll();
+  /**
+   * Retrieve all records PersonPhases.
+   *
+   * @return A list of PersonPhases
+   */
+  public List<PersonPhases> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An PersonPhases id.
-     * @return The same PersonPhases.
-     */
-    public PersonPhases find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An PersonPhases id.
+   * @return The same PersonPhases.
+   */
+  public PersonPhases find(java.lang.Integer id);
 
-    /**
-     * Create an PersonPhases.
-     *
-     * @param e the PersonPhases.
-     * @return The same PersonPhases.
-     */
-    public PersonPhases create(PersonPhases e);
+  /**
+   * Create an PersonPhases.
+   *
+   * @param e the PersonPhases.
+   * @return The same PersonPhases.
+   */
+  public PersonPhases create(PersonPhases e);
 
-    /**
-     * Update the PersonPhases.
-     *
-     * @param e the PersonPhases.
-     * @return The same PersonPhases.
-     */
-    public PersonPhases update(PersonPhases e);
+  /**
+   * Update the PersonPhases.
+   *
+   * @param e the PersonPhases.
+   * @return The same PersonPhases.
+   */
+  public PersonPhases update(PersonPhases e);
 }

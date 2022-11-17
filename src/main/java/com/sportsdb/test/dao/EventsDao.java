@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.Events;
 import java.util.List;
+import com.sportsdb.test.entity.Events;
 
 public interface EventsDao {
-    /**
-     * Retrieve all records Events.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of Events
-     */
-    public List<Events> select(int maxResult);
+  /**
+   * Retrieve all records Events.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of Events
+   */
+  public List<Events> select(int maxResult);
 
-    /**
-     * Retrieve all records Events.
-     *
-     * @return A list of Events
-     */
-    public List<Events> selectAll();
+  /**
+   * Retrieve all records Events.
+   *
+   * @return A list of Events
+   */
+  public List<Events> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An Events id.
-     * @return The same Events.
-     */
-    public Events find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An Events id.
+   * @return The same Events.
+   */
+  public Events find(java.lang.Integer id);
 
-    /**
-     * Create an Events.
-     *
-     * @param e the Events.
-     * @return The same Events.
-     */
-    public Events create(Events e);
+  /**
+   * Create an Events.
+   *
+   * @param e the Events.
+   * @return The same Events.
+   */
+  public Events create(Events e);
 
-    /**
-     * Update the Events.
-     *
-     * @param e the Events.
-     * @return The same Events.
-     */
-    public Events update(Events e);
+  /**
+   * Update the Events.
+   *
+   * @param e the Events.
+   * @return The same Events.
+   */
+  public Events update(Events e);
 }

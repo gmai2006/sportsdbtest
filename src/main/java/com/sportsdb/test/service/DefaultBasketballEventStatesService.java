@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.BasketballEventStatesDao;
-import com.sportsdb.test.entity.BasketballEventStates;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.BasketballEventStatesDao;
+import com.sportsdb.test.entity.BasketballEventStates;
 
 @Stateless
 @Named("DefaultBasketballEventStatesService")
 public class DefaultBasketballEventStatesService implements BasketballEventStatesService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final BasketballEventStatesDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final BasketballEventStatesDao dao;
 
-    @Inject
-    @Named("DefaultBasketballEventStatesDao")
-    public DefaultBasketballEventStatesService(final BasketballEventStatesDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultBasketballEventStatesDao")
+  public DefaultBasketballEventStatesService(final BasketballEventStatesDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BasketballEventStates find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public BasketballEventStates find(java.lang.Integer id) {
 
-        final BasketballEventStates result = dao.find(id);
-        logger.info("find(BasketballEventStates) - exited - return value={} result ");
-        return result;
-    }
+    final BasketballEventStates result = dao.find(id);
+    logger.info("find(BasketballEventStates) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<BasketballEventStates> select(int maxResult) {
-        final List<BasketballEventStates> result = dao.select(maxResult);
-        logger.info("select(BasketballEventStates) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<BasketballEventStates> select(int maxResult) {
+    final List<BasketballEventStates> result = dao.select(maxResult);
+    logger.info("select(BasketballEventStates) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<BasketballEventStates> selectAll() {
-        final List<BasketballEventStates> results = dao.selectAll();
-        logger.info("selectAll(BasketballEventStates) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<BasketballEventStates> selectAll() {
+    final List<BasketballEventStates> results = dao.selectAll();
+    logger.info("selectAll(BasketballEventStates) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BasketballEventStates create(BasketballEventStates bean) {
-        requireNonNull(bean);
-        logger.info("create(BasketballEventStates={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public BasketballEventStates create(BasketballEventStates bean) {
+    requireNonNull(bean);
+    logger.info("create(BasketballEventStates={}) - entered bean ");
 
-        final BasketballEventStates result = dao.create(bean);
+    final BasketballEventStates result = dao.create(bean);
 
-        logger.info("create(BasketballEventStates) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(BasketballEventStates) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BasketballEventStates update(BasketballEventStates bean) {
-        requireNonNull(bean);
-        logger.info("update(BasketballEventStates={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public BasketballEventStates update(BasketballEventStates bean) {
+    requireNonNull(bean);
+    logger.info("update(BasketballEventStates={}) - entered bean ");
 
-        final BasketballEventStates result = dao.update(bean);
+    final BasketballEventStates result = dao.update(bean);
 
-        logger.info("update(BasketballEventStates) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(BasketballEventStates) - exited - return value={} result ");
+    return result;
+  }
 }

@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.BaseballActionPlays;
 import java.util.List;
+import com.sportsdb.test.entity.BaseballActionPlays;
 
 public interface BaseballActionPlaysService {
-    public BaseballActionPlays find(java.lang.Integer id);
+  public BaseballActionPlays find(java.lang.Integer id);
 
-    /**
-     * Select a list of BaseballActionPlays based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return BaseballActionPlays records.
-     */
-    public List<BaseballActionPlays> select(int maxResult);
+  /**
+   * Select a list of BaseballActionPlays based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return BaseballActionPlays records.
+   */
+  public List<BaseballActionPlays> select(int maxResult);
 
-    /**
-     * Select all BaseballActionPlays.
-     *
-     * @return all BaseballActionPlays records.
-     */
-    public List<BaseballActionPlays> selectAll();
+  /**
+   * Select all BaseballActionPlays.
+   *
+   * @return all BaseballActionPlays records.
+   */
+  public List<BaseballActionPlays> selectAll();
 
-    /**
-     * Create BaseballActionPlays.
-     *
-     * @param bean The BaseballActionPlays.
-     * @return The BaseballActionPlays.
-     */
-    public BaseballActionPlays create(BaseballActionPlays bean);
+  /**
+   * Create BaseballActionPlays.
+   *
+   * @param bean The BaseballActionPlays.
+   * @return The BaseballActionPlays.
+   */
+  public BaseballActionPlays create(BaseballActionPlays bean);
 
-    /**
-     * Update a BaseballActionPlays.
-     *
-     * @param bean - The BaseballActionPlays.
-     * @return BaseballActionPlays.
-     */
-    public BaseballActionPlays update(BaseballActionPlays bean);
+  /**
+   * Update a BaseballActionPlays.
+   *
+   * @param bean - The BaseballActionPlays.
+   * @return BaseballActionPlays.
+   */
+  public BaseballActionPlays update(BaseballActionPlays bean);
 }

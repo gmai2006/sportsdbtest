@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.CoreStats;
 import java.util.List;
+import com.sportsdb.test.entity.CoreStats;
 
 public interface CoreStatsDao {
-    /**
-     * Retrieve all records CoreStats.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of CoreStats
-     */
-    public List<CoreStats> select(int maxResult);
+  /**
+   * Retrieve all records CoreStats.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of CoreStats
+   */
+  public List<CoreStats> select(int maxResult);
 
-    /**
-     * Retrieve all records CoreStats.
-     *
-     * @return A list of CoreStats
-     */
-    public List<CoreStats> selectAll();
+  /**
+   * Retrieve all records CoreStats.
+   *
+   * @return A list of CoreStats
+   */
+  public List<CoreStats> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An CoreStats id.
-     * @return The same CoreStats.
-     */
-    public CoreStats find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An CoreStats id.
+   * @return The same CoreStats.
+   */
+  public CoreStats find(java.lang.Integer id);
 
-    /**
-     * Create an CoreStats.
-     *
-     * @param e the CoreStats.
-     * @return The same CoreStats.
-     */
-    public CoreStats create(CoreStats e);
+  /**
+   * Create an CoreStats.
+   *
+   * @param e the CoreStats.
+   * @return The same CoreStats.
+   */
+  public CoreStats create(CoreStats e);
 
-    /**
-     * Update the CoreStats.
-     *
-     * @param e the CoreStats.
-     * @return The same CoreStats.
-     */
-    public CoreStats update(CoreStats e);
+  /**
+   * Update the CoreStats.
+   *
+   * @param e the CoreStats.
+   * @return The same CoreStats.
+   */
+  public CoreStats update(CoreStats e);
 }

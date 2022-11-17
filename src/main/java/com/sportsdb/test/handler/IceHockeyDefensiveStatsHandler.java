@@ -16,106 +16,109 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.IceHockeyDefensiveStats;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.IceHockeyDefensiveStats;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("IceHockeyDefensiveStatsHandler")
 public class IceHockeyDefensiveStatsHandler extends DelimiterFileHandler<IceHockeyDefensiveStats> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public IceHockeyDefensiveStatsHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public IceHockeyDefensiveStatsHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected IceHockeyDefensiveStats parseLine(List<String> headers, List<String> tokens) {
+    IceHockeyDefensiveStats record = new IceHockeyDefensiveStats();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "shotsPowerPlayAllowed":
+          record.setShotsPowerPlayAllowed(tokens.get(i));
+          break;
+
+        case "shotsPenaltyShotAllowed":
+          record.setShotsPenaltyShotAllowed(tokens.get(i));
+          break;
+
+        case "goalsPowerPlayAllowed":
+          record.setGoalsPowerPlayAllowed(tokens.get(i));
+          break;
+
+        case "goalsPenaltyShotAllowed":
+          record.setGoalsPenaltyShotAllowed(tokens.get(i));
+          break;
+
+        case "goalsAgainstAverage":
+          record.setGoalsAgainstAverage(tokens.get(i));
+          break;
+
+        case "saves":
+          record.setSaves(tokens.get(i));
+          break;
+
+        case "savePercentage":
+          record.setSavePercentage(tokens.get(i));
+          break;
+
+        case "penaltyKillingAmount":
+          record.setPenaltyKillingAmount(tokens.get(i));
+          break;
+
+        case "penaltyKillingPercentage":
+          record.setPenaltyKillingPercentage(tokens.get(i));
+          break;
+
+        case "shotsBlocked":
+          record.setShotsBlocked(tokens.get(i));
+          break;
+
+        case "takeaways":
+          record.setTakeaways(tokens.get(i));
+          break;
+
+        case "shutouts":
+          record.setShutouts(tokens.get(i));
+          break;
+
+        case "minutesPenaltyKilling":
+          record.setMinutesPenaltyKilling(tokens.get(i));
+          break;
+
+        case "hits":
+          record.setHits(tokens.get(i));
+          break;
+
+        case "goalsEmptyNetAllowed":
+          record.setGoalsEmptyNetAllowed(tokens.get(i));
+          break;
+
+        case "goalsShortHandedAllowed":
+          record.setGoalsShortHandedAllowed(tokens.get(i));
+          break;
+
+        case "goalsShootoutAllowed":
+          record.setGoalsShootoutAllowed(tokens.get(i));
+          break;
+
+        case "shotsShootoutAllowed":
+          record.setShotsShootoutAllowed(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected IceHockeyDefensiveStats parseLine(List<String> headers, List<String> tokens) {
-        IceHockeyDefensiveStats record = new IceHockeyDefensiveStats();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "shotsPowerPlayAllowed":
-                    record.setShotsPowerPlayAllowed(tokens.get(i));
-                    break;
-
-                case "shotsPenaltyShotAllowed":
-                    record.setShotsPenaltyShotAllowed(tokens.get(i));
-                    break;
-
-                case "goalsPowerPlayAllowed":
-                    record.setGoalsPowerPlayAllowed(tokens.get(i));
-                    break;
-
-                case "goalsPenaltyShotAllowed":
-                    record.setGoalsPenaltyShotAllowed(tokens.get(i));
-                    break;
-
-                case "goalsAgainstAverage":
-                    record.setGoalsAgainstAverage(tokens.get(i));
-                    break;
-
-                case "saves":
-                    record.setSaves(tokens.get(i));
-                    break;
-
-                case "savePercentage":
-                    record.setSavePercentage(tokens.get(i));
-                    break;
-
-                case "penaltyKillingAmount":
-                    record.setPenaltyKillingAmount(tokens.get(i));
-                    break;
-
-                case "penaltyKillingPercentage":
-                    record.setPenaltyKillingPercentage(tokens.get(i));
-                    break;
-
-                case "shotsBlocked":
-                    record.setShotsBlocked(tokens.get(i));
-                    break;
-
-                case "takeaways":
-                    record.setTakeaways(tokens.get(i));
-                    break;
-
-                case "shutouts":
-                    record.setShutouts(tokens.get(i));
-                    break;
-
-                case "minutesPenaltyKilling":
-                    record.setMinutesPenaltyKilling(tokens.get(i));
-                    break;
-
-                case "hits":
-                    record.setHits(tokens.get(i));
-                    break;
-
-                case "goalsEmptyNetAllowed":
-                    record.setGoalsEmptyNetAllowed(tokens.get(i));
-                    break;
-
-                case "goalsShortHandedAllowed":
-                    record.setGoalsShortHandedAllowed(tokens.get(i));
-                    break;
-
-                case "goalsShootoutAllowed":
-                    record.setGoalsShootoutAllowed(tokens.get(i));
-                    break;
-
-                case "shotsShootoutAllowed":
-                    record.setShotsShootoutAllowed(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

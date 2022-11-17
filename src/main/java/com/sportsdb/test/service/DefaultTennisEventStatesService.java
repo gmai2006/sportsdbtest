@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.TennisEventStatesDao;
-import com.sportsdb.test.entity.TennisEventStates;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.TennisEventStatesDao;
+import com.sportsdb.test.entity.TennisEventStates;
 
 @Stateless
 @Named("DefaultTennisEventStatesService")
 public class DefaultTennisEventStatesService implements TennisEventStatesService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final TennisEventStatesDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final TennisEventStatesDao dao;
 
-    @Inject
-    @Named("DefaultTennisEventStatesDao")
-    public DefaultTennisEventStatesService(final TennisEventStatesDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultTennisEventStatesDao")
+  public DefaultTennisEventStatesService(final TennisEventStatesDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public TennisEventStates find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public TennisEventStates find(java.lang.Integer id) {
 
-        final TennisEventStates result = dao.find(id);
-        logger.info("find(TennisEventStates) - exited - return value={} result ");
-        return result;
-    }
+    final TennisEventStates result = dao.find(id);
+    logger.info("find(TennisEventStates) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<TennisEventStates> select(int maxResult) {
-        final List<TennisEventStates> result = dao.select(maxResult);
-        logger.info("select(TennisEventStates) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<TennisEventStates> select(int maxResult) {
+    final List<TennisEventStates> result = dao.select(maxResult);
+    logger.info("select(TennisEventStates) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<TennisEventStates> selectAll() {
-        final List<TennisEventStates> results = dao.selectAll();
-        logger.info("selectAll(TennisEventStates) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<TennisEventStates> selectAll() {
+    final List<TennisEventStates> results = dao.selectAll();
+    logger.info("selectAll(TennisEventStates) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public TennisEventStates create(TennisEventStates bean) {
-        requireNonNull(bean);
-        logger.info("create(TennisEventStates={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public TennisEventStates create(TennisEventStates bean) {
+    requireNonNull(bean);
+    logger.info("create(TennisEventStates={}) - entered bean ");
 
-        final TennisEventStates result = dao.create(bean);
+    final TennisEventStates result = dao.create(bean);
 
-        logger.info("create(TennisEventStates) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(TennisEventStates) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public TennisEventStates update(TennisEventStates bean) {
-        requireNonNull(bean);
-        logger.info("update(TennisEventStates={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public TennisEventStates update(TennisEventStates bean) {
+    requireNonNull(bean);
+    logger.info("update(TennisEventStates={}) - entered bean ");
 
-        final TennisEventStates result = dao.update(bean);
+    final TennisEventStates result = dao.update(bean);
 
-        logger.info("update(TennisEventStates) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(TennisEventStates) - exited - return value={} result ");
+    return result;
+  }
 }

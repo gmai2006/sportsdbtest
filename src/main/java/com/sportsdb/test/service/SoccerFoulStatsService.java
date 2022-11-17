@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.SoccerFoulStats;
 import java.util.List;
+import com.sportsdb.test.entity.SoccerFoulStats;
 
 public interface SoccerFoulStatsService {
-    public SoccerFoulStats find(java.lang.Integer id);
+  public SoccerFoulStats find(java.lang.Integer id);
 
-    /**
-     * Select a list of SoccerFoulStats based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return SoccerFoulStats records.
-     */
-    public List<SoccerFoulStats> select(int maxResult);
+  /**
+   * Select a list of SoccerFoulStats based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return SoccerFoulStats records.
+   */
+  public List<SoccerFoulStats> select(int maxResult);
 
-    /**
-     * Select all SoccerFoulStats.
-     *
-     * @return all SoccerFoulStats records.
-     */
-    public List<SoccerFoulStats> selectAll();
+  /**
+   * Select all SoccerFoulStats.
+   *
+   * @return all SoccerFoulStats records.
+   */
+  public List<SoccerFoulStats> selectAll();
 
-    /**
-     * Create SoccerFoulStats.
-     *
-     * @param bean The SoccerFoulStats.
-     * @return The SoccerFoulStats.
-     */
-    public SoccerFoulStats create(SoccerFoulStats bean);
+  /**
+   * Create SoccerFoulStats.
+   *
+   * @param bean The SoccerFoulStats.
+   * @return The SoccerFoulStats.
+   */
+  public SoccerFoulStats create(SoccerFoulStats bean);
 
-    /**
-     * Update a SoccerFoulStats.
-     *
-     * @param bean - The SoccerFoulStats.
-     * @return SoccerFoulStats.
-     */
-    public SoccerFoulStats update(SoccerFoulStats bean);
+  /**
+   * Update a SoccerFoulStats.
+   *
+   * @param bean - The SoccerFoulStats.
+   * @return SoccerFoulStats.
+   */
+  public SoccerFoulStats update(SoccerFoulStats bean);
 }

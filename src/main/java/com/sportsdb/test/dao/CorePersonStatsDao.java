@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.CorePersonStats;
 import java.util.List;
+import com.sportsdb.test.entity.CorePersonStats;
 
 public interface CorePersonStatsDao {
-    /**
-     * Retrieve all records CorePersonStats.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of CorePersonStats
-     */
-    public List<CorePersonStats> select(int maxResult);
+  /**
+   * Retrieve all records CorePersonStats.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of CorePersonStats
+   */
+  public List<CorePersonStats> select(int maxResult);
 
-    /**
-     * Retrieve all records CorePersonStats.
-     *
-     * @return A list of CorePersonStats
-     */
-    public List<CorePersonStats> selectAll();
+  /**
+   * Retrieve all records CorePersonStats.
+   *
+   * @return A list of CorePersonStats
+   */
+  public List<CorePersonStats> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An CorePersonStats id.
-     * @return The same CorePersonStats.
-     */
-    public CorePersonStats find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An CorePersonStats id.
+   * @return The same CorePersonStats.
+   */
+  public CorePersonStats find(java.lang.Integer id);
 
-    /**
-     * Create an CorePersonStats.
-     *
-     * @param e the CorePersonStats.
-     * @return The same CorePersonStats.
-     */
-    public CorePersonStats create(CorePersonStats e);
+  /**
+   * Create an CorePersonStats.
+   *
+   * @param e the CorePersonStats.
+   * @return The same CorePersonStats.
+   */
+  public CorePersonStats create(CorePersonStats e);
 
-    /**
-     * Update the CorePersonStats.
-     *
-     * @param e the CorePersonStats.
-     * @return The same CorePersonStats.
-     */
-    public CorePersonStats update(CorePersonStats e);
+  /**
+   * Update the CorePersonStats.
+   *
+   * @param e the CorePersonStats.
+   * @return The same CorePersonStats.
+   */
+  public CorePersonStats update(CorePersonStats e);
 }

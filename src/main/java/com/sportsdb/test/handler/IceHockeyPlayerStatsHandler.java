@@ -16,38 +16,41 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.IceHockeyPlayerStats;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.IceHockeyPlayerStats;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("IceHockeyPlayerStatsHandler")
 public class IceHockeyPlayerStatsHandler extends DelimiterFileHandler<IceHockeyPlayerStats> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public IceHockeyPlayerStatsHandler(final JpaDao dao) {
-        super(dao);
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public IceHockeyPlayerStatsHandler(final JpaDao dao) {
+    super(dao);
+  }
 
-    @Override
-    protected IceHockeyPlayerStats parseLine(List<String> headers, List<String> tokens) {
-        IceHockeyPlayerStats record = new IceHockeyPlayerStats();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "plusMinus":
-                    record.setPlusMinus(tokens.get(i));
-                    break;
+  @Override
+  protected IceHockeyPlayerStats parseLine(List<String> headers, List<String> tokens) {
+    IceHockeyPlayerStats record = new IceHockeyPlayerStats();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "plusMinus":
+          record.setPlusMinus(tokens.get(i));
+          break;
 
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
+    return record;
+  }
 }

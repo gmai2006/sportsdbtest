@@ -17,75 +17,73 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.AmericanFootballDefensiveStatsDao;
-import com.sportsdb.test.entity.AmericanFootballDefensiveStats;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.AmericanFootballDefensiveStatsDao;
+import com.sportsdb.test.entity.AmericanFootballDefensiveStats;
 
 @Stateless
 @Named("DefaultAmericanFootballDefensiveStatsService")
 public class DefaultAmericanFootballDefensiveStatsService
-        implements AmericanFootballDefensiveStatsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final AmericanFootballDefensiveStatsDao dao;
+    implements AmericanFootballDefensiveStatsService {
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final AmericanFootballDefensiveStatsDao dao;
 
-    @Inject
-    @Named("DefaultAmericanFootballDefensiveStatsDao")
-    public DefaultAmericanFootballDefensiveStatsService(
-            final AmericanFootballDefensiveStatsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultAmericanFootballDefensiveStatsDao")
+  public DefaultAmericanFootballDefensiveStatsService(final AmericanFootballDefensiveStatsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AmericanFootballDefensiveStats find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public AmericanFootballDefensiveStats find(java.lang.Integer id) {
 
-        final AmericanFootballDefensiveStats result = dao.find(id);
-        logger.info("find(AmericanFootballDefensiveStats) - exited - return value={} result ");
-        return result;
-    }
+    final AmericanFootballDefensiveStats result = dao.find(id);
+    logger.info("find(AmericanFootballDefensiveStats) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<AmericanFootballDefensiveStats> select(int maxResult) {
-        final List<AmericanFootballDefensiveStats> result = dao.select(maxResult);
-        logger.info("select(AmericanFootballDefensiveStats) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<AmericanFootballDefensiveStats> select(int maxResult) {
+    final List<AmericanFootballDefensiveStats> result = dao.select(maxResult);
+    logger.info("select(AmericanFootballDefensiveStats) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<AmericanFootballDefensiveStats> selectAll() {
-        final List<AmericanFootballDefensiveStats> results = dao.selectAll();
-        logger.info("selectAll(AmericanFootballDefensiveStats) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<AmericanFootballDefensiveStats> selectAll() {
+    final List<AmericanFootballDefensiveStats> results = dao.selectAll();
+    logger.info("selectAll(AmericanFootballDefensiveStats) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AmericanFootballDefensiveStats create(AmericanFootballDefensiveStats bean) {
-        requireNonNull(bean);
-        logger.info("create(AmericanFootballDefensiveStats={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public AmericanFootballDefensiveStats create(AmericanFootballDefensiveStats bean) {
+    requireNonNull(bean);
+    logger.info("create(AmericanFootballDefensiveStats={}) - entered bean ");
 
-        final AmericanFootballDefensiveStats result = dao.create(bean);
+    final AmericanFootballDefensiveStats result = dao.create(bean);
 
-        logger.info("create(AmericanFootballDefensiveStats) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(AmericanFootballDefensiveStats) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AmericanFootballDefensiveStats update(AmericanFootballDefensiveStats bean) {
-        requireNonNull(bean);
-        logger.info("update(AmericanFootballDefensiveStats={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public AmericanFootballDefensiveStats update(AmericanFootballDefensiveStats bean) {
+    requireNonNull(bean);
+    logger.info("update(AmericanFootballDefensiveStats={}) - entered bean ");
 
-        final AmericanFootballDefensiveStats result = dao.update(bean);
+    final AmericanFootballDefensiveStats result = dao.update(bean);
 
-        logger.info("update(AmericanFootballDefensiveStats) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(AmericanFootballDefensiveStats) - exited - return value={} result ");
+    return result;
+  }
 }

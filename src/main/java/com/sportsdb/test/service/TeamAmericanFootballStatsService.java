@@ -16,41 +16,41 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.TeamAmericanFootballStats;
 import java.util.List;
+import com.sportsdb.test.entity.TeamAmericanFootballStats;
 
 public interface TeamAmericanFootballStatsService {
-    public TeamAmericanFootballStats find(java.lang.Integer id);
+  public TeamAmericanFootballStats find(java.lang.Integer id);
 
-    /**
-     * Select a list of TeamAmericanFootballStats based on a given maximum number of returning
-     * records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return TeamAmericanFootballStats records.
-     */
-    public List<TeamAmericanFootballStats> select(int maxResult);
+  /**
+   * Select a list of TeamAmericanFootballStats based on a given maximum number of returning
+   * records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return TeamAmericanFootballStats records.
+   */
+  public List<TeamAmericanFootballStats> select(int maxResult);
 
-    /**
-     * Select all TeamAmericanFootballStats.
-     *
-     * @return all TeamAmericanFootballStats records.
-     */
-    public List<TeamAmericanFootballStats> selectAll();
+  /**
+   * Select all TeamAmericanFootballStats.
+   *
+   * @return all TeamAmericanFootballStats records.
+   */
+  public List<TeamAmericanFootballStats> selectAll();
 
-    /**
-     * Create TeamAmericanFootballStats.
-     *
-     * @param bean The TeamAmericanFootballStats.
-     * @return The TeamAmericanFootballStats.
-     */
-    public TeamAmericanFootballStats create(TeamAmericanFootballStats bean);
+  /**
+   * Create TeamAmericanFootballStats.
+   *
+   * @param bean The TeamAmericanFootballStats.
+   * @return The TeamAmericanFootballStats.
+   */
+  public TeamAmericanFootballStats create(TeamAmericanFootballStats bean);
 
-    /**
-     * Update a TeamAmericanFootballStats.
-     *
-     * @param bean - The TeamAmericanFootballStats.
-     * @return TeamAmericanFootballStats.
-     */
-    public TeamAmericanFootballStats update(TeamAmericanFootballStats bean);
+  /**
+   * Update a TeamAmericanFootballStats.
+   *
+   * @param bean - The TeamAmericanFootballStats.
+   * @return TeamAmericanFootballStats.
+   */
+  public TeamAmericanFootballStats update(TeamAmericanFootballStats bean);
 }

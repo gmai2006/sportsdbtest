@@ -88,6 +88,15 @@ task copyReact(type: Copy) {
     include("**/*")
 }
 
+tasks.register("buildAll", Copy) {
+    dependsOn spotlessApply
+    dependsOn tasks.build
+    dependsOn tasks.copyReact
+    from "${project.rootDir}/build/libs/"
+    into "${project.rootDir}/dockerbuild"
+    include '*.war'
+}
+
 task copyOnly(type: Copy) {
     from("${projectDir}/ui/build/")
     into("${projectDir}/src/main/webapp/")

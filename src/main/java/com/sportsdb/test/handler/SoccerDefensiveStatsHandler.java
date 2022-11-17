@@ -16,82 +16,85 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.SoccerDefensiveStats;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.SoccerDefensiveStats;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("SoccerDefensiveStatsHandler")
 public class SoccerDefensiveStatsHandler extends DelimiterFileHandler<SoccerDefensiveStats> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public SoccerDefensiveStatsHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public SoccerDefensiveStatsHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected SoccerDefensiveStats parseLine(List<String> headers, List<String> tokens) {
+    SoccerDefensiveStats record = new SoccerDefensiveStats();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "shotsPenaltyShotAllowed":
+          record.setShotsPenaltyShotAllowed(tokens.get(i));
+          break;
+
+        case "goalsPenaltyShotAllowed":
+          record.setGoalsPenaltyShotAllowed(tokens.get(i));
+          break;
+
+        case "goalsAgainstAverage":
+          record.setGoalsAgainstAverage(tokens.get(i));
+          break;
+
+        case "goalsAgainstTotal":
+          record.setGoalsAgainstTotal(tokens.get(i));
+          break;
+
+        case "saves":
+          record.setSaves(tokens.get(i));
+          break;
+
+        case "savePercentage":
+          record.setSavePercentage(tokens.get(i));
+          break;
+
+        case "catchesPunches":
+          record.setCatchesPunches(tokens.get(i));
+          break;
+
+        case "shotsOnGoalTotal":
+          record.setShotsOnGoalTotal(tokens.get(i));
+          break;
+
+        case "shotsShootoutTotal":
+          record.setShotsShootoutTotal(tokens.get(i));
+          break;
+
+        case "shotsShootoutAllowed":
+          record.setShotsShootoutAllowed(tokens.get(i));
+          break;
+
+        case "shotsBlocked":
+          record.setShotsBlocked(tokens.get(i));
+          break;
+
+        case "shutouts":
+          record.setShutouts(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected SoccerDefensiveStats parseLine(List<String> headers, List<String> tokens) {
-        SoccerDefensiveStats record = new SoccerDefensiveStats();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "shotsPenaltyShotAllowed":
-                    record.setShotsPenaltyShotAllowed(tokens.get(i));
-                    break;
-
-                case "goalsPenaltyShotAllowed":
-                    record.setGoalsPenaltyShotAllowed(tokens.get(i));
-                    break;
-
-                case "goalsAgainstAverage":
-                    record.setGoalsAgainstAverage(tokens.get(i));
-                    break;
-
-                case "goalsAgainstTotal":
-                    record.setGoalsAgainstTotal(tokens.get(i));
-                    break;
-
-                case "saves":
-                    record.setSaves(tokens.get(i));
-                    break;
-
-                case "savePercentage":
-                    record.setSavePercentage(tokens.get(i));
-                    break;
-
-                case "catchesPunches":
-                    record.setCatchesPunches(tokens.get(i));
-                    break;
-
-                case "shotsOnGoalTotal":
-                    record.setShotsOnGoalTotal(tokens.get(i));
-                    break;
-
-                case "shotsShootoutTotal":
-                    record.setShotsShootoutTotal(tokens.get(i));
-                    break;
-
-                case "shotsShootoutAllowed":
-                    record.setShotsShootoutAllowed(tokens.get(i));
-                    break;
-
-                case "shotsBlocked":
-                    record.setShotsBlocked(tokens.get(i));
-                    break;
-
-                case "shutouts":
-                    record.setShutouts(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

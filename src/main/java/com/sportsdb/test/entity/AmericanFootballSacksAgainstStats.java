@@ -16,55 +16,55 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "american_football_sacks_against_stats")
 public class AmericanFootballSacksAgainstStats implements Serializable {
-    private static final long serialVersionUID = 163445241875588448L;
+  private static final long serialVersionUID = 166867004216828515L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: sacks_against_yards. */
-    @Basic
-    @Column(name = "sacks_against_yards", length = 100)
-    private java.lang.String sacksAgainstYards;
-    /** Description: sacks_against_total. */
-    @Basic
-    @Column(name = "sacks_against_total", length = 100)
-    private java.lang.String sacksAgainstTotal;
+  /** Description: sacks_against_yards. */
+  @Basic
+  @Column(name = "sacks_against_yards", length = 100)
+  private java.lang.String sacksAgainstYards;
+  /** Description: sacks_against_total. */
+  @Basic
+  @Column(name = "sacks_against_total", length = 100)
+  private java.lang.String sacksAgainstTotal;
 
-    public AmericanFootballSacksAgainstStats() {}
+  public AmericanFootballSacksAgainstStats() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.String getSacksAgainstYards() {
-        return this.sacksAgainstYards;
-    }
+  public java.lang.String getSacksAgainstYards() {
+    return this.sacksAgainstYards;
+  }
 
-    public java.lang.String getSacksAgainstTotal() {
-        return this.sacksAgainstTotal;
-    }
+  public java.lang.String getSacksAgainstTotal() {
+    return this.sacksAgainstTotal;
+  }
 
-    public void setSacksAgainstYards(java.lang.String sacksAgainstYards) {
-        this.sacksAgainstYards = sacksAgainstYards;
-    }
+  public void setSacksAgainstYards(java.lang.String sacksAgainstYards) {
+    this.sacksAgainstYards = sacksAgainstYards;
+  }
 
-    public void setSacksAgainstTotal(java.lang.String sacksAgainstTotal) {
-        this.sacksAgainstTotal = sacksAgainstTotal;
-    }
+  public void setSacksAgainstTotal(java.lang.String sacksAgainstTotal) {
+    this.sacksAgainstTotal = sacksAgainstTotal;
+  }
 }

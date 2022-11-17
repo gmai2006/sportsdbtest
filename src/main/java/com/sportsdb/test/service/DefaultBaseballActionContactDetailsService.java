@@ -17,74 +17,73 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.BaseballActionContactDetailsDao;
-import com.sportsdb.test.entity.BaseballActionContactDetails;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.BaseballActionContactDetailsDao;
+import com.sportsdb.test.entity.BaseballActionContactDetails;
 
 @Stateless
 @Named("DefaultBaseballActionContactDetailsService")
 public class DefaultBaseballActionContactDetailsService
-        implements BaseballActionContactDetailsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final BaseballActionContactDetailsDao dao;
+    implements BaseballActionContactDetailsService {
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final BaseballActionContactDetailsDao dao;
 
-    @Inject
-    @Named("DefaultBaseballActionContactDetailsDao")
-    public DefaultBaseballActionContactDetailsService(final BaseballActionContactDetailsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultBaseballActionContactDetailsDao")
+  public DefaultBaseballActionContactDetailsService(final BaseballActionContactDetailsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BaseballActionContactDetails find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public BaseballActionContactDetails find(java.lang.Integer id) {
 
-        final BaseballActionContactDetails result = dao.find(id);
-        logger.info("find(BaseballActionContactDetails) - exited - return value={} result ");
-        return result;
-    }
+    final BaseballActionContactDetails result = dao.find(id);
+    logger.info("find(BaseballActionContactDetails) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<BaseballActionContactDetails> select(int maxResult) {
-        final List<BaseballActionContactDetails> result = dao.select(maxResult);
-        logger.info("select(BaseballActionContactDetails) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<BaseballActionContactDetails> select(int maxResult) {
+    final List<BaseballActionContactDetails> result = dao.select(maxResult);
+    logger.info("select(BaseballActionContactDetails) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<BaseballActionContactDetails> selectAll() {
-        final List<BaseballActionContactDetails> results = dao.selectAll();
-        logger.info("selectAll(BaseballActionContactDetails) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<BaseballActionContactDetails> selectAll() {
+    final List<BaseballActionContactDetails> results = dao.selectAll();
+    logger.info("selectAll(BaseballActionContactDetails) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BaseballActionContactDetails create(BaseballActionContactDetails bean) {
-        requireNonNull(bean);
-        logger.info("create(BaseballActionContactDetails={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public BaseballActionContactDetails create(BaseballActionContactDetails bean) {
+    requireNonNull(bean);
+    logger.info("create(BaseballActionContactDetails={}) - entered bean ");
 
-        final BaseballActionContactDetails result = dao.create(bean);
+    final BaseballActionContactDetails result = dao.create(bean);
 
-        logger.info("create(BaseballActionContactDetails) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(BaseballActionContactDetails) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BaseballActionContactDetails update(BaseballActionContactDetails bean) {
-        requireNonNull(bean);
-        logger.info("update(BaseballActionContactDetails={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public BaseballActionContactDetails update(BaseballActionContactDetails bean) {
+    requireNonNull(bean);
+    logger.info("update(BaseballActionContactDetails={}) - entered bean ");
 
-        final BaseballActionContactDetails result = dao.update(bean);
+    final BaseballActionContactDetails result = dao.update(bean);
 
-        logger.info("update(BaseballActionContactDetails) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(BaseballActionContactDetails) - exited - return value={} result ");
+    return result;
+  }
 }

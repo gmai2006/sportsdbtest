@@ -1,92 +1,92 @@
 [
   {
-    "startDateTime": "1926-10-16",
+    "startDateTime": "2027-11-16",
     "endSeasonId": 0,
     "ancestorAffiliationId": 0,
     "affiliationId": 0,
-    "endDateTime": "2026-10-16",
+    "endDateTime": "2001-11-16",
     "startSeasonId": 0,
-    "id": 2126345494
+    "id": 1431713062
   },
   {
-    "startDateTime": "1993-10-16",
+    "startDateTime": "1958-11-16",
     "endSeasonId": 1,
     "ancestorAffiliationId": 1,
     "affiliationId": 1,
-    "endDateTime": "2013-10-16",
+    "endDateTime": "1932-11-16",
     "startSeasonId": 1,
-    "id": 2005728453
+    "id": 431971507
   },
   {
-    "startDateTime": "2093-10-16",
+    "startDateTime": "2085-11-16",
     "endSeasonId": 2,
     "ancestorAffiliationId": 2,
     "affiliationId": 2,
-    "endDateTime": "2037-10-16",
+    "endDateTime": "1916-11-16",
     "startSeasonId": 2,
-    "id": 1800233048
+    "id": 1577735144
   },
   {
-    "startDateTime": "1975-10-16",
+    "startDateTime": "2071-11-16",
     "endSeasonId": 3,
     "ancestorAffiliationId": 3,
     "affiliationId": 3,
-    "endDateTime": "2076-10-16",
+    "endDateTime": "1954-11-16",
     "startSeasonId": 3,
-    "id": 160323767
+    "id": 1577722975
   },
   {
-    "startDateTime": "2029-10-16",
+    "startDateTime": "1989-11-16",
     "endSeasonId": 4,
     "ancestorAffiliationId": 4,
     "affiliationId": 4,
-    "endDateTime": "2053-10-16",
+    "endDateTime": "1979-11-16",
     "startSeasonId": 4,
-    "id": 1206550840
+    "id": 296511234
   },
   {
-    "startDateTime": "1907-10-16",
+    "startDateTime": "1942-11-16",
     "endSeasonId": 5,
     "ancestorAffiliationId": 5,
     "affiliationId": 5,
-    "endDateTime": "2067-10-16",
+    "endDateTime": "2040-11-16",
     "startSeasonId": 5,
-    "id": 1316566253
+    "id": 1217402101
   },
   {
-    "startDateTime": "1976-10-16",
+    "startDateTime": "1982-11-16",
     "endSeasonId": 6,
     "ancestorAffiliationId": 6,
     "affiliationId": 6,
-    "endDateTime": "1957-10-16",
+    "endDateTime": "1941-11-16",
     "startSeasonId": 6,
-    "id": 946339556
+    "id": 300766182
   },
   {
-    "startDateTime": "1974-10-16",
+    "startDateTime": "1991-11-16",
     "endSeasonId": 7,
     "ancestorAffiliationId": 7,
     "affiliationId": 7,
-    "endDateTime": "2094-10-16",
+    "endDateTime": "2043-11-16",
     "startSeasonId": 7,
-    "id": 119969295
+    "id": 1876416856
   },
   {
-    "startDateTime": "2083-10-16",
+    "startDateTime": "2038-11-16",
     "endSeasonId": 8,
     "ancestorAffiliationId": 8,
     "affiliationId": 8,
-    "endDateTime": "2068-10-16",
+    "endDateTime": "2055-11-16",
     "startSeasonId": 8,
-    "id": 1025024356
+    "id": 2081079631
   },
   {
-    "startDateTime": "2079-10-16",
+    "startDateTime": "2032-11-16",
     "endSeasonId": 9,
     "ancestorAffiliationId": 9,
     "affiliationId": 9,
-    "endDateTime": "2025-10-16",
+    "endDateTime": "2006-11-16",
     "startSeasonId": 9,
-    "id": 1656611622
+    "id": 1901152442
   }
 ]

@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.Teams;
 import java.util.List;
+import com.sportsdb.test.entity.Teams;
 
 public interface TeamsDao {
-    /**
-     * Retrieve all records Teams.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of Teams
-     */
-    public List<Teams> select(int maxResult);
+  /**
+   * Retrieve all records Teams.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of Teams
+   */
+  public List<Teams> select(int maxResult);
 
-    /**
-     * Retrieve all records Teams.
-     *
-     * @return A list of Teams
-     */
-    public List<Teams> selectAll();
+  /**
+   * Retrieve all records Teams.
+   *
+   * @return A list of Teams
+   */
+  public List<Teams> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An Teams id.
-     * @return The same Teams.
-     */
-    public Teams find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An Teams id.
+   * @return The same Teams.
+   */
+  public Teams find(java.lang.Integer id);
 
-    /**
-     * Create an Teams.
-     *
-     * @param e the Teams.
-     * @return The same Teams.
-     */
-    public Teams create(Teams e);
+  /**
+   * Create an Teams.
+   *
+   * @param e the Teams.
+   * @return The same Teams.
+   */
+  public Teams create(Teams e);
 
-    /**
-     * Update the Teams.
-     *
-     * @param e the Teams.
-     * @return The same Teams.
-     */
-    public Teams update(Teams e);
+  /**
+   * Update the Teams.
+   *
+   * @param e the Teams.
+   * @return The same Teams.
+   */
+  public Teams update(Teams e);
 }

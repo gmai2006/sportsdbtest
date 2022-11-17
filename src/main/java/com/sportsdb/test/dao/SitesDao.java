@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.Sites;
 import java.util.List;
+import com.sportsdb.test.entity.Sites;
 
 public interface SitesDao {
-    /**
-     * Retrieve all records Sites.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of Sites
-     */
-    public List<Sites> select(int maxResult);
+  /**
+   * Retrieve all records Sites.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of Sites
+   */
+  public List<Sites> select(int maxResult);
 
-    /**
-     * Retrieve all records Sites.
-     *
-     * @return A list of Sites
-     */
-    public List<Sites> selectAll();
+  /**
+   * Retrieve all records Sites.
+   *
+   * @return A list of Sites
+   */
+  public List<Sites> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An Sites id.
-     * @return The same Sites.
-     */
-    public Sites find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An Sites id.
+   * @return The same Sites.
+   */
+  public Sites find(java.lang.Integer id);
 
-    /**
-     * Create an Sites.
-     *
-     * @param e the Sites.
-     * @return The same Sites.
-     */
-    public Sites create(Sites e);
+  /**
+   * Create an Sites.
+   *
+   * @param e the Sites.
+   * @return The same Sites.
+   */
+  public Sites create(Sites e);
 
-    /**
-     * Update the Sites.
-     *
-     * @param e the Sites.
-     * @return The same Sites.
-     */
-    public Sites update(Sites e);
+  /**
+   * Update the Sites.
+   *
+   * @param e the Sites.
+   * @return The same Sites.
+   */
+  public Sites update(Sites e);
 }

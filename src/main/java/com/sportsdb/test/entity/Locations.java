@@ -16,79 +16,79 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "locations")
 public class Locations implements Serializable {
-    private static final long serialVersionUID = 163445241910299554L;
+  private static final long serialVersionUID = 166867004241263100L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: timezone. */
-    @Basic
-    @Column(name = "timezone", length = 100)
-    private java.lang.String timezone;
-    /** Description: latitude. */
-    @Basic
-    @Column(name = "latitude", length = 100)
-    private java.lang.String latitude;
-    /** Description: longitude. */
-    @Basic
-    @Column(name = "longitude", length = 100)
-    private java.lang.String longitude;
-    /** Description: country_code. */
-    @Basic
-    @Column(name = "country_code", length = 100)
-    private java.lang.String countryCode;
+  /** Description: timezone. */
+  @Basic
+  @Column(name = "timezone", length = 100)
+  private java.lang.String timezone;
+  /** Description: latitude. */
+  @Basic
+  @Column(name = "latitude", length = 100)
+  private java.lang.String latitude;
+  /** Description: longitude. */
+  @Basic
+  @Column(name = "longitude", length = 100)
+  private java.lang.String longitude;
+  /** Description: country_code. */
+  @Basic
+  @Column(name = "country_code", length = 100)
+  private java.lang.String countryCode;
 
-    public Locations() {}
+  public Locations() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.String getTimezone() {
-        return this.timezone;
-    }
+  public java.lang.String getTimezone() {
+    return this.timezone;
+  }
 
-    public java.lang.String getLatitude() {
-        return this.latitude;
-    }
+  public java.lang.String getLatitude() {
+    return this.latitude;
+  }
 
-    public java.lang.String getLongitude() {
-        return this.longitude;
-    }
+  public java.lang.String getLongitude() {
+    return this.longitude;
+  }
 
-    public java.lang.String getCountryCode() {
-        return this.countryCode;
-    }
+  public java.lang.String getCountryCode() {
+    return this.countryCode;
+  }
 
-    public void setTimezone(java.lang.String timezone) {
-        this.timezone = timezone;
-    }
+  public void setTimezone(java.lang.String timezone) {
+    this.timezone = timezone;
+  }
 
-    public void setLatitude(java.lang.String latitude) {
-        this.latitude = latitude;
-    }
+  public void setLatitude(java.lang.String latitude) {
+    this.latitude = latitude;
+  }
 
-    public void setLongitude(java.lang.String longitude) {
-        this.longitude = longitude;
-    }
+  public void setLongitude(java.lang.String longitude) {
+    this.longitude = longitude;
+  }
 
-    public void setCountryCode(java.lang.String countryCode) {
-        this.countryCode = countryCode;
-    }
+  public void setCountryCode(java.lang.String countryCode) {
+    this.countryCode = countryCode;
+  }
 }

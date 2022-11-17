@@ -16,47 +16,50 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.AmericanFootballPenaltiesStats;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.AmericanFootballPenaltiesStats;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("AmericanFootballPenaltiesStatsHandler")
 public class AmericanFootballPenaltiesStatsHandler
-        extends DelimiterFileHandler<AmericanFootballPenaltiesStats> {
+    extends DelimiterFileHandler<AmericanFootballPenaltiesStats> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public AmericanFootballPenaltiesStatsHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public AmericanFootballPenaltiesStatsHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected AmericanFootballPenaltiesStats parseLine(List<String> headers, List<String> tokens) {
+    AmericanFootballPenaltiesStats record = new AmericanFootballPenaltiesStats();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "penaltiesTotal":
+          record.setPenaltiesTotal(tokens.get(i));
+          break;
+
+        case "penaltyYards":
+          record.setPenaltyYards(tokens.get(i));
+          break;
+
+        case "penaltyFirstDowns":
+          record.setPenaltyFirstDowns(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected AmericanFootballPenaltiesStats parseLine(List<String> headers, List<String> tokens) {
-        AmericanFootballPenaltiesStats record = new AmericanFootballPenaltiesStats();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "penaltiesTotal":
-                    record.setPenaltiesTotal(tokens.get(i));
-                    break;
-
-                case "penaltyYards":
-                    record.setPenaltyYards(tokens.get(i));
-                    break;
-
-                case "penaltyFirstDowns":
-                    record.setPenaltyFirstDowns(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

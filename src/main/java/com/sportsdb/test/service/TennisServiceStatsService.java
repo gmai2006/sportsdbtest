@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.TennisServiceStats;
 import java.util.List;
+import com.sportsdb.test.entity.TennisServiceStats;
 
 public interface TennisServiceStatsService {
-    public TennisServiceStats find(java.lang.Integer id);
+  public TennisServiceStats find(java.lang.Integer id);
 
-    /**
-     * Select a list of TennisServiceStats based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return TennisServiceStats records.
-     */
-    public List<TennisServiceStats> select(int maxResult);
+  /**
+   * Select a list of TennisServiceStats based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return TennisServiceStats records.
+   */
+  public List<TennisServiceStats> select(int maxResult);
 
-    /**
-     * Select all TennisServiceStats.
-     *
-     * @return all TennisServiceStats records.
-     */
-    public List<TennisServiceStats> selectAll();
+  /**
+   * Select all TennisServiceStats.
+   *
+   * @return all TennisServiceStats records.
+   */
+  public List<TennisServiceStats> selectAll();
 
-    /**
-     * Create TennisServiceStats.
-     *
-     * @param bean The TennisServiceStats.
-     * @return The TennisServiceStats.
-     */
-    public TennisServiceStats create(TennisServiceStats bean);
+  /**
+   * Create TennisServiceStats.
+   *
+   * @param bean The TennisServiceStats.
+   * @return The TennisServiceStats.
+   */
+  public TennisServiceStats create(TennisServiceStats bean);
 
-    /**
-     * Update a TennisServiceStats.
-     *
-     * @param bean - The TennisServiceStats.
-     * @return TennisServiceStats.
-     */
-    public TennisServiceStats update(TennisServiceStats bean);
+  /**
+   * Update a TennisServiceStats.
+   *
+   * @param bean - The TennisServiceStats.
+   * @return TennisServiceStats.
+   */
+  public TennisServiceStats update(TennisServiceStats bean);
 }

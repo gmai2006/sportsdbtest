@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.TennisServiceStatsDao;
-import com.sportsdb.test.entity.TennisServiceStats;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.TennisServiceStatsDao;
+import com.sportsdb.test.entity.TennisServiceStats;
 
 @Stateless
 @Named("DefaultTennisServiceStatsService")
 public class DefaultTennisServiceStatsService implements TennisServiceStatsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final TennisServiceStatsDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final TennisServiceStatsDao dao;
 
-    @Inject
-    @Named("DefaultTennisServiceStatsDao")
-    public DefaultTennisServiceStatsService(final TennisServiceStatsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultTennisServiceStatsDao")
+  public DefaultTennisServiceStatsService(final TennisServiceStatsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public TennisServiceStats find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public TennisServiceStats find(java.lang.Integer id) {
 
-        final TennisServiceStats result = dao.find(id);
-        logger.info("find(TennisServiceStats) - exited - return value={} result ");
-        return result;
-    }
+    final TennisServiceStats result = dao.find(id);
+    logger.info("find(TennisServiceStats) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<TennisServiceStats> select(int maxResult) {
-        final List<TennisServiceStats> result = dao.select(maxResult);
-        logger.info("select(TennisServiceStats) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<TennisServiceStats> select(int maxResult) {
+    final List<TennisServiceStats> result = dao.select(maxResult);
+    logger.info("select(TennisServiceStats) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<TennisServiceStats> selectAll() {
-        final List<TennisServiceStats> results = dao.selectAll();
-        logger.info("selectAll(TennisServiceStats) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<TennisServiceStats> selectAll() {
+    final List<TennisServiceStats> results = dao.selectAll();
+    logger.info("selectAll(TennisServiceStats) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public TennisServiceStats create(TennisServiceStats bean) {
-        requireNonNull(bean);
-        logger.info("create(TennisServiceStats={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public TennisServiceStats create(TennisServiceStats bean) {
+    requireNonNull(bean);
+    logger.info("create(TennisServiceStats={}) - entered bean ");
 
-        final TennisServiceStats result = dao.create(bean);
+    final TennisServiceStats result = dao.create(bean);
 
-        logger.info("create(TennisServiceStats) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(TennisServiceStats) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public TennisServiceStats update(TennisServiceStats bean) {
-        requireNonNull(bean);
-        logger.info("update(TennisServiceStats={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public TennisServiceStats update(TennisServiceStats bean) {
+    requireNonNull(bean);
+    logger.info("update(TennisServiceStats={}) - entered bean ");
 
-        final TennisServiceStats result = dao.update(bean);
+    final TennisServiceStats result = dao.update(bean);
 
-        logger.info("update(TennisServiceStats) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(TennisServiceStats) - exited - return value={} result ");
+    return result;
+  }
 }

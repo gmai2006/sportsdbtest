@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.AffiliationsEvents;
 import java.util.List;
+import com.sportsdb.test.entity.AffiliationsEvents;
 
 public interface AffiliationsEventsDao {
-    /**
-     * Retrieve all records AffiliationsEvents.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of AffiliationsEvents
-     */
-    public List<AffiliationsEvents> select(int maxResult);
+  /**
+   * Retrieve all records AffiliationsEvents.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of AffiliationsEvents
+   */
+  public List<AffiliationsEvents> select(int maxResult);
 
-    /**
-     * Retrieve all records AffiliationsEvents.
-     *
-     * @return A list of AffiliationsEvents
-     */
-    public List<AffiliationsEvents> selectAll();
+  /**
+   * Retrieve all records AffiliationsEvents.
+   *
+   * @return A list of AffiliationsEvents
+   */
+  public List<AffiliationsEvents> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An AffiliationsEvents id.
-     * @return The same AffiliationsEvents.
-     */
-    public AffiliationsEvents find(java.lang.String id);
+  /**
+   * Find an entity.
+   *
+   * @param id An AffiliationsEvents id.
+   * @return The same AffiliationsEvents.
+   */
+  public AffiliationsEvents find(java.lang.String id);
 
-    /**
-     * Create an AffiliationsEvents.
-     *
-     * @param e the AffiliationsEvents.
-     * @return The same AffiliationsEvents.
-     */
-    public AffiliationsEvents create(AffiliationsEvents e);
+  /**
+   * Create an AffiliationsEvents.
+   *
+   * @param e the AffiliationsEvents.
+   * @return The same AffiliationsEvents.
+   */
+  public AffiliationsEvents create(AffiliationsEvents e);
 
-    /**
-     * Update the AffiliationsEvents.
-     *
-     * @param e the AffiliationsEvents.
-     * @return The same AffiliationsEvents.
-     */
-    public AffiliationsEvents update(AffiliationsEvents e);
+  /**
+   * Update the AffiliationsEvents.
+   *
+   * @param e the AffiliationsEvents.
+   * @return The same AffiliationsEvents.
+   */
+  public AffiliationsEvents update(AffiliationsEvents e);
 }

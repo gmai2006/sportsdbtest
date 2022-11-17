@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.PersonsMedia;
 import java.util.List;
+import com.sportsdb.test.entity.PersonsMedia;
 
 public interface PersonsMediaDao {
-    /**
-     * Retrieve all records PersonsMedia.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of PersonsMedia
-     */
-    public List<PersonsMedia> select(int maxResult);
+  /**
+   * Retrieve all records PersonsMedia.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of PersonsMedia
+   */
+  public List<PersonsMedia> select(int maxResult);
 
-    /**
-     * Retrieve all records PersonsMedia.
-     *
-     * @return A list of PersonsMedia
-     */
-    public List<PersonsMedia> selectAll();
+  /**
+   * Retrieve all records PersonsMedia.
+   *
+   * @return A list of PersonsMedia
+   */
+  public List<PersonsMedia> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An PersonsMedia id.
-     * @return The same PersonsMedia.
-     */
-    public PersonsMedia find(java.lang.String id);
+  /**
+   * Find an entity.
+   *
+   * @param id An PersonsMedia id.
+   * @return The same PersonsMedia.
+   */
+  public PersonsMedia find(java.lang.String id);
 
-    /**
-     * Create an PersonsMedia.
-     *
-     * @param e the PersonsMedia.
-     * @return The same PersonsMedia.
-     */
-    public PersonsMedia create(PersonsMedia e);
+  /**
+   * Create an PersonsMedia.
+   *
+   * @param e the PersonsMedia.
+   * @return The same PersonsMedia.
+   */
+  public PersonsMedia create(PersonsMedia e);
 
-    /**
-     * Update the PersonsMedia.
-     *
-     * @param e the PersonsMedia.
-     * @return The same PersonsMedia.
-     */
-    public PersonsMedia update(PersonsMedia e);
+  /**
+   * Update the PersonsMedia.
+   *
+   * @param e the PersonsMedia.
+   * @return The same PersonsMedia.
+   */
+  public PersonsMedia update(PersonsMedia e);
 }

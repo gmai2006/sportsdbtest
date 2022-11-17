@@ -16,41 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.BasketballOffensiveStats;
 import java.util.List;
+import com.sportsdb.test.entity.BasketballOffensiveStats;
 
 public interface BasketballOffensiveStatsService {
-    public BasketballOffensiveStats find(java.lang.Integer id);
+  public BasketballOffensiveStats find(java.lang.Integer id);
 
-    /**
-     * Select a list of BasketballOffensiveStats based on a given maximum number of returning
-     * records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return BasketballOffensiveStats records.
-     */
-    public List<BasketballOffensiveStats> select(int maxResult);
+  /**
+   * Select a list of BasketballOffensiveStats based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return BasketballOffensiveStats records.
+   */
+  public List<BasketballOffensiveStats> select(int maxResult);
 
-    /**
-     * Select all BasketballOffensiveStats.
-     *
-     * @return all BasketballOffensiveStats records.
-     */
-    public List<BasketballOffensiveStats> selectAll();
+  /**
+   * Select all BasketballOffensiveStats.
+   *
+   * @return all BasketballOffensiveStats records.
+   */
+  public List<BasketballOffensiveStats> selectAll();
 
-    /**
-     * Create BasketballOffensiveStats.
-     *
-     * @param bean The BasketballOffensiveStats.
-     * @return The BasketballOffensiveStats.
-     */
-    public BasketballOffensiveStats create(BasketballOffensiveStats bean);
+  /**
+   * Create BasketballOffensiveStats.
+   *
+   * @param bean The BasketballOffensiveStats.
+   * @return The BasketballOffensiveStats.
+   */
+  public BasketballOffensiveStats create(BasketballOffensiveStats bean);
 
-    /**
-     * Update a BasketballOffensiveStats.
-     *
-     * @param bean - The BasketballOffensiveStats.
-     * @return BasketballOffensiveStats.
-     */
-    public BasketballOffensiveStats update(BasketballOffensiveStats bean);
+  /**
+   * Update a BasketballOffensiveStats.
+   *
+   * @param bean - The BasketballOffensiveStats.
+   * @return BasketballOffensiveStats.
+   */
+  public BasketballOffensiveStats update(BasketballOffensiveStats bean);
 }

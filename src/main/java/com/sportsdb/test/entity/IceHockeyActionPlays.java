@@ -16,92 +16,92 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "ice_hockey_action_plays")
 public class IceHockeyActionPlays implements Serializable {
-    private static final long serialVersionUID = 163445241901133869L;
+  private static final long serialVersionUID = 166867004236939775L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Long id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Long id;
 
-    /** Description: ice_hockey_event_state_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "ice_hockey_event_state_id")
-    private java.lang.Integer iceHockeyEventStateId;
-    /** Description: play_type. */
-    @Basic
-    @Column(name = "play_type", length = 100)
-    private java.lang.String playType;
-    /** Description: score_attempt_type. */
-    @Basic
-    @Column(name = "score_attempt_type", length = 100)
-    private java.lang.String scoreAttemptType;
-    /** Description: play_result. */
-    @Basic
-    @Column(name = "play_result", length = 100)
-    private java.lang.String playResult;
-    /** Description: comment. */
-    @Basic
-    @Column(name = "comment", length = 255)
-    private java.lang.String comment;
+  /** Description: ice_hockey_event_state_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "ice_hockey_event_state_id")
+  private java.lang.Integer iceHockeyEventStateId;
+  /** Description: play_type. */
+  @Basic
+  @Column(name = "play_type", length = 100)
+  private java.lang.String playType;
+  /** Description: score_attempt_type. */
+  @Basic
+  @Column(name = "score_attempt_type", length = 100)
+  private java.lang.String scoreAttemptType;
+  /** Description: play_result. */
+  @Basic
+  @Column(name = "play_result", length = 100)
+  private java.lang.String playResult;
+  /** Description: comment. */
+  @Basic
+  @Column(name = "comment", length = 255)
+  private java.lang.String comment;
 
-    public IceHockeyActionPlays() {}
+  public IceHockeyActionPlays() {}
 
-    public java.lang.Long getId() {
-        return this.id;
-    }
+  public java.lang.Long getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Long id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Long id) {
+    this.id = id;
+  }
 
-    public java.lang.Integer getIceHockeyEventStateId() {
-        return this.iceHockeyEventStateId;
-    }
+  public java.lang.Integer getIceHockeyEventStateId() {
+    return this.iceHockeyEventStateId;
+  }
 
-    public java.lang.String getPlayType() {
-        return this.playType;
-    }
+  public java.lang.String getPlayType() {
+    return this.playType;
+  }
 
-    public java.lang.String getScoreAttemptType() {
-        return this.scoreAttemptType;
-    }
+  public java.lang.String getScoreAttemptType() {
+    return this.scoreAttemptType;
+  }
 
-    public java.lang.String getPlayResult() {
-        return this.playResult;
-    }
+  public java.lang.String getPlayResult() {
+    return this.playResult;
+  }
 
-    public java.lang.String getComment() {
-        return this.comment;
-    }
+  public java.lang.String getComment() {
+    return this.comment;
+  }
 
-    public void setIceHockeyEventStateId(java.lang.Integer iceHockeyEventStateId) {
-        this.iceHockeyEventStateId = iceHockeyEventStateId;
-    }
+  public void setIceHockeyEventStateId(java.lang.Integer iceHockeyEventStateId) {
+    this.iceHockeyEventStateId = iceHockeyEventStateId;
+  }
 
-    public void setPlayType(java.lang.String playType) {
-        this.playType = playType;
-    }
+  public void setPlayType(java.lang.String playType) {
+    this.playType = playType;
+  }
 
-    public void setScoreAttemptType(java.lang.String scoreAttemptType) {
-        this.scoreAttemptType = scoreAttemptType;
-    }
+  public void setScoreAttemptType(java.lang.String scoreAttemptType) {
+    this.scoreAttemptType = scoreAttemptType;
+  }
 
-    public void setPlayResult(java.lang.String playResult) {
-        this.playResult = playResult;
-    }
+  public void setPlayResult(java.lang.String playResult) {
+    this.playResult = playResult;
+  }
 
-    public void setComment(java.lang.String comment) {
-        this.comment = comment;
-    }
+  public void setComment(java.lang.String comment) {
+    this.comment = comment;
+  }
 }

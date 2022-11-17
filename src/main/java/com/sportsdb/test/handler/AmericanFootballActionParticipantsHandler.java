@@ -16,64 +16,66 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.AmericanFootballActionParticipants;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.AmericanFootballActionParticipants;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("AmericanFootballActionParticipantsHandler")
 public class AmericanFootballActionParticipantsHandler
-        extends DelimiterFileHandler<AmericanFootballActionParticipants> {
+    extends DelimiterFileHandler<AmericanFootballActionParticipants> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public AmericanFootballActionParticipantsHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public AmericanFootballActionParticipantsHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected AmericanFootballActionParticipants parseLine(
+      List<String> headers, List<String> tokens) {
+    AmericanFootballActionParticipants record = new AmericanFootballActionParticipants();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "americanFootballActionPlayId":
+          record.setAmericanFootballActionPlayId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "personId":
+          record.setPersonId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "participantRole":
+          record.setParticipantRole(tokens.get(i));
+          break;
+
+        case "scoreType":
+          record.setScoreType(tokens.get(i));
+          break;
+
+        case "fieldLine":
+          record.setFieldLine(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "yardage":
+          record.setYardage(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "scoreCredit":
+          record.setScoreCredit(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "yardsGained":
+          record.setYardsGained(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected AmericanFootballActionParticipants parseLine(
-            List<String> headers, List<String> tokens) {
-        AmericanFootballActionParticipants record = new AmericanFootballActionParticipants();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "americanFootballActionPlayId":
-                    record.setAmericanFootballActionPlayId(
-                            java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "personId":
-                    record.setPersonId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "participantRole":
-                    record.setParticipantRole(tokens.get(i));
-                    break;
-
-                case "scoreType":
-                    record.setScoreType(tokens.get(i));
-                    break;
-
-                case "fieldLine":
-                    record.setFieldLine(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "yardage":
-                    record.setYardage(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "scoreCredit":
-                    record.setScoreCredit(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "yardsGained":
-                    record.setYardsGained(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

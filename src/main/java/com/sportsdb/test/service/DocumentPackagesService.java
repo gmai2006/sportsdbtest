@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.DocumentPackages;
 import java.util.List;
+import com.sportsdb.test.entity.DocumentPackages;
 
 public interface DocumentPackagesService {
-    public DocumentPackages find(java.lang.Integer id);
+  public DocumentPackages find(java.lang.Integer id);
 
-    /**
-     * Select a list of DocumentPackages based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return DocumentPackages records.
-     */
-    public List<DocumentPackages> select(int maxResult);
+  /**
+   * Select a list of DocumentPackages based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return DocumentPackages records.
+   */
+  public List<DocumentPackages> select(int maxResult);
 
-    /**
-     * Select all DocumentPackages.
-     *
-     * @return all DocumentPackages records.
-     */
-    public List<DocumentPackages> selectAll();
+  /**
+   * Select all DocumentPackages.
+   *
+   * @return all DocumentPackages records.
+   */
+  public List<DocumentPackages> selectAll();
 
-    /**
-     * Create DocumentPackages.
-     *
-     * @param bean The DocumentPackages.
-     * @return The DocumentPackages.
-     */
-    public DocumentPackages create(DocumentPackages bean);
+  /**
+   * Create DocumentPackages.
+   *
+   * @param bean The DocumentPackages.
+   * @return The DocumentPackages.
+   */
+  public DocumentPackages create(DocumentPackages bean);
 
-    /**
-     * Update a DocumentPackages.
-     *
-     * @param bean - The DocumentPackages.
-     * @return DocumentPackages.
-     */
-    public DocumentPackages update(DocumentPackages bean);
+  /**
+   * Update a DocumentPackages.
+   *
+   * @param bean - The DocumentPackages.
+   * @return DocumentPackages.
+   */
+  public DocumentPackages update(DocumentPackages bean);
 }

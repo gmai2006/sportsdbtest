@@ -16,61 +16,62 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.MotorRacingQualifyingStats;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.MotorRacingQualifyingStats;
 
 @Stateless
 @Named("DefaultMotorRacingQualifyingStatsDao")
 public class DefaultMotorRacingQualifyingStatsDao implements MotorRacingQualifyingStatsDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultMotorRacingQualifyingStatsDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultMotorRacingQualifyingStatsDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultMotorRacingQualifyingStatsDao() {}
+  public DefaultMotorRacingQualifyingStatsDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public MotorRacingQualifyingStats find(java.lang.Integer id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(MotorRacingQualifyingStats.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public MotorRacingQualifyingStats find(java.lang.Integer id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(MotorRacingQualifyingStats.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<MotorRacingQualifyingStats> select(int max) {
-        return dao.select(
-                "select a from MotorRacingQualifyingStats a",
-                MotorRacingQualifyingStats.class,
-                max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<MotorRacingQualifyingStats> select(int max) {
+    return dao.select(
+        "select a from MotorRacingQualifyingStats a", MotorRacingQualifyingStats.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<MotorRacingQualifyingStats> selectAll() {
-        return dao.selectAll(
-                "select a from MotorRacingQualifyingStats a", MotorRacingQualifyingStats.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<MotorRacingQualifyingStats> selectAll() {
+    return dao.selectAll(
+        "select a from MotorRacingQualifyingStats a", MotorRacingQualifyingStats.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public MotorRacingQualifyingStats create(MotorRacingQualifyingStats e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public MotorRacingQualifyingStats create(MotorRacingQualifyingStats e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public MotorRacingQualifyingStats update(MotorRacingQualifyingStats e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public MotorRacingQualifyingStats update(MotorRacingQualifyingStats e) {
+    return dao.update(e);
+  }
 }

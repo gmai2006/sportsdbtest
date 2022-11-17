@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.Locations;
 import java.util.List;
+import com.sportsdb.test.entity.Locations;
 
 public interface LocationsService {
-    public Locations find(java.lang.Integer id);
+  public Locations find(java.lang.Integer id);
 
-    /**
-     * Select a list of Locations based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return Locations records.
-     */
-    public List<Locations> select(int maxResult);
+  /**
+   * Select a list of Locations based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return Locations records.
+   */
+  public List<Locations> select(int maxResult);
 
-    /**
-     * Select all Locations.
-     *
-     * @return all Locations records.
-     */
-    public List<Locations> selectAll();
+  /**
+   * Select all Locations.
+   *
+   * @return all Locations records.
+   */
+  public List<Locations> selectAll();
 
-    /**
-     * Create Locations.
-     *
-     * @param bean The Locations.
-     * @return The Locations.
-     */
-    public Locations create(Locations bean);
+  /**
+   * Create Locations.
+   *
+   * @param bean The Locations.
+   * @return The Locations.
+   */
+  public Locations create(Locations bean);
 
-    /**
-     * Update a Locations.
-     *
-     * @param bean - The Locations.
-     * @return Locations.
-     */
-    public Locations update(Locations bean);
+  /**
+   * Update a Locations.
+   *
+   * @param bean - The Locations.
+   * @return Locations.
+   */
+  public Locations update(Locations bean);
 }

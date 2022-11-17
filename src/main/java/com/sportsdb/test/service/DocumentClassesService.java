@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.DocumentClasses;
 import java.util.List;
+import com.sportsdb.test.entity.DocumentClasses;
 
 public interface DocumentClassesService {
-    public DocumentClasses find(java.lang.Integer id);
+  public DocumentClasses find(java.lang.Integer id);
 
-    /**
-     * Select a list of DocumentClasses based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return DocumentClasses records.
-     */
-    public List<DocumentClasses> select(int maxResult);
+  /**
+   * Select a list of DocumentClasses based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return DocumentClasses records.
+   */
+  public List<DocumentClasses> select(int maxResult);
 
-    /**
-     * Select all DocumentClasses.
-     *
-     * @return all DocumentClasses records.
-     */
-    public List<DocumentClasses> selectAll();
+  /**
+   * Select all DocumentClasses.
+   *
+   * @return all DocumentClasses records.
+   */
+  public List<DocumentClasses> selectAll();
 
-    /**
-     * Create DocumentClasses.
-     *
-     * @param bean The DocumentClasses.
-     * @return The DocumentClasses.
-     */
-    public DocumentClasses create(DocumentClasses bean);
+  /**
+   * Create DocumentClasses.
+   *
+   * @param bean The DocumentClasses.
+   * @return The DocumentClasses.
+   */
+  public DocumentClasses create(DocumentClasses bean);
 
-    /**
-     * Update a DocumentClasses.
-     *
-     * @param bean - The DocumentClasses.
-     * @return DocumentClasses.
-     */
-    public DocumentClasses update(DocumentClasses bean);
+  /**
+   * Update a DocumentClasses.
+   *
+   * @param bean - The DocumentClasses.
+   * @return DocumentClasses.
+   */
+  public DocumentClasses update(DocumentClasses bean);
 }

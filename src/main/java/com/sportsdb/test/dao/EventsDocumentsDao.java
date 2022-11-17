@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.EventsDocuments;
 import java.util.List;
+import com.sportsdb.test.entity.EventsDocuments;
 
 public interface EventsDocumentsDao {
-    /**
-     * Retrieve all records EventsDocuments.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of EventsDocuments
-     */
-    public List<EventsDocuments> select(int maxResult);
+  /**
+   * Retrieve all records EventsDocuments.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of EventsDocuments
+   */
+  public List<EventsDocuments> select(int maxResult);
 
-    /**
-     * Retrieve all records EventsDocuments.
-     *
-     * @return A list of EventsDocuments
-     */
-    public List<EventsDocuments> selectAll();
+  /**
+   * Retrieve all records EventsDocuments.
+   *
+   * @return A list of EventsDocuments
+   */
+  public List<EventsDocuments> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An EventsDocuments id.
-     * @return The same EventsDocuments.
-     */
-    public EventsDocuments find(java.lang.String id);
+  /**
+   * Find an entity.
+   *
+   * @param id An EventsDocuments id.
+   * @return The same EventsDocuments.
+   */
+  public EventsDocuments find(java.lang.String id);
 
-    /**
-     * Create an EventsDocuments.
-     *
-     * @param e the EventsDocuments.
-     * @return The same EventsDocuments.
-     */
-    public EventsDocuments create(EventsDocuments e);
+  /**
+   * Create an EventsDocuments.
+   *
+   * @param e the EventsDocuments.
+   * @return The same EventsDocuments.
+   */
+  public EventsDocuments create(EventsDocuments e);
 
-    /**
-     * Update the EventsDocuments.
-     *
-     * @param e the EventsDocuments.
-     * @return The same EventsDocuments.
-     */
-    public EventsDocuments update(EventsDocuments e);
+  /**
+   * Update the EventsDocuments.
+   *
+   * @param e the EventsDocuments.
+   * @return The same EventsDocuments.
+   */
+  public EventsDocuments update(EventsDocuments e);
 }

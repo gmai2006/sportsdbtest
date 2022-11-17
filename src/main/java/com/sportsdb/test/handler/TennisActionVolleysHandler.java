@@ -16,61 +16,64 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.TennisActionVolleys;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.TennisActionVolleys;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("TennisActionVolleysHandler")
 public class TennisActionVolleysHandler extends DelimiterFileHandler<TennisActionVolleys> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public TennisActionVolleysHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public TennisActionVolleysHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected TennisActionVolleys parseLine(List<String> headers, List<String> tokens) {
+    TennisActionVolleys record = new TennisActionVolleys();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "sequenceNumber":
+          record.setSequenceNumber(tokens.get(i));
+          break;
+
+        case "tennisActionPointsId":
+          record.setTennisActionPointsId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "landingLocation":
+          record.setLandingLocation(tokens.get(i));
+          break;
+
+        case "swingType":
+          record.setSwingType(tokens.get(i));
+          break;
+
+        case "result":
+          record.setResult(tokens.get(i));
+          break;
+
+        case "spinType":
+          record.setSpinType(tokens.get(i));
+          break;
+
+        case "trajectoryDetails":
+          record.setTrajectoryDetails(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected TennisActionVolleys parseLine(List<String> headers, List<String> tokens) {
-        TennisActionVolleys record = new TennisActionVolleys();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "sequenceNumber":
-                    record.setSequenceNumber(tokens.get(i));
-                    break;
-
-                case "tennisActionPointsId":
-                    record.setTennisActionPointsId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "landingLocation":
-                    record.setLandingLocation(tokens.get(i));
-                    break;
-
-                case "swingType":
-                    record.setSwingType(tokens.get(i));
-                    break;
-
-                case "result":
-                    record.setResult(tokens.get(i));
-                    break;
-
-                case "spinType":
-                    record.setSpinType(tokens.get(i));
-                    break;
-
-                case "trajectoryDetails":
-                    record.setTrajectoryDetails(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

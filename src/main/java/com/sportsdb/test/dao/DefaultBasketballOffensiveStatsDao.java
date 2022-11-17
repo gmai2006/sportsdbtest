@@ -16,59 +16,62 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.BasketballOffensiveStats;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.BasketballOffensiveStats;
 
 @Stateless
 @Named("DefaultBasketballOffensiveStatsDao")
 public class DefaultBasketballOffensiveStatsDao implements BasketballOffensiveStatsDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultBasketballOffensiveStatsDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultBasketballOffensiveStatsDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultBasketballOffensiveStatsDao() {}
+  public DefaultBasketballOffensiveStatsDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public BasketballOffensiveStats find(java.lang.Integer id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(BasketballOffensiveStats.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public BasketballOffensiveStats find(java.lang.Integer id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(BasketballOffensiveStats.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<BasketballOffensiveStats> select(int max) {
-        return dao.select(
-                "select a from BasketballOffensiveStats a", BasketballOffensiveStats.class, max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<BasketballOffensiveStats> select(int max) {
+    return dao.select(
+        "select a from BasketballOffensiveStats a", BasketballOffensiveStats.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<BasketballOffensiveStats> selectAll() {
-        return dao.selectAll(
-                "select a from BasketballOffensiveStats a", BasketballOffensiveStats.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<BasketballOffensiveStats> selectAll() {
+    return dao.selectAll(
+        "select a from BasketballOffensiveStats a", BasketballOffensiveStats.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BasketballOffensiveStats create(BasketballOffensiveStats e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public BasketballOffensiveStats create(BasketballOffensiveStats e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BasketballOffensiveStats update(BasketballOffensiveStats e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public BasketballOffensiveStats update(BasketballOffensiveStats e) {
+    return dao.update(e);
+  }
 }

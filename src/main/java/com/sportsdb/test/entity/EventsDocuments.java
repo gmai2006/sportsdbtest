@@ -16,57 +16,57 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "events_documents")
 public class EventsDocuments implements Serializable {
-    private static final long serialVersionUID = 16344524189937171L;
+  private static final long serialVersionUID = 166867004234863790L;
 
-    /** Description: default_id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "default_id")
-    private java.lang.String defaultId;
+  /** Description: default_id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "default_id")
+  private java.lang.String defaultId;
 
-    /** Description: event_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "event_id")
-    private java.lang.Integer eventId;
-    /** Description: document_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "document_id")
-    private java.lang.Integer documentId;
+  /** Description: event_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "event_id")
+  private java.lang.Integer eventId;
+  /** Description: document_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "document_id")
+  private java.lang.Integer documentId;
 
-    public EventsDocuments() {}
+  public EventsDocuments() {}
 
-    public java.lang.String getDefaultId() {
-        return this.defaultId;
-    }
+  public java.lang.String getDefaultId() {
+    return this.defaultId;
+  }
 
-    public void setDefaultId(java.lang.String defaultId) {
-        this.defaultId = defaultId;
-    }
+  public void setDefaultId(java.lang.String defaultId) {
+    this.defaultId = defaultId;
+  }
 
-    public java.lang.Integer getEventId() {
-        return this.eventId;
-    }
+  public java.lang.Integer getEventId() {
+    return this.eventId;
+  }
 
-    public java.lang.Integer getDocumentId() {
-        return this.documentId;
-    }
+  public java.lang.Integer getDocumentId() {
+    return this.documentId;
+  }
 
-    public void setEventId(java.lang.Integer eventId) {
-        this.eventId = eventId;
-    }
+  public void setEventId(java.lang.Integer eventId) {
+    this.eventId = eventId;
+  }
 
-    public void setDocumentId(java.lang.Integer documentId) {
-        this.documentId = documentId;
-    }
+  public void setDocumentId(java.lang.Integer documentId) {
+    this.documentId = documentId;
+  }
 }

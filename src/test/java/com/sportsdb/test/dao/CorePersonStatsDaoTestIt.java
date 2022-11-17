@@ -16,13 +16,13 @@
  */
 package com.sportsdb.test.dao;
 
+import java.nio.charset.Charset;
+import java.util.Arrays;
+import java.io.IOException;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.sportsdb.test.entity.CorePersonStats;
-import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
-import com.sportsdb.test.utils.FileUtils;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.Arrays;
@@ -32,68 +32,69 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import com.sportsdb.test.entity.CorePersonStats;
+import com.sportsdb.test.utils.FileUtils;
+import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
 
 public class CorePersonStatsDaoTestIt {
-    static final String inputFile = "CorePersonStats.json";
-    static CorePersonStatsDao dao;
-    static Gson gson =
-            new GsonBuilder()
-                    .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
-                    .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
-                    .create();
-    private CorePersonStats[] records;
+  static final String inputFile = "CorePersonStats.json";
+  static CorePersonStatsDao dao;
+  static Gson gson =
+      new GsonBuilder()
+          .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
+          .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
+          .create();
+  private CorePersonStats[] records;
 
-    /** Run when the class is loaded. */
-    @BeforeClass
-    public static void beforeClass() {
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("testpersistence");
-        JpaDao jpa = new StandaloneJpaDao(factory.createEntityManager());
-        dao = new DefaultCorePersonStatsDao(jpa);
-    }
+  /** Run when the class is loaded. */
+  @BeforeClass
+  public static void beforeClass() {
+    EntityManagerFactory factory = Persistence.createEntityManagerFactory("testpersistence");
+    JpaDao jpa = new StandaloneJpaDao(factory.createEntityManager());
+    dao = new DefaultCorePersonStatsDao(jpa);
+  }
 
-    /** Run before the test. */
-    @Before
-    public void before() {
-        try {
-            String json =
-                    FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
-            records = gson.fromJson(json, CorePersonStats[].class);
-            json = null;
-            Arrays.stream(records).skip(1).forEach(o -> dao.create(o));
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+  /** Run before the test. */
+  @Before
+  public void before() {
+    try {
+      String json = FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
+      records = gson.fromJson(json, CorePersonStats[].class);
+      json = null;
+      Arrays.stream(records).skip(1).forEach(o -> dao.create(o));
+    } catch (IOException ex) {
+      ex.printStackTrace();
     }
+  }
 
-    @After
-    public void after() {
-        records = null;
-    }
+  @After
+  public void after() {
+    records = null;
+  }
 
-    @Test
-    public void testSelect() {
-        CorePersonStats testResult = dao.find(records[1].getId());
-        assertNotNull("expect result", testResult);
-        org.junit.Assert.assertEquals(
-                "expect equals timePlayedEvent ",
-                this.records[1].getTimePlayedEvent(),
-                testResult.getTimePlayedEvent());
-        org.junit.Assert.assertEquals(
-                "expect equals timePlayedTotal ",
-                this.records[1].getTimePlayedTotal(),
-                testResult.getTimePlayedTotal());
-        org.junit.Assert.assertEquals(
-                "expect equals timePlayedEventAverage ",
-                this.records[1].getTimePlayedEventAverage(),
-                testResult.getTimePlayedEventAverage());
-        org.junit.Assert.assertTrue(
-                "expect equals eventsPlayed ",
-                this.records[1].getEventsPlayed() == testResult.getEventsPlayed());
-        org.junit.Assert.assertTrue(
-                "expect equals eventsStarted ",
-                this.records[1].getEventsStarted() == testResult.getEventsStarted());
-        org.junit.Assert.assertTrue(
-                "expect equals positionId ",
-                this.records[1].getPositionId() == testResult.getPositionId());
-    }
+  @Test
+  public void testSelect() {
+    CorePersonStats testResult = dao.find(records[1].getId());
+    assertNotNull("expect result", testResult);
+    org.junit.Assert.assertEquals(
+        "expect equals timePlayedEvent ",
+        this.records[1].getTimePlayedEvent(),
+        testResult.getTimePlayedEvent());
+    org.junit.Assert.assertEquals(
+        "expect equals timePlayedTotal ",
+        this.records[1].getTimePlayedTotal(),
+        testResult.getTimePlayedTotal());
+    org.junit.Assert.assertEquals(
+        "expect equals timePlayedEventAverage ",
+        this.records[1].getTimePlayedEventAverage(),
+        testResult.getTimePlayedEventAverage());
+    org.junit.Assert.assertTrue(
+        "expect equals eventsPlayed ",
+        this.records[1].getEventsPlayed() == testResult.getEventsPlayed());
+    org.junit.Assert.assertTrue(
+        "expect equals eventsStarted ",
+        this.records[1].getEventsStarted() == testResult.getEventsStarted());
+    org.junit.Assert.assertTrue(
+        "expect equals positionId ", this.records[1].getPositionId() == testResult.getPositionId());
+  }
 }

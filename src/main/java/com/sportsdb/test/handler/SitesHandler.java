@@ -16,44 +16,47 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.Sites;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.Sites;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("SitesHandler")
 public class SitesHandler extends DelimiterFileHandler<Sites> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public SitesHandler(final JpaDao dao) {
-        super(dao);
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public SitesHandler(final JpaDao dao) {
+    super(dao);
+  }
 
-    @Override
-    protected Sites parseLine(List<String> headers, List<String> tokens) {
-        Sites record = new Sites();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "siteKey":
-                    record.setSiteKey(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "publisherId":
-                    record.setPublisherId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "locationId":
-                    record.setLocationId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
+  @Override
+  protected Sites parseLine(List<String> headers, List<String> tokens) {
+    Sites record = new Sites();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "siteKey":
+          record.setSiteKey(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "publisherId":
+          record.setPublisherId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "locationId":
+          record.setLocationId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
 
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
+    return record;
+  }
 }

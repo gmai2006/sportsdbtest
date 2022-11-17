@@ -16,97 +16,100 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.BaseballEventStates;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.BaseballEventStates;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("BaseballEventStatesHandler")
 public class BaseballEventStatesHandler extends DelimiterFileHandler<BaseballEventStates> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public BaseballEventStatesHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public BaseballEventStatesHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected BaseballEventStates parseLine(List<String> headers, List<String> tokens) {
+    BaseballEventStates record = new BaseballEventStates();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "eventId":
+          record.setEventId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "currentState":
+          record.setCurrentState(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "sequenceNumber":
+          record.setSequenceNumber(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "atBatNumber":
+          record.setAtBatNumber(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "inningValue":
+          record.setInningValue(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "inningHalf":
+          record.setInningHalf(tokens.get(i));
+          break;
+
+        case "outs":
+          record.setOuts(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "balls":
+          record.setBalls(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "strikes":
+          record.setStrikes(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "runnerOnFirstId":
+          record.setRunnerOnFirstId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "runnerOnSecondId":
+          record.setRunnerOnSecondId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "runnerOnThirdId":
+          record.setRunnerOnThirdId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "runnerOnFirst":
+          record.setRunnerOnFirst(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "runnerOnSecond":
+          record.setRunnerOnSecond(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "runnerOnThird":
+          record.setRunnerOnThird(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "runsThisInningHalf":
+          record.setRunsThisInningHalf(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "pitcherId":
+          record.setPitcherId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "batterId":
+          record.setBatterId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "batterSide":
+          record.setBatterSide(tokens.get(i));
+          break;
+
+        case "context":
+          record.setContext(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected BaseballEventStates parseLine(List<String> headers, List<String> tokens) {
-        BaseballEventStates record = new BaseballEventStates();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "eventId":
-                    record.setEventId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "currentState":
-                    record.setCurrentState(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "sequenceNumber":
-                    record.setSequenceNumber(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "atBatNumber":
-                    record.setAtBatNumber(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "inningValue":
-                    record.setInningValue(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "inningHalf":
-                    record.setInningHalf(tokens.get(i));
-                    break;
-
-                case "outs":
-                    record.setOuts(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "balls":
-                    record.setBalls(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "strikes":
-                    record.setStrikes(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "runnerOnFirstId":
-                    record.setRunnerOnFirstId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "runnerOnSecondId":
-                    record.setRunnerOnSecondId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "runnerOnThirdId":
-                    record.setRunnerOnThirdId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "runnerOnFirst":
-                    record.setRunnerOnFirst(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "runnerOnSecond":
-                    record.setRunnerOnSecond(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "runnerOnThird":
-                    record.setRunnerOnThird(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "runsThisInningHalf":
-                    record.setRunsThisInningHalf(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "pitcherId":
-                    record.setPitcherId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "batterId":
-                    record.setBatterId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "batterSide":
-                    record.setBatterSide(tokens.get(i));
-                    break;
-
-                case "context":
-                    record.setContext(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

@@ -16,57 +16,60 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.DisplayNames;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.DisplayNames;
 
 @Stateless
 @Named("DefaultDisplayNamesDao")
 public class DefaultDisplayNamesDao implements DisplayNamesDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultDisplayNamesDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultDisplayNamesDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultDisplayNamesDao() {}
+  public DefaultDisplayNamesDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public DisplayNames find(java.lang.Integer id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(DisplayNames.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public DisplayNames find(java.lang.Integer id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(DisplayNames.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<DisplayNames> select(int max) {
-        return dao.select("select a from DisplayNames a", DisplayNames.class, max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<DisplayNames> select(int max) {
+    return dao.select("select a from DisplayNames a", DisplayNames.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<DisplayNames> selectAll() {
-        return dao.selectAll("select a from DisplayNames a", DisplayNames.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<DisplayNames> selectAll() {
+    return dao.selectAll("select a from DisplayNames a", DisplayNames.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public DisplayNames create(DisplayNames e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public DisplayNames create(DisplayNames e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public DisplayNames update(DisplayNames e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public DisplayNames update(DisplayNames e) {
+    return dao.update(e);
+  }
 }

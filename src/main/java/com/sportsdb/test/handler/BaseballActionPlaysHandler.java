@@ -16,78 +16,81 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.BaseballActionPlays;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.BaseballActionPlays;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("BaseballActionPlaysHandler")
 public class BaseballActionPlaysHandler extends DelimiterFileHandler<BaseballActionPlays> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public BaseballActionPlaysHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public BaseballActionPlaysHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected BaseballActionPlays parseLine(List<String> headers, List<String> tokens) {
+    BaseballActionPlays record = new BaseballActionPlays();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "baseballEventStateId":
+          record.setBaseballEventStateId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "playType":
+          record.setPlayType(tokens.get(i));
+          break;
+
+        case "notation":
+          record.setNotation(tokens.get(i));
+          break;
+
+        case "notationYaml":
+          record.setNotationYaml(tokens.get(i));
+          break;
+
+        case "baseballDefensiveGroupId":
+          record.setBaseballDefensiveGroupId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "comment":
+          record.setComment(tokens.get(i));
+          break;
+
+        case "runnerOnFirstAdvance":
+          record.setRunnerOnFirstAdvance(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "runnerOnSecondAdvance":
+          record.setRunnerOnSecondAdvance(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "runnerOnThirdAdvance":
+          record.setRunnerOnThirdAdvance(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "outsRecorded":
+          record.setOutsRecorded(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "rbi":
+          record.setRbi(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "runsScored":
+          record.setRunsScored(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "earnedRunsScored":
+          record.setEarnedRunsScored(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected BaseballActionPlays parseLine(List<String> headers, List<String> tokens) {
-        BaseballActionPlays record = new BaseballActionPlays();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "baseballEventStateId":
-                    record.setBaseballEventStateId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "playType":
-                    record.setPlayType(tokens.get(i));
-                    break;
-
-                case "notation":
-                    record.setNotation(tokens.get(i));
-                    break;
-
-                case "notationYaml":
-                    record.setNotationYaml(tokens.get(i));
-                    break;
-
-                case "baseballDefensiveGroupId":
-                    record.setBaseballDefensiveGroupId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "comment":
-                    record.setComment(tokens.get(i));
-                    break;
-
-                case "runnerOnFirstAdvance":
-                    record.setRunnerOnFirstAdvance(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "runnerOnSecondAdvance":
-                    record.setRunnerOnSecondAdvance(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "runnerOnThirdAdvance":
-                    record.setRunnerOnThirdAdvance(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "outsRecorded":
-                    record.setOutsRecorded(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "rbi":
-                    record.setRbi(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "runsScored":
-                    record.setRunsScored(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "earnedRunsScored":
-                    record.setEarnedRunsScored(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

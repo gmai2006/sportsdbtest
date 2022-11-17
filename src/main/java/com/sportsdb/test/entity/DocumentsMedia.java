@@ -16,70 +16,70 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "documents_media")
 public class DocumentsMedia implements Serializable {
-    private static final long serialVersionUID = 163445241897610603L;
+  private static final long serialVersionUID = 166867004233523152L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: document_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "document_id")
-    private java.lang.Integer documentId;
-    /** Description: media_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "media_id")
-    private java.lang.Integer mediaId;
-    /** Description: media_caption_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "media_caption_id")
-    private java.lang.Integer mediaCaptionId;
+  /** Description: document_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "document_id")
+  private java.lang.Integer documentId;
+  /** Description: media_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "media_id")
+  private java.lang.Integer mediaId;
+  /** Description: media_caption_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "media_caption_id")
+  private java.lang.Integer mediaCaptionId;
 
-    public DocumentsMedia() {}
+  public DocumentsMedia() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.Integer getDocumentId() {
-        return this.documentId;
-    }
+  public java.lang.Integer getDocumentId() {
+    return this.documentId;
+  }
 
-    public java.lang.Integer getMediaId() {
-        return this.mediaId;
-    }
+  public java.lang.Integer getMediaId() {
+    return this.mediaId;
+  }
 
-    public java.lang.Integer getMediaCaptionId() {
-        return this.mediaCaptionId;
-    }
+  public java.lang.Integer getMediaCaptionId() {
+    return this.mediaCaptionId;
+  }
 
-    public void setDocumentId(java.lang.Integer documentId) {
-        this.documentId = documentId;
-    }
+  public void setDocumentId(java.lang.Integer documentId) {
+    this.documentId = documentId;
+  }
 
-    public void setMediaId(java.lang.Integer mediaId) {
-        this.mediaId = mediaId;
-    }
+  public void setMediaId(java.lang.Integer mediaId) {
+    this.mediaId = mediaId;
+  }
 
-    public void setMediaCaptionId(java.lang.Integer mediaCaptionId) {
-        this.mediaCaptionId = mediaCaptionId;
-    }
+  public void setMediaCaptionId(java.lang.Integer mediaCaptionId) {
+    this.mediaCaptionId = mediaCaptionId;
+  }
 }

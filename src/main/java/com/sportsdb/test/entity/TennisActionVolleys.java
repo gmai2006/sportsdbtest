@@ -16,115 +16,115 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "tennis_action_volleys")
 public class TennisActionVolleys implements Serializable {
-    private static final long serialVersionUID = 163445241936724984L;
+  private static final long serialVersionUID = 166867004258925493L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: sequence_number. */
-    @Basic
-    @Column(name = "sequence_number", length = 100)
-    private java.lang.String sequenceNumber;
-    /** Description: tennis_action_points_id. */
-    @Basic
-    @Column(name = "tennis_action_points_id")
-    private java.lang.Integer tennisActionPointsId;
-    /** Description: landing_location. */
-    @Basic
-    @Column(name = "landing_location", length = 100)
-    private java.lang.String landingLocation;
-    /** Description: swing_type. */
-    @Basic
-    @Column(name = "swing_type", length = 100)
-    private java.lang.String swingType;
-    /** Description: result. */
-    @Basic
-    @Column(name = "result", length = 100)
-    private java.lang.String result;
-    /** Description: spin_type. */
-    @Basic
-    @Column(name = "spin_type", length = 100)
-    private java.lang.String spinType;
-    /** Description: trajectory_details. */
-    @Basic
-    @Column(name = "trajectory_details", length = 100)
-    private java.lang.String trajectoryDetails;
+  /** Description: sequence_number. */
+  @Basic
+  @Column(name = "sequence_number", length = 100)
+  private java.lang.String sequenceNumber;
+  /** Description: tennis_action_points_id. */
+  @Basic
+  @Column(name = "tennis_action_points_id")
+  private java.lang.Integer tennisActionPointsId;
+  /** Description: landing_location. */
+  @Basic
+  @Column(name = "landing_location", length = 100)
+  private java.lang.String landingLocation;
+  /** Description: swing_type. */
+  @Basic
+  @Column(name = "swing_type", length = 100)
+  private java.lang.String swingType;
+  /** Description: result. */
+  @Basic
+  @Column(name = "result", length = 100)
+  private java.lang.String result;
+  /** Description: spin_type. */
+  @Basic
+  @Column(name = "spin_type", length = 100)
+  private java.lang.String spinType;
+  /** Description: trajectory_details. */
+  @Basic
+  @Column(name = "trajectory_details", length = 100)
+  private java.lang.String trajectoryDetails;
 
-    public TennisActionVolleys() {}
+  public TennisActionVolleys() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.String getSequenceNumber() {
-        return this.sequenceNumber;
-    }
+  public java.lang.String getSequenceNumber() {
+    return this.sequenceNumber;
+  }
 
-    public java.lang.Integer getTennisActionPointsId() {
-        return this.tennisActionPointsId;
-    }
+  public java.lang.Integer getTennisActionPointsId() {
+    return this.tennisActionPointsId;
+  }
 
-    public java.lang.String getLandingLocation() {
-        return this.landingLocation;
-    }
+  public java.lang.String getLandingLocation() {
+    return this.landingLocation;
+  }
 
-    public java.lang.String getSwingType() {
-        return this.swingType;
-    }
+  public java.lang.String getSwingType() {
+    return this.swingType;
+  }
 
-    public java.lang.String getResult() {
-        return this.result;
-    }
+  public java.lang.String getResult() {
+    return this.result;
+  }
 
-    public java.lang.String getSpinType() {
-        return this.spinType;
-    }
+  public java.lang.String getSpinType() {
+    return this.spinType;
+  }
 
-    public java.lang.String getTrajectoryDetails() {
-        return this.trajectoryDetails;
-    }
+  public java.lang.String getTrajectoryDetails() {
+    return this.trajectoryDetails;
+  }
 
-    public void setSequenceNumber(java.lang.String sequenceNumber) {
-        this.sequenceNumber = sequenceNumber;
-    }
+  public void setSequenceNumber(java.lang.String sequenceNumber) {
+    this.sequenceNumber = sequenceNumber;
+  }
 
-    public void setTennisActionPointsId(java.lang.Integer tennisActionPointsId) {
-        this.tennisActionPointsId = tennisActionPointsId;
-    }
+  public void setTennisActionPointsId(java.lang.Integer tennisActionPointsId) {
+    this.tennisActionPointsId = tennisActionPointsId;
+  }
 
-    public void setLandingLocation(java.lang.String landingLocation) {
-        this.landingLocation = landingLocation;
-    }
+  public void setLandingLocation(java.lang.String landingLocation) {
+    this.landingLocation = landingLocation;
+  }
 
-    public void setSwingType(java.lang.String swingType) {
-        this.swingType = swingType;
-    }
+  public void setSwingType(java.lang.String swingType) {
+    this.swingType = swingType;
+  }
 
-    public void setResult(java.lang.String result) {
-        this.result = result;
-    }
+  public void setResult(java.lang.String result) {
+    this.result = result;
+  }
 
-    public void setSpinType(java.lang.String spinType) {
-        this.spinType = spinType;
-    }
+  public void setSpinType(java.lang.String spinType) {
+    this.spinType = spinType;
+  }
 
-    public void setTrajectoryDetails(java.lang.String trajectoryDetails) {
-        this.trajectoryDetails = trajectoryDetails;
-    }
+  public void setTrajectoryDetails(java.lang.String trajectoryDetails) {
+    this.trajectoryDetails = trajectoryDetails;
+  }
 }

@@ -16,13 +16,13 @@
  */
 package com.sportsdb.test.dao;
 
+import java.nio.charset.Charset;
+import java.util.Arrays;
+import java.io.IOException;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.sportsdb.test.entity.AmericanFootballRushingStats;
-import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
-import com.sportsdb.test.utils.FileUtils;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.Arrays;
@@ -32,71 +32,73 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import com.sportsdb.test.entity.AmericanFootballRushingStats;
+import com.sportsdb.test.utils.FileUtils;
+import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
 
 public class AmericanFootballRushingStatsDaoTestIt {
-    static final String inputFile = "AmericanFootballRushingStats.json";
-    static AmericanFootballRushingStatsDao dao;
-    static Gson gson =
-            new GsonBuilder()
-                    .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
-                    .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
-                    .create();
-    private AmericanFootballRushingStats[] records;
+  static final String inputFile = "AmericanFootballRushingStats.json";
+  static AmericanFootballRushingStatsDao dao;
+  static Gson gson =
+      new GsonBuilder()
+          .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
+          .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
+          .create();
+  private AmericanFootballRushingStats[] records;
 
-    /** Run when the class is loaded. */
-    @BeforeClass
-    public static void beforeClass() {
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("testpersistence");
-        JpaDao jpa = new StandaloneJpaDao(factory.createEntityManager());
-        dao = new DefaultAmericanFootballRushingStatsDao(jpa);
-    }
+  /** Run when the class is loaded. */
+  @BeforeClass
+  public static void beforeClass() {
+    EntityManagerFactory factory = Persistence.createEntityManagerFactory("testpersistence");
+    JpaDao jpa = new StandaloneJpaDao(factory.createEntityManager());
+    dao = new DefaultAmericanFootballRushingStatsDao(jpa);
+  }
 
-    /** Run before the test. */
-    @Before
-    public void before() {
-        try {
-            String json =
-                    FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
-            records = gson.fromJson(json, AmericanFootballRushingStats[].class);
-            json = null;
-            Arrays.stream(records).skip(1).forEach(o -> dao.create(o));
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+  /** Run before the test. */
+  @Before
+  public void before() {
+    try {
+      String json = FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
+      records = gson.fromJson(json, AmericanFootballRushingStats[].class);
+      json = null;
+      Arrays.stream(records).skip(1).forEach(o -> dao.create(o));
+    } catch (IOException ex) {
+      ex.printStackTrace();
     }
+  }
 
-    @After
-    public void after() {
-        records = null;
-    }
+  @After
+  public void after() {
+    records = null;
+  }
 
-    @Test
-    public void testSelect() {
-        AmericanFootballRushingStats testResult = dao.find(records[1].getId());
-        assertNotNull("expect result", testResult);
-        org.junit.Assert.assertEquals(
-                "expect equals rushesAttempts ",
-                this.records[1].getRushesAttempts(),
-                testResult.getRushesAttempts());
-        org.junit.Assert.assertEquals(
-                "expect equals rushesYards ",
-                this.records[1].getRushesYards(),
-                testResult.getRushesYards());
-        org.junit.Assert.assertEquals(
-                "expect equals rushesTouchdowns ",
-                this.records[1].getRushesTouchdowns(),
-                testResult.getRushesTouchdowns());
-        org.junit.Assert.assertEquals(
-                "expect equals rushingAverageYardsPer ",
-                this.records[1].getRushingAverageYardsPer(),
-                testResult.getRushingAverageYardsPer());
-        org.junit.Assert.assertEquals(
-                "expect equals rushesFirstDown ",
-                this.records[1].getRushesFirstDown(),
-                testResult.getRushesFirstDown());
-        org.junit.Assert.assertEquals(
-                "expect equals rushesLongest ",
-                this.records[1].getRushesLongest(),
-                testResult.getRushesLongest());
-    }
+  @Test
+  public void testSelect() {
+    AmericanFootballRushingStats testResult = dao.find(records[1].getId());
+    assertNotNull("expect result", testResult);
+    org.junit.Assert.assertEquals(
+        "expect equals rushesAttempts ",
+        this.records[1].getRushesAttempts(),
+        testResult.getRushesAttempts());
+    org.junit.Assert.assertEquals(
+        "expect equals rushesYards ",
+        this.records[1].getRushesYards(),
+        testResult.getRushesYards());
+    org.junit.Assert.assertEquals(
+        "expect equals rushesTouchdowns ",
+        this.records[1].getRushesTouchdowns(),
+        testResult.getRushesTouchdowns());
+    org.junit.Assert.assertEquals(
+        "expect equals rushingAverageYardsPer ",
+        this.records[1].getRushingAverageYardsPer(),
+        testResult.getRushingAverageYardsPer());
+    org.junit.Assert.assertEquals(
+        "expect equals rushesFirstDown ",
+        this.records[1].getRushesFirstDown(),
+        testResult.getRushesFirstDown());
+    org.junit.Assert.assertEquals(
+        "expect equals rushesLongest ",
+        this.records[1].getRushesLongest(),
+        testResult.getRushesLongest());
+  }
 }

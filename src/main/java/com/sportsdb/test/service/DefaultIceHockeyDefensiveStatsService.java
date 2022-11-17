@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.IceHockeyDefensiveStatsDao;
-import com.sportsdb.test.entity.IceHockeyDefensiveStats;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.IceHockeyDefensiveStatsDao;
+import com.sportsdb.test.entity.IceHockeyDefensiveStats;
 
 @Stateless
 @Named("DefaultIceHockeyDefensiveStatsService")
 public class DefaultIceHockeyDefensiveStatsService implements IceHockeyDefensiveStatsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final IceHockeyDefensiveStatsDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final IceHockeyDefensiveStatsDao dao;
 
-    @Inject
-    @Named("DefaultIceHockeyDefensiveStatsDao")
-    public DefaultIceHockeyDefensiveStatsService(final IceHockeyDefensiveStatsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultIceHockeyDefensiveStatsDao")
+  public DefaultIceHockeyDefensiveStatsService(final IceHockeyDefensiveStatsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public IceHockeyDefensiveStats find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public IceHockeyDefensiveStats find(java.lang.Integer id) {
 
-        final IceHockeyDefensiveStats result = dao.find(id);
-        logger.info("find(IceHockeyDefensiveStats) - exited - return value={} result ");
-        return result;
-    }
+    final IceHockeyDefensiveStats result = dao.find(id);
+    logger.info("find(IceHockeyDefensiveStats) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<IceHockeyDefensiveStats> select(int maxResult) {
-        final List<IceHockeyDefensiveStats> result = dao.select(maxResult);
-        logger.info("select(IceHockeyDefensiveStats) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<IceHockeyDefensiveStats> select(int maxResult) {
+    final List<IceHockeyDefensiveStats> result = dao.select(maxResult);
+    logger.info("select(IceHockeyDefensiveStats) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<IceHockeyDefensiveStats> selectAll() {
-        final List<IceHockeyDefensiveStats> results = dao.selectAll();
-        logger.info("selectAll(IceHockeyDefensiveStats) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<IceHockeyDefensiveStats> selectAll() {
+    final List<IceHockeyDefensiveStats> results = dao.selectAll();
+    logger.info("selectAll(IceHockeyDefensiveStats) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public IceHockeyDefensiveStats create(IceHockeyDefensiveStats bean) {
-        requireNonNull(bean);
-        logger.info("create(IceHockeyDefensiveStats={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public IceHockeyDefensiveStats create(IceHockeyDefensiveStats bean) {
+    requireNonNull(bean);
+    logger.info("create(IceHockeyDefensiveStats={}) - entered bean ");
 
-        final IceHockeyDefensiveStats result = dao.create(bean);
+    final IceHockeyDefensiveStats result = dao.create(bean);
 
-        logger.info("create(IceHockeyDefensiveStats) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(IceHockeyDefensiveStats) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public IceHockeyDefensiveStats update(IceHockeyDefensiveStats bean) {
-        requireNonNull(bean);
-        logger.info("update(IceHockeyDefensiveStats={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public IceHockeyDefensiveStats update(IceHockeyDefensiveStats bean) {
+    requireNonNull(bean);
+    logger.info("update(IceHockeyDefensiveStats={}) - entered bean ");
 
-        final IceHockeyDefensiveStats result = dao.update(bean);
+    final IceHockeyDefensiveStats result = dao.update(bean);
 
-        logger.info("update(IceHockeyDefensiveStats) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(IceHockeyDefensiveStats) - exited - return value={} result ");
+    return result;
+  }
 }

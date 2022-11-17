@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.WageringRunlines;
 import java.util.List;
+import com.sportsdb.test.entity.WageringRunlines;
 
 public interface WageringRunlinesDao {
-    /**
-     * Retrieve all records WageringRunlines.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of WageringRunlines
-     */
-    public List<WageringRunlines> select(int maxResult);
+  /**
+   * Retrieve all records WageringRunlines.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of WageringRunlines
+   */
+  public List<WageringRunlines> select(int maxResult);
 
-    /**
-     * Retrieve all records WageringRunlines.
-     *
-     * @return A list of WageringRunlines
-     */
-    public List<WageringRunlines> selectAll();
+  /**
+   * Retrieve all records WageringRunlines.
+   *
+   * @return A list of WageringRunlines
+   */
+  public List<WageringRunlines> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An WageringRunlines id.
-     * @return The same WageringRunlines.
-     */
-    public WageringRunlines find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An WageringRunlines id.
+   * @return The same WageringRunlines.
+   */
+  public WageringRunlines find(java.lang.Integer id);
 
-    /**
-     * Create an WageringRunlines.
-     *
-     * @param e the WageringRunlines.
-     * @return The same WageringRunlines.
-     */
-    public WageringRunlines create(WageringRunlines e);
+  /**
+   * Create an WageringRunlines.
+   *
+   * @param e the WageringRunlines.
+   * @return The same WageringRunlines.
+   */
+  public WageringRunlines create(WageringRunlines e);
 
-    /**
-     * Update the WageringRunlines.
-     *
-     * @param e the WageringRunlines.
-     * @return The same WageringRunlines.
-     */
-    public WageringRunlines update(WageringRunlines e);
+  /**
+   * Update the WageringRunlines.
+   *
+   * @param e the WageringRunlines.
+   * @return The same WageringRunlines.
+   */
+  public WageringRunlines update(WageringRunlines e);
 }

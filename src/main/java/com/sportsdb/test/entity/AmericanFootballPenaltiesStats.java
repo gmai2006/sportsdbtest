@@ -16,67 +16,67 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "american_football_penalties_stats")
 public class AmericanFootballPenaltiesStats implements Serializable {
-    private static final long serialVersionUID = 163445241874498952L;
+  private static final long serialVersionUID = 166867004215993663L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: penalties_total. */
-    @Basic
-    @Column(name = "penalties_total", length = 100)
-    private java.lang.String penaltiesTotal;
-    /** Description: penalty_yards. */
-    @Basic
-    @Column(name = "penalty_yards", length = 100)
-    private java.lang.String penaltyYards;
-    /** Description: penalty_first_downs. */
-    @Basic
-    @Column(name = "penalty_first_downs", length = 100)
-    private java.lang.String penaltyFirstDowns;
+  /** Description: penalties_total. */
+  @Basic
+  @Column(name = "penalties_total", length = 100)
+  private java.lang.String penaltiesTotal;
+  /** Description: penalty_yards. */
+  @Basic
+  @Column(name = "penalty_yards", length = 100)
+  private java.lang.String penaltyYards;
+  /** Description: penalty_first_downs. */
+  @Basic
+  @Column(name = "penalty_first_downs", length = 100)
+  private java.lang.String penaltyFirstDowns;
 
-    public AmericanFootballPenaltiesStats() {}
+  public AmericanFootballPenaltiesStats() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.String getPenaltiesTotal() {
-        return this.penaltiesTotal;
-    }
+  public java.lang.String getPenaltiesTotal() {
+    return this.penaltiesTotal;
+  }
 
-    public java.lang.String getPenaltyYards() {
-        return this.penaltyYards;
-    }
+  public java.lang.String getPenaltyYards() {
+    return this.penaltyYards;
+  }
 
-    public java.lang.String getPenaltyFirstDowns() {
-        return this.penaltyFirstDowns;
-    }
+  public java.lang.String getPenaltyFirstDowns() {
+    return this.penaltyFirstDowns;
+  }
 
-    public void setPenaltiesTotal(java.lang.String penaltiesTotal) {
-        this.penaltiesTotal = penaltiesTotal;
-    }
+  public void setPenaltiesTotal(java.lang.String penaltiesTotal) {
+    this.penaltiesTotal = penaltiesTotal;
+  }
 
-    public void setPenaltyYards(java.lang.String penaltyYards) {
-        this.penaltyYards = penaltyYards;
-    }
+  public void setPenaltyYards(java.lang.String penaltyYards) {
+    this.penaltyYards = penaltyYards;
+  }
 
-    public void setPenaltyFirstDowns(java.lang.String penaltyFirstDowns) {
-        this.penaltyFirstDowns = penaltyFirstDowns;
-    }
+  public void setPenaltyFirstDowns(java.lang.String penaltyFirstDowns) {
+    this.penaltyFirstDowns = penaltyFirstDowns;
+  }
 }

@@ -16,104 +16,104 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "american_football_action_plays")
 public class AmericanFootballActionPlays implements Serializable {
-    private static final long serialVersionUID = 16344524186886908L;
+  private static final long serialVersionUID = 166867004211628435L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: american_football_event_state_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "american_football_event_state_id")
-    private java.lang.Integer americanFootballEventStateId;
-    /** Description: play_type. */
-    @Basic
-    @Column(name = "play_type", length = 100)
-    private java.lang.String playType;
-    /** Description: score_attempt_type. */
-    @Basic
-    @Column(name = "score_attempt_type", length = 100)
-    private java.lang.String scoreAttemptType;
-    /** Description: drive_result. */
-    @Basic
-    @Column(name = "drive_result", length = 100)
-    private java.lang.String driveResult;
-    /** Description: points. */
-    @Basic
-    @Column(name = "points")
-    private java.lang.Integer points;
-    /** Description: comment. */
-    @Basic
-    @Column(name = "comment", length = 255)
-    private java.lang.String comment;
+  /** Description: american_football_event_state_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "american_football_event_state_id")
+  private java.lang.Integer americanFootballEventStateId;
+  /** Description: play_type. */
+  @Basic
+  @Column(name = "play_type", length = 100)
+  private java.lang.String playType;
+  /** Description: score_attempt_type. */
+  @Basic
+  @Column(name = "score_attempt_type", length = 100)
+  private java.lang.String scoreAttemptType;
+  /** Description: drive_result. */
+  @Basic
+  @Column(name = "drive_result", length = 100)
+  private java.lang.String driveResult;
+  /** Description: points. */
+  @Basic
+  @Column(name = "points")
+  private java.lang.Integer points;
+  /** Description: comment. */
+  @Basic
+  @Column(name = "comment", length = 255)
+  private java.lang.String comment;
 
-    public AmericanFootballActionPlays() {}
+  public AmericanFootballActionPlays() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.Integer getAmericanFootballEventStateId() {
-        return this.americanFootballEventStateId;
-    }
+  public java.lang.Integer getAmericanFootballEventStateId() {
+    return this.americanFootballEventStateId;
+  }
 
-    public java.lang.String getPlayType() {
-        return this.playType;
-    }
+  public java.lang.String getPlayType() {
+    return this.playType;
+  }
 
-    public java.lang.String getScoreAttemptType() {
-        return this.scoreAttemptType;
-    }
+  public java.lang.String getScoreAttemptType() {
+    return this.scoreAttemptType;
+  }
 
-    public java.lang.String getDriveResult() {
-        return this.driveResult;
-    }
+  public java.lang.String getDriveResult() {
+    return this.driveResult;
+  }
 
-    public java.lang.Integer getPoints() {
-        return this.points;
-    }
+  public java.lang.Integer getPoints() {
+    return this.points;
+  }
 
-    public java.lang.String getComment() {
-        return this.comment;
-    }
+  public java.lang.String getComment() {
+    return this.comment;
+  }
 
-    public void setAmericanFootballEventStateId(java.lang.Integer americanFootballEventStateId) {
-        this.americanFootballEventStateId = americanFootballEventStateId;
-    }
+  public void setAmericanFootballEventStateId(java.lang.Integer americanFootballEventStateId) {
+    this.americanFootballEventStateId = americanFootballEventStateId;
+  }
 
-    public void setPlayType(java.lang.String playType) {
-        this.playType = playType;
-    }
+  public void setPlayType(java.lang.String playType) {
+    this.playType = playType;
+  }
 
-    public void setScoreAttemptType(java.lang.String scoreAttemptType) {
-        this.scoreAttemptType = scoreAttemptType;
-    }
+  public void setScoreAttemptType(java.lang.String scoreAttemptType) {
+    this.scoreAttemptType = scoreAttemptType;
+  }
 
-    public void setDriveResult(java.lang.String driveResult) {
-        this.driveResult = driveResult;
-    }
+  public void setDriveResult(java.lang.String driveResult) {
+    this.driveResult = driveResult;
+  }
 
-    public void setPoints(java.lang.Integer points) {
-        this.points = points;
-    }
+  public void setPoints(java.lang.Integer points) {
+    this.points = points;
+  }
 
-    public void setComment(java.lang.String comment) {
-        this.comment = comment;
-    }
+  public void setComment(java.lang.String comment) {
+    this.comment = comment;
+  }
 }

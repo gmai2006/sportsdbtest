@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.BaseballPitchingStats;
 import java.util.List;
+import com.sportsdb.test.entity.BaseballPitchingStats;
 
 public interface BaseballPitchingStatsDao {
-    /**
-     * Retrieve all records BaseballPitchingStats.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of BaseballPitchingStats
-     */
-    public List<BaseballPitchingStats> select(int maxResult);
+  /**
+   * Retrieve all records BaseballPitchingStats.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of BaseballPitchingStats
+   */
+  public List<BaseballPitchingStats> select(int maxResult);
 
-    /**
-     * Retrieve all records BaseballPitchingStats.
-     *
-     * @return A list of BaseballPitchingStats
-     */
-    public List<BaseballPitchingStats> selectAll();
+  /**
+   * Retrieve all records BaseballPitchingStats.
+   *
+   * @return A list of BaseballPitchingStats
+   */
+  public List<BaseballPitchingStats> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An BaseballPitchingStats id.
-     * @return The same BaseballPitchingStats.
-     */
-    public BaseballPitchingStats find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An BaseballPitchingStats id.
+   * @return The same BaseballPitchingStats.
+   */
+  public BaseballPitchingStats find(java.lang.Integer id);
 
-    /**
-     * Create an BaseballPitchingStats.
-     *
-     * @param e the BaseballPitchingStats.
-     * @return The same BaseballPitchingStats.
-     */
-    public BaseballPitchingStats create(BaseballPitchingStats e);
+  /**
+   * Create an BaseballPitchingStats.
+   *
+   * @param e the BaseballPitchingStats.
+   * @return The same BaseballPitchingStats.
+   */
+  public BaseballPitchingStats create(BaseballPitchingStats e);
 
-    /**
-     * Update the BaseballPitchingStats.
-     *
-     * @param e the BaseballPitchingStats.
-     * @return The same BaseballPitchingStats.
-     */
-    public BaseballPitchingStats update(BaseballPitchingStats e);
+  /**
+   * Update the BaseballPitchingStats.
+   *
+   * @param e the BaseballPitchingStats.
+   * @return The same BaseballPitchingStats.
+   */
+  public BaseballPitchingStats update(BaseballPitchingStats e);
 }

@@ -17,74 +17,73 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.AmericanFootballEventStatesDao;
-import com.sportsdb.test.entity.AmericanFootballEventStates;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.AmericanFootballEventStatesDao;
+import com.sportsdb.test.entity.AmericanFootballEventStates;
 
 @Stateless
 @Named("DefaultAmericanFootballEventStatesService")
 public class DefaultAmericanFootballEventStatesService
-        implements AmericanFootballEventStatesService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final AmericanFootballEventStatesDao dao;
+    implements AmericanFootballEventStatesService {
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final AmericanFootballEventStatesDao dao;
 
-    @Inject
-    @Named("DefaultAmericanFootballEventStatesDao")
-    public DefaultAmericanFootballEventStatesService(final AmericanFootballEventStatesDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultAmericanFootballEventStatesDao")
+  public DefaultAmericanFootballEventStatesService(final AmericanFootballEventStatesDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AmericanFootballEventStates find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public AmericanFootballEventStates find(java.lang.Integer id) {
 
-        final AmericanFootballEventStates result = dao.find(id);
-        logger.info("find(AmericanFootballEventStates) - exited - return value={} result ");
-        return result;
-    }
+    final AmericanFootballEventStates result = dao.find(id);
+    logger.info("find(AmericanFootballEventStates) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<AmericanFootballEventStates> select(int maxResult) {
-        final List<AmericanFootballEventStates> result = dao.select(maxResult);
-        logger.info("select(AmericanFootballEventStates) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<AmericanFootballEventStates> select(int maxResult) {
+    final List<AmericanFootballEventStates> result = dao.select(maxResult);
+    logger.info("select(AmericanFootballEventStates) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<AmericanFootballEventStates> selectAll() {
-        final List<AmericanFootballEventStates> results = dao.selectAll();
-        logger.info("selectAll(AmericanFootballEventStates) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<AmericanFootballEventStates> selectAll() {
+    final List<AmericanFootballEventStates> results = dao.selectAll();
+    logger.info("selectAll(AmericanFootballEventStates) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AmericanFootballEventStates create(AmericanFootballEventStates bean) {
-        requireNonNull(bean);
-        logger.info("create(AmericanFootballEventStates={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public AmericanFootballEventStates create(AmericanFootballEventStates bean) {
+    requireNonNull(bean);
+    logger.info("create(AmericanFootballEventStates={}) - entered bean ");
 
-        final AmericanFootballEventStates result = dao.create(bean);
+    final AmericanFootballEventStates result = dao.create(bean);
 
-        logger.info("create(AmericanFootballEventStates) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(AmericanFootballEventStates) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AmericanFootballEventStates update(AmericanFootballEventStates bean) {
-        requireNonNull(bean);
-        logger.info("update(AmericanFootballEventStates={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public AmericanFootballEventStates update(AmericanFootballEventStates bean) {
+    requireNonNull(bean);
+    logger.info("update(AmericanFootballEventStates={}) - entered bean ");
 
-        final AmericanFootballEventStates result = dao.update(bean);
+    final AmericanFootballEventStates result = dao.update(bean);
 
-        logger.info("update(AmericanFootballEventStates) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(AmericanFootballEventStates) - exited - return value={} result ");
+    return result;
+  }
 }

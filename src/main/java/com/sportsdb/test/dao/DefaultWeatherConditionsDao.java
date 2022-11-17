@@ -16,57 +16,60 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.WeatherConditions;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.WeatherConditions;
 
 @Stateless
 @Named("DefaultWeatherConditionsDao")
 public class DefaultWeatherConditionsDao implements WeatherConditionsDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultWeatherConditionsDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultWeatherConditionsDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultWeatherConditionsDao() {}
+  public DefaultWeatherConditionsDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public WeatherConditions find(java.lang.Integer id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(WeatherConditions.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public WeatherConditions find(java.lang.Integer id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(WeatherConditions.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<WeatherConditions> select(int max) {
-        return dao.select("select a from WeatherConditions a", WeatherConditions.class, max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<WeatherConditions> select(int max) {
+    return dao.select("select a from WeatherConditions a", WeatherConditions.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<WeatherConditions> selectAll() {
-        return dao.selectAll("select a from WeatherConditions a", WeatherConditions.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<WeatherConditions> selectAll() {
+    return dao.selectAll("select a from WeatherConditions a", WeatherConditions.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public WeatherConditions create(WeatherConditions e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public WeatherConditions create(WeatherConditions e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public WeatherConditions update(WeatherConditions e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public WeatherConditions update(WeatherConditions e) {
+    return dao.update(e);
+  }
 }

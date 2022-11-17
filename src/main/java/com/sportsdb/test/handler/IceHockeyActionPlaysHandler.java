@@ -16,53 +16,56 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.IceHockeyActionPlays;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.IceHockeyActionPlays;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("IceHockeyActionPlaysHandler")
 public class IceHockeyActionPlaysHandler extends DelimiterFileHandler<IceHockeyActionPlays> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public IceHockeyActionPlaysHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public IceHockeyActionPlaysHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected IceHockeyActionPlays parseLine(List<String> headers, List<String> tokens) {
+    IceHockeyActionPlays record = new IceHockeyActionPlays();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Long.valueOf((tokens.get(i))));
+          break;
+        case "iceHockeyEventStateId":
+          record.setIceHockeyEventStateId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "playType":
+          record.setPlayType(tokens.get(i));
+          break;
+
+        case "scoreAttemptType":
+          record.setScoreAttemptType(tokens.get(i));
+          break;
+
+        case "playResult":
+          record.setPlayResult(tokens.get(i));
+          break;
+
+        case "comment":
+          record.setComment(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected IceHockeyActionPlays parseLine(List<String> headers, List<String> tokens) {
-        IceHockeyActionPlays record = new IceHockeyActionPlays();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Long.valueOf((tokens.get(i))));
-                    break;
-                case "iceHockeyEventStateId":
-                    record.setIceHockeyEventStateId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "playType":
-                    record.setPlayType(tokens.get(i));
-                    break;
-
-                case "scoreAttemptType":
-                    record.setScoreAttemptType(tokens.get(i));
-                    break;
-
-                case "playResult":
-                    record.setPlayResult(tokens.get(i));
-                    break;
-
-                case "comment":
-                    record.setComment(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

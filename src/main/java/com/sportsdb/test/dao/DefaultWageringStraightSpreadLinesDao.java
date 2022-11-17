@@ -16,61 +16,62 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.WageringStraightSpreadLines;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.WageringStraightSpreadLines;
 
 @Stateless
 @Named("DefaultWageringStraightSpreadLinesDao")
 public class DefaultWageringStraightSpreadLinesDao implements WageringStraightSpreadLinesDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultWageringStraightSpreadLinesDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultWageringStraightSpreadLinesDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultWageringStraightSpreadLinesDao() {}
+  public DefaultWageringStraightSpreadLinesDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public WageringStraightSpreadLines find(java.lang.Integer id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(WageringStraightSpreadLines.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public WageringStraightSpreadLines find(java.lang.Integer id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(WageringStraightSpreadLines.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<WageringStraightSpreadLines> select(int max) {
-        return dao.select(
-                "select a from WageringStraightSpreadLines a",
-                WageringStraightSpreadLines.class,
-                max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<WageringStraightSpreadLines> select(int max) {
+    return dao.select(
+        "select a from WageringStraightSpreadLines a", WageringStraightSpreadLines.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<WageringStraightSpreadLines> selectAll() {
-        return dao.selectAll(
-                "select a from WageringStraightSpreadLines a", WageringStraightSpreadLines.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<WageringStraightSpreadLines> selectAll() {
+    return dao.selectAll(
+        "select a from WageringStraightSpreadLines a", WageringStraightSpreadLines.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public WageringStraightSpreadLines create(WageringStraightSpreadLines e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public WageringStraightSpreadLines create(WageringStraightSpreadLines e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public WageringStraightSpreadLines update(WageringStraightSpreadLines e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public WageringStraightSpreadLines update(WageringStraightSpreadLines e) {
+    return dao.update(e);
+  }
 }

@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.OutcomeTotals;
 import java.util.List;
+import com.sportsdb.test.entity.OutcomeTotals;
 
 public interface OutcomeTotalsDao {
-    /**
-     * Retrieve all records OutcomeTotals.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of OutcomeTotals
-     */
-    public List<OutcomeTotals> select(int maxResult);
+  /**
+   * Retrieve all records OutcomeTotals.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of OutcomeTotals
+   */
+  public List<OutcomeTotals> select(int maxResult);
 
-    /**
-     * Retrieve all records OutcomeTotals.
-     *
-     * @return A list of OutcomeTotals
-     */
-    public List<OutcomeTotals> selectAll();
+  /**
+   * Retrieve all records OutcomeTotals.
+   *
+   * @return A list of OutcomeTotals
+   */
+  public List<OutcomeTotals> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An OutcomeTotals id.
-     * @return The same OutcomeTotals.
-     */
-    public OutcomeTotals find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An OutcomeTotals id.
+   * @return The same OutcomeTotals.
+   */
+  public OutcomeTotals find(java.lang.Integer id);
 
-    /**
-     * Create an OutcomeTotals.
-     *
-     * @param e the OutcomeTotals.
-     * @return The same OutcomeTotals.
-     */
-    public OutcomeTotals create(OutcomeTotals e);
+  /**
+   * Create an OutcomeTotals.
+   *
+   * @param e the OutcomeTotals.
+   * @return The same OutcomeTotals.
+   */
+  public OutcomeTotals create(OutcomeTotals e);
 
-    /**
-     * Update the OutcomeTotals.
-     *
-     * @param e the OutcomeTotals.
-     * @return The same OutcomeTotals.
-     */
-    public OutcomeTotals update(OutcomeTotals e);
+  /**
+   * Update the OutcomeTotals.
+   *
+   * @param e the OutcomeTotals.
+   * @return The same OutcomeTotals.
+   */
+  public OutcomeTotals update(OutcomeTotals e);
 }

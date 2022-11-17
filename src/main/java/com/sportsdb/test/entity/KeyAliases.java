@@ -16,57 +16,57 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "key_aliases")
 public class KeyAliases implements Serializable {
-    private static final long serialVersionUID = 163445241908842354L;
+  private static final long serialVersionUID = 166867004240387582L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: key_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "key_id")
-    private java.lang.Integer keyId;
-    /** Description: key_root_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "key_root_id")
-    private java.lang.Integer keyRootId;
+  /** Description: key_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "key_id")
+  private java.lang.Integer keyId;
+  /** Description: key_root_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "key_root_id")
+  private java.lang.Integer keyRootId;
 
-    public KeyAliases() {}
+  public KeyAliases() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.Integer getKeyId() {
-        return this.keyId;
-    }
+  public java.lang.Integer getKeyId() {
+    return this.keyId;
+  }
 
-    public java.lang.Integer getKeyRootId() {
-        return this.keyRootId;
-    }
+  public java.lang.Integer getKeyRootId() {
+    return this.keyRootId;
+  }
 
-    public void setKeyId(java.lang.Integer keyId) {
-        this.keyId = keyId;
-    }
+  public void setKeyId(java.lang.Integer keyId) {
+    this.keyId = keyId;
+  }
 
-    public void setKeyRootId(java.lang.Integer keyRootId) {
-        this.keyRootId = keyRootId;
-    }
+  public void setKeyRootId(java.lang.Integer keyRootId) {
+    this.keyRootId = keyRootId;
+  }
 }

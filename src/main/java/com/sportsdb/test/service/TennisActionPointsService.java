@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.TennisActionPoints;
 import java.util.List;
+import com.sportsdb.test.entity.TennisActionPoints;
 
 public interface TennisActionPointsService {
-    public TennisActionPoints find(java.lang.Integer id);
+  public TennisActionPoints find(java.lang.Integer id);
 
-    /**
-     * Select a list of TennisActionPoints based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return TennisActionPoints records.
-     */
-    public List<TennisActionPoints> select(int maxResult);
+  /**
+   * Select a list of TennisActionPoints based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return TennisActionPoints records.
+   */
+  public List<TennisActionPoints> select(int maxResult);
 
-    /**
-     * Select all TennisActionPoints.
-     *
-     * @return all TennisActionPoints records.
-     */
-    public List<TennisActionPoints> selectAll();
+  /**
+   * Select all TennisActionPoints.
+   *
+   * @return all TennisActionPoints records.
+   */
+  public List<TennisActionPoints> selectAll();
 
-    /**
-     * Create TennisActionPoints.
-     *
-     * @param bean The TennisActionPoints.
-     * @return The TennisActionPoints.
-     */
-    public TennisActionPoints create(TennisActionPoints bean);
+  /**
+   * Create TennisActionPoints.
+   *
+   * @param bean The TennisActionPoints.
+   * @return The TennisActionPoints.
+   */
+  public TennisActionPoints create(TennisActionPoints bean);
 
-    /**
-     * Update a TennisActionPoints.
-     *
-     * @param bean - The TennisActionPoints.
-     * @return TennisActionPoints.
-     */
-    public TennisActionPoints update(TennisActionPoints bean);
+  /**
+   * Update a TennisActionPoints.
+   *
+   * @param bean - The TennisActionPoints.
+   * @return TennisActionPoints.
+   */
+  public TennisActionPoints update(TennisActionPoints bean);
 }

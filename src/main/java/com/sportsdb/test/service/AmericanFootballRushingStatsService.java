@@ -16,41 +16,41 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.AmericanFootballRushingStats;
 import java.util.List;
+import com.sportsdb.test.entity.AmericanFootballRushingStats;
 
 public interface AmericanFootballRushingStatsService {
-    public AmericanFootballRushingStats find(java.lang.Integer id);
+  public AmericanFootballRushingStats find(java.lang.Integer id);
 
-    /**
-     * Select a list of AmericanFootballRushingStats based on a given maximum number of returning
-     * records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return AmericanFootballRushingStats records.
-     */
-    public List<AmericanFootballRushingStats> select(int maxResult);
+  /**
+   * Select a list of AmericanFootballRushingStats based on a given maximum number of returning
+   * records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return AmericanFootballRushingStats records.
+   */
+  public List<AmericanFootballRushingStats> select(int maxResult);
 
-    /**
-     * Select all AmericanFootballRushingStats.
-     *
-     * @return all AmericanFootballRushingStats records.
-     */
-    public List<AmericanFootballRushingStats> selectAll();
+  /**
+   * Select all AmericanFootballRushingStats.
+   *
+   * @return all AmericanFootballRushingStats records.
+   */
+  public List<AmericanFootballRushingStats> selectAll();
 
-    /**
-     * Create AmericanFootballRushingStats.
-     *
-     * @param bean The AmericanFootballRushingStats.
-     * @return The AmericanFootballRushingStats.
-     */
-    public AmericanFootballRushingStats create(AmericanFootballRushingStats bean);
+  /**
+   * Create AmericanFootballRushingStats.
+   *
+   * @param bean The AmericanFootballRushingStats.
+   * @return The AmericanFootballRushingStats.
+   */
+  public AmericanFootballRushingStats create(AmericanFootballRushingStats bean);
 
-    /**
-     * Update a AmericanFootballRushingStats.
-     *
-     * @param bean - The AmericanFootballRushingStats.
-     * @return AmericanFootballRushingStats.
-     */
-    public AmericanFootballRushingStats update(AmericanFootballRushingStats bean);
+  /**
+   * Update a AmericanFootballRushingStats.
+   *
+   * @param bean - The AmericanFootballRushingStats.
+   * @return AmericanFootballRushingStats.
+   */
+  public AmericanFootballRushingStats update(AmericanFootballRushingStats bean);
 }

@@ -16,57 +16,57 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "latest_revisions")
 public class LatestRevisions implements Serializable {
-    private static final long serialVersionUID = 163445241909710999L;
+  private static final long serialVersionUID = 166867004240960960L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: revision_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "revision_id", length = 75)
-    private java.lang.String revisionId;
-    /** Description: latest_document_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "latest_document_id")
-    private java.lang.Integer latestDocumentId;
+  /** Description: revision_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "revision_id", length = 75)
+  private java.lang.String revisionId;
+  /** Description: latest_document_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "latest_document_id")
+  private java.lang.Integer latestDocumentId;
 
-    public LatestRevisions() {}
+  public LatestRevisions() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.String getRevisionId() {
-        return this.revisionId;
-    }
+  public java.lang.String getRevisionId() {
+    return this.revisionId;
+  }
 
-    public java.lang.Integer getLatestDocumentId() {
-        return this.latestDocumentId;
-    }
+  public java.lang.Integer getLatestDocumentId() {
+    return this.latestDocumentId;
+  }
 
-    public void setRevisionId(java.lang.String revisionId) {
-        this.revisionId = revisionId;
-    }
+  public void setRevisionId(java.lang.String revisionId) {
+    this.revisionId = revisionId;
+  }
 
-    public void setLatestDocumentId(java.lang.Integer latestDocumentId) {
-        this.latestDocumentId = latestDocumentId;
-    }
+  public void setLatestDocumentId(java.lang.Integer latestDocumentId) {
+    this.latestDocumentId = latestDocumentId;
+  }
 }

@@ -1,6 +1,6 @@
 [
   {
-    "goalsAgainstAverage": "39",
+    "goalsAgainstAverage": "14",
     "shotsPenaltyShotAllowed": "Lorem ipsum dolor si0",
     "takeaways": "Lorem ipsum dolor si0",
     "goalsShortHandedAllowed": "Lorem ipsum dolor si0",
@@ -9,7 +9,7 @@
     "hits": "Lorem ipsum dolor si0",
     "minutesPenaltyKilling": "Lorem ipsum dolor si0",
     "saves": "Lorem ipsum dolor si0",
-    "savePercentage": "58",
+    "savePercentage": "46",
     "penaltyKillingAmount": "Lorem ipsum dolor si0",
     "shutouts": "Lorem ipsum dolor si0",
     "goalsEmptyNetAllowed": "Lorem ipsum dolor si0",
@@ -17,11 +17,11 @@
     "shotsPowerPlayAllowed": "Lorem ipsum dolor si0",
     "goalsPowerPlayAllowed": "Lorem ipsum dolor si0",
     "shotsBlocked": "Lorem ipsum dolor si0",
-    "penaltyKillingPercentage": "45",
-    "id": 1208711260
+    "penaltyKillingPercentage": "30",
+    "id": 714000356
   },
   {
-    "goalsAgainstAverage": "22",
+    "goalsAgainstAverage": "29",
     "shotsPenaltyShotAllowed": "Lorem ipsum dolor si1",
     "takeaways": "Lorem ipsum dolor si1",
     "goalsShortHandedAllowed": "Lorem ipsum dolor si1",
@@ -30,7 +30,7 @@
     "hits": "Lorem ipsum dolor si1",
     "minutesPenaltyKilling": "Lorem ipsum dolor si1",
     "saves": "Lorem ipsum dolor si1",
-    "savePercentage": "51",
+    "savePercentage": "34",
     "penaltyKillingAmount": "Lorem ipsum dolor si1",
     "shutouts": "Lorem ipsum dolor si1",
     "goalsEmptyNetAllowed": "Lorem ipsum dolor si1",
@@ -38,11 +38,11 @@
     "shotsPowerPlayAllowed": "Lorem ipsum dolor si1",
     "goalsPowerPlayAllowed": "Lorem ipsum dolor si1",
     "shotsBlocked": "Lorem ipsum dolor si1",
-    "penaltyKillingPercentage": "20",
-    "id": 1105331219
+    "penaltyKillingPercentage": "44",
+    "id": 2002726537
   },
   {
-    "goalsAgainstAverage": "2",
+    "goalsAgainstAverage": "21",
     "shotsPenaltyShotAllowed": "Lorem ipsum dolor si2",
     "takeaways": "Lorem ipsum dolor si2",
     "goalsShortHandedAllowed": "Lorem ipsum dolor si2",
@@ -51,7 +51,7 @@
     "hits": "Lorem ipsum dolor si2",
     "minutesPenaltyKilling": "Lorem ipsum dolor si2",
     "saves": "Lorem ipsum dolor si2",
-    "savePercentage": "8",
+    "savePercentage": "28",
     "penaltyKillingAmount": "Lorem ipsum dolor si2",
     "shutouts": "Lorem ipsum dolor si2",
     "goalsEmptyNetAllowed": "Lorem ipsum dolor si2",
@@ -59,11 +59,11 @@
     "shotsPowerPlayAllowed": "Lorem ipsum dolor si2",
     "goalsPowerPlayAllowed": "Lorem ipsum dolor si2",
     "shotsBlocked": "Lorem ipsum dolor si2",
-    "penaltyKillingPercentage": "49",
-    "id": 2008576837
+    "penaltyKillingPercentage": "89",
+    "id": 1440568840
   },
   {
-    "goalsAgainstAverage": "74",
+    "goalsAgainstAverage": "55",
     "shotsPenaltyShotAllowed": "Lorem ipsum dolor si3",
     "takeaways": "Lorem ipsum dolor si3",
     "goalsShortHandedAllowed": "Lorem ipsum dolor si3",
@@ -72,7 +72,7 @@
     "hits": "Lorem ipsum dolor si3",
     "minutesPenaltyKilling": "Lorem ipsum dolor si3",
     "saves": "Lorem ipsum dolor si3",
-    "savePercentage": "10",
+    "savePercentage": "58",
     "penaltyKillingAmount": "Lorem ipsum dolor si3",
     "shutouts": "Lorem ipsum dolor si3",
     "goalsEmptyNetAllowed": "Lorem ipsum dolor si3",
@@ -80,11 +80,11 @@
     "shotsPowerPlayAllowed": "Lorem ipsum dolor si3",
     "goalsPowerPlayAllowed": "Lorem ipsum dolor si3",
     "shotsBlocked": "Lorem ipsum dolor si3",
-    "penaltyKillingPercentage": "96",
-    "id": 208941505
+    "penaltyKillingPercentage": "74",
+    "id": 1250590852
   },
   {
-    "goalsAgainstAverage": "23",
+    "goalsAgainstAverage": "6",
     "shotsPenaltyShotAllowed": "Lorem ipsum dolor si4",
     "takeaways": "Lorem ipsum dolor si4",
     "goalsShortHandedAllowed": "Lorem ipsum dolor si4",
@@ -93,7 +93,7 @@
     "hits": "Lorem ipsum dolor si4",
     "minutesPenaltyKilling": "Lorem ipsum dolor si4",
     "saves": "Lorem ipsum dolor si4",
-    "savePercentage": "88",
+    "savePercentage": "70",
     "penaltyKillingAmount": "Lorem ipsum dolor si4",
     "shutouts": "Lorem ipsum dolor si4",
     "goalsEmptyNetAllowed": "Lorem ipsum dolor si4",
@@ -101,11 +101,11 @@
     "shotsPowerPlayAllowed": "Lorem ipsum dolor si4",
     "goalsPowerPlayAllowed": "Lorem ipsum dolor si4",
     "shotsBlocked": "Lorem ipsum dolor si4",
-    "penaltyKillingPercentage": "26",
-    "id": 1386152644
+    "penaltyKillingPercentage": "91",
+    "id": 21116164
   },
   {
-    "goalsAgainstAverage": "99",
+    "goalsAgainstAverage": "66",
     "shotsPenaltyShotAllowed": "Lorem ipsum dolor si5",
     "takeaways": "Lorem ipsum dolor si5",
     "goalsShortHandedAllowed": "Lorem ipsum dolor si5",
@@ -114,7 +114,7 @@
     "hits": "Lorem ipsum dolor si5",
     "minutesPenaltyKilling": "Lorem ipsum dolor si5",
     "saves": "Lorem ipsum dolor si5",
-    "savePercentage": "10",
+    "savePercentage": "60",
     "penaltyKillingAmount": "Lorem ipsum dolor si5",
     "shutouts": "Lorem ipsum dolor si5",
     "goalsEmptyNetAllowed": "Lorem ipsum dolor si5",
@@ -122,11 +122,11 @@
     "shotsPowerPlayAllowed": "Lorem ipsum dolor si5",
     "goalsPowerPlayAllowed": "Lorem ipsum dolor si5",
     "shotsBlocked": "Lorem ipsum dolor si5",
-    "penaltyKillingPercentage": "67",
-    "id": 2142512808
+    "penaltyKillingPercentage": "95",
+    "id": 1920562633
   },
   {
-    "goalsAgainstAverage": "51",
+    "goalsAgainstAverage": "13",
     "shotsPenaltyShotAllowed": "Lorem ipsum dolor si6",
     "takeaways": "Lorem ipsum dolor si6",
     "goalsShortHandedAllowed": "Lorem ipsum dolor si6",
@@ -135,7 +135,7 @@
     "hits": "Lorem ipsum dolor si6",
     "minutesPenaltyKilling": "Lorem ipsum dolor si6",
     "saves": "Lorem ipsum dolor si6",
-    "savePercentage": "36",
+    "savePercentage": "40",
     "penaltyKillingAmount": "Lorem ipsum dolor si6",
     "shutouts": "Lorem ipsum dolor si6",
     "goalsEmptyNetAllowed": "Lorem ipsum dolor si6",
@@ -143,11 +143,11 @@
     "shotsPowerPlayAllowed": "Lorem ipsum dolor si6",
     "goalsPowerPlayAllowed": "Lorem ipsum dolor si6",
     "shotsBlocked": "Lorem ipsum dolor si6",
-    "penaltyKillingPercentage": "98",
-    "id": 1706121742
+    "penaltyKillingPercentage": "10",
+    "id": 1017286585
   },
   {
-    "goalsAgainstAverage": "52",
+    "goalsAgainstAverage": "95",
     "shotsPenaltyShotAllowed": "Lorem ipsum dolor si7",
     "takeaways": "Lorem ipsum dolor si7",
     "goalsShortHandedAllowed": "Lorem ipsum dolor si7",
@@ -156,7 +156,7 @@
     "hits": "Lorem ipsum dolor si7",
     "minutesPenaltyKilling": "Lorem ipsum dolor si7",
     "saves": "Lorem ipsum dolor si7",
-    "savePercentage": "56",
+    "savePercentage": "65",
     "penaltyKillingAmount": "Lorem ipsum dolor si7",
     "shutouts": "Lorem ipsum dolor si7",
     "goalsEmptyNetAllowed": "Lorem ipsum dolor si7",
@@ -164,11 +164,11 @@
     "shotsPowerPlayAllowed": "Lorem ipsum dolor si7",
     "goalsPowerPlayAllowed": "Lorem ipsum dolor si7",
     "shotsBlocked": "Lorem ipsum dolor si7",
-    "penaltyKillingPercentage": "34",
-    "id": 359587534
+    "penaltyKillingPercentage": "19",
+    "id": 878917253
   },
   {
-    "goalsAgainstAverage": "55",
+    "goalsAgainstAverage": "60",
     "shotsPenaltyShotAllowed": "Lorem ipsum dolor si8",
     "takeaways": "Lorem ipsum dolor si8",
     "goalsShortHandedAllowed": "Lorem ipsum dolor si8",
@@ -177,7 +177,7 @@
     "hits": "Lorem ipsum dolor si8",
     "minutesPenaltyKilling": "Lorem ipsum dolor si8",
     "saves": "Lorem ipsum dolor si8",
-    "savePercentage": "21",
+    "savePercentage": "50",
     "penaltyKillingAmount": "Lorem ipsum dolor si8",
     "shutouts": "Lorem ipsum dolor si8",
     "goalsEmptyNetAllowed": "Lorem ipsum dolor si8",
@@ -185,11 +185,11 @@
     "shotsPowerPlayAllowed": "Lorem ipsum dolor si8",
     "goalsPowerPlayAllowed": "Lorem ipsum dolor si8",
     "shotsBlocked": "Lorem ipsum dolor si8",
-    "penaltyKillingPercentage": "55",
-    "id": 191347028
+    "penaltyKillingPercentage": "72",
+    "id": 1239196295
   },
   {
-    "goalsAgainstAverage": "5",
+    "goalsAgainstAverage": "22",
     "shotsPenaltyShotAllowed": "Lorem ipsum dolor si9",
     "takeaways": "Lorem ipsum dolor si9",
     "goalsShortHandedAllowed": "Lorem ipsum dolor si9",
@@ -198,7 +198,7 @@
     "hits": "Lorem ipsum dolor si9",
     "minutesPenaltyKilling": "Lorem ipsum dolor si9",
     "saves": "Lorem ipsum dolor si9",
-    "savePercentage": "73",
+    "savePercentage": "22",
     "penaltyKillingAmount": "Lorem ipsum dolor si9",
     "shutouts": "Lorem ipsum dolor si9",
     "goalsEmptyNetAllowed": "Lorem ipsum dolor si9",
@@ -206,7 +206,7 @@
     "shotsPowerPlayAllowed": "Lorem ipsum dolor si9",
     "goalsPowerPlayAllowed": "Lorem ipsum dolor si9",
     "shotsBlocked": "Lorem ipsum dolor si9",
-    "penaltyKillingPercentage": "87",
-    "id": 1852968692
+    "penaltyKillingPercentage": "85",
+    "id": 1613239278
   }
 ]

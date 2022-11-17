@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.IceHockeyEventStates;
 import java.util.List;
+import com.sportsdb.test.entity.IceHockeyEventStates;
 
 public interface IceHockeyEventStatesService {
-    public IceHockeyEventStates find(java.lang.Integer id);
+  public IceHockeyEventStates find(java.lang.Integer id);
 
-    /**
-     * Select a list of IceHockeyEventStates based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return IceHockeyEventStates records.
-     */
-    public List<IceHockeyEventStates> select(int maxResult);
+  /**
+   * Select a list of IceHockeyEventStates based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return IceHockeyEventStates records.
+   */
+  public List<IceHockeyEventStates> select(int maxResult);
 
-    /**
-     * Select all IceHockeyEventStates.
-     *
-     * @return all IceHockeyEventStates records.
-     */
-    public List<IceHockeyEventStates> selectAll();
+  /**
+   * Select all IceHockeyEventStates.
+   *
+   * @return all IceHockeyEventStates records.
+   */
+  public List<IceHockeyEventStates> selectAll();
 
-    /**
-     * Create IceHockeyEventStates.
-     *
-     * @param bean The IceHockeyEventStates.
-     * @return The IceHockeyEventStates.
-     */
-    public IceHockeyEventStates create(IceHockeyEventStates bean);
+  /**
+   * Create IceHockeyEventStates.
+   *
+   * @param bean The IceHockeyEventStates.
+   * @return The IceHockeyEventStates.
+   */
+  public IceHockeyEventStates create(IceHockeyEventStates bean);
 
-    /**
-     * Update a IceHockeyEventStates.
-     *
-     * @param bean - The IceHockeyEventStates.
-     * @return IceHockeyEventStates.
-     */
-    public IceHockeyEventStates update(IceHockeyEventStates bean);
+  /**
+   * Update a IceHockeyEventStates.
+   *
+   * @param bean - The IceHockeyEventStates.
+   * @return IceHockeyEventStates.
+   */
+  public IceHockeyEventStates update(IceHockeyEventStates bean);
 }

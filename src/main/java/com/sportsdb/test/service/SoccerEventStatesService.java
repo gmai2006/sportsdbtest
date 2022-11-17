@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.SoccerEventStates;
 import java.util.List;
+import com.sportsdb.test.entity.SoccerEventStates;
 
 public interface SoccerEventStatesService {
-    public SoccerEventStates find(java.lang.Integer id);
+  public SoccerEventStates find(java.lang.Integer id);
 
-    /**
-     * Select a list of SoccerEventStates based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return SoccerEventStates records.
-     */
-    public List<SoccerEventStates> select(int maxResult);
+  /**
+   * Select a list of SoccerEventStates based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return SoccerEventStates records.
+   */
+  public List<SoccerEventStates> select(int maxResult);
 
-    /**
-     * Select all SoccerEventStates.
-     *
-     * @return all SoccerEventStates records.
-     */
-    public List<SoccerEventStates> selectAll();
+  /**
+   * Select all SoccerEventStates.
+   *
+   * @return all SoccerEventStates records.
+   */
+  public List<SoccerEventStates> selectAll();
 
-    /**
-     * Create SoccerEventStates.
-     *
-     * @param bean The SoccerEventStates.
-     * @return The SoccerEventStates.
-     */
-    public SoccerEventStates create(SoccerEventStates bean);
+  /**
+   * Create SoccerEventStates.
+   *
+   * @param bean The SoccerEventStates.
+   * @return The SoccerEventStates.
+   */
+  public SoccerEventStates create(SoccerEventStates bean);
 
-    /**
-     * Update a SoccerEventStates.
-     *
-     * @param bean - The SoccerEventStates.
-     * @return SoccerEventStates.
-     */
-    public SoccerEventStates update(SoccerEventStates bean);
+  /**
+   * Update a SoccerEventStates.
+   *
+   * @param bean - The SoccerEventStates.
+   * @return SoccerEventStates.
+   */
+  public SoccerEventStates update(SoccerEventStates bean);
 }

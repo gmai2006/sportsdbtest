@@ -16,69 +16,69 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "teams")
 public class Teams implements Serializable {
-    private static final long serialVersionUID = 16344524193511810L;
+  private static final long serialVersionUID = 16686700425766310L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: team_key. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "team_key", length = 100)
-    private java.lang.String teamKey;
-    /** Description: publisher_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "publisher_id")
-    private java.lang.Integer publisherId;
-    /** Description: home_site_id. */
-    @Basic
-    @Column(name = "home_site_id")
-    private java.lang.Integer homeSiteId;
+  /** Description: team_key. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "team_key", length = 100)
+  private java.lang.String teamKey;
+  /** Description: publisher_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "publisher_id")
+  private java.lang.Integer publisherId;
+  /** Description: home_site_id. */
+  @Basic
+  @Column(name = "home_site_id")
+  private java.lang.Integer homeSiteId;
 
-    public Teams() {}
+  public Teams() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.String getTeamKey() {
-        return this.teamKey;
-    }
+  public java.lang.String getTeamKey() {
+    return this.teamKey;
+  }
 
-    public java.lang.Integer getPublisherId() {
-        return this.publisherId;
-    }
+  public java.lang.Integer getPublisherId() {
+    return this.publisherId;
+  }
 
-    public java.lang.Integer getHomeSiteId() {
-        return this.homeSiteId;
-    }
+  public java.lang.Integer getHomeSiteId() {
+    return this.homeSiteId;
+  }
 
-    public void setTeamKey(java.lang.String teamKey) {
-        this.teamKey = teamKey;
-    }
+  public void setTeamKey(java.lang.String teamKey) {
+    this.teamKey = teamKey;
+  }
 
-    public void setPublisherId(java.lang.Integer publisherId) {
-        this.publisherId = publisherId;
-    }
+  public void setPublisherId(java.lang.Integer publisherId) {
+    this.publisherId = publisherId;
+  }
 
-    public void setHomeSiteId(java.lang.Integer homeSiteId) {
-        this.homeSiteId = homeSiteId;
-    }
+  public void setHomeSiteId(java.lang.Integer homeSiteId) {
+    this.homeSiteId = homeSiteId;
+  }
 }

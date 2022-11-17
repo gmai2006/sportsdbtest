@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.KeyAliases;
 import java.util.List;
+import com.sportsdb.test.entity.KeyAliases;
 
 public interface KeyAliasesService {
-    public KeyAliases find(java.lang.Integer id);
+  public KeyAliases find(java.lang.Integer id);
 
-    /**
-     * Select a list of KeyAliases based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return KeyAliases records.
-     */
-    public List<KeyAliases> select(int maxResult);
+  /**
+   * Select a list of KeyAliases based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return KeyAliases records.
+   */
+  public List<KeyAliases> select(int maxResult);
 
-    /**
-     * Select all KeyAliases.
-     *
-     * @return all KeyAliases records.
-     */
-    public List<KeyAliases> selectAll();
+  /**
+   * Select all KeyAliases.
+   *
+   * @return all KeyAliases records.
+   */
+  public List<KeyAliases> selectAll();
 
-    /**
-     * Create KeyAliases.
-     *
-     * @param bean The KeyAliases.
-     * @return The KeyAliases.
-     */
-    public KeyAliases create(KeyAliases bean);
+  /**
+   * Create KeyAliases.
+   *
+   * @param bean The KeyAliases.
+   * @return The KeyAliases.
+   */
+  public KeyAliases create(KeyAliases bean);
 
-    /**
-     * Update a KeyAliases.
-     *
-     * @param bean - The KeyAliases.
-     * @return KeyAliases.
-     */
-    public KeyAliases update(KeyAliases bean);
+  /**
+   * Update a KeyAliases.
+   *
+   * @param bean - The KeyAliases.
+   * @return KeyAliases.
+   */
+  public KeyAliases update(KeyAliases bean);
 }

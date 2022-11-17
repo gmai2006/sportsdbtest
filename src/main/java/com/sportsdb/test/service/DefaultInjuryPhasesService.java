@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.InjuryPhasesDao;
-import com.sportsdb.test.entity.InjuryPhases;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.InjuryPhasesDao;
+import com.sportsdb.test.entity.InjuryPhases;
 
 @Stateless
 @Named("DefaultInjuryPhasesService")
 public class DefaultInjuryPhasesService implements InjuryPhasesService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final InjuryPhasesDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final InjuryPhasesDao dao;
 
-    @Inject
-    @Named("DefaultInjuryPhasesDao")
-    public DefaultInjuryPhasesService(final InjuryPhasesDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultInjuryPhasesDao")
+  public DefaultInjuryPhasesService(final InjuryPhasesDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public InjuryPhases find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public InjuryPhases find(java.lang.Integer id) {
 
-        final InjuryPhases result = dao.find(id);
-        logger.info("find(InjuryPhases) - exited - return value={} result ");
-        return result;
-    }
+    final InjuryPhases result = dao.find(id);
+    logger.info("find(InjuryPhases) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<InjuryPhases> select(int maxResult) {
-        final List<InjuryPhases> result = dao.select(maxResult);
-        logger.info("select(InjuryPhases) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<InjuryPhases> select(int maxResult) {
+    final List<InjuryPhases> result = dao.select(maxResult);
+    logger.info("select(InjuryPhases) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<InjuryPhases> selectAll() {
-        final List<InjuryPhases> results = dao.selectAll();
-        logger.info("selectAll(InjuryPhases) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<InjuryPhases> selectAll() {
+    final List<InjuryPhases> results = dao.selectAll();
+    logger.info("selectAll(InjuryPhases) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public InjuryPhases create(InjuryPhases bean) {
-        requireNonNull(bean);
-        logger.info("create(InjuryPhases={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public InjuryPhases create(InjuryPhases bean) {
+    requireNonNull(bean);
+    logger.info("create(InjuryPhases={}) - entered bean ");
 
-        final InjuryPhases result = dao.create(bean);
+    final InjuryPhases result = dao.create(bean);
 
-        logger.info("create(InjuryPhases) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(InjuryPhases) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public InjuryPhases update(InjuryPhases bean) {
-        requireNonNull(bean);
-        logger.info("update(InjuryPhases={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public InjuryPhases update(InjuryPhases bean) {
+    requireNonNull(bean);
+    logger.info("update(InjuryPhases={}) - entered bean ");
 
-        final InjuryPhases result = dao.update(bean);
+    final InjuryPhases result = dao.update(bean);
 
-        logger.info("update(InjuryPhases) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(InjuryPhases) - exited - return value={} result ");
+    return result;
+  }
 }

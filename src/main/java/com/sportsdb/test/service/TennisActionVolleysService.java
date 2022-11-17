@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.TennisActionVolleys;
 import java.util.List;
+import com.sportsdb.test.entity.TennisActionVolleys;
 
 public interface TennisActionVolleysService {
-    public TennisActionVolleys find(java.lang.Integer id);
+  public TennisActionVolleys find(java.lang.Integer id);
 
-    /**
-     * Select a list of TennisActionVolleys based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return TennisActionVolleys records.
-     */
-    public List<TennisActionVolleys> select(int maxResult);
+  /**
+   * Select a list of TennisActionVolleys based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return TennisActionVolleys records.
+   */
+  public List<TennisActionVolleys> select(int maxResult);
 
-    /**
-     * Select all TennisActionVolleys.
-     *
-     * @return all TennisActionVolleys records.
-     */
-    public List<TennisActionVolleys> selectAll();
+  /**
+   * Select all TennisActionVolleys.
+   *
+   * @return all TennisActionVolleys records.
+   */
+  public List<TennisActionVolleys> selectAll();
 
-    /**
-     * Create TennisActionVolleys.
-     *
-     * @param bean The TennisActionVolleys.
-     * @return The TennisActionVolleys.
-     */
-    public TennisActionVolleys create(TennisActionVolleys bean);
+  /**
+   * Create TennisActionVolleys.
+   *
+   * @param bean The TennisActionVolleys.
+   * @return The TennisActionVolleys.
+   */
+  public TennisActionVolleys create(TennisActionVolleys bean);
 
-    /**
-     * Update a TennisActionVolleys.
-     *
-     * @param bean - The TennisActionVolleys.
-     * @return TennisActionVolleys.
-     */
-    public TennisActionVolleys update(TennisActionVolleys bean);
+  /**
+   * Update a TennisActionVolleys.
+   *
+   * @param bean - The TennisActionVolleys.
+   * @return TennisActionVolleys.
+   */
+  public TennisActionVolleys update(TennisActionVolleys bean);
 }

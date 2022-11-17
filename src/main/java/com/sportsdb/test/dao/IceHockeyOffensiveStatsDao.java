@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.IceHockeyOffensiveStats;
 import java.util.List;
+import com.sportsdb.test.entity.IceHockeyOffensiveStats;
 
 public interface IceHockeyOffensiveStatsDao {
-    /**
-     * Retrieve all records IceHockeyOffensiveStats.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of IceHockeyOffensiveStats
-     */
-    public List<IceHockeyOffensiveStats> select(int maxResult);
+  /**
+   * Retrieve all records IceHockeyOffensiveStats.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of IceHockeyOffensiveStats
+   */
+  public List<IceHockeyOffensiveStats> select(int maxResult);
 
-    /**
-     * Retrieve all records IceHockeyOffensiveStats.
-     *
-     * @return A list of IceHockeyOffensiveStats
-     */
-    public List<IceHockeyOffensiveStats> selectAll();
+  /**
+   * Retrieve all records IceHockeyOffensiveStats.
+   *
+   * @return A list of IceHockeyOffensiveStats
+   */
+  public List<IceHockeyOffensiveStats> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An IceHockeyOffensiveStats id.
-     * @return The same IceHockeyOffensiveStats.
-     */
-    public IceHockeyOffensiveStats find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An IceHockeyOffensiveStats id.
+   * @return The same IceHockeyOffensiveStats.
+   */
+  public IceHockeyOffensiveStats find(java.lang.Integer id);
 
-    /**
-     * Create an IceHockeyOffensiveStats.
-     *
-     * @param e the IceHockeyOffensiveStats.
-     * @return The same IceHockeyOffensiveStats.
-     */
-    public IceHockeyOffensiveStats create(IceHockeyOffensiveStats e);
+  /**
+   * Create an IceHockeyOffensiveStats.
+   *
+   * @param e the IceHockeyOffensiveStats.
+   * @return The same IceHockeyOffensiveStats.
+   */
+  public IceHockeyOffensiveStats create(IceHockeyOffensiveStats e);
 
-    /**
-     * Update the IceHockeyOffensiveStats.
-     *
-     * @param e the IceHockeyOffensiveStats.
-     * @return The same IceHockeyOffensiveStats.
-     */
-    public IceHockeyOffensiveStats update(IceHockeyOffensiveStats e);
+  /**
+   * Update the IceHockeyOffensiveStats.
+   *
+   * @param e the IceHockeyOffensiveStats.
+   * @return The same IceHockeyOffensiveStats.
+   */
+  public IceHockeyOffensiveStats update(IceHockeyOffensiveStats e);
 }

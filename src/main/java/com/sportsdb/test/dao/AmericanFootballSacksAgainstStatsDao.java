@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.AmericanFootballSacksAgainstStats;
 import java.util.List;
+import com.sportsdb.test.entity.AmericanFootballSacksAgainstStats;
 
 public interface AmericanFootballSacksAgainstStatsDao {
-    /**
-     * Retrieve all records AmericanFootballSacksAgainstStats.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of AmericanFootballSacksAgainstStats
-     */
-    public List<AmericanFootballSacksAgainstStats> select(int maxResult);
+  /**
+   * Retrieve all records AmericanFootballSacksAgainstStats.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of AmericanFootballSacksAgainstStats
+   */
+  public List<AmericanFootballSacksAgainstStats> select(int maxResult);
 
-    /**
-     * Retrieve all records AmericanFootballSacksAgainstStats.
-     *
-     * @return A list of AmericanFootballSacksAgainstStats
-     */
-    public List<AmericanFootballSacksAgainstStats> selectAll();
+  /**
+   * Retrieve all records AmericanFootballSacksAgainstStats.
+   *
+   * @return A list of AmericanFootballSacksAgainstStats
+   */
+  public List<AmericanFootballSacksAgainstStats> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An AmericanFootballSacksAgainstStats id.
-     * @return The same AmericanFootballSacksAgainstStats.
-     */
-    public AmericanFootballSacksAgainstStats find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An AmericanFootballSacksAgainstStats id.
+   * @return The same AmericanFootballSacksAgainstStats.
+   */
+  public AmericanFootballSacksAgainstStats find(java.lang.Integer id);
 
-    /**
-     * Create an AmericanFootballSacksAgainstStats.
-     *
-     * @param e the AmericanFootballSacksAgainstStats.
-     * @return The same AmericanFootballSacksAgainstStats.
-     */
-    public AmericanFootballSacksAgainstStats create(AmericanFootballSacksAgainstStats e);
+  /**
+   * Create an AmericanFootballSacksAgainstStats.
+   *
+   * @param e the AmericanFootballSacksAgainstStats.
+   * @return The same AmericanFootballSacksAgainstStats.
+   */
+  public AmericanFootballSacksAgainstStats create(AmericanFootballSacksAgainstStats e);
 
-    /**
-     * Update the AmericanFootballSacksAgainstStats.
-     *
-     * @param e the AmericanFootballSacksAgainstStats.
-     * @return The same AmericanFootballSacksAgainstStats.
-     */
-    public AmericanFootballSacksAgainstStats update(AmericanFootballSacksAgainstStats e);
+  /**
+   * Update the AmericanFootballSacksAgainstStats.
+   *
+   * @param e the AmericanFootballSacksAgainstStats.
+   * @return The same AmericanFootballSacksAgainstStats.
+   */
+  public AmericanFootballSacksAgainstStats update(AmericanFootballSacksAgainstStats e);
 }

@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.EventsMedia;
 import java.util.List;
+import com.sportsdb.test.entity.EventsMedia;
 
 public interface EventsMediaDao {
-    /**
-     * Retrieve all records EventsMedia.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of EventsMedia
-     */
-    public List<EventsMedia> select(int maxResult);
+  /**
+   * Retrieve all records EventsMedia.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of EventsMedia
+   */
+  public List<EventsMedia> select(int maxResult);
 
-    /**
-     * Retrieve all records EventsMedia.
-     *
-     * @return A list of EventsMedia
-     */
-    public List<EventsMedia> selectAll();
+  /**
+   * Retrieve all records EventsMedia.
+   *
+   * @return A list of EventsMedia
+   */
+  public List<EventsMedia> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An EventsMedia id.
-     * @return The same EventsMedia.
-     */
-    public EventsMedia find(java.lang.String id);
+  /**
+   * Find an entity.
+   *
+   * @param id An EventsMedia id.
+   * @return The same EventsMedia.
+   */
+  public EventsMedia find(java.lang.String id);
 
-    /**
-     * Create an EventsMedia.
-     *
-     * @param e the EventsMedia.
-     * @return The same EventsMedia.
-     */
-    public EventsMedia create(EventsMedia e);
+  /**
+   * Create an EventsMedia.
+   *
+   * @param e the EventsMedia.
+   * @return The same EventsMedia.
+   */
+  public EventsMedia create(EventsMedia e);
 
-    /**
-     * Update the EventsMedia.
-     *
-     * @param e the EventsMedia.
-     * @return The same EventsMedia.
-     */
-    public EventsMedia update(EventsMedia e);
+  /**
+   * Update the EventsMedia.
+   *
+   * @param e the EventsMedia.
+   * @return The same EventsMedia.
+   */
+  public EventsMedia update(EventsMedia e);
 }

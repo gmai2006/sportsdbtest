@@ -16,56 +16,59 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.MediaCaptions;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.MediaCaptions;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("MediaCaptionsHandler")
 public class MediaCaptionsHandler extends DelimiterFileHandler<MediaCaptions> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public MediaCaptionsHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public MediaCaptionsHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected MediaCaptions parseLine(List<String> headers, List<String> tokens) {
+    MediaCaptions record = new MediaCaptions();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "mediaId":
+          record.setMediaId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "captionType":
+          record.setCaptionType(tokens.get(i));
+          break;
+
+        case "caption":
+          record.setCaption(tokens.get(i));
+          break;
+
+        case "captionAuthorId":
+          record.setCaptionAuthorId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "language":
+          record.setLanguage(tokens.get(i));
+          break;
+
+        case "captionSize":
+          record.setCaptionSize(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected MediaCaptions parseLine(List<String> headers, List<String> tokens) {
-        MediaCaptions record = new MediaCaptions();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "mediaId":
-                    record.setMediaId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "captionType":
-                    record.setCaptionType(tokens.get(i));
-                    break;
-
-                case "caption":
-                    record.setCaption(tokens.get(i));
-                    break;
-
-                case "captionAuthorId":
-                    record.setCaptionAuthorId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "language":
-                    record.setLanguage(tokens.get(i));
-                    break;
-
-                case "captionSize":
-                    record.setCaptionSize(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

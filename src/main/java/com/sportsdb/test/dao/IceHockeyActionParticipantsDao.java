@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.IceHockeyActionParticipants;
 import java.util.List;
+import com.sportsdb.test.entity.IceHockeyActionParticipants;
 
 public interface IceHockeyActionParticipantsDao {
-    /**
-     * Retrieve all records IceHockeyActionParticipants.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of IceHockeyActionParticipants
-     */
-    public List<IceHockeyActionParticipants> select(int maxResult);
+  /**
+   * Retrieve all records IceHockeyActionParticipants.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of IceHockeyActionParticipants
+   */
+  public List<IceHockeyActionParticipants> select(int maxResult);
 
-    /**
-     * Retrieve all records IceHockeyActionParticipants.
-     *
-     * @return A list of IceHockeyActionParticipants
-     */
-    public List<IceHockeyActionParticipants> selectAll();
+  /**
+   * Retrieve all records IceHockeyActionParticipants.
+   *
+   * @return A list of IceHockeyActionParticipants
+   */
+  public List<IceHockeyActionParticipants> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An IceHockeyActionParticipants id.
-     * @return The same IceHockeyActionParticipants.
-     */
-    public IceHockeyActionParticipants find(java.lang.Long id);
+  /**
+   * Find an entity.
+   *
+   * @param id An IceHockeyActionParticipants id.
+   * @return The same IceHockeyActionParticipants.
+   */
+  public IceHockeyActionParticipants find(java.lang.Long id);
 
-    /**
-     * Create an IceHockeyActionParticipants.
-     *
-     * @param e the IceHockeyActionParticipants.
-     * @return The same IceHockeyActionParticipants.
-     */
-    public IceHockeyActionParticipants create(IceHockeyActionParticipants e);
+  /**
+   * Create an IceHockeyActionParticipants.
+   *
+   * @param e the IceHockeyActionParticipants.
+   * @return The same IceHockeyActionParticipants.
+   */
+  public IceHockeyActionParticipants create(IceHockeyActionParticipants e);
 
-    /**
-     * Update the IceHockeyActionParticipants.
-     *
-     * @param e the IceHockeyActionParticipants.
-     * @return The same IceHockeyActionParticipants.
-     */
-    public IceHockeyActionParticipants update(IceHockeyActionParticipants e);
+  /**
+   * Update the IceHockeyActionParticipants.
+   *
+   * @param e the IceHockeyActionParticipants.
+   * @return The same IceHockeyActionParticipants.
+   */
+  public IceHockeyActionParticipants update(IceHockeyActionParticipants e);
 }

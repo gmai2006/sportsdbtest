@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.AffiliationsMediaDao;
-import com.sportsdb.test.entity.AffiliationsMedia;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.AffiliationsMediaDao;
+import com.sportsdb.test.entity.AffiliationsMedia;
 
 @Stateless
 @Named("DefaultAffiliationsMediaService")
 public class DefaultAffiliationsMediaService implements AffiliationsMediaService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final AffiliationsMediaDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final AffiliationsMediaDao dao;
 
-    @Inject
-    @Named("DefaultAffiliationsMediaDao")
-    public DefaultAffiliationsMediaService(final AffiliationsMediaDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultAffiliationsMediaDao")
+  public DefaultAffiliationsMediaService(final AffiliationsMediaDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AffiliationsMedia find(java.lang.String id) {
+  /** {@inheritDoc} */
+  @Override
+  public AffiliationsMedia find(java.lang.String id) {
 
-        final AffiliationsMedia result = dao.find(id);
-        logger.info("find(AffiliationsMedia) - exited - return value={} result ");
-        return result;
-    }
+    final AffiliationsMedia result = dao.find(id);
+    logger.info("find(AffiliationsMedia) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<AffiliationsMedia> select(int maxResult) {
-        final List<AffiliationsMedia> result = dao.select(maxResult);
-        logger.info("select(AffiliationsMedia) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<AffiliationsMedia> select(int maxResult) {
+    final List<AffiliationsMedia> result = dao.select(maxResult);
+    logger.info("select(AffiliationsMedia) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<AffiliationsMedia> selectAll() {
-        final List<AffiliationsMedia> results = dao.selectAll();
-        logger.info("selectAll(AffiliationsMedia) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<AffiliationsMedia> selectAll() {
+    final List<AffiliationsMedia> results = dao.selectAll();
+    logger.info("selectAll(AffiliationsMedia) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AffiliationsMedia create(AffiliationsMedia bean) {
-        requireNonNull(bean);
-        logger.info("create(AffiliationsMedia={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public AffiliationsMedia create(AffiliationsMedia bean) {
+    requireNonNull(bean);
+    logger.info("create(AffiliationsMedia={}) - entered bean ");
 
-        final AffiliationsMedia result = dao.create(bean);
+    final AffiliationsMedia result = dao.create(bean);
 
-        logger.info("create(AffiliationsMedia) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(AffiliationsMedia) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AffiliationsMedia update(AffiliationsMedia bean) {
-        requireNonNull(bean);
-        logger.info("update(AffiliationsMedia={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public AffiliationsMedia update(AffiliationsMedia bean) {
+    requireNonNull(bean);
+    logger.info("update(AffiliationsMedia={}) - entered bean ");
 
-        final AffiliationsMedia result = dao.update(bean);
+    final AffiliationsMedia result = dao.update(bean);
 
-        logger.info("update(AffiliationsMedia) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(AffiliationsMedia) - exited - return value={} result ");
+    return result;
+  }
 }

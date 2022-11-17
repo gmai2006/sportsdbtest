@@ -16,13 +16,13 @@
  */
 package com.sportsdb.test.dao;
 
+import java.nio.charset.Charset;
+import java.util.Arrays;
+import java.io.IOException;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.sportsdb.test.entity.AmericanFootballOffensiveStats;
-import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
-import com.sportsdb.test.utils.FileUtils;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.Arrays;
@@ -32,67 +32,69 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import com.sportsdb.test.entity.AmericanFootballOffensiveStats;
+import com.sportsdb.test.utils.FileUtils;
+import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
 
 public class AmericanFootballOffensiveStatsDaoTestIt {
-    static final String inputFile = "AmericanFootballOffensiveStats.json";
-    static AmericanFootballOffensiveStatsDao dao;
-    static Gson gson =
-            new GsonBuilder()
-                    .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
-                    .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
-                    .create();
-    private AmericanFootballOffensiveStats[] records;
+  static final String inputFile = "AmericanFootballOffensiveStats.json";
+  static AmericanFootballOffensiveStatsDao dao;
+  static Gson gson =
+      new GsonBuilder()
+          .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
+          .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
+          .create();
+  private AmericanFootballOffensiveStats[] records;
 
-    /** Run when the class is loaded. */
-    @BeforeClass
-    public static void beforeClass() {
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("testpersistence");
-        JpaDao jpa = new StandaloneJpaDao(factory.createEntityManager());
-        dao = new DefaultAmericanFootballOffensiveStatsDao(jpa);
-    }
+  /** Run when the class is loaded. */
+  @BeforeClass
+  public static void beforeClass() {
+    EntityManagerFactory factory = Persistence.createEntityManagerFactory("testpersistence");
+    JpaDao jpa = new StandaloneJpaDao(factory.createEntityManager());
+    dao = new DefaultAmericanFootballOffensiveStatsDao(jpa);
+  }
 
-    /** Run before the test. */
-    @Before
-    public void before() {
-        try {
-            String json =
-                    FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
-            records = gson.fromJson(json, AmericanFootballOffensiveStats[].class);
-            json = null;
-            Arrays.stream(records).skip(1).forEach(o -> dao.create(o));
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+  /** Run before the test. */
+  @Before
+  public void before() {
+    try {
+      String json = FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
+      records = gson.fromJson(json, AmericanFootballOffensiveStats[].class);
+      json = null;
+      Arrays.stream(records).skip(1).forEach(o -> dao.create(o));
+    } catch (IOException ex) {
+      ex.printStackTrace();
     }
+  }
 
-    @After
-    public void after() {
-        records = null;
-    }
+  @After
+  public void after() {
+    records = null;
+  }
 
-    @Test
-    public void testSelect() {
-        AmericanFootballOffensiveStats testResult = dao.find(records[1].getId());
-        assertNotNull("expect result", testResult);
-        org.junit.Assert.assertEquals(
-                "expect equals offensivePlaysYards ",
-                this.records[1].getOffensivePlaysYards(),
-                testResult.getOffensivePlaysYards());
-        org.junit.Assert.assertEquals(
-                "expect equals offensivePlaysNumber ",
-                this.records[1].getOffensivePlaysNumber(),
-                testResult.getOffensivePlaysNumber());
-        org.junit.Assert.assertEquals(
-                "expect equals offensivePlaysAverageYardsPer ",
-                this.records[1].getOffensivePlaysAverageYardsPer(),
-                testResult.getOffensivePlaysAverageYardsPer());
-        org.junit.Assert.assertEquals(
-                "expect equals possessionDuration ",
-                this.records[1].getPossessionDuration(),
-                testResult.getPossessionDuration());
-        org.junit.Assert.assertEquals(
-                "expect equals turnoversGiveaway ",
-                this.records[1].getTurnoversGiveaway(),
-                testResult.getTurnoversGiveaway());
-    }
+  @Test
+  public void testSelect() {
+    AmericanFootballOffensiveStats testResult = dao.find(records[1].getId());
+    assertNotNull("expect result", testResult);
+    org.junit.Assert.assertEquals(
+        "expect equals offensivePlaysYards ",
+        this.records[1].getOffensivePlaysYards(),
+        testResult.getOffensivePlaysYards());
+    org.junit.Assert.assertEquals(
+        "expect equals offensivePlaysNumber ",
+        this.records[1].getOffensivePlaysNumber(),
+        testResult.getOffensivePlaysNumber());
+    org.junit.Assert.assertEquals(
+        "expect equals offensivePlaysAverageYardsPer ",
+        this.records[1].getOffensivePlaysAverageYardsPer(),
+        testResult.getOffensivePlaysAverageYardsPer());
+    org.junit.Assert.assertEquals(
+        "expect equals possessionDuration ",
+        this.records[1].getPossessionDuration(),
+        testResult.getPossessionDuration());
+    org.junit.Assert.assertEquals(
+        "expect equals turnoversGiveaway ",
+        this.records[1].getTurnoversGiveaway(),
+        testResult.getTurnoversGiveaway());
+  }
 }

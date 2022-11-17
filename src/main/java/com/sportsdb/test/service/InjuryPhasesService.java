@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.InjuryPhases;
 import java.util.List;
+import com.sportsdb.test.entity.InjuryPhases;
 
 public interface InjuryPhasesService {
-    public InjuryPhases find(java.lang.Integer id);
+  public InjuryPhases find(java.lang.Integer id);
 
-    /**
-     * Select a list of InjuryPhases based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return InjuryPhases records.
-     */
-    public List<InjuryPhases> select(int maxResult);
+  /**
+   * Select a list of InjuryPhases based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return InjuryPhases records.
+   */
+  public List<InjuryPhases> select(int maxResult);
 
-    /**
-     * Select all InjuryPhases.
-     *
-     * @return all InjuryPhases records.
-     */
-    public List<InjuryPhases> selectAll();
+  /**
+   * Select all InjuryPhases.
+   *
+   * @return all InjuryPhases records.
+   */
+  public List<InjuryPhases> selectAll();
 
-    /**
-     * Create InjuryPhases.
-     *
-     * @param bean The InjuryPhases.
-     * @return The InjuryPhases.
-     */
-    public InjuryPhases create(InjuryPhases bean);
+  /**
+   * Create InjuryPhases.
+   *
+   * @param bean The InjuryPhases.
+   * @return The InjuryPhases.
+   */
+  public InjuryPhases create(InjuryPhases bean);
 
-    /**
-     * Update a InjuryPhases.
-     *
-     * @param bean - The InjuryPhases.
-     * @return InjuryPhases.
-     */
-    public InjuryPhases update(InjuryPhases bean);
+  /**
+   * Update a InjuryPhases.
+   *
+   * @param bean - The InjuryPhases.
+   * @return InjuryPhases.
+   */
+  public InjuryPhases update(InjuryPhases bean);
 }

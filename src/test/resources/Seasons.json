@@ -2,81 +2,81 @@
   {
     "seasonKey": 0,
     "publisherId": 0,
-    "startDateTime": "2076-10-16",
+    "startDateTime": "1955-11-16",
     "leagueId": 0,
-    "endDateTime": "1934-10-16",
-    "id": 26125192
+    "endDateTime": "1987-11-16",
+    "id": 488068510
   },
   {
     "seasonKey": 1,
     "publisherId": 1,
-    "startDateTime": "1949-10-16",
+    "startDateTime": "2009-11-16",
     "leagueId": 1,
-    "endDateTime": "2038-10-16",
-    "id": 1992874385
+    "endDateTime": "1903-11-16",
+    "id": 1360595057
   },
   {
     "seasonKey": 2,
     "publisherId": 2,
-    "startDateTime": "2048-10-16",
+    "startDateTime": "1958-11-16",
     "leagueId": 2,
-    "endDateTime": "1961-10-16",
-    "id": 1162839999
+    "endDateTime": "2075-11-16",
+    "id": 1914071110
   },
   {
     "seasonKey": 3,
     "publisherId": 3,
-    "startDateTime": "1948-10-16",
+    "startDateTime": "2050-11-16",
     "leagueId": 3,
-    "endDateTime": "2086-10-16",
-    "id": 113825460
+    "endDateTime": "1969-11-16",
+    "id": 1776691401
   },
   {
     "seasonKey": 4,
     "publisherId": 4,
-    "startDateTime": "2002-10-16",
+    "startDateTime": "2023-11-16",
     "leagueId": 4,
-    "endDateTime": "1982-10-16",
-    "id": 1196818849
+    "endDateTime": "1901-11-16",
+    "id": 686848371
   },
   {
     "seasonKey": 5,
     "publisherId": 5,
-    "startDateTime": "1956-10-16",
+    "startDateTime": "1984-11-16",
     "leagueId": 5,
-    "endDateTime": "2031-10-16",
-    "id": 110403279
+    "endDateTime": "2042-11-16",
+    "id": 127398814
   },
   {
     "seasonKey": 6,
     "publisherId": 6,
-    "startDateTime": "1980-10-16",
+    "startDateTime": "2070-11-16",
     "leagueId": 6,
-    "endDateTime": "2069-10-16",
-    "id": 1247600667
+    "endDateTime": "1979-11-16",
+    "id": 489917022
   },
   {
     "seasonKey": 7,
     "publisherId": 7,
-    "startDateTime": "2059-10-16",
+    "startDateTime": "2059-11-16",
     "leagueId": 7,
-    "endDateTime": "1933-10-16",
-    "id": 564394235
+    "endDateTime": "2060-11-16",
+    "id": 296343344
   },
   {
     "seasonKey": 8,
     "publisherId": 8,
-    "startDateTime": "2035-10-16",
+    "startDateTime": "2026-11-16",
     "leagueId": 8,
-    "endDateTime": "1966-10-16",
-    "id": 2122669048
+    "endDateTime": "1948-11-16",
+    "id": 230453804
   },
   {
     "seasonKey": 9,
     "publisherId": 9,
-    "startDateTime": "2068-10-16",
+    "startDateTime": "2006-11-16",
     "leagueId": 9,
-    "endDateTime": "2098-10-16",
-    "id": 1410779410
+    "endDateTime": "2050-11-16",
+    "id": 151763069
   }
 ]

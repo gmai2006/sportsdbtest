@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.PersonsDocuments;
 import java.util.List;
+import com.sportsdb.test.entity.PersonsDocuments;
 
 public interface PersonsDocumentsDao {
-    /**
-     * Retrieve all records PersonsDocuments.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of PersonsDocuments
-     */
-    public List<PersonsDocuments> select(int maxResult);
+  /**
+   * Retrieve all records PersonsDocuments.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of PersonsDocuments
+   */
+  public List<PersonsDocuments> select(int maxResult);
 
-    /**
-     * Retrieve all records PersonsDocuments.
-     *
-     * @return A list of PersonsDocuments
-     */
-    public List<PersonsDocuments> selectAll();
+  /**
+   * Retrieve all records PersonsDocuments.
+   *
+   * @return A list of PersonsDocuments
+   */
+  public List<PersonsDocuments> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An PersonsDocuments id.
-     * @return The same PersonsDocuments.
-     */
-    public PersonsDocuments find(java.lang.String id);
+  /**
+   * Find an entity.
+   *
+   * @param id An PersonsDocuments id.
+   * @return The same PersonsDocuments.
+   */
+  public PersonsDocuments find(java.lang.String id);
 
-    /**
-     * Create an PersonsDocuments.
-     *
-     * @param e the PersonsDocuments.
-     * @return The same PersonsDocuments.
-     */
-    public PersonsDocuments create(PersonsDocuments e);
+  /**
+   * Create an PersonsDocuments.
+   *
+   * @param e the PersonsDocuments.
+   * @return The same PersonsDocuments.
+   */
+  public PersonsDocuments create(PersonsDocuments e);
 
-    /**
-     * Update the PersonsDocuments.
-     *
-     * @param e the PersonsDocuments.
-     * @return The same PersonsDocuments.
-     */
-    public PersonsDocuments update(PersonsDocuments e);
+  /**
+   * Update the PersonsDocuments.
+   *
+   * @param e the PersonsDocuments.
+   * @return The same PersonsDocuments.
+   */
+  public PersonsDocuments update(PersonsDocuments e);
 }

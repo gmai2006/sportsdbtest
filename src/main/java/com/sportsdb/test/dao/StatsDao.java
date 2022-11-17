@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.Stats;
 import java.util.List;
+import com.sportsdb.test.entity.Stats;
 
 public interface StatsDao {
-    /**
-     * Retrieve all records Stats.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of Stats
-     */
-    public List<Stats> select(int maxResult);
+  /**
+   * Retrieve all records Stats.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of Stats
+   */
+  public List<Stats> select(int maxResult);
 
-    /**
-     * Retrieve all records Stats.
-     *
-     * @return A list of Stats
-     */
-    public List<Stats> selectAll();
+  /**
+   * Retrieve all records Stats.
+   *
+   * @return A list of Stats
+   */
+  public List<Stats> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An Stats id.
-     * @return The same Stats.
-     */
-    public Stats find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An Stats id.
+   * @return The same Stats.
+   */
+  public Stats find(java.lang.Integer id);
 
-    /**
-     * Create an Stats.
-     *
-     * @param e the Stats.
-     * @return The same Stats.
-     */
-    public Stats create(Stats e);
+  /**
+   * Create an Stats.
+   *
+   * @param e the Stats.
+   * @return The same Stats.
+   */
+  public Stats create(Stats e);
 
-    /**
-     * Update the Stats.
-     *
-     * @param e the Stats.
-     * @return The same Stats.
-     */
-    public Stats update(Stats e);
+  /**
+   * Update the Stats.
+   *
+   * @param e the Stats.
+   * @return The same Stats.
+   */
+  public Stats update(Stats e);
 }

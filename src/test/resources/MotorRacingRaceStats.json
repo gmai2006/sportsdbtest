@@ -4,7 +4,7 @@
     "bonus": "Lorem ipsum dolor si0",
     "lapsCompleted": "Lorem ipsum dolor si0",
     "speedUnits": "Lorem ipsum dolor si0",
-    "speedAverage": "32",
+    "speedAverage": "7",
     "points": "Lorem ipsum dolor si0",
     "timeBehindLeader": "Lorem ipsum dolor si0",
     "distanceLeading": "Lorem ipsum dolor si0",
@@ -26,14 +26,14 @@
     "distanceUnits": "Lorem ipsum dolor si0",
     "time": "Lorem ipsum dolor si0",
     "status": "Lorem ipsum dolor si0",
-    "id": 942968121
+    "id": 1098344126
   },
   {
     "lapsLeadingTotal": "Lorem ipsum dolor si1",
     "bonus": "Lorem ipsum dolor si1",
     "lapsCompleted": "Lorem ipsum dolor si1",
     "speedUnits": "Lorem ipsum dolor si1",
-    "speedAverage": "63",
+    "speedAverage": "96",
     "points": "Lorem ipsum dolor si1",
     "timeBehindLeader": "Lorem ipsum dolor si1",
     "distanceLeading": "Lorem ipsum dolor si1",
@@ -55,14 +55,14 @@
     "distanceUnits": "Lorem ipsum dolor si1",
     "time": "Lorem ipsum dolor si1",
     "status": "Lorem ipsum dolor si1",
-    "id": 104400701
+    "id": 260413152
   },
   {
     "lapsLeadingTotal": "Lorem ipsum dolor si2",
     "bonus": "Lorem ipsum dolor si2",
     "lapsCompleted": "Lorem ipsum dolor si2",
     "speedUnits": "Lorem ipsum dolor si2",
-    "speedAverage": "38",
+    "speedAverage": "87",
     "points": "Lorem ipsum dolor si2",
     "timeBehindLeader": "Lorem ipsum dolor si2",
     "distanceLeading": "Lorem ipsum dolor si2",
@@ -84,14 +84,14 @@
     "distanceUnits": "Lorem ipsum dolor si2",
     "time": "Lorem ipsum dolor si2",
     "status": "Lorem ipsum dolor si2",
-    "id": 2047099132
+    "id": 1906451160
   },
   {
     "lapsLeadingTotal": "Lorem ipsum dolor si3",
     "bonus": "Lorem ipsum dolor si3",
     "lapsCompleted": "Lorem ipsum dolor si3",
     "speedUnits": "Lorem ipsum dolor si3",
-    "speedAverage": "98",
+    "speedAverage": "12",
     "points": "Lorem ipsum dolor si3",
     "timeBehindLeader": "Lorem ipsum dolor si3",
     "distanceLeading": "Lorem ipsum dolor si3",
@@ -113,14 +113,14 @@
     "distanceUnits": "Lorem ipsum dolor si3",
     "time": "Lorem ipsum dolor si3",
     "status": "Lorem ipsum dolor si3",
-    "id": 1387851184
+    "id": 1243035296
   },
   {
     "lapsLeadingTotal": "Lorem ipsum dolor si4",
     "bonus": "Lorem ipsum dolor si4",
     "lapsCompleted": "Lorem ipsum dolor si4",
     "speedUnits": "Lorem ipsum dolor si4",
-    "speedAverage": "34",
+    "speedAverage": "30",
     "points": "Lorem ipsum dolor si4",
     "timeBehindLeader": "Lorem ipsum dolor si4",
     "distanceLeading": "Lorem ipsum dolor si4",
@@ -142,14 +142,14 @@
     "distanceUnits": "Lorem ipsum dolor si4",
     "time": "Lorem ipsum dolor si4",
     "status": "Lorem ipsum dolor si4",
-    "id": 823820434
+    "id": 1712591473
   },
   {
     "lapsLeadingTotal": "Lorem ipsum dolor si5",
     "bonus": "Lorem ipsum dolor si5",
     "lapsCompleted": "Lorem ipsum dolor si5",
     "speedUnits": "Lorem ipsum dolor si5",
-    "speedAverage": "28",
+    "speedAverage": "80",
     "points": "Lorem ipsum dolor si5",
     "timeBehindLeader": "Lorem ipsum dolor si5",
     "distanceLeading": "Lorem ipsum dolor si5",
@@ -171,14 +171,14 @@
     "distanceUnits": "Lorem ipsum dolor si5",
     "time": "Lorem ipsum dolor si5",
     "status": "Lorem ipsum dolor si5",
-    "id": 1665141603
+    "id": 2080945945
   },
   {
     "lapsLeadingTotal": "Lorem ipsum dolor si6",
     "bonus": "Lorem ipsum dolor si6",
     "lapsCompleted": "Lorem ipsum dolor si6",
     "speedUnits": "Lorem ipsum dolor si6",
-    "speedAverage": "32",
+    "speedAverage": "51",
     "points": "Lorem ipsum dolor si6",
     "timeBehindLeader": "Lorem ipsum dolor si6",
     "distanceLeading": "Lorem ipsum dolor si6",
@@ -200,14 +200,14 @@
     "distanceUnits": "Lorem ipsum dolor si6",
     "time": "Lorem ipsum dolor si6",
     "status": "Lorem ipsum dolor si6",
-    "id": 1024093328
+    "id": 273278383
   },
   {
     "lapsLeadingTotal": "Lorem ipsum dolor si7",
     "bonus": "Lorem ipsum dolor si7",
     "lapsCompleted": "Lorem ipsum dolor si7",
     "speedUnits": "Lorem ipsum dolor si7",
-    "speedAverage": "6",
+    "speedAverage": "1",
     "points": "Lorem ipsum dolor si7",
     "timeBehindLeader": "Lorem ipsum dolor si7",
     "distanceLeading": "Lorem ipsum dolor si7",
@@ -229,14 +229,14 @@
     "distanceUnits": "Lorem ipsum dolor si7",
     "time": "Lorem ipsum dolor si7",
     "status": "Lorem ipsum dolor si7",
-    "id": 1354454113
+    "id": 322651887
   },
   {
     "lapsLeadingTotal": "Lorem ipsum dolor si8",
     "bonus": "Lorem ipsum dolor si8",
     "lapsCompleted": "Lorem ipsum dolor si8",
     "speedUnits": "Lorem ipsum dolor si8",
-    "speedAverage": "59",
+    "speedAverage": "95",
     "points": "Lorem ipsum dolor si8",
     "timeBehindLeader": "Lorem ipsum dolor si8",
     "distanceLeading": "Lorem ipsum dolor si8",
@@ -258,14 +258,14 @@
     "distanceUnits": "Lorem ipsum dolor si8",
     "time": "Lorem ipsum dolor si8",
     "status": "Lorem ipsum dolor si8",
-    "id": 218287463
+    "id": 1356158705
   },
   {
     "lapsLeadingTotal": "Lorem ipsum dolor si9",
     "bonus": "Lorem ipsum dolor si9",
     "lapsCompleted": "Lorem ipsum dolor si9",
     "speedUnits": "Lorem ipsum dolor si9",
-    "speedAverage": "92",
+    "speedAverage": "61",
     "points": "Lorem ipsum dolor si9",
     "timeBehindLeader": "Lorem ipsum dolor si9",
     "distanceLeading": "Lorem ipsum dolor si9",
@@ -287,6 +287,6 @@
     "distanceUnits": "Lorem ipsum dolor si9",
     "time": "Lorem ipsum dolor si9",
     "status": "Lorem ipsum dolor si9",
-    "id": 826660151
+    "id": 524349084
   }
 ]

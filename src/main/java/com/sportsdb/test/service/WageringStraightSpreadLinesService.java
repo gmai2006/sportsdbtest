@@ -16,41 +16,41 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.WageringStraightSpreadLines;
 import java.util.List;
+import com.sportsdb.test.entity.WageringStraightSpreadLines;
 
 public interface WageringStraightSpreadLinesService {
-    public WageringStraightSpreadLines find(java.lang.Integer id);
+  public WageringStraightSpreadLines find(java.lang.Integer id);
 
-    /**
-     * Select a list of WageringStraightSpreadLines based on a given maximum number of returning
-     * records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return WageringStraightSpreadLines records.
-     */
-    public List<WageringStraightSpreadLines> select(int maxResult);
+  /**
+   * Select a list of WageringStraightSpreadLines based on a given maximum number of returning
+   * records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return WageringStraightSpreadLines records.
+   */
+  public List<WageringStraightSpreadLines> select(int maxResult);
 
-    /**
-     * Select all WageringStraightSpreadLines.
-     *
-     * @return all WageringStraightSpreadLines records.
-     */
-    public List<WageringStraightSpreadLines> selectAll();
+  /**
+   * Select all WageringStraightSpreadLines.
+   *
+   * @return all WageringStraightSpreadLines records.
+   */
+  public List<WageringStraightSpreadLines> selectAll();
 
-    /**
-     * Create WageringStraightSpreadLines.
-     *
-     * @param bean The WageringStraightSpreadLines.
-     * @return The WageringStraightSpreadLines.
-     */
-    public WageringStraightSpreadLines create(WageringStraightSpreadLines bean);
+  /**
+   * Create WageringStraightSpreadLines.
+   *
+   * @param bean The WageringStraightSpreadLines.
+   * @return The WageringStraightSpreadLines.
+   */
+  public WageringStraightSpreadLines create(WageringStraightSpreadLines bean);
 
-    /**
-     * Update a WageringStraightSpreadLines.
-     *
-     * @param bean - The WageringStraightSpreadLines.
-     * @return WageringStraightSpreadLines.
-     */
-    public WageringStraightSpreadLines update(WageringStraightSpreadLines bean);
+  /**
+   * Update a WageringStraightSpreadLines.
+   *
+   * @param bean - The WageringStraightSpreadLines.
+   * @return WageringStraightSpreadLines.
+   */
+  public WageringStraightSpreadLines update(WageringStraightSpreadLines bean);
 }

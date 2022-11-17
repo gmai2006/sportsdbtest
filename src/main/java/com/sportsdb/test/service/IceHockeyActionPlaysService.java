@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.IceHockeyActionPlays;
 import java.util.List;
+import com.sportsdb.test.entity.IceHockeyActionPlays;
 
 public interface IceHockeyActionPlaysService {
-    public IceHockeyActionPlays find(java.lang.Long id);
+  public IceHockeyActionPlays find(java.lang.Long id);
 
-    /**
-     * Select a list of IceHockeyActionPlays based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return IceHockeyActionPlays records.
-     */
-    public List<IceHockeyActionPlays> select(int maxResult);
+  /**
+   * Select a list of IceHockeyActionPlays based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return IceHockeyActionPlays records.
+   */
+  public List<IceHockeyActionPlays> select(int maxResult);
 
-    /**
-     * Select all IceHockeyActionPlays.
-     *
-     * @return all IceHockeyActionPlays records.
-     */
-    public List<IceHockeyActionPlays> selectAll();
+  /**
+   * Select all IceHockeyActionPlays.
+   *
+   * @return all IceHockeyActionPlays records.
+   */
+  public List<IceHockeyActionPlays> selectAll();
 
-    /**
-     * Create IceHockeyActionPlays.
-     *
-     * @param bean The IceHockeyActionPlays.
-     * @return The IceHockeyActionPlays.
-     */
-    public IceHockeyActionPlays create(IceHockeyActionPlays bean);
+  /**
+   * Create IceHockeyActionPlays.
+   *
+   * @param bean The IceHockeyActionPlays.
+   * @return The IceHockeyActionPlays.
+   */
+  public IceHockeyActionPlays create(IceHockeyActionPlays bean);
 
-    /**
-     * Update a IceHockeyActionPlays.
-     *
-     * @param bean - The IceHockeyActionPlays.
-     * @return IceHockeyActionPlays.
-     */
-    public IceHockeyActionPlays update(IceHockeyActionPlays bean);
+  /**
+   * Update a IceHockeyActionPlays.
+   *
+   * @param bean - The IceHockeyActionPlays.
+   * @return IceHockeyActionPlays.
+   */
+  public IceHockeyActionPlays update(IceHockeyActionPlays bean);
 }

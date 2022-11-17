@@ -17,14 +17,14 @@
 package com.sportsdb.test.rest;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.entity.StandingSubgroups;
-import com.sportsdb.test.service.StandingSubgroupsService;
 import java.util.List;
+
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -32,96 +32,95 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import com.sportsdb.test.service.StandingSubgroupsService;
+import com.sportsdb.test.entity.StandingSubgroups;
+
 @Path("/standingsubgroups")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces({MediaType.APPLICATION_JSON})
 public class StandingSubgroupsResource {
 
-    @Inject private StandingSubgroupsService service;
+  @Inject private StandingSubgroupsService service;
 
-    public StandingSubgroupsResource() {}
+  public StandingSubgroupsResource() {}
 
-    public StandingSubgroupsResource(final StandingSubgroupsService service) {
-        requireNonNull(service);
-        this.service = service;
+  public StandingSubgroupsResource(final StandingSubgroupsService service) {
+    requireNonNull(service);
+    this.service = service;
+  }
+
+  /**
+   * hello.
+   *
+   * @return a hello.
+   */
+  @GET
+  @Path("")
+  public Response hello() {
+    return Response.status(Response.Status.OK).entity(this.getClass().getName()).build();
+  }
+
+  /**
+   * InIdempotent method. Update existing StandingSubgroups.
+   *
+   * @param obj - instance of StandingSubgroups.
+   * @return StandingSubgroups.
+   */
+  @Consumes(MediaType.APPLICATION_JSON)
+  @POST
+  public StandingSubgroups update(StandingSubgroups obj) {
+    return this.service.update(obj);
+  }
+
+  /**
+   * Delete existing StandingSubgroups.
+   *
+   * @param id instance of StandingSubgroups.
+   * @return StandingSubgroups.
+   */
+
+  /**
+   * Select all StandingSubgroups with limit of returned records.
+   *
+   * @param max - number of records.
+   * @return a list StandingSubgroups.
+   */
+  @GET
+  @Path("select/{max}")
+  public Response findWithLimit(@PathParam("max") String max) {
+    Integer input = null;
+    try {
+      input = Integer.valueOf(max);
+    } catch (NumberFormatException ex) {
+      throw new WebApplicationException(Response.Status.BAD_REQUEST);
     }
+    List<StandingSubgroups> result = service.select(input);
 
-    /**
-     * hello.
-     *
-     * @return a hello.
-     */
-    @GET
-    @Path("")
-    public Response hello() {
-        return Response.status(Response.Status.OK).entity(this.getClass().getName()).build();
-    }
+    return Response.status(Response.Status.OK)
+        .header("Access-Control-Allow-Origin", "*")
+        .header("Access-Control-Allow-Credentials", "true")
+        .header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
+        .header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
+        .entity(result)
+        .build();
+  }
 
-    /**
-     * InIdempotent method. Update existing StandingSubgroups.
-     *
-     * @param obj - instance of StandingSubgroups.
-     * @return StandingSubgroups.
-     */
-    @Consumes(MediaType.APPLICATION_JSON)
-    @POST
-    public StandingSubgroups update(StandingSubgroups obj) {
-        return this.service.update(obj);
-    }
+  /**
+   * Select all StandingSubgroups records.
+   *
+   * @return a list StandingSubgroups.
+   */
+  @GET
+  @Path("selectAll")
+  public Response selectAll() {
+    List<StandingSubgroups> result = service.selectAll();
 
-    /**
-     * Delete existing StandingSubgroups.
-     *
-     * @param id instance of StandingSubgroups.
-     * @return StandingSubgroups.
-     */
-
-    /**
-     * Select all StandingSubgroups with limit of returned records.
-     *
-     * @param max - number of records.
-     * @return a list StandingSubgroups.
-     */
-    @GET
-    @Path("select/{max}")
-    public Response findWithLimit(@PathParam("max") String max) {
-        Integer input = null;
-        try {
-            input = Integer.valueOf(max);
-        } catch (NumberFormatException ex) {
-            throw new WebApplicationException(Response.Status.BAD_REQUEST);
-        }
-        List<StandingSubgroups> result = service.select(input);
-
-        return Response.status(Response.Status.OK)
-                .header("Access-Control-Allow-Origin", "*")
-                .header("Access-Control-Allow-Credentials", "true")
-                .header(
-                        "Access-Control-Allow-Headers",
-                        "origin, content-type, accept, authorization")
-                .header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
-                .entity(result)
-                .build();
-    }
-
-    /**
-     * Select all StandingSubgroups records.
-     *
-     * @return a list StandingSubgroups.
-     */
-    @GET
-    @Path("selectAll")
-    public Response selectAll() {
-        List<StandingSubgroups> result = service.selectAll();
-
-        return Response.status(Response.Status.OK)
-                .header("Access-Control-Allow-Origin", "*")
-                .header("Access-Control-Allow-Credentials", "true")
-                .header(
-                        "Access-Control-Allow-Headers",
-                        "origin, content-type, accept, authorization")
-                .header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
-                .entity(result)
-                .build();
-    }
+    return Response.status(Response.Status.OK)
+        .header("Access-Control-Allow-Origin", "*")
+        .header("Access-Control-Allow-Credentials", "true")
+        .header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
+        .header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
+        .entity(result)
+        .build();
+  }
 }

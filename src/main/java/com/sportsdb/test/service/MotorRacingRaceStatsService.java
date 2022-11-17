@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.MotorRacingRaceStats;
 import java.util.List;
+import com.sportsdb.test.entity.MotorRacingRaceStats;
 
 public interface MotorRacingRaceStatsService {
-    public MotorRacingRaceStats find(java.lang.Integer id);
+  public MotorRacingRaceStats find(java.lang.Integer id);
 
-    /**
-     * Select a list of MotorRacingRaceStats based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return MotorRacingRaceStats records.
-     */
-    public List<MotorRacingRaceStats> select(int maxResult);
+  /**
+   * Select a list of MotorRacingRaceStats based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return MotorRacingRaceStats records.
+   */
+  public List<MotorRacingRaceStats> select(int maxResult);
 
-    /**
-     * Select all MotorRacingRaceStats.
-     *
-     * @return all MotorRacingRaceStats records.
-     */
-    public List<MotorRacingRaceStats> selectAll();
+  /**
+   * Select all MotorRacingRaceStats.
+   *
+   * @return all MotorRacingRaceStats records.
+   */
+  public List<MotorRacingRaceStats> selectAll();
 
-    /**
-     * Create MotorRacingRaceStats.
-     *
-     * @param bean The MotorRacingRaceStats.
-     * @return The MotorRacingRaceStats.
-     */
-    public MotorRacingRaceStats create(MotorRacingRaceStats bean);
+  /**
+   * Create MotorRacingRaceStats.
+   *
+   * @param bean The MotorRacingRaceStats.
+   * @return The MotorRacingRaceStats.
+   */
+  public MotorRacingRaceStats create(MotorRacingRaceStats bean);
 
-    /**
-     * Update a MotorRacingRaceStats.
-     *
-     * @param bean - The MotorRacingRaceStats.
-     * @return MotorRacingRaceStats.
-     */
-    public MotorRacingRaceStats update(MotorRacingRaceStats bean);
+  /**
+   * Update a MotorRacingRaceStats.
+   *
+   * @param bean - The MotorRacingRaceStats.
+   * @return MotorRacingRaceStats.
+   */
+  public MotorRacingRaceStats update(MotorRacingRaceStats bean);
 }

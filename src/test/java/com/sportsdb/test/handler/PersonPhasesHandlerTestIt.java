@@ -17,147 +17,121 @@
 package com.sportsdb.test.handler;
 
 import static org.junit.Assert.assertEquals;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.dao.StandaloneJpaDao;
-import com.sportsdb.test.entity.PersonPhases;
-import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
-import com.sportsdb.test.utils.FileUtils;
+import java.io.IOException;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import org.json.CDL;
 import org.json.JSONArray;
+import com.google.gson.Gson;
+import com.sportsdb.test.entity.PersonPhases;
+import com.sportsdb.test.dao.JpaDao;
+import com.sportsdb.test.dao.StandaloneJpaDao;
+import com.sportsdb.test.dao.DefaultPersonPhasesDao;
+import com.sportsdb.test.utils.DelimiterParser;
+import com.sportsdb.test.utils.FileUtils;
+import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
+
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import com.google.gson.GsonBuilder;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class PersonPhasesHandlerTestIt {
-    static final String inputFile = "PersonPhases.json";
-    static PersonPhasesHandler handler;
-    private static JpaDao jpa;
-    static Gson gson =
-            new GsonBuilder()
-                    .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
-                    .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
-                    .create();
-    private PersonPhases[] records;
+  static final String inputFile = "PersonPhases.json";
+  static PersonPhasesHandler handler;
+  private static JpaDao jpa;
+  static Gson gson =
+      new GsonBuilder()
+          .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
+          .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
+          .create();
+  private PersonPhases[] records;
 
-    /** Run before the test. */
-    @BeforeClass
-    public static void before() {
-        final EntityManagerFactory factory =
-                Persistence.createEntityManagerFactory("testpersistence");
-        jpa = new StandaloneJpaDao(factory.createEntityManager());
-        handler = new PersonPhasesHandler(jpa);
-    }
+  /** Run before the test. */
+  @BeforeClass
+  public static void before() {
+    final EntityManagerFactory factory = Persistence.createEntityManagerFactory("testpersistence");
+    jpa = new StandaloneJpaDao(factory.createEntityManager());
+    handler = new PersonPhasesHandler(jpa);
+  }
 
-    @Test
-    public void testSelect() throws IOException {
-        final File tempFile =
-                createRecordInputStreamFromJsonFile(inputFile, Charset.defaultCharset());
-        final InputStream inputStream = new BufferedInputStream(new FileInputStream(tempFile));
-        int count = handler.process(inputStream);
-        String json = FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
-        records = gson.fromJson(json, PersonPhases[].class);
-        assertEquals("match count", count, records.length);
-        PersonPhases testResult = jpa.find(PersonPhases.class, records[0].getId());
-        org.junit.Assert.assertEquals(
-                "expect equals personId ", this.records[0].getPersonId(), testResult.getPersonId());
-        assertEquals(
-                "expect equals membershipType ",
-                this.records[0].getMembershipType(),
-                testResult.getMembershipType());
-        org.junit.Assert.assertEquals(
-                "expect equals membershipId ",
-                this.records[0].getMembershipId(),
-                testResult.getMembershipId());
-        org.junit.Assert.assertEquals(
-                "expect equals roleId ", this.records[0].getRoleId(), testResult.getRoleId());
-        assertEquals(
-                "expect equals roleStatus ",
-                this.records[0].getRoleStatus(),
-                testResult.getRoleStatus());
-        assertEquals(
-                "expect equals phaseStatus ",
-                this.records[0].getPhaseStatus(),
-                testResult.getPhaseStatus());
-        assertEquals(
-                "expect equals uniformNumber ",
-                this.records[0].getUniformNumber(),
-                testResult.getUniformNumber());
-        org.junit.Assert.assertEquals(
-                "expect equals regularPositionId ",
-                this.records[0].getRegularPositionId(),
-                testResult.getRegularPositionId());
-        assertEquals(
-                "expect equals regularPositionDepth ",
-                this.records[0].getRegularPositionDepth(),
-                testResult.getRegularPositionDepth());
-        assertEquals("expect equals height ", this.records[0].getHeight(), testResult.getHeight());
-        assertEquals("expect equals weight ", this.records[0].getWeight(), testResult.getWeight());
-        org.junit.Assert.assertEquals(
-                "expect equals startSeasonId ",
-                this.records[0].getStartSeasonId(),
-                testResult.getStartSeasonId());
-        org.junit.Assert.assertEquals(
-                "expect equals endSeasonId ",
-                this.records[0].getEndSeasonId(),
-                testResult.getEndSeasonId());
-        assertEquals(
-                "expect equals entryReason ",
-                this.records[0].getEntryReason(),
-                testResult.getEntryReason());
-        assertEquals(
-                "expect equals exitReason ",
-                this.records[0].getExitReason(),
-                testResult.getExitReason());
-        org.junit.Assert.assertEquals(
-                "expect equals selectionLevel ",
-                this.records[0].getSelectionLevel(),
-                testResult.getSelectionLevel());
-        org.junit.Assert.assertEquals(
-                "expect equals selectionSublevel ",
-                this.records[0].getSelectionSublevel(),
-                testResult.getSelectionSublevel());
-        org.junit.Assert.assertEquals(
-                "expect equals selectionOverall ",
-                this.records[0].getSelectionOverall(),
-                testResult.getSelectionOverall());
+  @Test
+  public void testSelect() throws IOException {
+    final File tempFile = new File("./src/test/resources/PersonPhases.csv");
+    final InputStream inputStream = new BufferedInputStream(new FileInputStream(tempFile));
+    int count = handler.process(inputStream);
+    String json = FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
+    records = gson.fromJson(json, PersonPhases[].class);
+    assertEquals("match count", count, records.length);
+    PersonPhases testResult = jpa.find(PersonPhases.class, records[0].getId());
+    org.junit.Assert.assertEquals(
+        "expect equals personId ", this.records[0].getPersonId(), testResult.getPersonId());
+    assertEquals(
+        "expect equals membershipType ",
+        this.records[0].getMembershipType(),
+        testResult.getMembershipType());
+    org.junit.Assert.assertEquals(
+        "expect equals membershipId ",
+        this.records[0].getMembershipId(),
+        testResult.getMembershipId());
+    org.junit.Assert.assertEquals(
+        "expect equals roleId ", this.records[0].getRoleId(), testResult.getRoleId());
+    assertEquals(
+        "expect equals roleStatus ", this.records[0].getRoleStatus(), testResult.getRoleStatus());
+    assertEquals(
+        "expect equals phaseStatus ",
+        this.records[0].getPhaseStatus(),
+        testResult.getPhaseStatus());
+    assertEquals(
+        "expect equals uniformNumber ",
+        this.records[0].getUniformNumber(),
+        testResult.getUniformNumber());
+    org.junit.Assert.assertEquals(
+        "expect equals regularPositionId ",
+        this.records[0].getRegularPositionId(),
+        testResult.getRegularPositionId());
+    assertEquals(
+        "expect equals regularPositionDepth ",
+        this.records[0].getRegularPositionDepth(),
+        testResult.getRegularPositionDepth());
+    assertEquals("expect equals height ", this.records[0].getHeight(), testResult.getHeight());
+    assertEquals("expect equals weight ", this.records[0].getWeight(), testResult.getWeight());
+    org.junit.Assert.assertEquals(
+        "expect equals startSeasonId ",
+        this.records[0].getStartSeasonId(),
+        testResult.getStartSeasonId());
+    org.junit.Assert.assertEquals(
+        "expect equals endSeasonId ",
+        this.records[0].getEndSeasonId(),
+        testResult.getEndSeasonId());
+    assertEquals(
+        "expect equals entryReason ",
+        this.records[0].getEntryReason(),
+        testResult.getEntryReason());
+    assertEquals(
+        "expect equals exitReason ", this.records[0].getExitReason(), testResult.getExitReason());
+    org.junit.Assert.assertEquals(
+        "expect equals selectionLevel ",
+        this.records[0].getSelectionLevel(),
+        testResult.getSelectionLevel());
+    org.junit.Assert.assertEquals(
+        "expect equals selectionSublevel ",
+        this.records[0].getSelectionSublevel(),
+        testResult.getSelectionSublevel());
+    org.junit.Assert.assertEquals(
+        "expect equals selectionOverall ",
+        this.records[0].getSelectionOverall(),
+        testResult.getSelectionOverall());
 
-        // cleanup
-        inputStream.close();
-        json = null;
-        records = null;
-    }
-
-    /**
-     * Construct a delimiter file from a json file.
-     *
-     * @param inputFile the json file.
-     * @param charset default charset.
-     * @return
-     */
-    private File createRecordInputStreamFromJsonFile(String inputFile, Charset charset) {
-        try {
-            final File tempFile = File.createTempFile(inputFile, ".txt");
-            tempFile.deleteOnExit();
-            String json =
-                    FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
-            JSONArray docs = new JSONArray(json);
-            String csv = CDL.toString(docs);
-            org.apache.commons.io.FileUtils.writeStringToFile(
-                    tempFile, csv, Charset.defaultCharset());
-            return tempFile;
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return null;
-        }
-    }
+    // cleanup
+    inputStream.close();
+    json = null;
+    records = null;
+  }
 }

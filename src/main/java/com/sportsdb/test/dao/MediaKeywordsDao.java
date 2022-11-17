@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.MediaKeywords;
 import java.util.List;
+import com.sportsdb.test.entity.MediaKeywords;
 
 public interface MediaKeywordsDao {
-    /**
-     * Retrieve all records MediaKeywords.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of MediaKeywords
-     */
-    public List<MediaKeywords> select(int maxResult);
+  /**
+   * Retrieve all records MediaKeywords.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of MediaKeywords
+   */
+  public List<MediaKeywords> select(int maxResult);
 
-    /**
-     * Retrieve all records MediaKeywords.
-     *
-     * @return A list of MediaKeywords
-     */
-    public List<MediaKeywords> selectAll();
+  /**
+   * Retrieve all records MediaKeywords.
+   *
+   * @return A list of MediaKeywords
+   */
+  public List<MediaKeywords> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An MediaKeywords id.
-     * @return The same MediaKeywords.
-     */
-    public MediaKeywords find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An MediaKeywords id.
+   * @return The same MediaKeywords.
+   */
+  public MediaKeywords find(java.lang.Integer id);
 
-    /**
-     * Create an MediaKeywords.
-     *
-     * @param e the MediaKeywords.
-     * @return The same MediaKeywords.
-     */
-    public MediaKeywords create(MediaKeywords e);
+  /**
+   * Create an MediaKeywords.
+   *
+   * @param e the MediaKeywords.
+   * @return The same MediaKeywords.
+   */
+  public MediaKeywords create(MediaKeywords e);
 
-    /**
-     * Update the MediaKeywords.
-     *
-     * @param e the MediaKeywords.
-     * @return The same MediaKeywords.
-     */
-    public MediaKeywords update(MediaKeywords e);
+  /**
+   * Update the MediaKeywords.
+   *
+   * @param e the MediaKeywords.
+   * @return The same MediaKeywords.
+   */
+  public MediaKeywords update(MediaKeywords e);
 }

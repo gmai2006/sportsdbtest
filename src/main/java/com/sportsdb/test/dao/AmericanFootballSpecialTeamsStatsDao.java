@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.AmericanFootballSpecialTeamsStats;
 import java.util.List;
+import com.sportsdb.test.entity.AmericanFootballSpecialTeamsStats;
 
 public interface AmericanFootballSpecialTeamsStatsDao {
-    /**
-     * Retrieve all records AmericanFootballSpecialTeamsStats.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of AmericanFootballSpecialTeamsStats
-     */
-    public List<AmericanFootballSpecialTeamsStats> select(int maxResult);
+  /**
+   * Retrieve all records AmericanFootballSpecialTeamsStats.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of AmericanFootballSpecialTeamsStats
+   */
+  public List<AmericanFootballSpecialTeamsStats> select(int maxResult);
 
-    /**
-     * Retrieve all records AmericanFootballSpecialTeamsStats.
-     *
-     * @return A list of AmericanFootballSpecialTeamsStats
-     */
-    public List<AmericanFootballSpecialTeamsStats> selectAll();
+  /**
+   * Retrieve all records AmericanFootballSpecialTeamsStats.
+   *
+   * @return A list of AmericanFootballSpecialTeamsStats
+   */
+  public List<AmericanFootballSpecialTeamsStats> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An AmericanFootballSpecialTeamsStats id.
-     * @return The same AmericanFootballSpecialTeamsStats.
-     */
-    public AmericanFootballSpecialTeamsStats find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An AmericanFootballSpecialTeamsStats id.
+   * @return The same AmericanFootballSpecialTeamsStats.
+   */
+  public AmericanFootballSpecialTeamsStats find(java.lang.Integer id);
 
-    /**
-     * Create an AmericanFootballSpecialTeamsStats.
-     *
-     * @param e the AmericanFootballSpecialTeamsStats.
-     * @return The same AmericanFootballSpecialTeamsStats.
-     */
-    public AmericanFootballSpecialTeamsStats create(AmericanFootballSpecialTeamsStats e);
+  /**
+   * Create an AmericanFootballSpecialTeamsStats.
+   *
+   * @param e the AmericanFootballSpecialTeamsStats.
+   * @return The same AmericanFootballSpecialTeamsStats.
+   */
+  public AmericanFootballSpecialTeamsStats create(AmericanFootballSpecialTeamsStats e);
 
-    /**
-     * Update the AmericanFootballSpecialTeamsStats.
-     *
-     * @param e the AmericanFootballSpecialTeamsStats.
-     * @return The same AmericanFootballSpecialTeamsStats.
-     */
-    public AmericanFootballSpecialTeamsStats update(AmericanFootballSpecialTeamsStats e);
+  /**
+   * Update the AmericanFootballSpecialTeamsStats.
+   *
+   * @param e the AmericanFootballSpecialTeamsStats.
+   * @return The same AmericanFootballSpecialTeamsStats.
+   */
+  public AmericanFootballSpecialTeamsStats update(AmericanFootballSpecialTeamsStats e);
 }

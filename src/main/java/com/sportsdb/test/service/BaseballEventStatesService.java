@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.BaseballEventStates;
 import java.util.List;
+import com.sportsdb.test.entity.BaseballEventStates;
 
 public interface BaseballEventStatesService {
-    public BaseballEventStates find(java.lang.Integer id);
+  public BaseballEventStates find(java.lang.Integer id);
 
-    /**
-     * Select a list of BaseballEventStates based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return BaseballEventStates records.
-     */
-    public List<BaseballEventStates> select(int maxResult);
+  /**
+   * Select a list of BaseballEventStates based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return BaseballEventStates records.
+   */
+  public List<BaseballEventStates> select(int maxResult);
 
-    /**
-     * Select all BaseballEventStates.
-     *
-     * @return all BaseballEventStates records.
-     */
-    public List<BaseballEventStates> selectAll();
+  /**
+   * Select all BaseballEventStates.
+   *
+   * @return all BaseballEventStates records.
+   */
+  public List<BaseballEventStates> selectAll();
 
-    /**
-     * Create BaseballEventStates.
-     *
-     * @param bean The BaseballEventStates.
-     * @return The BaseballEventStates.
-     */
-    public BaseballEventStates create(BaseballEventStates bean);
+  /**
+   * Create BaseballEventStates.
+   *
+   * @param bean The BaseballEventStates.
+   * @return The BaseballEventStates.
+   */
+  public BaseballEventStates create(BaseballEventStates bean);
 
-    /**
-     * Update a BaseballEventStates.
-     *
-     * @param bean - The BaseballEventStates.
-     * @return BaseballEventStates.
-     */
-    public BaseballEventStates update(BaseballEventStates bean);
+  /**
+   * Update a BaseballEventStates.
+   *
+   * @param bean - The BaseballEventStates.
+   * @return BaseballEventStates.
+   */
+  public BaseballEventStates update(BaseballEventStates bean);
 }

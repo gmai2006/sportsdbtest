@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.WageringTotalScoreLines;
 import java.util.List;
+import com.sportsdb.test.entity.WageringTotalScoreLines;
 
 public interface WageringTotalScoreLinesDao {
-    /**
-     * Retrieve all records WageringTotalScoreLines.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of WageringTotalScoreLines
-     */
-    public List<WageringTotalScoreLines> select(int maxResult);
+  /**
+   * Retrieve all records WageringTotalScoreLines.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of WageringTotalScoreLines
+   */
+  public List<WageringTotalScoreLines> select(int maxResult);
 
-    /**
-     * Retrieve all records WageringTotalScoreLines.
-     *
-     * @return A list of WageringTotalScoreLines
-     */
-    public List<WageringTotalScoreLines> selectAll();
+  /**
+   * Retrieve all records WageringTotalScoreLines.
+   *
+   * @return A list of WageringTotalScoreLines
+   */
+  public List<WageringTotalScoreLines> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An WageringTotalScoreLines id.
-     * @return The same WageringTotalScoreLines.
-     */
-    public WageringTotalScoreLines find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An WageringTotalScoreLines id.
+   * @return The same WageringTotalScoreLines.
+   */
+  public WageringTotalScoreLines find(java.lang.Integer id);
 
-    /**
-     * Create an WageringTotalScoreLines.
-     *
-     * @param e the WageringTotalScoreLines.
-     * @return The same WageringTotalScoreLines.
-     */
-    public WageringTotalScoreLines create(WageringTotalScoreLines e);
+  /**
+   * Create an WageringTotalScoreLines.
+   *
+   * @param e the WageringTotalScoreLines.
+   * @return The same WageringTotalScoreLines.
+   */
+  public WageringTotalScoreLines create(WageringTotalScoreLines e);
 
-    /**
-     * Update the WageringTotalScoreLines.
-     *
-     * @param e the WageringTotalScoreLines.
-     * @return The same WageringTotalScoreLines.
-     */
-    public WageringTotalScoreLines update(WageringTotalScoreLines e);
+  /**
+   * Update the WageringTotalScoreLines.
+   *
+   * @param e the WageringTotalScoreLines.
+   * @return The same WageringTotalScoreLines.
+   */
+  public WageringTotalScoreLines update(WageringTotalScoreLines e);
 }

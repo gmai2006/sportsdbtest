@@ -4,7 +4,7 @@
     "sequenceNumber": 0,
     "periodTimeElapsed": "Lorem ipsum dolor si0",
     "fieldLine": 0,
-    "clockState": "NJ",
+    "clockState": "NM",
     "down": 0,
     "periodValue": 0,
     "distanceFor1stDown": 0,
@@ -13,14 +13,14 @@
     "currentState": 0,
     "periodTimeRemaining": "Lorem ipsum dolor si0",
     "teamInPossessionId": 0,
-    "id": 1237794402
+    "id": 137761446
   },
   {
     "eventId": 1,
     "sequenceNumber": 1,
     "periodTimeElapsed": "Lorem ipsum dolor si1",
     "fieldLine": 1,
-    "clockState": "MO",
+    "clockState": "NM",
     "down": 1,
     "periodValue": 1,
     "distanceFor1stDown": 1,
@@ -29,14 +29,14 @@
     "currentState": 1,
     "periodTimeRemaining": "Lorem ipsum dolor si1",
     "teamInPossessionId": 1,
-    "id": 462105973
+    "id": 1181719962
   },
   {
     "eventId": 2,
     "sequenceNumber": 2,
     "periodTimeElapsed": "Lorem ipsum dolor si2",
     "fieldLine": 2,
-    "clockState": "TN",
+    "clockState": "KY",
     "down": 2,
     "periodValue": 2,
     "distanceFor1stDown": 2,
@@ -45,14 +45,14 @@
     "currentState": 2,
     "periodTimeRemaining": "Lorem ipsum dolor si2",
     "teamInPossessionId": 2,
-    "id": 1405427640
+    "id": 1880321077
   },
   {
     "eventId": 3,
     "sequenceNumber": 3,
     "periodTimeElapsed": "Lorem ipsum dolor si3",
     "fieldLine": 3,
-    "clockState": "NC",
+    "clockState": "PA",
     "down": 3,
     "periodValue": 3,
     "distanceFor1stDown": 3,
@@ -61,14 +61,14 @@
     "currentState": 3,
     "periodTimeRemaining": "Lorem ipsum dolor si3",
     "teamInPossessionId": 3,
-    "id": 435043699
+    "id": 1683783805
   },
   {
     "eventId": 4,
     "sequenceNumber": 4,
     "periodTimeElapsed": "Lorem ipsum dolor si4",
     "fieldLine": 4,
-    "clockState": "IN",
+    "clockState": "VT",
     "down": 4,
     "periodValue": 4,
     "distanceFor1stDown": 4,
@@ -77,14 +77,14 @@
     "currentState": 4,
     "periodTimeRemaining": "Lorem ipsum dolor si4",
     "teamInPossessionId": 4,
-    "id": 1701023935
+    "id": 742945404
   },
   {
     "eventId": 5,
     "sequenceNumber": 5,
     "periodTimeElapsed": "Lorem ipsum dolor si5",
     "fieldLine": 5,
-    "clockState": "LA",
+    "clockState": "MI",
     "down": 5,
     "periodValue": 5,
     "distanceFor1stDown": 5,
@@ -93,14 +93,14 @@
     "currentState": 5,
     "periodTimeRemaining": "Lorem ipsum dolor si5",
     "teamInPossessionId": 5,
-    "id": 888762323
+    "id": 1649060682
   },
   {
     "eventId": 6,
     "sequenceNumber": 6,
     "periodTimeElapsed": "Lorem ipsum dolor si6",
     "fieldLine": 6,
-    "clockState": "ND",
+    "clockState": "FL",
     "down": 6,
     "periodValue": 6,
     "distanceFor1stDown": 6,
@@ -109,14 +109,14 @@
     "currentState": 6,
     "periodTimeRemaining": "Lorem ipsum dolor si6",
     "teamInPossessionId": 6,
-    "id": 1251206788
+    "id": 1336323347
   },
   {
     "eventId": 7,
     "sequenceNumber": 7,
     "periodTimeElapsed": "Lorem ipsum dolor si7",
     "fieldLine": 7,
-    "clockState": "MO",
+    "clockState": "SC",
     "down": 7,
     "periodValue": 7,
     "distanceFor1stDown": 7,
@@ -125,14 +125,14 @@
     "currentState": 7,
     "periodTimeRemaining": "Lorem ipsum dolor si7",
     "teamInPossessionId": 7,
-    "id": 291452833
+    "id": 1646834327
   },
   {
     "eventId": 8,
     "sequenceNumber": 8,
     "periodTimeElapsed": "Lorem ipsum dolor si8",
     "fieldLine": 8,
-    "clockState": "PR",
+    "clockState": "MS",
     "down": 8,
     "periodValue": 8,
     "distanceFor1stDown": 8,
@@ -141,14 +141,14 @@
     "currentState": 8,
     "periodTimeRemaining": "Lorem ipsum dolor si8",
     "teamInPossessionId": 8,
-    "id": 274586579
+    "id": 14091113
   },
   {
     "eventId": 9,
     "sequenceNumber": 9,
     "periodTimeElapsed": "Lorem ipsum dolor si9",
     "fieldLine": 9,
-    "clockState": "KY",
+    "clockState": "NY",
     "down": 9,
     "periodValue": 9,
     "distanceFor1stDown": 9,
@@ -157,6 +157,6 @@
     "currentState": 9,
     "periodTimeRemaining": "Lorem ipsum dolor si9",
     "teamInPossessionId": 9,
-    "id": 1884251634
+    "id": 636005706
   }
 ]

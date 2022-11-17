@@ -16,41 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.BaseballDefensivePlayers;
 import java.util.List;
+import com.sportsdb.test.entity.BaseballDefensivePlayers;
 
 public interface BaseballDefensivePlayersService {
-    public BaseballDefensivePlayers find(java.lang.Integer id);
+  public BaseballDefensivePlayers find(java.lang.Integer id);
 
-    /**
-     * Select a list of BaseballDefensivePlayers based on a given maximum number of returning
-     * records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return BaseballDefensivePlayers records.
-     */
-    public List<BaseballDefensivePlayers> select(int maxResult);
+  /**
+   * Select a list of BaseballDefensivePlayers based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return BaseballDefensivePlayers records.
+   */
+  public List<BaseballDefensivePlayers> select(int maxResult);
 
-    /**
-     * Select all BaseballDefensivePlayers.
-     *
-     * @return all BaseballDefensivePlayers records.
-     */
-    public List<BaseballDefensivePlayers> selectAll();
+  /**
+   * Select all BaseballDefensivePlayers.
+   *
+   * @return all BaseballDefensivePlayers records.
+   */
+  public List<BaseballDefensivePlayers> selectAll();
 
-    /**
-     * Create BaseballDefensivePlayers.
-     *
-     * @param bean The BaseballDefensivePlayers.
-     * @return The BaseballDefensivePlayers.
-     */
-    public BaseballDefensivePlayers create(BaseballDefensivePlayers bean);
+  /**
+   * Create BaseballDefensivePlayers.
+   *
+   * @param bean The BaseballDefensivePlayers.
+   * @return The BaseballDefensivePlayers.
+   */
+  public BaseballDefensivePlayers create(BaseballDefensivePlayers bean);
 
-    /**
-     * Update a BaseballDefensivePlayers.
-     *
-     * @param bean - The BaseballDefensivePlayers.
-     * @return BaseballDefensivePlayers.
-     */
-    public BaseballDefensivePlayers update(BaseballDefensivePlayers bean);
+  /**
+   * Update a BaseballDefensivePlayers.
+   *
+   * @param bean - The BaseballDefensivePlayers.
+   * @return BaseballDefensivePlayers.
+   */
+  public BaseballDefensivePlayers update(BaseballDefensivePlayers bean);
 }

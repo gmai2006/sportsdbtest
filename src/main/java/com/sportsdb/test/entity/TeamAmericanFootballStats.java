@@ -16,91 +16,91 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "team_american_football_stats")
 public class TeamAmericanFootballStats implements Serializable {
-    private static final long serialVersionUID = 163445241933838517L;
+  private static final long serialVersionUID = 166867004256745827L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: yards_per_attempt. */
-    @Basic
-    @Column(name = "yards_per_attempt", length = 100)
-    private java.lang.String yardsPerAttempt;
-    /** Description: average_starting_position. */
-    @Basic
-    @Column(name = "average_starting_position", length = 100)
-    private java.lang.String averageStartingPosition;
-    /** Description: timeouts. */
-    @Basic
-    @Column(name = "timeouts", length = 100)
-    private java.lang.String timeouts;
-    /** Description: time_of_possession. */
-    @Basic
-    @Column(name = "time_of_possession", length = 100)
-    private java.lang.String timeOfPossession;
-    /** Description: turnover_ratio. */
-    @Basic
-    @Column(name = "turnover_ratio", length = 100)
-    private java.lang.String turnoverRatio;
+  /** Description: yards_per_attempt. */
+  @Basic
+  @Column(name = "yards_per_attempt", length = 100)
+  private java.lang.String yardsPerAttempt;
+  /** Description: average_starting_position. */
+  @Basic
+  @Column(name = "average_starting_position", length = 100)
+  private java.lang.String averageStartingPosition;
+  /** Description: timeouts. */
+  @Basic
+  @Column(name = "timeouts", length = 100)
+  private java.lang.String timeouts;
+  /** Description: time_of_possession. */
+  @Basic
+  @Column(name = "time_of_possession", length = 100)
+  private java.lang.String timeOfPossession;
+  /** Description: turnover_ratio. */
+  @Basic
+  @Column(name = "turnover_ratio", length = 100)
+  private java.lang.String turnoverRatio;
 
-    public TeamAmericanFootballStats() {}
+  public TeamAmericanFootballStats() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.String getYardsPerAttempt() {
-        return this.yardsPerAttempt;
-    }
+  public java.lang.String getYardsPerAttempt() {
+    return this.yardsPerAttempt;
+  }
 
-    public java.lang.String getAverageStartingPosition() {
-        return this.averageStartingPosition;
-    }
+  public java.lang.String getAverageStartingPosition() {
+    return this.averageStartingPosition;
+  }
 
-    public java.lang.String getTimeouts() {
-        return this.timeouts;
-    }
+  public java.lang.String getTimeouts() {
+    return this.timeouts;
+  }
 
-    public java.lang.String getTimeOfPossession() {
-        return this.timeOfPossession;
-    }
+  public java.lang.String getTimeOfPossession() {
+    return this.timeOfPossession;
+  }
 
-    public java.lang.String getTurnoverRatio() {
-        return this.turnoverRatio;
-    }
+  public java.lang.String getTurnoverRatio() {
+    return this.turnoverRatio;
+  }
 
-    public void setYardsPerAttempt(java.lang.String yardsPerAttempt) {
-        this.yardsPerAttempt = yardsPerAttempt;
-    }
+  public void setYardsPerAttempt(java.lang.String yardsPerAttempt) {
+    this.yardsPerAttempt = yardsPerAttempt;
+  }
 
-    public void setAverageStartingPosition(java.lang.String averageStartingPosition) {
-        this.averageStartingPosition = averageStartingPosition;
-    }
+  public void setAverageStartingPosition(java.lang.String averageStartingPosition) {
+    this.averageStartingPosition = averageStartingPosition;
+  }
 
-    public void setTimeouts(java.lang.String timeouts) {
-        this.timeouts = timeouts;
-    }
+  public void setTimeouts(java.lang.String timeouts) {
+    this.timeouts = timeouts;
+  }
 
-    public void setTimeOfPossession(java.lang.String timeOfPossession) {
-        this.timeOfPossession = timeOfPossession;
-    }
+  public void setTimeOfPossession(java.lang.String timeOfPossession) {
+    this.timeOfPossession = timeOfPossession;
+  }
 
-    public void setTurnoverRatio(java.lang.String turnoverRatio) {
-        this.turnoverRatio = turnoverRatio;
-    }
+  public void setTurnoverRatio(java.lang.String turnoverRatio) {
+    this.turnoverRatio = turnoverRatio;
+  }
 }

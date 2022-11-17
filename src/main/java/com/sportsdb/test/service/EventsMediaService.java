@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.EventsMedia;
 import java.util.List;
+import com.sportsdb.test.entity.EventsMedia;
 
 public interface EventsMediaService {
-    public EventsMedia find(java.lang.String id);
+  public EventsMedia find(java.lang.String id);
 
-    /**
-     * Select a list of EventsMedia based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return EventsMedia records.
-     */
-    public List<EventsMedia> select(int maxResult);
+  /**
+   * Select a list of EventsMedia based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return EventsMedia records.
+   */
+  public List<EventsMedia> select(int maxResult);
 
-    /**
-     * Select all EventsMedia.
-     *
-     * @return all EventsMedia records.
-     */
-    public List<EventsMedia> selectAll();
+  /**
+   * Select all EventsMedia.
+   *
+   * @return all EventsMedia records.
+   */
+  public List<EventsMedia> selectAll();
 
-    /**
-     * Create EventsMedia.
-     *
-     * @param bean The EventsMedia.
-     * @return The EventsMedia.
-     */
-    public EventsMedia create(EventsMedia bean);
+  /**
+   * Create EventsMedia.
+   *
+   * @param bean The EventsMedia.
+   * @return The EventsMedia.
+   */
+  public EventsMedia create(EventsMedia bean);
 
-    /**
-     * Update a EventsMedia.
-     *
-     * @param bean - The EventsMedia.
-     * @return EventsMedia.
-     */
-    public EventsMedia update(EventsMedia bean);
+  /**
+   * Update a EventsMedia.
+   *
+   * @param bean - The EventsMedia.
+   * @return EventsMedia.
+   */
+  public EventsMedia update(EventsMedia bean);
 }

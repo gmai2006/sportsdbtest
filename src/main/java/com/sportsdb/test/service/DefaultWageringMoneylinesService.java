@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.WageringMoneylinesDao;
-import com.sportsdb.test.entity.WageringMoneylines;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.WageringMoneylinesDao;
+import com.sportsdb.test.entity.WageringMoneylines;
 
 @Stateless
 @Named("DefaultWageringMoneylinesService")
 public class DefaultWageringMoneylinesService implements WageringMoneylinesService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final WageringMoneylinesDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final WageringMoneylinesDao dao;
 
-    @Inject
-    @Named("DefaultWageringMoneylinesDao")
-    public DefaultWageringMoneylinesService(final WageringMoneylinesDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultWageringMoneylinesDao")
+  public DefaultWageringMoneylinesService(final WageringMoneylinesDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public WageringMoneylines find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public WageringMoneylines find(java.lang.Integer id) {
 
-        final WageringMoneylines result = dao.find(id);
-        logger.info("find(WageringMoneylines) - exited - return value={} result ");
-        return result;
-    }
+    final WageringMoneylines result = dao.find(id);
+    logger.info("find(WageringMoneylines) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<WageringMoneylines> select(int maxResult) {
-        final List<WageringMoneylines> result = dao.select(maxResult);
-        logger.info("select(WageringMoneylines) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<WageringMoneylines> select(int maxResult) {
+    final List<WageringMoneylines> result = dao.select(maxResult);
+    logger.info("select(WageringMoneylines) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<WageringMoneylines> selectAll() {
-        final List<WageringMoneylines> results = dao.selectAll();
-        logger.info("selectAll(WageringMoneylines) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<WageringMoneylines> selectAll() {
+    final List<WageringMoneylines> results = dao.selectAll();
+    logger.info("selectAll(WageringMoneylines) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public WageringMoneylines create(WageringMoneylines bean) {
-        requireNonNull(bean);
-        logger.info("create(WageringMoneylines={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public WageringMoneylines create(WageringMoneylines bean) {
+    requireNonNull(bean);
+    logger.info("create(WageringMoneylines={}) - entered bean ");
 
-        final WageringMoneylines result = dao.create(bean);
+    final WageringMoneylines result = dao.create(bean);
 
-        logger.info("create(WageringMoneylines) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(WageringMoneylines) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public WageringMoneylines update(WageringMoneylines bean) {
-        requireNonNull(bean);
-        logger.info("update(WageringMoneylines={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public WageringMoneylines update(WageringMoneylines bean) {
+    requireNonNull(bean);
+    logger.info("update(WageringMoneylines={}) - entered bean ");
 
-        final WageringMoneylines result = dao.update(bean);
+    final WageringMoneylines result = dao.update(bean);
 
-        logger.info("update(WageringMoneylines) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(WageringMoneylines) - exited - return value={} result ");
+    return result;
+  }
 }

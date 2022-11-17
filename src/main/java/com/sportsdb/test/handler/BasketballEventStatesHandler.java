@@ -16,59 +16,62 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.BasketballEventStates;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.BasketballEventStates;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("BasketballEventStatesHandler")
 public class BasketballEventStatesHandler extends DelimiterFileHandler<BasketballEventStates> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public BasketballEventStatesHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public BasketballEventStatesHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected BasketballEventStates parseLine(List<String> headers, List<String> tokens) {
+    BasketballEventStates record = new BasketballEventStates();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "eventId":
+          record.setEventId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "currentState":
+          record.setCurrentState(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "sequenceNumber":
+          record.setSequenceNumber(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "periodValue":
+          record.setPeriodValue(tokens.get(i));
+          break;
+
+        case "periodTimeElapsed":
+          record.setPeriodTimeElapsed(tokens.get(i));
+          break;
+
+        case "periodTimeRemaining":
+          record.setPeriodTimeRemaining(tokens.get(i));
+          break;
+
+        case "context":
+          record.setContext(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected BasketballEventStates parseLine(List<String> headers, List<String> tokens) {
-        BasketballEventStates record = new BasketballEventStates();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "eventId":
-                    record.setEventId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "currentState":
-                    record.setCurrentState(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "sequenceNumber":
-                    record.setSequenceNumber(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "periodValue":
-                    record.setPeriodValue(tokens.get(i));
-                    break;
-
-                case "periodTimeElapsed":
-                    record.setPeriodTimeElapsed(tokens.get(i));
-                    break;
-
-                case "periodTimeRemaining":
-                    record.setPeriodTimeRemaining(tokens.get(i));
-                    break;
-
-                case "context":
-                    record.setContext(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

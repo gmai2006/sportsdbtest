@@ -16,41 +16,41 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.AmericanFootballSpecialTeamsStats;
 import java.util.List;
+import com.sportsdb.test.entity.AmericanFootballSpecialTeamsStats;
 
 public interface AmericanFootballSpecialTeamsStatsService {
-    public AmericanFootballSpecialTeamsStats find(java.lang.Integer id);
+  public AmericanFootballSpecialTeamsStats find(java.lang.Integer id);
 
-    /**
-     * Select a list of AmericanFootballSpecialTeamsStats based on a given maximum number of
-     * returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return AmericanFootballSpecialTeamsStats records.
-     */
-    public List<AmericanFootballSpecialTeamsStats> select(int maxResult);
+  /**
+   * Select a list of AmericanFootballSpecialTeamsStats based on a given maximum number of returning
+   * records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return AmericanFootballSpecialTeamsStats records.
+   */
+  public List<AmericanFootballSpecialTeamsStats> select(int maxResult);
 
-    /**
-     * Select all AmericanFootballSpecialTeamsStats.
-     *
-     * @return all AmericanFootballSpecialTeamsStats records.
-     */
-    public List<AmericanFootballSpecialTeamsStats> selectAll();
+  /**
+   * Select all AmericanFootballSpecialTeamsStats.
+   *
+   * @return all AmericanFootballSpecialTeamsStats records.
+   */
+  public List<AmericanFootballSpecialTeamsStats> selectAll();
 
-    /**
-     * Create AmericanFootballSpecialTeamsStats.
-     *
-     * @param bean The AmericanFootballSpecialTeamsStats.
-     * @return The AmericanFootballSpecialTeamsStats.
-     */
-    public AmericanFootballSpecialTeamsStats create(AmericanFootballSpecialTeamsStats bean);
+  /**
+   * Create AmericanFootballSpecialTeamsStats.
+   *
+   * @param bean The AmericanFootballSpecialTeamsStats.
+   * @return The AmericanFootballSpecialTeamsStats.
+   */
+  public AmericanFootballSpecialTeamsStats create(AmericanFootballSpecialTeamsStats bean);
 
-    /**
-     * Update a AmericanFootballSpecialTeamsStats.
-     *
-     * @param bean - The AmericanFootballSpecialTeamsStats.
-     * @return AmericanFootballSpecialTeamsStats.
-     */
-    public AmericanFootballSpecialTeamsStats update(AmericanFootballSpecialTeamsStats bean);
+  /**
+   * Update a AmericanFootballSpecialTeamsStats.
+   *
+   * @param bean - The AmericanFootballSpecialTeamsStats.
+   * @return AmericanFootballSpecialTeamsStats.
+   */
+  public AmericanFootballSpecialTeamsStats update(AmericanFootballSpecialTeamsStats bean);
 }

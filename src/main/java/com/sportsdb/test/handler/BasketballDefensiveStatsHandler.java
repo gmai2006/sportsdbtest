@@ -16,51 +16,54 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.BasketballDefensiveStats;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.BasketballDefensiveStats;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("BasketballDefensiveStatsHandler")
 public class BasketballDefensiveStatsHandler
-        extends DelimiterFileHandler<BasketballDefensiveStats> {
+    extends DelimiterFileHandler<BasketballDefensiveStats> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public BasketballDefensiveStatsHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public BasketballDefensiveStatsHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected BasketballDefensiveStats parseLine(List<String> headers, List<String> tokens) {
+    BasketballDefensiveStats record = new BasketballDefensiveStats();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "stealsTotal":
+          record.setStealsTotal(tokens.get(i));
+          break;
+
+        case "stealsPerGame":
+          record.setStealsPerGame(tokens.get(i));
+          break;
+
+        case "blocksTotal":
+          record.setBlocksTotal(tokens.get(i));
+          break;
+
+        case "blocksPerGame":
+          record.setBlocksPerGame(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected BasketballDefensiveStats parseLine(List<String> headers, List<String> tokens) {
-        BasketballDefensiveStats record = new BasketballDefensiveStats();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "stealsTotal":
-                    record.setStealsTotal(tokens.get(i));
-                    break;
-
-                case "stealsPerGame":
-                    record.setStealsPerGame(tokens.get(i));
-                    break;
-
-                case "blocksTotal":
-                    record.setBlocksTotal(tokens.get(i));
-                    break;
-
-                case "blocksPerGame":
-                    record.setBlocksPerGame(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

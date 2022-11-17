@@ -16,41 +16,41 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.AmericanFootballPenaltiesStats;
 import java.util.List;
+import com.sportsdb.test.entity.AmericanFootballPenaltiesStats;
 
 public interface AmericanFootballPenaltiesStatsService {
-    public AmericanFootballPenaltiesStats find(java.lang.Integer id);
+  public AmericanFootballPenaltiesStats find(java.lang.Integer id);
 
-    /**
-     * Select a list of AmericanFootballPenaltiesStats based on a given maximum number of returning
-     * records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return AmericanFootballPenaltiesStats records.
-     */
-    public List<AmericanFootballPenaltiesStats> select(int maxResult);
+  /**
+   * Select a list of AmericanFootballPenaltiesStats based on a given maximum number of returning
+   * records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return AmericanFootballPenaltiesStats records.
+   */
+  public List<AmericanFootballPenaltiesStats> select(int maxResult);
 
-    /**
-     * Select all AmericanFootballPenaltiesStats.
-     *
-     * @return all AmericanFootballPenaltiesStats records.
-     */
-    public List<AmericanFootballPenaltiesStats> selectAll();
+  /**
+   * Select all AmericanFootballPenaltiesStats.
+   *
+   * @return all AmericanFootballPenaltiesStats records.
+   */
+  public List<AmericanFootballPenaltiesStats> selectAll();
 
-    /**
-     * Create AmericanFootballPenaltiesStats.
-     *
-     * @param bean The AmericanFootballPenaltiesStats.
-     * @return The AmericanFootballPenaltiesStats.
-     */
-    public AmericanFootballPenaltiesStats create(AmericanFootballPenaltiesStats bean);
+  /**
+   * Create AmericanFootballPenaltiesStats.
+   *
+   * @param bean The AmericanFootballPenaltiesStats.
+   * @return The AmericanFootballPenaltiesStats.
+   */
+  public AmericanFootballPenaltiesStats create(AmericanFootballPenaltiesStats bean);
 
-    /**
-     * Update a AmericanFootballPenaltiesStats.
-     *
-     * @param bean - The AmericanFootballPenaltiesStats.
-     * @return AmericanFootballPenaltiesStats.
-     */
-    public AmericanFootballPenaltiesStats update(AmericanFootballPenaltiesStats bean);
+  /**
+   * Update a AmericanFootballPenaltiesStats.
+   *
+   * @param bean - The AmericanFootballPenaltiesStats.
+   * @return AmericanFootballPenaltiesStats.
+   */
+  public AmericanFootballPenaltiesStats update(AmericanFootballPenaltiesStats bean);
 }

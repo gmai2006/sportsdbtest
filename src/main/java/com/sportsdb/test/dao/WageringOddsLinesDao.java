@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.WageringOddsLines;
 import java.util.List;
+import com.sportsdb.test.entity.WageringOddsLines;
 
 public interface WageringOddsLinesDao {
-    /**
-     * Retrieve all records WageringOddsLines.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of WageringOddsLines
-     */
-    public List<WageringOddsLines> select(int maxResult);
+  /**
+   * Retrieve all records WageringOddsLines.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of WageringOddsLines
+   */
+  public List<WageringOddsLines> select(int maxResult);
 
-    /**
-     * Retrieve all records WageringOddsLines.
-     *
-     * @return A list of WageringOddsLines
-     */
-    public List<WageringOddsLines> selectAll();
+  /**
+   * Retrieve all records WageringOddsLines.
+   *
+   * @return A list of WageringOddsLines
+   */
+  public List<WageringOddsLines> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An WageringOddsLines id.
-     * @return The same WageringOddsLines.
-     */
-    public WageringOddsLines find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An WageringOddsLines id.
+   * @return The same WageringOddsLines.
+   */
+  public WageringOddsLines find(java.lang.Integer id);
 
-    /**
-     * Create an WageringOddsLines.
-     *
-     * @param e the WageringOddsLines.
-     * @return The same WageringOddsLines.
-     */
-    public WageringOddsLines create(WageringOddsLines e);
+  /**
+   * Create an WageringOddsLines.
+   *
+   * @param e the WageringOddsLines.
+   * @return The same WageringOddsLines.
+   */
+  public WageringOddsLines create(WageringOddsLines e);
 
-    /**
-     * Update the WageringOddsLines.
-     *
-     * @param e the WageringOddsLines.
-     * @return The same WageringOddsLines.
-     */
-    public WageringOddsLines update(WageringOddsLines e);
+  /**
+   * Update the WageringOddsLines.
+   *
+   * @param e the WageringOddsLines.
+   * @return The same WageringOddsLines.
+   */
+  public WageringOddsLines update(WageringOddsLines e);
 }

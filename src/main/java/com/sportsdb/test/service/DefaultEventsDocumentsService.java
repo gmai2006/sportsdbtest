@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.EventsDocumentsDao;
-import com.sportsdb.test.entity.EventsDocuments;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.EventsDocumentsDao;
+import com.sportsdb.test.entity.EventsDocuments;
 
 @Stateless
 @Named("DefaultEventsDocumentsService")
 public class DefaultEventsDocumentsService implements EventsDocumentsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final EventsDocumentsDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final EventsDocumentsDao dao;
 
-    @Inject
-    @Named("DefaultEventsDocumentsDao")
-    public DefaultEventsDocumentsService(final EventsDocumentsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultEventsDocumentsDao")
+  public DefaultEventsDocumentsService(final EventsDocumentsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public EventsDocuments find(java.lang.String id) {
+  /** {@inheritDoc} */
+  @Override
+  public EventsDocuments find(java.lang.String id) {
 
-        final EventsDocuments result = dao.find(id);
-        logger.info("find(EventsDocuments) - exited - return value={} result ");
-        return result;
-    }
+    final EventsDocuments result = dao.find(id);
+    logger.info("find(EventsDocuments) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<EventsDocuments> select(int maxResult) {
-        final List<EventsDocuments> result = dao.select(maxResult);
-        logger.info("select(EventsDocuments) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<EventsDocuments> select(int maxResult) {
+    final List<EventsDocuments> result = dao.select(maxResult);
+    logger.info("select(EventsDocuments) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<EventsDocuments> selectAll() {
-        final List<EventsDocuments> results = dao.selectAll();
-        logger.info("selectAll(EventsDocuments) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<EventsDocuments> selectAll() {
+    final List<EventsDocuments> results = dao.selectAll();
+    logger.info("selectAll(EventsDocuments) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public EventsDocuments create(EventsDocuments bean) {
-        requireNonNull(bean);
-        logger.info("create(EventsDocuments={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public EventsDocuments create(EventsDocuments bean) {
+    requireNonNull(bean);
+    logger.info("create(EventsDocuments={}) - entered bean ");
 
-        final EventsDocuments result = dao.create(bean);
+    final EventsDocuments result = dao.create(bean);
 
-        logger.info("create(EventsDocuments) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(EventsDocuments) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public EventsDocuments update(EventsDocuments bean) {
-        requireNonNull(bean);
-        logger.info("update(EventsDocuments={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public EventsDocuments update(EventsDocuments bean) {
+    requireNonNull(bean);
+    logger.info("update(EventsDocuments={}) - entered bean ");
 
-        final EventsDocuments result = dao.update(bean);
+    final EventsDocuments result = dao.update(bean);
 
-        logger.info("update(EventsDocuments) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(EventsDocuments) - exited - return value={} result ");
+    return result;
+  }
 }

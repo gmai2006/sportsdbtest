@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.TennisActionVolleysDao;
-import com.sportsdb.test.entity.TennisActionVolleys;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.TennisActionVolleysDao;
+import com.sportsdb.test.entity.TennisActionVolleys;
 
 @Stateless
 @Named("DefaultTennisActionVolleysService")
 public class DefaultTennisActionVolleysService implements TennisActionVolleysService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final TennisActionVolleysDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final TennisActionVolleysDao dao;
 
-    @Inject
-    @Named("DefaultTennisActionVolleysDao")
-    public DefaultTennisActionVolleysService(final TennisActionVolleysDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultTennisActionVolleysDao")
+  public DefaultTennisActionVolleysService(final TennisActionVolleysDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public TennisActionVolleys find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public TennisActionVolleys find(java.lang.Integer id) {
 
-        final TennisActionVolleys result = dao.find(id);
-        logger.info("find(TennisActionVolleys) - exited - return value={} result ");
-        return result;
-    }
+    final TennisActionVolleys result = dao.find(id);
+    logger.info("find(TennisActionVolleys) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<TennisActionVolleys> select(int maxResult) {
-        final List<TennisActionVolleys> result = dao.select(maxResult);
-        logger.info("select(TennisActionVolleys) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<TennisActionVolleys> select(int maxResult) {
+    final List<TennisActionVolleys> result = dao.select(maxResult);
+    logger.info("select(TennisActionVolleys) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<TennisActionVolleys> selectAll() {
-        final List<TennisActionVolleys> results = dao.selectAll();
-        logger.info("selectAll(TennisActionVolleys) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<TennisActionVolleys> selectAll() {
+    final List<TennisActionVolleys> results = dao.selectAll();
+    logger.info("selectAll(TennisActionVolleys) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public TennisActionVolleys create(TennisActionVolleys bean) {
-        requireNonNull(bean);
-        logger.info("create(TennisActionVolleys={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public TennisActionVolleys create(TennisActionVolleys bean) {
+    requireNonNull(bean);
+    logger.info("create(TennisActionVolleys={}) - entered bean ");
 
-        final TennisActionVolleys result = dao.create(bean);
+    final TennisActionVolleys result = dao.create(bean);
 
-        logger.info("create(TennisActionVolleys) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(TennisActionVolleys) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public TennisActionVolleys update(TennisActionVolleys bean) {
-        requireNonNull(bean);
-        logger.info("update(TennisActionVolleys={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public TennisActionVolleys update(TennisActionVolleys bean) {
+    requireNonNull(bean);
+    logger.info("update(TennisActionVolleys={}) - entered bean ");
 
-        final TennisActionVolleys result = dao.update(bean);
+    final TennisActionVolleys result = dao.update(bean);
 
-        logger.info("update(TennisActionVolleys) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(TennisActionVolleys) - exited - return value={} result ");
+    return result;
+  }
 }

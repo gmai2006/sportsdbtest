@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.Addresses;
 import java.util.List;
+import com.sportsdb.test.entity.Addresses;
 
 public interface AddressesDao {
-    /**
-     * Retrieve all records Addresses.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of Addresses
-     */
-    public List<Addresses> select(int maxResult);
+  /**
+   * Retrieve all records Addresses.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of Addresses
+   */
+  public List<Addresses> select(int maxResult);
 
-    /**
-     * Retrieve all records Addresses.
-     *
-     * @return A list of Addresses
-     */
-    public List<Addresses> selectAll();
+  /**
+   * Retrieve all records Addresses.
+   *
+   * @return A list of Addresses
+   */
+  public List<Addresses> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An Addresses id.
-     * @return The same Addresses.
-     */
-    public Addresses find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An Addresses id.
+   * @return The same Addresses.
+   */
+  public Addresses find(java.lang.Integer id);
 
-    /**
-     * Create an Addresses.
-     *
-     * @param e the Addresses.
-     * @return The same Addresses.
-     */
-    public Addresses create(Addresses e);
+  /**
+   * Create an Addresses.
+   *
+   * @param e the Addresses.
+   * @return The same Addresses.
+   */
+  public Addresses create(Addresses e);
 
-    /**
-     * Update the Addresses.
-     *
-     * @param e the Addresses.
-     * @return The same Addresses.
-     */
-    public Addresses update(Addresses e);
+  /**
+   * Update the Addresses.
+   *
+   * @param e the Addresses.
+   * @return The same Addresses.
+   */
+  public Addresses update(Addresses e);
 }

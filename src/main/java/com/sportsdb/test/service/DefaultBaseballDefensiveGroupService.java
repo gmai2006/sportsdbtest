@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.BaseballDefensiveGroupDao;
-import com.sportsdb.test.entity.BaseballDefensiveGroup;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.BaseballDefensiveGroupDao;
+import com.sportsdb.test.entity.BaseballDefensiveGroup;
 
 @Stateless
 @Named("DefaultBaseballDefensiveGroupService")
 public class DefaultBaseballDefensiveGroupService implements BaseballDefensiveGroupService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final BaseballDefensiveGroupDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final BaseballDefensiveGroupDao dao;
 
-    @Inject
-    @Named("DefaultBaseballDefensiveGroupDao")
-    public DefaultBaseballDefensiveGroupService(final BaseballDefensiveGroupDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultBaseballDefensiveGroupDao")
+  public DefaultBaseballDefensiveGroupService(final BaseballDefensiveGroupDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BaseballDefensiveGroup find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public BaseballDefensiveGroup find(java.lang.Integer id) {
 
-        final BaseballDefensiveGroup result = dao.find(id);
-        logger.info("find(BaseballDefensiveGroup) - exited - return value={} result ");
-        return result;
-    }
+    final BaseballDefensiveGroup result = dao.find(id);
+    logger.info("find(BaseballDefensiveGroup) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<BaseballDefensiveGroup> select(int maxResult) {
-        final List<BaseballDefensiveGroup> result = dao.select(maxResult);
-        logger.info("select(BaseballDefensiveGroup) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<BaseballDefensiveGroup> select(int maxResult) {
+    final List<BaseballDefensiveGroup> result = dao.select(maxResult);
+    logger.info("select(BaseballDefensiveGroup) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<BaseballDefensiveGroup> selectAll() {
-        final List<BaseballDefensiveGroup> results = dao.selectAll();
-        logger.info("selectAll(BaseballDefensiveGroup) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<BaseballDefensiveGroup> selectAll() {
+    final List<BaseballDefensiveGroup> results = dao.selectAll();
+    logger.info("selectAll(BaseballDefensiveGroup) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BaseballDefensiveGroup create(BaseballDefensiveGroup bean) {
-        requireNonNull(bean);
-        logger.info("create(BaseballDefensiveGroup={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public BaseballDefensiveGroup create(BaseballDefensiveGroup bean) {
+    requireNonNull(bean);
+    logger.info("create(BaseballDefensiveGroup={}) - entered bean ");
 
-        final BaseballDefensiveGroup result = dao.create(bean);
+    final BaseballDefensiveGroup result = dao.create(bean);
 
-        logger.info("create(BaseballDefensiveGroup) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(BaseballDefensiveGroup) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BaseballDefensiveGroup update(BaseballDefensiveGroup bean) {
-        requireNonNull(bean);
-        logger.info("update(BaseballDefensiveGroup={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public BaseballDefensiveGroup update(BaseballDefensiveGroup bean) {
+    requireNonNull(bean);
+    logger.info("update(BaseballDefensiveGroup={}) - entered bean ");
 
-        final BaseballDefensiveGroup result = dao.update(bean);
+    final BaseballDefensiveGroup result = dao.update(bean);
 
-        logger.info("update(BaseballDefensiveGroup) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(BaseballDefensiveGroup) - exited - return value={} result ");
+    return result;
+  }
 }

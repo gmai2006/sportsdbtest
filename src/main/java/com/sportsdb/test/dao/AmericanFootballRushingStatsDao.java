@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.AmericanFootballRushingStats;
 import java.util.List;
+import com.sportsdb.test.entity.AmericanFootballRushingStats;
 
 public interface AmericanFootballRushingStatsDao {
-    /**
-     * Retrieve all records AmericanFootballRushingStats.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of AmericanFootballRushingStats
-     */
-    public List<AmericanFootballRushingStats> select(int maxResult);
+  /**
+   * Retrieve all records AmericanFootballRushingStats.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of AmericanFootballRushingStats
+   */
+  public List<AmericanFootballRushingStats> select(int maxResult);
 
-    /**
-     * Retrieve all records AmericanFootballRushingStats.
-     *
-     * @return A list of AmericanFootballRushingStats
-     */
-    public List<AmericanFootballRushingStats> selectAll();
+  /**
+   * Retrieve all records AmericanFootballRushingStats.
+   *
+   * @return A list of AmericanFootballRushingStats
+   */
+  public List<AmericanFootballRushingStats> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An AmericanFootballRushingStats id.
-     * @return The same AmericanFootballRushingStats.
-     */
-    public AmericanFootballRushingStats find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An AmericanFootballRushingStats id.
+   * @return The same AmericanFootballRushingStats.
+   */
+  public AmericanFootballRushingStats find(java.lang.Integer id);
 
-    /**
-     * Create an AmericanFootballRushingStats.
-     *
-     * @param e the AmericanFootballRushingStats.
-     * @return The same AmericanFootballRushingStats.
-     */
-    public AmericanFootballRushingStats create(AmericanFootballRushingStats e);
+  /**
+   * Create an AmericanFootballRushingStats.
+   *
+   * @param e the AmericanFootballRushingStats.
+   * @return The same AmericanFootballRushingStats.
+   */
+  public AmericanFootballRushingStats create(AmericanFootballRushingStats e);
 
-    /**
-     * Update the AmericanFootballRushingStats.
-     *
-     * @param e the AmericanFootballRushingStats.
-     * @return The same AmericanFootballRushingStats.
-     */
-    public AmericanFootballRushingStats update(AmericanFootballRushingStats e);
+  /**
+   * Update the AmericanFootballRushingStats.
+   *
+   * @param e the AmericanFootballRushingStats.
+   * @return The same AmericanFootballRushingStats.
+   */
+  public AmericanFootballRushingStats update(AmericanFootballRushingStats e);
 }

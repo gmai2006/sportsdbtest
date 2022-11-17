@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.TennisEventStates;
 import java.util.List;
+import com.sportsdb.test.entity.TennisEventStates;
 
 public interface TennisEventStatesDao {
-    /**
-     * Retrieve all records TennisEventStates.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of TennisEventStates
-     */
-    public List<TennisEventStates> select(int maxResult);
+  /**
+   * Retrieve all records TennisEventStates.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of TennisEventStates
+   */
+  public List<TennisEventStates> select(int maxResult);
 
-    /**
-     * Retrieve all records TennisEventStates.
-     *
-     * @return A list of TennisEventStates
-     */
-    public List<TennisEventStates> selectAll();
+  /**
+   * Retrieve all records TennisEventStates.
+   *
+   * @return A list of TennisEventStates
+   */
+  public List<TennisEventStates> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An TennisEventStates id.
-     * @return The same TennisEventStates.
-     */
-    public TennisEventStates find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An TennisEventStates id.
+   * @return The same TennisEventStates.
+   */
+  public TennisEventStates find(java.lang.Integer id);
 
-    /**
-     * Create an TennisEventStates.
-     *
-     * @param e the TennisEventStates.
-     * @return The same TennisEventStates.
-     */
-    public TennisEventStates create(TennisEventStates e);
+  /**
+   * Create an TennisEventStates.
+   *
+   * @param e the TennisEventStates.
+   * @return The same TennisEventStates.
+   */
+  public TennisEventStates create(TennisEventStates e);
 
-    /**
-     * Update the TennisEventStates.
-     *
-     * @param e the TennisEventStates.
-     * @return The same TennisEventStates.
-     */
-    public TennisEventStates update(TennisEventStates e);
+  /**
+   * Update the TennisEventStates.
+   *
+   * @param e the TennisEventStates.
+   * @return The same TennisEventStates.
+   */
+  public TennisEventStates update(TennisEventStates e);
 }

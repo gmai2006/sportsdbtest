@@ -16,41 +16,41 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.AmericanFootballActionPlays;
 import java.util.List;
+import com.sportsdb.test.entity.AmericanFootballActionPlays;
 
 public interface AmericanFootballActionPlaysService {
-    public AmericanFootballActionPlays find(java.lang.Integer id);
+  public AmericanFootballActionPlays find(java.lang.Integer id);
 
-    /**
-     * Select a list of AmericanFootballActionPlays based on a given maximum number of returning
-     * records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return AmericanFootballActionPlays records.
-     */
-    public List<AmericanFootballActionPlays> select(int maxResult);
+  /**
+   * Select a list of AmericanFootballActionPlays based on a given maximum number of returning
+   * records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return AmericanFootballActionPlays records.
+   */
+  public List<AmericanFootballActionPlays> select(int maxResult);
 
-    /**
-     * Select all AmericanFootballActionPlays.
-     *
-     * @return all AmericanFootballActionPlays records.
-     */
-    public List<AmericanFootballActionPlays> selectAll();
+  /**
+   * Select all AmericanFootballActionPlays.
+   *
+   * @return all AmericanFootballActionPlays records.
+   */
+  public List<AmericanFootballActionPlays> selectAll();
 
-    /**
-     * Create AmericanFootballActionPlays.
-     *
-     * @param bean The AmericanFootballActionPlays.
-     * @return The AmericanFootballActionPlays.
-     */
-    public AmericanFootballActionPlays create(AmericanFootballActionPlays bean);
+  /**
+   * Create AmericanFootballActionPlays.
+   *
+   * @param bean The AmericanFootballActionPlays.
+   * @return The AmericanFootballActionPlays.
+   */
+  public AmericanFootballActionPlays create(AmericanFootballActionPlays bean);
 
-    /**
-     * Update a AmericanFootballActionPlays.
-     *
-     * @param bean - The AmericanFootballActionPlays.
-     * @return AmericanFootballActionPlays.
-     */
-    public AmericanFootballActionPlays update(AmericanFootballActionPlays bean);
+  /**
+   * Update a AmericanFootballActionPlays.
+   *
+   * @param bean - The AmericanFootballActionPlays.
+   * @return AmericanFootballActionPlays.
+   */
+  public AmericanFootballActionPlays update(AmericanFootballActionPlays bean);
 }

@@ -16,57 +16,60 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.PersonPhases;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.PersonPhases;
 
 @Stateless
 @Named("DefaultPersonPhasesDao")
 public class DefaultPersonPhasesDao implements PersonPhasesDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultPersonPhasesDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultPersonPhasesDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultPersonPhasesDao() {}
+  public DefaultPersonPhasesDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public PersonPhases find(java.lang.Integer id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(PersonPhases.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public PersonPhases find(java.lang.Integer id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(PersonPhases.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<PersonPhases> select(int max) {
-        return dao.select("select a from PersonPhases a", PersonPhases.class, max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<PersonPhases> select(int max) {
+    return dao.select("select a from PersonPhases a", PersonPhases.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<PersonPhases> selectAll() {
-        return dao.selectAll("select a from PersonPhases a", PersonPhases.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<PersonPhases> selectAll() {
+    return dao.selectAll("select a from PersonPhases a", PersonPhases.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public PersonPhases create(PersonPhases e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public PersonPhases create(PersonPhases e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public PersonPhases update(PersonPhases e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public PersonPhases update(PersonPhases e) {
+    return dao.update(e);
+  }
 }

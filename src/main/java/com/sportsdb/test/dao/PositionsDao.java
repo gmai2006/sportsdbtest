@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.Positions;
 import java.util.List;
+import com.sportsdb.test.entity.Positions;
 
 public interface PositionsDao {
-    /**
-     * Retrieve all records Positions.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of Positions
-     */
-    public List<Positions> select(int maxResult);
+  /**
+   * Retrieve all records Positions.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of Positions
+   */
+  public List<Positions> select(int maxResult);
 
-    /**
-     * Retrieve all records Positions.
-     *
-     * @return A list of Positions
-     */
-    public List<Positions> selectAll();
+  /**
+   * Retrieve all records Positions.
+   *
+   * @return A list of Positions
+   */
+  public List<Positions> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An Positions id.
-     * @return The same Positions.
-     */
-    public Positions find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An Positions id.
+   * @return The same Positions.
+   */
+  public Positions find(java.lang.Integer id);
 
-    /**
-     * Create an Positions.
-     *
-     * @param e the Positions.
-     * @return The same Positions.
-     */
-    public Positions create(Positions e);
+  /**
+   * Create an Positions.
+   *
+   * @param e the Positions.
+   * @return The same Positions.
+   */
+  public Positions create(Positions e);
 
-    /**
-     * Update the Positions.
-     *
-     * @param e the Positions.
-     * @return The same Positions.
-     */
-    public Positions update(Positions e);
+  /**
+   * Update the Positions.
+   *
+   * @param e the Positions.
+   * @return The same Positions.
+   */
+  public Positions update(Positions e);
 }

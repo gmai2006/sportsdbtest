@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.AmericanFootballEventStates;
 import java.util.List;
+import com.sportsdb.test.entity.AmericanFootballEventStates;
 
 public interface AmericanFootballEventStatesDao {
-    /**
-     * Retrieve all records AmericanFootballEventStates.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of AmericanFootballEventStates
-     */
-    public List<AmericanFootballEventStates> select(int maxResult);
+  /**
+   * Retrieve all records AmericanFootballEventStates.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of AmericanFootballEventStates
+   */
+  public List<AmericanFootballEventStates> select(int maxResult);
 
-    /**
-     * Retrieve all records AmericanFootballEventStates.
-     *
-     * @return A list of AmericanFootballEventStates
-     */
-    public List<AmericanFootballEventStates> selectAll();
+  /**
+   * Retrieve all records AmericanFootballEventStates.
+   *
+   * @return A list of AmericanFootballEventStates
+   */
+  public List<AmericanFootballEventStates> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An AmericanFootballEventStates id.
-     * @return The same AmericanFootballEventStates.
-     */
-    public AmericanFootballEventStates find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An AmericanFootballEventStates id.
+   * @return The same AmericanFootballEventStates.
+   */
+  public AmericanFootballEventStates find(java.lang.Integer id);
 
-    /**
-     * Create an AmericanFootballEventStates.
-     *
-     * @param e the AmericanFootballEventStates.
-     * @return The same AmericanFootballEventStates.
-     */
-    public AmericanFootballEventStates create(AmericanFootballEventStates e);
+  /**
+   * Create an AmericanFootballEventStates.
+   *
+   * @param e the AmericanFootballEventStates.
+   * @return The same AmericanFootballEventStates.
+   */
+  public AmericanFootballEventStates create(AmericanFootballEventStates e);
 
-    /**
-     * Update the AmericanFootballEventStates.
-     *
-     * @param e the AmericanFootballEventStates.
-     * @return The same AmericanFootballEventStates.
-     */
-    public AmericanFootballEventStates update(AmericanFootballEventStates e);
+  /**
+   * Update the AmericanFootballEventStates.
+   *
+   * @param e the AmericanFootballEventStates.
+   * @return The same AmericanFootballEventStates.
+   */
+  public AmericanFootballEventStates update(AmericanFootballEventStates e);
 }

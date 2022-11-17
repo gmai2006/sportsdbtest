@@ -16,41 +16,41 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.AmericanFootballPassingStats;
 import java.util.List;
+import com.sportsdb.test.entity.AmericanFootballPassingStats;
 
 public interface AmericanFootballPassingStatsService {
-    public AmericanFootballPassingStats find(java.lang.Integer id);
+  public AmericanFootballPassingStats find(java.lang.Integer id);
 
-    /**
-     * Select a list of AmericanFootballPassingStats based on a given maximum number of returning
-     * records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return AmericanFootballPassingStats records.
-     */
-    public List<AmericanFootballPassingStats> select(int maxResult);
+  /**
+   * Select a list of AmericanFootballPassingStats based on a given maximum number of returning
+   * records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return AmericanFootballPassingStats records.
+   */
+  public List<AmericanFootballPassingStats> select(int maxResult);
 
-    /**
-     * Select all AmericanFootballPassingStats.
-     *
-     * @return all AmericanFootballPassingStats records.
-     */
-    public List<AmericanFootballPassingStats> selectAll();
+  /**
+   * Select all AmericanFootballPassingStats.
+   *
+   * @return all AmericanFootballPassingStats records.
+   */
+  public List<AmericanFootballPassingStats> selectAll();
 
-    /**
-     * Create AmericanFootballPassingStats.
-     *
-     * @param bean The AmericanFootballPassingStats.
-     * @return The AmericanFootballPassingStats.
-     */
-    public AmericanFootballPassingStats create(AmericanFootballPassingStats bean);
+  /**
+   * Create AmericanFootballPassingStats.
+   *
+   * @param bean The AmericanFootballPassingStats.
+   * @return The AmericanFootballPassingStats.
+   */
+  public AmericanFootballPassingStats create(AmericanFootballPassingStats bean);
 
-    /**
-     * Update a AmericanFootballPassingStats.
-     *
-     * @param bean - The AmericanFootballPassingStats.
-     * @return AmericanFootballPassingStats.
-     */
-    public AmericanFootballPassingStats update(AmericanFootballPassingStats bean);
+  /**
+   * Update a AmericanFootballPassingStats.
+   *
+   * @param bean - The AmericanFootballPassingStats.
+   * @return AmericanFootballPassingStats.
+   */
+  public AmericanFootballPassingStats update(AmericanFootballPassingStats bean);
 }

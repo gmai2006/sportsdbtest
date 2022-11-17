@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.PersonPhases;
 import java.util.List;
+import com.sportsdb.test.entity.PersonPhases;
 
 public interface PersonPhasesService {
-    public PersonPhases find(java.lang.Integer id);
+  public PersonPhases find(java.lang.Integer id);
 
-    /**
-     * Select a list of PersonPhases based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return PersonPhases records.
-     */
-    public List<PersonPhases> select(int maxResult);
+  /**
+   * Select a list of PersonPhases based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return PersonPhases records.
+   */
+  public List<PersonPhases> select(int maxResult);
 
-    /**
-     * Select all PersonPhases.
-     *
-     * @return all PersonPhases records.
-     */
-    public List<PersonPhases> selectAll();
+  /**
+   * Select all PersonPhases.
+   *
+   * @return all PersonPhases records.
+   */
+  public List<PersonPhases> selectAll();
 
-    /**
-     * Create PersonPhases.
-     *
-     * @param bean The PersonPhases.
-     * @return The PersonPhases.
-     */
-    public PersonPhases create(PersonPhases bean);
+  /**
+   * Create PersonPhases.
+   *
+   * @param bean The PersonPhases.
+   * @return The PersonPhases.
+   */
+  public PersonPhases create(PersonPhases bean);
 
-    /**
-     * Update a PersonPhases.
-     *
-     * @param bean - The PersonPhases.
-     * @return PersonPhases.
-     */
-    public PersonPhases update(PersonPhases bean);
+  /**
+   * Update a PersonPhases.
+   *
+   * @param bean - The PersonPhases.
+   * @return PersonPhases.
+   */
+  public PersonPhases update(PersonPhases bean);
 }

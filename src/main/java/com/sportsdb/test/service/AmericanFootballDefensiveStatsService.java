@@ -16,41 +16,41 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.AmericanFootballDefensiveStats;
 import java.util.List;
+import com.sportsdb.test.entity.AmericanFootballDefensiveStats;
 
 public interface AmericanFootballDefensiveStatsService {
-    public AmericanFootballDefensiveStats find(java.lang.Integer id);
+  public AmericanFootballDefensiveStats find(java.lang.Integer id);
 
-    /**
-     * Select a list of AmericanFootballDefensiveStats based on a given maximum number of returning
-     * records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return AmericanFootballDefensiveStats records.
-     */
-    public List<AmericanFootballDefensiveStats> select(int maxResult);
+  /**
+   * Select a list of AmericanFootballDefensiveStats based on a given maximum number of returning
+   * records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return AmericanFootballDefensiveStats records.
+   */
+  public List<AmericanFootballDefensiveStats> select(int maxResult);
 
-    /**
-     * Select all AmericanFootballDefensiveStats.
-     *
-     * @return all AmericanFootballDefensiveStats records.
-     */
-    public List<AmericanFootballDefensiveStats> selectAll();
+  /**
+   * Select all AmericanFootballDefensiveStats.
+   *
+   * @return all AmericanFootballDefensiveStats records.
+   */
+  public List<AmericanFootballDefensiveStats> selectAll();
 
-    /**
-     * Create AmericanFootballDefensiveStats.
-     *
-     * @param bean The AmericanFootballDefensiveStats.
-     * @return The AmericanFootballDefensiveStats.
-     */
-    public AmericanFootballDefensiveStats create(AmericanFootballDefensiveStats bean);
+  /**
+   * Create AmericanFootballDefensiveStats.
+   *
+   * @param bean The AmericanFootballDefensiveStats.
+   * @return The AmericanFootballDefensiveStats.
+   */
+  public AmericanFootballDefensiveStats create(AmericanFootballDefensiveStats bean);
 
-    /**
-     * Update a AmericanFootballDefensiveStats.
-     *
-     * @param bean - The AmericanFootballDefensiveStats.
-     * @return AmericanFootballDefensiveStats.
-     */
-    public AmericanFootballDefensiveStats update(AmericanFootballDefensiveStats bean);
+  /**
+   * Update a AmericanFootballDefensiveStats.
+   *
+   * @param bean - The AmericanFootballDefensiveStats.
+   * @return AmericanFootballDefensiveStats.
+   */
+  public AmericanFootballDefensiveStats update(AmericanFootballDefensiveStats bean);
 }

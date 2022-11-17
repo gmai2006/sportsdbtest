@@ -16,61 +16,62 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.BaseballActionContactDetails;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.BaseballActionContactDetails;
 
 @Stateless
 @Named("DefaultBaseballActionContactDetailsDao")
 public class DefaultBaseballActionContactDetailsDao implements BaseballActionContactDetailsDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultBaseballActionContactDetailsDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultBaseballActionContactDetailsDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultBaseballActionContactDetailsDao() {}
+  public DefaultBaseballActionContactDetailsDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public BaseballActionContactDetails find(java.lang.Integer id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(BaseballActionContactDetails.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public BaseballActionContactDetails find(java.lang.Integer id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(BaseballActionContactDetails.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<BaseballActionContactDetails> select(int max) {
-        return dao.select(
-                "select a from BaseballActionContactDetails a",
-                BaseballActionContactDetails.class,
-                max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<BaseballActionContactDetails> select(int max) {
+    return dao.select(
+        "select a from BaseballActionContactDetails a", BaseballActionContactDetails.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<BaseballActionContactDetails> selectAll() {
-        return dao.selectAll(
-                "select a from BaseballActionContactDetails a", BaseballActionContactDetails.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<BaseballActionContactDetails> selectAll() {
+    return dao.selectAll(
+        "select a from BaseballActionContactDetails a", BaseballActionContactDetails.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BaseballActionContactDetails create(BaseballActionContactDetails e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public BaseballActionContactDetails create(BaseballActionContactDetails e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BaseballActionContactDetails update(BaseballActionContactDetails e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public BaseballActionContactDetails update(BaseballActionContactDetails e) {
+    return dao.update(e);
+  }
 }

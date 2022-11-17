@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.WageringRunlines;
 import java.util.List;
+import com.sportsdb.test.entity.WageringRunlines;
 
 public interface WageringRunlinesService {
-    public WageringRunlines find(java.lang.Integer id);
+  public WageringRunlines find(java.lang.Integer id);
 
-    /**
-     * Select a list of WageringRunlines based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return WageringRunlines records.
-     */
-    public List<WageringRunlines> select(int maxResult);
+  /**
+   * Select a list of WageringRunlines based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return WageringRunlines records.
+   */
+  public List<WageringRunlines> select(int maxResult);
 
-    /**
-     * Select all WageringRunlines.
-     *
-     * @return all WageringRunlines records.
-     */
-    public List<WageringRunlines> selectAll();
+  /**
+   * Select all WageringRunlines.
+   *
+   * @return all WageringRunlines records.
+   */
+  public List<WageringRunlines> selectAll();
 
-    /**
-     * Create WageringRunlines.
-     *
-     * @param bean The WageringRunlines.
-     * @return The WageringRunlines.
-     */
-    public WageringRunlines create(WageringRunlines bean);
+  /**
+   * Create WageringRunlines.
+   *
+   * @param bean The WageringRunlines.
+   * @return The WageringRunlines.
+   */
+  public WageringRunlines create(WageringRunlines bean);
 
-    /**
-     * Update a WageringRunlines.
-     *
-     * @param bean - The WageringRunlines.
-     * @return WageringRunlines.
-     */
-    public WageringRunlines update(WageringRunlines bean);
+  /**
+   * Update a WageringRunlines.
+   *
+   * @param bean - The WageringRunlines.
+   * @return WageringRunlines.
+   */
+  public WageringRunlines update(WageringRunlines bean);
 }

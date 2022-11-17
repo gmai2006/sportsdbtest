@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.WeatherConditions;
 import java.util.List;
+import com.sportsdb.test.entity.WeatherConditions;
 
 public interface WeatherConditionsService {
-    public WeatherConditions find(java.lang.Integer id);
+  public WeatherConditions find(java.lang.Integer id);
 
-    /**
-     * Select a list of WeatherConditions based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return WeatherConditions records.
-     */
-    public List<WeatherConditions> select(int maxResult);
+  /**
+   * Select a list of WeatherConditions based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return WeatherConditions records.
+   */
+  public List<WeatherConditions> select(int maxResult);
 
-    /**
-     * Select all WeatherConditions.
-     *
-     * @return all WeatherConditions records.
-     */
-    public List<WeatherConditions> selectAll();
+  /**
+   * Select all WeatherConditions.
+   *
+   * @return all WeatherConditions records.
+   */
+  public List<WeatherConditions> selectAll();
 
-    /**
-     * Create WeatherConditions.
-     *
-     * @param bean The WeatherConditions.
-     * @return The WeatherConditions.
-     */
-    public WeatherConditions create(WeatherConditions bean);
+  /**
+   * Create WeatherConditions.
+   *
+   * @param bean The WeatherConditions.
+   * @return The WeatherConditions.
+   */
+  public WeatherConditions create(WeatherConditions bean);
 
-    /**
-     * Update a WeatherConditions.
-     *
-     * @param bean - The WeatherConditions.
-     * @return WeatherConditions.
-     */
-    public WeatherConditions update(WeatherConditions bean);
+  /**
+   * Update a WeatherConditions.
+   *
+   * @param bean - The WeatherConditions.
+   * @return WeatherConditions.
+   */
+  public WeatherConditions update(WeatherConditions bean);
 }

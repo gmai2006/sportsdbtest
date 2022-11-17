@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.BaseballPitchingStats;
 import java.util.List;
+import com.sportsdb.test.entity.BaseballPitchingStats;
 
 public interface BaseballPitchingStatsService {
-    public BaseballPitchingStats find(java.lang.Integer id);
+  public BaseballPitchingStats find(java.lang.Integer id);
 
-    /**
-     * Select a list of BaseballPitchingStats based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return BaseballPitchingStats records.
-     */
-    public List<BaseballPitchingStats> select(int maxResult);
+  /**
+   * Select a list of BaseballPitchingStats based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return BaseballPitchingStats records.
+   */
+  public List<BaseballPitchingStats> select(int maxResult);
 
-    /**
-     * Select all BaseballPitchingStats.
-     *
-     * @return all BaseballPitchingStats records.
-     */
-    public List<BaseballPitchingStats> selectAll();
+  /**
+   * Select all BaseballPitchingStats.
+   *
+   * @return all BaseballPitchingStats records.
+   */
+  public List<BaseballPitchingStats> selectAll();
 
-    /**
-     * Create BaseballPitchingStats.
-     *
-     * @param bean The BaseballPitchingStats.
-     * @return The BaseballPitchingStats.
-     */
-    public BaseballPitchingStats create(BaseballPitchingStats bean);
+  /**
+   * Create BaseballPitchingStats.
+   *
+   * @param bean The BaseballPitchingStats.
+   * @return The BaseballPitchingStats.
+   */
+  public BaseballPitchingStats create(BaseballPitchingStats bean);
 
-    /**
-     * Update a BaseballPitchingStats.
-     *
-     * @param bean - The BaseballPitchingStats.
-     * @return BaseballPitchingStats.
-     */
-    public BaseballPitchingStats update(BaseballPitchingStats bean);
+  /**
+   * Update a BaseballPitchingStats.
+   *
+   * @param bean - The BaseballPitchingStats.
+   * @return BaseballPitchingStats.
+   */
+  public BaseballPitchingStats update(BaseballPitchingStats bean);
 }

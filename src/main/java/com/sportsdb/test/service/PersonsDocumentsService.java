@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.PersonsDocuments;
 import java.util.List;
+import com.sportsdb.test.entity.PersonsDocuments;
 
 public interface PersonsDocumentsService {
-    public PersonsDocuments find(java.lang.String id);
+  public PersonsDocuments find(java.lang.String id);
 
-    /**
-     * Select a list of PersonsDocuments based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return PersonsDocuments records.
-     */
-    public List<PersonsDocuments> select(int maxResult);
+  /**
+   * Select a list of PersonsDocuments based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return PersonsDocuments records.
+   */
+  public List<PersonsDocuments> select(int maxResult);
 
-    /**
-     * Select all PersonsDocuments.
-     *
-     * @return all PersonsDocuments records.
-     */
-    public List<PersonsDocuments> selectAll();
+  /**
+   * Select all PersonsDocuments.
+   *
+   * @return all PersonsDocuments records.
+   */
+  public List<PersonsDocuments> selectAll();
 
-    /**
-     * Create PersonsDocuments.
-     *
-     * @param bean The PersonsDocuments.
-     * @return The PersonsDocuments.
-     */
-    public PersonsDocuments create(PersonsDocuments bean);
+  /**
+   * Create PersonsDocuments.
+   *
+   * @param bean The PersonsDocuments.
+   * @return The PersonsDocuments.
+   */
+  public PersonsDocuments create(PersonsDocuments bean);
 
-    /**
-     * Update a PersonsDocuments.
-     *
-     * @param bean - The PersonsDocuments.
-     * @return PersonsDocuments.
-     */
-    public PersonsDocuments update(PersonsDocuments bean);
+  /**
+   * Update a PersonsDocuments.
+   *
+   * @param bean - The PersonsDocuments.
+   * @return PersonsDocuments.
+   */
+  public PersonsDocuments update(PersonsDocuments bean);
 }

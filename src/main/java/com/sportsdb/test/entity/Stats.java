@@ -16,117 +16,117 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "stats")
 public class Stats implements Serializable {
-    private static final long serialVersionUID = 163445241931929455L;
+  private static final long serialVersionUID = 16686700425556773L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: stat_repository_type. */
-    @Basic
-    @Column(name = "stat_repository_type", length = 100)
-    private java.lang.String statRepositoryType;
-    /** Description: stat_repository_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "stat_repository_id")
-    private java.lang.Integer statRepositoryId;
-    /** Description: stat_holder_type. */
-    @Basic
-    @Column(name = "stat_holder_type", length = 100)
-    private java.lang.String statHolderType;
-    /** Description: stat_holder_id. */
-    @Basic
-    @Column(name = "stat_holder_id")
-    private java.lang.Integer statHolderId;
-    /** Description: stat_coverage_type. */
-    @Basic
-    @Column(name = "stat_coverage_type", length = 100)
-    private java.lang.String statCoverageType;
-    /** Description: stat_coverage_id. */
-    @Basic
-    @Column(name = "stat_coverage_id")
-    private java.lang.Integer statCoverageId;
-    /** Description: context. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "context", length = 40)
-    private java.lang.String context;
+  /** Description: stat_repository_type. */
+  @Basic
+  @Column(name = "stat_repository_type", length = 100)
+  private java.lang.String statRepositoryType;
+  /** Description: stat_repository_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "stat_repository_id")
+  private java.lang.Integer statRepositoryId;
+  /** Description: stat_holder_type. */
+  @Basic
+  @Column(name = "stat_holder_type", length = 100)
+  private java.lang.String statHolderType;
+  /** Description: stat_holder_id. */
+  @Basic
+  @Column(name = "stat_holder_id")
+  private java.lang.Integer statHolderId;
+  /** Description: stat_coverage_type. */
+  @Basic
+  @Column(name = "stat_coverage_type", length = 100)
+  private java.lang.String statCoverageType;
+  /** Description: stat_coverage_id. */
+  @Basic
+  @Column(name = "stat_coverage_id")
+  private java.lang.Integer statCoverageId;
+  /** Description: context. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "context", length = 40)
+  private java.lang.String context;
 
-    public Stats() {}
+  public Stats() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.String getStatRepositoryType() {
-        return this.statRepositoryType;
-    }
+  public java.lang.String getStatRepositoryType() {
+    return this.statRepositoryType;
+  }
 
-    public java.lang.Integer getStatRepositoryId() {
-        return this.statRepositoryId;
-    }
+  public java.lang.Integer getStatRepositoryId() {
+    return this.statRepositoryId;
+  }
 
-    public java.lang.String getStatHolderType() {
-        return this.statHolderType;
-    }
+  public java.lang.String getStatHolderType() {
+    return this.statHolderType;
+  }
 
-    public java.lang.Integer getStatHolderId() {
-        return this.statHolderId;
-    }
+  public java.lang.Integer getStatHolderId() {
+    return this.statHolderId;
+  }
 
-    public java.lang.String getStatCoverageType() {
-        return this.statCoverageType;
-    }
+  public java.lang.String getStatCoverageType() {
+    return this.statCoverageType;
+  }
 
-    public java.lang.Integer getStatCoverageId() {
-        return this.statCoverageId;
-    }
+  public java.lang.Integer getStatCoverageId() {
+    return this.statCoverageId;
+  }
 
-    public java.lang.String getContext() {
-        return this.context;
-    }
+  public java.lang.String getContext() {
+    return this.context;
+  }
 
-    public void setStatRepositoryType(java.lang.String statRepositoryType) {
-        this.statRepositoryType = statRepositoryType;
-    }
+  public void setStatRepositoryType(java.lang.String statRepositoryType) {
+    this.statRepositoryType = statRepositoryType;
+  }
 
-    public void setStatRepositoryId(java.lang.Integer statRepositoryId) {
-        this.statRepositoryId = statRepositoryId;
-    }
+  public void setStatRepositoryId(java.lang.Integer statRepositoryId) {
+    this.statRepositoryId = statRepositoryId;
+  }
 
-    public void setStatHolderType(java.lang.String statHolderType) {
-        this.statHolderType = statHolderType;
-    }
+  public void setStatHolderType(java.lang.String statHolderType) {
+    this.statHolderType = statHolderType;
+  }
 
-    public void setStatHolderId(java.lang.Integer statHolderId) {
-        this.statHolderId = statHolderId;
-    }
+  public void setStatHolderId(java.lang.Integer statHolderId) {
+    this.statHolderId = statHolderId;
+  }
 
-    public void setStatCoverageType(java.lang.String statCoverageType) {
-        this.statCoverageType = statCoverageType;
-    }
+  public void setStatCoverageType(java.lang.String statCoverageType) {
+    this.statCoverageType = statCoverageType;
+  }
 
-    public void setStatCoverageId(java.lang.Integer statCoverageId) {
-        this.statCoverageId = statCoverageId;
-    }
+  public void setStatCoverageId(java.lang.Integer statCoverageId) {
+    this.statCoverageId = statCoverageId;
+  }
 
-    public void setContext(java.lang.String context) {
-        this.context = context;
-    }
+  public void setContext(java.lang.String context) {
+    this.context = context;
+  }
 }

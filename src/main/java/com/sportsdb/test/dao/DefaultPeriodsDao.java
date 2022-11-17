@@ -16,57 +16,60 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.Periods;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.Periods;
 
 @Stateless
 @Named("DefaultPeriodsDao")
 public class DefaultPeriodsDao implements PeriodsDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultPeriodsDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultPeriodsDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultPeriodsDao() {}
+  public DefaultPeriodsDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public Periods find(java.lang.Integer id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(Periods.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public Periods find(java.lang.Integer id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(Periods.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<Periods> select(int max) {
-        return dao.select("select a from Periods a", Periods.class, max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<Periods> select(int max) {
+    return dao.select("select a from Periods a", Periods.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<Periods> selectAll() {
-        return dao.selectAll("select a from Periods a", Periods.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<Periods> selectAll() {
+    return dao.selectAll("select a from Periods a", Periods.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public Periods create(Periods e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public Periods create(Periods e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public Periods update(Periods e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public Periods update(Periods e) {
+    return dao.update(e);
+  }
 }

@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.SubPeriods;
 import java.util.List;
+import com.sportsdb.test.entity.SubPeriods;
 
 public interface SubPeriodsService {
-    public SubPeriods find(java.lang.Integer id);
+  public SubPeriods find(java.lang.Integer id);
 
-    /**
-     * Select a list of SubPeriods based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return SubPeriods records.
-     */
-    public List<SubPeriods> select(int maxResult);
+  /**
+   * Select a list of SubPeriods based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return SubPeriods records.
+   */
+  public List<SubPeriods> select(int maxResult);
 
-    /**
-     * Select all SubPeriods.
-     *
-     * @return all SubPeriods records.
-     */
-    public List<SubPeriods> selectAll();
+  /**
+   * Select all SubPeriods.
+   *
+   * @return all SubPeriods records.
+   */
+  public List<SubPeriods> selectAll();
 
-    /**
-     * Create SubPeriods.
-     *
-     * @param bean The SubPeriods.
-     * @return The SubPeriods.
-     */
-    public SubPeriods create(SubPeriods bean);
+  /**
+   * Create SubPeriods.
+   *
+   * @param bean The SubPeriods.
+   * @return The SubPeriods.
+   */
+  public SubPeriods create(SubPeriods bean);
 
-    /**
-     * Update a SubPeriods.
-     *
-     * @param bean - The SubPeriods.
-     * @return SubPeriods.
-     */
-    public SubPeriods update(SubPeriods bean);
+  /**
+   * Update a SubPeriods.
+   *
+   * @param bean - The SubPeriods.
+   * @return SubPeriods.
+   */
+  public SubPeriods update(SubPeriods bean);
 }

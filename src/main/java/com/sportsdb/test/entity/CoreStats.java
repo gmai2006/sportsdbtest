@@ -16,103 +16,103 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "core_stats")
 public class CoreStats implements Serializable {
-    private static final long serialVersionUID = 163445241892276741L;
+  private static final long serialVersionUID = 166867004229551269L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: score. */
-    @Basic
-    @Column(name = "score", length = 100)
-    private java.lang.String score;
-    /** Description: score_opposing. */
-    @Basic
-    @Column(name = "score_opposing", length = 100)
-    private java.lang.String scoreOpposing;
-    /** Description: score_attempts. */
-    @Basic
-    @Column(name = "score_attempts", length = 100)
-    private java.lang.String scoreAttempts;
-    /** Description: score_attempts_opposing. */
-    @Basic
-    @Column(name = "score_attempts_opposing", length = 100)
-    private java.lang.String scoreAttemptsOpposing;
-    /** Description: score_percentage. */
-    @Basic
-    @Column(name = "score_percentage", length = 100)
-    private java.lang.String scorePercentage;
-    /** Description: score_percentage_opposing. */
-    @Basic
-    @Column(name = "score_percentage_opposing", length = 100)
-    private java.lang.String scorePercentageOpposing;
+  /** Description: score. */
+  @Basic
+  @Column(name = "score", length = 100)
+  private java.lang.String score;
+  /** Description: score_opposing. */
+  @Basic
+  @Column(name = "score_opposing", length = 100)
+  private java.lang.String scoreOpposing;
+  /** Description: score_attempts. */
+  @Basic
+  @Column(name = "score_attempts", length = 100)
+  private java.lang.String scoreAttempts;
+  /** Description: score_attempts_opposing. */
+  @Basic
+  @Column(name = "score_attempts_opposing", length = 100)
+  private java.lang.String scoreAttemptsOpposing;
+  /** Description: score_percentage. */
+  @Basic
+  @Column(name = "score_percentage", length = 100)
+  private java.lang.String scorePercentage;
+  /** Description: score_percentage_opposing. */
+  @Basic
+  @Column(name = "score_percentage_opposing", length = 100)
+  private java.lang.String scorePercentageOpposing;
 
-    public CoreStats() {}
+  public CoreStats() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.String getScore() {
-        return this.score;
-    }
+  public java.lang.String getScore() {
+    return this.score;
+  }
 
-    public java.lang.String getScoreOpposing() {
-        return this.scoreOpposing;
-    }
+  public java.lang.String getScoreOpposing() {
+    return this.scoreOpposing;
+  }
 
-    public java.lang.String getScoreAttempts() {
-        return this.scoreAttempts;
-    }
+  public java.lang.String getScoreAttempts() {
+    return this.scoreAttempts;
+  }
 
-    public java.lang.String getScoreAttemptsOpposing() {
-        return this.scoreAttemptsOpposing;
-    }
+  public java.lang.String getScoreAttemptsOpposing() {
+    return this.scoreAttemptsOpposing;
+  }
 
-    public java.lang.String getScorePercentage() {
-        return this.scorePercentage;
-    }
+  public java.lang.String getScorePercentage() {
+    return this.scorePercentage;
+  }
 
-    public java.lang.String getScorePercentageOpposing() {
-        return this.scorePercentageOpposing;
-    }
+  public java.lang.String getScorePercentageOpposing() {
+    return this.scorePercentageOpposing;
+  }
 
-    public void setScore(java.lang.String score) {
-        this.score = score;
-    }
+  public void setScore(java.lang.String score) {
+    this.score = score;
+  }
 
-    public void setScoreOpposing(java.lang.String scoreOpposing) {
-        this.scoreOpposing = scoreOpposing;
-    }
+  public void setScoreOpposing(java.lang.String scoreOpposing) {
+    this.scoreOpposing = scoreOpposing;
+  }
 
-    public void setScoreAttempts(java.lang.String scoreAttempts) {
-        this.scoreAttempts = scoreAttempts;
-    }
+  public void setScoreAttempts(java.lang.String scoreAttempts) {
+    this.scoreAttempts = scoreAttempts;
+  }
 
-    public void setScoreAttemptsOpposing(java.lang.String scoreAttemptsOpposing) {
-        this.scoreAttemptsOpposing = scoreAttemptsOpposing;
-    }
+  public void setScoreAttemptsOpposing(java.lang.String scoreAttemptsOpposing) {
+    this.scoreAttemptsOpposing = scoreAttemptsOpposing;
+  }
 
-    public void setScorePercentage(java.lang.String scorePercentage) {
-        this.scorePercentage = scorePercentage;
-    }
+  public void setScorePercentage(java.lang.String scorePercentage) {
+    this.scorePercentage = scorePercentage;
+  }
 
-    public void setScorePercentageOpposing(java.lang.String scorePercentageOpposing) {
-        this.scorePercentageOpposing = scorePercentageOpposing;
-    }
+  public void setScorePercentageOpposing(java.lang.String scorePercentageOpposing) {
+    this.scorePercentageOpposing = scorePercentageOpposing;
+  }
 }

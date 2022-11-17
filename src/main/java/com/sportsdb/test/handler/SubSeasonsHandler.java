@@ -16,53 +16,56 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.SubSeasons;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.SubSeasons;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("SubSeasonsHandler")
 public class SubSeasonsHandler extends DelimiterFileHandler<SubSeasons> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public SubSeasonsHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public SubSeasonsHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected SubSeasons parseLine(List<String> headers, List<String> tokens) {
+    SubSeasons record = new SubSeasons();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "subSeasonKey":
+          record.setSubSeasonKey(tokens.get(i));
+          break;
+
+        case "seasonId":
+          record.setSeasonId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "subSeasonType":
+          record.setSubSeasonType(tokens.get(i));
+          break;
+
+        case "startDateTime":
+          record.setStartDateTime(new java.util.Date(parseDate(tokens.get(i))));
+          break;
+
+        case "endDateTime":
+          record.setEndDateTime(new java.util.Date(parseDate(tokens.get(i))));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected SubSeasons parseLine(List<String> headers, List<String> tokens) {
-        SubSeasons record = new SubSeasons();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "subSeasonKey":
-                    record.setSubSeasonKey(tokens.get(i));
-                    break;
-
-                case "seasonId":
-                    record.setSeasonId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "subSeasonType":
-                    record.setSubSeasonType(tokens.get(i));
-                    break;
-
-                case "startDateTime":
-                    record.setStartDateTime(new java.util.Date(parseDate(tokens.get(i))));
-                    break;
-
-                case "endDateTime":
-                    record.setEndDateTime(new java.util.Date(parseDate(tokens.get(i))));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

@@ -16,30 +16,32 @@
  */
 package com.sportsdb.test.utils;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class TestUtils {
-    private static final Logger LOGGER = Logger.getLogger(TestUtils.class.getName());
-    /**
-     * Get date object.
-     *
-     * @param d the date
-     * @return a string value of a date object.
-     */
-    public static String getDateObject(java.util.Date d) {
-        final SimpleDateFormat formater = new SimpleDateFormat("yyyy-MM-dd");
-        return formater.format(d);
-    }
+  private static final Logger LOGGER = Logger.getLogger(TestUtils.class.getName());
+  /**
+   * Get date object.
+   *
+   * @param d the date
+   * @return a string value of a date object.
+   */
+  public static String getDateObject(java.util.Date d) {
+    final SimpleDateFormat formater = new SimpleDateFormat("yyyy-MM-dd");
+    return formater.format(d);
+  }
 
-    /**
-     * Get time object.
-     *
-     * @param d the timestamp
-     * @return a string value of a timestamp object.
-     */
-    public static String getTimeObject(java.sql.Timestamp d) {
-        final SimpleDateFormat formater = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss SSS");
-        return formater.format(d);
-    }
+  /**
+   * Get time object.
+   *
+   * @param d the timestamp
+   * @return a string value of a timestamp object.
+   */
+  public static String getTimeObject(java.sql.Timestamp d) {
+    final SimpleDateFormat formater = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss SSS");
+    return formater.format(d);
+  }
 }

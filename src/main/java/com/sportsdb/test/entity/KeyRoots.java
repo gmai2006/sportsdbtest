@@ -16,43 +16,43 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "key_roots")
 public class KeyRoots implements Serializable {
-    private static final long serialVersionUID = 163445241909324472L;
+  private static final long serialVersionUID = 166867004240654294L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: key_type. */
-    @Basic
-    @Column(name = "key_type", length = 100)
-    private java.lang.String keyType;
+  /** Description: key_type. */
+  @Basic
+  @Column(name = "key_type", length = 100)
+  private java.lang.String keyType;
 
-    public KeyRoots() {}
+  public KeyRoots() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.String getKeyType() {
-        return this.keyType;
-    }
+  public java.lang.String getKeyType() {
+    return this.keyType;
+  }
 
-    public void setKeyType(java.lang.String keyType) {
-        this.keyType = keyType;
-    }
+  public void setKeyType(java.lang.String keyType) {
+    this.keyType = keyType;
+  }
 }

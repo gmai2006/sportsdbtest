@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.BaseballDefensiveStats;
 import java.util.List;
+import com.sportsdb.test.entity.BaseballDefensiveStats;
 
 public interface BaseballDefensiveStatsService {
-    public BaseballDefensiveStats find(java.lang.Integer id);
+  public BaseballDefensiveStats find(java.lang.Integer id);
 
-    /**
-     * Select a list of BaseballDefensiveStats based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return BaseballDefensiveStats records.
-     */
-    public List<BaseballDefensiveStats> select(int maxResult);
+  /**
+   * Select a list of BaseballDefensiveStats based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return BaseballDefensiveStats records.
+   */
+  public List<BaseballDefensiveStats> select(int maxResult);
 
-    /**
-     * Select all BaseballDefensiveStats.
-     *
-     * @return all BaseballDefensiveStats records.
-     */
-    public List<BaseballDefensiveStats> selectAll();
+  /**
+   * Select all BaseballDefensiveStats.
+   *
+   * @return all BaseballDefensiveStats records.
+   */
+  public List<BaseballDefensiveStats> selectAll();
 
-    /**
-     * Create BaseballDefensiveStats.
-     *
-     * @param bean The BaseballDefensiveStats.
-     * @return The BaseballDefensiveStats.
-     */
-    public BaseballDefensiveStats create(BaseballDefensiveStats bean);
+  /**
+   * Create BaseballDefensiveStats.
+   *
+   * @param bean The BaseballDefensiveStats.
+   * @return The BaseballDefensiveStats.
+   */
+  public BaseballDefensiveStats create(BaseballDefensiveStats bean);
 
-    /**
-     * Update a BaseballDefensiveStats.
-     *
-     * @param bean - The BaseballDefensiveStats.
-     * @return BaseballDefensiveStats.
-     */
-    public BaseballDefensiveStats update(BaseballDefensiveStats bean);
+  /**
+   * Update a BaseballDefensiveStats.
+   *
+   * @param bean - The BaseballDefensiveStats.
+   * @return BaseballDefensiveStats.
+   */
+  public BaseballDefensiveStats update(BaseballDefensiveStats bean);
 }

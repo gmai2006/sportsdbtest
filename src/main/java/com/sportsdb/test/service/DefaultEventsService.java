@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.EventsDao;
-import com.sportsdb.test.entity.Events;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.EventsDao;
+import com.sportsdb.test.entity.Events;
 
 @Stateless
 @Named("DefaultEventsService")
 public class DefaultEventsService implements EventsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final EventsDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final EventsDao dao;
 
-    @Inject
-    @Named("DefaultEventsDao")
-    public DefaultEventsService(final EventsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultEventsDao")
+  public DefaultEventsService(final EventsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public Events find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public Events find(java.lang.Integer id) {
 
-        final Events result = dao.find(id);
-        logger.info("find(Events) - exited - return value={} result ");
-        return result;
-    }
+    final Events result = dao.find(id);
+    logger.info("find(Events) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<Events> select(int maxResult) {
-        final List<Events> result = dao.select(maxResult);
-        logger.info("select(Events) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<Events> select(int maxResult) {
+    final List<Events> result = dao.select(maxResult);
+    logger.info("select(Events) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<Events> selectAll() {
-        final List<Events> results = dao.selectAll();
-        logger.info("selectAll(Events) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<Events> selectAll() {
+    final List<Events> results = dao.selectAll();
+    logger.info("selectAll(Events) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public Events create(Events bean) {
-        requireNonNull(bean);
-        logger.info("create(Events={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public Events create(Events bean) {
+    requireNonNull(bean);
+    logger.info("create(Events={}) - entered bean ");
 
-        final Events result = dao.create(bean);
+    final Events result = dao.create(bean);
 
-        logger.info("create(Events) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(Events) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public Events update(Events bean) {
-        requireNonNull(bean);
-        logger.info("update(Events={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public Events update(Events bean) {
+    requireNonNull(bean);
+    logger.info("update(Events={}) - entered bean ");
 
-        final Events result = dao.update(bean);
+    final Events result = dao.update(bean);
 
-        logger.info("update(Events) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(Events) - exited - return value={} result ");
+    return result;
+  }
 }

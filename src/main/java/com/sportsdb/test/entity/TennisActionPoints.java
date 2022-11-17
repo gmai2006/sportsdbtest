@@ -16,67 +16,67 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "tennis_action_points")
 public class TennisActionPoints implements Serializable {
-    private static final long serialVersionUID = 163445241936389806L;
+  private static final long serialVersionUID = 166867004258525877L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: sub_period_id. */
-    @Basic
-    @Column(name = "sub_period_id", length = 100)
-    private java.lang.String subPeriodId;
-    /** Description: sequence_number. */
-    @Basic
-    @Column(name = "sequence_number", length = 100)
-    private java.lang.String sequenceNumber;
-    /** Description: win_type. */
-    @Basic
-    @Column(name = "win_type", length = 100)
-    private java.lang.String winType;
+  /** Description: sub_period_id. */
+  @Basic
+  @Column(name = "sub_period_id", length = 100)
+  private java.lang.String subPeriodId;
+  /** Description: sequence_number. */
+  @Basic
+  @Column(name = "sequence_number", length = 100)
+  private java.lang.String sequenceNumber;
+  /** Description: win_type. */
+  @Basic
+  @Column(name = "win_type", length = 100)
+  private java.lang.String winType;
 
-    public TennisActionPoints() {}
+  public TennisActionPoints() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.String getSubPeriodId() {
-        return this.subPeriodId;
-    }
+  public java.lang.String getSubPeriodId() {
+    return this.subPeriodId;
+  }
 
-    public java.lang.String getSequenceNumber() {
-        return this.sequenceNumber;
-    }
+  public java.lang.String getSequenceNumber() {
+    return this.sequenceNumber;
+  }
 
-    public java.lang.String getWinType() {
-        return this.winType;
-    }
+  public java.lang.String getWinType() {
+    return this.winType;
+  }
 
-    public void setSubPeriodId(java.lang.String subPeriodId) {
-        this.subPeriodId = subPeriodId;
-    }
+  public void setSubPeriodId(java.lang.String subPeriodId) {
+    this.subPeriodId = subPeriodId;
+  }
 
-    public void setSequenceNumber(java.lang.String sequenceNumber) {
-        this.sequenceNumber = sequenceNumber;
-    }
+  public void setSequenceNumber(java.lang.String sequenceNumber) {
+    this.sequenceNumber = sequenceNumber;
+  }
 
-    public void setWinType(java.lang.String winType) {
-        this.winType = winType;
-    }
+  public void setWinType(java.lang.String winType) {
+    this.winType = winType;
+  }
 }

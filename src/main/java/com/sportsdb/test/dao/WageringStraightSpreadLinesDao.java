@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.WageringStraightSpreadLines;
 import java.util.List;
+import com.sportsdb.test.entity.WageringStraightSpreadLines;
 
 public interface WageringStraightSpreadLinesDao {
-    /**
-     * Retrieve all records WageringStraightSpreadLines.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of WageringStraightSpreadLines
-     */
-    public List<WageringStraightSpreadLines> select(int maxResult);
+  /**
+   * Retrieve all records WageringStraightSpreadLines.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of WageringStraightSpreadLines
+   */
+  public List<WageringStraightSpreadLines> select(int maxResult);
 
-    /**
-     * Retrieve all records WageringStraightSpreadLines.
-     *
-     * @return A list of WageringStraightSpreadLines
-     */
-    public List<WageringStraightSpreadLines> selectAll();
+  /**
+   * Retrieve all records WageringStraightSpreadLines.
+   *
+   * @return A list of WageringStraightSpreadLines
+   */
+  public List<WageringStraightSpreadLines> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An WageringStraightSpreadLines id.
-     * @return The same WageringStraightSpreadLines.
-     */
-    public WageringStraightSpreadLines find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An WageringStraightSpreadLines id.
+   * @return The same WageringStraightSpreadLines.
+   */
+  public WageringStraightSpreadLines find(java.lang.Integer id);
 
-    /**
-     * Create an WageringStraightSpreadLines.
-     *
-     * @param e the WageringStraightSpreadLines.
-     * @return The same WageringStraightSpreadLines.
-     */
-    public WageringStraightSpreadLines create(WageringStraightSpreadLines e);
+  /**
+   * Create an WageringStraightSpreadLines.
+   *
+   * @param e the WageringStraightSpreadLines.
+   * @return The same WageringStraightSpreadLines.
+   */
+  public WageringStraightSpreadLines create(WageringStraightSpreadLines e);
 
-    /**
-     * Update the WageringStraightSpreadLines.
-     *
-     * @param e the WageringStraightSpreadLines.
-     * @return The same WageringStraightSpreadLines.
-     */
-    public WageringStraightSpreadLines update(WageringStraightSpreadLines e);
+  /**
+   * Update the WageringStraightSpreadLines.
+   *
+   * @param e the WageringStraightSpreadLines.
+   * @return The same WageringStraightSpreadLines.
+   */
+  public WageringStraightSpreadLines update(WageringStraightSpreadLines e);
 }

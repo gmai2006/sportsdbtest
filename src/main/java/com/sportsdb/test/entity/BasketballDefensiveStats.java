@@ -16,79 +16,79 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "basketball_defensive_stats")
 public class BasketballDefensiveStats implements Serializable {
-    private static final long serialVersionUID = 163445241887636522L;
+  private static final long serialVersionUID = 16686700422601663L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: steals_total. */
-    @Basic
-    @Column(name = "steals_total", length = 100)
-    private java.lang.String stealsTotal;
-    /** Description: steals_per_game. */
-    @Basic
-    @Column(name = "steals_per_game", length = 100)
-    private java.lang.String stealsPerGame;
-    /** Description: blocks_total. */
-    @Basic
-    @Column(name = "blocks_total", length = 100)
-    private java.lang.String blocksTotal;
-    /** Description: blocks_per_game. */
-    @Basic
-    @Column(name = "blocks_per_game", length = 100)
-    private java.lang.String blocksPerGame;
+  /** Description: steals_total. */
+  @Basic
+  @Column(name = "steals_total", length = 100)
+  private java.lang.String stealsTotal;
+  /** Description: steals_per_game. */
+  @Basic
+  @Column(name = "steals_per_game", length = 100)
+  private java.lang.String stealsPerGame;
+  /** Description: blocks_total. */
+  @Basic
+  @Column(name = "blocks_total", length = 100)
+  private java.lang.String blocksTotal;
+  /** Description: blocks_per_game. */
+  @Basic
+  @Column(name = "blocks_per_game", length = 100)
+  private java.lang.String blocksPerGame;
 
-    public BasketballDefensiveStats() {}
+  public BasketballDefensiveStats() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.String getStealsTotal() {
-        return this.stealsTotal;
-    }
+  public java.lang.String getStealsTotal() {
+    return this.stealsTotal;
+  }
 
-    public java.lang.String getStealsPerGame() {
-        return this.stealsPerGame;
-    }
+  public java.lang.String getStealsPerGame() {
+    return this.stealsPerGame;
+  }
 
-    public java.lang.String getBlocksTotal() {
-        return this.blocksTotal;
-    }
+  public java.lang.String getBlocksTotal() {
+    return this.blocksTotal;
+  }
 
-    public java.lang.String getBlocksPerGame() {
-        return this.blocksPerGame;
-    }
+  public java.lang.String getBlocksPerGame() {
+    return this.blocksPerGame;
+  }
 
-    public void setStealsTotal(java.lang.String stealsTotal) {
-        this.stealsTotal = stealsTotal;
-    }
+  public void setStealsTotal(java.lang.String stealsTotal) {
+    this.stealsTotal = stealsTotal;
+  }
 
-    public void setStealsPerGame(java.lang.String stealsPerGame) {
-        this.stealsPerGame = stealsPerGame;
-    }
+  public void setStealsPerGame(java.lang.String stealsPerGame) {
+    this.stealsPerGame = stealsPerGame;
+  }
 
-    public void setBlocksTotal(java.lang.String blocksTotal) {
-        this.blocksTotal = blocksTotal;
-    }
+  public void setBlocksTotal(java.lang.String blocksTotal) {
+    this.blocksTotal = blocksTotal;
+  }
 
-    public void setBlocksPerGame(java.lang.String blocksPerGame) {
-        this.blocksPerGame = blocksPerGame;
-    }
+  public void setBlocksPerGame(java.lang.String blocksPerGame) {
+    this.blocksPerGame = blocksPerGame;
+  }
 }

@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.SoccerDefensiveStatsDao;
-import com.sportsdb.test.entity.SoccerDefensiveStats;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.SoccerDefensiveStatsDao;
+import com.sportsdb.test.entity.SoccerDefensiveStats;
 
 @Stateless
 @Named("DefaultSoccerDefensiveStatsService")
 public class DefaultSoccerDefensiveStatsService implements SoccerDefensiveStatsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final SoccerDefensiveStatsDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final SoccerDefensiveStatsDao dao;
 
-    @Inject
-    @Named("DefaultSoccerDefensiveStatsDao")
-    public DefaultSoccerDefensiveStatsService(final SoccerDefensiveStatsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultSoccerDefensiveStatsDao")
+  public DefaultSoccerDefensiveStatsService(final SoccerDefensiveStatsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public SoccerDefensiveStats find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public SoccerDefensiveStats find(java.lang.Integer id) {
 
-        final SoccerDefensiveStats result = dao.find(id);
-        logger.info("find(SoccerDefensiveStats) - exited - return value={} result ");
-        return result;
-    }
+    final SoccerDefensiveStats result = dao.find(id);
+    logger.info("find(SoccerDefensiveStats) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<SoccerDefensiveStats> select(int maxResult) {
-        final List<SoccerDefensiveStats> result = dao.select(maxResult);
-        logger.info("select(SoccerDefensiveStats) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<SoccerDefensiveStats> select(int maxResult) {
+    final List<SoccerDefensiveStats> result = dao.select(maxResult);
+    logger.info("select(SoccerDefensiveStats) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<SoccerDefensiveStats> selectAll() {
-        final List<SoccerDefensiveStats> results = dao.selectAll();
-        logger.info("selectAll(SoccerDefensiveStats) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<SoccerDefensiveStats> selectAll() {
+    final List<SoccerDefensiveStats> results = dao.selectAll();
+    logger.info("selectAll(SoccerDefensiveStats) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public SoccerDefensiveStats create(SoccerDefensiveStats bean) {
-        requireNonNull(bean);
-        logger.info("create(SoccerDefensiveStats={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public SoccerDefensiveStats create(SoccerDefensiveStats bean) {
+    requireNonNull(bean);
+    logger.info("create(SoccerDefensiveStats={}) - entered bean ");
 
-        final SoccerDefensiveStats result = dao.create(bean);
+    final SoccerDefensiveStats result = dao.create(bean);
 
-        logger.info("create(SoccerDefensiveStats) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(SoccerDefensiveStats) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public SoccerDefensiveStats update(SoccerDefensiveStats bean) {
-        requireNonNull(bean);
-        logger.info("update(SoccerDefensiveStats={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public SoccerDefensiveStats update(SoccerDefensiveStats bean) {
+    requireNonNull(bean);
+    logger.info("update(SoccerDefensiveStats={}) - entered bean ");
 
-        final SoccerDefensiveStats result = dao.update(bean);
+    final SoccerDefensiveStats result = dao.update(bean);
 
-        logger.info("update(SoccerDefensiveStats) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(SoccerDefensiveStats) - exited - return value={} result ");
+    return result;
+  }
 }

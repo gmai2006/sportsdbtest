@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.AmericanFootballScoringStats;
 import java.util.List;
+import com.sportsdb.test.entity.AmericanFootballScoringStats;
 
 public interface AmericanFootballScoringStatsDao {
-    /**
-     * Retrieve all records AmericanFootballScoringStats.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of AmericanFootballScoringStats
-     */
-    public List<AmericanFootballScoringStats> select(int maxResult);
+  /**
+   * Retrieve all records AmericanFootballScoringStats.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of AmericanFootballScoringStats
+   */
+  public List<AmericanFootballScoringStats> select(int maxResult);
 
-    /**
-     * Retrieve all records AmericanFootballScoringStats.
-     *
-     * @return A list of AmericanFootballScoringStats
-     */
-    public List<AmericanFootballScoringStats> selectAll();
+  /**
+   * Retrieve all records AmericanFootballScoringStats.
+   *
+   * @return A list of AmericanFootballScoringStats
+   */
+  public List<AmericanFootballScoringStats> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An AmericanFootballScoringStats id.
-     * @return The same AmericanFootballScoringStats.
-     */
-    public AmericanFootballScoringStats find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An AmericanFootballScoringStats id.
+   * @return The same AmericanFootballScoringStats.
+   */
+  public AmericanFootballScoringStats find(java.lang.Integer id);
 
-    /**
-     * Create an AmericanFootballScoringStats.
-     *
-     * @param e the AmericanFootballScoringStats.
-     * @return The same AmericanFootballScoringStats.
-     */
-    public AmericanFootballScoringStats create(AmericanFootballScoringStats e);
+  /**
+   * Create an AmericanFootballScoringStats.
+   *
+   * @param e the AmericanFootballScoringStats.
+   * @return The same AmericanFootballScoringStats.
+   */
+  public AmericanFootballScoringStats create(AmericanFootballScoringStats e);
 
-    /**
-     * Update the AmericanFootballScoringStats.
-     *
-     * @param e the AmericanFootballScoringStats.
-     * @return The same AmericanFootballScoringStats.
-     */
-    public AmericanFootballScoringStats update(AmericanFootballScoringStats e);
+  /**
+   * Update the AmericanFootballScoringStats.
+   *
+   * @param e the AmericanFootballScoringStats.
+   * @return The same AmericanFootballScoringStats.
+   */
+  public AmericanFootballScoringStats update(AmericanFootballScoringStats e);
 }

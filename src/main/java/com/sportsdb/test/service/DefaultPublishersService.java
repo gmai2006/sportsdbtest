@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.PublishersDao;
-import com.sportsdb.test.entity.Publishers;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.PublishersDao;
+import com.sportsdb.test.entity.Publishers;
 
 @Stateless
 @Named("DefaultPublishersService")
 public class DefaultPublishersService implements PublishersService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final PublishersDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final PublishersDao dao;
 
-    @Inject
-    @Named("DefaultPublishersDao")
-    public DefaultPublishersService(final PublishersDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultPublishersDao")
+  public DefaultPublishersService(final PublishersDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public Publishers find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public Publishers find(java.lang.Integer id) {
 
-        final Publishers result = dao.find(id);
-        logger.info("find(Publishers) - exited - return value={} result ");
-        return result;
-    }
+    final Publishers result = dao.find(id);
+    logger.info("find(Publishers) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<Publishers> select(int maxResult) {
-        final List<Publishers> result = dao.select(maxResult);
-        logger.info("select(Publishers) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<Publishers> select(int maxResult) {
+    final List<Publishers> result = dao.select(maxResult);
+    logger.info("select(Publishers) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<Publishers> selectAll() {
-        final List<Publishers> results = dao.selectAll();
-        logger.info("selectAll(Publishers) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<Publishers> selectAll() {
+    final List<Publishers> results = dao.selectAll();
+    logger.info("selectAll(Publishers) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public Publishers create(Publishers bean) {
-        requireNonNull(bean);
-        logger.info("create(Publishers={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public Publishers create(Publishers bean) {
+    requireNonNull(bean);
+    logger.info("create(Publishers={}) - entered bean ");
 
-        final Publishers result = dao.create(bean);
+    final Publishers result = dao.create(bean);
 
-        logger.info("create(Publishers) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(Publishers) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public Publishers update(Publishers bean) {
-        requireNonNull(bean);
-        logger.info("update(Publishers={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public Publishers update(Publishers bean) {
+    requireNonNull(bean);
+    logger.info("update(Publishers={}) - entered bean ");
 
-        final Publishers result = dao.update(bean);
+    final Publishers result = dao.update(bean);
 
-        logger.info("update(Publishers) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(Publishers) - exited - return value={} result ");
+    return result;
+  }
 }

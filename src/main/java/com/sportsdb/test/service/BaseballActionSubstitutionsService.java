@@ -16,41 +16,41 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.BaseballActionSubstitutions;
 import java.util.List;
+import com.sportsdb.test.entity.BaseballActionSubstitutions;
 
 public interface BaseballActionSubstitutionsService {
-    public BaseballActionSubstitutions find(java.lang.Integer id);
+  public BaseballActionSubstitutions find(java.lang.Integer id);
 
-    /**
-     * Select a list of BaseballActionSubstitutions based on a given maximum number of returning
-     * records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return BaseballActionSubstitutions records.
-     */
-    public List<BaseballActionSubstitutions> select(int maxResult);
+  /**
+   * Select a list of BaseballActionSubstitutions based on a given maximum number of returning
+   * records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return BaseballActionSubstitutions records.
+   */
+  public List<BaseballActionSubstitutions> select(int maxResult);
 
-    /**
-     * Select all BaseballActionSubstitutions.
-     *
-     * @return all BaseballActionSubstitutions records.
-     */
-    public List<BaseballActionSubstitutions> selectAll();
+  /**
+   * Select all BaseballActionSubstitutions.
+   *
+   * @return all BaseballActionSubstitutions records.
+   */
+  public List<BaseballActionSubstitutions> selectAll();
 
-    /**
-     * Create BaseballActionSubstitutions.
-     *
-     * @param bean The BaseballActionSubstitutions.
-     * @return The BaseballActionSubstitutions.
-     */
-    public BaseballActionSubstitutions create(BaseballActionSubstitutions bean);
+  /**
+   * Create BaseballActionSubstitutions.
+   *
+   * @param bean The BaseballActionSubstitutions.
+   * @return The BaseballActionSubstitutions.
+   */
+  public BaseballActionSubstitutions create(BaseballActionSubstitutions bean);
 
-    /**
-     * Update a BaseballActionSubstitutions.
-     *
-     * @param bean - The BaseballActionSubstitutions.
-     * @return BaseballActionSubstitutions.
-     */
-    public BaseballActionSubstitutions update(BaseballActionSubstitutions bean);
+  /**
+   * Update a BaseballActionSubstitutions.
+   *
+   * @param bean - The BaseballActionSubstitutions.
+   * @return BaseballActionSubstitutions.
+   */
+  public BaseballActionSubstitutions update(BaseballActionSubstitutions bean);
 }

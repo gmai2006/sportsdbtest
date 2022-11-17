@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.BaseballOffensiveStats;
 import java.util.List;
+import com.sportsdb.test.entity.BaseballOffensiveStats;
 
 public interface BaseballOffensiveStatsDao {
-    /**
-     * Retrieve all records BaseballOffensiveStats.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of BaseballOffensiveStats
-     */
-    public List<BaseballOffensiveStats> select(int maxResult);
+  /**
+   * Retrieve all records BaseballOffensiveStats.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of BaseballOffensiveStats
+   */
+  public List<BaseballOffensiveStats> select(int maxResult);
 
-    /**
-     * Retrieve all records BaseballOffensiveStats.
-     *
-     * @return A list of BaseballOffensiveStats
-     */
-    public List<BaseballOffensiveStats> selectAll();
+  /**
+   * Retrieve all records BaseballOffensiveStats.
+   *
+   * @return A list of BaseballOffensiveStats
+   */
+  public List<BaseballOffensiveStats> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An BaseballOffensiveStats id.
-     * @return The same BaseballOffensiveStats.
-     */
-    public BaseballOffensiveStats find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An BaseballOffensiveStats id.
+   * @return The same BaseballOffensiveStats.
+   */
+  public BaseballOffensiveStats find(java.lang.Integer id);
 
-    /**
-     * Create an BaseballOffensiveStats.
-     *
-     * @param e the BaseballOffensiveStats.
-     * @return The same BaseballOffensiveStats.
-     */
-    public BaseballOffensiveStats create(BaseballOffensiveStats e);
+  /**
+   * Create an BaseballOffensiveStats.
+   *
+   * @param e the BaseballOffensiveStats.
+   * @return The same BaseballOffensiveStats.
+   */
+  public BaseballOffensiveStats create(BaseballOffensiveStats e);
 
-    /**
-     * Update the BaseballOffensiveStats.
-     *
-     * @param e the BaseballOffensiveStats.
-     * @return The same BaseballOffensiveStats.
-     */
-    public BaseballOffensiveStats update(BaseballOffensiveStats e);
+  /**
+   * Update the BaseballOffensiveStats.
+   *
+   * @param e the BaseballOffensiveStats.
+   * @return The same BaseballOffensiveStats.
+   */
+  public BaseballOffensiveStats update(BaseballOffensiveStats e);
 }

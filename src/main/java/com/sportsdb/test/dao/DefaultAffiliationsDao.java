@@ -16,57 +16,60 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.Affiliations;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.Affiliations;
 
 @Stateless
 @Named("DefaultAffiliationsDao")
 public class DefaultAffiliationsDao implements AffiliationsDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultAffiliationsDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultAffiliationsDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultAffiliationsDao() {}
+  public DefaultAffiliationsDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public Affiliations find(java.lang.Integer id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(Affiliations.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public Affiliations find(java.lang.Integer id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(Affiliations.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<Affiliations> select(int max) {
-        return dao.select("select a from Affiliations a", Affiliations.class, max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<Affiliations> select(int max) {
+    return dao.select("select a from Affiliations a", Affiliations.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<Affiliations> selectAll() {
-        return dao.selectAll("select a from Affiliations a", Affiliations.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<Affiliations> selectAll() {
+    return dao.selectAll("select a from Affiliations a", Affiliations.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public Affiliations create(Affiliations e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public Affiliations create(Affiliations e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public Affiliations update(Affiliations e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public Affiliations update(Affiliations e) {
+    return dao.update(e);
+  }
 }

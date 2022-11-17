@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.AmericanFootballPassingStats;
 import java.util.List;
+import com.sportsdb.test.entity.AmericanFootballPassingStats;
 
 public interface AmericanFootballPassingStatsDao {
-    /**
-     * Retrieve all records AmericanFootballPassingStats.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of AmericanFootballPassingStats
-     */
-    public List<AmericanFootballPassingStats> select(int maxResult);
+  /**
+   * Retrieve all records AmericanFootballPassingStats.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of AmericanFootballPassingStats
+   */
+  public List<AmericanFootballPassingStats> select(int maxResult);
 
-    /**
-     * Retrieve all records AmericanFootballPassingStats.
-     *
-     * @return A list of AmericanFootballPassingStats
-     */
-    public List<AmericanFootballPassingStats> selectAll();
+  /**
+   * Retrieve all records AmericanFootballPassingStats.
+   *
+   * @return A list of AmericanFootballPassingStats
+   */
+  public List<AmericanFootballPassingStats> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An AmericanFootballPassingStats id.
-     * @return The same AmericanFootballPassingStats.
-     */
-    public AmericanFootballPassingStats find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An AmericanFootballPassingStats id.
+   * @return The same AmericanFootballPassingStats.
+   */
+  public AmericanFootballPassingStats find(java.lang.Integer id);
 
-    /**
-     * Create an AmericanFootballPassingStats.
-     *
-     * @param e the AmericanFootballPassingStats.
-     * @return The same AmericanFootballPassingStats.
-     */
-    public AmericanFootballPassingStats create(AmericanFootballPassingStats e);
+  /**
+   * Create an AmericanFootballPassingStats.
+   *
+   * @param e the AmericanFootballPassingStats.
+   * @return The same AmericanFootballPassingStats.
+   */
+  public AmericanFootballPassingStats create(AmericanFootballPassingStats e);
 
-    /**
-     * Update the AmericanFootballPassingStats.
-     *
-     * @param e the AmericanFootballPassingStats.
-     * @return The same AmericanFootballPassingStats.
-     */
-    public AmericanFootballPassingStats update(AmericanFootballPassingStats e);
+  /**
+   * Update the AmericanFootballPassingStats.
+   *
+   * @param e the AmericanFootballPassingStats.
+   * @return The same AmericanFootballPassingStats.
+   */
+  public AmericanFootballPassingStats update(AmericanFootballPassingStats e);
 }

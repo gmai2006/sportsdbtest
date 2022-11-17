@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.Persons;
 import java.util.List;
+import com.sportsdb.test.entity.Persons;
 
 public interface PersonsDao {
-    /**
-     * Retrieve all records Persons.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of Persons
-     */
-    public List<Persons> select(int maxResult);
+  /**
+   * Retrieve all records Persons.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of Persons
+   */
+  public List<Persons> select(int maxResult);
 
-    /**
-     * Retrieve all records Persons.
-     *
-     * @return A list of Persons
-     */
-    public List<Persons> selectAll();
+  /**
+   * Retrieve all records Persons.
+   *
+   * @return A list of Persons
+   */
+  public List<Persons> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An Persons id.
-     * @return The same Persons.
-     */
-    public Persons find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An Persons id.
+   * @return The same Persons.
+   */
+  public Persons find(java.lang.Integer id);
 
-    /**
-     * Create an Persons.
-     *
-     * @param e the Persons.
-     * @return The same Persons.
-     */
-    public Persons create(Persons e);
+  /**
+   * Create an Persons.
+   *
+   * @param e the Persons.
+   * @return The same Persons.
+   */
+  public Persons create(Persons e);
 
-    /**
-     * Update the Persons.
-     *
-     * @param e the Persons.
-     * @return The same Persons.
-     */
-    public Persons update(Persons e);
+  /**
+   * Update the Persons.
+   *
+   * @param e the Persons.
+   * @return The same Persons.
+   */
+  public Persons update(Persons e);
 }

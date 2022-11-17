@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.DocumentContents;
 import java.util.List;
+import com.sportsdb.test.entity.DocumentContents;
 
 public interface DocumentContentsDao {
-    /**
-     * Retrieve all records DocumentContents.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of DocumentContents
-     */
-    public List<DocumentContents> select(int maxResult);
+  /**
+   * Retrieve all records DocumentContents.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of DocumentContents
+   */
+  public List<DocumentContents> select(int maxResult);
 
-    /**
-     * Retrieve all records DocumentContents.
-     *
-     * @return A list of DocumentContents
-     */
-    public List<DocumentContents> selectAll();
+  /**
+   * Retrieve all records DocumentContents.
+   *
+   * @return A list of DocumentContents
+   */
+  public List<DocumentContents> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An DocumentContents id.
-     * @return The same DocumentContents.
-     */
-    public DocumentContents find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An DocumentContents id.
+   * @return The same DocumentContents.
+   */
+  public DocumentContents find(java.lang.Integer id);
 
-    /**
-     * Create an DocumentContents.
-     *
-     * @param e the DocumentContents.
-     * @return The same DocumentContents.
-     */
-    public DocumentContents create(DocumentContents e);
+  /**
+   * Create an DocumentContents.
+   *
+   * @param e the DocumentContents.
+   * @return The same DocumentContents.
+   */
+  public DocumentContents create(DocumentContents e);
 
-    /**
-     * Update the DocumentContents.
-     *
-     * @param e the DocumentContents.
-     * @return The same DocumentContents.
-     */
-    public DocumentContents update(DocumentContents e);
+  /**
+   * Update the DocumentContents.
+   *
+   * @param e the DocumentContents.
+   * @return The same DocumentContents.
+   */
+  public DocumentContents update(DocumentContents e);
 }

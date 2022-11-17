@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.AmericanFootballDownProgressStats;
 import java.util.List;
+import com.sportsdb.test.entity.AmericanFootballDownProgressStats;
 
 public interface AmericanFootballDownProgressStatsDao {
-    /**
-     * Retrieve all records AmericanFootballDownProgressStats.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of AmericanFootballDownProgressStats
-     */
-    public List<AmericanFootballDownProgressStats> select(int maxResult);
+  /**
+   * Retrieve all records AmericanFootballDownProgressStats.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of AmericanFootballDownProgressStats
+   */
+  public List<AmericanFootballDownProgressStats> select(int maxResult);
 
-    /**
-     * Retrieve all records AmericanFootballDownProgressStats.
-     *
-     * @return A list of AmericanFootballDownProgressStats
-     */
-    public List<AmericanFootballDownProgressStats> selectAll();
+  /**
+   * Retrieve all records AmericanFootballDownProgressStats.
+   *
+   * @return A list of AmericanFootballDownProgressStats
+   */
+  public List<AmericanFootballDownProgressStats> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An AmericanFootballDownProgressStats id.
-     * @return The same AmericanFootballDownProgressStats.
-     */
-    public AmericanFootballDownProgressStats find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An AmericanFootballDownProgressStats id.
+   * @return The same AmericanFootballDownProgressStats.
+   */
+  public AmericanFootballDownProgressStats find(java.lang.Integer id);
 
-    /**
-     * Create an AmericanFootballDownProgressStats.
-     *
-     * @param e the AmericanFootballDownProgressStats.
-     * @return The same AmericanFootballDownProgressStats.
-     */
-    public AmericanFootballDownProgressStats create(AmericanFootballDownProgressStats e);
+  /**
+   * Create an AmericanFootballDownProgressStats.
+   *
+   * @param e the AmericanFootballDownProgressStats.
+   * @return The same AmericanFootballDownProgressStats.
+   */
+  public AmericanFootballDownProgressStats create(AmericanFootballDownProgressStats e);
 
-    /**
-     * Update the AmericanFootballDownProgressStats.
-     *
-     * @param e the AmericanFootballDownProgressStats.
-     * @return The same AmericanFootballDownProgressStats.
-     */
-    public AmericanFootballDownProgressStats update(AmericanFootballDownProgressStats e);
+  /**
+   * Update the AmericanFootballDownProgressStats.
+   *
+   * @param e the AmericanFootballDownProgressStats.
+   * @return The same AmericanFootballDownProgressStats.
+   */
+  public AmericanFootballDownProgressStats update(AmericanFootballDownProgressStats e);
 }

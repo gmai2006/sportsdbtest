@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.AmericanFootballOffensiveStats;
 import java.util.List;
+import com.sportsdb.test.entity.AmericanFootballOffensiveStats;
 
 public interface AmericanFootballOffensiveStatsDao {
-    /**
-     * Retrieve all records AmericanFootballOffensiveStats.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of AmericanFootballOffensiveStats
-     */
-    public List<AmericanFootballOffensiveStats> select(int maxResult);
+  /**
+   * Retrieve all records AmericanFootballOffensiveStats.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of AmericanFootballOffensiveStats
+   */
+  public List<AmericanFootballOffensiveStats> select(int maxResult);
 
-    /**
-     * Retrieve all records AmericanFootballOffensiveStats.
-     *
-     * @return A list of AmericanFootballOffensiveStats
-     */
-    public List<AmericanFootballOffensiveStats> selectAll();
+  /**
+   * Retrieve all records AmericanFootballOffensiveStats.
+   *
+   * @return A list of AmericanFootballOffensiveStats
+   */
+  public List<AmericanFootballOffensiveStats> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An AmericanFootballOffensiveStats id.
-     * @return The same AmericanFootballOffensiveStats.
-     */
-    public AmericanFootballOffensiveStats find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An AmericanFootballOffensiveStats id.
+   * @return The same AmericanFootballOffensiveStats.
+   */
+  public AmericanFootballOffensiveStats find(java.lang.Integer id);
 
-    /**
-     * Create an AmericanFootballOffensiveStats.
-     *
-     * @param e the AmericanFootballOffensiveStats.
-     * @return The same AmericanFootballOffensiveStats.
-     */
-    public AmericanFootballOffensiveStats create(AmericanFootballOffensiveStats e);
+  /**
+   * Create an AmericanFootballOffensiveStats.
+   *
+   * @param e the AmericanFootballOffensiveStats.
+   * @return The same AmericanFootballOffensiveStats.
+   */
+  public AmericanFootballOffensiveStats create(AmericanFootballOffensiveStats e);
 
-    /**
-     * Update the AmericanFootballOffensiveStats.
-     *
-     * @param e the AmericanFootballOffensiveStats.
-     * @return The same AmericanFootballOffensiveStats.
-     */
-    public AmericanFootballOffensiveStats update(AmericanFootballOffensiveStats e);
+  /**
+   * Update the AmericanFootballOffensiveStats.
+   *
+   * @param e the AmericanFootballOffensiveStats.
+   * @return The same AmericanFootballOffensiveStats.
+   */
+  public AmericanFootballOffensiveStats update(AmericanFootballOffensiveStats e);
 }

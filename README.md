@@ -1,26 +1,26 @@
 # Auto-generated sportsdb application from sportsdb db schema
+
+This application is JEE in the backend using H2 in memory data for testing.  The generated code comes with a docker
+build file for generating a docker image
+
 ## Instruction
 All instructions should be run in a terminal
 
 ### Clone the project
 ```git clone https://github.com/gmai2006/sportsdbtest.git```
 
-### Run the gradle build to download all dependencies
-```gradle spotlessApply build```
+### Format the source code and build the sportsdbtest
+```gradle spotlessApply build copyReact buildAll```
 
-### Optional integration test
-```gradle IntegrationTest```
+### Create a Docker image that contains Wildfly and the sportsdbtest WAR file.  You must have Docker installed
+```sudo docker build --tag=sportsdbtest .```
 
-### Run the application
-cd ui
-npm install
-npm start
+### Run the docker image
+```sudo docker run -p 8080:8080 -p 9990:9990 -it sportsdbtest```
 
-Generated UI components
-![An overview](sportsdb1.png?raw=true "Title")
+### View the generate application
+```http://127.0.0.1:8080/sportsdbtest/```
 
-sportsdb entity relationship diagram - generated from the DB schema
-![Openpay entity relationship model](sportsdb2.png?raw=true "Title")
-
-A tabular view with test data of a table in openpay DB.
-![A view of a table in sportsdb](sportsdb3.png?raw=true "Title")
+### Load data from Excel into the DB
+```Initially, the database is empty.  To load the test data from Excel into DB run
+http://127.0.0.1:8080/sportsdbtest/rest/admin/loadata```

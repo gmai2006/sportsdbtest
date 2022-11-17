@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.TennisActionPointsDao;
-import com.sportsdb.test.entity.TennisActionPoints;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.TennisActionPointsDao;
+import com.sportsdb.test.entity.TennisActionPoints;
 
 @Stateless
 @Named("DefaultTennisActionPointsService")
 public class DefaultTennisActionPointsService implements TennisActionPointsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final TennisActionPointsDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final TennisActionPointsDao dao;
 
-    @Inject
-    @Named("DefaultTennisActionPointsDao")
-    public DefaultTennisActionPointsService(final TennisActionPointsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultTennisActionPointsDao")
+  public DefaultTennisActionPointsService(final TennisActionPointsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public TennisActionPoints find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public TennisActionPoints find(java.lang.Integer id) {
 
-        final TennisActionPoints result = dao.find(id);
-        logger.info("find(TennisActionPoints) - exited - return value={} result ");
-        return result;
-    }
+    final TennisActionPoints result = dao.find(id);
+    logger.info("find(TennisActionPoints) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<TennisActionPoints> select(int maxResult) {
-        final List<TennisActionPoints> result = dao.select(maxResult);
-        logger.info("select(TennisActionPoints) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<TennisActionPoints> select(int maxResult) {
+    final List<TennisActionPoints> result = dao.select(maxResult);
+    logger.info("select(TennisActionPoints) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<TennisActionPoints> selectAll() {
-        final List<TennisActionPoints> results = dao.selectAll();
-        logger.info("selectAll(TennisActionPoints) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<TennisActionPoints> selectAll() {
+    final List<TennisActionPoints> results = dao.selectAll();
+    logger.info("selectAll(TennisActionPoints) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public TennisActionPoints create(TennisActionPoints bean) {
-        requireNonNull(bean);
-        logger.info("create(TennisActionPoints={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public TennisActionPoints create(TennisActionPoints bean) {
+    requireNonNull(bean);
+    logger.info("create(TennisActionPoints={}) - entered bean ");
 
-        final TennisActionPoints result = dao.create(bean);
+    final TennisActionPoints result = dao.create(bean);
 
-        logger.info("create(TennisActionPoints) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(TennisActionPoints) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public TennisActionPoints update(TennisActionPoints bean) {
-        requireNonNull(bean);
-        logger.info("update(TennisActionPoints={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public TennisActionPoints update(TennisActionPoints bean) {
+    requireNonNull(bean);
+    logger.info("update(TennisActionPoints={}) - entered bean ");
 
-        final TennisActionPoints result = dao.update(bean);
+    final TennisActionPoints result = dao.update(bean);
 
-        logger.info("update(TennisActionPoints) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(TennisActionPoints) - exited - return value={} result ");
+    return result;
+  }
 }

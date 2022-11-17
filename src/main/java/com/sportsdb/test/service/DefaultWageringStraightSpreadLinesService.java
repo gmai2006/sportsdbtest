@@ -17,74 +17,73 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.WageringStraightSpreadLinesDao;
-import com.sportsdb.test.entity.WageringStraightSpreadLines;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.WageringStraightSpreadLinesDao;
+import com.sportsdb.test.entity.WageringStraightSpreadLines;
 
 @Stateless
 @Named("DefaultWageringStraightSpreadLinesService")
 public class DefaultWageringStraightSpreadLinesService
-        implements WageringStraightSpreadLinesService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final WageringStraightSpreadLinesDao dao;
+    implements WageringStraightSpreadLinesService {
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final WageringStraightSpreadLinesDao dao;
 
-    @Inject
-    @Named("DefaultWageringStraightSpreadLinesDao")
-    public DefaultWageringStraightSpreadLinesService(final WageringStraightSpreadLinesDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultWageringStraightSpreadLinesDao")
+  public DefaultWageringStraightSpreadLinesService(final WageringStraightSpreadLinesDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public WageringStraightSpreadLines find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public WageringStraightSpreadLines find(java.lang.Integer id) {
 
-        final WageringStraightSpreadLines result = dao.find(id);
-        logger.info("find(WageringStraightSpreadLines) - exited - return value={} result ");
-        return result;
-    }
+    final WageringStraightSpreadLines result = dao.find(id);
+    logger.info("find(WageringStraightSpreadLines) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<WageringStraightSpreadLines> select(int maxResult) {
-        final List<WageringStraightSpreadLines> result = dao.select(maxResult);
-        logger.info("select(WageringStraightSpreadLines) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<WageringStraightSpreadLines> select(int maxResult) {
+    final List<WageringStraightSpreadLines> result = dao.select(maxResult);
+    logger.info("select(WageringStraightSpreadLines) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<WageringStraightSpreadLines> selectAll() {
-        final List<WageringStraightSpreadLines> results = dao.selectAll();
-        logger.info("selectAll(WageringStraightSpreadLines) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<WageringStraightSpreadLines> selectAll() {
+    final List<WageringStraightSpreadLines> results = dao.selectAll();
+    logger.info("selectAll(WageringStraightSpreadLines) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public WageringStraightSpreadLines create(WageringStraightSpreadLines bean) {
-        requireNonNull(bean);
-        logger.info("create(WageringStraightSpreadLines={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public WageringStraightSpreadLines create(WageringStraightSpreadLines bean) {
+    requireNonNull(bean);
+    logger.info("create(WageringStraightSpreadLines={}) - entered bean ");
 
-        final WageringStraightSpreadLines result = dao.create(bean);
+    final WageringStraightSpreadLines result = dao.create(bean);
 
-        logger.info("create(WageringStraightSpreadLines) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(WageringStraightSpreadLines) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public WageringStraightSpreadLines update(WageringStraightSpreadLines bean) {
-        requireNonNull(bean);
-        logger.info("update(WageringStraightSpreadLines={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public WageringStraightSpreadLines update(WageringStraightSpreadLines bean) {
+    requireNonNull(bean);
+    logger.info("update(WageringStraightSpreadLines={}) - entered bean ");
 
-        final WageringStraightSpreadLines result = dao.update(bean);
+    final WageringStraightSpreadLines result = dao.update(bean);
 
-        logger.info("update(WageringStraightSpreadLines) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(WageringStraightSpreadLines) - exited - return value={} result ");
+    return result;
+  }
 }

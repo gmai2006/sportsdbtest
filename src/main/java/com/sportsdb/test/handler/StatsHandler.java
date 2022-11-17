@@ -16,59 +16,62 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.Stats;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.Stats;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("StatsHandler")
 public class StatsHandler extends DelimiterFileHandler<Stats> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public StatsHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public StatsHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected Stats parseLine(List<String> headers, List<String> tokens) {
+    Stats record = new Stats();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "statRepositoryType":
+          record.setStatRepositoryType(tokens.get(i));
+          break;
+
+        case "statRepositoryId":
+          record.setStatRepositoryId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "statHolderType":
+          record.setStatHolderType(tokens.get(i));
+          break;
+
+        case "statHolderId":
+          record.setStatHolderId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "statCoverageType":
+          record.setStatCoverageType(tokens.get(i));
+          break;
+
+        case "statCoverageId":
+          record.setStatCoverageId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "context":
+          record.setContext(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected Stats parseLine(List<String> headers, List<String> tokens) {
-        Stats record = new Stats();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "statRepositoryType":
-                    record.setStatRepositoryType(tokens.get(i));
-                    break;
-
-                case "statRepositoryId":
-                    record.setStatRepositoryId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "statHolderType":
-                    record.setStatHolderType(tokens.get(i));
-                    break;
-
-                case "statHolderId":
-                    record.setStatHolderId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "statCoverageType":
-                    record.setStatCoverageType(tokens.get(i));
-                    break;
-
-                case "statCoverageId":
-                    record.setStatCoverageId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "context":
-                    record.setContext(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

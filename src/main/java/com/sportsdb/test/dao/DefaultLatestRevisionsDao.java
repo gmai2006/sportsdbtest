@@ -16,57 +16,60 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.LatestRevisions;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.LatestRevisions;
 
 @Stateless
 @Named("DefaultLatestRevisionsDao")
 public class DefaultLatestRevisionsDao implements LatestRevisionsDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultLatestRevisionsDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultLatestRevisionsDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultLatestRevisionsDao() {}
+  public DefaultLatestRevisionsDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public LatestRevisions find(java.lang.Integer id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(LatestRevisions.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public LatestRevisions find(java.lang.Integer id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(LatestRevisions.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<LatestRevisions> select(int max) {
-        return dao.select("select a from LatestRevisions a", LatestRevisions.class, max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<LatestRevisions> select(int max) {
+    return dao.select("select a from LatestRevisions a", LatestRevisions.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<LatestRevisions> selectAll() {
-        return dao.selectAll("select a from LatestRevisions a", LatestRevisions.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<LatestRevisions> selectAll() {
+    return dao.selectAll("select a from LatestRevisions a", LatestRevisions.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public LatestRevisions create(LatestRevisions e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public LatestRevisions create(LatestRevisions e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public LatestRevisions update(LatestRevisions e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public LatestRevisions update(LatestRevisions e) {
+    return dao.update(e);
+  }
 }

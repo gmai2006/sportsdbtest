@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.WeatherConditions;
 import java.util.List;
+import com.sportsdb.test.entity.WeatherConditions;
 
 public interface WeatherConditionsDao {
-    /**
-     * Retrieve all records WeatherConditions.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of WeatherConditions
-     */
-    public List<WeatherConditions> select(int maxResult);
+  /**
+   * Retrieve all records WeatherConditions.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of WeatherConditions
+   */
+  public List<WeatherConditions> select(int maxResult);
 
-    /**
-     * Retrieve all records WeatherConditions.
-     *
-     * @return A list of WeatherConditions
-     */
-    public List<WeatherConditions> selectAll();
+  /**
+   * Retrieve all records WeatherConditions.
+   *
+   * @return A list of WeatherConditions
+   */
+  public List<WeatherConditions> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An WeatherConditions id.
-     * @return The same WeatherConditions.
-     */
-    public WeatherConditions find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An WeatherConditions id.
+   * @return The same WeatherConditions.
+   */
+  public WeatherConditions find(java.lang.Integer id);
 
-    /**
-     * Create an WeatherConditions.
-     *
-     * @param e the WeatherConditions.
-     * @return The same WeatherConditions.
-     */
-    public WeatherConditions create(WeatherConditions e);
+  /**
+   * Create an WeatherConditions.
+   *
+   * @param e the WeatherConditions.
+   * @return The same WeatherConditions.
+   */
+  public WeatherConditions create(WeatherConditions e);
 
-    /**
-     * Update the WeatherConditions.
-     *
-     * @param e the WeatherConditions.
-     * @return The same WeatherConditions.
-     */
-    public WeatherConditions update(WeatherConditions e);
+  /**
+   * Update the WeatherConditions.
+   *
+   * @param e the WeatherConditions.
+   * @return The same WeatherConditions.
+   */
+  public WeatherConditions update(WeatherConditions e);
 }

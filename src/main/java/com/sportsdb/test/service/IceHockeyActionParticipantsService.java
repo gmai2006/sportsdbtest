@@ -16,41 +16,41 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.IceHockeyActionParticipants;
 import java.util.List;
+import com.sportsdb.test.entity.IceHockeyActionParticipants;
 
 public interface IceHockeyActionParticipantsService {
-    public IceHockeyActionParticipants find(java.lang.Long id);
+  public IceHockeyActionParticipants find(java.lang.Long id);
 
-    /**
-     * Select a list of IceHockeyActionParticipants based on a given maximum number of returning
-     * records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return IceHockeyActionParticipants records.
-     */
-    public List<IceHockeyActionParticipants> select(int maxResult);
+  /**
+   * Select a list of IceHockeyActionParticipants based on a given maximum number of returning
+   * records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return IceHockeyActionParticipants records.
+   */
+  public List<IceHockeyActionParticipants> select(int maxResult);
 
-    /**
-     * Select all IceHockeyActionParticipants.
-     *
-     * @return all IceHockeyActionParticipants records.
-     */
-    public List<IceHockeyActionParticipants> selectAll();
+  /**
+   * Select all IceHockeyActionParticipants.
+   *
+   * @return all IceHockeyActionParticipants records.
+   */
+  public List<IceHockeyActionParticipants> selectAll();
 
-    /**
-     * Create IceHockeyActionParticipants.
-     *
-     * @param bean The IceHockeyActionParticipants.
-     * @return The IceHockeyActionParticipants.
-     */
-    public IceHockeyActionParticipants create(IceHockeyActionParticipants bean);
+  /**
+   * Create IceHockeyActionParticipants.
+   *
+   * @param bean The IceHockeyActionParticipants.
+   * @return The IceHockeyActionParticipants.
+   */
+  public IceHockeyActionParticipants create(IceHockeyActionParticipants bean);
 
-    /**
-     * Update a IceHockeyActionParticipants.
-     *
-     * @param bean - The IceHockeyActionParticipants.
-     * @return IceHockeyActionParticipants.
-     */
-    public IceHockeyActionParticipants update(IceHockeyActionParticipants bean);
+  /**
+   * Update a IceHockeyActionParticipants.
+   *
+   * @param bean - The IceHockeyActionParticipants.
+   * @return IceHockeyActionParticipants.
+   */
+  public IceHockeyActionParticipants update(IceHockeyActionParticipants bean);
 }

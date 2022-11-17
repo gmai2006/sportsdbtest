@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.Positions;
 import java.util.List;
+import com.sportsdb.test.entity.Positions;
 
 public interface PositionsService {
-    public Positions find(java.lang.Integer id);
+  public Positions find(java.lang.Integer id);
 
-    /**
-     * Select a list of Positions based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return Positions records.
-     */
-    public List<Positions> select(int maxResult);
+  /**
+   * Select a list of Positions based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return Positions records.
+   */
+  public List<Positions> select(int maxResult);
 
-    /**
-     * Select all Positions.
-     *
-     * @return all Positions records.
-     */
-    public List<Positions> selectAll();
+  /**
+   * Select all Positions.
+   *
+   * @return all Positions records.
+   */
+  public List<Positions> selectAll();
 
-    /**
-     * Create Positions.
-     *
-     * @param bean The Positions.
-     * @return The Positions.
-     */
-    public Positions create(Positions bean);
+  /**
+   * Create Positions.
+   *
+   * @param bean The Positions.
+   * @return The Positions.
+   */
+  public Positions create(Positions bean);
 
-    /**
-     * Update a Positions.
-     *
-     * @param bean - The Positions.
-     * @return Positions.
-     */
-    public Positions update(Positions bean);
+  /**
+   * Update a Positions.
+   *
+   * @param bean - The Positions.
+   * @return Positions.
+   */
+  public Positions update(Positions bean);
 }

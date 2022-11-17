@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.Periods;
 import java.util.List;
+import com.sportsdb.test.entity.Periods;
 
 public interface PeriodsDao {
-    /**
-     * Retrieve all records Periods.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of Periods
-     */
-    public List<Periods> select(int maxResult);
+  /**
+   * Retrieve all records Periods.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of Periods
+   */
+  public List<Periods> select(int maxResult);
 
-    /**
-     * Retrieve all records Periods.
-     *
-     * @return A list of Periods
-     */
-    public List<Periods> selectAll();
+  /**
+   * Retrieve all records Periods.
+   *
+   * @return A list of Periods
+   */
+  public List<Periods> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An Periods id.
-     * @return The same Periods.
-     */
-    public Periods find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An Periods id.
+   * @return The same Periods.
+   */
+  public Periods find(java.lang.Integer id);
 
-    /**
-     * Create an Periods.
-     *
-     * @param e the Periods.
-     * @return The same Periods.
-     */
-    public Periods create(Periods e);
+  /**
+   * Create an Periods.
+   *
+   * @param e the Periods.
+   * @return The same Periods.
+   */
+  public Periods create(Periods e);
 
-    /**
-     * Update the Periods.
-     *
-     * @param e the Periods.
-     * @return The same Periods.
-     */
-    public Periods update(Periods e);
+  /**
+   * Update the Periods.
+   *
+   * @param e the Periods.
+   * @return The same Periods.
+   */
+  public Periods update(Periods e);
 }

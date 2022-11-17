@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.Media;
 import java.util.List;
+import com.sportsdb.test.entity.Media;
 
 public interface MediaDao {
-    /**
-     * Retrieve all records Media.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of Media
-     */
-    public List<Media> select(int maxResult);
+  /**
+   * Retrieve all records Media.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of Media
+   */
+  public List<Media> select(int maxResult);
 
-    /**
-     * Retrieve all records Media.
-     *
-     * @return A list of Media
-     */
-    public List<Media> selectAll();
+  /**
+   * Retrieve all records Media.
+   *
+   * @return A list of Media
+   */
+  public List<Media> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An Media id.
-     * @return The same Media.
-     */
-    public Media find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An Media id.
+   * @return The same Media.
+   */
+  public Media find(java.lang.Integer id);
 
-    /**
-     * Create an Media.
-     *
-     * @param e the Media.
-     * @return The same Media.
-     */
-    public Media create(Media e);
+  /**
+   * Create an Media.
+   *
+   * @param e the Media.
+   * @return The same Media.
+   */
+  public Media create(Media e);
 
-    /**
-     * Update the Media.
-     *
-     * @param e the Media.
-     * @return The same Media.
-     */
-    public Media update(Media e);
+  /**
+   * Update the Media.
+   *
+   * @param e the Media.
+   * @return The same Media.
+   */
+  public Media update(Media e);
 }

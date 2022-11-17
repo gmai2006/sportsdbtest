@@ -22,6 +22,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
@@ -29,112 +30,112 @@ import javax.transaction.Transactional;
 @Stateless
 @Named("DefaultJpaDao")
 public class DefaultJpaDao implements JpaDao {
-    private static final int BATCH_SIZE = 50;
-    private static final String UNITNAME = "test";
+  private static final int BATCH_SIZE = 50;
+  private static final String UNITNAME = "test";
 
-    @PersistenceContext(unitName = UNITNAME)
-    protected EntityManager em;
+  @PersistenceContext(unitName = UNITNAME)
+  protected EntityManager em;
 
-    public DefaultJpaDao() {}
+  public DefaultJpaDao() {}
 
-    /**
-     * This constructor is needed for unit test.
-     *
-     * @param em Entity manager.
-     */
-    public DefaultJpaDao(EntityManager em) {
-        this.em = em;
+  /**
+   * This constructor is needed for unit test.
+   *
+   * @param em Entity manager.
+   */
+  public DefaultJpaDao(EntityManager em) {
+    this.em = em;
+  }
+
+  /**
+   * Get Entity manager.
+   *
+   * @return Entity manager.
+   */
+  public EntityManager getEntityManager() {
+    requireNonNull(em);
+    return em;
+  }
+
+  /** {@inheritDoc} */
+  public <E> List<E> select(String queryStr, Class<E> e, int maxResult) {
+    final EntityManager em = getEntityManager();
+    Query query = em.createQuery(queryStr, e).setMaxResults(maxResult);
+    return query.getResultList();
+  }
+  /** {@inheritDoc} */
+  @Override
+  public <E> List<E> selectAll(String queryStr, Class<E> e) {
+    final EntityManager em = getEntityManager();
+    Query query = em.createQuery(queryStr, e);
+    return query.getResultList();
+  }
+
+  /** {@inheritDoc} */
+  @Override
+  public <E> E find(Class<E> e, Object id) {
+    final EntityManager em = getEntityManager();
+    E model = em.find(e, id);
+    if (null == model) {
+      return null;
     }
+    return model;
+  }
 
-    /**
-     * Get Entity manager.
-     *
-     * @return Entity manager.
-     */
-    public EntityManager getEntityManager() {
-        requireNonNull(em);
-        return em;
-    }
-
-    /** {@inheritDoc} */
-    public <E> List<E> select(String queryStr, Class<E> e, int maxResult) {
-        final EntityManager em = getEntityManager();
-        Query query = em.createQuery(queryStr, e).setMaxResults(maxResult);
-        return query.getResultList();
-    }
-    /** {@inheritDoc} */
-    @Override
-    public <E> List<E> selectAll(String queryStr, Class<E> e) {
-        final EntityManager em = getEntityManager();
-        Query query = em.createQuery(queryStr, e);
-        return query.getResultList();
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public <E> E find(Class<E> e, Object id) {
-        final EntityManager em = getEntityManager();
-        E model = em.find(e, id);
-        if (null == model) {
-            return null;
+  /** {@inheritDoc} */
+  @Override
+  public <E> int batchCreate(List<E> list) {
+    try {
+      for (int i = 0; i < list.size(); i++) {
+        if (i > 0 && i % BATCH_SIZE == 0) {
+          em.flush();
+          em.clear();
         }
-        return model;
+        em.persist(list.get(i));
+      }
+
+    } catch (RuntimeException e) {
+
+      throw e;
+    } finally {
+      em.flush();
+      em.clear();
     }
+    return list.size();
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public <E> int batchCreate(List<E> list) {
-        try {
-            for (int i = 0; i < list.size(); i++) {
-                if (i > 0 && i % BATCH_SIZE == 0) {
-                    em.flush();
-                    em.clear();
-                }
-                em.persist(list.get(i));
-            }
+  /** {@inheritDoc} */
+  @Override
+  @Transactional
+  public <E> E create(E e) {
+    em.persist(e);
+    return e;
+  }
 
-        } catch (RuntimeException e) {
-
-            throw e;
-        } finally {
-            em.flush();
-            em.clear();
-        }
-        return list.size();
+  /** {@inheritDoc} */
+  @Override
+  @Transactional
+  public <E> void delete(Class<E> e, Object id) {
+    final E removed = em.find(e, id);
+    if (null != removed) {
+      em.remove(removed);
     }
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    @Transactional
-    public <E> E create(E e) {
-        em.persist(e);
-        return e;
-    }
+  /** {@inheritDoc} */
+  @Override
+  @Transactional
+  public <E> E update(E e) {
+    final EntityManager em = getEntityManager();
+    E model = em.merge(e);
+    return model;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    @Transactional
-    public <E> void delete(Class<E> e, Object id) {
-        final E removed = em.find(e, id);
-        if (null != removed) {
-            em.remove(removed);
-        }
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    @Transactional
-    public <E> E update(E e) {
-        final EntityManager em = getEntityManager();
-        E model = em.merge(e);
-        return model;
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    @Transactional
-    public <E> void deleteAll(Class<E> e) {
-        Query query = em.createQuery("delete from " + e.getCanonicalName());
-        query.executeUpdate();
-    }
+  /** {@inheritDoc} */
+  @Override
+  @Transactional
+  public <E> void deleteAll(Class<E> e) {
+    Query query = em.createQuery("delete from " + e.getCanonicalName());
+    query.executeUpdate();
+  }
 }

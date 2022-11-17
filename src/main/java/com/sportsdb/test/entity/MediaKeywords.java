@@ -16,56 +16,56 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "media_keywords")
 public class MediaKeywords implements Serializable {
-    private static final long serialVersionUID = 163445241913385592L;
+  private static final long serialVersionUID = 166867004243162359L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: keyword. */
-    @Basic
-    @Column(name = "keyword", length = 100)
-    private java.lang.String keyword;
-    /** Description: media_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "media_id")
-    private java.lang.Integer mediaId;
+  /** Description: keyword. */
+  @Basic
+  @Column(name = "keyword", length = 100)
+  private java.lang.String keyword;
+  /** Description: media_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "media_id")
+  private java.lang.Integer mediaId;
 
-    public MediaKeywords() {}
+  public MediaKeywords() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.String getKeyword() {
-        return this.keyword;
-    }
+  public java.lang.String getKeyword() {
+    return this.keyword;
+  }
 
-    public java.lang.Integer getMediaId() {
-        return this.mediaId;
-    }
+  public java.lang.Integer getMediaId() {
+    return this.mediaId;
+  }
 
-    public void setKeyword(java.lang.String keyword) {
-        this.keyword = keyword;
-    }
+  public void setKeyword(java.lang.String keyword) {
+    this.keyword = keyword;
+  }
 
-    public void setMediaId(java.lang.Integer mediaId) {
-        this.mediaId = mediaId;
-    }
+  public void setMediaId(java.lang.Integer mediaId) {
+    this.mediaId = mediaId;
+  }
 }

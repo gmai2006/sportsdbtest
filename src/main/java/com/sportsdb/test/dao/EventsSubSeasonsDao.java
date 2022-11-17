@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.EventsSubSeasons;
 import java.util.List;
+import com.sportsdb.test.entity.EventsSubSeasons;
 
 public interface EventsSubSeasonsDao {
-    /**
-     * Retrieve all records EventsSubSeasons.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of EventsSubSeasons
-     */
-    public List<EventsSubSeasons> select(int maxResult);
+  /**
+   * Retrieve all records EventsSubSeasons.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of EventsSubSeasons
+   */
+  public List<EventsSubSeasons> select(int maxResult);
 
-    /**
-     * Retrieve all records EventsSubSeasons.
-     *
-     * @return A list of EventsSubSeasons
-     */
-    public List<EventsSubSeasons> selectAll();
+  /**
+   * Retrieve all records EventsSubSeasons.
+   *
+   * @return A list of EventsSubSeasons
+   */
+  public List<EventsSubSeasons> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An EventsSubSeasons id.
-     * @return The same EventsSubSeasons.
-     */
-    public EventsSubSeasons find(java.lang.String id);
+  /**
+   * Find an entity.
+   *
+   * @param id An EventsSubSeasons id.
+   * @return The same EventsSubSeasons.
+   */
+  public EventsSubSeasons find(java.lang.String id);
 
-    /**
-     * Create an EventsSubSeasons.
-     *
-     * @param e the EventsSubSeasons.
-     * @return The same EventsSubSeasons.
-     */
-    public EventsSubSeasons create(EventsSubSeasons e);
+  /**
+   * Create an EventsSubSeasons.
+   *
+   * @param e the EventsSubSeasons.
+   * @return The same EventsSubSeasons.
+   */
+  public EventsSubSeasons create(EventsSubSeasons e);
 
-    /**
-     * Update the EventsSubSeasons.
-     *
-     * @param e the EventsSubSeasons.
-     * @return The same EventsSubSeasons.
-     */
-    public EventsSubSeasons update(EventsSubSeasons e);
+  /**
+   * Update the EventsSubSeasons.
+   *
+   * @param e the EventsSubSeasons.
+   * @return The same EventsSubSeasons.
+   */
+  public EventsSubSeasons update(EventsSubSeasons e);
 }

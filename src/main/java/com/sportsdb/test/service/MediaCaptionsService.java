@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.MediaCaptions;
 import java.util.List;
+import com.sportsdb.test.entity.MediaCaptions;
 
 public interface MediaCaptionsService {
-    public MediaCaptions find(java.lang.Integer id);
+  public MediaCaptions find(java.lang.Integer id);
 
-    /**
-     * Select a list of MediaCaptions based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return MediaCaptions records.
-     */
-    public List<MediaCaptions> select(int maxResult);
+  /**
+   * Select a list of MediaCaptions based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return MediaCaptions records.
+   */
+  public List<MediaCaptions> select(int maxResult);
 
-    /**
-     * Select all MediaCaptions.
-     *
-     * @return all MediaCaptions records.
-     */
-    public List<MediaCaptions> selectAll();
+  /**
+   * Select all MediaCaptions.
+   *
+   * @return all MediaCaptions records.
+   */
+  public List<MediaCaptions> selectAll();
 
-    /**
-     * Create MediaCaptions.
-     *
-     * @param bean The MediaCaptions.
-     * @return The MediaCaptions.
-     */
-    public MediaCaptions create(MediaCaptions bean);
+  /**
+   * Create MediaCaptions.
+   *
+   * @param bean The MediaCaptions.
+   * @return The MediaCaptions.
+   */
+  public MediaCaptions create(MediaCaptions bean);
 
-    /**
-     * Update a MediaCaptions.
-     *
-     * @param bean - The MediaCaptions.
-     * @return MediaCaptions.
-     */
-    public MediaCaptions update(MediaCaptions bean);
+  /**
+   * Update a MediaCaptions.
+   *
+   * @param bean - The MediaCaptions.
+   * @return MediaCaptions.
+   */
+  public MediaCaptions update(MediaCaptions bean);
 }

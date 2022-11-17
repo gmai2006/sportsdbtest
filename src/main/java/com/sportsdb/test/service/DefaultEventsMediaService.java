@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.EventsMediaDao;
-import com.sportsdb.test.entity.EventsMedia;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.EventsMediaDao;
+import com.sportsdb.test.entity.EventsMedia;
 
 @Stateless
 @Named("DefaultEventsMediaService")
 public class DefaultEventsMediaService implements EventsMediaService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final EventsMediaDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final EventsMediaDao dao;
 
-    @Inject
-    @Named("DefaultEventsMediaDao")
-    public DefaultEventsMediaService(final EventsMediaDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultEventsMediaDao")
+  public DefaultEventsMediaService(final EventsMediaDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public EventsMedia find(java.lang.String id) {
+  /** {@inheritDoc} */
+  @Override
+  public EventsMedia find(java.lang.String id) {
 
-        final EventsMedia result = dao.find(id);
-        logger.info("find(EventsMedia) - exited - return value={} result ");
-        return result;
-    }
+    final EventsMedia result = dao.find(id);
+    logger.info("find(EventsMedia) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<EventsMedia> select(int maxResult) {
-        final List<EventsMedia> result = dao.select(maxResult);
-        logger.info("select(EventsMedia) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<EventsMedia> select(int maxResult) {
+    final List<EventsMedia> result = dao.select(maxResult);
+    logger.info("select(EventsMedia) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<EventsMedia> selectAll() {
-        final List<EventsMedia> results = dao.selectAll();
-        logger.info("selectAll(EventsMedia) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<EventsMedia> selectAll() {
+    final List<EventsMedia> results = dao.selectAll();
+    logger.info("selectAll(EventsMedia) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public EventsMedia create(EventsMedia bean) {
-        requireNonNull(bean);
-        logger.info("create(EventsMedia={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public EventsMedia create(EventsMedia bean) {
+    requireNonNull(bean);
+    logger.info("create(EventsMedia={}) - entered bean ");
 
-        final EventsMedia result = dao.create(bean);
+    final EventsMedia result = dao.create(bean);
 
-        logger.info("create(EventsMedia) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(EventsMedia) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public EventsMedia update(EventsMedia bean) {
-        requireNonNull(bean);
-        logger.info("update(EventsMedia={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public EventsMedia update(EventsMedia bean) {
+    requireNonNull(bean);
+    logger.info("update(EventsMedia={}) - entered bean ");
 
-        final EventsMedia result = dao.update(bean);
+    final EventsMedia result = dao.update(bean);
 
-        logger.info("update(EventsMedia) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(EventsMedia) - exited - return value={} result ");
+    return result;
+  }
 }

@@ -16,56 +16,59 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.CorePersonStats;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.CorePersonStats;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("CorePersonStatsHandler")
 public class CorePersonStatsHandler extends DelimiterFileHandler<CorePersonStats> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public CorePersonStatsHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public CorePersonStatsHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected CorePersonStats parseLine(List<String> headers, List<String> tokens) {
+    CorePersonStats record = new CorePersonStats();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "timePlayedEvent":
+          record.setTimePlayedEvent(tokens.get(i));
+          break;
+
+        case "timePlayedTotal":
+          record.setTimePlayedTotal(tokens.get(i));
+          break;
+
+        case "timePlayedEventAverage":
+          record.setTimePlayedEventAverage(tokens.get(i));
+          break;
+
+        case "eventsPlayed":
+          record.setEventsPlayed(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "eventsStarted":
+          record.setEventsStarted(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "positionId":
+          record.setPositionId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected CorePersonStats parseLine(List<String> headers, List<String> tokens) {
-        CorePersonStats record = new CorePersonStats();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "timePlayedEvent":
-                    record.setTimePlayedEvent(tokens.get(i));
-                    break;
-
-                case "timePlayedTotal":
-                    record.setTimePlayedTotal(tokens.get(i));
-                    break;
-
-                case "timePlayedEventAverage":
-                    record.setTimePlayedEventAverage(tokens.get(i));
-                    break;
-
-                case "eventsPlayed":
-                    record.setEventsPlayed(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "eventsStarted":
-                    record.setEventsStarted(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "positionId":
-                    record.setPositionId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

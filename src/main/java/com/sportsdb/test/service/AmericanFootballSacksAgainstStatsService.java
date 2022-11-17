@@ -16,41 +16,41 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.AmericanFootballSacksAgainstStats;
 import java.util.List;
+import com.sportsdb.test.entity.AmericanFootballSacksAgainstStats;
 
 public interface AmericanFootballSacksAgainstStatsService {
-    public AmericanFootballSacksAgainstStats find(java.lang.Integer id);
+  public AmericanFootballSacksAgainstStats find(java.lang.Integer id);
 
-    /**
-     * Select a list of AmericanFootballSacksAgainstStats based on a given maximum number of
-     * returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return AmericanFootballSacksAgainstStats records.
-     */
-    public List<AmericanFootballSacksAgainstStats> select(int maxResult);
+  /**
+   * Select a list of AmericanFootballSacksAgainstStats based on a given maximum number of returning
+   * records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return AmericanFootballSacksAgainstStats records.
+   */
+  public List<AmericanFootballSacksAgainstStats> select(int maxResult);
 
-    /**
-     * Select all AmericanFootballSacksAgainstStats.
-     *
-     * @return all AmericanFootballSacksAgainstStats records.
-     */
-    public List<AmericanFootballSacksAgainstStats> selectAll();
+  /**
+   * Select all AmericanFootballSacksAgainstStats.
+   *
+   * @return all AmericanFootballSacksAgainstStats records.
+   */
+  public List<AmericanFootballSacksAgainstStats> selectAll();
 
-    /**
-     * Create AmericanFootballSacksAgainstStats.
-     *
-     * @param bean The AmericanFootballSacksAgainstStats.
-     * @return The AmericanFootballSacksAgainstStats.
-     */
-    public AmericanFootballSacksAgainstStats create(AmericanFootballSacksAgainstStats bean);
+  /**
+   * Create AmericanFootballSacksAgainstStats.
+   *
+   * @param bean The AmericanFootballSacksAgainstStats.
+   * @return The AmericanFootballSacksAgainstStats.
+   */
+  public AmericanFootballSacksAgainstStats create(AmericanFootballSacksAgainstStats bean);
 
-    /**
-     * Update a AmericanFootballSacksAgainstStats.
-     *
-     * @param bean - The AmericanFootballSacksAgainstStats.
-     * @return AmericanFootballSacksAgainstStats.
-     */
-    public AmericanFootballSacksAgainstStats update(AmericanFootballSacksAgainstStats bean);
+  /**
+   * Update a AmericanFootballSacksAgainstStats.
+   *
+   * @param bean - The AmericanFootballSacksAgainstStats.
+   * @return AmericanFootballSacksAgainstStats.
+   */
+  public AmericanFootballSacksAgainstStats update(AmericanFootballSacksAgainstStats bean);
 }

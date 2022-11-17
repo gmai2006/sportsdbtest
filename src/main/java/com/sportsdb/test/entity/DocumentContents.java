@@ -16,68 +16,68 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "document_contents")
 public class DocumentContents implements Serializable {
-    private static final long serialVersionUID = 163445241894298924L;
+  private static final long serialVersionUID = 166867004231137410L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: document_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "document_id")
-    private java.lang.Integer documentId;
-    /** Description: sportsml. */
-    @Basic
-    @Column(name = "sportsml", length = 200)
-    private java.lang.String sportsml;
-    /** Description: abstract1. */
-    @Basic
-    @Column(name = "abstract1", length = 0)
-    private java.lang.String abstract1;
+  /** Description: document_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "document_id")
+  private java.lang.Integer documentId;
+  /** Description: sportsml. */
+  @Basic
+  @Column(name = "sportsml", length = 200)
+  private java.lang.String sportsml;
+  /** Description: abstract1. */
+  @Basic
+  @Column(name = "abstract1", length = 0)
+  private java.lang.String abstract1;
 
-    public DocumentContents() {}
+  public DocumentContents() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.Integer getDocumentId() {
-        return this.documentId;
-    }
+  public java.lang.Integer getDocumentId() {
+    return this.documentId;
+  }
 
-    public java.lang.String getSportsml() {
-        return this.sportsml;
-    }
+  public java.lang.String getSportsml() {
+    return this.sportsml;
+  }
 
-    public java.lang.String getAbstract1() {
-        return this.abstract1;
-    }
+  public java.lang.String getAbstract1() {
+    return this.abstract1;
+  }
 
-    public void setDocumentId(java.lang.Integer documentId) {
-        this.documentId = documentId;
-    }
+  public void setDocumentId(java.lang.Integer documentId) {
+    this.documentId = documentId;
+  }
 
-    public void setSportsml(java.lang.String sportsml) {
-        this.sportsml = sportsml;
-    }
+  public void setSportsml(java.lang.String sportsml) {
+    this.sportsml = sportsml;
+  }
 
-    public void setAbstract1(java.lang.String abstract1) {
-        this.abstract1 = abstract1;
-    }
+  public void setAbstract1(java.lang.String abstract1) {
+    this.abstract1 = abstract1;
+  }
 }

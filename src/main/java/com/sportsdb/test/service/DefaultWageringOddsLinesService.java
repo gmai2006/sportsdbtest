@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.WageringOddsLinesDao;
-import com.sportsdb.test.entity.WageringOddsLines;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.WageringOddsLinesDao;
+import com.sportsdb.test.entity.WageringOddsLines;
 
 @Stateless
 @Named("DefaultWageringOddsLinesService")
 public class DefaultWageringOddsLinesService implements WageringOddsLinesService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final WageringOddsLinesDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final WageringOddsLinesDao dao;
 
-    @Inject
-    @Named("DefaultWageringOddsLinesDao")
-    public DefaultWageringOddsLinesService(final WageringOddsLinesDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultWageringOddsLinesDao")
+  public DefaultWageringOddsLinesService(final WageringOddsLinesDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public WageringOddsLines find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public WageringOddsLines find(java.lang.Integer id) {
 
-        final WageringOddsLines result = dao.find(id);
-        logger.info("find(WageringOddsLines) - exited - return value={} result ");
-        return result;
-    }
+    final WageringOddsLines result = dao.find(id);
+    logger.info("find(WageringOddsLines) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<WageringOddsLines> select(int maxResult) {
-        final List<WageringOddsLines> result = dao.select(maxResult);
-        logger.info("select(WageringOddsLines) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<WageringOddsLines> select(int maxResult) {
+    final List<WageringOddsLines> result = dao.select(maxResult);
+    logger.info("select(WageringOddsLines) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<WageringOddsLines> selectAll() {
-        final List<WageringOddsLines> results = dao.selectAll();
-        logger.info("selectAll(WageringOddsLines) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<WageringOddsLines> selectAll() {
+    final List<WageringOddsLines> results = dao.selectAll();
+    logger.info("selectAll(WageringOddsLines) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public WageringOddsLines create(WageringOddsLines bean) {
-        requireNonNull(bean);
-        logger.info("create(WageringOddsLines={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public WageringOddsLines create(WageringOddsLines bean) {
+    requireNonNull(bean);
+    logger.info("create(WageringOddsLines={}) - entered bean ");
 
-        final WageringOddsLines result = dao.create(bean);
+    final WageringOddsLines result = dao.create(bean);
 
-        logger.info("create(WageringOddsLines) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(WageringOddsLines) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public WageringOddsLines update(WageringOddsLines bean) {
-        requireNonNull(bean);
-        logger.info("update(WageringOddsLines={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public WageringOddsLines update(WageringOddsLines bean) {
+    requireNonNull(bean);
+    logger.info("update(WageringOddsLines={}) - entered bean ");
 
-        final WageringOddsLines result = dao.update(bean);
+    final WageringOddsLines result = dao.update(bean);
 
-        logger.info("update(WageringOddsLines) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(WageringOddsLines) - exited - return value={} result ");
+    return result;
+  }
 }

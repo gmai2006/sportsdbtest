@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.DocumentClassesDao;
-import com.sportsdb.test.entity.DocumentClasses;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.DocumentClassesDao;
+import com.sportsdb.test.entity.DocumentClasses;
 
 @Stateless
 @Named("DefaultDocumentClassesService")
 public class DefaultDocumentClassesService implements DocumentClassesService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final DocumentClassesDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final DocumentClassesDao dao;
 
-    @Inject
-    @Named("DefaultDocumentClassesDao")
-    public DefaultDocumentClassesService(final DocumentClassesDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultDocumentClassesDao")
+  public DefaultDocumentClassesService(final DocumentClassesDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public DocumentClasses find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public DocumentClasses find(java.lang.Integer id) {
 
-        final DocumentClasses result = dao.find(id);
-        logger.info("find(DocumentClasses) - exited - return value={} result ");
-        return result;
-    }
+    final DocumentClasses result = dao.find(id);
+    logger.info("find(DocumentClasses) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<DocumentClasses> select(int maxResult) {
-        final List<DocumentClasses> result = dao.select(maxResult);
-        logger.info("select(DocumentClasses) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<DocumentClasses> select(int maxResult) {
+    final List<DocumentClasses> result = dao.select(maxResult);
+    logger.info("select(DocumentClasses) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<DocumentClasses> selectAll() {
-        final List<DocumentClasses> results = dao.selectAll();
-        logger.info("selectAll(DocumentClasses) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<DocumentClasses> selectAll() {
+    final List<DocumentClasses> results = dao.selectAll();
+    logger.info("selectAll(DocumentClasses) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public DocumentClasses create(DocumentClasses bean) {
-        requireNonNull(bean);
-        logger.info("create(DocumentClasses={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public DocumentClasses create(DocumentClasses bean) {
+    requireNonNull(bean);
+    logger.info("create(DocumentClasses={}) - entered bean ");
 
-        final DocumentClasses result = dao.create(bean);
+    final DocumentClasses result = dao.create(bean);
 
-        logger.info("create(DocumentClasses) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(DocumentClasses) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public DocumentClasses update(DocumentClasses bean) {
-        requireNonNull(bean);
-        logger.info("update(DocumentClasses={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public DocumentClasses update(DocumentClasses bean) {
+    requireNonNull(bean);
+    logger.info("update(DocumentClasses={}) - entered bean ");
 
-        final DocumentClasses result = dao.update(bean);
+    final DocumentClasses result = dao.update(bean);
 
-        logger.info("update(DocumentClasses) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(DocumentClasses) - exited - return value={} result ");
+    return result;
+  }
 }

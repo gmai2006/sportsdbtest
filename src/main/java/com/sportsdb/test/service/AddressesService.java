@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.Addresses;
 import java.util.List;
+import com.sportsdb.test.entity.Addresses;
 
 public interface AddressesService {
-    public Addresses find(java.lang.Integer id);
+  public Addresses find(java.lang.Integer id);
 
-    /**
-     * Select a list of Addresses based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return Addresses records.
-     */
-    public List<Addresses> select(int maxResult);
+  /**
+   * Select a list of Addresses based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return Addresses records.
+   */
+  public List<Addresses> select(int maxResult);
 
-    /**
-     * Select all Addresses.
-     *
-     * @return all Addresses records.
-     */
-    public List<Addresses> selectAll();
+  /**
+   * Select all Addresses.
+   *
+   * @return all Addresses records.
+   */
+  public List<Addresses> selectAll();
 
-    /**
-     * Create Addresses.
-     *
-     * @param bean The Addresses.
-     * @return The Addresses.
-     */
-    public Addresses create(Addresses bean);
+  /**
+   * Create Addresses.
+   *
+   * @param bean The Addresses.
+   * @return The Addresses.
+   */
+  public Addresses create(Addresses bean);
 
-    /**
-     * Update a Addresses.
-     *
-     * @param bean - The Addresses.
-     * @return Addresses.
-     */
-    public Addresses update(Addresses bean);
+  /**
+   * Update a Addresses.
+   *
+   * @param bean - The Addresses.
+   * @return Addresses.
+   */
+  public Addresses update(Addresses bean);
 }

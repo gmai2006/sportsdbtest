@@ -16,41 +16,41 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.AmericanFootballFumblesStats;
 import java.util.List;
+import com.sportsdb.test.entity.AmericanFootballFumblesStats;
 
 public interface AmericanFootballFumblesStatsService {
-    public AmericanFootballFumblesStats find(java.lang.Integer id);
+  public AmericanFootballFumblesStats find(java.lang.Integer id);
 
-    /**
-     * Select a list of AmericanFootballFumblesStats based on a given maximum number of returning
-     * records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return AmericanFootballFumblesStats records.
-     */
-    public List<AmericanFootballFumblesStats> select(int maxResult);
+  /**
+   * Select a list of AmericanFootballFumblesStats based on a given maximum number of returning
+   * records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return AmericanFootballFumblesStats records.
+   */
+  public List<AmericanFootballFumblesStats> select(int maxResult);
 
-    /**
-     * Select all AmericanFootballFumblesStats.
-     *
-     * @return all AmericanFootballFumblesStats records.
-     */
-    public List<AmericanFootballFumblesStats> selectAll();
+  /**
+   * Select all AmericanFootballFumblesStats.
+   *
+   * @return all AmericanFootballFumblesStats records.
+   */
+  public List<AmericanFootballFumblesStats> selectAll();
 
-    /**
-     * Create AmericanFootballFumblesStats.
-     *
-     * @param bean The AmericanFootballFumblesStats.
-     * @return The AmericanFootballFumblesStats.
-     */
-    public AmericanFootballFumblesStats create(AmericanFootballFumblesStats bean);
+  /**
+   * Create AmericanFootballFumblesStats.
+   *
+   * @param bean The AmericanFootballFumblesStats.
+   * @return The AmericanFootballFumblesStats.
+   */
+  public AmericanFootballFumblesStats create(AmericanFootballFumblesStats bean);
 
-    /**
-     * Update a AmericanFootballFumblesStats.
-     *
-     * @param bean - The AmericanFootballFumblesStats.
-     * @return AmericanFootballFumblesStats.
-     */
-    public AmericanFootballFumblesStats update(AmericanFootballFumblesStats bean);
+  /**
+   * Update a AmericanFootballFumblesStats.
+   *
+   * @param bean - The AmericanFootballFumblesStats.
+   * @return AmericanFootballFumblesStats.
+   */
+  public AmericanFootballFumblesStats update(AmericanFootballFumblesStats bean);
 }

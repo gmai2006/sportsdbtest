@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.PersonsDocumentsDao;
-import com.sportsdb.test.entity.PersonsDocuments;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.PersonsDocumentsDao;
+import com.sportsdb.test.entity.PersonsDocuments;
 
 @Stateless
 @Named("DefaultPersonsDocumentsService")
 public class DefaultPersonsDocumentsService implements PersonsDocumentsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final PersonsDocumentsDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final PersonsDocumentsDao dao;
 
-    @Inject
-    @Named("DefaultPersonsDocumentsDao")
-    public DefaultPersonsDocumentsService(final PersonsDocumentsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultPersonsDocumentsDao")
+  public DefaultPersonsDocumentsService(final PersonsDocumentsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public PersonsDocuments find(java.lang.String id) {
+  /** {@inheritDoc} */
+  @Override
+  public PersonsDocuments find(java.lang.String id) {
 
-        final PersonsDocuments result = dao.find(id);
-        logger.info("find(PersonsDocuments) - exited - return value={} result ");
-        return result;
-    }
+    final PersonsDocuments result = dao.find(id);
+    logger.info("find(PersonsDocuments) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<PersonsDocuments> select(int maxResult) {
-        final List<PersonsDocuments> result = dao.select(maxResult);
-        logger.info("select(PersonsDocuments) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<PersonsDocuments> select(int maxResult) {
+    final List<PersonsDocuments> result = dao.select(maxResult);
+    logger.info("select(PersonsDocuments) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<PersonsDocuments> selectAll() {
-        final List<PersonsDocuments> results = dao.selectAll();
-        logger.info("selectAll(PersonsDocuments) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<PersonsDocuments> selectAll() {
+    final List<PersonsDocuments> results = dao.selectAll();
+    logger.info("selectAll(PersonsDocuments) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public PersonsDocuments create(PersonsDocuments bean) {
-        requireNonNull(bean);
-        logger.info("create(PersonsDocuments={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public PersonsDocuments create(PersonsDocuments bean) {
+    requireNonNull(bean);
+    logger.info("create(PersonsDocuments={}) - entered bean ");
 
-        final PersonsDocuments result = dao.create(bean);
+    final PersonsDocuments result = dao.create(bean);
 
-        logger.info("create(PersonsDocuments) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(PersonsDocuments) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public PersonsDocuments update(PersonsDocuments bean) {
-        requireNonNull(bean);
-        logger.info("update(PersonsDocuments={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public PersonsDocuments update(PersonsDocuments bean) {
+    requireNonNull(bean);
+    logger.info("update(PersonsDocuments={}) - entered bean ");
 
-        final PersonsDocuments result = dao.update(bean);
+    final PersonsDocuments result = dao.update(bean);
 
-        logger.info("update(PersonsDocuments) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(PersonsDocuments) - exited - return value={} result ");
+    return result;
+  }
 }

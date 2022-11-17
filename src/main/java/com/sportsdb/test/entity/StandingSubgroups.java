@@ -16,57 +16,57 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "standing_subgroups")
 public class StandingSubgroups implements Serializable {
-    private static final long serialVersionUID = 163445241930573756L;
+  private static final long serialVersionUID = 16686700425468848L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: standing_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "standing_id")
-    private java.lang.Integer standingId;
-    /** Description: affiliation_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "affiliation_id")
-    private java.lang.Integer affiliationId;
+  /** Description: standing_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "standing_id")
+  private java.lang.Integer standingId;
+  /** Description: affiliation_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "affiliation_id")
+  private java.lang.Integer affiliationId;
 
-    public StandingSubgroups() {}
+  public StandingSubgroups() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.Integer getStandingId() {
-        return this.standingId;
-    }
+  public java.lang.Integer getStandingId() {
+    return this.standingId;
+  }
 
-    public java.lang.Integer getAffiliationId() {
-        return this.affiliationId;
-    }
+  public java.lang.Integer getAffiliationId() {
+    return this.affiliationId;
+  }
 
-    public void setStandingId(java.lang.Integer standingId) {
-        this.standingId = standingId;
-    }
+  public void setStandingId(java.lang.Integer standingId) {
+    this.standingId = standingId;
+  }
 
-    public void setAffiliationId(java.lang.Integer affiliationId) {
-        this.affiliationId = affiliationId;
-    }
+  public void setAffiliationId(java.lang.Integer affiliationId) {
+    this.affiliationId = affiliationId;
+  }
 }

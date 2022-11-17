@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.Bookmakers;
 import java.util.List;
+import com.sportsdb.test.entity.Bookmakers;
 
 public interface BookmakersService {
-    public Bookmakers find(java.lang.Integer id);
+  public Bookmakers find(java.lang.Integer id);
 
-    /**
-     * Select a list of Bookmakers based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return Bookmakers records.
-     */
-    public List<Bookmakers> select(int maxResult);
+  /**
+   * Select a list of Bookmakers based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return Bookmakers records.
+   */
+  public List<Bookmakers> select(int maxResult);
 
-    /**
-     * Select all Bookmakers.
-     *
-     * @return all Bookmakers records.
-     */
-    public List<Bookmakers> selectAll();
+  /**
+   * Select all Bookmakers.
+   *
+   * @return all Bookmakers records.
+   */
+  public List<Bookmakers> selectAll();
 
-    /**
-     * Create Bookmakers.
-     *
-     * @param bean The Bookmakers.
-     * @return The Bookmakers.
-     */
-    public Bookmakers create(Bookmakers bean);
+  /**
+   * Create Bookmakers.
+   *
+   * @param bean The Bookmakers.
+   * @return The Bookmakers.
+   */
+  public Bookmakers create(Bookmakers bean);
 
-    /**
-     * Update a Bookmakers.
-     *
-     * @param bean - The Bookmakers.
-     * @return Bookmakers.
-     */
-    public Bookmakers update(Bookmakers bean);
+  /**
+   * Update a Bookmakers.
+   *
+   * @param bean - The Bookmakers.
+   * @return Bookmakers.
+   */
+  public Bookmakers update(Bookmakers bean);
 }

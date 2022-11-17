@@ -16,57 +16,60 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.TennisActionVolleys;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.TennisActionVolleys;
 
 @Stateless
 @Named("DefaultTennisActionVolleysDao")
 public class DefaultTennisActionVolleysDao implements TennisActionVolleysDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultTennisActionVolleysDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultTennisActionVolleysDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultTennisActionVolleysDao() {}
+  public DefaultTennisActionVolleysDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public TennisActionVolleys find(java.lang.Integer id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(TennisActionVolleys.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public TennisActionVolleys find(java.lang.Integer id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(TennisActionVolleys.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<TennisActionVolleys> select(int max) {
-        return dao.select("select a from TennisActionVolleys a", TennisActionVolleys.class, max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<TennisActionVolleys> select(int max) {
+    return dao.select("select a from TennisActionVolleys a", TennisActionVolleys.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<TennisActionVolleys> selectAll() {
-        return dao.selectAll("select a from TennisActionVolleys a", TennisActionVolleys.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<TennisActionVolleys> selectAll() {
+    return dao.selectAll("select a from TennisActionVolleys a", TennisActionVolleys.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public TennisActionVolleys create(TennisActionVolleys e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public TennisActionVolleys create(TennisActionVolleys e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public TennisActionVolleys update(TennisActionVolleys e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public TennisActionVolleys update(TennisActionVolleys e) {
+    return dao.update(e);
+  }
 }

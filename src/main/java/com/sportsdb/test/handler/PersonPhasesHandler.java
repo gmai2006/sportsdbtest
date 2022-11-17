@@ -16,106 +16,109 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.PersonPhases;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.PersonPhases;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("PersonPhasesHandler")
 public class PersonPhasesHandler extends DelimiterFileHandler<PersonPhases> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public PersonPhasesHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public PersonPhasesHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected PersonPhases parseLine(List<String> headers, List<String> tokens) {
+    PersonPhases record = new PersonPhases();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "personId":
+          record.setPersonId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "membershipType":
+          record.setMembershipType(tokens.get(i));
+          break;
+
+        case "membershipId":
+          record.setMembershipId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "roleId":
+          record.setRoleId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "roleStatus":
+          record.setRoleStatus(tokens.get(i));
+          break;
+
+        case "phaseStatus":
+          record.setPhaseStatus(tokens.get(i));
+          break;
+
+        case "uniformNumber":
+          record.setUniformNumber(tokens.get(i));
+          break;
+
+        case "regularPositionId":
+          record.setRegularPositionId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "regularPositionDepth":
+          record.setRegularPositionDepth(tokens.get(i));
+          break;
+
+        case "height":
+          record.setHeight(tokens.get(i));
+          break;
+
+        case "weight":
+          record.setWeight(tokens.get(i));
+          break;
+
+        case "startDateTime":
+          record.setStartDateTime(new java.util.Date(parseDate(tokens.get(i))));
+          break;
+
+        case "startSeasonId":
+          record.setStartSeasonId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "endDateTime":
+          record.setEndDateTime(new java.util.Date(parseDate(tokens.get(i))));
+          break;
+
+        case "endSeasonId":
+          record.setEndSeasonId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "entryReason":
+          record.setEntryReason(tokens.get(i));
+          break;
+
+        case "exitReason":
+          record.setExitReason(tokens.get(i));
+          break;
+
+        case "selectionLevel":
+          record.setSelectionLevel(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "selectionSublevel":
+          record.setSelectionSublevel(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "selectionOverall":
+          record.setSelectionOverall(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected PersonPhases parseLine(List<String> headers, List<String> tokens) {
-        PersonPhases record = new PersonPhases();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "personId":
-                    record.setPersonId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "membershipType":
-                    record.setMembershipType(tokens.get(i));
-                    break;
-
-                case "membershipId":
-                    record.setMembershipId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "roleId":
-                    record.setRoleId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "roleStatus":
-                    record.setRoleStatus(tokens.get(i));
-                    break;
-
-                case "phaseStatus":
-                    record.setPhaseStatus(tokens.get(i));
-                    break;
-
-                case "uniformNumber":
-                    record.setUniformNumber(tokens.get(i));
-                    break;
-
-                case "regularPositionId":
-                    record.setRegularPositionId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "regularPositionDepth":
-                    record.setRegularPositionDepth(tokens.get(i));
-                    break;
-
-                case "height":
-                    record.setHeight(tokens.get(i));
-                    break;
-
-                case "weight":
-                    record.setWeight(tokens.get(i));
-                    break;
-
-                case "startDateTime":
-                    record.setStartDateTime(new java.util.Date(parseDate(tokens.get(i))));
-                    break;
-
-                case "startSeasonId":
-                    record.setStartSeasonId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "endDateTime":
-                    record.setEndDateTime(new java.util.Date(parseDate(tokens.get(i))));
-                    break;
-
-                case "endSeasonId":
-                    record.setEndSeasonId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "entryReason":
-                    record.setEntryReason(tokens.get(i));
-                    break;
-
-                case "exitReason":
-                    record.setExitReason(tokens.get(i));
-                    break;
-
-                case "selectionLevel":
-                    record.setSelectionLevel(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "selectionSublevel":
-                    record.setSelectionSublevel(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "selectionOverall":
-                    record.setSelectionOverall(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

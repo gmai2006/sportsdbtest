@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.MediaContentsDao;
-import com.sportsdb.test.entity.MediaContents;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.MediaContentsDao;
+import com.sportsdb.test.entity.MediaContents;
 
 @Stateless
 @Named("DefaultMediaContentsService")
 public class DefaultMediaContentsService implements MediaContentsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final MediaContentsDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final MediaContentsDao dao;
 
-    @Inject
-    @Named("DefaultMediaContentsDao")
-    public DefaultMediaContentsService(final MediaContentsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultMediaContentsDao")
+  public DefaultMediaContentsService(final MediaContentsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public MediaContents find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public MediaContents find(java.lang.Integer id) {
 
-        final MediaContents result = dao.find(id);
-        logger.info("find(MediaContents) - exited - return value={} result ");
-        return result;
-    }
+    final MediaContents result = dao.find(id);
+    logger.info("find(MediaContents) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<MediaContents> select(int maxResult) {
-        final List<MediaContents> result = dao.select(maxResult);
-        logger.info("select(MediaContents) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<MediaContents> select(int maxResult) {
+    final List<MediaContents> result = dao.select(maxResult);
+    logger.info("select(MediaContents) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<MediaContents> selectAll() {
-        final List<MediaContents> results = dao.selectAll();
-        logger.info("selectAll(MediaContents) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<MediaContents> selectAll() {
+    final List<MediaContents> results = dao.selectAll();
+    logger.info("selectAll(MediaContents) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public MediaContents create(MediaContents bean) {
-        requireNonNull(bean);
-        logger.info("create(MediaContents={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public MediaContents create(MediaContents bean) {
+    requireNonNull(bean);
+    logger.info("create(MediaContents={}) - entered bean ");
 
-        final MediaContents result = dao.create(bean);
+    final MediaContents result = dao.create(bean);
 
-        logger.info("create(MediaContents) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(MediaContents) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public MediaContents update(MediaContents bean) {
-        requireNonNull(bean);
-        logger.info("update(MediaContents={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public MediaContents update(MediaContents bean) {
+    requireNonNull(bean);
+    logger.info("update(MediaContents={}) - entered bean ");
 
-        final MediaContents result = dao.update(bean);
+    final MediaContents result = dao.update(bean);
 
-        logger.info("update(MediaContents) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(MediaContents) - exited - return value={} result ");
+    return result;
+  }
 }

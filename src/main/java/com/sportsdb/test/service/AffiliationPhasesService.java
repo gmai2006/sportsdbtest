@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.AffiliationPhases;
 import java.util.List;
+import com.sportsdb.test.entity.AffiliationPhases;
 
 public interface AffiliationPhasesService {
-    public AffiliationPhases find(java.lang.Integer id);
+  public AffiliationPhases find(java.lang.Integer id);
 
-    /**
-     * Select a list of AffiliationPhases based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return AffiliationPhases records.
-     */
-    public List<AffiliationPhases> select(int maxResult);
+  /**
+   * Select a list of AffiliationPhases based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return AffiliationPhases records.
+   */
+  public List<AffiliationPhases> select(int maxResult);
 
-    /**
-     * Select all AffiliationPhases.
-     *
-     * @return all AffiliationPhases records.
-     */
-    public List<AffiliationPhases> selectAll();
+  /**
+   * Select all AffiliationPhases.
+   *
+   * @return all AffiliationPhases records.
+   */
+  public List<AffiliationPhases> selectAll();
 
-    /**
-     * Create AffiliationPhases.
-     *
-     * @param bean The AffiliationPhases.
-     * @return The AffiliationPhases.
-     */
-    public AffiliationPhases create(AffiliationPhases bean);
+  /**
+   * Create AffiliationPhases.
+   *
+   * @param bean The AffiliationPhases.
+   * @return The AffiliationPhases.
+   */
+  public AffiliationPhases create(AffiliationPhases bean);
 
-    /**
-     * Update a AffiliationPhases.
-     *
-     * @param bean - The AffiliationPhases.
-     * @return AffiliationPhases.
-     */
-    public AffiliationPhases update(AffiliationPhases bean);
+  /**
+   * Update a AffiliationPhases.
+   *
+   * @param bean - The AffiliationPhases.
+   * @return AffiliationPhases.
+   */
+  public AffiliationPhases update(AffiliationPhases bean);
 }

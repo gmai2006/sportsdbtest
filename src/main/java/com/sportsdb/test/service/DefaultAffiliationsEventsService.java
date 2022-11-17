@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.AffiliationsEventsDao;
-import com.sportsdb.test.entity.AffiliationsEvents;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.AffiliationsEventsDao;
+import com.sportsdb.test.entity.AffiliationsEvents;
 
 @Stateless
 @Named("DefaultAffiliationsEventsService")
 public class DefaultAffiliationsEventsService implements AffiliationsEventsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final AffiliationsEventsDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final AffiliationsEventsDao dao;
 
-    @Inject
-    @Named("DefaultAffiliationsEventsDao")
-    public DefaultAffiliationsEventsService(final AffiliationsEventsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultAffiliationsEventsDao")
+  public DefaultAffiliationsEventsService(final AffiliationsEventsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AffiliationsEvents find(java.lang.String id) {
+  /** {@inheritDoc} */
+  @Override
+  public AffiliationsEvents find(java.lang.String id) {
 
-        final AffiliationsEvents result = dao.find(id);
-        logger.info("find(AffiliationsEvents) - exited - return value={} result ");
-        return result;
-    }
+    final AffiliationsEvents result = dao.find(id);
+    logger.info("find(AffiliationsEvents) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<AffiliationsEvents> select(int maxResult) {
-        final List<AffiliationsEvents> result = dao.select(maxResult);
-        logger.info("select(AffiliationsEvents) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<AffiliationsEvents> select(int maxResult) {
+    final List<AffiliationsEvents> result = dao.select(maxResult);
+    logger.info("select(AffiliationsEvents) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<AffiliationsEvents> selectAll() {
-        final List<AffiliationsEvents> results = dao.selectAll();
-        logger.info("selectAll(AffiliationsEvents) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<AffiliationsEvents> selectAll() {
+    final List<AffiliationsEvents> results = dao.selectAll();
+    logger.info("selectAll(AffiliationsEvents) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AffiliationsEvents create(AffiliationsEvents bean) {
-        requireNonNull(bean);
-        logger.info("create(AffiliationsEvents={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public AffiliationsEvents create(AffiliationsEvents bean) {
+    requireNonNull(bean);
+    logger.info("create(AffiliationsEvents={}) - entered bean ");
 
-        final AffiliationsEvents result = dao.create(bean);
+    final AffiliationsEvents result = dao.create(bean);
 
-        logger.info("create(AffiliationsEvents) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(AffiliationsEvents) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AffiliationsEvents update(AffiliationsEvents bean) {
-        requireNonNull(bean);
-        logger.info("update(AffiliationsEvents={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public AffiliationsEvents update(AffiliationsEvents bean) {
+    requireNonNull(bean);
+    logger.info("update(AffiliationsEvents={}) - entered bean ");
 
-        final AffiliationsEvents result = dao.update(bean);
+    final AffiliationsEvents result = dao.update(bean);
 
-        logger.info("update(AffiliationsEvents) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(AffiliationsEvents) - exited - return value={} result ");
+    return result;
+  }
 }

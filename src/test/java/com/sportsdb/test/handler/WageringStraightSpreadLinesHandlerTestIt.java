@@ -17,116 +17,89 @@
 package com.sportsdb.test.handler;
 
 import static org.junit.Assert.assertEquals;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.dao.StandaloneJpaDao;
-import com.sportsdb.test.entity.WageringStraightSpreadLines;
-import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
-import com.sportsdb.test.utils.FileUtils;
+import java.io.IOException;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import org.json.CDL;
 import org.json.JSONArray;
+import com.google.gson.Gson;
+import com.sportsdb.test.entity.WageringStraightSpreadLines;
+import com.sportsdb.test.dao.JpaDao;
+import com.sportsdb.test.dao.StandaloneJpaDao;
+import com.sportsdb.test.dao.DefaultWageringStraightSpreadLinesDao;
+import com.sportsdb.test.utils.DelimiterParser;
+import com.sportsdb.test.utils.FileUtils;
+import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
+
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import com.google.gson.GsonBuilder;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class WageringStraightSpreadLinesHandlerTestIt {
-    static final String inputFile = "WageringStraightSpreadLines.json";
-    static WageringStraightSpreadLinesHandler handler;
-    private static JpaDao jpa;
-    static Gson gson =
-            new GsonBuilder()
-                    .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
-                    .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
-                    .create();
-    private WageringStraightSpreadLines[] records;
+  static final String inputFile = "WageringStraightSpreadLines.json";
+  static WageringStraightSpreadLinesHandler handler;
+  private static JpaDao jpa;
+  static Gson gson =
+      new GsonBuilder()
+          .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
+          .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
+          .create();
+  private WageringStraightSpreadLines[] records;
 
-    /** Run before the test. */
-    @BeforeClass
-    public static void before() {
-        final EntityManagerFactory factory =
-                Persistence.createEntityManagerFactory("testpersistence");
-        jpa = new StandaloneJpaDao(factory.createEntityManager());
-        handler = new WageringStraightSpreadLinesHandler(jpa);
-    }
+  /** Run before the test. */
+  @BeforeClass
+  public static void before() {
+    final EntityManagerFactory factory = Persistence.createEntityManagerFactory("testpersistence");
+    jpa = new StandaloneJpaDao(factory.createEntityManager());
+    handler = new WageringStraightSpreadLinesHandler(jpa);
+  }
 
-    @Test
-    public void testSelect() throws IOException {
-        final File tempFile =
-                createRecordInputStreamFromJsonFile(inputFile, Charset.defaultCharset());
-        final InputStream inputStream = new BufferedInputStream(new FileInputStream(tempFile));
-        int count = handler.process(inputStream);
-        String json = FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
-        records = gson.fromJson(json, WageringStraightSpreadLines[].class);
-        assertEquals("match count", count, records.length);
-        WageringStraightSpreadLines testResult =
-                jpa.find(WageringStraightSpreadLines.class, records[0].getId());
-        org.junit.Assert.assertEquals(
-                "expect equals bookmakerId ",
-                this.records[0].getBookmakerId(),
-                testResult.getBookmakerId());
-        org.junit.Assert.assertEquals(
-                "expect equals eventId ", this.records[0].getEventId(), testResult.getEventId());
-        org.junit.Assert.assertEquals(
-                "expect equals teamId ", this.records[0].getTeamId(), testResult.getTeamId());
-        org.junit.Assert.assertEquals(
-                "expect equals personId ", this.records[0].getPersonId(), testResult.getPersonId());
-        assertEquals(
-                "expect equals rotationKey ",
-                this.records[0].getRotationKey(),
-                testResult.getRotationKey());
-        assertEquals(
-                "expect equals comment ", this.records[0].getComment(), testResult.getComment());
-        assertEquals(
-                "expect equals vigorish ", this.records[0].getVigorish(), testResult.getVigorish());
-        assertEquals(
-                "expect equals lineValue ",
-                this.records[0].getLineValue(),
-                testResult.getLineValue());
-        assertEquals(
-                "expect equals lineValueOpening ",
-                this.records[0].getLineValueOpening(),
-                testResult.getLineValueOpening());
-        assertEquals(
-                "expect equals prediction ",
-                this.records[0].getPrediction(),
-                testResult.getPrediction());
+  @Test
+  public void testSelect() throws IOException {
+    final File tempFile = new File("./src/test/resources/WageringStraightSpreadLines.csv");
+    final InputStream inputStream = new BufferedInputStream(new FileInputStream(tempFile));
+    int count = handler.process(inputStream);
+    String json = FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
+    records = gson.fromJson(json, WageringStraightSpreadLines[].class);
+    assertEquals("match count", count, records.length);
+    WageringStraightSpreadLines testResult =
+        jpa.find(WageringStraightSpreadLines.class, records[0].getId());
+    org.junit.Assert.assertEquals(
+        "expect equals bookmakerId ",
+        this.records[0].getBookmakerId(),
+        testResult.getBookmakerId());
+    org.junit.Assert.assertEquals(
+        "expect equals eventId ", this.records[0].getEventId(), testResult.getEventId());
+    org.junit.Assert.assertEquals(
+        "expect equals teamId ", this.records[0].getTeamId(), testResult.getTeamId());
+    org.junit.Assert.assertEquals(
+        "expect equals personId ", this.records[0].getPersonId(), testResult.getPersonId());
+    assertEquals(
+        "expect equals rotationKey ",
+        this.records[0].getRotationKey(),
+        testResult.getRotationKey());
+    assertEquals("expect equals comment ", this.records[0].getComment(), testResult.getComment());
+    assertEquals(
+        "expect equals vigorish ", this.records[0].getVigorish(), testResult.getVigorish());
+    assertEquals(
+        "expect equals lineValue ", this.records[0].getLineValue(), testResult.getLineValue());
+    assertEquals(
+        "expect equals lineValueOpening ",
+        this.records[0].getLineValueOpening(),
+        testResult.getLineValueOpening());
+    assertEquals(
+        "expect equals prediction ", this.records[0].getPrediction(), testResult.getPrediction());
 
-        // cleanup
-        inputStream.close();
-        json = null;
-        records = null;
-    }
-
-    /**
-     * Construct a delimiter file from a json file.
-     *
-     * @param inputFile the json file.
-     * @param charset default charset.
-     * @return
-     */
-    private File createRecordInputStreamFromJsonFile(String inputFile, Charset charset) {
-        try {
-            final File tempFile = File.createTempFile(inputFile, ".txt");
-            tempFile.deleteOnExit();
-            String json =
-                    FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
-            JSONArray docs = new JSONArray(json);
-            String csv = CDL.toString(docs);
-            org.apache.commons.io.FileUtils.writeStringToFile(
-                    tempFile, csv, Charset.defaultCharset());
-            return tempFile;
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return null;
-        }
-    }
+    // cleanup
+    inputStream.close();
+    json = null;
+    records = null;
+  }
 }

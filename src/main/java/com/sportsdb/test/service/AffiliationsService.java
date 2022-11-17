@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.Affiliations;
 import java.util.List;
+import com.sportsdb.test.entity.Affiliations;
 
 public interface AffiliationsService {
-    public Affiliations find(java.lang.Integer id);
+  public Affiliations find(java.lang.Integer id);
 
-    /**
-     * Select a list of Affiliations based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return Affiliations records.
-     */
-    public List<Affiliations> select(int maxResult);
+  /**
+   * Select a list of Affiliations based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return Affiliations records.
+   */
+  public List<Affiliations> select(int maxResult);
 
-    /**
-     * Select all Affiliations.
-     *
-     * @return all Affiliations records.
-     */
-    public List<Affiliations> selectAll();
+  /**
+   * Select all Affiliations.
+   *
+   * @return all Affiliations records.
+   */
+  public List<Affiliations> selectAll();
 
-    /**
-     * Create Affiliations.
-     *
-     * @param bean The Affiliations.
-     * @return The Affiliations.
-     */
-    public Affiliations create(Affiliations bean);
+  /**
+   * Create Affiliations.
+   *
+   * @param bean The Affiliations.
+   * @return The Affiliations.
+   */
+  public Affiliations create(Affiliations bean);
 
-    /**
-     * Update a Affiliations.
-     *
-     * @param bean - The Affiliations.
-     * @return Affiliations.
-     */
-    public Affiliations update(Affiliations bean);
+  /**
+   * Update a Affiliations.
+   *
+   * @param bean - The Affiliations.
+   * @return Affiliations.
+   */
+  public Affiliations update(Affiliations bean);
 }

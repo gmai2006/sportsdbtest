@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.PersonEventMetadata;
 import java.util.List;
+import com.sportsdb.test.entity.PersonEventMetadata;
 
 public interface PersonEventMetadataDao {
-    /**
-     * Retrieve all records PersonEventMetadata.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of PersonEventMetadata
-     */
-    public List<PersonEventMetadata> select(int maxResult);
+  /**
+   * Retrieve all records PersonEventMetadata.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of PersonEventMetadata
+   */
+  public List<PersonEventMetadata> select(int maxResult);
 
-    /**
-     * Retrieve all records PersonEventMetadata.
-     *
-     * @return A list of PersonEventMetadata
-     */
-    public List<PersonEventMetadata> selectAll();
+  /**
+   * Retrieve all records PersonEventMetadata.
+   *
+   * @return A list of PersonEventMetadata
+   */
+  public List<PersonEventMetadata> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An PersonEventMetadata id.
-     * @return The same PersonEventMetadata.
-     */
-    public PersonEventMetadata find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An PersonEventMetadata id.
+   * @return The same PersonEventMetadata.
+   */
+  public PersonEventMetadata find(java.lang.Integer id);
 
-    /**
-     * Create an PersonEventMetadata.
-     *
-     * @param e the PersonEventMetadata.
-     * @return The same PersonEventMetadata.
-     */
-    public PersonEventMetadata create(PersonEventMetadata e);
+  /**
+   * Create an PersonEventMetadata.
+   *
+   * @param e the PersonEventMetadata.
+   * @return The same PersonEventMetadata.
+   */
+  public PersonEventMetadata create(PersonEventMetadata e);
 
-    /**
-     * Update the PersonEventMetadata.
-     *
-     * @param e the PersonEventMetadata.
-     * @return The same PersonEventMetadata.
-     */
-    public PersonEventMetadata update(PersonEventMetadata e);
+  /**
+   * Update the PersonEventMetadata.
+   *
+   * @param e the PersonEventMetadata.
+   * @return The same PersonEventMetadata.
+   */
+  public PersonEventMetadata update(PersonEventMetadata e);
 }

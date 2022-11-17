@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.AffiliationsDocuments;
 import java.util.List;
+import com.sportsdb.test.entity.AffiliationsDocuments;
 
 public interface AffiliationsDocumentsService {
-    public AffiliationsDocuments find(java.lang.String id);
+  public AffiliationsDocuments find(java.lang.String id);
 
-    /**
-     * Select a list of AffiliationsDocuments based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return AffiliationsDocuments records.
-     */
-    public List<AffiliationsDocuments> select(int maxResult);
+  /**
+   * Select a list of AffiliationsDocuments based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return AffiliationsDocuments records.
+   */
+  public List<AffiliationsDocuments> select(int maxResult);
 
-    /**
-     * Select all AffiliationsDocuments.
-     *
-     * @return all AffiliationsDocuments records.
-     */
-    public List<AffiliationsDocuments> selectAll();
+  /**
+   * Select all AffiliationsDocuments.
+   *
+   * @return all AffiliationsDocuments records.
+   */
+  public List<AffiliationsDocuments> selectAll();
 
-    /**
-     * Create AffiliationsDocuments.
-     *
-     * @param bean The AffiliationsDocuments.
-     * @return The AffiliationsDocuments.
-     */
-    public AffiliationsDocuments create(AffiliationsDocuments bean);
+  /**
+   * Create AffiliationsDocuments.
+   *
+   * @param bean The AffiliationsDocuments.
+   * @return The AffiliationsDocuments.
+   */
+  public AffiliationsDocuments create(AffiliationsDocuments bean);
 
-    /**
-     * Update a AffiliationsDocuments.
-     *
-     * @param bean - The AffiliationsDocuments.
-     * @return AffiliationsDocuments.
-     */
-    public AffiliationsDocuments update(AffiliationsDocuments bean);
+  /**
+   * Update a AffiliationsDocuments.
+   *
+   * @param bean - The AffiliationsDocuments.
+   * @return AffiliationsDocuments.
+   */
+  public AffiliationsDocuments update(AffiliationsDocuments bean);
 }

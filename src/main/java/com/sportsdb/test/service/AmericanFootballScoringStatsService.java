@@ -16,41 +16,41 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.AmericanFootballScoringStats;
 import java.util.List;
+import com.sportsdb.test.entity.AmericanFootballScoringStats;
 
 public interface AmericanFootballScoringStatsService {
-    public AmericanFootballScoringStats find(java.lang.Integer id);
+  public AmericanFootballScoringStats find(java.lang.Integer id);
 
-    /**
-     * Select a list of AmericanFootballScoringStats based on a given maximum number of returning
-     * records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return AmericanFootballScoringStats records.
-     */
-    public List<AmericanFootballScoringStats> select(int maxResult);
+  /**
+   * Select a list of AmericanFootballScoringStats based on a given maximum number of returning
+   * records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return AmericanFootballScoringStats records.
+   */
+  public List<AmericanFootballScoringStats> select(int maxResult);
 
-    /**
-     * Select all AmericanFootballScoringStats.
-     *
-     * @return all AmericanFootballScoringStats records.
-     */
-    public List<AmericanFootballScoringStats> selectAll();
+  /**
+   * Select all AmericanFootballScoringStats.
+   *
+   * @return all AmericanFootballScoringStats records.
+   */
+  public List<AmericanFootballScoringStats> selectAll();
 
-    /**
-     * Create AmericanFootballScoringStats.
-     *
-     * @param bean The AmericanFootballScoringStats.
-     * @return The AmericanFootballScoringStats.
-     */
-    public AmericanFootballScoringStats create(AmericanFootballScoringStats bean);
+  /**
+   * Create AmericanFootballScoringStats.
+   *
+   * @param bean The AmericanFootballScoringStats.
+   * @return The AmericanFootballScoringStats.
+   */
+  public AmericanFootballScoringStats create(AmericanFootballScoringStats bean);
 
-    /**
-     * Update a AmericanFootballScoringStats.
-     *
-     * @param bean - The AmericanFootballScoringStats.
-     * @return AmericanFootballScoringStats.
-     */
-    public AmericanFootballScoringStats update(AmericanFootballScoringStats bean);
+  /**
+   * Update a AmericanFootballScoringStats.
+   *
+   * @param bean - The AmericanFootballScoringStats.
+   * @return AmericanFootballScoringStats.
+   */
+  public AmericanFootballScoringStats update(AmericanFootballScoringStats bean);
 }

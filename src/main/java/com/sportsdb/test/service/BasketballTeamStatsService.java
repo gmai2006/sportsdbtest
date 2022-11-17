@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.BasketballTeamStats;
 import java.util.List;
+import com.sportsdb.test.entity.BasketballTeamStats;
 
 public interface BasketballTeamStatsService {
-    public BasketballTeamStats find(java.lang.Integer id);
+  public BasketballTeamStats find(java.lang.Integer id);
 
-    /**
-     * Select a list of BasketballTeamStats based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return BasketballTeamStats records.
-     */
-    public List<BasketballTeamStats> select(int maxResult);
+  /**
+   * Select a list of BasketballTeamStats based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return BasketballTeamStats records.
+   */
+  public List<BasketballTeamStats> select(int maxResult);
 
-    /**
-     * Select all BasketballTeamStats.
-     *
-     * @return all BasketballTeamStats records.
-     */
-    public List<BasketballTeamStats> selectAll();
+  /**
+   * Select all BasketballTeamStats.
+   *
+   * @return all BasketballTeamStats records.
+   */
+  public List<BasketballTeamStats> selectAll();
 
-    /**
-     * Create BasketballTeamStats.
-     *
-     * @param bean The BasketballTeamStats.
-     * @return The BasketballTeamStats.
-     */
-    public BasketballTeamStats create(BasketballTeamStats bean);
+  /**
+   * Create BasketballTeamStats.
+   *
+   * @param bean The BasketballTeamStats.
+   * @return The BasketballTeamStats.
+   */
+  public BasketballTeamStats create(BasketballTeamStats bean);
 
-    /**
-     * Update a BasketballTeamStats.
-     *
-     * @param bean - The BasketballTeamStats.
-     * @return BasketballTeamStats.
-     */
-    public BasketballTeamStats update(BasketballTeamStats bean);
+  /**
+   * Update a BasketballTeamStats.
+   *
+   * @param bean - The BasketballTeamStats.
+   * @return BasketballTeamStats.
+   */
+  public BasketballTeamStats update(BasketballTeamStats bean);
 }

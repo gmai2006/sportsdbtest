@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.Documents;
 import java.util.List;
+import com.sportsdb.test.entity.Documents;
 
 public interface DocumentsDao {
-    /**
-     * Retrieve all records Documents.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of Documents
-     */
-    public List<Documents> select(int maxResult);
+  /**
+   * Retrieve all records Documents.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of Documents
+   */
+  public List<Documents> select(int maxResult);
 
-    /**
-     * Retrieve all records Documents.
-     *
-     * @return A list of Documents
-     */
-    public List<Documents> selectAll();
+  /**
+   * Retrieve all records Documents.
+   *
+   * @return A list of Documents
+   */
+  public List<Documents> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An Documents id.
-     * @return The same Documents.
-     */
-    public Documents find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An Documents id.
+   * @return The same Documents.
+   */
+  public Documents find(java.lang.Integer id);
 
-    /**
-     * Create an Documents.
-     *
-     * @param e the Documents.
-     * @return The same Documents.
-     */
-    public Documents create(Documents e);
+  /**
+   * Create an Documents.
+   *
+   * @param e the Documents.
+   * @return The same Documents.
+   */
+  public Documents create(Documents e);
 
-    /**
-     * Update the Documents.
-     *
-     * @param e the Documents.
-     * @return The same Documents.
-     */
-    public Documents update(Documents e);
+  /**
+   * Update the Documents.
+   *
+   * @param e the Documents.
+   * @return The same Documents.
+   */
+  public Documents update(Documents e);
 }

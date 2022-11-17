@@ -16,57 +16,60 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.IceHockeyEventStates;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.IceHockeyEventStates;
 
 @Stateless
 @Named("DefaultIceHockeyEventStatesDao")
 public class DefaultIceHockeyEventStatesDao implements IceHockeyEventStatesDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultIceHockeyEventStatesDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultIceHockeyEventStatesDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultIceHockeyEventStatesDao() {}
+  public DefaultIceHockeyEventStatesDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public IceHockeyEventStates find(java.lang.Integer id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(IceHockeyEventStates.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public IceHockeyEventStates find(java.lang.Integer id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(IceHockeyEventStates.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<IceHockeyEventStates> select(int max) {
-        return dao.select("select a from IceHockeyEventStates a", IceHockeyEventStates.class, max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<IceHockeyEventStates> select(int max) {
+    return dao.select("select a from IceHockeyEventStates a", IceHockeyEventStates.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<IceHockeyEventStates> selectAll() {
-        return dao.selectAll("select a from IceHockeyEventStates a", IceHockeyEventStates.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<IceHockeyEventStates> selectAll() {
+    return dao.selectAll("select a from IceHockeyEventStates a", IceHockeyEventStates.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public IceHockeyEventStates create(IceHockeyEventStates e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public IceHockeyEventStates create(IceHockeyEventStates e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public IceHockeyEventStates update(IceHockeyEventStates e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public IceHockeyEventStates update(IceHockeyEventStates e) {
+    return dao.update(e);
+  }
 }

@@ -16,62 +16,64 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.AmericanFootballPenaltiesStats;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.AmericanFootballPenaltiesStats;
 
 @Stateless
 @Named("DefaultAmericanFootballPenaltiesStatsDao")
 public class DefaultAmericanFootballPenaltiesStatsDao implements AmericanFootballPenaltiesStatsDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultAmericanFootballPenaltiesStatsDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultAmericanFootballPenaltiesStatsDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultAmericanFootballPenaltiesStatsDao() {}
+  public DefaultAmericanFootballPenaltiesStatsDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public AmericanFootballPenaltiesStats find(java.lang.Integer id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(AmericanFootballPenaltiesStats.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public AmericanFootballPenaltiesStats find(java.lang.Integer id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(AmericanFootballPenaltiesStats.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<AmericanFootballPenaltiesStats> select(int max) {
-        return dao.select(
-                "select a from AmericanFootballPenaltiesStats a",
-                AmericanFootballPenaltiesStats.class,
-                max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<AmericanFootballPenaltiesStats> select(int max) {
+    return dao.select(
+        "select a from AmericanFootballPenaltiesStats a",
+        AmericanFootballPenaltiesStats.class,
+        max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<AmericanFootballPenaltiesStats> selectAll() {
-        return dao.selectAll(
-                "select a from AmericanFootballPenaltiesStats a",
-                AmericanFootballPenaltiesStats.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<AmericanFootballPenaltiesStats> selectAll() {
+    return dao.selectAll(
+        "select a from AmericanFootballPenaltiesStats a", AmericanFootballPenaltiesStats.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AmericanFootballPenaltiesStats create(AmericanFootballPenaltiesStats e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public AmericanFootballPenaltiesStats create(AmericanFootballPenaltiesStats e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AmericanFootballPenaltiesStats update(AmericanFootballPenaltiesStats e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public AmericanFootballPenaltiesStats update(AmericanFootballPenaltiesStats e) {
+    return dao.update(e);
+  }
 }

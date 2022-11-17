@@ -16,57 +16,57 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "events_media")
 public class EventsMedia implements Serializable {
-    private static final long serialVersionUID = 163445241899928504L;
+  private static final long serialVersionUID = 166867004235487558L;
 
-    /** Description: default_id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "default_id")
-    private java.lang.String defaultId;
+  /** Description: default_id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "default_id")
+  private java.lang.String defaultId;
 
-    /** Description: event_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "event_id")
-    private java.lang.Integer eventId;
-    /** Description: media_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "media_id")
-    private java.lang.Integer mediaId;
+  /** Description: event_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "event_id")
+  private java.lang.Integer eventId;
+  /** Description: media_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "media_id")
+  private java.lang.Integer mediaId;
 
-    public EventsMedia() {}
+  public EventsMedia() {}
 
-    public java.lang.String getDefaultId() {
-        return this.defaultId;
-    }
+  public java.lang.String getDefaultId() {
+    return this.defaultId;
+  }
 
-    public void setDefaultId(java.lang.String defaultId) {
-        this.defaultId = defaultId;
-    }
+  public void setDefaultId(java.lang.String defaultId) {
+    this.defaultId = defaultId;
+  }
 
-    public java.lang.Integer getEventId() {
-        return this.eventId;
-    }
+  public java.lang.Integer getEventId() {
+    return this.eventId;
+  }
 
-    public java.lang.Integer getMediaId() {
-        return this.mediaId;
-    }
+  public java.lang.Integer getMediaId() {
+    return this.mediaId;
+  }
 
-    public void setEventId(java.lang.Integer eventId) {
-        this.eventId = eventId;
-    }
+  public void setEventId(java.lang.Integer eventId) {
+    this.eventId = eventId;
+  }
 
-    public void setMediaId(java.lang.Integer mediaId) {
-        this.mediaId = mediaId;
-    }
+  public void setMediaId(java.lang.Integer mediaId) {
+    this.mediaId = mediaId;
+  }
 }

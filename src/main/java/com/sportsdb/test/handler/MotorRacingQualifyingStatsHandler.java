@@ -16,63 +16,66 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.MotorRacingQualifyingStats;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.MotorRacingQualifyingStats;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("MotorRacingQualifyingStatsHandler")
 public class MotorRacingQualifyingStatsHandler
-        extends DelimiterFileHandler<MotorRacingQualifyingStats> {
+    extends DelimiterFileHandler<MotorRacingQualifyingStats> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public MotorRacingQualifyingStatsHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public MotorRacingQualifyingStatsHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected MotorRacingQualifyingStats parseLine(List<String> headers, List<String> tokens) {
+    MotorRacingQualifyingStats record = new MotorRacingQualifyingStats();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "grid":
+          record.setGrid(tokens.get(i));
+          break;
+
+        case "polePosition":
+          record.setPolePosition(tokens.get(i));
+          break;
+
+        case "poleWins":
+          record.setPoleWins(tokens.get(i));
+          break;
+
+        case "qualifyingSpeed":
+          record.setQualifyingSpeed(tokens.get(i));
+          break;
+
+        case "qualifyingSpeedUnits":
+          record.setQualifyingSpeedUnits(tokens.get(i));
+          break;
+
+        case "qualifyingTime":
+          record.setQualifyingTime(tokens.get(i));
+          break;
+
+        case "qualifyingPosition":
+          record.setQualifyingPosition(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected MotorRacingQualifyingStats parseLine(List<String> headers, List<String> tokens) {
-        MotorRacingQualifyingStats record = new MotorRacingQualifyingStats();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "grid":
-                    record.setGrid(tokens.get(i));
-                    break;
-
-                case "polePosition":
-                    record.setPolePosition(tokens.get(i));
-                    break;
-
-                case "poleWins":
-                    record.setPoleWins(tokens.get(i));
-                    break;
-
-                case "qualifyingSpeed":
-                    record.setQualifyingSpeed(tokens.get(i));
-                    break;
-
-                case "qualifyingSpeedUnits":
-                    record.setQualifyingSpeedUnits(tokens.get(i));
-                    break;
-
-                case "qualifyingTime":
-                    record.setQualifyingTime(tokens.get(i));
-                    break;
-
-                case "qualifyingPosition":
-                    record.setQualifyingPosition(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

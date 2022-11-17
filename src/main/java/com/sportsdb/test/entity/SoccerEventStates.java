@@ -16,140 +16,140 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "soccer_event_states")
 public class SoccerEventStates implements Serializable {
-    private static final long serialVersionUID = 163445241927240137L;
+  private static final long serialVersionUID = 166867004252877359L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: event_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "event_id")
-    private java.lang.Integer eventId;
-    /** Description: current_state. */
-    @Basic
-    @Column(name = "current_state")
-    private java.lang.Integer currentState;
-    /** Description: sequence_number. */
-    @Basic
-    @Column(name = "sequence_number")
-    private java.lang.Integer sequenceNumber;
-    /** Description: period_value. */
-    @Basic
-    @Column(name = "period_value", length = 100)
-    private java.lang.String periodValue;
-    /** Description: period_time_elapsed. */
-    @Basic
-    @Column(name = "period_time_elapsed", length = 100)
-    private java.lang.String periodTimeElapsed;
-    /** Description: period_time_remaining. */
-    @Basic
-    @Column(name = "period_time_remaining", length = 100)
-    private java.lang.String periodTimeRemaining;
-    /** Description: minutes_elapsed. */
-    @Basic
-    @Column(name = "minutes_elapsed", length = 100)
-    private java.lang.String minutesElapsed;
-    /** Description: period_minute_elapsed. */
-    @Basic
-    @Column(name = "period_minute_elapsed", length = 100)
-    private java.lang.String periodMinuteElapsed;
-    /** Description: context. */
-    @Basic
-    @Column(name = "context", length = 40)
-    private java.lang.String context;
+  /** Description: event_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "event_id")
+  private java.lang.Integer eventId;
+  /** Description: current_state. */
+  @Basic
+  @Column(name = "current_state")
+  private java.lang.Integer currentState;
+  /** Description: sequence_number. */
+  @Basic
+  @Column(name = "sequence_number")
+  private java.lang.Integer sequenceNumber;
+  /** Description: period_value. */
+  @Basic
+  @Column(name = "period_value", length = 100)
+  private java.lang.String periodValue;
+  /** Description: period_time_elapsed. */
+  @Basic
+  @Column(name = "period_time_elapsed", length = 100)
+  private java.lang.String periodTimeElapsed;
+  /** Description: period_time_remaining. */
+  @Basic
+  @Column(name = "period_time_remaining", length = 100)
+  private java.lang.String periodTimeRemaining;
+  /** Description: minutes_elapsed. */
+  @Basic
+  @Column(name = "minutes_elapsed", length = 100)
+  private java.lang.String minutesElapsed;
+  /** Description: period_minute_elapsed. */
+  @Basic
+  @Column(name = "period_minute_elapsed", length = 100)
+  private java.lang.String periodMinuteElapsed;
+  /** Description: context. */
+  @Basic
+  @Column(name = "context", length = 40)
+  private java.lang.String context;
 
-    public SoccerEventStates() {}
+  public SoccerEventStates() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.Integer getEventId() {
-        return this.eventId;
-    }
+  public java.lang.Integer getEventId() {
+    return this.eventId;
+  }
 
-    public java.lang.Integer getCurrentState() {
-        return this.currentState;
-    }
+  public java.lang.Integer getCurrentState() {
+    return this.currentState;
+  }
 
-    public java.lang.Integer getSequenceNumber() {
-        return this.sequenceNumber;
-    }
+  public java.lang.Integer getSequenceNumber() {
+    return this.sequenceNumber;
+  }
 
-    public java.lang.String getPeriodValue() {
-        return this.periodValue;
-    }
+  public java.lang.String getPeriodValue() {
+    return this.periodValue;
+  }
 
-    public java.lang.String getPeriodTimeElapsed() {
-        return this.periodTimeElapsed;
-    }
+  public java.lang.String getPeriodTimeElapsed() {
+    return this.periodTimeElapsed;
+  }
 
-    public java.lang.String getPeriodTimeRemaining() {
-        return this.periodTimeRemaining;
-    }
+  public java.lang.String getPeriodTimeRemaining() {
+    return this.periodTimeRemaining;
+  }
 
-    public java.lang.String getMinutesElapsed() {
-        return this.minutesElapsed;
-    }
+  public java.lang.String getMinutesElapsed() {
+    return this.minutesElapsed;
+  }
 
-    public java.lang.String getPeriodMinuteElapsed() {
-        return this.periodMinuteElapsed;
-    }
+  public java.lang.String getPeriodMinuteElapsed() {
+    return this.periodMinuteElapsed;
+  }
 
-    public java.lang.String getContext() {
-        return this.context;
-    }
+  public java.lang.String getContext() {
+    return this.context;
+  }
 
-    public void setEventId(java.lang.Integer eventId) {
-        this.eventId = eventId;
-    }
+  public void setEventId(java.lang.Integer eventId) {
+    this.eventId = eventId;
+  }
 
-    public void setCurrentState(java.lang.Integer currentState) {
-        this.currentState = currentState;
-    }
+  public void setCurrentState(java.lang.Integer currentState) {
+    this.currentState = currentState;
+  }
 
-    public void setSequenceNumber(java.lang.Integer sequenceNumber) {
-        this.sequenceNumber = sequenceNumber;
-    }
+  public void setSequenceNumber(java.lang.Integer sequenceNumber) {
+    this.sequenceNumber = sequenceNumber;
+  }
 
-    public void setPeriodValue(java.lang.String periodValue) {
-        this.periodValue = periodValue;
-    }
+  public void setPeriodValue(java.lang.String periodValue) {
+    this.periodValue = periodValue;
+  }
 
-    public void setPeriodTimeElapsed(java.lang.String periodTimeElapsed) {
-        this.periodTimeElapsed = periodTimeElapsed;
-    }
+  public void setPeriodTimeElapsed(java.lang.String periodTimeElapsed) {
+    this.periodTimeElapsed = periodTimeElapsed;
+  }
 
-    public void setPeriodTimeRemaining(java.lang.String periodTimeRemaining) {
-        this.periodTimeRemaining = periodTimeRemaining;
-    }
+  public void setPeriodTimeRemaining(java.lang.String periodTimeRemaining) {
+    this.periodTimeRemaining = periodTimeRemaining;
+  }
 
-    public void setMinutesElapsed(java.lang.String minutesElapsed) {
-        this.minutesElapsed = minutesElapsed;
-    }
+  public void setMinutesElapsed(java.lang.String minutesElapsed) {
+    this.minutesElapsed = minutesElapsed;
+  }
 
-    public void setPeriodMinuteElapsed(java.lang.String periodMinuteElapsed) {
-        this.periodMinuteElapsed = periodMinuteElapsed;
-    }
+  public void setPeriodMinuteElapsed(java.lang.String periodMinuteElapsed) {
+    this.periodMinuteElapsed = periodMinuteElapsed;
+  }
 
-    public void setContext(java.lang.String context) {
-        this.context = context;
-    }
+  public void setContext(java.lang.String context) {
+    this.context = context;
+  }
 }

@@ -16,41 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.WageringTotalScoreLines;
 import java.util.List;
+import com.sportsdb.test.entity.WageringTotalScoreLines;
 
 public interface WageringTotalScoreLinesService {
-    public WageringTotalScoreLines find(java.lang.Integer id);
+  public WageringTotalScoreLines find(java.lang.Integer id);
 
-    /**
-     * Select a list of WageringTotalScoreLines based on a given maximum number of returning
-     * records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return WageringTotalScoreLines records.
-     */
-    public List<WageringTotalScoreLines> select(int maxResult);
+  /**
+   * Select a list of WageringTotalScoreLines based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return WageringTotalScoreLines records.
+   */
+  public List<WageringTotalScoreLines> select(int maxResult);
 
-    /**
-     * Select all WageringTotalScoreLines.
-     *
-     * @return all WageringTotalScoreLines records.
-     */
-    public List<WageringTotalScoreLines> selectAll();
+  /**
+   * Select all WageringTotalScoreLines.
+   *
+   * @return all WageringTotalScoreLines records.
+   */
+  public List<WageringTotalScoreLines> selectAll();
 
-    /**
-     * Create WageringTotalScoreLines.
-     *
-     * @param bean The WageringTotalScoreLines.
-     * @return The WageringTotalScoreLines.
-     */
-    public WageringTotalScoreLines create(WageringTotalScoreLines bean);
+  /**
+   * Create WageringTotalScoreLines.
+   *
+   * @param bean The WageringTotalScoreLines.
+   * @return The WageringTotalScoreLines.
+   */
+  public WageringTotalScoreLines create(WageringTotalScoreLines bean);
 
-    /**
-     * Update a WageringTotalScoreLines.
-     *
-     * @param bean - The WageringTotalScoreLines.
-     * @return WageringTotalScoreLines.
-     */
-    public WageringTotalScoreLines update(WageringTotalScoreLines bean);
+  /**
+   * Update a WageringTotalScoreLines.
+   *
+   * @param bean - The WageringTotalScoreLines.
+   * @return WageringTotalScoreLines.
+   */
+  public WageringTotalScoreLines update(WageringTotalScoreLines bean);
 }

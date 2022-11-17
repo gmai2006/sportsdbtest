@@ -16,68 +16,68 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "bookmakers")
 public class Bookmakers implements Serializable {
-    private static final long serialVersionUID = 163445241891141344L;
+  private static final long serialVersionUID = 1668670042288560L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: bookmaker_key. */
-    @Basic
-    @Column(name = "bookmaker_key", length = 100)
-    private java.lang.String bookmakerKey;
-    /** Description: publisher_id. */
-    @javax.validation.constraints.NotNull
-    @Basic
-    @Column(name = "publisher_id")
-    private java.lang.Integer publisherId;
-    /** Description: location_id. */
-    @Basic
-    @Column(name = "location_id")
-    private java.lang.Integer locationId;
+  /** Description: bookmaker_key. */
+  @Basic
+  @Column(name = "bookmaker_key", length = 100)
+  private java.lang.String bookmakerKey;
+  /** Description: publisher_id. */
+  @javax.validation.constraints.NotNull
+  @Basic
+  @Column(name = "publisher_id")
+  private java.lang.Integer publisherId;
+  /** Description: location_id. */
+  @Basic
+  @Column(name = "location_id")
+  private java.lang.Integer locationId;
 
-    public Bookmakers() {}
+  public Bookmakers() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.String getBookmakerKey() {
-        return this.bookmakerKey;
-    }
+  public java.lang.String getBookmakerKey() {
+    return this.bookmakerKey;
+  }
 
-    public java.lang.Integer getPublisherId() {
-        return this.publisherId;
-    }
+  public java.lang.Integer getPublisherId() {
+    return this.publisherId;
+  }
 
-    public java.lang.Integer getLocationId() {
-        return this.locationId;
-    }
+  public java.lang.Integer getLocationId() {
+    return this.locationId;
+  }
 
-    public void setBookmakerKey(java.lang.String bookmakerKey) {
-        this.bookmakerKey = bookmakerKey;
-    }
+  public void setBookmakerKey(java.lang.String bookmakerKey) {
+    this.bookmakerKey = bookmakerKey;
+  }
 
-    public void setPublisherId(java.lang.Integer publisherId) {
-        this.publisherId = publisherId;
-    }
+  public void setPublisherId(java.lang.Integer publisherId) {
+    this.publisherId = publisherId;
+  }
 
-    public void setLocationId(java.lang.Integer locationId) {
-        this.locationId = locationId;
-    }
+  public void setLocationId(java.lang.Integer locationId) {
+    this.locationId = locationId;
+  }
 }

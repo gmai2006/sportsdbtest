@@ -16,49 +16,52 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.IceHockeyActionParticipants;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.IceHockeyActionParticipants;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("IceHockeyActionParticipantsHandler")
 public class IceHockeyActionParticipantsHandler
-        extends DelimiterFileHandler<IceHockeyActionParticipants> {
+    extends DelimiterFileHandler<IceHockeyActionParticipants> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public IceHockeyActionParticipantsHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public IceHockeyActionParticipantsHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected IceHockeyActionParticipants parseLine(List<String> headers, List<String> tokens) {
+    IceHockeyActionParticipants record = new IceHockeyActionParticipants();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Long.valueOf((tokens.get(i))));
+          break;
+        case "iceHockeyActionPlayId":
+          record.setIceHockeyActionPlayId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "personId":
+          record.setPersonId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "participantRole":
+          record.setParticipantRole(tokens.get(i));
+          break;
+
+        case "pointCredit":
+          record.setPointCredit(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected IceHockeyActionParticipants parseLine(List<String> headers, List<String> tokens) {
-        IceHockeyActionParticipants record = new IceHockeyActionParticipants();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Long.valueOf((tokens.get(i))));
-                    break;
-                case "iceHockeyActionPlayId":
-                    record.setIceHockeyActionPlayId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "personId":
-                    record.setPersonId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "participantRole":
-                    record.setParticipantRole(tokens.get(i));
-                    break;
-
-                case "pointCredit":
-                    record.setPointCredit(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

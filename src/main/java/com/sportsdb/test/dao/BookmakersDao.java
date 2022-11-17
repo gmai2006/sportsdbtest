@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.Bookmakers;
 import java.util.List;
+import com.sportsdb.test.entity.Bookmakers;
 
 public interface BookmakersDao {
-    /**
-     * Retrieve all records Bookmakers.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of Bookmakers
-     */
-    public List<Bookmakers> select(int maxResult);
+  /**
+   * Retrieve all records Bookmakers.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of Bookmakers
+   */
+  public List<Bookmakers> select(int maxResult);
 
-    /**
-     * Retrieve all records Bookmakers.
-     *
-     * @return A list of Bookmakers
-     */
-    public List<Bookmakers> selectAll();
+  /**
+   * Retrieve all records Bookmakers.
+   *
+   * @return A list of Bookmakers
+   */
+  public List<Bookmakers> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An Bookmakers id.
-     * @return The same Bookmakers.
-     */
-    public Bookmakers find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An Bookmakers id.
+   * @return The same Bookmakers.
+   */
+  public Bookmakers find(java.lang.Integer id);
 
-    /**
-     * Create an Bookmakers.
-     *
-     * @param e the Bookmakers.
-     * @return The same Bookmakers.
-     */
-    public Bookmakers create(Bookmakers e);
+  /**
+   * Create an Bookmakers.
+   *
+   * @param e the Bookmakers.
+   * @return The same Bookmakers.
+   */
+  public Bookmakers create(Bookmakers e);
 
-    /**
-     * Update the Bookmakers.
-     *
-     * @param e the Bookmakers.
-     * @return The same Bookmakers.
-     */
-    public Bookmakers update(Bookmakers e);
+  /**
+   * Update the Bookmakers.
+   *
+   * @param e the Bookmakers.
+   * @return The same Bookmakers.
+   */
+  public Bookmakers update(Bookmakers e);
 }

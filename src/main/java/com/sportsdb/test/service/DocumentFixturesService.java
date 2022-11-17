@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.DocumentFixtures;
 import java.util.List;
+import com.sportsdb.test.entity.DocumentFixtures;
 
 public interface DocumentFixturesService {
-    public DocumentFixtures find(java.lang.Integer id);
+  public DocumentFixtures find(java.lang.Integer id);
 
-    /**
-     * Select a list of DocumentFixtures based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return DocumentFixtures records.
-     */
-    public List<DocumentFixtures> select(int maxResult);
+  /**
+   * Select a list of DocumentFixtures based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return DocumentFixtures records.
+   */
+  public List<DocumentFixtures> select(int maxResult);
 
-    /**
-     * Select all DocumentFixtures.
-     *
-     * @return all DocumentFixtures records.
-     */
-    public List<DocumentFixtures> selectAll();
+  /**
+   * Select all DocumentFixtures.
+   *
+   * @return all DocumentFixtures records.
+   */
+  public List<DocumentFixtures> selectAll();
 
-    /**
-     * Create DocumentFixtures.
-     *
-     * @param bean The DocumentFixtures.
-     * @return The DocumentFixtures.
-     */
-    public DocumentFixtures create(DocumentFixtures bean);
+  /**
+   * Create DocumentFixtures.
+   *
+   * @param bean The DocumentFixtures.
+   * @return The DocumentFixtures.
+   */
+  public DocumentFixtures create(DocumentFixtures bean);
 
-    /**
-     * Update a DocumentFixtures.
-     *
-     * @param bean - The DocumentFixtures.
-     * @return DocumentFixtures.
-     */
-    public DocumentFixtures update(DocumentFixtures bean);
+  /**
+   * Update a DocumentFixtures.
+   *
+   * @param bean - The DocumentFixtures.
+   * @return DocumentFixtures.
+   */
+  public DocumentFixtures update(DocumentFixtures bean);
 }

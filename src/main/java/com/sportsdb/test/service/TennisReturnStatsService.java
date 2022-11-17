@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.TennisReturnStats;
 import java.util.List;
+import com.sportsdb.test.entity.TennisReturnStats;
 
 public interface TennisReturnStatsService {
-    public TennisReturnStats find(java.lang.Integer id);
+  public TennisReturnStats find(java.lang.Integer id);
 
-    /**
-     * Select a list of TennisReturnStats based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return TennisReturnStats records.
-     */
-    public List<TennisReturnStats> select(int maxResult);
+  /**
+   * Select a list of TennisReturnStats based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return TennisReturnStats records.
+   */
+  public List<TennisReturnStats> select(int maxResult);
 
-    /**
-     * Select all TennisReturnStats.
-     *
-     * @return all TennisReturnStats records.
-     */
-    public List<TennisReturnStats> selectAll();
+  /**
+   * Select all TennisReturnStats.
+   *
+   * @return all TennisReturnStats records.
+   */
+  public List<TennisReturnStats> selectAll();
 
-    /**
-     * Create TennisReturnStats.
-     *
-     * @param bean The TennisReturnStats.
-     * @return The TennisReturnStats.
-     */
-    public TennisReturnStats create(TennisReturnStats bean);
+  /**
+   * Create TennisReturnStats.
+   *
+   * @param bean The TennisReturnStats.
+   * @return The TennisReturnStats.
+   */
+  public TennisReturnStats create(TennisReturnStats bean);
 
-    /**
-     * Update a TennisReturnStats.
-     *
-     * @param bean - The TennisReturnStats.
-     * @return TennisReturnStats.
-     */
-    public TennisReturnStats update(TennisReturnStats bean);
+  /**
+   * Update a TennisReturnStats.
+   *
+   * @param bean - The TennisReturnStats.
+   * @return TennisReturnStats.
+   */
+  public TennisReturnStats update(TennisReturnStats bean);
 }

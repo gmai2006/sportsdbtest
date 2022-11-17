@@ -22,80 +22,80 @@ import javax.persistence.EntityManager;
 
 @Stateless
 public interface JpaDao {
-    /**
-     * Get entity manager.
-     *
-     * @return Return entity manager.
-     */
-    public EntityManager getEntityManager();
+  /**
+   * Get entity manager.
+   *
+   * @return Return entity manager.
+   */
+  public EntityManager getEntityManager();
 
-    /**
-     * Retrieve all records type E with a maximum number of returned records.
-     *
-     * @param queryStr A query string.
-     * @param e An entity.
-     * @param <E> An entity type.
-     * @param max A maximum number of returned records.
-     * @return A list of entities type E
-     */
-    <E> List<E> select(String queryStr, Class<E> e, int max);
+  /**
+   * Retrieve all records type E with a maximum number of returned records.
+   *
+   * @param queryStr A query string.
+   * @param e An entity.
+   * @param <E> An entity type.
+   * @param max A maximum number of returned records.
+   * @return A list of entities type E
+   */
+  <E> List<E> select(String queryStr, Class<E> e, int max);
 
-    /**
-     * Retrieve all records type E.
-     *
-     * @param queryStr A query string.
-     * @param e An entity.
-     * @param <E> An entity type.
-     * @return A list of entities type E
-     */
-    public <E> List<E> selectAll(String queryStr, Class<E> e);
+  /**
+   * Retrieve all records type E.
+   *
+   * @param queryStr A query string.
+   * @param e An entity.
+   * @param <E> An entity type.
+   * @return A list of entities type E
+   */
+  public <E> List<E> selectAll(String queryStr, Class<E> e);
 
-    /**
-     * Find an entity.
-     *
-     * @param id An entity id.
-     * @param e An entity.
-     * @param <E> An entity type.
-     * @return The same entity.
-     */
-    <E> E find(Class<E> e, Object id);
+  /**
+   * Find an entity.
+   *
+   * @param id An entity id.
+   * @param e An entity.
+   * @param <E> An entity type.
+   * @return The same entity.
+   */
+  <E> E find(Class<E> e, Object id);
 
-    /**
-     * Create an entity.
-     *
-     * @param e An entity.
-     * @param <E> An entity type.
-     * @return The same entity.
-     */
-    <E> E create(E e);
+  /**
+   * Create an entity.
+   *
+   * @param e An entity.
+   * @param <E> An entity type.
+   * @return The same entity.
+   */
+  <E> E create(E e);
 
-    /**
-     * Create entities in batch.
-     *
-     * @param list of entities to be persisted.
-     * @param <E> The entity type.
-     * @return The total count.
-     */
-    <E> int batchCreate(List<E> list);
+  /**
+   * Create entities in batch.
+   *
+   * @param list of entities to be persisted.
+   * @param <E> The entity type.
+   * @return The total count.
+   */
+  <E> int batchCreate(List<E> list);
 
-    /**
-     * Delete the entity.
-     *
-     * @param id The entity Id.
-     * @param e An entity.
-     * @param <E> An entity type.
-     */
-    <E> void delete(Class<E> e, Object id);
+  /**
+   * Delete the entity.
+   *
+   * @param id The entity Id.
+   * @param e An entity.
+   * @param <E> An entity type.
+   */
+  <E> void delete(Class<E> e, Object id);
 
-    /**
-     * Update the entity.
-     *
-     * @param e An entity.
-     * @param <E> An entity type.
-     * @return The same entity.
-     */
-    public <E> E update(E e);
+  /**
+   * Update the entity.
+   *
+   * @param e An entity.
+   * @param <E> An entity type.
+   * @return The same entity.
+   */
+  public <E> E update(E e);
 
-    /** Delete all air load tables. */
-    public <E> void deleteAll(Class<E> e);
+  /** Delete all air load tables. */
+  public <E> void deleteAll(Class<E> e);
 }

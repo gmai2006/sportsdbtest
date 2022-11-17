@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.BaseballDefensiveStatsDao;
-import com.sportsdb.test.entity.BaseballDefensiveStats;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.BaseballDefensiveStatsDao;
+import com.sportsdb.test.entity.BaseballDefensiveStats;
 
 @Stateless
 @Named("DefaultBaseballDefensiveStatsService")
 public class DefaultBaseballDefensiveStatsService implements BaseballDefensiveStatsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final BaseballDefensiveStatsDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final BaseballDefensiveStatsDao dao;
 
-    @Inject
-    @Named("DefaultBaseballDefensiveStatsDao")
-    public DefaultBaseballDefensiveStatsService(final BaseballDefensiveStatsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultBaseballDefensiveStatsDao")
+  public DefaultBaseballDefensiveStatsService(final BaseballDefensiveStatsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BaseballDefensiveStats find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public BaseballDefensiveStats find(java.lang.Integer id) {
 
-        final BaseballDefensiveStats result = dao.find(id);
-        logger.info("find(BaseballDefensiveStats) - exited - return value={} result ");
-        return result;
-    }
+    final BaseballDefensiveStats result = dao.find(id);
+    logger.info("find(BaseballDefensiveStats) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<BaseballDefensiveStats> select(int maxResult) {
-        final List<BaseballDefensiveStats> result = dao.select(maxResult);
-        logger.info("select(BaseballDefensiveStats) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<BaseballDefensiveStats> select(int maxResult) {
+    final List<BaseballDefensiveStats> result = dao.select(maxResult);
+    logger.info("select(BaseballDefensiveStats) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<BaseballDefensiveStats> selectAll() {
-        final List<BaseballDefensiveStats> results = dao.selectAll();
-        logger.info("selectAll(BaseballDefensiveStats) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<BaseballDefensiveStats> selectAll() {
+    final List<BaseballDefensiveStats> results = dao.selectAll();
+    logger.info("selectAll(BaseballDefensiveStats) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BaseballDefensiveStats create(BaseballDefensiveStats bean) {
-        requireNonNull(bean);
-        logger.info("create(BaseballDefensiveStats={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public BaseballDefensiveStats create(BaseballDefensiveStats bean) {
+    requireNonNull(bean);
+    logger.info("create(BaseballDefensiveStats={}) - entered bean ");
 
-        final BaseballDefensiveStats result = dao.create(bean);
+    final BaseballDefensiveStats result = dao.create(bean);
 
-        logger.info("create(BaseballDefensiveStats) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(BaseballDefensiveStats) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BaseballDefensiveStats update(BaseballDefensiveStats bean) {
-        requireNonNull(bean);
-        logger.info("update(BaseballDefensiveStats={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public BaseballDefensiveStats update(BaseballDefensiveStats bean) {
+    requireNonNull(bean);
+    logger.info("update(BaseballDefensiveStats={}) - entered bean ");
 
-        final BaseballDefensiveStats result = dao.update(bean);
+    final BaseballDefensiveStats result = dao.update(bean);
 
-        logger.info("update(BaseballDefensiveStats) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(BaseballDefensiveStats) - exited - return value={} result ");
+    return result;
+  }
 }

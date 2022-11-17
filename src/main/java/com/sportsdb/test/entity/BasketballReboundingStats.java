@@ -16,127 +16,127 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "basketball_rebounding_stats")
 public class BasketballReboundingStats implements Serializable {
-    private static final long serialVersionUID = 163445241889920895L;
+  private static final long serialVersionUID = 166867004227889745L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: rebounds_total. */
-    @Basic
-    @Column(name = "rebounds_total", length = 100)
-    private java.lang.String reboundsTotal;
-    /** Description: rebounds_per_game. */
-    @Basic
-    @Column(name = "rebounds_per_game", length = 100)
-    private java.lang.String reboundsPerGame;
-    /** Description: rebounds_defensive. */
-    @Basic
-    @Column(name = "rebounds_defensive", length = 100)
-    private java.lang.String reboundsDefensive;
-    /** Description: rebounds_offensive. */
-    @Basic
-    @Column(name = "rebounds_offensive", length = 100)
-    private java.lang.String reboundsOffensive;
-    /** Description: team_rebounds_total. */
-    @Basic
-    @Column(name = "team_rebounds_total", length = 100)
-    private java.lang.String teamReboundsTotal;
-    /** Description: team_rebounds_per_game. */
-    @Basic
-    @Column(name = "team_rebounds_per_game", length = 100)
-    private java.lang.String teamReboundsPerGame;
-    /** Description: team_rebounds_defensive. */
-    @Basic
-    @Column(name = "team_rebounds_defensive", length = 100)
-    private java.lang.String teamReboundsDefensive;
-    /** Description: team_rebounds_offensive. */
-    @Basic
-    @Column(name = "team_rebounds_offensive", length = 100)
-    private java.lang.String teamReboundsOffensive;
+  /** Description: rebounds_total. */
+  @Basic
+  @Column(name = "rebounds_total", length = 100)
+  private java.lang.String reboundsTotal;
+  /** Description: rebounds_per_game. */
+  @Basic
+  @Column(name = "rebounds_per_game", length = 100)
+  private java.lang.String reboundsPerGame;
+  /** Description: rebounds_defensive. */
+  @Basic
+  @Column(name = "rebounds_defensive", length = 100)
+  private java.lang.String reboundsDefensive;
+  /** Description: rebounds_offensive. */
+  @Basic
+  @Column(name = "rebounds_offensive", length = 100)
+  private java.lang.String reboundsOffensive;
+  /** Description: team_rebounds_total. */
+  @Basic
+  @Column(name = "team_rebounds_total", length = 100)
+  private java.lang.String teamReboundsTotal;
+  /** Description: team_rebounds_per_game. */
+  @Basic
+  @Column(name = "team_rebounds_per_game", length = 100)
+  private java.lang.String teamReboundsPerGame;
+  /** Description: team_rebounds_defensive. */
+  @Basic
+  @Column(name = "team_rebounds_defensive", length = 100)
+  private java.lang.String teamReboundsDefensive;
+  /** Description: team_rebounds_offensive. */
+  @Basic
+  @Column(name = "team_rebounds_offensive", length = 100)
+  private java.lang.String teamReboundsOffensive;
 
-    public BasketballReboundingStats() {}
+  public BasketballReboundingStats() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.String getReboundsTotal() {
-        return this.reboundsTotal;
-    }
+  public java.lang.String getReboundsTotal() {
+    return this.reboundsTotal;
+  }
 
-    public java.lang.String getReboundsPerGame() {
-        return this.reboundsPerGame;
-    }
+  public java.lang.String getReboundsPerGame() {
+    return this.reboundsPerGame;
+  }
 
-    public java.lang.String getReboundsDefensive() {
-        return this.reboundsDefensive;
-    }
+  public java.lang.String getReboundsDefensive() {
+    return this.reboundsDefensive;
+  }
 
-    public java.lang.String getReboundsOffensive() {
-        return this.reboundsOffensive;
-    }
+  public java.lang.String getReboundsOffensive() {
+    return this.reboundsOffensive;
+  }
 
-    public java.lang.String getTeamReboundsTotal() {
-        return this.teamReboundsTotal;
-    }
+  public java.lang.String getTeamReboundsTotal() {
+    return this.teamReboundsTotal;
+  }
 
-    public java.lang.String getTeamReboundsPerGame() {
-        return this.teamReboundsPerGame;
-    }
+  public java.lang.String getTeamReboundsPerGame() {
+    return this.teamReboundsPerGame;
+  }
 
-    public java.lang.String getTeamReboundsDefensive() {
-        return this.teamReboundsDefensive;
-    }
+  public java.lang.String getTeamReboundsDefensive() {
+    return this.teamReboundsDefensive;
+  }
 
-    public java.lang.String getTeamReboundsOffensive() {
-        return this.teamReboundsOffensive;
-    }
+  public java.lang.String getTeamReboundsOffensive() {
+    return this.teamReboundsOffensive;
+  }
 
-    public void setReboundsTotal(java.lang.String reboundsTotal) {
-        this.reboundsTotal = reboundsTotal;
-    }
+  public void setReboundsTotal(java.lang.String reboundsTotal) {
+    this.reboundsTotal = reboundsTotal;
+  }
 
-    public void setReboundsPerGame(java.lang.String reboundsPerGame) {
-        this.reboundsPerGame = reboundsPerGame;
-    }
+  public void setReboundsPerGame(java.lang.String reboundsPerGame) {
+    this.reboundsPerGame = reboundsPerGame;
+  }
 
-    public void setReboundsDefensive(java.lang.String reboundsDefensive) {
-        this.reboundsDefensive = reboundsDefensive;
-    }
+  public void setReboundsDefensive(java.lang.String reboundsDefensive) {
+    this.reboundsDefensive = reboundsDefensive;
+  }
 
-    public void setReboundsOffensive(java.lang.String reboundsOffensive) {
-        this.reboundsOffensive = reboundsOffensive;
-    }
+  public void setReboundsOffensive(java.lang.String reboundsOffensive) {
+    this.reboundsOffensive = reboundsOffensive;
+  }
 
-    public void setTeamReboundsTotal(java.lang.String teamReboundsTotal) {
-        this.teamReboundsTotal = teamReboundsTotal;
-    }
+  public void setTeamReboundsTotal(java.lang.String teamReboundsTotal) {
+    this.teamReboundsTotal = teamReboundsTotal;
+  }
 
-    public void setTeamReboundsPerGame(java.lang.String teamReboundsPerGame) {
-        this.teamReboundsPerGame = teamReboundsPerGame;
-    }
+  public void setTeamReboundsPerGame(java.lang.String teamReboundsPerGame) {
+    this.teamReboundsPerGame = teamReboundsPerGame;
+  }
 
-    public void setTeamReboundsDefensive(java.lang.String teamReboundsDefensive) {
-        this.teamReboundsDefensive = teamReboundsDefensive;
-    }
+  public void setTeamReboundsDefensive(java.lang.String teamReboundsDefensive) {
+    this.teamReboundsDefensive = teamReboundsDefensive;
+  }
 
-    public void setTeamReboundsOffensive(java.lang.String teamReboundsOffensive) {
-        this.teamReboundsOffensive = teamReboundsOffensive;
-    }
+  public void setTeamReboundsOffensive(java.lang.String teamReboundsOffensive) {
+    this.teamReboundsOffensive = teamReboundsOffensive;
+  }
 }

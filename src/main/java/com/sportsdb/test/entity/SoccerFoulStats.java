@@ -16,115 +16,115 @@
  */
 package com.sportsdb.test.entity;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Basic;
 
 @Entity
 @Table(name = "soccer_foul_stats")
 public class SoccerFoulStats implements Serializable {
-    private static final long serialVersionUID = 163445241928182091L;
+  private static final long serialVersionUID = 166867004253343340L;
 
-    /** Description: id. */
-    @javax.validation.constraints.NotNull
-    @javax.persistence.Id
-    @Column(name = "id")
-    private java.lang.Integer id;
+  /** Description: id. */
+  @javax.validation.constraints.NotNull
+  @javax.persistence.Id
+  @Column(name = "id")
+  private java.lang.Integer id;
 
-    /** Description: fouls_suffered. */
-    @Basic
-    @Column(name = "fouls_suffered", length = 100)
-    private java.lang.String foulsSuffered;
-    /** Description: fouls_commited. */
-    @Basic
-    @Column(name = "fouls_commited", length = 100)
-    private java.lang.String foulsCommited;
-    /** Description: cautions_total. */
-    @Basic
-    @Column(name = "cautions_total", length = 100)
-    private java.lang.String cautionsTotal;
-    /** Description: cautions_pending. */
-    @Basic
-    @Column(name = "cautions_pending", length = 100)
-    private java.lang.String cautionsPending;
-    /** Description: caution_points_total. */
-    @Basic
-    @Column(name = "caution_points_total", length = 100)
-    private java.lang.String cautionPointsTotal;
-    /** Description: caution_points_pending. */
-    @Basic
-    @Column(name = "caution_points_pending", length = 100)
-    private java.lang.String cautionPointsPending;
-    /** Description: ejections_total. */
-    @Basic
-    @Column(name = "ejections_total", length = 100)
-    private java.lang.String ejectionsTotal;
+  /** Description: fouls_suffered. */
+  @Basic
+  @Column(name = "fouls_suffered", length = 100)
+  private java.lang.String foulsSuffered;
+  /** Description: fouls_commited. */
+  @Basic
+  @Column(name = "fouls_commited", length = 100)
+  private java.lang.String foulsCommited;
+  /** Description: cautions_total. */
+  @Basic
+  @Column(name = "cautions_total", length = 100)
+  private java.lang.String cautionsTotal;
+  /** Description: cautions_pending. */
+  @Basic
+  @Column(name = "cautions_pending", length = 100)
+  private java.lang.String cautionsPending;
+  /** Description: caution_points_total. */
+  @Basic
+  @Column(name = "caution_points_total", length = 100)
+  private java.lang.String cautionPointsTotal;
+  /** Description: caution_points_pending. */
+  @Basic
+  @Column(name = "caution_points_pending", length = 100)
+  private java.lang.String cautionPointsPending;
+  /** Description: ejections_total. */
+  @Basic
+  @Column(name = "ejections_total", length = 100)
+  private java.lang.String ejectionsTotal;
 
-    public SoccerFoulStats() {}
+  public SoccerFoulStats() {}
 
-    public java.lang.Integer getId() {
-        return this.id;
-    }
+  public java.lang.Integer getId() {
+    return this.id;
+  }
 
-    public void setId(java.lang.Integer id) {
-        this.id = id;
-    }
+  public void setId(java.lang.Integer id) {
+    this.id = id;
+  }
 
-    public java.lang.String getFoulsSuffered() {
-        return this.foulsSuffered;
-    }
+  public java.lang.String getFoulsSuffered() {
+    return this.foulsSuffered;
+  }
 
-    public java.lang.String getFoulsCommited() {
-        return this.foulsCommited;
-    }
+  public java.lang.String getFoulsCommited() {
+    return this.foulsCommited;
+  }
 
-    public java.lang.String getCautionsTotal() {
-        return this.cautionsTotal;
-    }
+  public java.lang.String getCautionsTotal() {
+    return this.cautionsTotal;
+  }
 
-    public java.lang.String getCautionsPending() {
-        return this.cautionsPending;
-    }
+  public java.lang.String getCautionsPending() {
+    return this.cautionsPending;
+  }
 
-    public java.lang.String getCautionPointsTotal() {
-        return this.cautionPointsTotal;
-    }
+  public java.lang.String getCautionPointsTotal() {
+    return this.cautionPointsTotal;
+  }
 
-    public java.lang.String getCautionPointsPending() {
-        return this.cautionPointsPending;
-    }
+  public java.lang.String getCautionPointsPending() {
+    return this.cautionPointsPending;
+  }
 
-    public java.lang.String getEjectionsTotal() {
-        return this.ejectionsTotal;
-    }
+  public java.lang.String getEjectionsTotal() {
+    return this.ejectionsTotal;
+  }
 
-    public void setFoulsSuffered(java.lang.String foulsSuffered) {
-        this.foulsSuffered = foulsSuffered;
-    }
+  public void setFoulsSuffered(java.lang.String foulsSuffered) {
+    this.foulsSuffered = foulsSuffered;
+  }
 
-    public void setFoulsCommited(java.lang.String foulsCommited) {
-        this.foulsCommited = foulsCommited;
-    }
+  public void setFoulsCommited(java.lang.String foulsCommited) {
+    this.foulsCommited = foulsCommited;
+  }
 
-    public void setCautionsTotal(java.lang.String cautionsTotal) {
-        this.cautionsTotal = cautionsTotal;
-    }
+  public void setCautionsTotal(java.lang.String cautionsTotal) {
+    this.cautionsTotal = cautionsTotal;
+  }
 
-    public void setCautionsPending(java.lang.String cautionsPending) {
-        this.cautionsPending = cautionsPending;
-    }
+  public void setCautionsPending(java.lang.String cautionsPending) {
+    this.cautionsPending = cautionsPending;
+  }
 
-    public void setCautionPointsTotal(java.lang.String cautionPointsTotal) {
-        this.cautionPointsTotal = cautionPointsTotal;
-    }
+  public void setCautionPointsTotal(java.lang.String cautionPointsTotal) {
+    this.cautionPointsTotal = cautionPointsTotal;
+  }
 
-    public void setCautionPointsPending(java.lang.String cautionPointsPending) {
-        this.cautionPointsPending = cautionPointsPending;
-    }
+  public void setCautionPointsPending(java.lang.String cautionPointsPending) {
+    this.cautionPointsPending = cautionPointsPending;
+  }
 
-    public void setEjectionsTotal(java.lang.String ejectionsTotal) {
-        this.ejectionsTotal = ejectionsTotal;
-    }
+  public void setEjectionsTotal(java.lang.String ejectionsTotal) {
+    this.ejectionsTotal = ejectionsTotal;
+  }
 }

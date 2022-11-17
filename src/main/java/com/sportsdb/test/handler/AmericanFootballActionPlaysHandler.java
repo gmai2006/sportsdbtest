@@ -16,58 +16,60 @@
  */
 package com.sportsdb.test.handler;
 
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.entity.AmericanFootballActionPlays;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.nio.charset.StandardCharsets;
+import com.sportsdb.test.entity.AmericanFootballActionPlays;
+import com.sportsdb.test.dao.JpaDao;
+
+import com.sportsdb.test.utils.DelimiterParser;
 
 // @Stateless
 @Named("AmericanFootballActionPlaysHandler")
 public class AmericanFootballActionPlaysHandler
-        extends DelimiterFileHandler<AmericanFootballActionPlays> {
+    extends DelimiterFileHandler<AmericanFootballActionPlays> {
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public AmericanFootballActionPlaysHandler(final JpaDao dao) {
-        super(dao);
+  @Inject
+  @Named("DefaultJpaDao")
+  public AmericanFootballActionPlaysHandler(final JpaDao dao) {
+    super(dao);
+  }
+
+  @Override
+  protected AmericanFootballActionPlays parseLine(List<String> headers, List<String> tokens) {
+    AmericanFootballActionPlays record = new AmericanFootballActionPlays();
+    for (int i = 0; i < tokens.size(); i++) {
+      switch (headers.get(i)) {
+        case "id":
+          record.setId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "americanFootballEventStateId":
+          record.setAmericanFootballEventStateId(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "playType":
+          record.setPlayType(tokens.get(i));
+          break;
+
+        case "scoreAttemptType":
+          record.setScoreAttemptType(tokens.get(i));
+          break;
+
+        case "driveResult":
+          record.setDriveResult(tokens.get(i));
+          break;
+
+        case "points":
+          record.setPoints(java.lang.Integer.valueOf((tokens.get(i))));
+          break;
+        case "comment":
+          record.setComment(tokens.get(i));
+          break;
+
+        default:
+          logger.severe("Unknown col " + headers.get(i));
+      }
     }
-
-    @Override
-    protected AmericanFootballActionPlays parseLine(List<String> headers, List<String> tokens) {
-        AmericanFootballActionPlays record = new AmericanFootballActionPlays();
-        for (int i = 0; i < tokens.size(); i++) {
-            switch (headers.get(i)) {
-                case "id":
-                    record.setId(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "americanFootballEventStateId":
-                    record.setAmericanFootballEventStateId(
-                            java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "playType":
-                    record.setPlayType(tokens.get(i));
-                    break;
-
-                case "scoreAttemptType":
-                    record.setScoreAttemptType(tokens.get(i));
-                    break;
-
-                case "driveResult":
-                    record.setDriveResult(tokens.get(i));
-                    break;
-
-                case "points":
-                    record.setPoints(java.lang.Integer.valueOf((tokens.get(i))));
-                    break;
-                case "comment":
-                    record.setComment(tokens.get(i));
-                    break;
-
-                default:
-                    logger.severe("Unknown col " + headers.get(i));
-            }
-        }
-        return record;
-    }
+    return record;
+  }
 }

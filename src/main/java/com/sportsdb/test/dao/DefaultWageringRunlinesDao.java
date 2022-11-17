@@ -16,57 +16,60 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.WageringRunlines;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.WageringRunlines;
 
 @Stateless
 @Named("DefaultWageringRunlinesDao")
 public class DefaultWageringRunlinesDao implements WageringRunlinesDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultWageringRunlinesDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultWageringRunlinesDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultWageringRunlinesDao() {}
+  public DefaultWageringRunlinesDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public WageringRunlines find(java.lang.Integer id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(WageringRunlines.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public WageringRunlines find(java.lang.Integer id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(WageringRunlines.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<WageringRunlines> select(int max) {
-        return dao.select("select a from WageringRunlines a", WageringRunlines.class, max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<WageringRunlines> select(int max) {
+    return dao.select("select a from WageringRunlines a", WageringRunlines.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<WageringRunlines> selectAll() {
-        return dao.selectAll("select a from WageringRunlines a", WageringRunlines.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<WageringRunlines> selectAll() {
+    return dao.selectAll("select a from WageringRunlines a", WageringRunlines.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public WageringRunlines create(WageringRunlines e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public WageringRunlines create(WageringRunlines e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public WageringRunlines update(WageringRunlines e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public WageringRunlines update(WageringRunlines e) {
+    return dao.update(e);
+  }
 }

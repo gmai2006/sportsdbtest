@@ -16,41 +16,41 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.AmericanFootballActionParticipants;
 import java.util.List;
+import com.sportsdb.test.entity.AmericanFootballActionParticipants;
 
 public interface AmericanFootballActionParticipantsService {
-    public AmericanFootballActionParticipants find(java.lang.Integer id);
+  public AmericanFootballActionParticipants find(java.lang.Integer id);
 
-    /**
-     * Select a list of AmericanFootballActionParticipants based on a given maximum number of
-     * returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return AmericanFootballActionParticipants records.
-     */
-    public List<AmericanFootballActionParticipants> select(int maxResult);
+  /**
+   * Select a list of AmericanFootballActionParticipants based on a given maximum number of
+   * returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return AmericanFootballActionParticipants records.
+   */
+  public List<AmericanFootballActionParticipants> select(int maxResult);
 
-    /**
-     * Select all AmericanFootballActionParticipants.
-     *
-     * @return all AmericanFootballActionParticipants records.
-     */
-    public List<AmericanFootballActionParticipants> selectAll();
+  /**
+   * Select all AmericanFootballActionParticipants.
+   *
+   * @return all AmericanFootballActionParticipants records.
+   */
+  public List<AmericanFootballActionParticipants> selectAll();
 
-    /**
-     * Create AmericanFootballActionParticipants.
-     *
-     * @param bean The AmericanFootballActionParticipants.
-     * @return The AmericanFootballActionParticipants.
-     */
-    public AmericanFootballActionParticipants create(AmericanFootballActionParticipants bean);
+  /**
+   * Create AmericanFootballActionParticipants.
+   *
+   * @param bean The AmericanFootballActionParticipants.
+   * @return The AmericanFootballActionParticipants.
+   */
+  public AmericanFootballActionParticipants create(AmericanFootballActionParticipants bean);
 
-    /**
-     * Update a AmericanFootballActionParticipants.
-     *
-     * @param bean - The AmericanFootballActionParticipants.
-     * @return AmericanFootballActionParticipants.
-     */
-    public AmericanFootballActionParticipants update(AmericanFootballActionParticipants bean);
+  /**
+   * Update a AmericanFootballActionParticipants.
+   *
+   * @param bean - The AmericanFootballActionParticipants.
+   * @return AmericanFootballActionParticipants.
+   */
+  public AmericanFootballActionParticipants update(AmericanFootballActionParticipants bean);
 }

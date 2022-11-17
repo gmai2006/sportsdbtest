@@ -16,41 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.IceHockeyOffensiveStats;
 import java.util.List;
+import com.sportsdb.test.entity.IceHockeyOffensiveStats;
 
 public interface IceHockeyOffensiveStatsService {
-    public IceHockeyOffensiveStats find(java.lang.Integer id);
+  public IceHockeyOffensiveStats find(java.lang.Integer id);
 
-    /**
-     * Select a list of IceHockeyOffensiveStats based on a given maximum number of returning
-     * records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return IceHockeyOffensiveStats records.
-     */
-    public List<IceHockeyOffensiveStats> select(int maxResult);
+  /**
+   * Select a list of IceHockeyOffensiveStats based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return IceHockeyOffensiveStats records.
+   */
+  public List<IceHockeyOffensiveStats> select(int maxResult);
 
-    /**
-     * Select all IceHockeyOffensiveStats.
-     *
-     * @return all IceHockeyOffensiveStats records.
-     */
-    public List<IceHockeyOffensiveStats> selectAll();
+  /**
+   * Select all IceHockeyOffensiveStats.
+   *
+   * @return all IceHockeyOffensiveStats records.
+   */
+  public List<IceHockeyOffensiveStats> selectAll();
 
-    /**
-     * Create IceHockeyOffensiveStats.
-     *
-     * @param bean The IceHockeyOffensiveStats.
-     * @return The IceHockeyOffensiveStats.
-     */
-    public IceHockeyOffensiveStats create(IceHockeyOffensiveStats bean);
+  /**
+   * Create IceHockeyOffensiveStats.
+   *
+   * @param bean The IceHockeyOffensiveStats.
+   * @return The IceHockeyOffensiveStats.
+   */
+  public IceHockeyOffensiveStats create(IceHockeyOffensiveStats bean);
 
-    /**
-     * Update a IceHockeyOffensiveStats.
-     *
-     * @param bean - The IceHockeyOffensiveStats.
-     * @return IceHockeyOffensiveStats.
-     */
-    public IceHockeyOffensiveStats update(IceHockeyOffensiveStats bean);
+  /**
+   * Update a IceHockeyOffensiveStats.
+   *
+   * @param bean - The IceHockeyOffensiveStats.
+   * @return IceHockeyOffensiveStats.
+   */
+  public IceHockeyOffensiveStats update(IceHockeyOffensiveStats bean);
 }

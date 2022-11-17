@@ -16,57 +16,60 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.PersonEventMetadata;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.PersonEventMetadata;
 
 @Stateless
 @Named("DefaultPersonEventMetadataDao")
 public class DefaultPersonEventMetadataDao implements PersonEventMetadataDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultPersonEventMetadataDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultPersonEventMetadataDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultPersonEventMetadataDao() {}
+  public DefaultPersonEventMetadataDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public PersonEventMetadata find(java.lang.Integer id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(PersonEventMetadata.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public PersonEventMetadata find(java.lang.Integer id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(PersonEventMetadata.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<PersonEventMetadata> select(int max) {
-        return dao.select("select a from PersonEventMetadata a", PersonEventMetadata.class, max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<PersonEventMetadata> select(int max) {
+    return dao.select("select a from PersonEventMetadata a", PersonEventMetadata.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<PersonEventMetadata> selectAll() {
-        return dao.selectAll("select a from PersonEventMetadata a", PersonEventMetadata.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<PersonEventMetadata> selectAll() {
+    return dao.selectAll("select a from PersonEventMetadata a", PersonEventMetadata.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public PersonEventMetadata create(PersonEventMetadata e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public PersonEventMetadata create(PersonEventMetadata e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public PersonEventMetadata update(PersonEventMetadata e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public PersonEventMetadata update(PersonEventMetadata e) {
+    return dao.update(e);
+  }
 }

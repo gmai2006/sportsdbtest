@@ -16,57 +16,60 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.TeamsDocuments;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.TeamsDocuments;
 
 @Stateless
 @Named("DefaultTeamsDocumentsDao")
 public class DefaultTeamsDocumentsDao implements TeamsDocumentsDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultTeamsDocumentsDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultTeamsDocumentsDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultTeamsDocumentsDao() {}
+  public DefaultTeamsDocumentsDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public TeamsDocuments find(java.lang.String id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(TeamsDocuments.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public TeamsDocuments find(java.lang.String id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(TeamsDocuments.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<TeamsDocuments> select(int max) {
-        return dao.select("select a from TeamsDocuments a", TeamsDocuments.class, max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<TeamsDocuments> select(int max) {
+    return dao.select("select a from TeamsDocuments a", TeamsDocuments.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<TeamsDocuments> selectAll() {
-        return dao.selectAll("select a from TeamsDocuments a", TeamsDocuments.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<TeamsDocuments> selectAll() {
+    return dao.selectAll("select a from TeamsDocuments a", TeamsDocuments.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public TeamsDocuments create(TeamsDocuments e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public TeamsDocuments create(TeamsDocuments e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public TeamsDocuments update(TeamsDocuments e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public TeamsDocuments update(TeamsDocuments e) {
+    return dao.update(e);
+  }
 }

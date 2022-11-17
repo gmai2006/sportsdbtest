@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.BasketballReboundingStatsDao;
-import com.sportsdb.test.entity.BasketballReboundingStats;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.BasketballReboundingStatsDao;
+import com.sportsdb.test.entity.BasketballReboundingStats;
 
 @Stateless
 @Named("DefaultBasketballReboundingStatsService")
 public class DefaultBasketballReboundingStatsService implements BasketballReboundingStatsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final BasketballReboundingStatsDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final BasketballReboundingStatsDao dao;
 
-    @Inject
-    @Named("DefaultBasketballReboundingStatsDao")
-    public DefaultBasketballReboundingStatsService(final BasketballReboundingStatsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultBasketballReboundingStatsDao")
+  public DefaultBasketballReboundingStatsService(final BasketballReboundingStatsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BasketballReboundingStats find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public BasketballReboundingStats find(java.lang.Integer id) {
 
-        final BasketballReboundingStats result = dao.find(id);
-        logger.info("find(BasketballReboundingStats) - exited - return value={} result ");
-        return result;
-    }
+    final BasketballReboundingStats result = dao.find(id);
+    logger.info("find(BasketballReboundingStats) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<BasketballReboundingStats> select(int maxResult) {
-        final List<BasketballReboundingStats> result = dao.select(maxResult);
-        logger.info("select(BasketballReboundingStats) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<BasketballReboundingStats> select(int maxResult) {
+    final List<BasketballReboundingStats> result = dao.select(maxResult);
+    logger.info("select(BasketballReboundingStats) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<BasketballReboundingStats> selectAll() {
-        final List<BasketballReboundingStats> results = dao.selectAll();
-        logger.info("selectAll(BasketballReboundingStats) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<BasketballReboundingStats> selectAll() {
+    final List<BasketballReboundingStats> results = dao.selectAll();
+    logger.info("selectAll(BasketballReboundingStats) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BasketballReboundingStats create(BasketballReboundingStats bean) {
-        requireNonNull(bean);
-        logger.info("create(BasketballReboundingStats={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public BasketballReboundingStats create(BasketballReboundingStats bean) {
+    requireNonNull(bean);
+    logger.info("create(BasketballReboundingStats={}) - entered bean ");
 
-        final BasketballReboundingStats result = dao.create(bean);
+    final BasketballReboundingStats result = dao.create(bean);
 
-        logger.info("create(BasketballReboundingStats) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(BasketballReboundingStats) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public BasketballReboundingStats update(BasketballReboundingStats bean) {
-        requireNonNull(bean);
-        logger.info("update(BasketballReboundingStats={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public BasketballReboundingStats update(BasketballReboundingStats bean) {
+    requireNonNull(bean);
+    logger.info("update(BasketballReboundingStats={}) - entered bean ");
 
-        final BasketballReboundingStats result = dao.update(bean);
+    final BasketballReboundingStats result = dao.update(bean);
 
-        logger.info("update(BasketballReboundingStats) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(BasketballReboundingStats) - exited - return value={} result ");
+    return result;
+  }
 }

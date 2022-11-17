@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.AffiliationPhases;
 import java.util.List;
+import com.sportsdb.test.entity.AffiliationPhases;
 
 public interface AffiliationPhasesDao {
-    /**
-     * Retrieve all records AffiliationPhases.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of AffiliationPhases
-     */
-    public List<AffiliationPhases> select(int maxResult);
+  /**
+   * Retrieve all records AffiliationPhases.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of AffiliationPhases
+   */
+  public List<AffiliationPhases> select(int maxResult);
 
-    /**
-     * Retrieve all records AffiliationPhases.
-     *
-     * @return A list of AffiliationPhases
-     */
-    public List<AffiliationPhases> selectAll();
+  /**
+   * Retrieve all records AffiliationPhases.
+   *
+   * @return A list of AffiliationPhases
+   */
+  public List<AffiliationPhases> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An AffiliationPhases id.
-     * @return The same AffiliationPhases.
-     */
-    public AffiliationPhases find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An AffiliationPhases id.
+   * @return The same AffiliationPhases.
+   */
+  public AffiliationPhases find(java.lang.Integer id);
 
-    /**
-     * Create an AffiliationPhases.
-     *
-     * @param e the AffiliationPhases.
-     * @return The same AffiliationPhases.
-     */
-    public AffiliationPhases create(AffiliationPhases e);
+  /**
+   * Create an AffiliationPhases.
+   *
+   * @param e the AffiliationPhases.
+   * @return The same AffiliationPhases.
+   */
+  public AffiliationPhases create(AffiliationPhases e);
 
-    /**
-     * Update the AffiliationPhases.
-     *
-     * @param e the AffiliationPhases.
-     * @return The same AffiliationPhases.
-     */
-    public AffiliationPhases update(AffiliationPhases e);
+  /**
+   * Update the AffiliationPhases.
+   *
+   * @param e the AffiliationPhases.
+   * @return The same AffiliationPhases.
+   */
+  public AffiliationPhases update(AffiliationPhases e);
 }

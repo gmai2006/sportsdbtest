@@ -16,57 +16,60 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.SoccerFoulStats;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.SoccerFoulStats;
 
 @Stateless
 @Named("DefaultSoccerFoulStatsDao")
 public class DefaultSoccerFoulStatsDao implements SoccerFoulStatsDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultSoccerFoulStatsDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultSoccerFoulStatsDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultSoccerFoulStatsDao() {}
+  public DefaultSoccerFoulStatsDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public SoccerFoulStats find(java.lang.Integer id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(SoccerFoulStats.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public SoccerFoulStats find(java.lang.Integer id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(SoccerFoulStats.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<SoccerFoulStats> select(int max) {
-        return dao.select("select a from SoccerFoulStats a", SoccerFoulStats.class, max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<SoccerFoulStats> select(int max) {
+    return dao.select("select a from SoccerFoulStats a", SoccerFoulStats.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<SoccerFoulStats> selectAll() {
-        return dao.selectAll("select a from SoccerFoulStats a", SoccerFoulStats.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<SoccerFoulStats> selectAll() {
+    return dao.selectAll("select a from SoccerFoulStats a", SoccerFoulStats.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public SoccerFoulStats create(SoccerFoulStats e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public SoccerFoulStats create(SoccerFoulStats e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public SoccerFoulStats update(SoccerFoulStats e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public SoccerFoulStats update(SoccerFoulStats e) {
+    return dao.update(e);
+  }
 }

@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.LatestRevisions;
 import java.util.List;
+import com.sportsdb.test.entity.LatestRevisions;
 
 public interface LatestRevisionsService {
-    public LatestRevisions find(java.lang.Integer id);
+  public LatestRevisions find(java.lang.Integer id);
 
-    /**
-     * Select a list of LatestRevisions based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return LatestRevisions records.
-     */
-    public List<LatestRevisions> select(int maxResult);
+  /**
+   * Select a list of LatestRevisions based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return LatestRevisions records.
+   */
+  public List<LatestRevisions> select(int maxResult);
 
-    /**
-     * Select all LatestRevisions.
-     *
-     * @return all LatestRevisions records.
-     */
-    public List<LatestRevisions> selectAll();
+  /**
+   * Select all LatestRevisions.
+   *
+   * @return all LatestRevisions records.
+   */
+  public List<LatestRevisions> selectAll();
 
-    /**
-     * Create LatestRevisions.
-     *
-     * @param bean The LatestRevisions.
-     * @return The LatestRevisions.
-     */
-    public LatestRevisions create(LatestRevisions bean);
+  /**
+   * Create LatestRevisions.
+   *
+   * @param bean The LatestRevisions.
+   * @return The LatestRevisions.
+   */
+  public LatestRevisions create(LatestRevisions bean);
 
-    /**
-     * Update a LatestRevisions.
-     *
-     * @param bean - The LatestRevisions.
-     * @return LatestRevisions.
-     */
-    public LatestRevisions update(LatestRevisions bean);
+  /**
+   * Update a LatestRevisions.
+   *
+   * @param bean - The LatestRevisions.
+   * @return LatestRevisions.
+   */
+  public LatestRevisions update(LatestRevisions bean);
 }

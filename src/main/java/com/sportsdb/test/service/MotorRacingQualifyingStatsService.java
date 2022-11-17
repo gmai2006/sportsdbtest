@@ -16,41 +16,41 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.MotorRacingQualifyingStats;
 import java.util.List;
+import com.sportsdb.test.entity.MotorRacingQualifyingStats;
 
 public interface MotorRacingQualifyingStatsService {
-    public MotorRacingQualifyingStats find(java.lang.Integer id);
+  public MotorRacingQualifyingStats find(java.lang.Integer id);
 
-    /**
-     * Select a list of MotorRacingQualifyingStats based on a given maximum number of returning
-     * records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return MotorRacingQualifyingStats records.
-     */
-    public List<MotorRacingQualifyingStats> select(int maxResult);
+  /**
+   * Select a list of MotorRacingQualifyingStats based on a given maximum number of returning
+   * records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return MotorRacingQualifyingStats records.
+   */
+  public List<MotorRacingQualifyingStats> select(int maxResult);
 
-    /**
-     * Select all MotorRacingQualifyingStats.
-     *
-     * @return all MotorRacingQualifyingStats records.
-     */
-    public List<MotorRacingQualifyingStats> selectAll();
+  /**
+   * Select all MotorRacingQualifyingStats.
+   *
+   * @return all MotorRacingQualifyingStats records.
+   */
+  public List<MotorRacingQualifyingStats> selectAll();
 
-    /**
-     * Create MotorRacingQualifyingStats.
-     *
-     * @param bean The MotorRacingQualifyingStats.
-     * @return The MotorRacingQualifyingStats.
-     */
-    public MotorRacingQualifyingStats create(MotorRacingQualifyingStats bean);
+  /**
+   * Create MotorRacingQualifyingStats.
+   *
+   * @param bean The MotorRacingQualifyingStats.
+   * @return The MotorRacingQualifyingStats.
+   */
+  public MotorRacingQualifyingStats create(MotorRacingQualifyingStats bean);
 
-    /**
-     * Update a MotorRacingQualifyingStats.
-     *
-     * @param bean - The MotorRacingQualifyingStats.
-     * @return MotorRacingQualifyingStats.
-     */
-    public MotorRacingQualifyingStats update(MotorRacingQualifyingStats bean);
+  /**
+   * Update a MotorRacingQualifyingStats.
+   *
+   * @param bean - The MotorRacingQualifyingStats.
+   * @return MotorRacingQualifyingStats.
+   */
+  public MotorRacingQualifyingStats update(MotorRacingQualifyingStats bean);
 }

@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.MotorRacingEventStatesDao;
-import com.sportsdb.test.entity.MotorRacingEventStates;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.MotorRacingEventStatesDao;
+import com.sportsdb.test.entity.MotorRacingEventStates;
 
 @Stateless
 @Named("DefaultMotorRacingEventStatesService")
 public class DefaultMotorRacingEventStatesService implements MotorRacingEventStatesService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final MotorRacingEventStatesDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final MotorRacingEventStatesDao dao;
 
-    @Inject
-    @Named("DefaultMotorRacingEventStatesDao")
-    public DefaultMotorRacingEventStatesService(final MotorRacingEventStatesDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultMotorRacingEventStatesDao")
+  public DefaultMotorRacingEventStatesService(final MotorRacingEventStatesDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public MotorRacingEventStates find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public MotorRacingEventStates find(java.lang.Integer id) {
 
-        final MotorRacingEventStates result = dao.find(id);
-        logger.info("find(MotorRacingEventStates) - exited - return value={} result ");
-        return result;
-    }
+    final MotorRacingEventStates result = dao.find(id);
+    logger.info("find(MotorRacingEventStates) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<MotorRacingEventStates> select(int maxResult) {
-        final List<MotorRacingEventStates> result = dao.select(maxResult);
-        logger.info("select(MotorRacingEventStates) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<MotorRacingEventStates> select(int maxResult) {
+    final List<MotorRacingEventStates> result = dao.select(maxResult);
+    logger.info("select(MotorRacingEventStates) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<MotorRacingEventStates> selectAll() {
-        final List<MotorRacingEventStates> results = dao.selectAll();
-        logger.info("selectAll(MotorRacingEventStates) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<MotorRacingEventStates> selectAll() {
+    final List<MotorRacingEventStates> results = dao.selectAll();
+    logger.info("selectAll(MotorRacingEventStates) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public MotorRacingEventStates create(MotorRacingEventStates bean) {
-        requireNonNull(bean);
-        logger.info("create(MotorRacingEventStates={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public MotorRacingEventStates create(MotorRacingEventStates bean) {
+    requireNonNull(bean);
+    logger.info("create(MotorRacingEventStates={}) - entered bean ");
 
-        final MotorRacingEventStates result = dao.create(bean);
+    final MotorRacingEventStates result = dao.create(bean);
 
-        logger.info("create(MotorRacingEventStates) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(MotorRacingEventStates) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public MotorRacingEventStates update(MotorRacingEventStates bean) {
-        requireNonNull(bean);
-        logger.info("update(MotorRacingEventStates={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public MotorRacingEventStates update(MotorRacingEventStates bean) {
+    requireNonNull(bean);
+    logger.info("update(MotorRacingEventStates={}) - entered bean ");
 
-        final MotorRacingEventStates result = dao.update(bean);
+    final MotorRacingEventStates result = dao.update(bean);
 
-        logger.info("update(MotorRacingEventStates) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(MotorRacingEventStates) - exited - return value={} result ");
+    return result;
+  }
 }

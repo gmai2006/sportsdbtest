@@ -17,73 +17,72 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.MotorRacingQualifyingStatsDao;
-import com.sportsdb.test.entity.MotorRacingQualifyingStats;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.MotorRacingQualifyingStatsDao;
+import com.sportsdb.test.entity.MotorRacingQualifyingStats;
 
 @Stateless
 @Named("DefaultMotorRacingQualifyingStatsService")
 public class DefaultMotorRacingQualifyingStatsService implements MotorRacingQualifyingStatsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final MotorRacingQualifyingStatsDao dao;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final MotorRacingQualifyingStatsDao dao;
 
-    @Inject
-    @Named("DefaultMotorRacingQualifyingStatsDao")
-    public DefaultMotorRacingQualifyingStatsService(final MotorRacingQualifyingStatsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultMotorRacingQualifyingStatsDao")
+  public DefaultMotorRacingQualifyingStatsService(final MotorRacingQualifyingStatsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public MotorRacingQualifyingStats find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public MotorRacingQualifyingStats find(java.lang.Integer id) {
 
-        final MotorRacingQualifyingStats result = dao.find(id);
-        logger.info("find(MotorRacingQualifyingStats) - exited - return value={} result ");
-        return result;
-    }
+    final MotorRacingQualifyingStats result = dao.find(id);
+    logger.info("find(MotorRacingQualifyingStats) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<MotorRacingQualifyingStats> select(int maxResult) {
-        final List<MotorRacingQualifyingStats> result = dao.select(maxResult);
-        logger.info("select(MotorRacingQualifyingStats) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<MotorRacingQualifyingStats> select(int maxResult) {
+    final List<MotorRacingQualifyingStats> result = dao.select(maxResult);
+    logger.info("select(MotorRacingQualifyingStats) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<MotorRacingQualifyingStats> selectAll() {
-        final List<MotorRacingQualifyingStats> results = dao.selectAll();
-        logger.info("selectAll(MotorRacingQualifyingStats) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<MotorRacingQualifyingStats> selectAll() {
+    final List<MotorRacingQualifyingStats> results = dao.selectAll();
+    logger.info("selectAll(MotorRacingQualifyingStats) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public MotorRacingQualifyingStats create(MotorRacingQualifyingStats bean) {
-        requireNonNull(bean);
-        logger.info("create(MotorRacingQualifyingStats={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public MotorRacingQualifyingStats create(MotorRacingQualifyingStats bean) {
+    requireNonNull(bean);
+    logger.info("create(MotorRacingQualifyingStats={}) - entered bean ");
 
-        final MotorRacingQualifyingStats result = dao.create(bean);
+    final MotorRacingQualifyingStats result = dao.create(bean);
 
-        logger.info("create(MotorRacingQualifyingStats) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(MotorRacingQualifyingStats) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public MotorRacingQualifyingStats update(MotorRacingQualifyingStats bean) {
-        requireNonNull(bean);
-        logger.info("update(MotorRacingQualifyingStats={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public MotorRacingQualifyingStats update(MotorRacingQualifyingStats bean) {
+    requireNonNull(bean);
+    logger.info("update(MotorRacingQualifyingStats={}) - entered bean ");
 
-        final MotorRacingQualifyingStats result = dao.update(bean);
+    final MotorRacingQualifyingStats result = dao.update(bean);
 
-        logger.info("update(MotorRacingQualifyingStats) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(MotorRacingQualifyingStats) - exited - return value={} result ");
+    return result;
+  }
 }

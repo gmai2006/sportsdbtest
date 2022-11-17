@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.MediaCaptions;
 import java.util.List;
+import com.sportsdb.test.entity.MediaCaptions;
 
 public interface MediaCaptionsDao {
-    /**
-     * Retrieve all records MediaCaptions.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of MediaCaptions
-     */
-    public List<MediaCaptions> select(int maxResult);
+  /**
+   * Retrieve all records MediaCaptions.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of MediaCaptions
+   */
+  public List<MediaCaptions> select(int maxResult);
 
-    /**
-     * Retrieve all records MediaCaptions.
-     *
-     * @return A list of MediaCaptions
-     */
-    public List<MediaCaptions> selectAll();
+  /**
+   * Retrieve all records MediaCaptions.
+   *
+   * @return A list of MediaCaptions
+   */
+  public List<MediaCaptions> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An MediaCaptions id.
-     * @return The same MediaCaptions.
-     */
-    public MediaCaptions find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An MediaCaptions id.
+   * @return The same MediaCaptions.
+   */
+  public MediaCaptions find(java.lang.Integer id);
 
-    /**
-     * Create an MediaCaptions.
-     *
-     * @param e the MediaCaptions.
-     * @return The same MediaCaptions.
-     */
-    public MediaCaptions create(MediaCaptions e);
+  /**
+   * Create an MediaCaptions.
+   *
+   * @param e the MediaCaptions.
+   * @return The same MediaCaptions.
+   */
+  public MediaCaptions create(MediaCaptions e);
 
-    /**
-     * Update the MediaCaptions.
-     *
-     * @param e the MediaCaptions.
-     * @return The same MediaCaptions.
-     */
-    public MediaCaptions update(MediaCaptions e);
+  /**
+   * Update the MediaCaptions.
+   *
+   * @param e the MediaCaptions.
+   * @return The same MediaCaptions.
+   */
+  public MediaCaptions update(MediaCaptions e);
 }

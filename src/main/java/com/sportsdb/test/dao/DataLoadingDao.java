@@ -20,38 +20,38 @@ import com.sportsdb.test.entity.DataLoadingStatus;
 
 public interface DataLoadingDao {
 
-    /**
-     * Create Entity.
-     *
-     * @param <E> The entity type.
-     * @param e The DataLoadingStatus.
-     * @return The DataLoadingStatus.
-     */
-    public <E> E create(E e);
+  /**
+   * Create Entity.
+   *
+   * @param <E> The entity type.
+   * @param e The DataLoadingStatus.
+   * @return The DataLoadingStatus.
+   */
+  public <E> E create(E e);
 
-    /**
-     * Update a Entity.
-     *
-     * @param e The DataLoadingStatus.
-     * @return DataLoadingStatus.
-     */
-    public DataLoadingStatus update(DataLoadingStatus e);
+  /**
+   * Update a Entity.
+   *
+   * @param e The DataLoadingStatus.
+   * @return DataLoadingStatus.
+   */
+  public DataLoadingStatus update(DataLoadingStatus e);
 
-    /**
-     * Get data loading status.
-     *
-     * @param type The DataLoadingStatus type.
-     * @return DataLoadingStatus.
-     */
-    public DataLoadingStatus getLoadingStatus(String type);
+  /**
+   * Get data loading status.
+   *
+   * @param type The DataLoadingStatus type.
+   * @return DataLoadingStatus.
+   */
+  public DataLoadingStatus getLoadingStatus(String type);
 
-    /**
-     * Delete the DataLoadingStatus.
-     *
-     * @param id The DataLoadingStatus Id.
-     */
-    public void delete(String id);
+  /**
+   * Delete the DataLoadingStatus.
+   *
+   * @param id The DataLoadingStatus Id.
+   */
+  public void delete(String id);
 
-    /** Delete all air load tables. */
-    public void deleteAll();
+  /** Delete all air load tables. */
+  public void deleteAll();
 }

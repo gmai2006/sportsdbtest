@@ -17,109 +17,85 @@
 package com.sportsdb.test.handler;
 
 import static org.junit.Assert.assertEquals;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.sportsdb.test.dao.JpaDao;
-import com.sportsdb.test.dao.StandaloneJpaDao;
-import com.sportsdb.test.entity.Documents;
-import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
-import com.sportsdb.test.utils.FileUtils;
+import java.io.IOException;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import org.json.CDL;
 import org.json.JSONArray;
+import com.google.gson.Gson;
+import com.sportsdb.test.entity.Documents;
+import com.sportsdb.test.dao.JpaDao;
+import com.sportsdb.test.dao.StandaloneJpaDao;
+import com.sportsdb.test.dao.DefaultDocumentsDao;
+import com.sportsdb.test.utils.DelimiterParser;
+import com.sportsdb.test.utils.FileUtils;
+import com.sportsdb.test.utils.ByteArrayToBase64TypeAdapter;
+
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import com.google.gson.GsonBuilder;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class DocumentsHandlerTestIt {
-    static final String inputFile = "Documents.json";
-    static DocumentsHandler handler;
-    private static JpaDao jpa;
-    static Gson gson =
-            new GsonBuilder()
-                    .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
-                    .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
-                    .create();
-    private Documents[] records;
+  static final String inputFile = "Documents.json";
+  static DocumentsHandler handler;
+  private static JpaDao jpa;
+  static Gson gson =
+      new GsonBuilder()
+          .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
+          .setDateFormat("yyyy-MM-dd HH:mm:ss.S")
+          .create();
+  private Documents[] records;
 
-    /** Run before the test. */
-    @BeforeClass
-    public static void before() {
-        final EntityManagerFactory factory =
-                Persistence.createEntityManagerFactory("testpersistence");
-        jpa = new StandaloneJpaDao(factory.createEntityManager());
-        handler = new DocumentsHandler(jpa);
-    }
+  /** Run before the test. */
+  @BeforeClass
+  public static void before() {
+    final EntityManagerFactory factory = Persistence.createEntityManagerFactory("testpersistence");
+    jpa = new StandaloneJpaDao(factory.createEntityManager());
+    handler = new DocumentsHandler(jpa);
+  }
 
-    @Test
-    public void testSelect() throws IOException {
-        final File tempFile =
-                createRecordInputStreamFromJsonFile(inputFile, Charset.defaultCharset());
-        final InputStream inputStream = new BufferedInputStream(new FileInputStream(tempFile));
-        int count = handler.process(inputStream);
-        String json = FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
-        records = gson.fromJson(json, Documents[].class);
-        assertEquals("match count", count, records.length);
-        Documents testResult = jpa.find(Documents.class, records[0].getId());
-        assertEquals("expect equals docId ", this.records[0].getDocId(), testResult.getDocId());
-        org.junit.Assert.assertEquals(
-                "expect equals publisherId ",
-                this.records[0].getPublisherId(),
-                testResult.getPublisherId());
-        assertEquals("expect equals title ", this.records[0].getTitle(), testResult.getTitle());
-        assertEquals(
-                "expect equals language ", this.records[0].getLanguage(), testResult.getLanguage());
-        assertEquals(
-                "expect equals priority ", this.records[0].getPriority(), testResult.getPriority());
-        assertEquals(
-                "expect equals revisionId ",
-                this.records[0].getRevisionId(),
-                testResult.getRevisionId());
-        assertEquals(
-                "expect equals statsCoverage ",
-                this.records[0].getStatsCoverage(),
-                testResult.getStatsCoverage());
-        org.junit.Assert.assertEquals(
-                "expect equals documentFixtureId ",
-                this.records[0].getDocumentFixtureId(),
-                testResult.getDocumentFixtureId());
-        org.junit.Assert.assertEquals(
-                "expect equals sourceId ", this.records[0].getSourceId(), testResult.getSourceId());
+  @Test
+  public void testSelect() throws IOException {
+    final File tempFile = new File("./src/test/resources/Documents.csv");
+    final InputStream inputStream = new BufferedInputStream(new FileInputStream(tempFile));
+    int count = handler.process(inputStream);
+    String json = FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
+    records = gson.fromJson(json, Documents[].class);
+    assertEquals("match count", count, records.length);
+    Documents testResult = jpa.find(Documents.class, records[0].getId());
+    assertEquals("expect equals docId ", this.records[0].getDocId(), testResult.getDocId());
+    org.junit.Assert.assertEquals(
+        "expect equals publisherId ",
+        this.records[0].getPublisherId(),
+        testResult.getPublisherId());
+    assertEquals("expect equals title ", this.records[0].getTitle(), testResult.getTitle());
+    assertEquals(
+        "expect equals language ", this.records[0].getLanguage(), testResult.getLanguage());
+    assertEquals(
+        "expect equals priority ", this.records[0].getPriority(), testResult.getPriority());
+    assertEquals(
+        "expect equals revisionId ", this.records[0].getRevisionId(), testResult.getRevisionId());
+    assertEquals(
+        "expect equals statsCoverage ",
+        this.records[0].getStatsCoverage(),
+        testResult.getStatsCoverage());
+    org.junit.Assert.assertEquals(
+        "expect equals documentFixtureId ",
+        this.records[0].getDocumentFixtureId(),
+        testResult.getDocumentFixtureId());
+    org.junit.Assert.assertEquals(
+        "expect equals sourceId ", this.records[0].getSourceId(), testResult.getSourceId());
 
-        // cleanup
-        inputStream.close();
-        json = null;
-        records = null;
-    }
-
-    /**
-     * Construct a delimiter file from a json file.
-     *
-     * @param inputFile the json file.
-     * @param charset default charset.
-     * @return
-     */
-    private File createRecordInputStreamFromJsonFile(String inputFile, Charset charset) {
-        try {
-            final File tempFile = File.createTempFile(inputFile, ".txt");
-            tempFile.deleteOnExit();
-            String json =
-                    FileUtils.readFileFromResource2String(inputFile, Charset.defaultCharset());
-            JSONArray docs = new JSONArray(json);
-            String csv = CDL.toString(docs);
-            org.apache.commons.io.FileUtils.writeStringToFile(
-                    tempFile, csv, Charset.defaultCharset());
-            return tempFile;
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return null;
-        }
-    }
+    // cleanup
+    inputStream.close();
+    json = null;
+    records = null;
+  }
 }

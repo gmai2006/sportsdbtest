@@ -16,40 +16,40 @@
  */
 package com.sportsdb.test.service;
 
-import com.sportsdb.test.entity.ParticipantsEvents;
 import java.util.List;
+import com.sportsdb.test.entity.ParticipantsEvents;
 
 public interface ParticipantsEventsService {
-    public ParticipantsEvents find(java.lang.Integer id);
+  public ParticipantsEvents find(java.lang.Integer id);
 
-    /**
-     * Select a list of ParticipantsEvents based on a given maximum number of returning records.
-     *
-     * @param maxResult : a specified maximum number of returned records.
-     * @return ParticipantsEvents records.
-     */
-    public List<ParticipantsEvents> select(int maxResult);
+  /**
+   * Select a list of ParticipantsEvents based on a given maximum number of returning records.
+   *
+   * @param maxResult : a specified maximum number of returned records.
+   * @return ParticipantsEvents records.
+   */
+  public List<ParticipantsEvents> select(int maxResult);
 
-    /**
-     * Select all ParticipantsEvents.
-     *
-     * @return all ParticipantsEvents records.
-     */
-    public List<ParticipantsEvents> selectAll();
+  /**
+   * Select all ParticipantsEvents.
+   *
+   * @return all ParticipantsEvents records.
+   */
+  public List<ParticipantsEvents> selectAll();
 
-    /**
-     * Create ParticipantsEvents.
-     *
-     * @param bean The ParticipantsEvents.
-     * @return The ParticipantsEvents.
-     */
-    public ParticipantsEvents create(ParticipantsEvents bean);
+  /**
+   * Create ParticipantsEvents.
+   *
+   * @param bean The ParticipantsEvents.
+   * @return The ParticipantsEvents.
+   */
+  public ParticipantsEvents create(ParticipantsEvents bean);
 
-    /**
-     * Update a ParticipantsEvents.
-     *
-     * @param bean - The ParticipantsEvents.
-     * @return ParticipantsEvents.
-     */
-    public ParticipantsEvents update(ParticipantsEvents bean);
+  /**
+   * Update a ParticipantsEvents.
+   *
+   * @param bean - The ParticipantsEvents.
+   * @return ParticipantsEvents.
+   */
+  public ParticipantsEvents update(ParticipantsEvents bean);
 }

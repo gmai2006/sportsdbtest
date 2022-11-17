@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.BasketballEventStates;
 import java.util.List;
+import com.sportsdb.test.entity.BasketballEventStates;
 
 public interface BasketballEventStatesDao {
-    /**
-     * Retrieve all records BasketballEventStates.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of BasketballEventStates
-     */
-    public List<BasketballEventStates> select(int maxResult);
+  /**
+   * Retrieve all records BasketballEventStates.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of BasketballEventStates
+   */
+  public List<BasketballEventStates> select(int maxResult);
 
-    /**
-     * Retrieve all records BasketballEventStates.
-     *
-     * @return A list of BasketballEventStates
-     */
-    public List<BasketballEventStates> selectAll();
+  /**
+   * Retrieve all records BasketballEventStates.
+   *
+   * @return A list of BasketballEventStates
+   */
+  public List<BasketballEventStates> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An BasketballEventStates id.
-     * @return The same BasketballEventStates.
-     */
-    public BasketballEventStates find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An BasketballEventStates id.
+   * @return The same BasketballEventStates.
+   */
+  public BasketballEventStates find(java.lang.Integer id);
 
-    /**
-     * Create an BasketballEventStates.
-     *
-     * @param e the BasketballEventStates.
-     * @return The same BasketballEventStates.
-     */
-    public BasketballEventStates create(BasketballEventStates e);
+  /**
+   * Create an BasketballEventStates.
+   *
+   * @param e the BasketballEventStates.
+   * @return The same BasketballEventStates.
+   */
+  public BasketballEventStates create(BasketballEventStates e);
 
-    /**
-     * Update the BasketballEventStates.
-     *
-     * @param e the BasketballEventStates.
-     * @return The same BasketballEventStates.
-     */
-    public BasketballEventStates update(BasketballEventStates e);
+  /**
+   * Update the BasketballEventStates.
+   *
+   * @param e the BasketballEventStates.
+   * @return The same BasketballEventStates.
+   */
+  public BasketballEventStates update(BasketballEventStates e);
 }

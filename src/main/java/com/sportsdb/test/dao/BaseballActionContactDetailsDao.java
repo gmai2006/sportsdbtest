@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.BaseballActionContactDetails;
 import java.util.List;
+import com.sportsdb.test.entity.BaseballActionContactDetails;
 
 public interface BaseballActionContactDetailsDao {
-    /**
-     * Retrieve all records BaseballActionContactDetails.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of BaseballActionContactDetails
-     */
-    public List<BaseballActionContactDetails> select(int maxResult);
+  /**
+   * Retrieve all records BaseballActionContactDetails.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of BaseballActionContactDetails
+   */
+  public List<BaseballActionContactDetails> select(int maxResult);
 
-    /**
-     * Retrieve all records BaseballActionContactDetails.
-     *
-     * @return A list of BaseballActionContactDetails
-     */
-    public List<BaseballActionContactDetails> selectAll();
+  /**
+   * Retrieve all records BaseballActionContactDetails.
+   *
+   * @return A list of BaseballActionContactDetails
+   */
+  public List<BaseballActionContactDetails> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An BaseballActionContactDetails id.
-     * @return The same BaseballActionContactDetails.
-     */
-    public BaseballActionContactDetails find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An BaseballActionContactDetails id.
+   * @return The same BaseballActionContactDetails.
+   */
+  public BaseballActionContactDetails find(java.lang.Integer id);
 
-    /**
-     * Create an BaseballActionContactDetails.
-     *
-     * @param e the BaseballActionContactDetails.
-     * @return The same BaseballActionContactDetails.
-     */
-    public BaseballActionContactDetails create(BaseballActionContactDetails e);
+  /**
+   * Create an BaseballActionContactDetails.
+   *
+   * @param e the BaseballActionContactDetails.
+   * @return The same BaseballActionContactDetails.
+   */
+  public BaseballActionContactDetails create(BaseballActionContactDetails e);
 
-    /**
-     * Update the BaseballActionContactDetails.
-     *
-     * @param e the BaseballActionContactDetails.
-     * @return The same BaseballActionContactDetails.
-     */
-    public BaseballActionContactDetails update(BaseballActionContactDetails e);
+  /**
+   * Update the BaseballActionContactDetails.
+   *
+   * @param e the BaseballActionContactDetails.
+   * @return The same BaseballActionContactDetails.
+   */
+  public BaseballActionContactDetails update(BaseballActionContactDetails e);
 }

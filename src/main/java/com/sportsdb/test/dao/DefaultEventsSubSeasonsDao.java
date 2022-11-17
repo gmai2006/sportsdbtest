@@ -16,57 +16,60 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.EventsSubSeasons;
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import com.sportsdb.test.entity.EventsSubSeasons;
 
 @Stateless
 @Named("DefaultEventsSubSeasonsDao")
 public class DefaultEventsSubSeasonsDao implements EventsSubSeasonsDao {
-    private static final int BATCH_SIZE = 50;
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private JpaDao dao;
+  private static final int BATCH_SIZE = 50;
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private JpaDao dao;
 
-    @Inject
-    @Named("DefaultJpaDao")
-    public DefaultEventsSubSeasonsDao(JpaDao dao) {
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultJpaDao")
+  public DefaultEventsSubSeasonsDao(JpaDao dao) {
+    this.dao = dao;
+  }
 
-    public DefaultEventsSubSeasonsDao() {}
+  public DefaultEventsSubSeasonsDao() {}
 
-    /** {@inheritDoc} */
-    @Override
-    public EventsSubSeasons find(java.lang.String id) {
-        final EntityManager em = dao.getEntityManager();
-        return em.find(EventsSubSeasons.class, id);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public EventsSubSeasons find(java.lang.String id) {
+    final EntityManager em = dao.getEntityManager();
+    return em.find(EventsSubSeasons.class, id);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<EventsSubSeasons> select(int max) {
-        return dao.select("select a from EventsSubSeasons a", EventsSubSeasons.class, max);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<EventsSubSeasons> select(int max) {
+    return dao.select("select a from EventsSubSeasons a", EventsSubSeasons.class, max);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public List<EventsSubSeasons> selectAll() {
-        return dao.selectAll("select a from EventsSubSeasons a", EventsSubSeasons.class);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public List<EventsSubSeasons> selectAll() {
+    return dao.selectAll("select a from EventsSubSeasons a", EventsSubSeasons.class);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public EventsSubSeasons create(EventsSubSeasons e) {
-        return dao.create(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public EventsSubSeasons create(EventsSubSeasons e) {
+    return dao.create(e);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public EventsSubSeasons update(EventsSubSeasons e) {
-        return dao.update(e);
-    }
+  /** {@inheritDoc} */
+  @Override
+  public EventsSubSeasons update(EventsSubSeasons e) {
+    return dao.update(e);
+  }
 }

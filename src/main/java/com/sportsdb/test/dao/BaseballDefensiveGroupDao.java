@@ -16,46 +16,46 @@
  */
 package com.sportsdb.test.dao;
 
-import com.sportsdb.test.entity.BaseballDefensiveGroup;
 import java.util.List;
+import com.sportsdb.test.entity.BaseballDefensiveGroup;
 
 public interface BaseballDefensiveGroupDao {
-    /**
-     * Retrieve all records BaseballDefensiveGroup.
-     *
-     * @param maxResult a maximum number of returned records.
-     * @return A list of BaseballDefensiveGroup
-     */
-    public List<BaseballDefensiveGroup> select(int maxResult);
+  /**
+   * Retrieve all records BaseballDefensiveGroup.
+   *
+   * @param maxResult a maximum number of returned records.
+   * @return A list of BaseballDefensiveGroup
+   */
+  public List<BaseballDefensiveGroup> select(int maxResult);
 
-    /**
-     * Retrieve all records BaseballDefensiveGroup.
-     *
-     * @return A list of BaseballDefensiveGroup
-     */
-    public List<BaseballDefensiveGroup> selectAll();
+  /**
+   * Retrieve all records BaseballDefensiveGroup.
+   *
+   * @return A list of BaseballDefensiveGroup
+   */
+  public List<BaseballDefensiveGroup> selectAll();
 
-    /**
-     * Find an entity.
-     *
-     * @param id An BaseballDefensiveGroup id.
-     * @return The same BaseballDefensiveGroup.
-     */
-    public BaseballDefensiveGroup find(java.lang.Integer id);
+  /**
+   * Find an entity.
+   *
+   * @param id An BaseballDefensiveGroup id.
+   * @return The same BaseballDefensiveGroup.
+   */
+  public BaseballDefensiveGroup find(java.lang.Integer id);
 
-    /**
-     * Create an BaseballDefensiveGroup.
-     *
-     * @param e the BaseballDefensiveGroup.
-     * @return The same BaseballDefensiveGroup.
-     */
-    public BaseballDefensiveGroup create(BaseballDefensiveGroup e);
+  /**
+   * Create an BaseballDefensiveGroup.
+   *
+   * @param e the BaseballDefensiveGroup.
+   * @return The same BaseballDefensiveGroup.
+   */
+  public BaseballDefensiveGroup create(BaseballDefensiveGroup e);
 
-    /**
-     * Update the BaseballDefensiveGroup.
-     *
-     * @param e the BaseballDefensiveGroup.
-     * @return The same BaseballDefensiveGroup.
-     */
-    public BaseballDefensiveGroup update(BaseballDefensiveGroup e);
+  /**
+   * Update the BaseballDefensiveGroup.
+   *
+   * @param e the BaseballDefensiveGroup.
+   * @return The same BaseballDefensiveGroup.
+   */
+  public BaseballDefensiveGroup update(BaseballDefensiveGroup e);
 }

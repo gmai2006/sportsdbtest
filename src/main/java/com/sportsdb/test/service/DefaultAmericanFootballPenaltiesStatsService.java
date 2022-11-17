@@ -17,75 +17,73 @@
 package com.sportsdb.test.service;
 
 import static java.util.Objects.requireNonNull;
-
-import com.sportsdb.test.dao.AmericanFootballPenaltiesStatsDao;
-import com.sportsdb.test.entity.AmericanFootballPenaltiesStats;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import com.sportsdb.test.dao.AmericanFootballPenaltiesStatsDao;
+import com.sportsdb.test.entity.AmericanFootballPenaltiesStats;
 
 @Stateless
 @Named("DefaultAmericanFootballPenaltiesStatsService")
 public class DefaultAmericanFootballPenaltiesStatsService
-        implements AmericanFootballPenaltiesStatsService {
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
-    private final AmericanFootballPenaltiesStatsDao dao;
+    implements AmericanFootballPenaltiesStatsService {
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
+  private final AmericanFootballPenaltiesStatsDao dao;
 
-    @Inject
-    @Named("DefaultAmericanFootballPenaltiesStatsDao")
-    public DefaultAmericanFootballPenaltiesStatsService(
-            final AmericanFootballPenaltiesStatsDao dao) {
-        requireNonNull(dao);
-        this.dao = dao;
-    }
+  @Inject
+  @Named("DefaultAmericanFootballPenaltiesStatsDao")
+  public DefaultAmericanFootballPenaltiesStatsService(final AmericanFootballPenaltiesStatsDao dao) {
+    requireNonNull(dao);
+    this.dao = dao;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AmericanFootballPenaltiesStats find(java.lang.Integer id) {
+  /** {@inheritDoc} */
+  @Override
+  public AmericanFootballPenaltiesStats find(java.lang.Integer id) {
 
-        final AmericanFootballPenaltiesStats result = dao.find(id);
-        logger.info("find(AmericanFootballPenaltiesStats) - exited - return value={} result ");
-        return result;
-    }
+    final AmericanFootballPenaltiesStats result = dao.find(id);
+    logger.info("find(AmericanFootballPenaltiesStats) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<AmericanFootballPenaltiesStats> select(int maxResult) {
-        final List<AmericanFootballPenaltiesStats> result = dao.select(maxResult);
-        logger.info("select(AmericanFootballPenaltiesStats) - exited - return value={} result ");
+  /** {@inheritDoc} */
+  public List<AmericanFootballPenaltiesStats> select(int maxResult) {
+    final List<AmericanFootballPenaltiesStats> result = dao.select(maxResult);
+    logger.info("select(AmericanFootballPenaltiesStats) - exited - return value={} result ");
 
-        return result;
-    }
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    public List<AmericanFootballPenaltiesStats> selectAll() {
-        final List<AmericanFootballPenaltiesStats> results = dao.selectAll();
-        logger.info("selectAll(AmericanFootballPenaltiesStats) - exited - return value={} result ");
-        return results;
-    }
+  /** {@inheritDoc} */
+  public List<AmericanFootballPenaltiesStats> selectAll() {
+    final List<AmericanFootballPenaltiesStats> results = dao.selectAll();
+    logger.info("selectAll(AmericanFootballPenaltiesStats) - exited - return value={} result ");
+    return results;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AmericanFootballPenaltiesStats create(AmericanFootballPenaltiesStats bean) {
-        requireNonNull(bean);
-        logger.info("create(AmericanFootballPenaltiesStats={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public AmericanFootballPenaltiesStats create(AmericanFootballPenaltiesStats bean) {
+    requireNonNull(bean);
+    logger.info("create(AmericanFootballPenaltiesStats={}) - entered bean ");
 
-        final AmericanFootballPenaltiesStats result = dao.create(bean);
+    final AmericanFootballPenaltiesStats result = dao.create(bean);
 
-        logger.info("create(AmericanFootballPenaltiesStats) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("create(AmericanFootballPenaltiesStats) - exited - return value={} result ");
+    return result;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    public AmericanFootballPenaltiesStats update(AmericanFootballPenaltiesStats bean) {
-        requireNonNull(bean);
-        logger.info("update(AmericanFootballPenaltiesStats={}) - entered bean ");
+  /** {@inheritDoc} */
+  @Override
+  public AmericanFootballPenaltiesStats update(AmericanFootballPenaltiesStats bean) {
+    requireNonNull(bean);
+    logger.info("update(AmericanFootballPenaltiesStats={}) - entered bean ");
 
-        final AmericanFootballPenaltiesStats result = dao.update(bean);
+    final AmericanFootballPenaltiesStats result = dao.update(bean);
 
-        logger.info("update(AmericanFootballPenaltiesStats) - exited - return value={} result ");
-        return result;
-    }
+    logger.info("update(AmericanFootballPenaltiesStats) - exited - return value={} result ");
+    return result;
+  }
 }
